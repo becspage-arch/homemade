@@ -111,7 +111,7 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
  * DEMAND-WEIGHTED, not even. Toys and blankets are what people crochet most, so
  * amigurumi and blankets carry the biggest numbers; a crocheted pair of trousers
  * is a real item type and almost nobody makes one, so it carries three. The sum
- * is the category target (1,200 — a FLOOR, per the sign-off: originals-dominant,
+ * is the category target (1,500 — a FLOOR, per the sign-off: originals-dominant,
  * expected to grow well past it the way cross-stitch went 500 → thousands).
  *
  * A shelf's target is what the CATALOGUE wants, which is a separate question
@@ -119,72 +119,96 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
  * `bulk/crochet-forms.ts`; only the shelves listed there get a generation lane,
  * and the rest sit here at their target waiting for the engine to reach them.
  */
+// Targets adopted by Rebecca on 6 September 2026 from the world-best audit
+// (RECOMMENDED_CROCHET_SHELF_TARGETS in bulk/crochet-idea-backlog.ts): 1,500 total.
+//
+// TEN SHELVES ADDED 6 September 2026 (evening), from a second pass over what
+// sells at the top of Etsy that the fifty-seven did not name as an item type:
+// `flower-bouquet` (stems and bouquets, which are not appliqués), `keyring-charm`
+// (the 2026 bag-charm trend), `potted-plant` (succulents and cacti in their pot),
+// `play-food`, `doll-clothes`, `miniature` (micro crochet at dolls house scale),
+// `wreath`, `stocking` (stockings and advent calendars), `swimwear` (bikinis and
+// bralettes) and `pet-clothing` (a dog jumper is worn, so it was never pet-bed).
+// The total stays at the adopted 1,500: the 180 they carry comes off shelves the
+// new ones were quietly absorbing, chiefly amigurumi 220 to 180 (keyrings, play
+// food and miniatures were all being counted there, so the toy seam still grows,
+// 420 to 435) and applique-flower 20 to 14 (bouquets moved out of it).
 export const CROCHET_SHELVES: ShelfTarget[] = [
   // ── Toys — the biggest seam ──
-  { slug: 'amigurumi', name: 'Amigurumi', target: 155 },
-  { slug: 'animal-toy', name: 'Animal Toys', target: 55 },
-  { slug: 'doll', name: 'Dolls', target: 35 },
-  { slug: 'baby-toy-lovey', name: 'Baby Toys & Loveys', target: 25 },
+  { slug: 'amigurumi', name: 'Amigurumi', target: 180 },
+  { slug: 'animal-toy', name: 'Animal Toys', target: 85 },
+  { slug: 'doll', name: 'Dolls', target: 44 },
+  { slug: 'baby-toy-lovey', name: 'Baby Toys & Loveys', target: 44 },
+  { slug: 'play-food', name: 'Play Food', target: 22 },
+  { slug: 'doll-clothes', name: 'Doll Clothes & Accessories', target: 16 },
+  { slug: 'miniature', name: 'Miniatures', target: 14 },
   // ── Home & living ──
-  { slug: 'blanket', name: 'Blankets & Afghans', target: 125 },
-  { slug: 'cushion', name: 'Cushions & Pillows', target: 35 },
+  { slug: 'blanket', name: 'Blankets & Afghans', target: 130 },
+  { slug: 'cushion', name: 'Cushions & Pillows', target: 32 },
   { slug: 'basket', name: 'Baskets & Storage', target: 22 },
-  { slug: 'ornament', name: 'Ornaments & Decorations', target: 20 },
-  { slug: 'wall-hanging', name: 'Wall Hangings & Art', target: 18 },
-  { slug: 'rug', name: 'Rugs & Mats', target: 12 },
-  { slug: 'plant-hanger', name: 'Plant Hangers & Pot Covers', target: 10 },
-  { slug: 'bunting', name: 'Bunting & Garlands', target: 10 },
-  { slug: 'pet-bed', name: 'Pet Beds & Accessories', target: 8 },
+  { slug: 'ornament', name: 'Ornaments & Decorations', target: 30 },
+  { slug: 'wreath', name: 'Wreaths', target: 12 },
+  { slug: 'stocking', name: 'Stockings & Advent Calendars', target: 12 },
+  { slug: 'flower-bouquet', name: 'Flowers & Bouquets', target: 30 },
+  { slug: 'potted-plant', name: 'Potted Plants & Succulents', target: 20 },
+  { slug: 'wall-hanging', name: 'Wall Hangings & Art', target: 26 },
+  { slug: 'rug', name: 'Rugs & Mats', target: 10 },
+  { slug: 'plant-hanger', name: 'Plant Hangers & Pot Covers', target: 12 },
+  { slug: 'bunting', name: 'Bunting & Garlands', target: 12 },
+  { slug: 'pet-bed', name: 'Pet Beds & Accessories', target: 10 },
   { slug: 'pouffe', name: 'Pouffes & Floor Cushions', target: 6 },
   // ── Hats, headwear, scarves, wraps ──
-  { slug: 'hat', name: 'Hats & Beanies', target: 65 },
-  { slug: 'scarf', name: 'Scarves', target: 50 },
-  { slug: 'headband', name: 'Headbands & Ear Warmers', target: 30 },
-  { slug: 'cowl', name: 'Cowls & Snoods', target: 30 },
-  { slug: 'shawl', name: 'Shawls', target: 26 },
-  { slug: 'beret', name: 'Berets & Tams', target: 12 },
-  { slug: 'wrap', name: 'Wraps & Stoles', target: 12 },
+  { slug: 'hat', name: 'Hats & Beanies', target: 62 },
+  { slug: 'scarf', name: 'Scarves', target: 42 },
+  { slug: 'headband', name: 'Headbands & Ear Warmers', target: 20 },
+  { slug: 'cowl', name: 'Cowls & Snoods', target: 26 },
+  { slug: 'shawl', name: 'Shawls', target: 24 },
+  { slug: 'beret', name: 'Berets & Tams', target: 10 },
+  { slug: 'wrap', name: 'Wraps & Stoles', target: 10 },
   { slug: 'poncho', name: 'Ponchos & Capes', target: 8 },
   // ── Gloves, legwear, socks, slippers ──
   { slug: 'slippers', name: 'Slippers', target: 18 },
-  { slug: 'fingerless-mitts', name: 'Fingerless Mitts & Wrist Warmers', target: 15 },
-  { slug: 'socks', name: 'Socks', target: 12 },
+  { slug: 'fingerless-mitts', name: 'Fingerless Mitts & Wrist Warmers', target: 16 },
+  { slug: 'socks', name: 'Socks', target: 10 },
   { slug: 'booties', name: 'Baby Booties', target: 12 },
   { slug: 'mittens', name: 'Mittens', target: 10 },
   { slug: 'gloves', name: 'Gloves', target: 6 },
   { slug: 'legwarmers', name: 'Leg Warmers', target: 6 },
   // ── Bags & small accessories ──
-  { slug: 'bag', name: 'Bags & Totes', target: 30 },
+  { slug: 'bag', name: 'Bags & Totes', target: 40 },
+  { slug: 'keyring-charm', name: 'Keyrings & Bag Charms', target: 30 },
   { slug: 'purse', name: 'Purses & Pouches', target: 16 },
   { slug: 'hair-accessory', name: 'Hair Accessories', target: 10 },
   { slug: 'jewellery', name: 'Jewellery', target: 8 },
-  { slug: 'backpack', name: 'Backpacks', target: 5 },
+  { slug: 'backpack', name: 'Backpacks', target: 6 },
   { slug: 'belt', name: 'Belts', target: 3 },
   // ── Kitchen & bath ──
-  { slug: 'dishcloth', name: 'Dishcloths & Washcloths', target: 26 },
-  { slug: 'potholder', name: 'Potholders & Trivets', target: 15 },
+  { slug: 'dishcloth', name: 'Dishcloths & Washcloths', target: 32 },
+  { slug: 'potholder', name: 'Potholders & Trivets', target: 18 },
   { slug: 'tea-cosy', name: 'Tea & Egg Cosies', target: 10 },
   { slug: 'towel', name: 'Towels & Toppers', target: 6 },
   // ── Garments ──
-  { slug: 'cardigan', name: 'Cardigans', target: 20 },
-  { slug: 'jumper-pullover', name: 'Jumpers & Pullovers', target: 16 },
-  { slug: 'tee-top', name: 'Tees & Tops', target: 14 },
-  { slug: 'vest', name: 'Vests & Tank Tops', target: 10 },
-  { slug: 'dress', name: 'Dresses', target: 8 },
+  { slug: 'cardigan', name: 'Cardigans', target: 22 },
+  { slug: 'jumper-pullover', name: 'Jumpers & Pullovers', target: 18 },
+  { slug: 'tee-top', name: 'Tees & Tops', target: 18 },
+  { slug: 'vest', name: 'Vests & Tank Tops', target: 12 },
+  { slug: 'swimwear', name: 'Swimwear & Bralettes', target: 12 },
+  { slug: 'pet-clothing', name: 'Pet Clothing', target: 12 },
+  { slug: 'dress', name: 'Dresses', target: 10 },
   { slug: 'tunic', name: 'Tunics', target: 5 },
-  { slug: 'skirt', name: 'Skirts', target: 4 },
-  { slug: 'jacket-coat', name: 'Jackets & Coats', target: 4 },
+  { slug: 'skirt', name: 'Skirts', target: 5 },
+  { slug: 'jacket-coat', name: 'Jackets & Coats', target: 5 },
   { slug: 'trousers', name: 'Trousers & Leggings', target: 3 },
-  { slug: 'shorts', name: 'Shorts', target: 3 },
+  { slug: 'shorts', name: 'Shorts', target: 4 },
   { slug: 'jumpsuit-romper', name: 'Jumpsuits & Rompers', target: 3 },
   // ── Doilies, motifs, components ──
-  { slug: 'motif-granny-square', name: 'Motifs & Granny Squares', target: 35 },
-  { slug: 'coaster', name: 'Coasters & Placemats', target: 28 },
+  { slug: 'motif-granny-square', name: 'Motifs & Granny Squares', target: 52 },
+  { slug: 'coaster', name: 'Coasters & Placemats', target: 26 },
   { slug: 'doily', name: 'Doilies & Lace', target: 22 },
-  { slug: 'edging', name: 'Edgings & Trims', target: 18 },
-  { slug: 'applique-flower', name: 'Appliqués & Flowers', target: 18 },
-  { slug: 'bookmark', name: 'Bookmarks', target: 8 },
-  { slug: 'pincushion', name: 'Pincushions', target: 4 },
+  { slug: 'edging', name: 'Edgings & Trims', target: 16 },
+  { slug: 'applique-flower', name: 'Appliqués & Flowers', target: 14 },
+  { slug: 'bookmark', name: 'Bookmarks', target: 10 },
+  { slug: 'pincushion', name: 'Pincushions', target: 3 },
 ]
 
 /**

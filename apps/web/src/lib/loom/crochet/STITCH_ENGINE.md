@@ -2492,6 +2492,153 @@ HONEST RESIDUALS, for the orchestrator's verdict:
   even though the piece went from h/w 0.66 to 0.96. The bear is where the
   profile shows.
 
+## 8f-11. ROUND 9 — THREE NEW BASES: cat, dog and bird (2026-09-06)
+
+The amigurumi lane had four bases — ball, egg, bear, bunny — so the crochet
+routine could honestly make bears, bunnies, balls and eggs and nothing else,
+against an idea backlog whose toy entries are mostly cats, dogs and birds. The
+world-class audit put 370 of 668 buildable-shelf targets on toys, so the base
+list is the ceiling on the paid half of the catalogue. This adds three animals,
+each built exactly the way the bear was: every piece one of the audited round
+profiles, every join through the composition's mutual contact pass, and
+`STUFF_PRESSURE` / `STUFF_PRIOR` untouched.
+
+### Four new profiles, and why each is genuinely needed
+
+Everything a bear is made of is a ball, a short pad or a tapered tube. Two
+shapes it never needed:
+
+- **A POINTED CONE.** A bear's ear is `ballRounds(12, 2)` — a round pad. A cat's
+  ear and a bird's beak are triangles: wide at the join, coming to a point.
+  `tubeRounds(12, 0)` is that with nothing else in it — six in the ring, twelve,
+  then straight into the 10-8-6 taper — so what stands out of the head past the
+  seat is a cone, not a bump. `tubeRounds(12, 1)` is the same with one straight
+  round, and round 2 proved it is the WRONG shape for a cat (see §9).
+- **A THIN CORD.** A tail. `scale` cannot make one out of a limb: it shortens as
+  it slims, and a cat's tail wants to be long AND thin. `cordRounds(n)` is the
+  magic ring's six stitches worked straight up for n rounds, with no shaping at
+  all — six is already as narrow as a spiral gets, so there is nothing to
+  increase toward and nothing to decrease back to, which is exactly how a real
+  tail is worked and closed.
+
+| profile | rounds | settled (worsted, yr 2.1) | used for |
+|---|---|---|---|
+| `tubeRounds(12, 0)` | `6,12,10,8,6` | 23.7 x 24.7 mm | cat ear, bird beak |
+| `tubeRounds(12, 1)` | `6,12,12,10,8,6` | 24.9 x 28.3 mm | kept, audited, not shipped on a base |
+| `cordRounds(5)` | `6,6,6,6,6` | 14.0 x 27.4 mm | dog tail, small cat tail |
+| `cordRounds(9)` | `6` x 9 | 14.1 x 48.5 mm | cat tail |
+
+All four audit clean at **fine 1.5, worsted 2.1, worsted 2.4 and bulky 3.2**.
+
+### The three bases
+
+- **CAT** — the bear's skeleton with three changes: two `tubeRounds(12, 0)`
+  cones on TOP of the crown (attach direction 0.68 out from the head's axis
+  against the bear's 0.95, which is the difference between "on top" and "on the
+  sides"), a smaller muzzle set a little lower, and a `cordRounds(9)` tail. 15
+  pieces; 970 / 1,234 / 1,928 stitches at S / M / L.
+- **DOG** — a rounder snout (`ballRounds(12, 2)`, one plateau round more than the
+  bear's flat pad, seated 4 mm so it stands off the face), and the bunny's own
+  long tapered ear tube AIMED DOWN so each hangs beside the face. That one
+  flipped aim is the whole difference between a lop-eared dog and a rabbit; the
+  piece and the profile are the same. Plus a `cordRounds(5)` stub tail. 15
+  pieces; 1,078 / 1,366 / 2,048 stitches.
+- **BIRD** — the only base that is not on the bear's skeleton. No neck, no
+  muzzle, no limbs: an EGG standing on its own base, a small ball head stepped
+  out of its crown, a crocheted cone beak in the second yarn, two folded wings
+  down the flanks and two flat feet at the front. 7 pieces; 362 / 526 / 718
+  stitches.
+
+Semantics travel with the base rather than with the caller. `AmigurumiBaseSpec`
+replaces the `base === 'bear' || base === 'bunny'` tests that were scattered
+through the designer and the program builder: each base declares whether it has
+a muzzle a moulded safety nose fits (a beak is crocheted, so a bird's is false),
+whether it has limbs for contrast paw pads (a bird's is false), and what the
+second yarn actually makes, which is the hint the Studio shows. A cat and a dog
+are on four legs, so their limb pieces are named `front-leg` / `back-leg` and
+the written pattern says so; `compositionPattern.ts` grew an irregular plural so
+a bird's feet are Feet.
+
+### Sizes and hashes
+
+`amigurumiSizes.generated.ts` regenerated from a real compile of every profile
+and every preset. `amigurumi-presets.test.ts` walks 19 profiles and 21 presets:
+**40/40 clean, every one sitting on the table** (|minz| under 0.5 mm).
+
+| preset | S | M | L |
+|---|---|---|---|
+| cat | 95 x 105 mm | 105 x 130 | 140 x 170 |
+| dog | 95 x 95 | 105 x 115 | 140 x 150 |
+| bird | 40 x 65 | 60 x 90 | 80 x 110 |
+
+Composition geometry hashes (yr 2.1): `cat-S` **393281f6** · `cat-M`
+**bdb741b0** · `cat-L` **5f10b0c8** · `dog-S` **1228be29** · `dog-M`
+**f60359f1** · `dog-L` **1b0a6e40** · `bird-S` **01ffe84b** · `bird-M`
+**1a86c933** · `bird-L` **e4091d8e**.
+
+EVERYTHING THAT EXISTED IS BIT-IDENTICAL. All **36/36** dictionary swatch
+hashes unmoved (`loom-geom-hash.ts` diffed either side), and all seven amigurumi
+compositions: `amigurumi-ball` 2ff70d93 · `amigurumi-creature` c03d1014 ·
+`amigurumi-bear` 0db38d65 · `-perch` 43bbddeb · `-bigear` aad24ff0 · `-plain`
+d39aef41 · `-mirror` 87921021. Nothing in the engine, the relaxer or the
+composition layer's geometry was touched — the only shared edit is the piece
+LABELLER's irregular plural.
+
+### Rendered (Fargate, three batches of three)
+
+The proofs in `loom-composition-proofs.ts` are no longer a second copy of the
+assembly: `amigurumi-cat`, `-dog` and `-bird` are `buildAmigurumiProgram` at
+size M, so the thing rendered and judged IS what a maker who picks "Cat /
+Medium" is handed. (§8f-9 logged the opposite as a residual: the bear proof and
+the `bear-M` preset are the same geometry at different scales and only the proof
+was ever rendered.) Their hashes match the preset hashes above exactly.
+
+Round 3 (shipped) passes the fidelity/structure gate on all three: `amigurumi-cat`
+**0.956**, `amigurumi-dog` **0.943**, `amigurumi-bird` **0.962** (STRUCT_MIN 0.45).
+
+VERDICTS, beside real crocheted amigurumi hero photos (kept in
+`.loom-scratch/refs/pick`, sources in `SOURCES.json`):
+
+- **DOG — passes, and it is the strongest of the three.** The floppy ears
+  hanging either side of the face are the whole read, and they land: beside two
+  reference dogs the silhouette is the same animal. Cream snout, black nose,
+  sitting up on cream paws, soft and stuffed. Weakest element is the stub tail,
+  which at the staging angle reads as a nub above the front paw rather than a
+  tail.
+- **CAT — passes.** Two short wide-based triangles flaring off the crown, a
+  small low muzzle and a tail sweeping up from the near haunch. It reads as a
+  cat rather than a bear. It is honestly still a chunky sitting toy, and without
+  whiskers or a coloured nose a stranger might read "mouse" at a glance; the
+  ears and the tail are what carry it.
+- **BIRD — passes.** The head steps out of the egg over a real crease, the
+  orange beak points forward, both wings stand off the flanks as paddles and the
+  orange feet sit on the table at the front. Beside two reference chicks it is
+  the same kind of object. It is taller and narrower than a typical chick,
+  because the body is an egg standing on its end.
+
+Two look-pass rounds were spent on each; what failed is in §9.
+
+HONEST RESIDUALS, for the orchestrator's verdict:
+- **Every tail is foreshortened by the staging camera.** The tail has to be on
+  the near flank to be seen at all (§9), which means it points partly at the
+  lens; a 33 mm cat tail reads nearer 20. A tail that reads its full length
+  wants a second camera or a pose with the figure turned further.
+- **The wings and the small pieces are the same wool as the body.** A real
+  chick's wing is visible because it is a separate flat piece with an edge; ours
+  is visible only where it breaks the silhouette. A contrast wing would fix it
+  and would also be a design choice a maker should make, not one baked into the
+  base.
+- **The cat and dog front legs are the bear's ROUND-3 arm pose.** Held out and
+  forward, which is what stops them reading as extra feet (§8e-2 round 3) but is
+  not how a cat sits. A cat's forelegs are vertical and close to the body, and
+  putting them there walks straight back into the four-feet failure; it needs
+  the shorter limb that finding already named, not another placement.
+- **No S or L size was rendered.** The presets audit clean and sit on the table
+  at every size, and the M render is the geometry judged. S and L differ by
+  round counts and the measured per-size trims, not by construction.
+
+---
+
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
 
 The engine can build, render and word a pattern; §8g is the machinery that
@@ -3140,6 +3287,50 @@ things the spend guard caps. Same columns, craft-specific meaning.
   different one in binary; it moved `hdc` and `basketweave` for no reason at all.
   When refactoring a shared lattice, keep the untouched path's exact
   associativity, and diff `loom-geom-hash.ts` before believing a change is inert.
+
+- **Sewing a tail out of the BACK of the body** (round 9, 2026-09-06) → it is
+  invisible in every render, at every size, and the first cat and dog rounds
+  were both judged with no tail in the picture at all. The staging camera is not
+  square on: `tiltDeg`/`yawDeg` put it at `(sin yaw, -cos yaw)` and
+  `loom_render_crochet.py` NEGATES y when it writes the curves, so the lens sits
+  on the +x, +y side and everything at -y is behind the body. A tail has to be
+  joined on the NEAR flank, behind the hip, and swept up and out — which is also
+  where a sitting cat's tail actually lies. Measured on cat-M, that puts the tip
+  7.7 mm outside the body's widest point instead of 0.
+- **Making a cat's ear a longer tapered tube** (round 9, attempt 2, 2026-09-06)
+  → it reads as a RABBIT. `tubeRounds(12, 1)` at scale 0.88 is 21.9 x 24.9 mm of
+  which four rounds are straight, and two of those standing up off a crown are
+  bunny ears with a point on. A cat's ear is a short triangle that is nearly as
+  wide at the base as it is tall: the five-round cone `tubeRounds(12, 0)` scaled
+  so the base is ~47% of the head width. The lesson generalises — for a small
+  feature the SHAPE of the profile decides what animal it is, and scale cannot
+  rescue the wrong one.
+- **Seating a small size's ear as deep as a big one's** (round 9, 2026-09-06) →
+  a real audit failure, not a cosmetic one. The S cat head is a 37.9 mm eq-18
+  sphere against the M's 50.4, so the same 4 mm seat buries proportionally far
+  more of the ear and the contact pass has to draw that much more fabric onto
+  the head: at scale 0.72 the S ear fails one interlock (`hook floated above its
+  crown, dy 1.29yr`) and at 0.66 it fails TWO. Shrinking the ear is a knife edge
+  (0.60 passes, 0.62 fails) and gives the S cat ears the wrong size for its head.
+  Back off the SEAT instead — 2.5 mm at S — and the ear stays the size the head
+  wants.
+- **Letting the seat put a bird's feet on the egg's front-bottom surface**
+  (round 9, 2026-09-06) → the bird stands on nothing. An egg is widest at its
+  middle, so a foot seated on that surface below the belly settles 3.4 mm ABOVE
+  the table and INSIDE the body's own silhouette: invisible, and floating. It
+  needs a measured two-axis offset per size — forward until the foot is a few mm
+  proud of the breast, down until it rests on the table — the same kind of
+  number `GROUND_LIFT` already is for the bear's legs.
+- **Seating a bird's head deep into its egg body** (round 9, 2026-09-06) → the
+  silhouette is one continuous cone, a skittle, and no part of it reads as a
+  head. A real chick is two balls with a crease between them; at 7 mm of overlap
+  on a 60 mm body there is no crease left. 3.5 mm at M, and the head steps out.
+- **Hanging a bird's wings straight down the flank** (round 9, 2026-09-06) →
+  they vanish. Aimed at z -1 the wing lies along the body in the same wool with
+  no edge and no shadow, and the round-2 render shows a bird with no wings even
+  though both were there and both were 11 mm proud of the body. Joined higher on
+  the shoulder and aimed out at about 40 degrees below horizontal they read as
+  folded wings.
 
 ---
 

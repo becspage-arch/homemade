@@ -97,12 +97,24 @@ export interface CrochetCompletenessResult {
   rules: string[]
 }
 
-/** The shelves whose finished object is a toy a small child may get hold of. */
+/**
+ * The shelves whose finished object is a toy a small child may get hold of.
+ *
+ * Widened 6 September 2026 with the four toy-adjacent shelves the top-of-Etsy
+ * pass added. Play food and doll clothes are played with by the same children;
+ * a keyring charm and a dolls house miniature are small enough to swallow and
+ * live at handbag height, which is exactly where a toddler finds them. All four
+ * therefore need safety notes before they can publish.
+ */
 export const CROCHET_TOY_SHELVES = new Set([
   'amigurumi',
   'doll',
   'animal-toy',
   'baby-toy-lovey',
+  'play-food',
+  'doll-clothes',
+  'keyring-charm',
+  'miniature',
 ])
 
 /**

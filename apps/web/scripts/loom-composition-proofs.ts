@@ -11,6 +11,11 @@
 
 import type { CompositionProgram } from '../src/lib/loom/crochet/engine/composition'
 import { sphereRounds } from '../src/lib/loom/crochet/engine/sphereProfile'
+import {
+  buildAmigurumiProgram,
+  type AmigurumiBase,
+  type AmigurumiSize,
+} from '../src/lib/loom/crochet/engine/amigurumiPresets'
 
 /**
  * §8f-3 — the corrected sc CELL makes every crocheted piece bigger for the same
@@ -457,7 +462,36 @@ const amigurumiBearMirror = bear({
   notes: 'The bear built facing the other way — the staging control for the camera axis.',
 })
 
+// ── THE THREE ANIMAL BASES (§8f-11) ─────────────────────────────────────────
+//
+// Unlike the bear above, these are NOT a second copy of the assembly: they are
+// the Studio's own preset, compiled by `buildAmigurumiProgram`, so what gets
+// rendered and looked at beside a real photo is exactly what a maker who picks
+// "Cat / Medium" is handed. §8f-9 logged the opposite as a residual — the bear
+// proof and the `bear-M` preset are the same geometry at different scales, and
+// only the proof was ever rendered. These close that gap for the new bases.
+function presetProof(
+  base: AmigurumiBase,
+  size: AmigurumiSize,
+  mainHex: string,
+  contrastHex: string,
+  eyeMm: number,
+): CompositionProgram {
+  return buildAmigurumiProgram({ base, size, mainHex, contrastHex, eyeMm, nose: true, paws: true, name: `amigurumi-${base}` })
+}
+
+/** A grey tabby cat with cream paws — the shade a cat pattern is usually
+ *  photographed in, and the one that shows the ear cones against the ground. */
+const amigurumiCat = presetProof('cat', 'M', '#8d8b86', '#e6d3ae', 9)
+/** A biscuit-coloured dog with cream snout and paws. */
+const amigurumiDog = presetProof('dog', 'M', '#c0965f', '#efe3cd', 9)
+/** A yellow chick with an orange beak and feet. */
+const amigurumiBird = presetProof('bird', 'M', '#e9c95c', '#d9822b', 9)
+
 export const COMPOSITION_PROOFS: Record<string, CompositionProgram> = {
+  'amigurumi-cat': amigurumiCat,
+  'amigurumi-dog': amigurumiDog,
+  'amigurumi-bird': amigurumiBird,
   'amigurumi-ball': amigurumiBall,
   'amigurumi-creature': amigurumiCreature,
   'amigurumi-bear': amigurumiBear,

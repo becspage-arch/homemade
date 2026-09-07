@@ -17,7 +17,7 @@ import 'server-only'
 
 import sharp from 'sharp'
 import { utils as iqUtils, buildPaletteSync, applyPaletteSync } from 'image-q'
-import { nameYarnColours } from './yarn-shades'
+import { matchYarnShades } from './yarn-shades'
 import {
   TAPESTRY_MAX_COLOURS,
   TAPESTRY_MIN_COLOURS,
@@ -50,6 +50,72 @@ export interface PhotoToTapestrySettings {
   backgroundRemoval: boolean
   /** How hard to smooth single-stitch islands (they are fiddly to carry). */
   smoothing: 'low' | 'medium' | 'high'
+  /**
+   * Trim the near-uniform border sharp finds around the source's top-left
+   * pixel before quantising, so a subject drawn small on a plain ground fills
+   * the frame it is actually measured against rather than carrying that
+   * ground into the stitch grid as dead space. Off by default: a customer's
+   * own photo rarely has a plain border to trim, so the Studio path behaves
+   * exactly as before. The bulk pictorial lane turns this on because its
+   * source illustration IS drawn on a plain ground on purpose
+   * (`generation/bulk/crochet.ts`).
+   */
+  cropToSubject?: boolean
+  /**
+   * With `cropToSubject` on, refuse (`TapestrySubjectTooSmallError`) an
+   * illustration whose trimmed subject covers less than this fraction of the
+   * original frame, rather than quietly rendering a border no one asked for.
+   * The first published cottage showpiece was killed for exactly this — a
+   * third of the panel was empty ground above the scene
+   * (`apps/web/scripts/crochet-first-batch-verdicts.json`).
+   */
+  minSubjectCoverage?: number
+}
+
+/** Thrown by `photoToTapestryGrid` when `minSubjectCoverage` is set and the
+ *  trimmed subject does not clear it. Carries the measured coverage so the
+ *  caller can log it, and so a re-roll can tell how close it came. */
+export class TapestrySubjectTooSmallError extends Error {
+  constructor(
+    public readonly coverage: number,
+    public readonly minCoverage: number,
+  ) {
+    super(
+      `the illustration's subject fills only ${Math.round(coverage * 100)}% of the frame after ` +
+        `trimming the background (need at least ${Math.round(minCoverage * 100)}%)`,
+    )
+    this.name = 'TapestrySubjectTooSmallError'
+  }
+}
+
+export interface SubjectCrop {
+  /** The image, cropped to the trimmed bounding box. Unchanged if there was
+   *  nothing to trim. */
+  buffer: Buffer
+  /** Trimmed area over original area, 0 to 1. */
+  coverage: number
+}
+
+/**
+ * Trim the near-uniform border sharp finds around the top-left pixel's colour
+ * and report how much of the original frame survives. A photo with no plain
+ * border (an ordinary snapshot) simply reports a coverage at or near 1, so
+ * this is safe to run unconditionally on any source.
+ */
+export async function cropToSubject(imageBytes: Buffer): Promise<SubjectCrop> {
+  const meta = await sharp(imageBytes).metadata()
+  const originalArea = (meta.width ?? 0) * (meta.height ?? 0)
+  if (!originalArea) return { buffer: imageBytes, coverage: 1 }
+  try {
+    const { data, info } = await sharp(imageBytes)
+      .trim({ threshold: 24 })
+      .toBuffer({ resolveWithObject: true })
+    return { buffer: data, coverage: (info.width * info.height) / originalArea }
+  } catch {
+    // Nothing sharp will trim (a flat single-colour frame, or a shape trim
+    // refuses) — that is not a small subject, it is no border at all.
+    return { buffer: imageBytes, coverage: 1 }
+  }
 }
 
 export async function photoToTapestryGrid(
@@ -61,7 +127,19 @@ export async function photoToTapestryGrid(
   const ceiling = Math.max(TAPESTRY_MIN_COLOURS, Math.round(settings.maxColours ?? TAPESTRY_MAX_COLOURS))
   const colours = Math.max(TAPESTRY_MIN_COLOURS, Math.min(ceiling, Math.round(settings.colours)))
 
-  let pipeline = sharp(imageBytes).removeAlpha().resize(width, height, {
+  let source = imageBytes
+  if (settings.cropToSubject) {
+    const cropped = await cropToSubject(imageBytes)
+    if (settings.minSubjectCoverage != null && cropped.coverage < settings.minSubjectCoverage) {
+      throw new TapestrySubjectTooSmallError(cropped.coverage, settings.minSubjectCoverage)
+    }
+    source = cropped.buffer
+  }
+
+  // Cropped to the subject's own bounds (or the whole frame, if there was
+  // nothing to trim), so 'cover' + 'attention' is now filling the target grid
+  // from the picture that matters rather than centring it inside dead space.
+  let pipeline = sharp(source).removeAlpha().resize(width, height, {
     fit: 'cover',
     position: 'attention',
   })
@@ -116,13 +194,17 @@ export async function photoToTapestryGrid(
   const counts = new Map<string, number>()
   for (const k of cells) counts.set(k, (counts.get(k) ?? 0) + 1)
   const ordered = [...counts.entries()].sort((a, b) => b[1] - a[1])
-  const names = nameYarnColours(ordered.map(([k]) => hexByKey.get(k)!))
+  // Snap every quantised colour to an actual, buyable yarn shade rather than
+  // keeping the arbitrary averaged RGB the quantiser produced: the pattern
+  // NAMES a shade ("Sage", "Terracotta") and the rendered hero has to be that
+  // shade, not a nearby colour no yarn on the shelf actually makes.
+  const shades = matchYarnShades(ordered.map(([k]) => hexByKey.get(k)!))
   const rename = new Map<string, string>()
   const paletteOut: TapestryColour[] = ordered.map(([tempKey, stitches], i) => {
-    const name = names[i]!
-    const key = shadeKey(name)
+    const shade = shades[i]!
+    const key = shadeKey(shade.name)
     rename.set(tempKey, key)
-    return { key, name, hex: hexByKey.get(tempKey)!, stitches }
+    return { key, name: shade.name, hex: shade.hex, stitches }
   })
 
   return {

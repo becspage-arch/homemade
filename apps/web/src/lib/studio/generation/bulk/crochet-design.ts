@@ -36,7 +36,7 @@ import {
   AMIGURUMI_BASES,
   AMIGURUMI_SIZES,
   EYE_SIZES,
-  ballRounds,
+  sphereRounds,
   buildAmigurumiProgram,
   isAuditedProfile,
   type AmigurumiBase,
@@ -172,12 +172,16 @@ export function designToProgram(
 
   const { palette, base, problems } = readPalette(design)
   if (design.treatment === 'sphere') {
+    // Round 8 (§8f-10): a closed ball is a SPHERE profile, increases placed
+    // where the sphere grows; `ballPlateau` is the extra straight rounds held
+    // at the equator on top of the profile's own. The audited list is the
+    // only set of shapes the loom has been measured on.
     const equator = clampInt(design.ballEquator, 12, 36, 24)
-    const plateau = clampInt(design.ballPlateau, 1, 9, 5)
-    const rounds = ballRounds(equator, plateau)
+    const plateau = clampInt(design.ballPlateau, 1, 9, 1)
+    const rounds = sphereRounds(equator, plateau)
     if (!isAuditedProfile(rounds)) {
       problems.push(
-        `A ball with a widest round of ${equator} held for ${plateau} rounds is not one of the shapes the loom has been measured on.`,
+        `A ball with a widest round of ${equator} and ${plateau} extra rounds at the equator is not one of the shapes the loom has been measured on (audited: 12/1, 12/4, 18/1, 18/5, 24/1, 24/5, 30/1, 36/1).`,
       )
     }
     if (problems.length) return { kind: 'none', program: null, problems }

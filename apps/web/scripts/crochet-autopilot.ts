@@ -103,6 +103,24 @@ function parseArgs(argv: string[]): Args {
 
 // ── The run directory ───────────────────────────────────────────────────────
 
+/**
+ * A database write that follows minutes of geometry or a Fargate wait. The
+ * cloud session reaches Neon over a WebSocket; a long synchronous stretch (the
+ * relaxer blocks the event loop) starves its keepalive and the socket dies
+ * under the pool, which only notices on the next write ("Connection terminated
+ * unexpectedly"). The pool evicts the dead client on that error, so one retry
+ * lands on a fresh connection. Anything else is re-thrown.
+ */
+async function dbRetry<T>(fn: () => Promise<T>): Promise<T> {
+  try {
+    return await fn()
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e)
+    if (!/terminated unexpectedly|Connection closed|ECONNRESET|socket hang up/i.test(msg)) throw e
+    return await fn()
+  }
+}
+
 const MANIFEST = 'manifest.json'
 
 function manifestPath(runDir: string): string {
@@ -138,8 +156,15 @@ function writeJson(path: string, value: unknown): void {
 async function stageContext(args: Args): Promise<void> {
   const { crochetPlanContext } = await import('../src/lib/studio/generation/bulk/run')
   const { crochetPlanContextPayload } = await import('../src/lib/studio/generation/bulk/crochet-planner')
-  const { crochetSpendWindow, overCrochetCap, approxCrochetSpend, CROCHET_DAILY_RENDER_CAP, CROCHET_DAILY_ILLUSTRATION_CAP } =
-    await import('../src/lib/studio/generation/bulk/spend-guard')
+  const {
+    crochetSpendWindow,
+    overCrochetCap,
+    overCrochetMonthlyCap,
+    approxCrochetSpend,
+    CROCHET_DAILY_RENDER_CAP,
+    CROCHET_DAILY_ILLUSTRATION_CAP,
+    CROCHET_MONTHLY_USD_CAP,
+  } = await import('../src/lib/studio/generation/bulk/spend-guard')
   const { isAutopilotEnabled } = await import('../src/lib/studio/generation/bulk/autopilot-state')
   const { emptyManifest, parseManifest } = await import('../src/lib/studio/generation/bulk/crochet-session')
   const { estimateCrochetCost } = await import('../src/lib/studio/generation/bulk/crochet-cost')
@@ -163,11 +188,12 @@ async function stageContext(args: Args): Promise<void> {
     inFlightSubjectKeys,
   })
 
-  const [window, enabled] = await Promise.all([
+  const [window, window30d, enabled] = await Promise.all([
     crochetSpendWindow(),
+    crochetSpendWindow(24 * 30),
     isAutopilotEnabled('crochet').catch(() => false),
   ])
-  const capped = overCrochetCap(window)
+  const capped = overCrochetCap(window) ?? overCrochetMonthlyCap(window30d)
 
   const context = {
     ...payload,
@@ -180,6 +206,9 @@ async function stageContext(args: Args): Promise<void> {
       illustrationsUsed: window.proGenerations,
       illustrationCap: CROCHET_DAILY_ILLUSTRATION_CAP,
       approxUsd: Number(approxCrochetSpend(window).toFixed(2)),
+      /** The trailing 30 days against Rebecca's monthly ceiling. */
+      monthlyUsd: Number(approxCrochetSpend(window30d).toFixed(2)),
+      monthlyCapUsd: CROCHET_MONTHLY_USD_CAP,
       /** Non-null means a render started now would be refused. */
       cappedReason: capped,
       /** What this batch is forecast to cost if every candidate renders once. */
@@ -225,7 +254,7 @@ async function stageContext(args: Args): Promise<void> {
     )
   }
   console.log(
-    `Spend: ${window.generations}/${CROCHET_DAILY_RENDER_CAP} renders in 24h${capped ? ` — CAPPED: ${capped}` : ''}`,
+    `Spend: ${window.generations}/${CROCHET_DAILY_RENDER_CAP} renders in 24h; $${approxCrochetSpend(window30d).toFixed(2)} of the $${CROCHET_MONTHLY_USD_CAP} monthly ceiling used${capped ? ` — CAPPED: ${capped}` : ''}`,
   )
 }
 
@@ -403,20 +432,20 @@ async function stageExpand(args: Args): Promise<void> {
   // The BulkRun row, created once per run so the admin page sees the batch the
   // same way it sees a cron batch.
   if (!manifest.bulkRunId) {
-    const row = await prisma.bulkRun.create({
+    const row = await dbRetry(() => prisma.bulkRun.create({
       data: {
         craft: 'crochet',
         trigger: 'routine',
         requested: manifest.candidates.length,
       },
       select: { id: true },
-    })
+    }))
     manifest = { ...manifest, bulkRunId: row.id }
   } else {
-    await prisma.bulkRun.update({
-      where: { id: manifest.bulkRunId },
+    await dbRetry(() => prisma.bulkRun.update({
+      where: { id: manifest.bulkRunId as string },
       data: { requested: manifest.candidates.length },
-    })
+    }))
   }
 
   manifest = { ...manifest, stages: { ...manifest.stages, expand: new Date().toISOString() } }
@@ -458,7 +487,9 @@ class ExpandRefused extends Error {
 async function stageRender(args: Args): Promise<void> {
   const session = await import('../src/lib/studio/generation/bulk/crochet-session')
   const { renderCrochetCandidate, fargateRenderWired } = await import('../src/lib/studio/generation/bulk/crochet')
-  const { crochetSpendWindow, overCrochetCap } = await import('../src/lib/studio/generation/bulk/spend-guard')
+  const { crochetSpendWindow, overCrochetCap, overCrochetMonthlyCap } = await import(
+    '../src/lib/studio/generation/bulk/spend-guard'
+  )
   const { fargateRenderUsd, FAL_CREATIVE_UPSCALE_USD, ILLUSTRATION_USD } = await import(
     '../src/lib/studio/generation/bulk/crochet-cost'
   )
@@ -493,9 +524,11 @@ async function stageRender(args: Args): Promise<void> {
       break
     }
 
-    // THE DAILY CAPS, re-read at the point of spending.
-    const window = await crochetSpendWindow()
-    const capped = overCrochetCap(window, { illustration: entry.treatment === 'grid-tapestry' })
+    // THE DAILY CAPS AND THE MONTHLY CEILING, re-read at the point of spending.
+    const [window, window30d] = await Promise.all([crochetSpendWindow(), crochetSpendWindow(24 * 30)])
+    const capped =
+      overCrochetCap(window, { illustration: entry.treatment === 'grid-tapestry' }) ??
+      overCrochetMonthlyCap(window30d, cost)
     if (capped) {
       console.warn(`${entry.slug}: NOT rendered — ${capped}`)
       break
@@ -541,13 +574,13 @@ async function stageRender(args: Args): Promise<void> {
       manifest = { ...manifest, spentUsd: Number((manifest.spentUsd + cost).toFixed(4)) }
       writeJson(manifestPath(args.run), manifest)
       if (manifest.bulkRunId) {
-        await prisma.bulkRun.update({
-          where: { id: manifest.bulkRunId },
+        await dbRetry(() => prisma.bulkRun.update({
+          where: { id: manifest.bulkRunId as string },
           data: {
             generations: { increment: 1 },
             ...(entry.treatment === 'grid-tapestry' ? { proGenerations: { increment: 1 } } : {}),
           },
-        })
+        }))
       }
       console.log(
         `   hero ${candidate.heroPath} · hash ${candidate.geometryHash} · fidelity ${candidate.fidelityScore ?? 'n/a'} · ≈$${cost.toFixed(3)}`,
@@ -771,8 +804,8 @@ async function stagePublish(args: Args): Promise<void> {
     plannerMode: 'session',
   })
   if (manifest.bulkRunId) {
-    await prisma.bulkRun.update({
-      where: { id: manifest.bulkRunId },
+    await dbRetry(() => prisma.bulkRun.update({
+      where: { id: manifest.bulkRunId as string },
       data: {
         published: counters.published,
         culled: counters.culled,
@@ -784,7 +817,7 @@ async function stagePublish(args: Args): Promise<void> {
         finishedAt: new Date(),
         summary,
       },
-    })
+    }))
   }
   const consumed = session.backlogConsumed(manifest)
   console.log(`\n${summary}`)

@@ -12,7 +12,7 @@
  * planner draws only from it.
  *
  * The catalogue's ambition lives elsewhere — `CROCHET_SHELVES` in
- * `../categories.ts` carries a target for all fifty-seven item types, including
+ * `../categories.ts` carries a target for all sixty-seven item types, including
  * the ones the engine cannot reach yet. Those simply have no generation lane;
  * they sit at their target waiting. As the engine grows (tubes for hats, lace
  * for doilies, shaping for garments) a shelf moves into this file and starts

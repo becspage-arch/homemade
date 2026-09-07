@@ -44,11 +44,32 @@
  * works the first fifty entries produces a balanced browse grid — several
  * shelves, a spread of colourways, both easy and hard — instead of fifty
  * coasters. `seq` is that position.
+ *
+ * A THIRD, FINER-GRAINED CASE (6 September 2026, evening): on the four
+ * amigurumi-treatment shelves (amigurumi, animal-toy, doll, baby-toy-lovey),
+ * "the shelf is buildable" is not the same question as "this idea is
+ * buildable" — the amigurumi engine only builds FOUR bodies today (ball, egg,
+ * bear, bunny; `AMIGURUMI_BASES` in `loom/crochet/engine/amigurumiPresets.ts`),
+ * so a brief for an otter or a border collie has nowhere honest to land even
+ * though its shelf has a working treatment. `isHonestAmigurumiSubject` below
+ * is the per-idea gate: an amigurumi-treatment row on one of these shelves is
+ * `buildable: true` only when its motif IS one of those four bodies (any bear
+ * species, any rabbit/hare, a plain ball or egg, or a named colour/pattern
+ * variant of one) — everything else keeps its treatment (informational: this
+ * is what it WOULD build as, once the engine grows more bases) but is
+ * `buildable: false`, so `nextBuildableIdeas` never hands the routine a shape
+ * the loom cannot honestly render. A `baby-toy-lovey` row on the `sphere`
+ * treatment (a plain rattle ball) is never subject to this — it is already
+ * just a ball, whatever it is named.
  */
 
 import { CROCHET_SHELF_BY_SLUG } from '../categories'
 import { envelopeFor, shelfIsBuildable, type CrochetTreatment } from './crochet-forms'
 import { findSubjectKeyMatch, subjectKey } from './subject-key'
+// Relative, not the `@/` alias: this file is imported at runtime by
+// packages/db scripts (crochet-draft-triage.ts) run with tsx from outside
+// apps/web, which cannot resolve the Next.js path alias.
+import { AMIGURUMI_BASES } from '../../../loom/crochet/engine/amigurumiPresets'
 
 export type IdeaSize = 'small' | 'medium' | 'large' | 'showpiece'
 export type IdeaDifficulty = 'beginner' | 'intermediate' | 'advanced' | 'showpiece'
@@ -76,8 +97,14 @@ export interface CrochetIdea {
   searchPhrase: string
   /** Normalised key, by the same rule as the publish guard's subject key. */
   dedupeKey: string
-  /** Can the loom build it today? */
+  /** Can the loom build it today? Shelf-buildable AND, on the four
+   *  amigurumi-treatment shelves, honestly one of the four bodies the engine
+   *  actually builds — see `isHonestAmigurumiSubject`. `treatment` can still
+   *  be set when this is false (informational: what it would build as). */
   buildable: boolean
+  /** Optional provenance: a draft Tutorial row this idea was converted from
+   *  (6 September 2026 triage), by old slug. Absent on hand-authored ideas. */
+  source?: { kind: 'draft-tutorial'; slug: string }
   /** One line for the authoring session. */
   brief: string
 }
@@ -86,11 +113,15 @@ export interface CrochetIdea {
  * Compact source row. Hand-maintained; everything derivable is derived, so a
  * new idea is one short line rather than a twelve-field object.
  *
- *   [title, motif, hook, colourway, treatment, code]
+ *   [title, motif, hook, colourway, treatment, code, sourceSlug?]
  *
  * `code` is size + difficulty as one letter each: size s|m|l|w (small, medium,
  * large, showpiece), difficulty b|i|a|w (beginner, intermediate, advanced,
  * showpiece). So 'sb' is a small beginner piece and 'ww' a showpiece.
+ *
+ * `sourceSlug` (6 September 2026 triage): the old Tutorial slug this idea was
+ * converted from, when it came off the 959 pre-loom draft prose patterns
+ * rather than being hand-authored. Absent on every hand-authored row.
  */
 type Row = [
   title: string,
@@ -99,10 +130,12 @@ type Row = [
   colourway: string,
   treatment: CrochetTreatment,
   code: string,
+  sourceSlug?: string,
 ]
 
-/** A theme for a shelf the loom cannot build: [theme, hook, colourway]. */
-type Theme = [theme: string, hook: string, colourway: string]
+/** A theme for a shelf the loom cannot build: [theme, hook, colourway,
+ *  sourceSlug?] — sourceSlug has the same meaning as on `Row`. */
+type Theme = [theme: string, hook: string, colourway: string, sourceSlug?: string]
 
 const SIZE: Record<string, IdeaSize> = { s: 'small', m: 'medium', l: 'large', w: 'showpiece' }
 const DIFF: Record<string, IdeaDifficulty> = {
@@ -175,6 +208,16 @@ const SEARCH_NOUN: Record<string, string> = {
   doily: 'doily',
   edging: 'edging',
   'applique-flower': 'flower applique',
+  'flower-bouquet': 'bouquet',
+  'potted-plant': 'potted plant',
+  wreath: 'wreath',
+  stocking: 'stocking',
+  'keyring-charm': 'keyring',
+  'play-food': 'play food',
+  'doll-clothes': 'doll clothes',
+  miniature: 'miniature',
+  swimwear: 'bikini',
+  'pet-clothing': 'dog jumper',
 }
 
 /**
@@ -214,9 +257,48 @@ function pad(n: number): string {
   return String(n).padStart(3, '0')
 }
 
+/**
+ * The four shelves whose sole treatment (or, on baby-toy-lovey, one of two
+ * treatments) is 'amigurumi' — the shaped-figure builder that only knows how
+ * to lay out a bear body or a bunny body (`amigurumiFromDesign` in
+ * `crochet-design.ts`). Belt and braces: fails loudly if the engine ever
+ * grows a base beyond the seven this file was written against, so the regex
+ * below gets revisited rather than silently under- or over-matching.
+ */
+const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,dog,egg') {
+  throw new Error(
+    'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
+  )
+}
+
+/**
+ * Bear (any species/colourway — a panda is a bear), rabbit/hare/bunny (any
+ * breed), or a plain ball/egg (including a named colour or pattern variant,
+ * e.g. "speckled egg", "ball of yarn"). Deliberately narrow: a subject only
+ * passes because it names one of these bodies, never because it merely LOOKS
+ * roundish (a pufferfish, a cupcake, a donut are all real shapes the engine
+ * cannot lay out and stay off this list).
+ */
+const HONEST_AMIGURUMI_BASE_RE =
+  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b/i
+
+/**
+ * Bases the engine cannot lay out even though the word above might match:
+ * a dachshund needs a long body, an owl is not an egg with a beak.
+ */
+const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
+
+/** True when `motif` is honestly one of the seven bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird). */
+export function isHonestAmigurumiSubject(motif: string): boolean {
+  return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
+}
+
 function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
-  return rows.map(([title, motif, hook, colourway, treatment, code], i) => {
+  return rows.map(([title, motif, hook, colourway, treatment, code, sourceSlug], i) => {
     const envelope = envelopeFor(shelf, treatment)
+    const baseConstrained = AMIGURUMI_BASE_CONSTRAINED_SHELVES.has(shelf) && treatment === 'amigurumi'
+    const buildable = baseConstrained ? isHonestAmigurumiSubject(motif) : true
     return {
       id: `${shelf}-${pad(i + 1)}`,
       seq: 0,
@@ -229,15 +311,18 @@ function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
       difficulty: DIFF[code[1]!] ?? 'intermediate',
       searchPhrase: searchPhrase(motif, shelf),
       dedupeKey: dedupeKeyFor(motif, shelf),
-      buildable: true,
-      brief: `${motif}: ${hook}. ${colourway} palette, built as ${treatment}${envelope ? ` (${envelope.note.replace(/\.$/, '')})` : ''}.`,
+      buildable,
+      ...(sourceSlug ? { source: { kind: 'draft-tutorial' as const, slug: sourceSlug } } : {}),
+      brief: buildable
+        ? `${motif}: ${hook}. ${colourway} palette, built as ${treatment}${envelope ? ` (${envelope.note.replace(/\.$/, '')})` : ''}.`
+        : `${motif}: ${hook}. ${colourway} palette. Needs a body beyond the four the amigurumi engine builds today (ball, egg, bear, bunny), so not buildable yet.`,
     }
   })
 }
 
 function buildThemes(shelf: string, themes: Theme[]): CrochetIdea[] {
   const shelfName = CROCHET_SHELF_BY_SLUG[shelf]?.name ?? shelf
-  return themes.map(([theme, hook, colourway], i) => ({
+  return themes.map(([theme, hook, colourway, sourceSlug], i) => ({
     id: `${shelf}-t${pad(i + 1)}`,
     seq: 0,
     shelf,
@@ -250,6 +335,7 @@ function buildThemes(shelf: string, themes: Theme[]): CrochetIdea[] {
     searchPhrase: searchPhrase(theme, shelf),
     dedupeKey: dedupeKeyFor(theme, shelf),
     buildable: false,
+    ...(sourceSlug ? { source: { kind: 'draft-tutorial' as const, slug: sourceSlug } } : {}),
     brief: `${shelfName} theme. ${theme}: ${hook}. ${colourway} palette. Waiting on engine work.`,
   }))
 }
@@ -517,6 +603,185 @@ const AMIGURUMI: Row[] = [
   ['Nutcracker', 'nutcracker', 'a stiff little soldier with a lever jaw', 'winter-frost', 'amigurumi', 'mw'],
   ['Pancake day pan', 'frying pan', 'a pan with a flipping pancake', 'vintage-tea', 'amigurumi', 'mi'],
   ['Simnel cake', 'simnel cake', 'a marzipan top with eleven balls', 'vintage-tea', 'amigurumi', 'mi'],
+
+  ['Acorn', 'acorn', 'this tiny acorn is one of the simplest amigurumi in the woodland collection', 'elegant-mono', 'amigurumi', 'sb', 'amigurumi-acorn'],
+  ['Aeroplane', 'aeroplane', 'a white aeroplane with a long capsule fuselage, two flat oval wings, a cone nose, and two oval tail fins', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-aeroplane'],
+  ['Alien', 'alien', 'a green alien figure with a large sphere head, an oval body, two long capsule arms, and two cone antennae', 'vintage-tea', 'amigurumi', 'mi', 'amigurumi-alien'],
+  ['Alpaca', 'alpaca', 'the alpaca has a long neck between the body and the small oval head', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-alpaca'],
+  ['Ankylosaurus', 'ankylosaurus', 'a green ankylosaurus with a wide oval armoured body, a sphere head, four short legs, and a club-tipped tail', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-ankylosaurus'],
+  ['Arctic fox', 'arctic fox', 'a white arctic fox with a large fluffy tail', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-arctic-fox'],
+  ['Astronaut', 'astronaut', 'an intermediate astronaut with a white sphere helmet, a cylinder body suit, and two capsule arms', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-astronaut'],
+  ['Avocado', 'avocado', 'this avocado uses a pear body in two greens and an oval seed in brown', 'foxglove-autumn', 'amigurumi', 'sb', 'amigurumi-avocado'],
+  ['Axolotl', 'axolotl', 'a pink axolotl made from a capsule body, six feathery cylinder gills on the head, and four short capsule legs', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-axolotl'],
+  ['Baby Dinosaur Hatching Egg', 'baby dinosaur hatching egg', 'a hatching baby dinosaur worked as two pieces: a cracked egg shell and a small sphere head poking out of the top', 'nursery-pastel', 'amigurumi', 'mb', 'amigurumi-baby-dino'],
+  ['Baby Elephant', 'baby elephant', 'a beginner-friendly baby elephant at approximately 12 cm finished height', 'celestial-night', 'amigurumi', 'mb', 'amigurumi-baby-elephant'],
+  ['Baby seal', 'baby seal', 'a tiny white baby seal made from just two pieces: a sphere head and a small oval body', 'bright-pop', 'amigurumi', 'mb', 'amigurumi-baby-seal'],
+  ['Badger', 'badger', 'the badger is a stocky, low-slung figure with a sphere head and an oval body, both worked in its signature grey-and-white pattern', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-badger'],
+  ['Bison', 'bison', 'the bison has a proportionally large head and a humped back', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-bison'],
+  ['Boat', 'boat', 'a red boat made from an oval hull, a slim cylinder mast, and a flat oval sail', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-boat'],
+  ['Book', 'book', 'a toy book made from a thick oval cover body and a slightly smaller flat oval page block', 'boho-earth', 'amigurumi', 'mb', 'amigurumi-book'],
+  ['Brachiosaurus', 'brachiosaurus', 'a green brachiosaurus with a wide oval body and long cylinder neck. stuff the neck as you go to keep it upright', 'vintage-tea', 'amigurumi', 'mi', 'amigurumi-brachiosaurus'],
+  ['Brown bear', 'brown bear', 'this bear is larger than the classic teddy and uses four legs for a seated pose', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-brown-bear'],
+  ['Budgerigar', 'budgerigar', 'materials about 35 g of bright green dk yarn, plus yellow for the face and blue for wing tips', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-budgie'],
+  ['Bumble bee', 'bumble bee', 'work the body as an oval in alternating yellow and black stripes using stripe carry', 'winter-frost', 'amigurumi', 'mb', 'amigurumi-bumble-bee'],
+  ['Burger', 'burger', 'the burger has three pieces: a domed bun top, an oval patty, and a flat bun base', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-burger'],
+  ['Cactus', 'cactus', 'a chunky green cactus with a tall cylinder body and two shorter cylinder arms', 'foxglove-autumn', 'amigurumi', 'mb', 'amigurumi-cactus'],
+  ['Camera', 'camera', 'a toy camera built from an oval body, a cylinder lens, and a small oval viewfinder', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-camera'],
+  ['Capybara', 'capybara', 'a brown capybara made from a rectangular oval head, a long oval body, and four short sturdy capsule legs', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-capybara'],
+  ['Car', 'car', 'a red toy car built from an oval body, four flat cylinder wheels, and two small cylinder headlights', 'celestial-night', 'amigurumi', 'mi', 'amigurumi-car'],
+  ['Tabby Cat', 'tabby cat', 'a striped tabby cat with cone ears, a long tail, and a curious expression. worked in dk yarn at tight tension for a firm, poseable result', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-cat'],
+  ['Chameleon', 'chameleon', 'the chameleon uses a surface slip stitch ridge along the top of the body and tail to create the back crest', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-chameleon'],
+  ['Cheetah', 'cheetah', 'a sleek spotted cheetah made from a sphere head, an oval body, four slim capsule legs, and a long cylinder tail', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-cheetah'],
+  ['Chick', 'chick', 'a tiny yellow chick that works up in about an hour', 'elegant-mono', 'amigurumi', 'sb', 'amigurumi-chick'],
+  ['Chicken', 'chicken', 'a white or brown hen with a red comb and a yellow beak', 'boho-earth', 'amigurumi', 'mb', 'amigurumi-chicken'],
+  ['Cloud', 'cloud', 'a white cloud made from three spheres joined together with a flat oval base', 'vintage-tea', 'amigurumi', 'mb', 'amigurumi-cloud'],
+  ['Comet', 'comet', 'a beginner white comet with a sphere head and a streamer tail of looped yarn lengths', 'gothic-dusk', 'amigurumi', 'mb', 'amigurumi-comet'],
+  ['Cow', 'cow', 'this holstein dairy cow uses a magic ring start for every piece', 'coastal-breeze', 'amigurumi', 'li', 'amigurumi-cow'],
+  ['Crab', 'crab', 'a cheerful red crab built from a domed sphere body, two capsule claws, and six short cylinder legs', 'winter-frost', 'amigurumi', 'si', 'amigurumi-crab'],
+  ['Crocodile', 'crocodile', 'this crocodile is built from five piece types: a sphere head, a capsule body, four short capsule legs', 'wildflower-meadow', 'amigurumi', 'li', 'amigurumi-crocodile'],
+  ['Crow', 'crow', 'an all-black crow with a large sturdy beak and long wings', 'foxglove-autumn', 'amigurumi', 'mb', 'amigurumi-crow'],
+  ['Cupcake', 'cupcake', 'this cupcake uses two pieces: a cylinder base for the cake case and a sphere swirl on top for the frosting', 'mushroom-woodland', 'amigurumi', 'sb', 'amigurumi-cupcake'],
+  ['Fawn Deer', 'fawn deer', 'this fawn deer uses an oval head and a capsule body, with four slender wire-armature legs and cone antlers', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-deer'],
+  ['Diplodocus', 'diplodocus', 'a grey diplodocus with a wide oval body, a very long cylinder neck, a very long tapered cylinder tail, and a small sphere head', 'celestial-night', 'amigurumi', 'li', 'amigurumi-diplodocus'],
+  ['Corgi', 'corgi', 'materials about 75 g of golden-orange dk yarn, plus cream for the muzzle and belly', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-dog-corgi'],
+  ['Dachshund', 'dachshund', 'materials around 70 g of brown dk-weight yarn', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-dog-dachshund'],
+  ['Golden Labrador', 'golden labrador', 'materials about 80 g of golden dk-weight yarn plus a small amount of dark brown for nose embroidery', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-dog-labrador'],
+  ['Dolphin', 'dolphin', 'a streamlined dolphin made from a capsule body, cone snout, and two flat oval flippers', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-dolphin'],
+  ['Donkey', 'donkey', 'a grey donkey with a short yarn mane and long capsule ears', 'boho-earth', 'amigurumi', 'li', 'amigurumi-donkey'],
+  ['Donut', 'donut', 'a donut (torus) in amigurumi is made as a stuffed tube joined end to end', 'vintage-tea', 'amigurumi', 'mi', 'amigurumi-donut'],
+  ['Dragon', 'dragon', 'work each piece using a magic ring start in green dk yarn on a 3.5 mm hook', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-dragon'],
+  ['Dragonfly', 'dragonfly', 'work the body as a capsule body', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-dragonfly'],
+  ['Duck', 'duck', 'a yellow duckling with an orange bill', 'winter-frost', 'amigurumi', 'mb', 'amigurumi-duck'],
+  ['Eagle', 'eagle', 'a bald eagle with a white head, brown body, and large capsule wings', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-eagle'],
+  ['Echidna', 'echidna', 'a brown echidna with a sphere head, an oval body covered in spike texture, and a narrow cone beak', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-echidna'],
+  ['Fairy', 'fairy', 'work the head and body in a skin-tone or main colour dk yarn', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-fairy'],
+  ['Flamingo', 'flamingo', 'this tall flamingo stands on two long legs thanks to a wire armature threaded through each leg before stuffing', 'nursery-pastel', 'amigurumi', 'li', 'amigurumi-flamingo'],
+  ['Woodland Fox', 'woodland fox', 'a five-piece red and white fox with a pear-shaped body, fluffy tail, and pointed nose cone. colour changes create the classic muzzle and chest markings', 'celestial-night', 'amigurumi', 'mi', 'amigurumi-fox'],
+  ['Gecko', 'gecko', 'this gecko has an oval body, sphere head, four slim legs, and a cylinder tail', 'bright-pop', 'amigurumi', 'mb', 'amigurumi-gecko'],
+  ['Giraffe', 'giraffe', 'the giraffe stands on four capsule legs attached to a cylinder body', 'candy-kawaii', 'amigurumi', 'li', 'amigurumi-giraffe'],
+  ['Goat', 'goat', 'a white goat with cone horns and a pointed beard', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-goat'],
+  ['Goldfish', 'goldfish', 'materials about 40 g of bright orange dk yarn plus white for the belly', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-goldfish'],
+  ['Gorilla', 'gorilla', 'a stocky black gorilla with a large sphere head, oval body, two long capsule arms, and two short capsule legs', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-gorilla'],
+  ['Griffin', 'griffin', 'the griffin combines eagle and lion elements', 'vintage-tea', 'amigurumi', 'la', 'amigurumi-griffin'],
+  ['Grizzly bear', 'grizzly bear', 'the grizzly is posed standing upright with arms raised above the body', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-grizzly-bear'],
+  ['Guinea Pig', 'guinea pig', 'materials about 65 g of dk yarn in two or three colours for a patchy coat', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-guinea-pig'],
+  ['Hamster', 'hamster', 'materials about 55 g of sandy or golden dk yarn plus a small amount of cream for the belly', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-hamster'],
+  ['Heart', 'heart', 'a classic heart shape made from two sphere lobes joined side by side at the top, with a cone point base that tapers to the bottom tip', 'wildflower-meadow', 'amigurumi', 'mb', 'amigurumi-heart'],
+  ['Hedgehog', 'hedgehog', 'this plump hedgehog uses spike stitch over the back half of the body to mimic spines', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-hedgehog'],
+  ['Highland cow', 'highland cow', 'the signature feature of this highland cow is the shaggy forehead fringe', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-highland-cow'],
+  ['Hippo', 'hippo', 'a chunky grey hippo built from a large sphere head, an oval body, four short capsule legs, and two small cone ears', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-hippo'],
+  ['Horse', 'horse', 'a sturdy brown horse with a yarn mane and tail', 'celestial-night', 'amigurumi', 'li', 'amigurumi-horse'],
+  ['Hot Air Balloon', 'hot air balloon', 'a hot air balloon made from a large sphere balloon and a small open cylinder basket', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-hot-air-balloon'],
+  ['House', 'house', 'a toy house built from a cylinder wall section, a cone roof, and a flat oval door panel', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-house'],
+  ['Hummingbird', 'hummingbird', 'a tiny hummingbird worked entirely in small pieces', 'scandi-calm', 'amigurumi', 'sb', 'amigurumi-hummingbird'],
+  ['Hyena', 'hyena', 'a tawny spotted hyena made from a sphere head, oval body, and four capsule legs', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-hyena'],
+  ['Ice cream cone', 'ice cream cone', 'the ice cream cone has two pieces: a sphere scoop and a cone', 'boho-earth', 'amigurumi', 'sb', 'amigurumi-ice-cream-cone'],
+  ['Iguana', 'iguana', 'this iguana has an oval body, sphere head, four short legs, a long cone tail', 'vintage-tea', 'amigurumi', 'li', 'amigurumi-iguana'],
+  ['Jellyfish', 'jellyfish', 'a beginner-friendly pink jellyfish with a sphere bell and six long cylinder tentacles', 'gothic-dusk', 'amigurumi', 'sb', 'amigurumi-jellyfish'],
+  ['Kangaroo', 'kangaroo', 'a brown kangaroo with a sphere head, oval body, long capsule legs, and an open-top cylinder joey pocket on the belly', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-kangaroo'],
+  ['Kitten', 'kitten', 'this kitten is designed for beginners', 'winter-frost', 'amigurumi', 'mb', 'amigurumi-kitten'],
+  ['Kiwi', 'kiwi', 'a compact kiwi bird (apteryx) from new zealand, famous for its round body, tiny wings, and long slender beak', 'wildflower-meadow', 'amigurumi', 'mb', 'amigurumi-kiwi'],
+  ['Koala', 'koala', 'a grey koala made from a large sphere head, an oval body, two wide oval ears, and two capsule arms', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-koala'],
+  ['Komodo dragon', 'komodo dragon', 'this komodo dragon has an oval head, a large capsule body, four sturdy legs, and a thick tail', 'mushroom-woodland', 'amigurumi', 'li', 'amigurumi-komodo-dragon'],
+  ['Ladybird', 'ladybird', 'start the body with a magic ring', 'nursery-pastel', 'amigurumi', 'sb', 'amigurumi-ladybird'],
+  ['Autumn Leaf', 'autumn leaf', 'an autumn leaf in russet or golden orange, built from a stuffed oval body with a slim cylinder stem', 'celestial-night', 'amigurumi', 'mb', 'amigurumi-leaf'],
+  ['Lion', 'lion', 'the mane is the defining feature', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-lion'],
+  ['Llama', 'llama', 'the llama uses a longer neck than the alpaca', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-llama'],
+  ['Lobster', 'lobster', 'a bold red lobster built from an oval body, two large capsule claws, and six slim cylinder legs', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-lobster'],
+  ['Meerkat', 'meerkat', 'an alert meerkat standing upright', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-meerkat'],
+  ['Mermaid', 'mermaid', 'work the head and body in a skin-tone dk yarn and the tail pieces in teal or turquoise', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-mermaid'],
+  ['Mini avocado keychain', 'mini avocado keychain', 'outer body in dark green yarn, start with a magic ring', 'vintage-tea', 'amigurumi', 'sb', 'amigurumi-mini-avocado'],
+  ['Mini bear keychain', 'mini bear keychain', 'head start with a magic ring', 'gothic-dusk', 'amigurumi', 'sb', 'amigurumi-mini-bear'],
+  ['Mini bee keychain', 'mini bee keychain', 'body in yellow yarn, start with a magic ring', 'coastal-breeze', 'amigurumi', 'sb', 'amigurumi-mini-bee'],
+  ['Mini bunny keychain', 'mini bunny keychain', 'head start with a magic ring', 'winter-frost', 'amigurumi', 'sb', 'amigurumi-mini-bunny'],
+  ['Mini cat keychain', 'mini cat keychain', 'head start with a magic ring', 'wildflower-meadow', 'amigurumi', 'sb', 'amigurumi-mini-cat'],
+  ['Mini ghost keychain', 'mini ghost keychain', 'body in white yarn, start with a magic ring', 'foxglove-autumn', 'amigurumi', 'sb', 'amigurumi-mini-ghost'],
+  ['Mini heart keychain', 'mini heart keychain', 'halves (make 2) start with a magic ring', 'mushroom-woodland', 'amigurumi', 'sb', 'amigurumi-mini-heart'],
+  ['Mini mushroom keychain', 'mini mushroom keychain', 'cap in red yarn, start with a magic ring', 'nursery-pastel', 'amigurumi', 'sb', 'amigurumi-mini-mushroom'],
+  ['Mini star keychain', 'mini star keychain', 'points (make 5) start with a magic ring', 'celestial-night', 'amigurumi', 'sb', 'amigurumi-mini-star'],
+  ['Mini whale keychain', 'mini whale keychain', 'body in blue yarn, start with a magic ring', 'bright-pop', 'amigurumi', 'sb', 'amigurumi-mini-whale'],
+  ['Monkey', 'monkey', 'the monkey sits on a pear-shaped body', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-monkey'],
+  ['Moon', 'moon', 'a beginner white sphere moon with crater texture added after assembly', 'scandi-calm', 'amigurumi', 'mb', 'amigurumi-moon'],
+  ['Woodland Mouse', 'woodland mouse', 'this small grey wood mouse has a round sphere head, a pear-shaped body, and two flat cone ears', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-mouse-woodland'],
+  ['Red Spotted Mushroom', 'red spotted mushroom', 'this cheerful red-spotted mushroom is not an animal but a favourite woodland accent piece', 'boho-earth', 'amigurumi', 'mb', 'amigurumi-mushroom'],
+  ['Newt', 'newt', 'this newt has a capsule body, sphere head, four short legs, and a cylinder tail', 'vintage-tea', 'amigurumi', 'mb', 'amigurumi-newt'],
+  ['Octopus', 'octopus', 'a beginner-friendly octopus: one sphere head and eight short cylinder tentacles', 'gothic-dusk', 'amigurumi', 'sb', 'amigurumi-octopus'],
+  ['Ostrich', 'ostrich', 'a tall grey ostrich with a small sphere head, a long cylinder neck, an oval body, and two long cylinder legs', 'coastal-breeze', 'amigurumi', 'li', 'amigurumi-ostrich'],
+  ['Woodland Owl', 'woodland owl', 'this round brown owl has a sphere head and an oval body, with wing ovals and a small beak cone attached', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-owl'],
+  ['Pachycephalosaurus', 'pachycephalosaurus', 'a green pachycephalosaurus with its signature oversized domed head, an oval body, two stocky back legs, and two small front arms', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-pachycephalosaurus'],
+  ['Panda', 'panda', 'a giant panda worked in black and white dk yarn', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-panda'],
+  ['Parrot', 'parrot', 'the parrot is worked in multiple bright colours using colour changes for the wing and tail feather sections', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-parrot'],
+  ['Peacock', 'peacock', 'a jewel-toned peacock with five individual tail feathers fanned out behind the body', 'nursery-pastel', 'amigurumi', 'ma', 'amigurumi-peacock'],
+  ['Pelican', 'pelican', 'a white pelican with its distinctive large pouch beak worked as a wide cylinder attached below the head', 'celestial-night', 'amigurumi', 'mi', 'amigurumi-pelican'],
+  ['Penguin', 'penguin', 'a black and white penguin with an orange beak and feet', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-penguin'],
+  ['Phoenix', 'phoenix', 'work the body and wings using a magic ring start', 'candy-kawaii', 'amigurumi', 'li', 'amigurumi-phoenix'],
+  ['Pig', 'pig', 'a round pink pig with a disc snout and a curly tail', 'scandi-calm', 'amigurumi', 'mb', 'amigurumi-pig'],
+  ['Pigeon', 'pigeon', 'a plump city pigeon in grey and white dk', 'elegant-mono', 'amigurumi', 'mb', 'amigurumi-pigeon'],
+  ['Pine Tree', 'pine tree', 'a classic pine tree with a tall dark green cone canopy and a short brown cylinder trunk', 'boho-earth', 'amigurumi', 'mb', 'amigurumi-pine-tree'],
+  ['Pineapple', 'pineapple', 'the pineapple has an oval body in yellow and a short cylinder crown base in green', 'vintage-tea', 'amigurumi', 'sb', 'amigurumi-pineapple'],
+  ['Pizza slice', 'pizza slice', 'a pizza slice is shaped as a wide, flat cone', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-pizza-slice'],
+  ['Planet Earth', 'planet earth', 'a beginner sphere planet earth worked in blue and green', 'coastal-breeze', 'amigurumi', 'mb', 'amigurumi-planet-earth'],
+  ['Platypus', 'platypus', 'a brown platypus built from an oval body, a flat oval bill, and a broad flat capsule tail', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-platypus'],
+  ['Polar bear', 'polar bear', 'a white polar bear worked entirely in cream or white dk', 'wildflower-meadow', 'amigurumi', 'li', 'amigurumi-polar-bear'],
+  ['Pterodactyl', 'pterodactyl', 'a brown pterodactyl with an oval body, two long capsule wings, a sphere head, and a cone beak', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-pterodactyl'],
+  ['Puffin', 'puffin', 'a black and white puffin with a large striped orange beak', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-puffin'],
+  ['Quokka', 'quokka', 'a small round quokka worked in warm brown dk yarn', 'nursery-pastel', 'amigurumi', 'mb', 'amigurumi-quokka'],
+  ['Farm rabbit', 'farm rabbit', 'a seated white farm rabbit with long capsule ears and a fluffy sphere tail', 'celestial-night', 'amigurumi', 'mb', 'amigurumi-rabbit-farm'],
+  ['Rainbow', 'rainbow', 'a cheerful rainbow arc worked in six colour stripes along a stuffed cylinder, with a small white cloud ball at each end', 'bright-pop', 'amigurumi', 'mb', 'amigurumi-rainbow'],
+  ['Raindrop', 'raindrop', 'a compact blue raindrop about 7 cm tall, made from a sphere top and a cone bottom', 'candy-kawaii', 'amigurumi', 'sb', 'amigurumi-raindrop'],
+  ['Red Panda', 'red panda', 'a red panda worked in rust and cream dk yarn', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-red-panda'],
+  ['Reindeer', 'reindeer', 'a brown reindeer with cone antlers and a round red or brown snout', 'elegant-mono', 'amigurumi', 'li', 'amigurumi-reindeer'],
+  ['Rhino', 'rhino', 'a solid grey rhino made from an oval head, a large oval body, four sturdy capsule legs, and a cone horn', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-rhino'],
+  ['Robin', 'robin', 'this cheerful robin has a warm colour-change breast panel worked in rounds', 'vintage-tea', 'amigurumi', 'mb', 'amigurumi-robin'],
+  ['Rocket Ship', 'rocket ship', 'an intermediate rocket ship made from a cylinder body, a cone nose, and four small cone fins', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-rocket-ship'],
+  ['Rose', 'rose', 'a layered red rose built from a small sphere bud, five inner spiral cone petals, and seven wider outer cone petals', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-rose'],
+  ['Salamander', 'salamander', 'this salamander has a capsule body, sphere head, and four short legs', 'winter-frost', 'amigurumi', 'mb', 'amigurumi-salamander'],
+  ['Saturn', 'saturn', 'a golden sphere planet with a flat oval ring sewn around its equator', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-saturn'],
+  ['Seahorse', 'seahorse', 'a yellow seahorse made from a pear-shaped body, a small sphere head, and a narrow cone snout', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-seahorse'],
+  ['Shark', 'shark', 'a grey shark with a long capsule body, a tall dorsal fin, and two cone tail fins', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-shark'],
+  ['Sheep', 'sheep', 'a fluffy white sheep with a textured bobble stitch body and a darker face', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-sheep'],
+  ['Shooting Star', 'shooting star', 'a beginner yellow shooting star made from a small sphere centre and five cone points', 'celestial-night', 'amigurumi', 'mb', 'amigurumi-shooting-star'],
+  ['Sloth', 'sloth', 'the sloth is designed to hang from a twig or dowel', 'bright-pop', 'amigurumi', 'mb', 'amigurumi-sloth'],
+  ['Snail', 'snail', 'this garden snail has a pear-shaped body curling upward at the front and a sphere shell mounted on its back', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-snail'],
+  ['Python snake', 'python snake', 'this python is made from six oval body sections joined in a chain, plus a sphere head and a cone tongue', 'scandi-calm', 'amigurumi', 'li', 'amigurumi-snake-python'],
+  ['Snowflake', 'snowflake', 'a flat white snowflake with a small sphere centre disc and six cone arms radiating outward at equal intervals', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-snowflake'],
+  ['Snowman', 'snowman', 'a classic three-ball snowman with a top hat and a carrot nose', 'boho-earth', 'amigurumi', 'lb', 'amigurumi-snowman'],
+  ['Snowy owl', 'snowy owl', 'a white snowy owl with large yellow eyes and capsule wings', 'vintage-tea', 'amigurumi', 'mi', 'amigurumi-snowy-owl'],
+  ['Spider', 'spider', 'work a large body sphere and a smaller head sphere', 'gothic-dusk', 'amigurumi', 'mb', 'amigurumi-spider'],
+  ['Squirrel', 'squirrel', 'this bushy-tailed squirrel has a sphere head and a pear body worked in warm brown dk', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-squirrel'],
+  ['Starfish', 'starfish', 'a five-pointed orange starfish made from a small sphere centre and five cone arms', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-starfish'],
+  ['Stegosaurus', 'stegosaurus', 'a green stegosaurus with a wide oval body, small sphere head, four capsule legs, and six flat cone spine plates running along the back', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-stegosaurus'],
+  ['Strawberry', 'strawberry', 'this strawberry has two pieces: a sphere body in red and a cone leaf cap in green', 'foxglove-autumn', 'amigurumi', 'sb', 'amigurumi-strawberry'],
+  ['Sun bear', 'sun bear', 'the sun bear is one of the smaller bears', 'mushroom-woodland', 'amigurumi', 'mb', 'amigurumi-sun-bear'],
+  ['Sunflower', 'sunflower', 'a bright sunflower made from a sphere centre in dark brown or gold, twelve flat oval petals in yellow, and a slim green cylinder stem', 'nursery-pastel', 'amigurumi', 'mb', 'amigurumi-sunflower'],
+  ['Sushi roll', 'sushi roll', 'this sushi roll uses a short black cylinder body and a small oval filling', 'celestial-night', 'amigurumi', 'sb', 'amigurumi-sushi-roll'],
+  ['Swan', 'swan', 'a graceful white swan with a long curved neck supported by a wire armature', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-swan'],
+  ['T-Rex', 't-rex', 'a green t-rex built from five pieces: a sphere head, oval body, two tiny capsule arms, two larger capsule legs, and a tapered cylinder tail', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-t-rex'],
+  ['Teddy bear', 'teddy bear', 'this is a beginner-friendly bear built from simple shapes', 'scandi-calm', 'amigurumi', 'mb', 'amigurumi-teddy-bear'],
+  ['Telephone', 'telephone', 'a classic old-style telephone made from an oval base body and a capsule handset', 'elegant-mono', 'amigurumi', 'mi', 'amigurumi-telephone'],
+  ['Telescope', 'telescope', 'a dark blue cylinder telescope toy with a smaller cylinder eyepiece attached at one end', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-telescope'],
+  ['Toad', 'toad', 'this toad uses only three piece types: a sphere head, a large sphere body, and four short legs', 'vintage-tea', 'amigurumi', 'mb', 'amigurumi-toad'],
+  ['Giant tortoise', 'giant tortoise', 'this tortoise centres on a large domed sphere shell', 'gothic-dusk', 'amigurumi', 'li', 'amigurumi-tortoise-giant'],
+  ['Pet Tortoise', 'pet tortoise', 'materials about 60 g of dark green or brown dk yarn for the shell', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-tortoise-pet'],
+  ['Toucan', 'toucan', 'the beak is the centrepiece of this pattern', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-toucan'],
+  ['Train Engine', 'train engine', 'a blue train engine assembled from an oval body, four cylinder wheels, a cone chimney, and a small flattened sphere cab at the rear', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-train-engine'],
+  ['Oak Tree', 'oak tree', 'a classic oak tree with a brown cylinder trunk and a large round green foliage ball', 'foxglove-autumn', 'amigurumi', 'mb', 'amigurumi-tree-oak'],
+  ['Triceratops', 'triceratops', 'a green triceratops built from an oval head, oval body, three cone horns, and four capsule legs', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-triceratops'],
+  ['Turtle', 'turtle', 'a green sea turtle with a rounded sphere body, a textured oval shell panel, and four flat capsule flippers', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-turtle'],
+  ['UFO', 'ufo', 'an intermediate silver ufo saucer with a teal dome on top', 'celestial-night', 'amigurumi', 'mi', 'amigurumi-ufo'],
+  ['Unicorn', 'unicorn', 'work each piece in dk yarn using a 3.5 mm hook and a magic ring start', 'bright-pop', 'amigurumi', 'mi', 'amigurumi-unicorn'],
+  ['Valentine bear', 'valentine bear', 'this valentine bear is a classic teddy silhouette worked in pink dk across seven pieces', 'candy-kawaii', 'amigurumi', 'mi', 'amigurumi-valentine-bear'],
+  ['Velociraptor', 'velociraptor', 'an orange velociraptor with a sphere head, capsule body, two long capsule legs, and two cone sickle claws', 'scandi-calm', 'amigurumi', 'mi', 'amigurumi-velociraptor'],
+  ['Walrus', 'walrus', 'a brown walrus with ivory cone tusks and flat flippers', 'elegant-mono', 'amigurumi', 'li', 'amigurumi-walrus'],
+  ['Warthog', 'warthog', 'a compact brown warthog with a wide oval head, oval body, four short capsule legs, and two small cone tusks', 'boho-earth', 'amigurumi', 'mi', 'amigurumi-warthog'],
+  ['Watermelon slice', 'watermelon slice', 'the slice is worked as the increase half of a sphere stopped at the equator, giving a dome of flesh', 'vintage-tea', 'amigurumi', 'mb', 'amigurumi-watermelon-slice'],
+  ['Werewolf', 'werewolf', 'work all pieces in brown dk yarn', 'gothic-dusk', 'amigurumi', 'mi', 'amigurumi-werewolf'],
+  ['Blue Whale', 'blue whale', 'this blue whale builds from three pieces: an oval body, two capsule flippers, and two oval tail flukes', 'coastal-breeze', 'amigurumi', 'mi', 'amigurumi-whale'],
+  ['Wildebeest', 'wildebeest', 'a dark brown wildebeest (gnu) made from an oval head, a large oval body, four long capsule legs, and two curved cone horns', 'winter-frost', 'amigurumi', 'mi', 'amigurumi-wildebeest'],
+  ['Witch', 'witch', 'work all pieces using a magic ring start', 'wildflower-meadow', 'amigurumi', 'mi', 'amigurumi-witch'],
+  ['Wombat', 'wombat', 'a chunky brown wombat made from a wide sphere head, a generously stuffed oval body, and four short capsule legs', 'foxglove-autumn', 'amigurumi', 'mi', 'amigurumi-wombat'],
+  ['Yak', 'yak', 'the yak coat is created by working loop stitch on every alternate round across both the body and the lower head', 'mushroom-woodland', 'amigurumi', 'mi', 'amigurumi-yak'],
+  ['Zebra', 'zebra', 'the stripes are worked by switching yarn colours every 2 rounds', 'nursery-pastel', 'amigurumi', 'mi', 'amigurumi-zebra'],
 ]
 
 /**
@@ -821,6 +1086,17 @@ const COASTER: Row[] = [
   ['Dusk lilac round', 'dusk lilac', 'a lilac disc fading to grey at the rim', 'celestial-night', 'disc', 'sb'],
   ['Storm sea coaster', 'storm sea', 'grey-blue and navy in uneven bands', 'coastal-breeze', 'grid-stripe', 'sb'],
   ['Meadow buttercup round', 'buttercup', 'a gold centre with two green rounds', 'wildflower-meadow', 'disc', 'sb'],
+
+  ['Bobble dot table runner', 'bobble dot table runner', 'a textured table runner with raised bobble stitches scattered every four rows across a plain double crochet background. 30 × 90 cm in dk cotton on a 4 mm hook', 'foxglove-autumn', 'grid-plain', 'li', 'bobble-dot-table-runner'],
+  ['Broomstick lace table runner', 'broomstick lace table runner', 'this runner uses a cluster spacing of 5 loops per cluster throughout', 'mushroom-woodland', 'grid-plain', 'lb', 'broomstick-lace-table-runner-crochet'],
+  ['Corner-to-corner placemat', 'corner-to-corner placemat', 'a 30 × 40 cm placemat in the corner-to-corner (c2c) technique: diagonal pixel-block construction in dk cotton. intermediate skill for managing the increase and decrease sections', 'nursery-pastel', 'grid-plain', 'li', 'c2c-placemat'],
+  ['Tray liner', 'tray liner', 'work a 30 x 20 cm rectangle in plain double crochet', 'celestial-night', 'grid-plain', 'mb', 'crochet-tray-liner'],
+  ['Filet table runner', 'filet table runner', 'a traditional filet crochet table runner in fine cotton thread: a 25 × 80 cm runner worked in trebles and chain spaces, with a simple border motif in filled squares across each end', 'bright-pop', 'grid-plain', 'la', 'filet-crochet-table-runner'],
+  ['Granny square placemat', 'granny square placemat', 'a 30 × 30 cm placemat made from four classic granny squares, each 15 cm, joined with a flat slip stitch seam. intermediate due to the joining seam. the squares themselves are beginner-level', 'candy-kawaii', 'grid-plain', 'li', 'granny-square-placemat'],
+  ['Granny strip table runner', 'granny strip table runner', 'a granny strip table runner is 40 classic granny squares, 4 wide by 10 long: joined into a 36 × 90 cm table runner', 'scandi-calm', 'grid-plain', 'li', 'granny-strip-table-runner'],
+  ['Hexagon motif table runner', 'hexagon motif table runner', 'a table runner built from 18 flat hexagon motifs joined in two staggered rows. each hexagon is 12 cm across, worked in dk cotton on a 4 mm hook. the finished runner is 24 cm wide and 90 cm long', 'elegant-mono', 'grid-plain', 'ma', 'hexagon-motif-table-runner'],
+  ['Oval cotton placemat', 'oval cotton placemat', 'an oval cotton placemat is a 30 × 40 cm mat worked in double crochet outward from a foundation chain using oval construction', 'boho-earth', 'grid-plain', 'lb', 'oval-cotton-placemat'],
+  ['Shell edge rectangle placemat', 'shell edge rectangle placemat', 'a 30 × 40 cm rectangle in dk cotton worked in double crochet, finished with a shell stitch border all around. beginner-friendly with one decorative edging round. one 100 m ball per placemat', 'vintage-tea', 'grid-plain', 'lb', 'shell-edge-rectangle-placemat'],
 ]
 
 const DISHCLOTH: Row[] = [
@@ -865,6 +1141,12 @@ const DISHCLOTH: Row[] = [
   ['Plain aubergine cloth', 'plain aubergine', 'a dense dark purple with a clean edge', 'gothic-dusk', 'grid-plain', 'sb'],
   ['Lido cloth', 'lido', 'turquoise and white in bold wide bands', 'coastal-breeze', 'grid-stripe', 'sb'],
   ['Cake stand cloth', 'cake stand', 'icing pink, mint and cream in three bands', 'candy-kawaii', 'grid-stripe', 'sb'],
+
+  ['Dish scrubber', 'dish scrubber', 'work in blo double crochet for a ridged surface texture', 'wildflower-meadow', 'grid-texture', 'mb', 'crochet-dish-scrubber'],
+  ['Granny square dishcloth', 'granny square dishcloth', 'a granny square dishcloth is a single 5-round granny motif about 20 cm across', 'foxglove-autumn', 'grid-texture', 'mb', 'granny-square-dishcloth'],
+  ['Htr BLO washcloth', 'htr blo washcloth', 'an htr blo washcloth is 20 x 20 cm', 'mushroom-woodland', 'grid-texture', 'mb', 'htr-blo-washcloth'],
+  ['Rectangle dc dishcloth', 'rectangle dc dishcloth', 'a rectangle dc dishcloth is 20 x 30 cm in plain double crochet', 'nursery-pastel', 'grid-texture', 'lb', 'rectangle-dc-dishcloth'],
+  ['Star stitch face cloth', 'star stitch face cloth', 'a star stitch face cloth is 20 x 20 cm', 'celestial-night', 'grid-texture', 'ma', 'star-stitch-face-cloth'],
 ]
 
 const POTHOLDER: Row[] = [
@@ -890,6 +1172,8 @@ const POTHOLDER: Row[] = [
   ['Turmeric potholder', 'turmeric', 'mustard and clay red in bold bands', 'boho-earth', 'grid-stripe', 'sb'],
   ['Nightshade potholder', 'nightshade', 'deep purple stitch bands with a black edge', 'celestial-night', 'grid-texture', 'si'],
   ['Buttercup potholder', 'buttercup kitchen', 'yellow and white in narrow stripes', 'wildflower-meadow', 'grid-stripe', 'sb'],
+
+  ['Oven mitt pair', 'oven mitt pair', 'a pair of simple rectangular oven mitts in 100% aran cotton: double-layer construction for heat resistance, with a hanging loop. 18 × 30 cm each. intermediate skill for the double-layer finishing', 'foxglove-autumn', 'grid-texture', 'li', 'oven-mitt-pair'],
 ]
 
 /**
@@ -965,6 +1249,39 @@ const MOTIF: Row[] = [
   ['Deep forest round', 'deep forest', 'green rounds darkening to near black', 'mushroom-woodland', 'disc', 'sb'],
   ['Gorse square', 'gorse', 'yellow with dark green spiny stitch bands', 'wildflower-meadow', 'grid-texture', 'si'],
   ['Sloe gin square', 'sloe gin', 'blue-black and dusty rose in bands', 'gothic-dusk', 'grid-stripe', 'sb'],
+
+  ['African flower hexagon variant', 'african flower hexagon variant', 'the hexagon variant of the african flower changes the border construction so that each of the six corners forms a pointed tip rather than a rounded ch-2 space. the result is a true geometric hexagon that tiles without gaps in a flat grid, making it the joining-friendly choice for throws where the motifs sit edge to edge', 'scandi-calm', 'grid-texture', 'mi', 'crochet-african-flower-hexagon'],
+  ['Bavarian square', 'bavarian square', 'the bavarian square locks each colour ring to the previous with front post trebles worked around the tops of the previous round', 'elegant-mono', 'grid-texture', 'mi', 'crochet-bavarian-square'],
+  ['Bruges lace tile', 'bruges lace tile', 'bruges lace works narrow bruges ribbons as the structural components', 'boho-earth', 'grid-texture', 'ma', 'crochet-bruges-lace-tile'],
+  ['Bullion round', 'bullion round', 'bullion stitches, long coiled cylinders made by wrapping the yarn many times before drawing through, stand proud of the fabric surface and radiate outward from the ring like spokes. a border of dc closes the outer edge. the result is a heavily textured circular motif that works best in smooth, high-twist cotton where the coils stay distinct', 'vintage-tea', 'disc', 'ma', 'crochet-bullion-round'],
+  ['Catherine wheel motif', 'catherine wheel motif', 'the catherine wheel motif uses an eight-point star construction built from treble-cluster spokes alternating with fan shells, giving the tile its distinctive wheel-spoke appearance. worked in two colours, the spokes and fans read as separate bands; in a single colour the geometry is subtler. tiles at 12 cm into a striking radial-pattern throw', 'gothic-dusk', 'disc', 'mi', 'crochet-catherine-wheel-motif'],
+  ['Compass rose round', 'compass rose round', 'the compass rose alternates four tall cardinal points in colour a with four shorter intercardinal points in colour b', 'coastal-breeze', 'disc', 'mi', 'crochet-compass-rose-round'],
+  ['Daisy motif, bobble centre', 'daisy motif, bobble centre', 'the bobble-centre daisy builds five bobble stitches into a tight magic ring', 'winter-frost', 'grid-texture', 'mi', 'crochet-daisy-bobble-centre'],
+  ['Filet motif', 'filet motif', 'filet crochet builds patterns by alternating open and filled filet cells in a regular grid', 'wildflower-meadow', 'grid-texture', 'mi', 'crochet-filet-motif'],
+  ['Lotus motif', 'lotus motif', 'the lotus works a compact puff stitch centre in yellow or gold', 'foxglove-autumn', 'grid-texture', 'mi', 'crochet-flower-lotus'],
+  ['Sunflower motif', 'sunflower motif', 'the sunflower builds a large bobble-textured centre disc from a magic ring outward in three rounds', 'mushroom-woodland', 'grid-texture', 'mi', 'crochet-flower-sunflower'],
+  ['Granny rectangle', 'granny rectangle', 'the granny rectangle uses two corner positions instead of four, growing longer on the short sides and maintaining a fixed width. three rounds in dk cotton produce a 7 × 14 cm tile, twice as long as a three-round granny square, for scarves, bags, and bookmark strips worked in a grid', 'nursery-pastel', 'grid-texture', 'mb', 'crochet-granny-rectangle'],
+  ['Granny triangle', 'granny triangle', 'the granny triangle works the same cluster-and-corner structure as the granny square but with three corners instead of four', 'celestial-night', 'grid-texture', 'mb', 'crochet-granny-triangle'],
+  ['Interlocking square', 'interlocking square', 'two independent open-mesh grids form an interlocking mesh by inserting each grid\'s stitches through the chain spaces of the other', 'bright-pop', 'grid-texture', 'ma', 'crochet-interlocking-square'],
+  ['Join-as-you-go square', 'join-as-you-go square', 'the jayg method works all rounds of a new square independently through round 3', 'candy-kawaii', 'grid-texture', 'mi', 'crochet-join-as-you-go-square'],
+  ['Kaleidoscope round', 'kaleidoscope round', 'the kaleidoscope round is a scrap colour motif: each of the eight fan sections uses a different colour', 'scandi-calm', 'disc', 'mi', 'crochet-kaleidoscope-round'],
+  ['Log cabin square, basic', 'log cabin square, basic', 'the log cabin square grows outward from a central rectangle by adding a log cabin strip along each side in rotation', 'elegant-mono', 'grid-texture', 'mb', 'crochet-log-cabin-square-basic'],
+  ['Advanced mandala, ten rounds', 'advanced mandala, ten rounds', 'a mandala that distorts at round 6 cannot be blocked flat at round 10', 'boho-earth', 'disc', 'la', 'crochet-mandala-advanced-ten-round'],
+  ['Mitred square, basic', 'mitred square, basic', 'the mitred square builds from a corner chain downward', 'vintage-tea', 'grid-texture', 'mb', 'crochet-mitred-square-basic'],
+  ['Lacy circle motif', 'lacy circle motif', 'four rounds of treble shells separated by chain-2 spaces produce a 14 cm open-work disc with six-point symmetry', 'gothic-dusk', 'disc', 'mi', 'crochet-motif-circle-lacy'],
+  ['Solid circle motif', 'solid circle motif', 'the solid circle uses twelve treble increases per round rather than six', 'coastal-breeze', 'disc', 'mb', 'crochet-motif-solid-circle'],
+  ['Spiral round motif', 'spiral round motif', 'four rounds of continuous double crochet increases produce a 10 cm disc with no join bump, tracked by a single stitch marker', 'winter-frost', 'disc', 'mb', 'crochet-motif-spiral-round'],
+  ['Six-point star motif', 'six-point star motif', 'four rounds of treble crochet with triple-increase points at six evenly-spaced positions produce a 14 cm star that blocks flat with clearly projecting points', 'wildflower-meadow', 'grid-texture', 'mi', 'crochet-motif-star-six-point'],
+  ['Sunburst square motif', 'sunburst square motif', 'the sunburst square works double treble spikes back into the magic ring in round 2', 'foxglove-autumn', 'grid-texture', 'mi', 'crochet-motif-sunburst-square'],
+  ['Pinwheel motif, basic', 'pinwheel motif, basic', 'the pinwheel motif works treble clusters into offset chain spaces on each round', 'mushroom-woodland', 'disc', 'mi', 'crochet-pinwheel-motif-basic'],
+  ['Pinwheel motif, dense', 'pinwheel motif, dense', 'the dense pinwheel fills the space between each treble blade with double crochet stitches rather than leaving a chain space open', 'nursery-pastel', 'disc', 'mi', 'crochet-pinwheel-motif-dense'],
+  ['Sunburst motif, advanced', 'sunburst motif, advanced', 'the advanced sunburst adds a fourth round of five-treble shells to the three-round basic version', 'celestial-night', 'grid-texture', 'mi', 'crochet-sunburst-motif-advanced'],
+  ['Tapestry square', 'tapestry square', 'tapestry crochet keeps both colours in hand at all times', 'bright-pop', 'grid-texture', 'mi', 'crochet-tapestry-square'],
+  ['Pumpkin motif', 'pumpkin motif', 'the pumpkin body is a simple flat disc from a magic ring, increased each round to stay flat', 'candy-kawaii', 'grid-texture', 'mb', 'crochet-themed-pumpkin'],
+  ['Star wreath motif', 'star wreath motif', 'each star in the wreath has five treble cluster spokes from a magic ring', 'scandi-calm', 'grid-texture', 'li', 'crochet-themed-star-wreath'],
+  ['Vintage fan round', 'vintage fan round', 'eight fan shells grow outward from the magic ring, each sitting in its own chain-2 space', 'elegant-mono', 'disc', 'mi', 'crochet-vintage-fan-round'],
+  ['Vintage wheel square', 'vintage wheel square', 'the vintage wheel square builds eight radiating spokes in the first three rounds', 'boho-earth', 'disc', 'mi', 'crochet-vintage-wheel-square'],
+  ['Irish square motif', 'irish square motif', 'the centre rose sits inside a series of chain loop rounds that step out to the four corner chains to form a square', 'vintage-tea', 'grid-texture', 'sb', 'irish-crochet-square-motif-crochet'],
 ]
 
 const ORNAMENT: Row[] = [
@@ -1008,6 +1325,9 @@ const ORNAMENT: Row[] = [
   ['Ice blue drop', 'ice blue drop', 'a teardrop ball in graded blues', 'winter-frost', 'sphere', 'si'],
   ['Advent number bauble', 'advent bauble', 'a plain ball with a stitched number', 'scandi-calm', 'sphere', 'si'],
   ['Rosemary sprig bauble', 'rosemary bauble', 'grey-green with a stitched sprig', 'scandi-calm', 'sphere', 'si'],
+
+  ['Easter egg covers', 'easter egg covers', 'six small crochet sleeves in different stitch patterns cover wooden or plastic 6 cm easter eggs for a table display or easter tree', 'candy-kawaii', 'sphere', 'sb', 'crochet-easter-egg-covers'],
+  ['Pumpkin decoration', 'pumpkin decoration', 'the pumpkin body is a round ball worked from top to bottom', 'scandi-calm', 'sphere', 'mb', 'crochet-pumpkin-decoration'],
 ]
 
 const PINCUSHION: Row[] = [
@@ -1030,6 +1350,8 @@ const BOOKMARK: Row[] = [
   ['Fern bookmark', 'fern bookmark', 'three greens light to dark down the strip', 'wildflower-meadow', 'grid-stripe', 'sb'],
   ['Terracotta bookmark', 'terracotta bookmark', 'a plain clay strip with a leather tie', 'boho-earth', 'grid-plain', 'sb'],
   ['Frost bookmark', 'frost bookmark', 'white and ice blue in even bands', 'winter-frost', 'grid-stripe', 'sb'],
+
+  ['Irish bookmark', 'irish bookmark', 'the body is a narrow strip of double crochet', 'celestial-night', 'grid-plain', 'sb', 'irish-crochet-bookmark-crochet'],
 ]
 
 const HEADBAND: Row[] = [
@@ -1099,6 +1421,9 @@ const WALL_HANGING: Row[] = [
   ['Eye panel', 'eye', 'a single stylised eye in bone and black', 'elegant-mono', 'grid-tapestry', 'ma'],
   ['Hand panel', 'open hand', 'a flat hand shape with a heart in the palm', 'boho-earth', 'grid-tapestry', 'ma'],
   ['Mushroom trio panel', 'mushroom trio', 'three toadstools of different heights', 'mushroom-woodland', 'grid-tapestry', 'ma'],
+
+  ['Mobile hanging', 'mobile hanging', 'make 4 small circle motifs for the bottom tier, 2 leaf shapes for the middle, and 2 small stars for the top tier', 'foxglove-autumn', 'grid-tapestry', 'lb', 'crochet-mobile-hanging'],
+  ['Hanging wall star', 'hanging wall star', 'each panel starts at the centre back of the star and works outward through five points, turning with a point turn at each tip', 'mushroom-woodland', 'grid-tapestry', 'lb', 'hanging-wall-star'],
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1112,6 +1437,62 @@ const WALL_HANGING: Row[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 const THEMES_HOME: Record<string, Theme[]> = {
+  wreath: [
+    ['Spring blossom door wreath', 'blooms and buds worked round a hoop', 'nursery-pastel'],
+    ['Autumn leaf and acorn ring', 'oak and maple leaves with two acorns', 'foxglove-autumn'],
+    ['Winter holly and berry ring', 'toothed leaves and clustered berries', 'winter-frost'],
+    ['Halloween pumpkin wreath', 'small pumpkins between dark leaves', 'gothic-dusk'],
+    ['Eucalyptus and dried grass hoop', 'grey green rounds along a bare ring', 'scandi-calm'],
+    ['Easter egg and chick ring', 'speckled eggs with two small chicks', 'nursery-pastel'],
+    ['Sunflower summer wreath', 'five heads spaced round a wrapped ring', 'bright-pop'],
+    ['Lavender and wheat ring', 'spikes and ears bound at one side', 'wildflower-meadow'],
+    ['Toadstool woodland wreath', 'caps and moss along a twig ring', 'mushroom-woodland'],
+    ['Nautical rope wreath', 'a wrapped ring with shells and a knot', 'coastal-breeze'],
+    ['Advent candle ring', 'four candle shapes set on a flat ring', 'celestial-night'],
+    ['Monochrome minimal hoop', 'one wrapped arc on a bare metal ring', 'elegant-mono'],
+  ],
+  stocking: [
+    ['Fair isle look stocking', 'a colourwork band round a plain leg', 'winter-frost'],
+    ['Mini stocking advent set of twenty four', 'small stockings numbered along a cord', 'bright-pop'],
+    ['Personalised name stocking', 'a plain leg with a stitched name band', 'scandi-calm'],
+    ['Santa boot stocking', 'a red leg with a white fur cuff', 'gothic-dusk'],
+    ['Gingerbread house advent', 'twenty four pockets across a house front', 'foxglove-autumn'],
+    ['Nordic star stocking', 'eight point stars on cream', 'winter-frost'],
+    ['Cabled aran stocking', 'post stitches worked as travelling cables', 'elegant-mono'],
+    ['Christmas tree advent hanging', 'numbered pockets stepped up a tree', 'celestial-night'],
+    ['Striped candy cane stocking', 'diagonal red and white bands', 'candy-kawaii'],
+    ['Woodland animal stocking', 'a fox face across the front panel', 'mushroom-woodland'],
+    ['Gift sack for under the tree', 'a large drawstring sack with a tag', 'vintage-tea'],
+    ['Reindeer face stocking', 'antlers and a red nose on the cuff', 'bright-pop'],
+  ],
+  'flower-bouquet': [
+    ['Tulip bouquet of nine stems', 'nine wired tulips tied with a ribbon', 'nursery-pastel'],
+    ['Single long stem rose', 'a spiralled bloom on a wired stem with leaves', 'gothic-dusk'],
+    ['Sunflower stem trio', 'three tall heads with a dark seeded centre', 'foxglove-autumn'],
+    ['Lavender stem bundle', 'seven slim spikes tied with twine', 'wildflower-meadow'],
+    ['Daffodil spring posy', 'trumpet centres on six stems', 'nursery-pastel'],
+    ['Peony bridal bouquet', 'layered ruffled petals in a hand tied dome', 'vintage-tea'],
+    ['Dried grass and pampas spray', 'feathered heads on long bare stems', 'boho-earth'],
+    ['Forget me not posy in a jar', 'tiny five petal blooms on fine wire', 'coastal-breeze'],
+    ['Graduation rose and eucalyptus bunch', 'buds and grey green leaves wrapped in paper', 'scandi-calm'],
+    ['Poppy field bunch', 'thin petals round a black boss', 'bright-pop'],
+    ['Cherry blossom branch', 'small blooms set along a wired twig', 'candy-kawaii'],
+    ['Winter berry and pine spray', 'red berries among sprigs of needles', 'winter-frost'],
+  ],
+  'potted-plant': [
+    ['Monstera in a terracotta pot', 'three split leaves on thick stems', 'boho-earth'],
+    ['Succulent trio in one tray', 'a rosette, a jade and a haworthia', 'scandi-calm'],
+    ['Prickly pear cactus', 'two flat pads with a red bloom', 'bright-pop'],
+    ['String of pearls hanging pot', 'a trailing chain of round beads', 'wildflower-meadow'],
+    ['Snake plant in a ribbed pot', 'five tall blades with a pale edge', 'elegant-mono'],
+    ['Aloe in a stone pot', 'thick toothed leaves in a fan', 'coastal-breeze'],
+    ['Saguaro cactus in sand', 'a tall column with two raised arms', 'foxglove-autumn'],
+    ['Fern in a hanging basket', 'arched fronds with notched edges', 'mushroom-woodland'],
+    ['Lithops pebble plants', 'four split stones in a shallow dish', 'boho-earth'],
+    ['Barrel cactus with a flower crown', 'a ribbed dome topped with blooms', 'candy-kawaii'],
+    ['Herb pot set of three', 'basil, mint and rosemary in matching pots', 'wildflower-meadow'],
+    ['Bonsai tree in a shallow dish', 'a twisted trunk under a leaf cloud', 'elegant-mono'],
+  ],
   blanket: [
     ['Moon phase throw', 'eight moons waxing to full across indigo', 'celestial-night'],
     ['Wildflower meadow throw', 'scattered bloom motifs joined across cream', 'wildflower-meadow'],
@@ -1132,6 +1513,14 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Bobble cloud baby blanket', 'raised clouds on a pale blue ground', 'nursery-pastel'],
     ['Autumn leaf throw', 'falling leaves in rust, mustard and plum', 'foxglove-autumn'],
     ['Weighted lap blanket', 'a dense heavy square for calm', 'scandi-calm'],
+  
+    ['Broomstick lace baby blanket', 'this blanket works petal rows throughout, then finishes with a double crochet border to keep the edges neat', 'bright-pop', 'broomstick-lace-baby-blanket-crochet'],
+    ['Crocodile stitch accent blanket', 'a crocodile stitch accent blanket is 60 x 80 cm', 'candy-kawaii', 'crocodile-stitch-accent-blanket'],
+    ['Filet mesh baby blanket', 'a filet mesh baby blanket is 70 x 80 cm', 'scandi-calm', 'filet-mesh-baby-blanket'],
+    ['Granny square join blanket', 'a granny square join blanket is made from 42 classic four-round squares', 'elegant-mono', 'granny-square-join-blanket'],
+    ['Magic ring granny motif blanket', 'a magic ring granny motif blanket is approximately 88 x 88 cm built from 121 small 4-round granny motifs', 'boho-earth', 'magic-ring-granny-motif-blanket'],
+    ['Solomon\'s knot throw', 'a solomon\'s knot throw is 90 x 100 cm', 'vintage-tea', 'solomons-knot-throw'],
+    ['Spider stitch baby blanket', 'a spider stitch baby blanket is 75 x 90 cm', 'gothic-dusk', 'spider-stitch-baby-blanket'],
   ],
   cushion: [
     ['Sunburst cushion', 'a raised centre boss with radiating colour', 'boho-earth'],
@@ -1145,6 +1534,18 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Colour block round cushion', 'quartered colours on a flat disc', 'elegant-mono'],
     ['Velvet puff cushion', 'puff stitches in velvet yarn', 'gothic-dusk'],
     ['Daisy chain cushion', 'a ring of joined daisies on cream', 'wildflower-meadow'],
+  
+    ['Boho tassel cushion cover', 'both panels are worked in rows of double crochet', 'winter-frost', 'boho-tassel-cushion-cover'],
+    ['Broomstick lace cushion cover', 'the front is a broomstick lace square in chunky yarn', 'wildflower-meadow', 'broomstick-lace-cushion-cover-crochet'],
+    ['Button-fastening cushion cover', 'the back is made from two overlapping panels rather than one', 'foxglove-autumn', 'button-fastening-cushion-cover'],
+    ['Crocodile stitch cushion cover', 'each crocodile scale is built on a v-frame of two trebles', 'mushroom-woodland', 'crocodile-stitch-cushion-cover'],
+    ['Fan stitch rectangular cushion', 'seven trebles fan into each chain space, with an anchor dc at the centre of each fan in the next row', 'nursery-pastel', 'fan-stitch-rectangular-cushion'],
+    ['Granny square cushion cover', 'this cushion cover uses two large granny cluster squares, each grown to 40 cm', 'celestial-night', 'granny-square-cushion-cover'],
+    ['Mini granny hexagon cushion', 'each hexagon uses six granny clusters per round, one at each side', 'bright-pop', 'mini-granny-hexagon-cushion'],
+    ['Neck rest cushion cover', 'two flat circles grow from a magic ring to 30 cm using dc in the round with 6 increases per round', 'candy-kawaii', 'neck-rest-cushion-cover'],
+    ['Spider stitch cushion cover', 'the spider stitch draws up loops from four points and crosses them at the centre', 'scandi-calm', 'spider-stitch-cushion-cover'],
+    ['Star stitch cushion cover', 'each star stitch draws up five loops and closes through an eye', 'elegant-mono', 'star-stitch-cushion-cover'],
+    ['Tunisian honeycomb cushion cover', 'the honeycomb stitch is built from a two-row repeat', 'boho-earth', 'tunisian-honeycomb-cushion-crochet'],
   ],
   basket: [
     ['Firewood log carrier', 'a flat sling with two rigid handles', 'mushroom-woodland'],
@@ -1158,6 +1559,25 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Toy storage tub', 'a very large soft-sided tub with handles', 'nursery-pastel'],
     ['Wall pocket basket', 'a half-basket that hangs flat', 'boho-earth'],
     ['Lidded trinket pot', 'a small pot with a fitted domed lid', 'candy-kawaii'],
+  
+    ['Bathroom storage basket', 'a bathroom storage basket is 30 cm across and 10 cm tall', 'elegant-mono', 'bathroom-storage-basket'],
+    ['Bedroom catch-all tray', 'a bedroom catch-all tray is 20 cm across and only 5 cm tall', 'boho-earth', 'bedroom-catch-all-tray'],
+    ['Bread basket liner', 'work a flat circle in double crochet from a magic ring, adding 6 dc per round until the circle reaches 30 cm', 'vintage-tea', 'bread-basket-liner'],
+    ['Catch-all entry basket', 'a catch-all entry basket is 35 x 20 cm and only 8 cm tall', 'gothic-dusk', 'catch-all-entry-basket'],
+    ['Decorative bowl centrepiece', 'the base grows from a magic ring to 20 cm using standard dc increase rounds', 'coastal-breeze', 'decorative-bowl-centrepiece'],
+    ['Fruit bowl basket', 'a fruit bowl basket is 28 cm across and 8 cm tall', 'winter-frost', 'fruit-bowl-basket'],
+    ['Handled market basket', 'a handled market basket is 22 cm across and 15 cm tall', 'wildflower-meadow', 'handled-market-basket'],
+    ['Laundry basket', 'a laundry basket is 35 cm across and 45 cm tall', 'foxglove-autumn', 'laundry-basket'],
+    ['Lidded trinket box', 'a lidded trinket box is 12 cm across and 8 cm tall', 'mushroom-woodland', 'lidded-trinket-box'],
+    ['Log holder basket', 'a log holder basket is 50 x 30 cm and 40 cm tall, worked in thick rope on a 12 mm hook', 'nursery-pastel', 'log-holder-basket'],
+    ['Market tote basket', 'a market tote basket is 22 cm across and 25 cm tall with two 45 cm strap handles', 'celestial-night', 'market-tote-basket'],
+    ['Mini trinket basket', 'a mini trinket basket is 10 cm across and 7 cm tall', 'bright-pop', 'mini-trinket-basket'],
+    ['Nesting basket set', 'a nesting basket set is three round baskets in super-chunky rope on a 10 mm hook', 'candy-kawaii', 'nesting-basket-set'],
+    ['Oval basket', 'an oval basket is 30 x 20 cm and 10 cm tall', 'scandi-calm', 'oval-basket'],
+    ['Picnic storage basket', 'a picnic storage basket is 30 x 20 cm and 15 cm tall', 'elegant-mono', 'picnic-storage-basket'],
+    ['Small coiled rope basket', 'a small coiled rope basket is 18 cm across and 8 cm tall', 'boho-earth', 'small-coiled-rope-basket'],
+    ['Storage pot cover', 'a ribbed dc cylinder slips over a standard 12 cm storage pot or metal tin. front post and back post double crochet give it a stretchy ribbed fit', 'vintage-tea', 'storage-pot-cover'],
+    ['Tall round basket', 'a tall round basket is 25 cm across and 30 cm tall', 'gothic-dusk', 'tall-round-basket'],
   ],
   rug: [
     ['Round rag rug', 'thick t-shirt yarn worked in a spiral', 'boho-earth'],
@@ -1172,6 +1592,11 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Nursery cloud rug', 'a cloud-shaped mat in soft pastels', 'nursery-pastel'],
     ['Moon rug', 'a crescent-shaped bedside mat', 'celestial-night'],
     ['Striped kitchen runner', 'a long thin mat in kitchen brights', 'candy-kawaii'],
+  
+    ['Basket weave door mat', 'a basket weave door mat is a 40 × 60 cm mat in chunky cotton worked in alternating columns of front and back post stitches', 'vintage-tea', 'basket-weave-door-mat'],
+    ['Coiled rope rug', 'a 50 cm round rug made from thick cotton rope coiled in a flat spiral and joined with double crochet stitches through the rope. no yarn: works with 5 mm cotton macramé rope. advanced due to the tension needed to keep the coil flat', 'gothic-dusk', 'coiled-rope-rug'],
+    ['Oval doorstep mat', 'the mat starts with an oval base worked along a 30 cm foundation chain', 'coastal-breeze', 'oval-doorstep-mat'],
+    ['Striped rectangle rug', 'a striped rectangle rug is 50 × 80 cm of chunky cotton worked flat in double crochet with 4-row stripes in two colours', 'winter-frost', 'striped-rectangle-rug'],
   ],
   'plant-hanger': [
     ['Hanging terrarium sling', 'a cradle sized for a glass globe', 'celestial-night'],
@@ -1185,6 +1610,15 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Beaded ceiling hanger', 'graded beads down four cords', 'elegant-mono'],
     ['Wall bracket pot sling', 'a flat-backed sling for a wall hook', 'scandi-calm'],
     ['Rope and ring hanger', 'a wooden ring with four cords', 'coastal-breeze'],
+  
+    ['Chunky rope plant hanger', 'a chunky rope plant hanger holds a large 15, 20 cm pot in a thick open-mesh cup worked from a magic ring', 'winter-frost', 'chunky-rope-plant-hanger'],
+    ['Single-tier cotton plant hanger', 'a single-tier cotton plant hanger holds one pot', 'wildflower-meadow', 'cotton-plant-hanger-single-tier'],
+    ['Herb pot trio covers', 'all three covers start from a flat magic ring base, then rise straight up in dc in the round', 'foxglove-autumn', 'herb-pot-trio-covers'],
+    ['Mini cactus pot cover', 'the sleeve is a dc tube worked in the round', 'mushroom-woodland', 'mini-cactus-pot-cover'],
+    ['Plant pot cover basket', 'a plant pot cover basket is 16 cm across and 15 cm tall', 'nursery-pastel', 'plant-pot-cover-basket'],
+    ['Small-pot window hanger', 'a small-pot window hanger holds one 8, 10 cm pot on a window curtain rod or a nail, with a 25 cm total hanging length', 'celestial-night', 'small-pot-window-hanger'],
+    ['Triple herb window hanger', 'a triple herb window hanger keeps three small 8 cm herb pots at the kitchen window on a wooden dowel or curtain rod', 'bright-pop', 'triple-herb-window-hanger'],
+    ['Twin-pot plant hanger', 'a twin-pot plant hanger holds two 10, 12 cm pots side by side on a horizontal crochet bar', 'candy-kawaii', 'twin-pot-hanger'],
   ],
   bunting: [
     ['Spooky-cute Halloween bunting', 'pumpkins and friendly ghosts alternating', 'gothic-dusk'],
@@ -1197,6 +1631,10 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Name bunting letters', 'individual letters to spell a name', 'nursery-pastel'],
     ['Daisy chain garland', 'joined daisies on a green cord', 'wildflower-meadow'],
     ['Egg garland', 'speckled eggs for a spring branch', 'nursery-pastel'],
+  
+    ['Heart bunting', 'each heart is made of two flat panels', 'bright-pop', 'heart-bunting'],
+    ['Snowflake bunting', 'each snowflake works from a central ring outward through six arms', 'candy-kawaii', 'snowflake-bunting'],
+    ['Triangle pennant bunting', 'each triangle starts at the wide top edge and tapers to a point', 'scandi-calm', 'triangle-pennant-bunting'],
   ],
   'pet-bed': [
     ['Round cat nest', 'a raised rim over a padded disc', 'scandi-calm'],
@@ -1221,6 +1659,8 @@ const THEMES_HOME: Record<string, Theme[]> = {
     ['Velvet bobble pouffe', 'raised bobbles all over a deep colour', 'gothic-dusk'],
     ['Two-tone half pouffe', 'split colour top and bottom', 'elegant-mono'],
     ['Rope coil pouffe', 'crocheted over a thick rope core', 'coastal-breeze'],
+  
+    ['Striped floor cushion', 'two flat circles grow from a magic ring to 60 cm using standard dc increase rounds', 'gothic-dusk', 'striped-floor-cushion'],
   ],
 }
 
@@ -1244,6 +1684,10 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Mushroom cap hat', 'a red crown with white spots', 'mushroom-woodland'],
     ['Earflap hat with plaits', 'flaps with plaited ties', 'foxglove-autumn'],
     ['Turban headwrap hat', 'a twisted front and a smooth back', 'boho-earth'],
+  
+    ['Outdoor beanie', 'start with a magic ring', 'winter-frost', 'crochet-outdoor-beanie'],
+    ['Children\'s beanie hat', 'start with a magic ring', 'wildflower-meadow', 'kids-beanie-hat-crochet'],
+    ['Tunisian knit stitch beanie', 'the tunisian knit stitch creates a fabric that looks exactly like stocking stitch knitting', 'foxglove-autumn', 'tunisian-knit-stitch-hat-crochet'],
   ],
   scarf: [
     ['Chunky rib scarf', 'a wide dense rib in one colour', 'scandi-calm'],
@@ -1259,6 +1703,14 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Mohair whisper scarf', 'a long light scarf in fuzzy yarn', 'vintage-tea'],
     ['Buttoned neck warmer', 'a short scarf that fastens flat', 'mushroom-woodland'],
     ['Colour block scarf', 'four solid blocks along the length', 'elegant-mono'],
+  
+    ['Autumn leaves scarf', 'a long scarf with a plain mesh body and a border strip of leaf motifs along both short ends', 'bright-pop', 'autumn-leaves-scarf-crochet'],
+    ['Broomstick lace scarf', 'a classic long scarf worked in chunky yarn using broomstick lace. groups of loops are stretched over a large dowel and worked off together to create the signature petal clusters', 'candy-kawaii', 'broomstick-lace-scarf-crochet'],
+    ['Filet lace scarf', 'a long scarf worked in filet mesh with a simple diamond filet motif repeated along the length', 'scandi-calm', 'filet-scarf-crochet'],
+    ['Infinity lace scarf', 'an infinity scarf worked in the round as a long tube, then joined at the ends', 'elegant-mono', 'infinity-lace-scarf-crochet'],
+    ['Mesh tube scarf', 'a tube scarf worked in the round in cotton sport yarn', 'boho-earth', 'mesh-tube-scarf-crochet'],
+    ['Pineapple lace scarf', 'a long scarf built around a column of pineapple motifs running down the centre', 'vintage-tea', 'pineapple-lace-scarf-crochet'],
+    ['Tunisian entrelac scarf', 'tunisian entrelac works row by row across a set of blocks', 'gothic-dusk', 'tunisian-entrelac-scarf-crochet'],
   ],
   cowl: [
     ['Chunky infinity cowl', 'a wide loop in jumbo yarn', 'scandi-calm'],
@@ -1273,6 +1725,10 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Mohair cloud cowl', 'a very light halo of fuzzy yarn', 'vintage-tea'],
     ['Child button cowl', 'a safe short loop for a child', 'nursery-pastel'],
     ['Tapestry band cowl', 'one colourwork band on a plain tube', 'boho-earth'],
+  
+    ['Broomstick lace cowl', 'this cowl uses a short flat panel in broomstick lace, then closes it with a cowl seam', 'scandi-calm', 'broomstick-lace-cowl-crochet'],
+    ['Neck cowl shawl hybrid', 'this rectangle works up quickly on a 4 mm hook in dk yarn and sits at the borderline between a neck scarf and a shawl', 'elegant-mono', 'crochet-neck-cowl-shawl'],
+    ['Tunisian smock stitch cowl', 'the smock stitch is worked in two stages', 'boho-earth', 'tunisian-smock-stitch-cowl-crochet'],
   ],
   shawl: [
     ['Faroese shoulder shawl', 'a shaped back gusset that stays put', 'winter-frost'],
@@ -1286,6 +1742,26 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Boomerang shawl', 'an asymmetric shape with a long tail', 'gothic-dusk'],
     ['Summer cotton shawlette', 'a small light shawl for warm days', 'coastal-breeze'],
     ['Winter wool shoulder shawl', 'a thick square folded on the bias', 'winter-frost'],
+  
+    ['Asymmetric lace shawl', 'the asymmetric shawl grows by increasing at one end only on every row', 'scandi-calm', 'asymmetric-lace-shawl-crochet'],
+    ['Beach cover shawl', 'a beach cover shawl is a 200 x 90 cm rectangle of open mesh worked in cotton sport weight on a 4 mm hook', 'elegant-mono', 'beach-cover-shawl-crochet'],
+    ['Boho lace shawl', 'the boho shawl grows from a crescent spine outward', 'boho-earth', 'boho-lace-shawl-crochet'],
+    ['Bridal lace shawl', 'the bridal shawl is worked from the top neck edge downward', 'vintage-tea', 'bridal-lace-shawl-crochet'],
+    ['Broomstick lace triangular shawl', 'this shawl grows from a 3-stitch cast-on at the top edge', 'gothic-dusk', 'broomstick-lace-shawl-crochet'],
+    ['Crescent lace shawl', 'the crescent shawl curves because you add stitches faster at the outer edge than at the inner edge', 'winter-frost', 'crescent-lace-shawl-crochet'],
+    ['Asymmetric Wedge Shawl', 'this shawl is a wedge shape measuring approximately 130cm along the long straight edge and 65cm at the widest point', 'wildflower-meadow', 'crochet-asymmetric-wedge-shawl'],
+    ['Baby Christening Shawl in Openwork Lace', 'this shawl is a 100cm square worked in lace weight yarn on a 2.5mm hook', 'foxglove-autumn', 'crochet-baby-christening-shawl-lace'],
+    ['Folk striped shawl', 'this rectangular shawl works in horizontal treble stripes across three colours of dk yarn, with a colour change every four rows. the finished piece measures approximately 190 cm wide by 60 cm deep. the stripe sequence builds a bold folk-textile look that works in any combination of three coordinating shades', 'nursery-pastel', 'crochet-folk-striped-shawl'],
+    ['Granny square rectangle shawl', 'this rectangle shawl is built from 100 granny squares arranged in a 5-wide by 20-long grid', 'celestial-night', 'crochet-granny-square-rectangle-shawl'],
+    ['Meditation comfort shawl', 'this shawl uses a dc-treble column pattern throughout: each stitch in a row sits directly above the same stitch type in the row below', 'bright-pop', 'crochet-meditation-comfort-shawl'],
+    ['Merino heirloom shawl', 'this shawl is based on a triangular lace construction published in weldon\'s practical crochet in 1890', 'candy-kawaii', 'crochet-merino-heirloom-shawl'],
+    ['Mosaic rectangle shawl', 'this rectangular shawl uses mosaic crochet to place a two-colour geometric repeat across 175 cm of dk fabric on a 4 mm hook', 'scandi-calm', 'crochet-mosaic-shawl-blo'],
+    ['Pineapple lace shawl', 'pineapple crochet is one of the most recognisable victorian lace patterns', 'elegant-mono', 'crochet-pineapple-lace-shawl'],
+    ['Classic Prayer Shawl', 'this shawl is a straightforward top-down triangle measuring about 165cm across the top edge and 65cm from the top to the lower point', 'boho-earth', 'crochet-prayer-shawl-classic'],
+    ['Triangle shawl with shell border', 'this top-down triangular shawl grows from a chain-2 spine into a full triangle in half treble, then gains a shell-stitch border along the lower two edges. finished size is roughly 145 cm wide and 70 cm deep in dk cotton on a 4.5 mm hook. the half treble body gives a dense, warm fabric; the shell border adds decorative width', 'gothic-dusk', 'crochet-triangle-shawl-shell-border'],
+    ['Victorian collar shawlette', 'this collar shawlette works a scalloped lace edging in fingering-weight cotton on a 3 mm hook. each scallop unit is dc, ch 3, sl st, repeated across the row, with a shallow curve built by short-row shaping on the straight upper edge. finished size is approximately 80 cm wide by 25 cm deep. the pattern is adapted from weldon\'s practical crochet (1886)', 'coastal-breeze', 'crochet-victorian-collar-shawlette'],
+    ['Filet shawl', 'a filet crochet shawl is a triangular piece 170 cm across the wingspan and 80 cm deep at the centre back', 'winter-frost', 'filet-crochet-shawl'],
+    ['Vintage lace shawl', 'the vintage shawl alternates rows of treble clusters with open chain arches', 'mushroom-woodland', 'vintage-lace-shawl-crochet'],
   ],
   beret: [
     ['Slouchy wool beret', 'a soft flat crown and a snug band', 'scandi-calm'],
@@ -1310,6 +1786,12 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Gradient rectangle wrap', 'a slow colour shift end to end', 'foxglove-autumn'],
     ['Reversible two-colour wrap', 'a different colour on each face', 'elegant-mono'],
     ['Weighted comfort wrap', 'a heavy wrap for calm', 'winter-frost'],
+  
+    ['Newborn cocoon swaddle wrap', 'begin at the base with an oval base : chain 6, work 3 increasing rounds to form a small oval', 'elegant-mono', 'baby-cocoon-wrap-crochet'],
+    ['Basketweave Rectangle Wrap', 'a chunky rectangular wrap worked in alternating panels of front-post and back-post trebles to create a raised basketweave effect. aran weight yarn on a 5mm hook gives firm, structured fabric with satisfying depth', 'boho-earth', 'crochet-basketweave-rectangle-wrap'],
+    ['Boho fringed wrap', 'this wrap is a straightforward rectangle of treble crochet in chunky yarn on a 6 mm hook', 'vintage-tea', 'crochet-boho-fringed-wrap'],
+    ['Lace stole in Solomon\'s knot', 'solomon\'s knot is an elongated chain with a locking single crochet worked into the back loop, the result is an open, spiderweb lace fabric that uses very little yarn. this rectangular stole in lace-weight cotton is worked lengthwise, 200 cm long and 55 cm wide, on a 3 mm hook. the fabric is extremely light and drapes in long, fluid folds', 'gothic-dusk', 'crochet-lace-stole-solomon-knot'],
+    ['Linen summer wrap', 'this wrap uses a dc mesh throughout: one double crochet (uk), one chain, one skipped stitch, repeated across the row', 'coastal-breeze', 'crochet-linen-summer-wrap'],
   ],
   poncho: [
     ['Wearable blanket poncho', 'a big rectangle with a neck slit', 'foxglove-autumn'],
@@ -1323,6 +1805,8 @@ const THEMES_WEAR: Record<string, Theme[]> = {
     ['Ruana open wrap', 'an open front with no seam', 'scandi-calm'],
     ['Bobble hem poncho', 'bobbles all along the lower edge', 'candy-kawaii'],
     ['Lace summer poncho', 'a light openwork body in cotton', 'wildflower-meadow'],
+  
+    ['Granny square poncho', 'work four large granny squares each 30 cm across', 'foxglove-autumn', 'granny-square-poncho-crochet'],
   ],
 }
 
@@ -1421,6 +1905,20 @@ const THEMES_EXTREMITIES: Record<string, Theme[]> = {
 
 /** Bags, small accessories and the kitchen shelves the engine cannot reach. */
 const THEMES_CARRY: Record<string, Theme[]> = {
+  'keyring-charm': [
+    ['Strawberry keyring', 'a red berry with a green calyx and a split ring', 'bright-pop'],
+    ['Highland cow bag charm', 'a shaggy fringe over a wide muzzle', 'mushroom-woodland'],
+    ['Mushroom charm pair', 'two spotted caps on one clip', 'mushroom-woodland'],
+    ['Ghost clip on', 'a small white ghost with a stitched face', 'gothic-dusk'],
+    ['Frog keyring', 'a squat green body and two dome eyes', 'wildflower-meadow'],
+    ['Bee charm', 'a striped body and two tiny wings', 'foxglove-autumn'],
+    ['Axolotl bag charm', 'pink frills either side of the head', 'candy-kawaii'],
+    ['Star and moon charm set', 'two flat shapes on one lanyard', 'celestial-night'],
+    ['Avocado keyring', 'two halves joined round a brown stone', 'bright-pop'],
+    ['Chunky heart keyring', 'a padded heart with a wrist strap', 'candy-kawaii'],
+    ['Rainbow cloud clip', 'a cloud with seven short streamers', 'nursery-pastel'],
+    ['Initial letter charm', 'one stiffened letter on a split ring', 'elegant-mono'],
+  ],
   bag: [
     ['Bobble bucket bag', 'a round base and a drawstring top', 'candy-kawaii'],
     ['Tapestry shopper', 'a two-colour geometric across the front', 'boho-earth'],
@@ -1436,6 +1934,14 @@ const THEMES_CARRY: Record<string, Theme[]> = {
     ['Laptop sleeve bag', 'a padded sleeve with a strap', 'elegant-mono'],
     ['Half moon shoulder bag', 'a curved base and a short strap', 'gothic-dusk'],
     ['Baby changing bag', 'wipe-clean lining and a bottle pocket', 'nursery-pastel'],
+  
+    ['Broomstick lace handbag', 'the bag uses two matching broomstick lace panels joined by a narrow gusset strip', 'mushroom-woodland', 'broomstick-lace-bag-crochet'],
+    ['Cotton bottle bag', 'a cotton bottle bag is a 25 cm circumference cylindrical carrier worked in double crochet from a circular base via a magic ring', 'nursery-pastel', 'cotton-bottle-bag'],
+    ['Drawstring dry goods bag', 'a drawstring dry goods bag is a 15 × 20 cm closed-base cotton bag worked in double crochet from a magic ring', 'celestial-night', 'drawstring-dry-goods-bag'],
+    ['Market shopper tote', 'work a 30 cm circular base from a magic ring, then continue straight up in dc rounds for 35 cm', 'bright-pop', 'market-shopper-tote'],
+    ['Mesh produce bag', 'an open-mesh drawstring bag for loose fruit and vegetables: worked in a simple chain-space mesh in fingering cotton from the base upward. one size fits most produce. a beginner pattern in one ball', 'candy-kawaii', 'mesh-produce-bag'],
+    ['Small string shopper bag', 'a small market bag 30 × 35 cm: worked flat in chain-space mesh in dk cotton string and joined at the sides, with two twisted handles. holds a standard small grocery shop. intermediate skill for the handle construction', 'scandi-calm', 'string-shopper-bag-small'],
+    ['Tunisian mesh stitch market bag', 'this market bag uses tunisian mesh stitch throughout', 'elegant-mono', 'tunisian-mesh-stitch-market-bag-crochet'],
   ],
   purse: [
     ['Coin purse with a clasp', 'a metal frame sewn into the top', 'vintage-tea'],
@@ -1461,6 +1967,8 @@ const THEMES_CARRY: Record<string, Theme[]> = {
     ['Beaded hair tie', 'a tie with two wooden beads', 'mushroom-woodland'],
     ['Star hair clip set', 'three small stars on clips', 'celestial-night'],
     ['Shell hair pin', 'a small scallop on a pin', 'coastal-breeze'],
+  
+    ['Hair tie holder', 'work a flat circle base from a magic ring to 10 cm, then rise straight in dc for 8 cm', 'scandi-calm', 'hair-tie-holder'],
   ],
   jewellery: [
     ['Wrapped bead ring set', 'three fine rings with a seed bead', 'candy-kawaii'],
@@ -1474,6 +1982,9 @@ const THEMES_CARRY: Record<string, Theme[]> = {
     ['Choker with a shell', 'a fine cord and a single shell', 'coastal-breeze'],
     ['Charm bracelet', 'tiny motifs on a chain', 'vintage-tea'],
     ['Star drop earrings', 'two small stars on hooks', 'celestial-night'],
+  
+    ['Flower brooch', 'work a magic ring, 10 dc', 'gothic-dusk', 'crochet-flower-brooch'],
+    ['Irish rose brooch', 'the rose begins with a ring, then builds inner petals and outer petals in two separate rounds to give a layered look', 'coastal-breeze', 'irish-crochet-rose-brooch-crochet'],
   ],
   backpack: [
     ['Nappy backpack', 'a wipe-clean lining and a bottle pocket', 'nursery-pastel'],
@@ -1512,6 +2023,8 @@ const THEMES_CARRY: Record<string, Theme[]> = {
     ['Fair isle look tea cosy', 'a colourwork band round the dome', 'winter-frost'],
     ['Chicken egg cosies', 'four little hens with combs', 'bright-pop'],
     ['Floral vintage tea cosy', 'applied roses over a quilted dome', 'vintage-tea'],
+  
+    ['Boiled egg cosy set', 'each cosy starts at the top of the dome from a magic ring and grows outward to fit over the top of a boiled egg', 'winter-frost', 'boiled-egg-cosy-set'],
   ],
   towel: [
     ['Buttoned towel topper', 'a gathered top with a button loop', 'candy-kawaii'],
@@ -1530,6 +2043,34 @@ const THEMES_CARRY: Record<string, Theme[]> = {
 /** Garments. Every one needs grading, shaping and a schematic: the furthest
  *  from the engine and, on Ravelry and LoveCrafts, the most browsed. */
 const THEMES_GARMENT: Record<string, Theme[]> = {
+  swimwear: [
+    ['Triangle bikini set', 'adjustable ties at the neck and the hip', 'coastal-breeze'],
+    ['Shell cup bralette', 'two shaped shell cups on a cord', 'candy-kawaii'],
+    ['Festival lace bralette', 'an openwork front with a tie back', 'boho-earth'],
+    ['High waisted bikini bottoms', 'a wide ribbed waistband', 'bright-pop'],
+    ['Beach cover up dress', 'an open mesh dress to wear over swimwear', 'scandi-calm'],
+    ['One piece swimsuit', 'a scooped front worked in one piece', 'elegant-mono'],
+    ['Bandeau top with a halter tie', 'a straight cut band and one tie', 'candy-kawaii'],
+    ['Fringed festival top', 'a deep fringe below a fitted band', 'foxglove-autumn'],
+    ['Size inclusive bralette', 'graded cups across a wide size run', 'vintage-tea'],
+    ['Colour block swim set', 'three blocks split across the pieces', 'bright-pop'],
+    ['Openwork sarong', 'a mesh wrap tied at the hip', 'boho-earth'],
+    ['Scallop edge bikini top', 'a shell edging along both cups', 'nursery-pastel'],
+  ],
+  'pet-clothing': [
+    ['Striped dog jumper', 'a tube body with two leg holes and a collar', 'bright-pop'],
+    ['Cable look dog coat', 'post stitch cables along the back', 'winter-frost'],
+    ['Small dog hoodie', 'a hood over a fitted chest panel', 'scandi-calm'],
+    ['Cat jumper in fine cotton', 'a light body with a wide neck', 'candy-kawaii'],
+    ['Rain coat with a belly strap', 'a shaped back panel and a fastening', 'coastal-breeze'],
+    ['Christmas dog jumper', 'a snowflake band across the shoulders', 'winter-frost'],
+    ['Puppy bandana', 'a triangle that ties at the throat', 'foxglove-autumn'],
+    ['Ruffle dog vest', 'a frilled edge along a short vest', 'vintage-tea'],
+    ['Greyhound coat', 'a long deep chested shape', 'elegant-mono'],
+    ['Reindeer antler pet hat', 'a small hat with two antlers', 'mushroom-woodland'],
+    ['Rabbit cosy jumper', 'a very small body tube with wide holes', 'nursery-pastel'],
+    ['Dog paw warmers set of four', 'four short ribbed tubes', 'boho-earth'],
+  ],
   cardigan: [
     ['Shawl collar wrap cardigan', 'a deep collar and a tie belt', 'foxglove-autumn'],
     ['Bell sleeve cardigan', 'a flared cuff and a fitted body', 'candy-kawaii'],
@@ -1542,6 +2083,10 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Mohair open cardigan', 'a light halo with no fastening', 'vintage-tea'],
     ['Tapestry yoke cardigan', 'a colourwork band across the shoulders', 'foxglove-autumn'],
     ['Waffle textured cardigan', 'a raised grid over the whole body', 'scandi-calm'],
+  
+    ['Colour field cardigan', 'plan three colour fields across the back: left third in colour a', 'bright-pop', 'colour-field-cardigan-crochet'],
+    ['Wedding shrug', 'work a single rectangle 120 cm wide by 55 cm tall using an open treble lace pattern', 'candy-kawaii', 'crochet-wedding-shrug'],
+    ['Granny square cardigan', 'each granny square is 10 x 10 cm', 'scandi-calm', 'granny-square-cardigan'],
   ],
   'jumper-pullover': [
     ['Drop shoulder jumper', 'a simple boxy shape in aran wool', 'scandi-calm'],
@@ -1555,6 +2100,9 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Christmas jumper', 'a bold festive motif across the chest', 'winter-frost'],
     ['Oversized mohair jumper', 'a light halo in a huge shape', 'gothic-dusk'],
     ['Tapestry band jumper', 'one geometric band round the chest', 'boho-earth'],
+  
+    ['Granny square pullover', 'this pullover is built entirely from granny squares', 'boho-earth', 'granny-square-pullover-crochet'],
+    ['Men\'s fisherman rib pullover', 'work back and front panels entirely in fisherman rib : every row alternates fpdc and bpdc across', 'vintage-tea', 'mens-fisherman-rib-pullover'],
   ],
   'tee-top': [
     ['Shirred bandeau', 'a tube with an elasticated back', 'coastal-breeze'],
@@ -1568,6 +2116,11 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Puff sleeve blouse', 'a gathered sleeve and a buttoned back', 'vintage-tea'],
     ['Tapestry panel tee', 'one colourwork panel on the front', 'boho-earth'],
     ['Child summer top', 'a light cotton top with a button back', 'nursery-pastel'],
+  
+    ['Lace evening top', 'work the back and front panels entirely in open treble lace : two treble stitches, chain 2, repeat across', 'celestial-night', 'lace-evening-top-crochet'],
+    ['Men\'s ribbed tank top', 'work front and back panels entirely in 1x1 rib using fpdc and bpdc alternating across every row', 'bright-pop', 'mens-crochet-tank-top'],
+    ['One-shoulder top', 'work front and back as dc rectangles to the underarm', 'candy-kawaii', 'one-shoulder-top-crochet'],
+    ['Sparkle party top', 'choose a metallic yarn for maximum impact', 'scandi-calm', 'party-top-sequin-look-crochet'],
   ],
   vest: [
     ['Ribbed layering tank', 'a fine close rib to wear under a shirt', 'elegant-mono'],
@@ -1581,6 +2134,8 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Child school tank', 'a simple v-neck in school colours', 'nursery-pastel'],
     ['Faux fur look gilet', 'loop stitch all over a sleeveless body', 'gothic-dusk'],
     ['Tapestry front waistcoat', 'a geometric front and a plain back', 'foxglove-autumn'],
+  
+    ['Broomstick lace vest', 'this vest uses a drop shoulder shape: two identical panels seamed at the shoulder seam and lower sides', 'candy-kawaii', 'broomstick-lace-vest-crochet'],
   ],
   dress: [
     ['Tiered ruffle sundress', 'three gathered tiers on thin straps', 'candy-kawaii'],
@@ -1594,6 +2149,8 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Long sleeve winter dress', 'a warm aran body to the knee', 'winter-frost'],
     ['Tapestry hem dress', 'a colourwork band round the hem', 'boho-earth'],
     ['Doll dress set', 'three dresses for a crocheted doll', 'nursery-pastel'],
+  
+    ['Smocked bodice dress', 'work the bodice in dc with smocking columns using fpdc every 4 stitches', 'nursery-pastel', 'smock-dress-crochet'],
   ],
   tunic: [
     ['Fisherman smock tunic', 'a square yoke and a front pouch pocket', 'coastal-breeze'],
@@ -1620,6 +2177,8 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
     ['Fringed hem mini skirt', 'a short skirt with a deep fringe', 'foxglove-autumn'],
     ['Tapestry panel skirt', 'a colourwork band round the hem', 'boho-earth'],
     ['Pleated school skirt', 'stitched-down pleats and a lining', 'elegant-mono'],
+  
+    ['Tree skirt', 'make 16 granny squares at 15 cm each', 'winter-frost', 'crochet-tree-skirt'],
   ],
   'jacket-coat': [
     ['Hooded parka', 'a long body, a hood and a front zip', 'scandi-calm'],
@@ -1674,6 +2233,54 @@ const THEMES_GARMENT: Record<string, Theme[]> = {
   ],
 }
 
+/** Toy shelves the loom cannot reach yet. Play food needs many small shaped
+ *  pieces in one set, doll clothes need garment shaping at doll scale, and
+ *  miniatures need a thread gauge the stitch engine has never been run at. */
+const THEMES_TOYS: Record<string, Theme[]> = {
+  'play-food': [
+    ['Breakfast plate set', 'a fried egg, two rashers and a slice of toast', 'bright-pop'],
+    ['Fruit bowl set of six', 'an apple, a pear, a banana, an orange, a plum and a lemon', 'bright-pop'],
+    ['Market vegetable basket', 'a carrot, a leek, a tomato and a head of broccoli', 'wildflower-meadow'],
+    ['Birthday cake with slices', 'a round cake that comes apart into wedges', 'candy-kawaii'],
+    ['Sushi tray', 'four rolls, a nigiri and a soy dish', 'elegant-mono'],
+    ['Tea party set', 'a pot, two cups and a plate of biscuits', 'vintage-tea'],
+    ['Pizza with removable toppings', 'eight slices and loose toppings to place', 'bright-pop'],
+    ['Ice cream cone stack', 'three scoops that sit on one cone', 'candy-kawaii'],
+    ['Picnic sandwich set', 'a cut round loaf, a wedge of cheese and a tomato', 'wildflower-meadow'],
+    ['Sunday roast dinner', 'a joint, three vegetables and a jug of gravy', 'foxglove-autumn'],
+    ['Doughnut box of six', 'iced rings with sprinkle stitches', 'candy-kawaii'],
+    ['Egg box of six', 'speckled eggs in a fitted tray', 'nursery-pastel'],
+  ],
+  'doll-clothes': [
+    ['Party dress with a full skirt', 'a fitted bodice over gathered layers', 'candy-kawaii'],
+    ['Duffle coat and scarf', 'a hooded coat with toggle fastenings', 'winter-frost'],
+    ['Ballet leotard and tutu', 'a stretchy body under a stiff frill', 'nursery-pastel'],
+    ['Fairy wings and flower crown', 'two shaped wings and a ring of blooms', 'wildflower-meadow'],
+    ['Dungarees and striped tee', 'bib front dungarees over a banded top', 'bright-pop'],
+    ['Raincoat and wellingtons', 'a yellow coat and two short boots', 'coastal-breeze'],
+    ['Pyjama set with slippers', 'a two piece and a pair of soft shoes', 'nursery-pastel'],
+    ['Wedding gown with a veil', 'a long ivory dress and a lace veil', 'elegant-mono'],
+    ['School uniform set', 'a pinafore, a shirt collar and a satchel', 'scandi-calm'],
+    ['Jumper and pleated skirt', 'a post stitch jumper over knife pleats', 'foxglove-autumn'],
+    ['Swimsuit and sun hat', 'a one piece and a wide brimmed hat', 'coastal-breeze'],
+    ['Witch cape and pointed hat', 'a caped cloak and a tall brim', 'gothic-dusk'],
+  ],
+  miniature: [
+    ['Dolls house armchair', 'a scale armchair worked on a one millimetre hook', 'vintage-tea'],
+    ['Micro teddy under three centimetres', 'a jointed look bear at thread gauge', 'mushroom-woodland'],
+    ['Miniature tea set on a tray', 'a pot, two cups and two saucers at scale', 'vintage-tea'],
+    ['Dolls house rag rug', 'an oval rug in thread for a scale floor', 'boho-earth'],
+    ['Tiny potted cactus for a shelf', 'a two centimetre plant in a thread pot', 'bright-pop'],
+    ['Micro amigurumi bunny', 'a thumbnail sized rabbit with sewn eyes', 'nursery-pastel'],
+    ['Dolls house bedding set', 'a coverlet, a pillow and a bolster', 'elegant-mono'],
+    ['Miniature basket of apples', 'a thread basket and six tiny fruit', 'foxglove-autumn'],
+    ['Fairy door and toadstool scene', 'a small door with a spotted cap beside it', 'mushroom-woodland'],
+    ['Micro cactus garden in a thimble', 'three plants set in a metal thimble', 'scandi-calm'],
+    ['Dolls house curtains and pelmet', 'thread lace panels for a scale window', 'winter-frost'],
+    ['Tiny bunch of violets', 'six thread blooms tied with a strand', 'wildflower-meadow'],
+  ],
+}
+
 /** Doilies, edgings and appliqués: fine lace and picot work the engine has no
  *  stitch vocabulary for yet, plus the small motifs that finish other pieces. */
 const THEMES_LACE: Record<string, Theme[]> = {
@@ -1690,6 +2297,15 @@ const THEMES_LACE: Record<string, Theme[]> = {
     ['Mandala wall doily', 'a large stiffened disc to hang', 'boho-earth'],
     ['Coaster-sized lace set', 'four small matching doilies', 'elegant-mono'],
     ['Bridal table doily', 'fine ivory thread with a beaded edge', 'elegant-mono'],
+  
+    ['Butterfly motif doily', 'each butterfly has a wing pair above and below a central body treble', 'winter-frost', 'butterfly-doily-crochet'],
+    ['Filet grid square doily', 'filet crochet alternates filled squares and open squares to form pictures', 'wildflower-meadow', 'filet-square-doily-crochet'],
+    ['Heart-shaped doily', 'the heart is shaped by lobe increases at two positions along the top and a v-decrease at the base point', 'foxglove-autumn', 'heart-doily-crochet'],
+    ['Pineapple motif doily', 'the doily has 6 pineapple stitch sections, each beginning with a wide base fan that tapers to a point as the rounds decrease', 'mushroom-woodland', 'pineapple-doily-crochet'],
+    ['Snowflake doily', 'each arm has three arm branches worked along its length', 'nursery-pastel', 'snowflake-doily-crochet'],
+    ['Star doily', 'the star grows by adding point increases at 6 equally-spaced positions on every other round', 'celestial-night', 'star-doily-crochet'],
+    ['Sunflower centre doily', 'the sunflower centre is worked in brown and yellow before a colour change to white adds the lace edge', 'bright-pop', 'sunflower-doily-crochet'],
+    ['Vintage spider web doily', 'eight radial spokes run from the centre ring to the outer edge', 'candy-kawaii', 'vintage-spider-web-doily-crochet'],
   ],
   edging: [
     ['Ric-rac wave trim', 'a narrow zigzag band for a hem', 'candy-kawaii'],
@@ -1703,6 +2319,12 @@ const THEMES_LACE: Record<string, Theme[]> = {
     ['Crab stitch firm edge', 'a dense reverse-worked border', 'elegant-mono'],
     ['Bobble edge for a cushion', 'raised bobbles along one seam', 'candy-kawaii'],
     ['Pointed border for a shawl', 'a triangular point repeat', 'boho-earth'],
+  
+    ['Bullion stitch edging', 'the bullion stitch takes practice to keep even', 'elegant-mono', 'bullion-edging-crochet'],
+    ['Floral lace chain trim', 'each chain flower is joined to the previous flower by a joining chain of 6 stitches, creating a flexible chain of blooms', 'boho-earth', 'floral-lace-trim-crochet'],
+    ['Leaf border edging', 'each leaf cluster is widest at its leaf base and narrows to a point with decreasing trebles', 'vintage-tea', 'leaf-edging-crochet'],
+    ['Pineapple motif border strip', 'each pineapple section is worked above its chain arc base', 'gothic-dusk', 'pineapple-edging-crochet'],
+    ['Scallop border edging', 'each scallop arc spans 6 base stitches', 'coastal-breeze', 'scallop-edging-crochet'],
   ],
   'applique-flower': [
     ['Five-petal daisy set', 'six small daisies in one colourway', 'wildflower-meadow'],
@@ -1745,6 +2367,7 @@ const ALL_THEMES: Record<string, Theme[]> = {
   ...THEMES_EXTREMITIES,
   ...THEMES_CARRY,
   ...THEMES_GARMENT,
+  ...THEMES_TOYS,
   ...THEMES_LACE,
 }
 
@@ -1787,7 +2410,13 @@ function spaceColourways(list: CrochetIdea[]): CrochetIdea[] {
   return out
 }
 
-const BUILDABLE_IDEAS: CrochetIdea[] = interleave(
+/**
+ * Ideas from the thirteen shelves with a working treatment. NOT all
+ * `buildable: true` any more — the four amigurumi-treatment shelves carry a
+ * per-idea flag on top (see `isHonestAmigurumiSubject`), so this array is a
+ * mix until the partition below sorts it out.
+ */
+const BUILDABLE_SHELF_IDEAS: CrochetIdea[] = interleave(
   Object.fromEntries(
     Object.entries(BUILDABLE_BY_SHELF).map(([shelf, rows]) => [shelf, buildIdeas(shelf, rows)]),
   ),
@@ -1800,13 +2429,18 @@ const THEME_IDEAS: CrochetIdea[] = interleave(
 )
 
 /**
- * THE BACKLOG. Buildable ideas first, in working order, then the themes for the
- * shelves the loom cannot reach. `seq` is assigned here and is the only thing
+ * THE BACKLOG. Buildable ideas first, in working order, then everything the
+ * loom cannot honestly build yet — a stable partition on `buildable`, not a
+ * concatenation, because `BUILDABLE_SHELF_IDEAS` itself now interleaves a few
+ * hundred amigurumi/animal-toy/doll ideas the engine cannot render (see
+ * above) among the ones it can. `seq` is assigned here and is the only thing
  * a session needs: work from seq 1 down.
  */
-export const CROCHET_IDEA_BACKLOG: CrochetIdea[] = [...BUILDABLE_IDEAS, ...THEME_IDEAS].map(
-  (idea, i) => ({ ...idea, seq: i + 1 }),
-)
+const ALL_IDEAS_UNSEQUENCED: CrochetIdea[] = [...BUILDABLE_SHELF_IDEAS, ...THEME_IDEAS]
+export const CROCHET_IDEA_BACKLOG: CrochetIdea[] = [
+  ...ALL_IDEAS_UNSEQUENCED.filter((i) => i.buildable),
+  ...ALL_IDEAS_UNSEQUENCED.filter((i) => !i.buildable),
+].map((idea, i) => ({ ...idea, seq: i + 1 }))
 
 /** Just the part the autopilot can commission today. */
 export const CROCHET_BUILDABLE_IDEAS: CrochetIdea[] = CROCHET_IDEA_BACKLOG.filter((i) => i.buildable)
@@ -1817,67 +2451,80 @@ export const CROCHET_IDEA_THEMES: CrochetIdea[] = CROCHET_IDEA_BACKLOG.filter((i
 /**
  * THE RECOMMENDED SHELF TARGETS, as data rather than prose.
  *
- * A PROPOSAL, not the live config: `CROCHET_SHELVES` in `../categories.ts` is
- * still the number the autopilot stops at. These are the numbers the September
- * 2026 market comparison argues for — total 1,500 rather than 1,200, with toys
- * up from 22% to 28% of the catalogue, motifs and granny squares nearly
- * doubled, dishcloths up (the most common first project a beginner makes), bags
- * up (granny-square bags and mesh totes are the 2026 trend), and headbands down
- * (a modest niche that only carries thirty because the engine happens to build
- * it). Rebecca decides whether to adopt them; adopting means editing
- * CROCHET_SHELVES, and the category target follows because it is the sum.
+ * Now a MIRROR of the live config rather than a proposal: Rebecca adopted the
+ * 1,500 split on 6 September 2026, so `CROCHET_SHELVES` in `../categories.ts`
+ * carries these numbers and this map exists to keep the check script and the
+ * test honest about the two agreeing.
+ *
+ * Revised the same evening for the ten shelves the top-of-Etsy pass added
+ * (flowers and bouquets, keyrings and bag charms, potted plants, play food,
+ * doll clothes, miniatures, wreaths, stockings and advent, swimwear, pet
+ * clothing). The total is still 1,500: the 180 those carry came off shelves
+ * that were quietly absorbing them, chiefly amigurumi (220 to 180, because
+ * keyrings, play food and miniatures were all being counted as amigurumi) and
+ * applique-flower (20 to 14, because bouquets moved out of it).
  */
 export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   // Toys
-  amigurumi: 220,
-  'animal-toy': 100,
-  doll: 50,
-  'baby-toy-lovey': 50,
+  amigurumi: 180,
+  'animal-toy': 85,
+  doll: 44,
+  'baby-toy-lovey': 44,
+  'play-food': 22,
+  'doll-clothes': 16,
+  miniature: 14,
   // Home and living
-  blanket: 142,
-  cushion: 36,
-  basket: 25,
-  ornament: 36,
-  'wall-hanging': 28,
-  rug: 12,
+  blanket: 130,
+  cushion: 32,
+  basket: 22,
+  ornament: 30,
+  wreath: 12,
+  stocking: 12,
+  'flower-bouquet': 30,
+  'potted-plant': 20,
+  'wall-hanging': 26,
+  rug: 10,
   'plant-hanger': 12,
-  bunting: 14,
+  bunting: 12,
   'pet-bed': 10,
   pouffe: 6,
   // Headwear, neckwear, wraps
-  hat: 70,
-  scarf: 50,
-  headband: 24,
-  cowl: 30,
-  shawl: 28,
-  beret: 12,
-  wrap: 12,
-  poncho: 10,
+  hat: 62,
+  scarf: 42,
+  headband: 20,
+  cowl: 26,
+  shawl: 24,
+  beret: 10,
+  wrap: 10,
+  poncho: 8,
   // Hands, feet, legs
-  slippers: 20,
-  'fingerless-mitts': 18,
-  socks: 12,
-  booties: 14,
+  slippers: 18,
+  'fingerless-mitts': 16,
+  socks: 10,
+  booties: 12,
   mittens: 10,
   gloves: 6,
   legwarmers: 6,
   // Bags and small accessories
   bag: 40,
-  purse: 18,
-  'hair-accessory': 12,
+  'keyring-charm': 30,
+  purse: 16,
+  'hair-accessory': 10,
   jewellery: 8,
   backpack: 6,
   belt: 3,
   // Kitchen and bath
-  dishcloth: 36,
-  potholder: 20,
+  dishcloth: 32,
+  potholder: 18,
   'tea-cosy': 10,
   towel: 6,
   // Garments
-  cardigan: 25,
-  'jumper-pullover': 20,
-  'tee-top': 20,
-  vest: 14,
+  cardigan: 22,
+  'jumper-pullover': 18,
+  'tee-top': 18,
+  vest: 12,
+  swimwear: 12,
+  'pet-clothing': 12,
   dress: 10,
   tunic: 5,
   skirt: 5,
@@ -1886,13 +2533,13 @@ export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   shorts: 4,
   'jumpsuit-romper': 3,
   // Motifs and components
-  'motif-granny-square': 60,
-  coaster: 30,
+  'motif-granny-square': 52,
+  coaster: 26,
   doily: 22,
-  edging: 18,
-  'applique-flower': 20,
+  edging: 16,
+  'applique-flower': 14,
   bookmark: 10,
-  pincushion: 4,
+  pincushion: 3,
 }
 
 /** The backlog entries for one shelf, in working order. */

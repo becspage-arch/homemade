@@ -48,12 +48,15 @@ function baseName(name: string): string {
   return name.replace(SIDE_SUFFIX, '')
 }
 
+/** The part names that do not pluralise with an s. A pattern that says "make 2
+ *  Foots" is not a pattern anyone would trust with the rest of the maths. */
+const IRREGULAR_PLURAL: Record<string, string> = { foot: 'feet' }
+
 function prettify(base: string, quantity: number): string {
   const words = base.replace(/[-_]+/g, ' ').trim()
-  const title = words.charAt(0).toUpperCase() + words.slice(1)
-  if (quantity === 1) return title
-  // Plain plural — every part name in the presets pluralises with an s.
-  return title.endsWith('s') ? title : `${title}s`
+  const plural = quantity === 1 ? null : IRREGULAR_PLURAL[words.toLowerCase()]
+  const out = plural ?? (quantity === 1 || words.endsWith('s') ? words : `${words}s`)
+  return out.charAt(0).toUpperCase() + out.slice(1)
 }
 
 /** Group the composition's parts into the pieces a written pattern lists. */
