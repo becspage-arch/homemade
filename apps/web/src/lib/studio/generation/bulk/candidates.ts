@@ -518,6 +518,53 @@ export async function sweepUnjudgedCandidates(days = CANDIDATE_SWEEP_DAYS): Prom
   return stale.length
 }
 
+// ─────────────────────────── the judging report ───────────────────────────
+
+/** How many reports `addJudgingReport` keeps on the row — the admin card's history. */
+export const MAX_JUDGING_REPORTS = 20
+
+export interface JudgingReportEntry {
+  /** ISO timestamp of when the report was recorded. */
+  at: string
+  /** `judgedBy` — the session or person who filed it. */
+  by: string
+  kind: 'judging' | 'weekly'
+  text: string
+}
+
+/**
+ * THE REPORT, where a routine session can actually leave it.
+ *
+ * A routine-fired session cannot push a branch (an empty container has
+ * nothing to push from until it clones and bootstraps, and a bootstrap step
+ * failing is exactly when a report is most needed) and cannot message
+ * another session (`create_trigger` is blocked by the auto-mode classifier
+ * in these sessions). `BulkAutopilotState` is a row the CLI, the cron and the
+ * admin bulk-generation page already read and write with no repo or network
+ * access beyond the DB connection the judging commands already use — so the
+ * report lives there instead.
+ *
+ * Prepends the new entry and trims to `MAX_JUDGING_REPORTS`, newest first.
+ * Reports are additive history, not a judging decision: there is no
+ * idempotency to preserve, so every call writes a new entry even if the text
+ * is identical to the last one — the routine calls this once per firing.
+ */
+export async function addJudgingReport(
+  craft: string,
+  entry: { by: string; kind: JudgingReportEntry['kind']; text: string },
+): Promise<JudgingReportEntry[]> {
+  const row = await prisma.bulkAutopilotState.findUnique({ where: { craft }, select: { judgingReports: true } })
+  const existing = Array.isArray(row?.judgingReports) ? (row.judgingReports as unknown as JudgingReportEntry[]) : []
+  const next: JudgingReportEntry = { at: new Date().toISOString(), by: entry.by, kind: entry.kind, text: entry.text }
+  const merged = [next, ...existing].slice(0, MAX_JUDGING_REPORTS)
+  await prisma.bulkAutopilotState.upsert({
+    where: { craft },
+    create: { craft, enabled: false, judgingReports: merged as unknown as Prisma.InputJsonValue },
+    update: { judgingReports: merged as unknown as Prisma.InputJsonValue },
+  })
+  return merged
+}
+
 // ─────────────────────────── the pool check ───────────────────────────
 
 export interface PoolShelfCheck {

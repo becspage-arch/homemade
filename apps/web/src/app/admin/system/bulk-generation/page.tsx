@@ -4,8 +4,8 @@ import { redirect } from 'next/navigation'
 import { anthropicConfigured } from '@/lib/anthropic'
 import { PATTERN_CATEGORIES, CROSS_STITCH_SHELVES, CROCHET_SHELVES } from '@/lib/studio/generation/categories'
 import { PATTERN_LED_CATEGORY_SLUGS, isPatternLedSlug, patternLedCraftStats } from '@/lib/pattern-led-category-counts'
-import { autopilotStates, crossStitchSourceMode, crossStitchGateMode, makerPhotoGateMode } from '@/lib/studio/generation/bulk/autopilot-state'
-import { candidateStats, candidateWarnings, CANDIDATE_SWEEP_DAYS } from '@/lib/studio/generation/bulk/candidates'
+import { autopilotStates, crossStitchSourceMode, crossStitchGateMode, makerPhotoGateMode, judgingReports } from '@/lib/studio/generation/bulk/autopilot-state'
+import { candidateStats, candidateWarnings, CANDIDATE_SWEEP_DAYS, type JudgingReportEntry } from '@/lib/studio/generation/bulk/candidates'
 import { liveShelfCounts } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { liveCrochetShelfCounts } from '@/lib/studio/generation/bulk/crochet-dedupe'
 import { shelfIsBuildable } from '@/lib/studio/generation/bulk/crochet-forms'
@@ -51,6 +51,12 @@ function relativeTime(when: Date): string {
   const h = Math.floor(m / 60)
   if (h < 24) return `${h}h ago`
   return `${Math.floor(h / 24)}d ago`
+}
+
+/** The first `n` non-blank lines of a report, for the card's collapsed view. */
+function firstLines(text: string, n: number): string {
+  const lines = text.split(/\r?\n/).filter((l) => l.trim().length > 0)
+  return lines.slice(0, n).join('\n')
 }
 
 function stateBadge(status: PipelineStatus): { text: string; color: string } {
@@ -262,6 +268,7 @@ function CraftCard({
   spend,
   autopilotLabel,
   runNote,
+  reports,
 }: {
   name: string
   published: number
@@ -287,6 +294,12 @@ function CraftCard({
    * happens.
    */
   runNote?: React.ReactNode
+  /**
+   * The judging routine's own reports (`xs-candidates.ts report`), newest
+   * first — its git-push branch failed three runs running, so this is where
+   * it leaves its hand-off instead. Undefined or empty renders nothing.
+   */
+  reports?: JudgingReportEntry[]
 }) {
   const pct = target > 0 ? Math.min(100, Math.round((published / target) * 100)) : 0
   const full = published >= target
@@ -347,6 +360,51 @@ function CraftCard({
               )
             })}
           </div>
+        </div>
+      )}
+      {reports && reports.length > 0 && (
+        <div>
+          <div style={{ ...LORA_SM, marginBottom: 6 }}>
+            Latest report — {reports[0]!.by} · {relativeTime(new Date(reports[0]!.at))} · {reports[0]!.kind}
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-lora)',
+              fontSize: 12,
+              color: 'var(--color-espresso)',
+              margin: 0,
+              lineHeight: 1.6,
+              whiteSpace: 'pre-wrap',
+            }}
+          >
+            {firstLines(reports[0]!.text, 3)}
+          </p>
+          {reports.length > 1 && (
+            <details style={{ marginTop: 8 }}>
+              <summary style={{ ...LORA_SM, cursor: 'pointer' }}>Last {reports.length} reports</summary>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 8 }}>
+                {reports.slice(1).map((r, i) => (
+                  <div key={i} style={{ borderTop: '0.5px solid var(--color-linen-grey)', paddingTop: 8 }}>
+                    <div style={{ ...LORA_SM, marginBottom: 4 }}>
+                      {r.by} · {relativeTime(new Date(r.at))} · {r.kind}
+                    </div>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-lora)',
+                        fontSize: 12,
+                        color: 'var(--color-espresso)',
+                        margin: 0,
+                        lineHeight: 1.6,
+                        whiteSpace: 'pre-wrap',
+                      }}
+                    >
+                      {r.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       )}
       {extraNote && <p style={{ ...LORA_SM, margin: 0, lineHeight: 1.5 }}>{extraNote}</p>}
@@ -471,6 +529,7 @@ export default async function AdminBulkGenerationPage() {
   const xsGateMode = await crossStitchGateMode().catch(() => 'candidates')
   const photoGateMode = await makerPhotoGateMode().catch(() => 'api')
   const candidates = await candidateStats().catch(() => ({ pending: 0, oldest: null, lastJudgedAt: null }))
+  const xsReports = await judgingReports('cross-stitch').catch(() => [] as JudgingReportEntry[])
   const candidateWarns = candidateWarnings(candidates)
   const xsAutopilot = autopilot['cross-stitch']
   const nwAutopilot = autopilot.needlework
@@ -588,6 +647,7 @@ export default async function AdminBulkGenerationPage() {
               approx: approxSpend(spendWindow),
               note: `Approximate, costed at $${SCHNELL_UNIT_COST.toFixed(3)} per schnell generation and $${PRO_UNIT_COST.toFixed(3)} per Flux Pro generation. At either cap the batch skips rather than spends.`,
             }}
+            reports={xsReports}
           />
           <CraftCard
             name="Needlework"
