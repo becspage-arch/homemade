@@ -262,11 +262,11 @@ function pad(n: number): string {
  * treatments) is 'amigurumi' — the shaped-figure builder that only knows how
  * to lay out a bear body or a bunny body (`amigurumiFromDesign` in
  * `crochet-design.ts`). Belt and braces: fails loudly if the engine ever
- * grows a base beyond the four this file was written against, so the regex
+ * grows a base beyond the seven this file was written against, so the regex
  * below gets revisited rather than silently under- or over-matching.
  */
 const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
-if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bunny,egg') {
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,dog,egg') {
   throw new Error(
     'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
   )
@@ -280,11 +280,18 @@ if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bunny,egg')
  * roundish (a pufferfish, a cupcake, a donut are all real shapes the engine
  * cannot lay out and stay off this list).
  */
-const HONEST_AMIGURUMI_BASE_RE = /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b/i
+const HONEST_AMIGURUMI_BASE_RE =
+  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b/i
 
-/** True when `motif` is honestly one of the four bodies the engine builds. */
+/**
+ * Bases the engine cannot lay out even though the word above might match:
+ * a dachshund needs a long body, an owl is not an egg with a beak.
+ */
+const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
+
+/** True when `motif` is honestly one of the seven bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird). */
 export function isHonestAmigurumiSubject(motif: string): boolean {
-  return HONEST_AMIGURUMI_BASE_RE.test(motif)
+  return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
 }
 
 function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
