@@ -333,13 +333,12 @@ export function computePatternMetrics(data: PatternData): PatternMetrics {
 }
 
 /**
- * Estimated skeins per palette entry, given a +25% safety margin.
+ * Estimated skeins for one palette symbol, given a +25% safety margin.
  *
- * The model is the one most pattern publishers print on their floss key:
- * a full cross-stitch on 14-count Aida with 2 strands uses roughly
- * 1/180th of a 8-yard skein (~2.4 cm of thread per stitch including
- * tail). Back-stitch + French knots add a small overhead. We round up
- * to the nearest 0.5 skein because no shop sells less.
+ * Counts that symbol's work and hands it to `skeinCountFromUsage`, which
+ * carries the model. Asking this for every colour on a chart re-walks the grid
+ * once per colour; `summarisePaletteUsage` is the one-walk answer when the
+ * whole palette is wanted.
  */
 export function estimateSkeinCount(
   data: PatternData,
@@ -348,26 +347,106 @@ export function estimateSkeinCount(
 ): number {
   const entry = data.palette.find((p) => p.symbol === symbol)
   if (!entry) return 0
+  return skeinCountFromUsage(paletteUsageOf(data, symbol), entry, data.fabric.count, safetyMargin)
+}
 
-  const fullCrossCount = data.grid.cells.filter((c) => c.s === symbol).length
-  // Back-stitch is measured in CELLS OF LINE, not in segments: a segment is one
-  // unbroken run and may be twenty cells long, so counting segments would have a
-  // chart's outline cost the same thread whether it went once round a motif or
-  // twenty times round it.
-  const backstitchCells = data.grid.backstitch
-    .filter((b) => b.s === symbol)
-    .reduce((a, b) => a + Math.hypot(b.x2 - b.x1, b.y2 - b.y1), 0)
-  const frenchKnotCount = data.grid.frenchKnots.filter((k) => k.s === symbol).length
-  // A quarter stitch is a quarter of the thread of a full cross, and a
-  // three-quarter three quarters of it.
-  const fractionalCrosses = data.grid.fractional
-    .filter((f) => f.s === symbol)
-    .reduce((a, f) => a + (f.k === 'threeQuarter' ? 0.75 : 0.25), 0)
+/**
+ * How much work one palette symbol accounts for, counted once.
+ *
+ * The four numbers are exactly what a thread estimate needs, and nothing
+ * about the chart's geometry beyond them.
+ */
+export interface PaletteUsage {
+  /** Full crosses worked in this colour. */
+  fullCrossCount: number
+  /**
+   * Back-stitch measured in CELLS OF LINE, not in segments: a segment is one
+   * unbroken run and may be twenty cells long, so counting segments would have
+   * a chart's outline cost the same thread whether it went once round a motif
+   * or twenty times round it.
+   */
+  backstitchCells: number
+  frenchKnotCount: number
+  /**
+   * Fractional stitches as full-cross equivalents. A quarter stitch is a
+   * quarter of the thread of a full cross, and a three-quarter three quarters
+   * of it.
+   */
+  fractionalCrosses: number
+}
 
+function emptyUsage(): PaletteUsage {
+  return { fullCrossCount: 0, backstitchCells: 0, frenchKnotCount: 0, fractionalCrosses: 0 }
+}
+
+/** The usage of one symbol, walking each layer once. */
+function paletteUsageOf(data: PatternData, symbol: string): PaletteUsage {
+  const usage = emptyUsage()
+  for (const c of data.grid.cells) if (c.s === symbol) usage.fullCrossCount++
+  for (const b of data.grid.backstitch) {
+    if (b.s === symbol) usage.backstitchCells += Math.hypot(b.x2 - b.x1, b.y2 - b.y1)
+  }
+  for (const k of data.grid.frenchKnots) if (k.s === symbol) usage.frenchKnotCount++
+  for (const f of data.grid.fractional) {
+    if (f.s === symbol) usage.fractionalCrosses += f.k === 'threeQuarter' ? 0.75 : 0.25
+  }
+  return usage
+}
+
+/**
+ * Usage for EVERY palette symbol in one walk of the grid.
+ *
+ * Asking `estimateSkeinCount` for each colour in turn re-walks the whole chart
+ * once per colour, which is fine for a twelve-colour motif and ruinous for a
+ * showpiece: 224 colours against 244,800 cells is 55 million comparisons for a
+ * number the page prints in a list. This walks each layer once and buckets by
+ * symbol, so the cost is the size of the chart rather than the size of the
+ * chart times the size of the palette.
+ *
+ * Symbols carrying no work are still present, with zeroes, so a caller can
+ * read every palette entry off the map without a fallback.
+ */
+export function summarisePaletteUsage(data: PatternData): Map<string, PaletteUsage> {
+  const bySymbol = new Map<string, PaletteUsage>()
+  const usageFor = (symbol: string): PaletteUsage => {
+    let usage = bySymbol.get(symbol)
+    if (!usage) {
+      usage = emptyUsage()
+      bySymbol.set(symbol, usage)
+    }
+    return usage
+  }
+  for (const p of data.palette) usageFor(p.symbol)
+  for (const c of data.grid.cells) usageFor(c.s).fullCrossCount++
+  for (const b of data.grid.backstitch) {
+    usageFor(b.s).backstitchCells += Math.hypot(b.x2 - b.x1, b.y2 - b.y1)
+  }
+  for (const k of data.grid.frenchKnots) usageFor(k.s).frenchKnotCount++
+  for (const f of data.grid.fractional) {
+    usageFor(f.s).fractionalCrosses += f.k === 'threeQuarter' ? 0.75 : 0.25
+  }
+  return bySymbol
+}
+
+/**
+ * Estimated skeins for one palette entry from its counted usage.
+ *
+ * The model is the one most pattern publishers print on their floss key:
+ * a full cross-stitch on 14-count Aida with 2 strands uses roughly
+ * 1/180th of a 8-yard skein (~2.4 cm of thread per stitch including
+ * tail). Back-stitch + French knots add a small overhead. We round up
+ * to the nearest 0.5 skein because no shop sells less.
+ */
+export function skeinCountFromUsage(
+  usage: PaletteUsage,
+  entry: Pick<PaletteEntry, 'strandsFullCross'>,
+  fabricCount: number,
+  safetyMargin = 0.25,
+): number {
   // 14-count Aida baseline: ~180 full-cross stitches with 2 strands per skein.
   // Scale by fabric count (finer cloth = shorter stitches), strand count,
   // and the published 8-yard / ~730 cm skein length.
-  const fabricFactor = 14 / data.fabric.count
+  const fabricFactor = 14 / fabricCount
   const strandFactor = entry.strandsFullCross / 2
   const stitchesPerSkein = 180 * fabricFactor / strandFactor
 
@@ -376,7 +455,10 @@ export function estimateSkeinCount(
   // French knot about the same. Cheap approximations; the safety margin absorbs
   // the rest.
   const equivalentStitches =
-    fullCrossCount + fractionalCrosses + backstitchCells * 0.25 + frenchKnotCount * 0.25
+    usage.fullCrossCount +
+    usage.fractionalCrosses +
+    usage.backstitchCells * 0.25 +
+    usage.frenchKnotCount * 0.25
 
   const raw = equivalentStitches / stitchesPerSkein
   const padded = raw * (1 + safetyMargin)
