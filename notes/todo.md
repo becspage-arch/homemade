@@ -26,6 +26,9 @@ Rules for this file: only items still to do; remove a line the moment it is done
 3. Small leftovers: seed-stitches.ts drift; xs-candidates.ts treats the value after --as as a slug too (harmless); a faint grey halo on the weakest quick-win charts at the bare-fabric edge.
 4. Fill to 1,818 under the $50–60 image budget (cron on in candidates mode since 6 September 12:32 UTC; the six-hourly judging routine keeps or rejects; the orchestrator merges the routine's pool branches); close-out gates; learnings line in the playbook; Rebecca's sign-off.
 
+## Housekeeping (next train)
+- Refresh stale notes flagged by the cross-stitch session's audit (7 Sept): project_crochet_signoff.md (row counts, migration 20260921000000), project_crochet_pattern_engine.md (no migration 20260926000000; render-on-publish has run live since 5 Sept), project_loom_engine_build_state.md (loom is on main; drop old worktree paths), project_loom_orchestrator.md (July log), project_knitting_state.md (branches are on main, hidden), five wiki links to files not in notes/. todo.md holds only items still to do.
+
 ## Parked to save credits
 - Yarn-fibre halo render option (chenille look matched to the pattern yarn).
 - fpdc/bpdc collars (branch claude/loom-look-pass-6; look regressed).

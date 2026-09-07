@@ -47,6 +47,15 @@ If a needed change falls outside this, stop and hand off.
 
 ## Setup, once per fire
 
+**The container starts EMPTY** (no repository, no node_modules, no
+`.env.credentials`; the SessionStart hook does not run for a routine).
+Bootstrap before anything else: call `add_repo` (owner `becspage-arch`,
+repo `homemade`, access `push`), run the clone command it returns into
+`/home/user/homemade`, call `register_repo_root` with that path, then
+`export PATH=$HOME/.local/bin:$PATH && bash scripts/cloud-session-setup.sh`
+and confirm it wrote `.env.credentials` and generated the Prisma client.
+Only then:
+
 ```bash
 cd apps/web
 export CLI="npx tsx --conditions=react-server scripts/crochet-autopilot.ts"
@@ -465,3 +474,12 @@ Plain English. Cover:
   name. The category being hidden is not a reason to lower the bar.
 - If a pre-flight check is ambiguous, halt and exit rather than pushing
   through.
+
+## Where the hand-off goes
+
+A routine session cannot create triggers or message other sessions (the
+classifier blocks it). Write the hand-off to
+`reports/crochet-routine/<UTC timestamp>.md`, commit it on the branch
+`claude/crochet-routine-reports` (create it from main if absent, otherwise
+add to it), and push that branch. The orchestrator reads that branch and
+never merges it. Never push to main.
