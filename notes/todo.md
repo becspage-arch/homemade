@@ -1,6 +1,6 @@
 # Homemade to-do (kept by the orchestrating sessions; update it as work lands)
 
-Rule: this file is the shared to-do. Any session that finishes or starts an item edits it and the edit rides the next train. Plain English, one line per item, newest decisions at the top of each section.
+Rules for this file: only items still to do; remove a line the moment it is done (finished work goes in BUILD_PROGRESS.md, not here); one line each; newest decisions at the top of a section.
 
 ## Crochet: to live, in order (updated 6 September 2026, evening)
 0. DONE (branch claude/crochet-top-tier-shelves): the top-of-Etsy pass Rebecca asked for after the fine-doll references. TEN item types added to the cross-craft vocabulary and to CROCHET_SHELVES, each a distinct object the old fifty-seven forced onto a shelf that means something else: flower-bouquet (stems and bouquets, not appliques), keyring-charm (the 2026 bag-charm trend), potted-plant (succulents and cacti with their pot), play-food, doll-clothes, miniature (micro crochet at dolls house scale), wreath, stocking (stockings and advent), swimwear (bikinis and bralettes), pet-clothing (a dog jumper is worn, so it was never pet-bed). Total held at the adopted 1,500: the 180 they carry came off shelves that were absorbing them, chiefly amigurumi 220 to 180 (the live backlog already had "Aloe vera pot" filed as amigurumi, which is the proof) and applique-flower 20 to 14. Twelve buildable:false themes each; check script and backlog test green; ensureCraftShelves needs re-running for crochet (`pnpm --filter "@homemade/db" exec tsx scripts/seed-item-type-shelves.ts crochet crochet --apply`) before the new shelves exist in the DB. The ten tiers have NO reference photos yet and that is deliberate: Etsy, Unsplash, Pexels, Pixabay, Flickr and Openverse are all blocked by the cloud egress proxy and Commons rate limits the search API to 429 from the shared address, so the only two frames that came through were a yarn-bombed bollard and a bed of real marigolds, which would have set a wrong bar. .loom-scratch/refs/tiers/SEARCHES.txt (on the VM, gitignored) carries the search phrase per tier and what each photo has to show; Rebecca pulls them on her machine, two per tier, the same way the fine-doll references were pulled. The phrases are "crochet flower bouquet pattern", "amigurumi keychain pattern bundle", "crochet succulent cactus pattern", "crochet play food pattern bundle", "crochet doll clothes 18 inch", "micro crochet miniature amigurumi", "crochet wreath pattern", "crochet mini stocking advent calendar", "crochet bikini pattern", "crochet dog jumper pattern".
@@ -15,13 +15,16 @@ Rule: this file is the shared to-do. Any session that finishes or starts an item
 5. Rebecca: adopt 1,500 with the audit's shelf split or keep 1,200; the 959 DRAFT prose crochet pattern tutorials as a brief source through the loom path or leave; headband 30→24.
 6. Go-live gates: completeness, vision sweep, tagging coverage, search reindex, category page and descriptions; then add 'crochet' to LAUNCH_VISIBLE_CATEGORY_SLUGS on a train. Rebecca's sign-off moment.
 
+1. Re-render the ball and bear sign-off rows and the Studio presets on the new geometry; judge the served images.
+2. Rebecca: set the crochet budget from the estimate (about $0.16 per published pattern, about $188 for 1,200; pass rate assumed 60% until measured). Then one judged batch of eight on her Max plan via docs/autopilot-prompts/crochet.md, then the routine schedule.
+3. Rebecca: adopt 1,500 with the audit's shelf split or keep 1,200; the 959 DRAFT prose crochet pattern tutorials as a brief source through the loom path or leave; headband 30→24.
+4. Go-live gates: completeness, vision sweep, tagging coverage, search reindex, category page and descriptions; then add 'crochet' to LAUNCH_VISIBLE_CATEGORY_SLUGS on a train. Rebecca's sign-off moment.
+
 ## Cross-stitch: to sign-off, in order (6 September 2026)
-1. Train 12: admin-counts, stash-on-card, parking (run `seed-stitches.ts --craft=cross-stitch` at merge; migration runs in deploy), new shelves and targets (1,784), first-stitch journey, then outlines/French knots and the zero-API candidates conversion as they finish. One deploy verification.
-2. Maker photos site-wide (claude/maker-photos 42272825) rides once the crochet session confirms no collision. Terms, tester agreement and "Upload photo" wording are Rebecca-approved.
-3. Candidates-mode proof batch on the server; 6-hourly cloud routine from docs/autopilot-prompts/cross-stitch.md; cron back on in candidates mode (it is OFF until then); needlework converted the same way.
-4. Personalised sampler job: birth, wedding, new home, name-and-date, word-art track; several catalogue samples per type; customise or build from scratch.
-5. Then in order: loom photoreal heroes (crochet session owns the builder), 200+ colour / 400+ cell tier and under-60-cell tier (proof first), readings wired to the glossary, upload-tutorial.ts hero-clearing defect, seed-stitches.ts drift.
-6. Fill to 1,784 under the $50–60 image budget; close-out gates; learnings line in the playbook; Rebecca's sign-off. Tell her only when everything is merged and it is down to the cron.
+1. Needlework: its own audit first (Rebecca is writing the prompt; do not start before it), then the candidates-mode conversion in the same shape as cross-stitch. Its cron has no autopilot row and skips today, so it spends nothing.
+2. Loom photoreal heroes for cross-stitch (needs the crochet session's loom builder; coordinate before starting).
+3. Small leftovers: seed-stitches.ts drift; xs-candidates.ts treats the value after --as as a slug too (harmless); a faint grey halo on the weakest quick-win charts at the bare-fabric edge.
+4. Fill to 1,818 under the $50–60 image budget (cron on in candidates mode since 6 September 12:32 UTC; the six-hourly judging routine keeps or rejects; the orchestrator merges the routine's pool branches); close-out gates; learnings line in the playbook; Rebecca's sign-off.
 
 ## Parked to save credits
 - Yarn-fibre halo render option (chenille look matched to the pattern yarn).
@@ -29,13 +32,8 @@ Rule: this file is the shared to-do. Any session that finishes or starts an item
 - Shorter bear arms (round count), ball coil at macro.
 - Tapestry lane: the illustration must fill the frame; the routine skips that shelf until fixed.
 - Knitting: see project_knitting_state.md.
-- Needlework audit and its candidates-mode conversion (cross-stitch session, after the cross-stitch cron is back on).
 - Cross-craft from the world-best audit: yarn/floss database, follow-along offline mode, accessibility, one-way contributions (maker photos, reviews, errata pages, feature suggestions, AI-screened), animated stitch diagrams, public errata.
 
-## Done this run (6 September 2026)
-- Cross-stitch: duplication root-caused and guarded in the publish path; 104 reversible culls; shelves merged, targets set from the world-best audit; print quality, stitchability, bare fabric, provenance page, stitch library and chart tutorial live; Typesense reachable from cloud sessions; four cron firings proven before the cron was paused for the zero-API conversion.
-- Access proven from the cloud (DB via Neon WebSocket adapter, AWS, GitHub, R2, Typesense, Sentry, GSC, Fargate).
-- Search Console audit and gsc.ts path fix; Sentry triage and fixes; /admin/analytics/acquisition crash fixed; admin Members activity and spam signal.
-- Loom look-pass rounds 1–6 on main; seven sign-off heroes and four autopilot keepers pass on the white ground on the served images.
-- Crochet Studio "Design your own"; async Fargate render path; the real bulk path proven end to end.
-- Merging rules (two lanes, daily train) in CLAUDE.md; the no-API-spend rule as Rebecca stated it.
+## Notes housekeeping (raised by the 6 September notes audit)
+- `project_pattern_generation_toolkit.md` needs a rewrite or a retirement: quote-engine.ts, quote-specs.ts, xs-publish-approved.ts, xs-contact-sheet.ts and xs-volume-gen.ts are all deleted, so only its thumbnail and dense-tier sections still describe live code.
+- The crochet, loom and knitting notes need their owning session to refresh them; the stale facts are listed in the audit hand-off.

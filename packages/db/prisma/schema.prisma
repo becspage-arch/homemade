@@ -3687,6 +3687,13 @@ model BulkRun {
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])
+  /// Normalised SUBJECT KEYS of the ideas this run killed as duplicates.
+  /// A duplicate kill writes no Pattern row, so without this the only trace of
+  /// it is a counter — and the planner, which builds its avoid list from rows,
+  /// would pick the same doomed subject again on the next firing and pay for
+  /// another Flux generation to be told the same thing. The planner reads the
+  /// last few runs' worth back and avoids them.
+  duplicateSubjectKeys String[] @default([])
   /// WHAT THE GATE KILLED. Up to 20 rows of
   /// `{ slug, attempt, url, verdict, reasons, lane, shelf, colours }` — one per
   /// terminal cull and per pale skip, each pointing at the render kept under

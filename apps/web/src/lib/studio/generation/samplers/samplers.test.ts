@@ -1,0 +1,305 @@
+/**
+ * THE SAMPLER RULES — the ones that decide what gets stitched.
+ *
+ * Runnable as a tsx script, like the repo's other `*.test.ts` files:
+ *   cd apps/web && pnpm exec tsx src/lib/studio/generation/samplers/samplers.test.ts
+ *
+ * The three things that would ruin a sampler if they went wrong: the wording
+ * (a blank box must remove a line, not stitch half of one), the lettering (the
+ * same words must always make the same squares, and a long name must break
+ * rather than run off the cloth), and the re-lettering (a personal copy must be
+ * the same piece with a different name on it, with every stitch of the art
+ * still where it was).
+ */
+
+import assert from 'node:assert/strict'
+import { parsePatternData } from '@homemade/db'
+import {
+  SAMPLER_KINDS,
+  cleanSamplerValues,
+  dateLocaleForCountry,
+  fillTemplate,
+  formatSamplerDate,
+  isSamplerKind,
+  joinValues,
+  missingRequired,
+  samplerYear,
+} from './kinds'
+import {
+  measureTextBlock,
+  minCapFor,
+  renderTextBlock,
+  fitTextBlock,
+  splitBalanced,
+} from './lettering'
+import {
+  assembleChart,
+  buildPalette,
+  personaliseSampler,
+  prunePalette,
+  setSamplerText,
+  templateValues,
+  type SamplerBlockSpec,
+  type SamplerChartMeta,
+} from './chart'
+import { newArt, paint, artColours, despeckle, clearBoxAround, stamp, rotate } from './art'
+
+async function main(): Promise<void> {
+  // ── wording ───────────────────────────────────────────────────────────────
+
+  {
+    // A line whose every value is blank disappears. This is what stops a birth
+    // sampler stitching the word "Born" over an empty date.
+    assert.equal(fillTemplate('Born {date}', { date: '12 March 2026' }), 'Born 12 March 2026')
+    assert.equal(fillTemplate('Born {date}', { date: '' }), '')
+    assert.equal(fillTemplate('Born {date}', {}), '')
+  }
+
+  {
+    // A bracketed group takes its own punctuation with it when it goes.
+    assert.equal(
+      fillTemplate('{date}[ at {place}]', { date: '20 June 2026', place: "St Mary's" }),
+      "20 June 2026 at St Mary's",
+    )
+    assert.equal(fillTemplate('{date}[ at {place}]', { date: '20 June 2026' }), '20 June 2026')
+    // And a line that is nothing BUT an optional group still collapses.
+    assert.equal(fillTemplate('[{place}]', {}), '')
+  }
+
+  {
+    // Two optional facts on one line read properly when only one was filled in.
+    assert.equal(joinValues(['weight', 'length'], ' · ', { weight: '3.4 kg', length: '51 cm' }), '3.4 kg · 51 cm')
+    assert.equal(joinValues(['weight', 'length'], ' · ', { length: '51 cm' }), '51 cm')
+    assert.equal(joinValues(['weight', 'length'], ' · ', {}), '')
+  }
+
+  {
+    // Whatever a maker types, only the fields this kind declares reach a chart,
+    // control characters are gone and the length is capped.
+    const cleaned = cleanSamplerValues('birth', {
+      name: '  Amelia \tRose  ',
+      date: '2026-03-12',
+      colour: 'red',
+      weight: 'x'.repeat(80),
+    })
+    assert.equal(cleaned.name, 'Amelia Rose')
+    assert.equal(cleaned.colour, undefined, 'a field this kind does not have is dropped')
+    assert.equal(cleaned.weight?.length, 20, 'a long value is cut to the field limit')
+  }
+
+  {
+    assert.deepEqual(missingRequired('birth', { name: 'Amelia Rose' }), ['The date'])
+    assert.deepEqual(missingRequired('birth', { name: 'A', date: '2026-03-12' }), [])
+    // The optional boxes never hold anyone up.
+    assert.deepEqual(missingRequired('wedding', { nameOne: 'A', nameTwo: 'B', date: '2026-06-20' }), [])
+  }
+
+  {
+    // Dates are held as ISO and set in the reader's own order.
+    assert.equal(formatSamplerDate('2026-03-12', 'en-GB'), '12 March 2026')
+    assert.equal(formatSamplerDate('2026-03-12', 'en-US'), 'March 12, 2026')
+    assert.equal(dateLocaleForCountry('US'), 'en-US')
+    assert.equal(dateLocaleForCountry('GB'), 'en-GB')
+    assert.equal(dateLocaleForCountry(null), 'en-GB', 'no country means the plain form')
+    // Anything that is not a date is stitched as typed.
+    assert.equal(formatSamplerDate('Midsummer', 'en-GB'), 'Midsummer')
+    assert.equal(samplerYear('1986-09-06'), '1986')
+  }
+
+  {
+    const filled = templateValues('birth', { name: 'Amelia Rose', date: '2026-03-12' }, 'en-GB')
+    assert.equal(filled.date, '12 March 2026')
+    assert.equal(filled.dateYear, '2026')
+    assert.equal(filled.dateIso, '2026-03-12')
+  }
+
+  {
+    assert.equal(isSamplerKind('birth'), true)
+    assert.equal(isSamplerKind('christening'), false)
+    // Every kind's sample wording fills every one of its required fields, or the
+    // catalogue copy would ship with a gap in it.
+    for (const [kind, spec] of Object.entries(SAMPLER_KINDS)) {
+      assert.deepEqual(missingRequired(kind as never, spec.sample), [], `${kind} sample is complete`)
+    }
+  }
+
+  // ── lettering ─────────────────────────────────────────────────────────────
+
+  {
+    // Same words, same squares. Twice.
+    const a = await renderTextBlock({ lines: [{ text: 'Amelia Rose', face: 'sampler', size: 10 }] })
+    const b = await renderTextBlock({ lines: [{ text: 'Amelia Rose', face: 'sampler', size: 10 }] })
+    assert.deepEqual(a, b, 'lettering is deterministic')
+    assert.ok(a.cells.length > 40, 'a name is more than a few squares')
+    assert.ok(a.width > 0 && a.height > 0)
+    // Nothing spills outside the mask it reports.
+    for (const c of a.cells) {
+      assert.ok(c.x >= 0 && c.x < a.width && c.y >= 0 && c.y < a.height, 'every cell is inside the mask')
+    }
+  }
+
+  {
+    // Bigger type is bigger. Obvious, and the thing that breaks first if the
+    // cap-height maths ever drifts.
+    const small = measureTextBlock({ lines: [{ text: 'Amelia', face: 'block', size: 8 }] })
+    const large = measureTextBlock({ lines: [{ text: 'Amelia', face: 'block', size: 16 }] })
+    assert.ok(large.width > small.width * 1.7, 'width roughly doubles with the size')
+  }
+
+  {
+    // An empty line is not an error, it is nothing.
+    const empty = await renderTextBlock({ lines: [{ text: '   ', face: 'block', size: 10 }] })
+    assert.equal(empty.cells.length, 0)
+  }
+
+  {
+    // A long name breaks over lines rather than running off the cloth.
+    const pieces = splitBalanced('Bartholomew Fitzgerald Whitmore', 'sampler', 2)
+    assert.equal(pieces.length, 2)
+    assert.equal(pieces.join(' '), 'Bartholomew Fitzgerald Whitmore', 'no word is lost in the break')
+    // One word cannot be broken, and is handed back whole.
+    assert.deepEqual(splitBalanced('Bartholomew', 'sampler', 3), ['Bartholomew'])
+  }
+
+  {
+    // Fitting never sets a face below the size it stops reading at.
+    const fitted = await fitTextBlock(
+      { lines: [{ text: 'Bartholomew Fitzgerald', face: 'sampler', size: 20 }] },
+      { width: 90, height: 40 },
+    )
+    assert.ok(fitted, 'a long name fits a reasonable slot once it is allowed to break')
+    assert.ok(fitted.width <= 90 && fitted.height <= 40, 'and it stays inside the slot')
+
+    // A slot too small for the smallest readable setting is refused outright
+    // rather than filled with something nobody could stitch.
+    const refused = await fitTextBlock(
+      { lines: [{ text: 'Bartholomew Fitzgerald', face: 'script', size: 20 }] },
+      { width: 12, height: 6 },
+    )
+    assert.equal(refused, null, 'an impossible slot is refused, not fudged')
+    assert.ok(minCapFor('script') > minCapFor('block'), 'a script needs more room than a block letter')
+  }
+
+  // ── the art layer ─────────────────────────────────────────────────────────
+
+  {
+    const art = newArt()
+    paint(art, 1, 1, '#aa0000')
+    paint(art, 2, 1, '#aa0000')
+    paint(art, 40, 40, '#00aa00') // a speck on its own
+    assert.deepEqual(artColours(art), ['#aa0000', '#00aa00'])
+    const removed = despeckle(art, 3)
+    assert.equal(removed, 3, 'both islands are under three squares, so both go')
+    assert.equal(art.size, 0)
+  }
+
+  {
+    // The opening in a ring is measured, not assumed.
+    const art = newArt()
+    for (let i = 0; i < 40; i++) {
+      paint(art, i, 0, '#000000')
+      paint(art, i, 39, '#000000')
+      paint(art, 0, i, '#000000')
+      paint(art, 39, i, '#000000')
+    }
+    const box = clearBoxAround(art, 40, 40, 20, 20, { margin: 2 })
+    assert.equal(box.x, 3)
+    assert.equal(box.w, 34, 'the hole is the inside of the ring less the margin')
+  }
+
+  {
+    // A bitmap turned a quarter is the same bitmap on its side.
+    const bm = ['AB', 'CD'] as const
+    assert.deepEqual(rotate(bm), ['CA', 'DB'])
+    const art = newArt()
+    stamp(art, 0, 0, ['A'], { A: '#123456' }, 3)
+    assert.equal(art.size, 9, 'a square stamped at three times the size is nine squares')
+  }
+
+  // ── palette ───────────────────────────────────────────────────────────────
+
+  {
+    // The lettering thread is never one the art is worked in, so clearing the
+    // words can never take part of the design with them.
+    const palette = buildPalette(['#c8778c', '#8ba576', '#5e3a49'], ['#5e3a49'])
+    const inkSymbol = palette.symbolFor.get('#5e3a49')
+    const artSymbol = palette.symbolFor.get('#c8778c')
+    assert.ok(inkSymbol && artSymbol)
+    assert.notEqual(inkSymbol, artSymbol)
+    // The art colour that would have landed on the ink's skein was moved along
+    // to the next nearest, so both are still in the key exactly once.
+    const codes = palette.entries.map((e) => e.code)
+    assert.equal(new Set(codes).size, codes.length, 'no skein appears twice')
+  }
+
+  {
+    const entries = buildPalette(['#c8778c', '#8ba576'], ['#5e3a49']).entries
+    const kept = prunePalette(entries, new Set([entries[0]!.symbol]))
+    assert.equal(kept.length, 1, 'a colour nothing is worked in is not on the shopping list')
+    assert.equal(prunePalette(entries, new Set<string>()).length, 1, 'a palette is never empty')
+  }
+
+  // ── re-lettering ──────────────────────────────────────────────────────────
+
+  {
+    // Build a tiny sampler by hand: a border, and one slot of words.
+    const art = newArt()
+    for (let x = 0; x < 120; x++) {
+      paint(art, x, 0, '#a5342f')
+      paint(art, x, 59, '#a5342f')
+    }
+    const palette = buildPalette(artColours(art), ['#5b4239'])
+    const inkSymbol = palette.symbolFor.get('#5b4239')!
+    const blocks: SamplerBlockSpec[] = [
+      {
+        region: { x: 6, y: 14, w: 108, h: 30 },
+        align: 'centre',
+        vAlign: 'middle',
+        lineGap: 3,
+        inkSymbol,
+        lines: [
+          { template: '{name}', face: 'block', size: 8 },
+          { template: '{date}', face: 'block', size: 6 },
+        ],
+      },
+    ]
+    const values = { name: 'Amelia Rose', date: '2026-03-12' }
+    const text = await setSamplerText(blocks, 'birth', values)
+    const data = assembleChart(art, text, palette, { width: 120, height: 60 })
+    const meta: SamplerChartMeta = { version: 1, kind: 'birth', designSlug: 'test', blocks, values }
+
+    const artCells = data.grid.cells.filter((c) => c.s !== inkSymbol)
+    assert.equal(artCells.length, 240, 'the two border rows are there')
+    assert.ok(data.grid.cells.some((c) => c.s === inkSymbol), 'and so are the words')
+
+    const relettered = await personaliseSampler(data, meta, { name: 'Bo', date: '2026-01-01' })
+    const relettedArt = relettered.grid.cells.filter((c) => c.s !== inkSymbol)
+    assert.equal(relettedArt.length, 240, 'the art survives the change of name')
+    assert.deepEqual(
+      relettedArt.map((c) => `${c.x},${c.y},${c.s}`).sort(),
+      artCells.map((c) => `${c.x},${c.y},${c.s}`).sort(),
+      'every square of the art is exactly where it was',
+    )
+    const before = data.grid.cells.filter((c) => c.s === inkSymbol).length
+    const after = relettered.grid.cells.filter((c) => c.s === inkSymbol).length
+    assert.ok(after > 0 && after !== before, 'and the words are different words')
+
+    // It still validates, which is what the Studio and the PDF export assume.
+    parsePatternData(relettered)
+
+    // Emptying every word leaves the art and drops the thread from the key.
+    const blank = await personaliseSampler(data, meta, { name: '', date: '' })
+    assert.equal(blank.grid.cells.filter((c) => c.s === inkSymbol).length, 0)
+    assert.ok(
+      !blank.palette.some((p) => p.symbol === inkSymbol),
+      'a thread nothing is worked in is off the shopping list',
+    )
+  }
+
+  console.log('samplers.test.ts — all assertions passed')
+}
+
+main().catch((err) => {
+  console.error(err)
+  process.exit(1)
+})

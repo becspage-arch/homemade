@@ -4,6 +4,8 @@ description: The Homemade build uses a Master Orchestrator session plus focused 
 type: project
 originSessionId: 5bc8ac16-5989-4c22-83d0-2e81109cbf3f
 ---
+**Corrected 6 September 2026 (notes audit).** Two orchestrators now run side by side, one per lane (loom/crochet/knitting and cross-stitch), each keeping an "In flight" block in `BUILD_PROGRESS.md`. Workers no longer merge their own work: they push a branch and the orchestrator merges the day's train (see `CLAUDE.md` and `feedback_credits_and_merging.md`). Memory is the files in `notes/`, read from the repo, not an auto-loaded laptop memory.
+
 Rebecca runs **two kinds of Claude Code sessions** in this project:
 
 ## 1. Master Orchestrator session
@@ -25,7 +27,8 @@ How to recognise you're the orchestrator: Rebecca's first message will say somet
 Short, focused sessions that do one specific thing — build a feature, fix a bug, write a tutorial, debug a deploy. They:
 
 - Get a self-contained prompt from the orchestrator (or directly from Rebecca)
-- Have full access to write code, run commands, push commits
+- Have full access to write code and run commands, in their own git worktree on their own branch
+- Push that branch and report the branch name and commit. They never merge to `main` and never open a PR; the orchestrator merges the daily train with one deploy verification
 - End when the focused task is complete
 - Report back so the orchestrator can update tracking
 
@@ -46,14 +49,16 @@ Each prompt should be self-contained — pasted into a new Claude Code session a
 - **Success criteria:** how the worker knows it's done
 - **Hand-off:** what to report back to the orchestrator
 
-Worker sessions auto-load this project's memory, so the orchestrator doesn't need to re-state stack details or voice rules — just the specific task.
+Worker sessions read this project's memory from `notes/` in the repo, so the orchestrator doesn't need to re-state stack details or voice rules — just the specific task, and which notes to read.
 
-## Content pipeline (future, Phase 8 onward)
+## Content pipeline
 
-When we start authoring tutorials, the orchestrator tracks:
+**Updated 6 September 2026.** Authoring is long past its first batch: cooking (3,040 published), baking (1,247) and cross-stitch are done categories, and the public set is cooking, baking, cross-stitch and needlework (`LAUNCH_VISIBLE_CATEGORY_SLUGS` in `packages/db/scripts/enforce-launch-visibility.ts`). The "launch five" framing below is historical. Editorial review is AI-only — no Rebecca-in-the-loop pass, see `feedback_ai_only_moderation.md`.
 
-- Which categories need their first tutorials seeded (the launch five: cooking, baking, gardening, crochet, knitting)
-- For each tutorial: draft → editorial pass (Rebecca) → publish
+The orchestrator tracks:
+
+- Which categories still need their first content seeded, and which are mid sign-off (`playbook_category_signoff.md`)
+- For each row: draft → automated completeness and voice gates → publish
 - Two upload paths must work:
   - **Manual via `/admin/tutorials/new`** — Rebecca types/edits in TipTap
   - **Direct programmatic upload** — a worker session writes the tutorial via Prisma (server action or script in `packages/db/scripts/`) so AI-generated content can be staged and reviewed in `/admin/tutorials` before publishing
@@ -78,11 +83,12 @@ This rule converts a self-reported "done" into an objective check. Apply to:
 
 **The standard "Deploy verification" block already enforces this for code changes** (gh run watch + /healthz=200). The new rule extends the same discipline to DB-write deliverables: code-shipped is not done; DB-state-verified is done.
 
-## What this memory does NOT replace
+## What this file does NOT replace
 
-- `project_overview.md` — what Homemade is and the locked tech stack
-- `project_build_state.md` — current snapshot of what's done (updated each session)
+- `BUILD_PROGRESS.md` at the repo root — the canonical build log and the "In flight" blocks (this replaces the old `project_build_state.md`, which no longer exists)
+- `CLAUDE.md` — the locked tech stack, the merging rules and deploy verification (this replaces the old `project_overview.md`, which no longer exists)
+- `playbook_category_signoff.md` — the operational sign-off checklist
 - `feedback_homemade_voice.md` — anti-AI voice rules
 - `feedback_no_time_estimates.md` — no duration estimates ever
 
-All memory files load automatically. Read them before doing anything.
+Nothing here loads automatically any more. Read `INDEX.md`, then the notes that bear on the task, before doing anything.

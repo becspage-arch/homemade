@@ -3,22 +3,33 @@ import { anthropicConfigured, anthropicJson, PLANNER_MODEL } from '@/lib/anthrop
 import { STYLE, type StyleKey } from './cross-stitch-style'
 import { subjectKey as normaliseSubject, findSubjectKeyMatch } from './subject-key'
 import { CROSS_STITCH_SHELF_BY_SLUG } from '../categories'
-import { applyWarmFurGuard } from './brief-rules'
 import {
   postFilterBriefs,
   countRejects,
   matchExampleByHead,
-  lanesForSubject,
   capTextRiskBriefs,
   type BriefReject,
-  type ThemeLaneTags,
 } from './brief-filter'
+import {
+  LANE_TAGS_BY_THEME,
+  PLANNABLE_THEMES,
+  FALLBACK_MID_CELLS,
+  MIN_CELLS,
+  MAX_CELLS,
+  MIN_COLOURS,
+  MAX_COLOURS,
+  DENSE_BATCH_FLOOR,
+  enforceRange,
+  laneByName,
+  reserveQuickWin,
+  settleBrief,
+  settleLaneFor,
+} from './range'
 import { shelfQuotaCounts } from './shelf-plan'
 import {
   CROSS_STITCH_THEMES,
-  LANES_ALL,
   isTextRiskSubject,
-  smallestLane,
+  SAMPLER_LANE_NAMES,
   CROSS_STITCH_SIZE_LANES,
   NEEDLEWORK_THEMES,
   NEEDLEWORK_SIZE_LANES,
@@ -27,6 +38,17 @@ import {
   type CrossStitchTheme,
   type NeedleworkTheme,
 } from './subject-pool'
+
+export {
+  DENSE_BATCH_FLOOR,
+  QUICK_BATCH_FLOOR,
+  SHOWPIECE_SHARE,
+  MIN_CELLS,
+  MAX_CELLS,
+  MIN_COLOURS,
+  MAX_COLOURS,
+  enforceRange,
+} from './range'
 
 /**
  * The batch PLANNER — composes a varied set of briefs from the subject pool,
@@ -67,7 +89,8 @@ export interface CrossStitchBrief {
   w: number
   h: number
   colours: number
-  /** Size lane this brief was placed in (mini | small | medium | large | dense). */
+  /** Size lane this brief was placed in (quick | mini | small | medium | large
+   *  | dense | showpiece). */
   lane: string
   /**
    * Who wrote this brief: the planner model, or the curated pool sampler used as
@@ -111,30 +134,6 @@ export interface NeedleworkBrief {
 const STYLE_KEYS = Object.keys(STYLE) as StyleKey[]
 const clamp = (n: number, lo: number, hi: number): number => Math.max(lo, Math.min(hi, Math.round(n)))
 const pick = <T>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)]!
-
-/** Styles that need a real canvas — never placed in the `mini` lane. */
-const DETAIL_STYLES: StyleKey[] = ['dogportrait', 'artface', 'icon']
-
-/**
- * Detailed styles (realistic pet portraits, fine-art faces) need a size + colour
- * floor — under-resolved they turn to mush (a 120-cell realistic collie has muddy
- * eyes). Raise the brief to at least a medium canvas. Flat/graphic styles are fine
- * small, so they're untouched.
- */
-function applyStyleFloors(b: CrossStitchBrief): CrossStitchBrief {
-  if (!DETAIL_STYLES.includes(b.style)) return b
-  return {
-    ...b,
-    w: Math.max(b.w, 160),
-    h: Math.max(b.h, 160),
-    colours: Math.max(b.colours, 34),
-  }
-}
-
-/** Every size/colour correction a finished brief gets, in one place. */
-function settleBrief(b: CrossStitchBrief): CrossStitchBrief {
-  return applyWarmFurGuard(applyStyleFloors(b))
-}
 
 function slugify(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 48)
@@ -252,9 +251,6 @@ function isHoldShelf(slug: string): boolean {
   return Boolean(CROSS_STITCH_SHELF_BY_SLUG[slug]?.hold)
 }
 
-/** Every theme that still has a generation lane. */
-const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !isHoldShelf(t.shelf))
-
 /**
  * The allowed subjects per theme — constrained mode's whole vocabulary. Built
  * from every theme, not just the plannable ones, so a brief on a hold shelf is
@@ -263,35 +259,6 @@ const PLANNABLE_THEMES: CrossStitchTheme[] = CROSS_STITCH_THEMES.filter((t) => !
 const EXAMPLES_BY_THEME: Record<string, readonly string[]> = Object.fromEntries(
   CROSS_STITCH_THEMES.map((t) => [t.id, t.examples]),
 )
-
-/** The size lanes each theme's subjects survive — the pool's own tags, as data. */
-const LANE_TAGS_BY_THEME: Record<string, ThemeLaneTags> = Object.fromEntries(
-  CROSS_STITCH_THEMES.map((t) => [
-    t.id,
-    { examples: t.examples, lanes: t.lanes ?? LANES_ALL, ...(t.laneOverrides ? { overrides: t.laneOverrides } : {}) },
-  ]),
-)
-
-/** Is this brief in a lane its subject can survive? */
-function laneFits(themeId: string, subject: string, lane: string): boolean {
-  const allowed = lanesForSubject(subject, LANE_TAGS_BY_THEME[themeId])
-  return !allowed || allowed.includes(lane)
-}
-
-/**
- * Put a brief in a lane its subject can actually survive.
- *
- * PROMOTION, not rejection: a shopfront asked for in the mini lane is a fine
- * subject in the wrong canvas, and moving it to the smallest lane that holds it
- * keeps the brief and costs nothing. Only a subject with no allowed lane at all
- * is beyond help, and the pool has none of those.
- */
-function settleLaneFor(b: CrossStitchBrief): CrossStitchBrief {
-  if (laneFits(b.themeId, b.subject, b.lane)) return b
-  const allowed = lanesForSubject(b.subject, LANE_TAGS_BY_THEME[b.themeId])
-  const lane = allowed ? smallestLane(allowed as never) : null
-  return lane ? applyLane(b, lane) : b
-}
 
 function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
   if (!shelves?.length) return PLANNABLE_THEMES
@@ -315,7 +282,10 @@ function xsPromptText(count: number, ctx: XsPlanContext, banned: string[] = []):
         .map((q) => `- ${q.slug} (${q.name}): ${q.briefs} brief${q.briefs === 1 ? '' : 's'} [gap ${q.deficit}]`)
         .join('\n')}\n\n`
     : ''
-  const dense = count >= DENSE_BATCH_FLOOR ? `\n- EXACTLY ONE brief in this batch must use sizeLane "dense" (the 100+ colour heirloom showpiece). Not two.` : `\n- This batch is small: do NOT use sizeLane "dense".`
+  const dense =
+    count >= DENSE_BATCH_FLOOR
+      ? `\n- EXACTLY ONE brief in this batch may use the expensive tier — sizeLane "dense" (100+ colours) OR sizeLane "showpiece" (the 400–600 cell, 200–300 colour heirloom). One of the two, never both, never two of either.\n- sizeLane "showpiece" is only for a subject that is a full-coverage scene with real depth to it — a landscape, a packed cottage garden, a harbour town. Never a single motif.`
+      : `\n- This batch is small: do NOT use sizeLane "dense" or sizeLane "showpiece".`
   // Only the most recent slice goes in the prompt; the full list is still
   // enforced after the fact (see `taken` in planCrossStitchBriefs).
   const shown = (ctx.avoidSubjectKeys ?? []).slice(0, PROMPT_AVOID_LIMIT)
@@ -340,8 +310,9 @@ ${dense}
 - subject: a specific, vivid noun phrase WITHOUT any style words (e.g. "a sleeping red fox curled in autumn leaves"), invented around the theme examples — do NOT just copy them.
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; make tall subjects tall, wide subjects wide, wreaths square.
+- sizeLane "quick" is the one-evening make: ONE motif on bare cloth at 40–60 cells — a strawberry, a robin, a teacup, a star, a mushroom. A subject with a setting, a second object or a face does not belong in it. At least one brief per batch should be one, if any subject suits.
 - colours: within the size lane's range.
-- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
+- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" or "showpiece" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
 - subject: ONE noun phrase. No "with a …", no "wearing/holding/carrying a …", no "topped with", no "beside a", no "tiny/little/single". In the mini and small lanes: at most 12 words, and no "with", "and" or "beside" at all.
 ${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
@@ -367,7 +338,10 @@ function xsConstrainedPromptText(count: number, ctx: XsPlanContext, banned: stri
         .map((q) => `- ${q.slug} (${q.name}): ${q.briefs} brief${q.briefs === 1 ? '' : 's'} [gap ${q.deficit}]`)
         .join('\n')}\n\n`
     : ''
-  const dense = count >= DENSE_BATCH_FLOOR ? `\n- EXACTLY ONE brief in this batch must use sizeLane "dense" (the 100+ colour heirloom showpiece). Not two.` : `\n- This batch is small: do NOT use sizeLane "dense".`
+  const dense =
+    count >= DENSE_BATCH_FLOOR
+      ? `\n- EXACTLY ONE brief in this batch may use the expensive tier — sizeLane "dense" (100+ colours) OR sizeLane "showpiece" (the 400–600 cell, 200–300 colour heirloom). One of the two, never both, never two of either.\n- sizeLane "showpiece" is only for a subject that is a full-coverage scene with real depth to it — a landscape, a packed cottage garden, a harbour town. Never a single motif.`
+      : `\n- This batch is small: do NOT use sizeLane "dense" or sizeLane "showpiece".`
   const shown = (ctx.avoidSubjectKeys ?? []).slice(0, PROMPT_AVOID_LIMIT)
   const avoid = shown.length
     ? `\nTHE CATALOGUE ALREADY HAS THESE — do not choose a subject that repeats one. One per line:\n${shown.join('\n')}\n`
@@ -387,8 +361,9 @@ ${dense}
 - subject: one of the listed SUBJECTS for the theme, RE-DRESSED — change at least one of setting, palette, season, time of day, pose or expression. Nothing added, and the noun at its heart unchanged.
 - style: one style key from the chosen theme's list.
 - w/h: cells for the size lane; tall subjects tall, wide subjects wide, wreaths square.
+- sizeLane "quick" is the one-evening make: ONE motif on bare cloth at 40–60 cells — a strawberry, a robin, a teacup, a star, a mushroom. A subject with a setting, a second object or a face does not belong in it. At least one brief per batch should be one, if any subject suits.
 - colours: within the size lane's range.
-- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
+- A subject that invites LETTERING (a shop or shopfront, a sign, a label, a jar, a book, alphabet blocks, a banner, a menu, a poster, a map, a newspaper, a card, a calendar, a clock face) may ONLY use sizeLane "dense" or "showpiece" — anywhere smaller Flux writes garbled letters and the piece is killed. At most ONE such subject per batch; otherwise choose a different subject.
 ${avoid}${rejected}
 Return ONLY the JSON array of ${count} briefs.`
 }
@@ -402,11 +377,11 @@ function coerceXsBrief(raw: RawXsBrief, seen: Set<string>, allowed: CrossStitchT
     raw.style && STYLE_KEYS.includes(raw.style as StyleKey) && theme.styles.includes(raw.style as StyleKey)
       ? (raw.style as StyleKey)
       : pick(theme.styles)
-  const lane = CROSS_STITCH_SIZE_LANES.find((l) => l.lane === raw.sizeLane) ?? CROSS_STITCH_SIZE_LANES[0]
+  const lane = CROSS_STITCH_SIZE_LANES.find((l) => l.lane === raw.sizeLane) ?? laneByName('mini')
   const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
-  const w = clamp(raw.w ?? 150, 48, 230)
-  const h = clamp(raw.h ?? 150, 48, 230)
-  const colours = clamp(raw.colours ?? loC!, 6, 160)
+  const w = clamp(raw.w ?? 150, MIN_CELLS, MAX_CELLS)
+  const h = clamp(raw.h ?? 150, MIN_CELLS, MAX_CELLS)
+  const colours = clamp(raw.colours ?? loC!, MIN_COLOURS, MAX_COLOURS)
   const subject = raw.subject.trim()
   const matched = matchExampleByHead(subject, theme.examples)
   return settleLaneFor(settleBrief({
@@ -451,12 +426,6 @@ function mintSlug(themeId: string, subject: string, seen: Set<string>): string {
   seen.add(slug)
   return slug
 }
-
-/** Mid canvas per lane for the fallback — keeps the sampler honest to each lane. */
-const FALLBACK_MID_CELLS: Record<string, number> = { mini: 68, small: 120, medium: 155, large: 210, dense: 215 }
-
-/** Batches of this size or larger carry exactly one dense showpiece. */
-export const DENSE_BATCH_FLOOR = 8
 
 /**
  * How many existing subjects to SHOW the model.
@@ -572,9 +541,10 @@ function sampleSubject(theme: CrossStitchTheme, taken: (key: string) => boolean)
 function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: string) => boolean): CrossStitchBrief | null {
   const subject = sampleSubject(theme, taken)
   if (!subject) return null
-  // Span mini → large in the fallback (never force the dense/epic extremes
-  // unguided — those need a deliberate brief), so a fallback batch still varies.
-  const lane = pick(CROSS_STITCH_SIZE_LANES.slice(0, 4))
+  // Span mini → large in the fallback (never force the deliberate tiers
+  // unguided — quick, dense and showpiece each need a chosen subject), so a
+  // fallback batch still varies.
+  const lane = pick(CROSS_STITCH_SIZE_LANES.filter((l) => SAMPLER_LANE_NAMES.includes(l.lane)))
   const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
   const isTall = /tall|stem|spire|foxglove|delphinium|hollyhock|lighthouse/i.test(subject)
   const isWide = /band|row|field|landscape|wide|receding/i.test(subject)
@@ -589,131 +559,14 @@ function sampleXsBrief(theme: CrossStitchTheme, seen: Set<string>, taken: (key: 
     plannerMode: PLANNER_MODE,
     dressed: isDressed(subject, matchExampleByHead(subject, theme.examples)),
     style: pick(theme.styles),
-    w: clamp(w, 48, 230),
-    h: clamp(h, 48, 230),
-    colours: clamp((loC! + hiC!) / 2, 6, 160),
+    w: clamp(w, MIN_CELLS, MAX_CELLS),
+    h: clamp(h, MIN_CELLS, MAX_CELLS),
+    colours: clamp((loC! + hiC!) / 2, MIN_COLOURS, MAX_COLOURS),
     lane: lane.lane,
     shelf: theme.shelf,
     shelfName: theme.shelfName,
     themeId: theme.id,
   }))
-}
-
-// ───────────────────────────── the size range ─────────────────────────────
-
-function laneByName(name: string): (typeof CROSS_STITCH_SIZE_LANES)[number] {
-  return CROSS_STITCH_SIZE_LANES.find((l) => l.lane === name) ?? CROSS_STITCH_SIZE_LANES[2]!
-}
-
-/** Re-size a brief into a lane, keeping its aspect ratio and its subject. */
-function applyLane(b: CrossStitchBrief, laneName: string): CrossStitchBrief {
-  const lane = laneByName(laneName)
-  const [loC, hiC] = lane.colours.split('–').map((s) => parseInt(s, 10))
-  const mid = FALLBACK_MID_CELLS[lane.lane] ?? 155
-  const ratio = b.h > 0 ? b.w / b.h : 1
-  const w = ratio >= 1 ? mid : Math.round(mid * ratio)
-  const h = ratio >= 1 ? Math.round(mid / ratio) : mid
-  // Re-settle after a lane change: a brief demoted INTO mini may now need the
-  // warm-fur saturation it did not need as a large piece.
-  return settleBrief({
-    ...b,
-    lane: lane.lane,
-    w: clamp(w, 48, 230),
-    h: clamp(h, 48, 230),
-    colours: clamp((loC! + hiC!) / 2, 6, 160),
-  })
-}
-
-/**
- * Hold the batch to the RANGE rule: at least one mini, a couple of small/medium,
- * a large, and — only when the batch is big enough — EXACTLY ONE dense 100+
- * colour Flux 1.1 Pro showpiece. The complexity range is the point of this
- * catalogue, so it is enforced after the fact rather than hoped for.
- */
-export function enforceRange(briefs: CrossStitchBrief[], count: number): CrossStitchBrief[] {
-  if (briefs.length === 0) return briefs
-  const wantDense = count >= DENSE_BATCH_FLOOR
-
-  // ── text risk: the dense slot or nothing ─────────────────────────────────
-  // A subject that invites lettering is buildable in exactly one lane, and a
-  // batch has exactly one dense slot — so at most one text-risk brief can be
-  // built, and only when the batch is big enough to carry a dense piece at all.
-  // The rest are DROPPED here rather than demoted: `applyLane` would otherwise
-  // quietly move one into `large`, which is the lane the 6 September haberdashery
-  // window died in. `finaliseBriefs` refills the hole from the pool, which never
-  // samples a text-risk subject.
-  const out = capTextRiskBriefs(briefs, { wantDense }).kept
-  if (out.length === 0) return out
-  const idxOf = (lane: string): number[] => out.map((b, i) => (b.lane === lane ? i : -1)).filter((i) => i >= 0)
-
-  // ── dense: exactly one when the batch has room, none otherwise ────────────
-  const riskIdx = out.findIndex((b) => isTextRiskSubject(b.subject))
-  if (wantDense && riskIdx >= 0) {
-    // The text-risk brief TAKES the dense slot — it is the only lane it has.
-    if (out[riskIdx]!.lane !== 'dense') out[riskIdx] = applyLane(out[riskIdx]!, 'dense')
-    for (const i of idxOf('dense')) if (i !== riskIdx) out[i] = applyLane(out[i]!, 'large')
-  } else if (wantDense) {
-    const dense = idxOf('dense')
-    if (dense.length === 0) {
-      // Promote the biggest canvas that isn't the mini we still need. Promotion
-      // used to be unconditional — every lane rule was a FLOOR, so a bigger
-      // canvas was never the wrong one. `small-makes` (September 2026) is the
-      // first SIZE-CAPPED theme: an ornament motif is mini or small and nothing
-      // else, so promotion now has to ask, exactly as demotion always did. If
-      // nothing in the batch can hold a dense canvas the batch simply runs
-      // without one rather than blowing a bookmark motif up to 150 colours.
-      const candidates = out
-        .map((b, i) => ({ b, i, area: b.w * b.h }))
-        .filter(({ b }) => laneFits(b.themeId, b.subject, 'dense'))
-        .sort((a, b) => b.area - a.area)
-      const pickIdx = candidates[0]?.i
-      if (pickIdx != null) out[pickIdx] = applyLane(out[pickIdx]!, 'dense')
-    } else {
-      for (const i of dense.slice(1)) out[i] = applyLane(out[i]!, 'large')
-    }
-  } else {
-    for (const i of idxOf('dense')) out[i] = applyLane(out[i]!, 'large')
-  }
-
-  const denseIdx = out.findIndex((b) => b.lane === 'dense')
-
-  // ── mini: at least one, and never a detail style ─────────────────────────
-  // Only a subject that can SURVIVE mini is eligible. Batch 7 demoted a shopfront
-  // into it and got mush; the range rule is worth having, but not at the price of
-  // a guaranteed kill.
-  if (!out.some((b) => b.lane === 'mini')) {
-    const candidate = out
-      .map((b, i) => ({ b, i }))
-      .filter(({ b, i }) => i !== denseIdx && !DETAIL_STYLES.includes(b.style) && laneFits(b.themeId, b.subject, 'mini'))
-      .sort((a, b) => a.b.w * a.b.h - b.b.w * b.b.h)[0]
-    if (candidate) out[candidate.i] = applyLane(candidate.b, 'mini')
-  }
-
-  // ── large: at least one (the dense showpiece does not count) ──────────────
-  if (!out.some((b, i) => b.lane === 'large' && i !== denseIdx)) {
-    const candidate = out
-      .map((b, i) => ({ b, i }))
-      .filter(({ b, i }) => i !== denseIdx && b.lane !== 'mini' && laneFits(b.themeId, b.subject, 'large'))
-      .sort((a, b) => b.b.w * b.b.h - a.b.w * a.b.h)[0]
-    if (candidate) out[candidate.i] = applyLane(candidate.b, 'large')
-  }
-
-  // ── a couple of small/medium in between ──────────────────────────────────
-  // Take from the SURPLUS at either end — a second large, a second mini — never
-  // the single piece each extreme of the range needs.
-  const midCount = (): number => out.filter((b) => b.lane === 'small' || b.lane === 'medium').length
-  if (out.length >= 4) {
-    for (const lane of ['small', 'medium'] as const) {
-      if (midCount() >= 2) break
-      const surplus = [...idxOf('large').filter((i) => i !== denseIdx).slice(1), ...idxOf('mini').slice(1)].filter(
-        (i) => laneFits(out[i]!.themeId, out[i]!.subject, lane),
-      )
-      const i = surplus[0]
-      if (i == null) break
-      out[i] = applyLane(out[i]!, lane)
-    }
-  }
-  return out
 }
 
 // ───────────────────────────────── plan ─────────────────────────────────
@@ -881,7 +734,12 @@ export async function planModelBriefs(
  * the "a fox in a mustard raincoat" register it rejects, and filtering the
  * fallback to nothing would turn a slow Anthropic call into an empty batch.
  */
-export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, ctx: XsPlanContext = {}): CrossStitchBrief[] {
+export function finaliseBriefs(
+  modelBriefs: CrossStitchBrief[],
+  count: number,
+  ctx: XsPlanContext = {},
+  opts: { rng?: () => number } = {},
+): CrossStitchBrief[] {
   const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
   const batchKeys = new Set<string>()
   const seen = new Set<string>()
@@ -929,7 +787,14 @@ export function finaliseBriefs(modelBriefs: CrossStitchBrief[], count: number, c
     out.push(b)
   }
 
-  return enforceRange(out.slice(0, count), count)
+  const reserved = reserveQuickWin(out.slice(0, count), count, {
+    mintSlug: (themeId, subject) => mintSlug(themeId, subject, seen),
+    subjectKey: normaliseSubject,
+    plannerMode: PLANNER_MODE,
+    taken,
+    pickStyle: (theme) => pick(theme.styles),
+  })
+  return enforceRange(reserved, count, opts)
 }
 
 /** How many of a planned batch the model actually wrote. */

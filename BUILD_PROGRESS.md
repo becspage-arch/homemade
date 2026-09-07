@@ -48,10 +48,12 @@ the site-wide maker-photo system (`claude/maker-photos`, held for the loom
 session's word on collisions), `packages/search` (the proxy-aware client), and
 the `Pattern` fingerprint/outline/stitchability columns + `BulkRun` finaliser
 columns. Full state in `notes/project/project_cross_stitch_state.md`; the
-ordered list in `notes/todo.md`. The cron is OFF until the zero-API
-candidates conversion (`claude/xs-candidates`) lands; then a proof batch, the
-6-hourly cloud routine, the cron back on, needlework converted the same way,
-the personalised sampler job, fill to 1,784, close-out.
+ordered list in `notes/todo.md`. Train 12 shipped 6 September (deploy
+34032370254): the cron is back ON in candidates mode (no model call on the
+server; the six-hourly cloud routine judges), the proof batch was judged, the
+maker-photo system is live. Train 13 shipped the 34 personalised samplers
+("Make it yours", word art in the Studio). Nothing in flight on a branch. Then
+needlework converted the same way, fill to 1,818, close-out.
 
 ## Crochet bulk autopilot, driven by a Claude routine (2026-09-06)
 
@@ -236,9 +238,30 @@ in the market; we trailed on print quality, credibility and beginner entry):
 - **Shelves**: small-makes 60, christmas 80, coastal 60, folk-geometric 60
   added; seasonal 90→40; target 1,784. Admin category counts count patterns
   for pattern-led crafts.
-- Queued, agreed with Rebecca: loom photoreal heroes, the 200+ colour /
-  400+ cell and under-60 cell tiers, readings wired to the glossary, the
-  personalised sampler. No community features, ever.
+- **Personalised samplers** (`generation/samplers/`): 34 live on a held
+  `samplers` shelf (birth, wedding, new home, name-and-date, anniversary),
+  lettering set from glyph outlines on the server, motifs stored once;
+  "Make it yours" on the page with a live preview and "Stitch it"; a "Words"
+  tool in the Studio. Saving a copy and word art sit behind the premium
+  framework; the catalogue and the preview are free.
+- **Zero-API autopilot**: `gateMode` 'candidates' parks ideas as UNLISTED
+  candidates with no model call; `xs-candidates.ts` and the six-hourly cloud
+  routine (`docs/autopilot-prompts/cross-stitch.md`) judge them; the weekly
+  routine takes the second look.
+- **Two tiers** (7 September): `showpiece` (400–600 cells, 200–300 flosses on
+  Flux Pro, one per firing) and `quick` (40–60 cells, 6–14 flosses, its own
+  sticker look and clarity guard); 1,584 distinct symbols; the converter's
+  floss ceiling was two bugs, now fixed. Three showpieces and six quick wins
+  public. Re-rolls no longer collide with their own earlier roll.
+- **Readings** (7 September): eight READING pieces with inline glossary marks,
+  a "Start here" list on the category page, glossary tips on the stitch
+  library, the uploader's hero-clearing defect fixed.
+- **Studio tracker** (7 September) ticks back-stitch, knots and fractionals
+  done, with line hit-testing and counts in cells of line.
+- **Routine sessions** get `.env.credentials` (the hook guard now recognises
+  the cloud VM; the 6 September judging routines ran without it).
+- Queued, agreed with Rebecca: loom photoreal heroes (needs the crochet
+  session's loom builder). No community features, ever.
 
 ## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
 

@@ -4,13 +4,7 @@ import { Check } from 'lucide-react'
 import { headers } from 'next/headers'
 import { after } from 'next/server'
 import { notFound } from 'next/navigation'
-import {
-  prisma,
-  Visibility,
-  parsePatternData,
-  estimateSkeinCount,
-  STITCHABILITY_BANDS,
-} from '@homemade/db'
+import { prisma, Visibility, STITCHABILITY_BANDS } from '@homemade/db'
 import { bumpPatternView } from '@/lib/popularity'
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { buildBreadcrumbSchema, absoluteImageUrl } from '@/lib/seo/schema-builders'
@@ -26,9 +20,12 @@ import {
   FLOSS_BRAND_LABEL,
   type FlossOwnership,
 } from '@/lib/floss/stash-ownership'
+import { PersonaliseSection } from '@/components/public/samplers/personalise-section'
+import { samplerMetaOf, samplerPreviewBase } from '@/lib/studio/generation/samplers/load'
 import { MakerPhotos } from '@/components/public/maker-photos/maker-photos'
 import { loadMakerPhotos } from '@/lib/maker-photos'
 import { FabricCalculator } from './fabric-calculator'
+import { getPatternFlossSummary } from './floss-summary'
 import { FlossShoppingList } from './floss-shopping-list'
 import { PdfDownload } from './pdf-download'
 import { SpecTip } from './spec-tip'
@@ -73,14 +70,36 @@ export async function generateMetadata({ params }: Pick<PageProps, 'params'>): P
 export default async function PatternDetailPage({ params, searchParams }: PageProps) {
   const { slug } = await params
   const sp = await searchParams
+  // Field-by-field rather than `include`, which would also pull `data` — the
+  // chart itself, six megabytes of cells on a showpiece, for a page that never
+  // draws a single one of them. The floss key it does draw comes from
+  // getPatternFlossSummary below.
   const row = await prisma.pattern.findUnique({
     where: { slug },
-    include: {
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      ownerUserId: true,
+      visibility: true,
+      updatedAt: true,
+      widthCells: true,
+      heightCells: true,
+      colourCount: true,
+      totalStitches: true,
+      fabricCountSuggested: true,
+      difficulty: true,
+      estimatedHours: true,
+      hasBackstitch: true,
+      hasFrenchKnots: true,
+      stitchability: true,
+      premium: true,
+      subCategoryId: true,
+      generationMeta: true,
       designer: { select: { displayName: true, slug: true, bio: true, isHouseDesigner: true } },
       subCategory: { select: { slug: true, name: true } },
       hero: { select: { cloudflareId: true, r2Key: true } },
       thumbnail: { select: { cloudflareId: true, r2Key: true } },
-      license: true,
     },
   })
   if (!row || row.ownerUserId !== null || row.visibility !== Visibility.PUBLIC) notFound()
@@ -99,18 +118,18 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
     try { await bumpPatternView(row.id) } catch { /* best-effort counter */ }
   })
 
-  let data
-  try { data = parsePatternData(row.data) } catch { notFound() }
+  // The floss key, cached off the row's updatedAt. Null means the stored chart
+  // is missing or malformed, which is the same unrenderable page a failed parse
+  // used to produce.
+  const floss = await getPatternFlossSummary(row.id, row.updatedAt)
+  if (!floss) notFound()
 
   const finishedW = (row.widthCells / row.fabricCountSuggested) * 2.54
   const finishedH = (row.heightCells / row.fabricCountSuggested) * 2.54
 
-  // Per-colour skein estimates, worked out once. The total in the spec table,
-  // the ownership maths, and the floss list all read the same numbers.
-  const skeinBySymbol = new Map(
-    data.palette.map((p) => [p.symbol, estimateSkeinCount(data, p.symbol)] as const),
-  )
-  const totalSkein = [...skeinBySymbol.values()].reduce((sum, n) => sum + n, 0)
+  // The spec table's skein total, the ownership maths and the floss list all
+  // read the same per-colour numbers, out of the one summary.
+  const totalSkein = floss.totalSkeins
 
   // How the chart feels under the needle. Computed off the grid at save time
   // and stored on the row; older rows the backfill hasn't reached simply show
@@ -133,6 +152,12 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
       : difficultyLabel
         ? difficultyLabel
         : (band?.label ?? '')
+
+  // A sampler carries a lettering recipe beside its chart. When it does, the
+  // page grows a "Make it yours" section: the maker types their own name and
+  // date and watches this chart become theirs. Everything else on the page is
+  // unchanged, and a pattern without the recipe never sees it.
+  const sampler = samplerMetaOf(row.generationMeta)
 
   const related = await prisma.pattern.findMany({
     where: {
@@ -235,13 +260,13 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
   const ownership: FlossOwnership | null =
     stashRows.length > 0
       ? computeFlossOwnership(
-          data.palette.map((p) => ({
-            symbol: p.symbol,
-            brand: p.brand,
-            code: p.code,
-            name: p.name,
-            rgb: p.rgb,
-            skeinsNeeded: skeinBySymbol.get(p.symbol) ?? 0,
+          floss.lines.map((line) => ({
+            symbol: line.symbol,
+            brand: line.brand,
+            code: line.code,
+            name: line.name,
+            rgb: line.rgb,
+            skeinsNeeded: line.skeins,
           })),
           stashRows,
         )
@@ -371,6 +396,20 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
         </div>
       </header>
 
+      {sampler && (
+        <PersonaliseSection
+          patternId={row.id}
+          patternName={row.name}
+          kind={sampler.kind}
+          values={sampler.values}
+          previewBaseUrl={samplerPreviewBase(row.generationMeta)}
+          gridWidth={row.widthCells}
+          gridHeight={row.heightCells}
+          isPremium={premium}
+          patternPath={patternPath}
+        />
+      )}
+
       <MakerPhotos
         photos={makerPhotos}
         signedIn={Boolean(user)}
@@ -435,9 +474,9 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
         )}
 
         <ul>
-          {data.palette.map((p) => {
-            const stitches = data.grid.cells.filter((c) => c.s === p.symbol).length
-            const skein = skeinBySymbol.get(p.symbol) ?? 0
+          {floss.lines.map((p) => {
+            const stitches = p.stitches
+            const skein = p.skeins
             const owned = ownedSymbols.has(p.symbol)
             return (
               <li key={p.symbol} className={owned ? 'is-owned' : undefined}>

@@ -12,7 +12,7 @@ Rebecca said server-side sync should not be premium because free
 users need reasons to log in, and seeing progress on multiple
 devices is one of them.
 
-**OVERRIDE 2026-06-20 — see [[project_premium_free_spec.md]] (canonical).**
+**OVERRIDE 2026-06-20 — see [[project/project_premium_free_spec]] (canonical).**
 The "Studio works in anonymous mode" rule below was reversed: the Studio
 is now FREE-SIGNED-IN, not anonymous. Anonymous users VIEW free content
 (full pattern pages, instructions, all info) but cannot use the Studio,

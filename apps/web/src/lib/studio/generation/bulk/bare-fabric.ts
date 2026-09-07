@@ -412,7 +412,7 @@ export function clearBackground(data: PatternData): ClearedBackground {
  * is a deliberate flat expanse, not the "clean white background" the other
  * style prompts ask Flux for.
  */
-const FULL_COVERAGE_LANES: ReadonlySet<string> = new Set(['dense'])
+const FULL_COVERAGE_LANES: ReadonlySet<string> = new Set(['dense', 'showpiece'])
 const FULL_COVERAGE_STYLES: ReadonlySet<string> = new Set(['scene', 'showpiece', 'landscape'])
 
 /**

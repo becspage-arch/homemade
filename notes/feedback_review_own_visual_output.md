@@ -12,7 +12,7 @@ template mockup without critically looking at it; she immediately spotted it was
 "extremely crude in comparison" to her reference images and told me to review my work
 before sending.
 
-**Why:** the [[project_category_signoff_flow]] vision gate ("LOOK at every render,
+**Why:** the [[playbook_category_signoff]] vision gate ("LOOK at every render,
 never assert quality from an unseen file") applies to MY OWN outputs too, not just
 generated content. Sending something visibly below the agreed bar wastes her time and
 erodes trust that I'm holding the standard.

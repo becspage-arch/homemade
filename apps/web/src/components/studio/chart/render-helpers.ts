@@ -73,6 +73,26 @@ export function shiftColour(hex: string, amount: number): string {
   return '#' + out.toString(16).padStart(6, '0')
 }
 
+/**
+ * Blend two #RRGGBB colours. `t` is how far to travel from `a` to `b`, so
+ * `mixColour(floss, fabric, 0.55)` is the washed-out tone worked line and
+ * point work is drawn in — the colour is still recognisably the floss, but
+ * it has plainly been covered.
+ */
+export function mixColour(a: string, b: string, t: number): string {
+  const pa = /^#?([0-9a-fA-F]{6})$/.exec(a)
+  const pb = /^#?([0-9a-fA-F]{6})$/.exec(b)
+  if (!pa?.[1] || !pb?.[1]) return a
+  const k = t < 0 ? 0 : t > 1 ? 1 : t
+  const channel = (i: number) => {
+    const ca = parseInt(pa[1]!.slice(i, i + 2), 16)
+    const cb = parseInt(pb[1]!.slice(i, i + 2), 16)
+    return Math.max(0, Math.min(255, Math.round(ca + (cb - ca) * k)))
+  }
+  const out = (channel(0) << 16) | (channel(2) << 8) | channel(4)
+  return '#' + out.toString(16).padStart(6, '0')
+}
+
 /** Returns 'dark' or 'light' depending on the perceived brightness of
  *  the given hex colour. Used to pick a legible symbol-overlay colour. */
 export function symbolOnFill(hex: string): string {
@@ -463,9 +483,27 @@ export function screenToCell(
   viewport: Viewport,
   cellPx: number = DEFAULT_CELL_PX,
 ): { x: number; y: number } {
-  const worldX = (screenX - viewport.panX) / (cellPx * viewport.scale)
-  const worldY = (screenY - viewport.panY) / (cellPx * viewport.scale)
-  return { x: Math.floor(worldX), y: Math.floor(worldY) }
+  const point = screenToCellPoint(screenX, screenY, viewport, cellPx)
+  return { x: Math.floor(point.x), y: Math.floor(point.y) }
+}
+
+/**
+ * The same conversion without the floor: the pointer's position in CELL
+ * UNITS, fractions and all. Line and point work do not live on square
+ * boundaries — a back-stitch segment runs corner to corner and a knot sits
+ * in the middle of a square — so hit-testing them needs the real position,
+ * not the square it happens to be over.
+ */
+export function screenToCellPoint(
+  screenX: number,
+  screenY: number,
+  viewport: Viewport,
+  cellPx: number = DEFAULT_CELL_PX,
+): { x: number; y: number } {
+  return {
+    x: (screenX - viewport.panX) / (cellPx * viewport.scale),
+    y: (screenY - viewport.panY) / (cellPx * viewport.scale),
+  }
 }
 
 /** Convert a cell-corner world coordinate (allowing non-integer cell

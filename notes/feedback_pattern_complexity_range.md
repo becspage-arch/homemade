@@ -30,3 +30,5 @@ reducing the needlework peony from 103 → 20-40 colours; corrected 2026-06-30).
 
 Applies alongside [[feedback_cross_stitch_world_class_bar]] and the AI-design system's
 "vary on four axes" brief rule. See [[project_cross_stitch]], [[project_needlework_signoff]].
+
+(Cross-reference note, 2026-09-06: `[[project_cross_stitch]]` and `[[project_needlework_signoff]]` are not in notes/; cross-stitch state is `project/project_cross_stitch_state.md` and there is no needlework note.)

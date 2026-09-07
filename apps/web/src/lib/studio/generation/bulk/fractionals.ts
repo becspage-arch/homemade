@@ -272,12 +272,19 @@ export function deriveFractionals(
  */
 export function smoothingWantedFor(
   data: PatternData,
-  ctx: { shelf?: string | null } = {},
+  ctx: { shelf?: string | null; lane?: string | null } = {},
 ): { yes: boolean; reason: string } {
   if (data.grid.fractional.length > 0) {
     return { yes: false, reason: 'chart already carries fractional stitches' }
   }
   if (ctx.shelf === 'monochrome') return { yes: false, reason: 'the monochrome shelf is line work' }
+  // The heirloom tier is whole crosses, as the pieces it is judged against are.
+  // At 400–600 cells a colour boundary is already a fine step, so a shared cell
+  // buys nothing an eye can see and costs the stitcher a fiddly stitch — and
+  // there would be tens of thousands of them.
+  if (ctx.lane === 'showpiece') {
+    return { yes: false, reason: 'showpiece tier — whole crosses, the steps are already fine at this size' }
+  }
   const lineWork = looksLikeLineWork(data)
   if (lineWork.yes) return { yes: false, reason: lineWork.reason }
   return { yes: true, reason: 'stair-stepped diagonals are worth smoothing' }

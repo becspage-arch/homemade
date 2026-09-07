@@ -8,6 +8,7 @@ import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 import { StitchGlyph } from '@/components/public/stitch-glyph'
 import { getStitchReference, REFERENCE_CRAFTS } from '@/lib/stitch-reference'
 import { StitchReferenceControls } from './StitchReferenceControls'
+import { StitchGlossaryTip } from './StitchGlossaryTip'
 
 import './stitches-page.css'
 
@@ -142,6 +143,12 @@ export default async function StitchGuidePage({ params }: PageProps) {
                             {s.usAbbreviation ?? s.ukAbbreviation}
                           </span>
                         </code>
+                      )}
+                      {s.glossaryTerm && (
+                        <StitchGlossaryTip
+                          term={s.glossaryTerm.term}
+                          definition={s.glossaryTerm.definition}
+                        />
                       )}
                     </div>
                     {s.workingSteps ? (

@@ -112,14 +112,21 @@ When both checks pass, the session is done.
   `deploy`. Use `pnpm --filter X exec cdk deploy` for CDK.
 - `apps/web/src/proxy.ts` is the Next.js 16 rename of `middleware.ts`.
 - Admin lives at `/admin` inside `apps/web`, not a separate app.
-- Public bundle stays TipTap-free — the editor (admin) imports `@tiptap/*`,
-  the public renderer walks the JSON with plain React.
-- Prisma 7's datasource `url` lives in `prisma.config.ts`, not in the
-  `schema.prisma` `datasource` block.
-- For Bash invocations the harness needs
-  `PATH="$PATH:$HOME/AppData/Roaming/npm"` so pnpm resolves.
-- Running DB/publish ops (tsx importing `@homemade/db`): a worktree resolves it
-  after ONE `pnpm install --frozen-lockfile --prefer-offline` in the worktree
+- The public tutorial RENDERER stays TipTap-free — the editor (admin) imports
+  `@tiptap/*`, and `components/public/tutorial-content/` walks the JSON with
+  plain React (type-only `@tiptap/core` imports are erased at build). The one
+  runtime `@tiptap/react` import under `components/public/` is the member
+  recipe editor, `recipes/recipe-body-editor.tsx`; don't add another.
+- Prisma 7's datasource `url` lives in `packages/db/prisma.config.ts`, not in
+  the `schema.prisma` `datasource` block.
+- Resolving pnpm depends on where the session runs: on Rebecca's laptop the
+  harness needs `PATH="$PATH:$HOME/AppData/Roaming/npm"`; in a cloud session it
+  is `export PATH=$HOME/.local/bin:$PATH` (which is also where `aws` and `gh`
+  live). The workspace pins `pnpm@11.0.9`.
+- Running DB/publish ops (tsx importing `@homemade/db`): the database is reached
+  only over the Neon WebSocket path (`PG_VIA_HTTPS_PROXY=1`, already in
+  `.env.credentials`) — never a tunnel, a listener or `psql`. A worktree resolves
+  the package after ONE `pnpm install --frozen-lockfile --prefer-offline` in the worktree
   (~3 min, hardlinks from the global pnpm store; verified — it then queries the
   live DB fine). PREFER this: the session stays fully in its own worktree and
   never touches the shared main checkout. The main checkout also resolves it
@@ -127,6 +134,13 @@ When both checks pass, the session is done.
   shared checkout clean: name throwaway scripts `*.tmp.ts` (gitignored), never
   run `git add -A` there, and PUSH from a clean worktree — never commit a working
   tree full of stray junk/deletions; that's how a deploy gets polluted.
+- `packages/db/scripts/*` load `../../.env.credentials` themselves;
+  `apps/web/scripts/*` take `HOMEMADE_ENV_FILE`, so run those as
+  `cd apps/web && HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/<x>.ts`.
+- Taking a category public is a CODE change: `LAUNCH_VISIBLE_CATEGORY_SLUGS` in
+  `packages/db/scripts/enforce-launch-visibility.ts` (today: cooking, baking,
+  cross-stitch, needlework). A direct `isPublicVisible` write is reverted on the
+  next deploy.
 
 ## Cloud sessions
 
