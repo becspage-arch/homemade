@@ -236,6 +236,24 @@ Add a fourth line only if something is stuck: the cron has not fired, the sheets
 would not build, a script failed. Say what happened and stop rather than working
 round it.
 
+Record it with the CLI, from `apps/web` — this is how the report actually
+reaches Rebecca, not a step to skip:
+
+```bash
+HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts report --as <name> --kind judging --text "<the three (or four) lines above>"
+```
+
+`--as` is the same session label the `keep`/`reject`/`reroll` commands took.
+The command prepends the report to `BulkAutopilotState.judgingReports` (craft
+`cross-stitch`), keeps the last 20, and prints what it wrote so you can check
+it landed. It shows on the admin bulk-generation page's cross-stitch card —
+the latest report at a glance, the last few behind a fold. There is no branch
+to push and nothing for the orchestrator to merge: the report lives on the row
+the admin page already reads, because a routine session cannot push a branch
+or message another session. `--file <path>` takes the text from a file
+instead of `--text`, for a report too long to fit comfortably on a command
+line.
+
 ## Never
 
 - Never merge to `main`, never open a PR, never force-push.

@@ -1,6 +1,7 @@
 import 'server-only'
 import { prisma } from '@homemade/db'
 import type { Craft } from './run'
+import type { JudgingReportEntry } from './candidates'
 
 /**
  * DB-backed autopilot switch per craft. The bulk cron reads this to decide
@@ -186,4 +187,17 @@ export async function setMakerPhotoGateMode(mode: PhotoGateMode, userId?: string
     create: { craft: PHOTO_GATE_STATE_KEY, enabled: false, photoGateMode: mode, updatedById: userId ?? null },
     update: { photoGateMode: mode, updatedById: userId ?? null },
   })
+}
+
+/**
+ * ── THE JUDGING REPORT READER ──────────────────────────────────────────────
+ *
+ * The last `MAX_JUDGING_REPORTS` reports a judging routine has left on the
+ * craft's row, newest first — written by `addJudgingReport` in
+ * `candidates.ts` via `xs-candidates.ts report`. What the admin
+ * bulk-generation page's cross-stitch card reads.
+ */
+export async function judgingReports(craft: Craft): Promise<JudgingReportEntry[]> {
+  const row = await prisma.bulkAutopilotState.findUnique({ where: { craft }, select: { judgingReports: true } })
+  return Array.isArray(row?.judgingReports) ? (row.judgingReports as unknown as JudgingReportEntry[]) : []
 }

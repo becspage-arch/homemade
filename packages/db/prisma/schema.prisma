@@ -3626,6 +3626,12 @@ model BulkAutopilotState {
   /// Stored on the row with craft 'maker-photos'. MAKER_PHOTO_GATE_MODE
   /// overrides it for ops.
   photoGateMode String @default("api")
+  /// The last 20 reports a judging routine has left on this row, newest
+  /// first, as `{ at, by, kind, text }[]` (`kind` 'judging' | 'weekly').
+  /// A routine session cannot push a branch or message another session, so
+  /// the report lives here instead — the admin bulk-generation page already
+  /// reads this row on every load.
+  judgingReports Json?
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }
