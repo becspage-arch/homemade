@@ -237,9 +237,20 @@ in the market; we trailed on print quality, credibility and beginner entry):
   candidates with no model call; `xs-candidates.ts` and the six-hourly cloud
   routine (`docs/autopilot-prompts/cross-stitch.md`) judge them; the weekly
   routine takes the second look.
-- Queued, agreed with Rebecca: loom photoreal heroes, the 200+ colour /
-  400+ cell and under-60 cell tiers, readings wired to the glossary. No
-  community features, ever.
+- **Two tiers** (7 September): `showpiece` (400–600 cells, 200–300 flosses on
+  Flux Pro, one per firing) and `quick` (40–60 cells, 6–14 flosses, its own
+  sticker look and clarity guard); 1,584 distinct symbols; the converter's
+  floss ceiling was two bugs, now fixed. Three showpieces and six quick wins
+  public. Re-rolls no longer collide with their own earlier roll.
+- **Readings** (7 September): eight READING pieces with inline glossary marks,
+  a "Start here" list on the category page, glossary tips on the stitch
+  library, the uploader's hero-clearing defect fixed.
+- **Studio tracker** (7 September) ticks back-stitch, knots and fractionals
+  done, with line hit-testing and counts in cells of line.
+- **Routine sessions** get `.env.credentials` (the hook guard now recognises
+  the cloud VM; the 6 September judging routines ran without it).
+- Queued, agreed with Rebecca: loom photoreal heroes (needs the crochet
+  session's loom builder). No community features, ever.
 
 ## Cross-stitch: audit, dedupe, and the self-running cloud autopilot (2026-09-05/06)
 

@@ -27,8 +27,19 @@ Dedupe guard and fingerprints; planner rewrite; run finaliser and alerts; Fal ca
 ## Samplers (train 13, 6 September)
 34 personalised samplers live on the `samplers` shelf (held, target 34 = its size; category target now 1,818): birth 7, wedding 7, new home 6, name-and-date 7, anniversary 7, from a 2-colour hoop to a 39-colour wreath. Lettering is set from glyph outlines on the server (`apps/web/src/lib/studio/generation/samplers/`), never drawn by a model; twelve motifs came from Flux schnell (about $0.16 in total) and are stored once. "Make it yours" on a sampler's page: the fields for that kind, a live preview, "Stitch it" saves the member's own copy (PRIVATE, owned) and opens the Studio. "Words" in the Studio toolbar is the word-art tool. Premium line as the spec has it: the catalogue samplers and the preview are free (stitching needs the free account as everywhere); saving a personalised copy and the word-art tool sit behind `hasPremium` in `POST /api/studio/samplers/create` and `POST /api/studio/word-art`. Not verified by a signed-in click from the cloud (Clerk's script is blocked here); verified by `xs-samplers-verify.ts` against the live DB and `next build`.
 
+## Trains 14 and 15 (7 September, early)
+- Studio tracker ticks back-stitch, French knots and fractionals done (`bs:x1,y1,x2,y2`, `kn:x,y`, `fr:x,y,corner,kind` keys beside `cellKey`; hit-testing in `components/studio/chart/hit-test.ts`; counts in cells of line; old keys untouched, no migration).
+- Eight cross-stitch READING pieces live with inline glossary marks (52 glossary terms), a "Start here" list on the category page, glossary tips on `/stitches/cross-stitch`, and the `upload-tutorial.ts` hero-clearing defect fixed.
+- Two new lanes: `showpiece` (400–600 cells, 200–300 flosses, Flux Pro, one per firing, own guard in `bulk/showpiece.ts`) and `quick` (40–60 cells, 6–14 flosses, its own `quickwin` look, mitchell downscale under 90 cells, clarity guard); 1,584 distinct symbols; the converter's floss ceiling was two bugs (`applyPaletteSync` re-quantising its own output; the DMC snap re-merging swatches), now fixed with a capacity-aware snap. Three showpieces (224–256 flosses) and six quick wins public. A 600×408 chart is 737 KB gzipped and its hero renders in 0.2 s; its A4 PDF is 72 chart pages.
+- Dedupe: a re-roll no longer collides with its own earlier roll (the old row retires as "re-rolled"); subjects killed as duplicates in the last twelve runs join the planner's avoid list (`BulkRun.duplicateSubjectKeys`, migration 20261015000000).
+- The routine-session credentials defect (below) fixed on train 14.
+- Memory audit: 34 notes files corrected against the repo and the live DB; `notes/todo.md` is a running list of what is left.
+
+## Known defect fixed 7 September: routine sessions had no credentials
+A session started by a scheduled routine does not set `CLAUDE_CODE_REMOTE=true`, so `scripts/cloud-session-setup.sh` exited at once and the 13:30 and 19:30 judging routines on 6 September ran with no `.env.credentials` (the 19:30 one blocked on a permission prompt trying to run the script by hand; archived). The guard now also recognises the cloud VM (DATABASE_URL set, `/home/user`, no USERPROFILE), the script is on the permissions allow list, and both routine prompts check for the file first. The 01:30 firing on 7 September is the first real test; 54 candidates were waiting.
+
 ## In flight (branches)
-- Nothing on a branch. The cron and the two routines are the only moving parts.
+- Nothing on a branch. The cron and the two routines are the only moving parts. Still to do: `seed-stitches.ts` drift; the small `xs-candidates.ts --as` parse quirk (the label is also reported as a not-found slug); a faint grey halo on the weakest quick wins where bare-fabric clearing leaves the antialiased edge.
 
 ## Next, in order
 (Corrected 2026-09-06: the sampler job shipped on train 13, so it is no longer a next step, and the list had two items numbered 2. The same order lives in `todo.md`.)
