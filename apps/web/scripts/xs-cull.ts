@@ -88,7 +88,7 @@ async function main(): Promise<void> {
   )
   if (searchAttempted > 0) {
     console.log(
-      'Search removal is best-effort — @homemade/search logs its own failures rather than throwing, and the Typesense SDK cannot reach Typesense from a cloud sandbox. Run the server-side reindex (Inngest `tutorials/reindex.requested`) to be certain the index matches the database.',
+      'Search removal is best-effort — @homemade/search logs its own failures rather than throwing, and cloud sessions reach Typesense through the proxy, so a removal that logged an error needs the server-side reindex (Inngest `tutorials/reindex.requested`) to be certain the index matches the database.',
     )
   }
   console.log(`PUBLIC house cross-stitch patterns now: ${publicCount}`)
