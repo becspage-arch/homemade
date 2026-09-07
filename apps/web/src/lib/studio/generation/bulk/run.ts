@@ -6,6 +6,7 @@ import {
   publishCrossStitchGem,
   uploadRejectSample,
   recordDuplicateSubject,
+  SHOWPIECE_LANE,
   type CandidateTweak,
   type RejectSample,
 } from './cross-stitch'
@@ -21,6 +22,7 @@ import {
 } from './dedupe-guard'
 import { judgeVividness } from './vividness'
 import { quickWinVerdict } from './quick-win'
+import { showpieceVerdict } from './showpiece'
 import { crossStitchGateMode, type XsGateMode, type XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
@@ -29,6 +31,7 @@ import { setShelfCaps } from './subject-pool'
 
 /** The under-60-cell tier — the one lane the quick-win clarity guard runs on. */
 export const QUICK_LANE = 'quick'
+
 import {
   generateNeedleworkCandidate,
   publishNeedleworkGem,
@@ -395,6 +398,27 @@ export async function crossStitchCandidateAttempt(
           clarity.reasons,
           candidate.colourCount,
         )),
+      }
+    }
+  }
+
+  // THE SHOWPIECE GUARD — the same shape as the quick-win one, on the tier at
+  // the other end. A heirloom chart that came back with ninety stands in it is
+  // a dense-lane chart at heirloom size, and the tier's claim is the floss
+  // count. The converter has already climbed as far as the picture allowed, so
+  // the repair is a plain re-roll onto a different picture rather than an
+  // instruction to find colours that are not there.
+  if (brief.lane === SHOWPIECE_LANE) {
+    const tier = showpieceVerdict(candidate.data)
+    if (!tier.ok) {
+      const lastShot = attempt >= MAX_XS_CANDIDATE_ATTEMPTS
+      return {
+        verdict: lastShot ? 'kill' : 'repair',
+        reasons: tier.reasons,
+        ...(lastShot ? {} : { repairAction: 'reroll' as const }),
+        published: false,
+        pro: candidate.pro,
+        ...(await sampleFor(candidate.renderPng, brief, ctx, lastShot ? 'kill' : 'repair', tier.reasons, candidate.colourCount)),
       }
     }
   }

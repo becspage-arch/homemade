@@ -126,6 +126,34 @@ export const SHOWPIECE_LANE = 'showpiece'
 export const MAX_CHART_COLOURS = 320
 
 /**
+ * The stand count the heirloom lane aims the converter at — the MIDDLE of the
+ * tier's 200–300 band, not either edge.
+ *
+ * The converter's ladder keeps the rung nearest the target and stops climbing
+ * once it reaches it, so the target is where charts cluster. Aiming at the
+ * bottom put the cluster on the wrong side of the guard: a rung landing at 195
+ * beats one landing at 235 on distance to 200, and 195 fails the tier. Aiming
+ * at the middle means both neighbouring rungs are inside the band.
+ *
+ * A subject whose gamut cannot reach the bottom of the band lands short and is
+ * caught by the lane's own guard rather than being padded out with stands that
+ * are not really in the picture.
+ */
+export const SHOWPIECE_FLOSS_TARGET = 250
+
+/**
+ * The quantiser ceiling the heirloom lane hands the converter.
+ *
+ * Not a colour count: it is how many RGB swatches the quantiser may work in
+ * before the snap to DMC turns them into stands. The converter's floss-target
+ * ladder climbs to four times the target looking for enough separable
+ * near-neighbours, so the ceiling has to sit above that or the top rung is
+ * never actually tried. Well inside the 1,584-glyph symbol catalogue either
+ * way, so no chart can outrun its own key.
+ */
+export const SHOWPIECE_QUANTISER_CEILING = 840
+
+/**
  * A repair tweak from the vision gate — applied on a re-roll to fix a fixable
  * fault (mirrors GATE_CHECKLIST's repair table). Every re-roll also re-rolls the
  * stochastic Flux generation, which fixes most cut-off / garbled / off-subject
@@ -190,7 +218,19 @@ export async function generateCrossStitchCandidate(
     brand: 'DMC',
     confettiMin: dense ? 'high' : 'medium',
     backgroundRemoval: false,
-    ...(dense ? { maxColours: brief.colours, flossRange: 'full' as const } : {}),
+    // The dense tier lifts the floss ceiling and takes the full DMC range. The
+    // heirloom tier goes further: its headline is the STAND COUNT, and asking
+    // the quantiser for 300 RGB colours measured out at 131 stands because the
+    // snap to DMC collapses several swatches onto one. So it names the count it
+    // wants and lets the converter climb to it, with the quantiser ceiling
+    // raised out of the way so there is room to climb.
+    ...(dense
+      ? {
+          maxColours: showpiece ? SHOWPIECE_QUANTISER_CEILING : brief.colours,
+          flossRange: 'full' as const,
+          ...(showpiece ? { flossTarget: SHOWPIECE_FLOSS_TARGET } : {}),
+        }
+      : {}),
   })
   data.fabric.colourRgb = FABRIC
 

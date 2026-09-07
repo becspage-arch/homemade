@@ -25,6 +25,13 @@ import {
   DENSE_BATCH_FLOOR,
 } from './range'
 import {
+  showpieceVerdict,
+  SHOWPIECE_MIN_COLOURS,
+  SHOWPIECE_MAX_COLOURS,
+  SHOWPIECE_MIN_CELLS,
+} from './showpiece'
+import { SYMBOL_GLYPHS } from '@/lib/studio/symbol-assignment'
+import {
   quickWinVerdict,
   measureQuickWin,
   QUICK_MAX_COLOURS,
@@ -380,6 +387,71 @@ function hslHex(h: number, s: number, l: number): string {
     hp < 1 ? [c, x, 0] : hp < 2 ? [x, c, 0] : hp < 3 ? [0, c, x] : hp < 4 ? [0, x, c] : hp < 5 ? [x, 0, c] : [c, 0, x]
   const m = l - c / 2
   return `#${[r1, g1, b1].map((v) => Math.round((v + m) * 255).toString(16).padStart(2, '0')).join('')}`
+}
+
+
+// ─────────────────────── the showpiece guard ───────────────────────
+
+record('an heirloom chart inside its bands passes', () => {
+  const v = showpieceVerdict(bandChart(500, 500, 234))
+  assert.deepEqual(v.reasons, [])
+  assert.ok(v.ok)
+})
+
+record('an heirloom-sized chart short of the floss floor is refused', () => {
+  const v = showpieceVerdict(bandChart(500, 500, 122))
+  assert.ok(!v.ok)
+  assert.ok(
+    v.reasons.some((r) => r.includes(`under the ${SHOWPIECE_MIN_COLOURS}`)),
+    v.reasons.join(' / '),
+  )
+})
+
+record('a chart past the top of the floss band is refused too', () => {
+  const v = showpieceVerdict(bandChart(500, 500, SHOWPIECE_MAX_COLOURS + 20))
+  assert.ok(!v.ok)
+  assert.ok(v.reasons.some((r) => r.includes('printed key')), v.reasons.join(' / '))
+})
+
+record('the guard checks the size band as well as the colours', () => {
+  const v = showpieceVerdict(bandChart(240, 240, 234))
+  assert.ok(!v.ok)
+  assert.ok(v.reasons.some((r) => r.includes(`${SHOWPIECE_MIN_CELLS}`)), v.reasons.join(' / '))
+})
+
+record('the symbol catalogue covers a chart at the top of the heirloom band', () => {
+  // The tier's headline is 200–300 distinct symbols on one chart, in the
+  // working chart, the print legend and the Studio key alike. They all read the
+  // same catalogue, so the catalogue covering the band is the whole of it.
+  assert.ok(
+    SYMBOL_GLYPHS.length >= SHOWPIECE_MAX_COLOURS,
+    `${SYMBOL_GLYPHS.length} glyphs cannot symbolise a ${SHOWPIECE_MAX_COLOURS}-colour chart`,
+  )
+  assert.equal(new Set(SYMBOL_GLYPHS).size, SYMBOL_GLYPHS.length, 'the catalogue repeats a glyph')
+  const top = bandChart(500, 500, SHOWPIECE_MAX_COLOURS)
+  assert.equal(top.palette.length, SHOWPIECE_MAX_COLOURS)
+  assert.equal(new Set(top.palette.map((p) => p.symbol)).size, SHOWPIECE_MAX_COLOURS)
+})
+
+/** A chart of horizontal bands, one per colour — enough colours for the
+ *  heirloom tier, so it draws its symbols from the real catalogue. */
+function bandChart(w: number, h: number, colours: number): PatternData {
+  const palette = Array.from({ length: colours }, (_, i) => ({
+    symbol: SYMBOL_GLYPHS[i]!,
+    brand: 'DMC' as const,
+    code: `T${i}`,
+    name: `Test ${i}`,
+    rgb: hslHex((i * 47) % 360, 0.6, 0.3 + 0.4 * ((i % 5) / 4)),
+    strandsFullCross: 2,
+    strandsBackstitch: 1,
+  }))
+  const cells: Array<{ x: number; y: number; s: string }> = []
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      cells.push({ x, y, s: palette[Math.min(colours - 1, Math.floor((y / h) * colours))]!.symbol })
+    }
+  }
+  return chart(w, h, cells, palette)
 }
 
 // ─────────────────────────── report ───────────────────────────

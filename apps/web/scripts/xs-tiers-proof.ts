@@ -19,10 +19,15 @@
  *
  * Run from apps/web:
  *
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-tiers-proof.ts \
- *     --lane showpiece --count 3 --out ../../scratchpad/showpiece
- *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-tiers-proof.ts \
- *     --lane quick --count 6 --out ../../scratchpad/quick
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server \
+ *     scripts/xs-tiers-proof.ts --lane showpiece --count 3 --out ../../scratchpad/showpiece
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx --conditions=react-server \
+ *     scripts/xs-tiers-proof.ts --lane quick --count 6 --out ../../scratchpad/quick
+ *
+ * `--conditions=react-server` is load-bearing: the bulk modules carry Next's
+ * `server-only` marker, which throws outside a server component unless that
+ * export condition resolves it to the empty module. It is the same code the
+ * ECS job runs either way.
  *
  * `--plan-only` prints the briefs and spends nothing, which is the right first
  * run: a showpiece generation is a Flux 1.1 Pro call.
@@ -56,6 +61,7 @@ import {
   type LaneName,
 } from '@/lib/studio/generation/bulk/subject-pool'
 import { lanesForSubject } from '@/lib/studio/generation/bulk/brief-filter'
+import { isTextRiskSubject } from '@/lib/studio/generation/bulk/subject-pool'
 import { subjectKey } from '@/lib/studio/generation/bulk/subject-key'
 import { publicSubjectKeys } from '@/lib/studio/generation/bulk/dedupe-guard'
 import { crossStitchCandidateAttempt, MAX_XS_CANDIDATE_ATTEMPTS, tweakFor } from '@/lib/studio/generation/bulk/run'
@@ -88,6 +94,11 @@ function subjectsForLane(lane: LaneName): Array<{ theme: CrossStitchTheme; subje
       ...(theme.laneOverrides ? { overrides: theme.laneOverrides } : {}),
     }
     for (const subject of theme.examples) {
+      // A lettering-risk subject is legal in the two big lanes, but it is not
+      // what a proof should be judged on: the fault it risks is Flux writing
+      // gibberish on a signboard, which says nothing about whether the tier
+      // works. The pipeline still allows them; this script does not pick them.
+      if (isTextRiskSubject(subject)) continue
       if (lanesForSubject(subject, tags)?.includes(lane)) out.push({ theme, subject })
     }
   }
@@ -111,9 +122,12 @@ function buildBrief(lane: LaneName, theme: CrossStitchTheme, subject: string, st
   // point of it is the floss count, and the converter only ever returns fewer
   // than it was asked for.
   const colours = lane === 'showpiece' ? hiC! : Math.round((loC! + hiC!) / 2)
-  // A showpiece is a full-coverage painted scene; the pool's own style list for
-  // the theme decides the rest.
-  const style = lane === 'showpiece' && theme.styles.includes('showpiece') ? 'showpiece' : theme.styles[0]!
+  // The heirloom tier has one look — a richly detailed full-coverage painted
+  // scene — so it takes the showpiece style whatever the theme's own list says.
+  // (Flux 1.1 Pro appends its own showpiece style on top either way; this is
+  // the base prompt and the source saturation.) Everything else takes the
+  // theme's first style, which is the one the pool leads with.
+  const style = lane === 'showpiece' ? 'showpiece' : theme.styles[0]!
   return {
     slug: `xs-${lane}-${slugify(subject)}-${stamp}`,
     subject,
