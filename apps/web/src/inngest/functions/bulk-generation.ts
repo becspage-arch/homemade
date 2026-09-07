@@ -98,6 +98,22 @@ import {
  *
  * Nothing ships un-judged: if the gate isn't wired (ANTHROPIC_API_KEY unset) the
  * dispatcher is a clean no-op — it plans + generates nothing rather than publish blind.
+ *
+ * ── STEP BUDGET ────────────────────────────────────────────────────────────
+ * Inngest's free tier counts EVERY step execution — each `step.run`, each
+ * `step.sendEvent`, each sleep — against one monthly allowance, and this cron
+ * fires twelve ideas every two hours. So a step here is not a way of organising
+ * code: it is a memoisation boundary, and it is spent only on work that MUST
+ * NOT happen twice or that is too expensive to repeat. Everything else rides
+ * inside one. Counter increments, the reject render a cull keeps and the run
+ * finaliser now travel together in the terminal step (`recordIdeaProgress`),
+ * ordered so the one non-idempotent write goes first.
+ *
+ * Where that lands, per invocation:
+ *   dispatcher, candidates mode   4  preflight, reroll-queue, plan-and-create-run, dispatch-ideas
+ *   idea worker, candidates mode  3  prepare, attempt, finish  (4 on the pale re-roll)
+ *   idea worker, api mode         3  the same layout, with the vision gate inside `attempt`
+ * The candidates-mode layout is asserted by `bulk-cross-stitch-candidate.test.ts`.
  */
 
 const XS_CRON_COUNT = 10
@@ -417,11 +433,17 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     const data = event.data as BatchEventData | undefined
     const manual = typeof data?.count === 'number'
 
-    // WHO JUDGES this batch. Read first, because it decides whether the run
-    // needs the API gate wired at all, how many ideas it plans, and whether a
-    // single call is made through `anthropic.ts` anywhere on the path.
-    const gateMode = await step.run('gate-mode', () => crossStitchGateMode())
-    const pre = await step.run('preflight', () => preflight('cross-stitch', manual, gateMode))
+    // WHO JUDGES this batch, and may it run at all. ONE step for both: reading
+    // the gate mode decides whether the run needs the API gate wired, how many
+    // ideas it plans, and whether a single call is made through `anthropic.ts`
+    // anywhere on the path — and preflight cannot answer without it. Both are
+    // reads plus idempotent housekeeping, so a retry of the pair changes
+    // nothing; splitting them bought a second step execution and no safety.
+    const pre = await step.run('preflight', async () => {
+      const mode = await crossStitchGateMode()
+      return { ...(await preflight('cross-stitch', manual, mode)), gateMode: mode }
+    })
+    const gateMode = pre.gateMode
     if (pre.skip) {
       // A capped run is recorded so the admin panel shows WHY nothing happened —
       // a silent no-op looks identical to a broken autopilot.
@@ -453,17 +475,29 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     // few slots, and every idea that survives the deterministic guards is parked
     // as an UNLISTED candidate for the next session to look at.
     if (gateMode === 'candidates') {
+      // ITS OWN STEP, and it has to be. `takeRerollRequests` CLAIMS the requests
+      // it returns — it retires the rows they came from — so a failure anywhere
+      // downstream must not send it round again: the second pass would take the
+      // next three requests and the first three would be retired without ever
+      // being dispatched.
       const rerolls = await step.run('reroll-queue', () => takeRerollRequests(Math.min(XS_MAX_REROLLS_PER_BATCH, n)))
       const fresh = Math.max(0, n - rerolls.length)
-      const candCtx = (await step.run('plan-context', () => crossStitchPlanContext(fresh))) ?? {}
-      const sampled = fresh > 0 ? await step.run('plan-candidates', () => planCrossStitchCandidateBriefs(fresh, candCtx)) : []
-      const planned = [...rerolls.map((r) => r.brief), ...sampled]
-      if (!planned.length) return { skipped: 'no briefs planned', gateMode }
       const rerollCounts = new Map(rerolls.map((r) => [r.brief.slug, r.rerollCount]))
-
       const triggeredBy = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
-      const candidateRun = await step.run('create-run', () =>
-        prisma.bulkRun.create({
+
+      // ONE step for planning and the run row. The API-gated path below keeps
+      // the catalogue read and the model call apart because together they run
+      // past the ~100s gateway limit; there is no model call here, so the pool
+      // sampler and the row it belongs to fit in one request comfortably.
+      // Planning is a pure read, so a failure at the `create` re-plans harmlessly
+      // — and a lost response after a successful `create` leaves one empty run
+      // row, exactly as it did when `create-run` stood alone.
+      const dispatch = await step.run('plan-and-create-run', async () => {
+        const ctx = fresh > 0 ? ((await crossStitchPlanContext(fresh)) ?? {}) : {}
+        const sampled = fresh > 0 ? planCrossStitchCandidateBriefs(fresh, ctx) : []
+        const planned = [...rerolls.map((r) => r.brief as CrossStitchBrief), ...sampled]
+        if (!planned.length) return { runId: null as string | null, planned }
+        const created = await prisma.bulkRun.create({
           data: {
             craft: 'cross-stitch',
             trigger: manual ? 'manual' : 'cron',
@@ -474,14 +508,17 @@ export const bulkCrossStitchBatch = inngest.createFunction(
             triggeredById: triggeredBy,
           },
           select: { id: true },
-        }),
-      )
+        })
+        return { runId: created.id as string | null, planned }
+      })
+      if (!dispatch.runId) return { skipped: 'no briefs planned', gateMode }
+
       await step.sendEvent(
         'dispatch-ideas',
-        planned.map((brief) => ({
+        dispatch.planned.map((brief) => ({
           name: 'bulk/cross-stitch.idea',
           data: {
-            runId: candidateRun.id,
+            runId: dispatch.runId,
             brief,
             attempt: 1,
             tweak: {} as CandidateTweak,
@@ -491,8 +528,8 @@ export const bulkCrossStitchBatch = inngest.createFunction(
         })),
       )
       return {
-        runId: candidateRun.id,
-        dispatched: planned.length,
+        runId: dispatch.runId,
+        dispatched: dispatch.planned.length,
         rerolls: rerolls.length,
         gateMode,
         plannerMode: PLANNER_MODE,
@@ -553,9 +590,12 @@ export const bulkCrossStitchBatch = inngest.createFunction(
     }
 
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
-    const sourceMode = await step.run('source-mode', () => crossStitchSourceMode())
-    const run = await step.run('create-run', () =>
-      prisma.bulkRun.create({
+    // The admin's source-mode toggle is a read, so it rides along with the row
+    // rather than paying for a step of its own; it is reported for the record and
+    // read again per attempt in the idea worker, which is what actually binds.
+    const run = await step.run('create-run', async () => {
+      const mode = await crossStitchSourceMode()
+      const created = await prisma.bulkRun.create({
         data: {
           craft: 'cross-stitch',
           trigger: manual ? 'manual' : 'cron',
@@ -567,8 +607,10 @@ export const bulkCrossStitchBatch = inngest.createFunction(
           triggeredById,
         },
         select: { id: true },
-      }),
-    )
+      })
+      return { id: created.id, sourceMode: mode }
+    })
+    const sourceMode = run.sourceMode
 
     // Fan out: one idea event per brief. Each runs as its own short invocation.
     await step.sendEvent(
@@ -860,15 +902,20 @@ export const bulkNeedleworkBatch = inngest.createFunction(
 
     const n = manual ? manualCount(data?.count, NW_CRON_COUNT) : NW_CRON_COUNT
 
-    const briefs = await step.run('plan', async () => {
-      const recent = await recentNeedleworkSlugs().catch(() => [])
-      return planNeedleworkBriefs(n, recent)
-    })
-    if (!briefs.length) return { skipped: 'no briefs planned' }
-
     const triggeredById = manual && typeof data?.triggeredBy === 'string' && data.triggeredBy ? data.triggeredBy : null
-    const run = await step.run('create-run', () =>
-      prisma.bulkRun.create({
+
+    // ONE step for planning and the run row, for the same reason cross-stitch's
+    // candidates dispatcher does it: no model is called here either, so the two
+    // fit in one request, and planning is a pure read that re-runs harmlessly if
+    // the `create` fails. The needlework IDEA worker is left exactly as it is —
+    // its cost is the Fargate render's sleep-and-poll loop, and shortening that
+    // trades step executions for how long a dead render holds an idea open,
+    // which is a judgement call rather than a mechanical saving.
+    const dispatch = await step.run('plan-and-create-run', async () => {
+      const recent = await recentNeedleworkSlugs().catch(() => [])
+      const briefs = await planNeedleworkBriefs(n, recent)
+      if (!briefs.length) return { runId: null as string | null, briefs }
+      const created = await prisma.bulkRun.create({
         data: {
           craft: 'needlework',
           trigger: manual ? 'manual' : 'cron',
@@ -876,14 +923,16 @@ export const bulkNeedleworkBatch = inngest.createFunction(
           triggeredById,
         },
         select: { id: true },
-      }),
-    )
+      })
+      return { runId: created.id as string | null, briefs }
+    })
+    if (!dispatch.runId) return { skipped: 'no briefs planned' }
 
     await step.sendEvent(
       'dispatch-ideas',
-      briefs.map((brief) => ({ name: 'bulk/needlework.idea', data: { runId: run.id, brief, attempt: 1 } })),
+      dispatch.briefs.map((brief) => ({ name: 'bulk/needlework.idea', data: { runId: dispatch.runId, brief, attempt: 1 } })),
     )
-    return { runId: run.id, dispatched: briefs.length }
+    return { runId: dispatch.runId, dispatched: dispatch.briefs.length }
   },
 )
 
