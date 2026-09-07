@@ -23,11 +23,14 @@ older copy of the same files, not the source.)
 
 ## The environment
 
-- FIRST, before anything else: `ls .env.credentials` at the repo root. If it is
-  missing, run `bash scripts/cloud-session-setup.sh` (it rebuilds the file from
-  the environment and generates the Prisma client) and check again. Without that
-  file nothing below can reach the database; do not try any other way in.
-
+- A routine-started session begins in an EMPTY container: no repository, no
+  `node_modules`, no `.env.credentials`, `CLAUDE_PROJECT_DIR` unset. The
+  routine's own prompt bootstraps before this file is opened: `add_repo`
+  (becspage-arch/homemade), the clone command it returns, `register_repo_root`,
+  then `bash scripts/cloud-session-setup.sh` from the clone. If you are reading
+  this and `ls .env.credentials` at the repo root fails, run that script now;
+  without the file nothing below can reach the database, and there is no other
+  way in.
 - Ubuntu VM, fresh clone of `becspage-arch/homemade`. The project memory is
   `notes/` in the repo; this file and those notes are what you get.
 - Run every script **from `apps/web`** with the env file:
