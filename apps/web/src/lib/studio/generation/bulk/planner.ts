@@ -9,6 +9,7 @@ import {
   matchExampleByHead,
   capTextRiskBriefs,
   type BriefReject,
+  type ThemeLaneTags,
 } from './brief-filter'
 import {
   LANE_TAGS_BY_THEME,
@@ -26,6 +27,7 @@ import {
   settleLaneFor,
 } from './range'
 import { shelfQuotaCounts } from './shelf-plan'
+import { mergeThemesWithExtras } from './pool-merge'
 import {
   CROSS_STITCH_THEMES,
   isTextRiskSubject,
@@ -35,8 +37,10 @@ import {
   NEEDLEWORK_SIZE_LANES,
   NEEDLEWORK_SHELF,
   NEEDLEWORK_SHELF_NAME,
+  LANES_ALL,
   type CrossStitchTheme,
   type NeedleworkTheme,
+  type PoolExtra,
 } from './subject-pool'
 
 export {
@@ -49,6 +53,7 @@ export {
   MAX_COLOURS,
   enforceRange,
 } from './range'
+export { mergeThemesWithExtras } from './pool-merge'
 
 /**
  * The batch PLANNER — composes a varied set of briefs from the subject pool,
@@ -244,6 +249,13 @@ export interface XsPlanContext {
   shelfSlots?: string[]
   /** Shelf lines for the prompt: what the batch must serve and why. */
   shelfQuota?: { slug: string; name: string; briefs: number; deficit: number }[]
+  /**
+   * Pool additions a routine session has written without a git push
+   * (`xs-candidates.ts pool-add`, `BulkAutopilotState.poolExtras`). Merged
+   * onto the file's themes for this one plan call by `mergeThemesWithExtras`
+   * — nothing here is ever written back to `subject-pool.ts`.
+   */
+  poolExtras?: readonly PoolExtra[]
 }
 
 /** A shelf that is already the size it should be — never planned into. */
@@ -254,22 +266,40 @@ function isHoldShelf(slug: string): boolean {
 /**
  * The allowed subjects per theme — constrained mode's whole vocabulary. Built
  * from every theme, not just the plannable ones, so a brief on a hold shelf is
- * rejected for being on a hold shelf rather than for being off-pool.
+ * rejected for being on a hold shelf rather than for being off-pool. Extras
+ * only ever target a plannable theme (`pool-add` rejects a hold-shelf theme),
+ * so the merge is applied to `PLANNABLE_THEMES` and folded back in on top.
  */
 const EXAMPLES_BY_THEME: Record<string, readonly string[]> = Object.fromEntries(
   CROSS_STITCH_THEMES.map((t) => [t.id, t.examples]),
 )
 
-function themesForShelves(shelves: string[] | undefined): CrossStitchTheme[] {
-  if (!shelves?.length) return PLANNABLE_THEMES
-  const wanted = new Set(shelves.filter((s) => !isHoldShelf(s)))
-  const subset = PLANNABLE_THEMES.filter((t) => wanted.has(t.shelf))
-  return subset.length ? subset : PLANNABLE_THEMES
+/** `EXAMPLES_BY_THEME`, but reading merged themes where a poolExtra applies. */
+function examplesByThemeFor(themes: readonly CrossStitchTheme[]): Record<string, readonly string[]> {
+  const merged = { ...EXAMPLES_BY_THEME }
+  for (const t of themes) merged[t.id] = t.examples
+  return merged
 }
 
-function xsPromptText(count: number, ctx: XsPlanContext, banned: string[] = []): string {
+/** `LANE_TAGS_BY_THEME` (range.ts), but reading merged themes where a poolExtra applies. */
+function laneTagsFor(themes: readonly CrossStitchTheme[]): Record<string, ThemeLaneTags> {
+  const merged: Record<string, ThemeLaneTags> = { ...LANE_TAGS_BY_THEME }
+  for (const t of themes) {
+    merged[t.id] = { examples: t.examples, lanes: t.lanes ?? LANES_ALL, ...(t.laneOverrides ? { overrides: t.laneOverrides } : {}) }
+  }
+  return merged
+}
+
+function themesForShelves(shelves: string[] | undefined, pool: readonly CrossStitchTheme[] = PLANNABLE_THEMES): CrossStitchTheme[] {
+  if (!shelves?.length) return pool as CrossStitchTheme[]
+  const wanted = new Set(shelves.filter((s) => !isHoldShelf(s)))
+  const subset = pool.filter((t) => wanted.has(t.shelf))
+  return subset.length ? subset : (pool as CrossStitchTheme[])
+}
+
+function xsPromptText(count: number, ctx: XsPlanContext, banned: string[] = [], pool: readonly CrossStitchTheme[] = PLANNABLE_THEMES): string {
   const shelves = ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined
-  const themes = themesForShelves(shelves)
+  const themes = themesForShelves(shelves, pool)
     .map(
       (t) => `- ${t.id} (shelf ${t.shelf}): ${t.title}. styles: ${t.styles.join('/')}. e.g. ${t.examples.slice(0, 3).join('; ')}.${t.notes ? ' NOTE: ' + t.notes : ''}`,
     )
@@ -324,9 +354,9 @@ Return ONLY the JSON array of ${count} briefs.`
  * than three teaser examples, because that list is now the allowed set rather
  * than a flavour hint.
  */
-function xsConstrainedPromptText(count: number, ctx: XsPlanContext, banned: string[] = []): string {
+function xsConstrainedPromptText(count: number, ctx: XsPlanContext, banned: string[] = [], pool: readonly CrossStitchTheme[] = PLANNABLE_THEMES): string {
   const shelves = ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined
-  const themes = themesForShelves(shelves)
+  const themes = themesForShelves(shelves, pool)
     .map(
       (t) =>
         `- ${t.id} (shelf ${t.shelf}): ${t.title}. styles: ${t.styles.join('/')}.${t.notes ? ' NOTE: ' + t.notes : ''}\n  SUBJECTS: ${t.examples.map((e) => `"${e}"`).join('; ')}`,
@@ -660,7 +690,10 @@ export async function planModelBriefs(
   const avoid = new Set((ctx.avoidSubjectKeys ?? []).filter(Boolean))
   const batchKeys = new Set(alreadyPicked.map((b) => b.subjectKey).filter(Boolean))
   const taken = makeTaken(avoid, batchKeys)
-  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
+  // The merge only ever WIDENS the pool a batch may draw on — a routine's
+  // pool-add subjects joining their theme's file examples for this call.
+  const pool = ctx.poolExtras?.length ? mergeThemesWithExtras(PLANNABLE_THEMES, ctx.poolExtras) : PLANNABLE_THEMES
+  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined, pool)
 
   const candidates: CrossStitchBrief[] = []
   let duplicates = 0
@@ -669,7 +702,7 @@ export async function planModelBriefs(
       anthropicJson<RawXsBrief[]>({
         model: PLANNER_MODEL,
         system: constrained ? XS_CONSTRAINED_SYSTEM : XS_SYSTEM,
-        prompt: constrained ? xsConstrainedPromptText(count, ctx, banned) : xsPromptText(count, ctx, banned),
+        prompt: constrained ? xsConstrainedPromptText(count, ctx, banned, pool) : xsPromptText(count, ctx, banned, pool),
         maxTokens: 4000,
         retries: PLANNER_RETRIES,
       }),
@@ -705,9 +738,9 @@ export async function planModelBriefs(
   // curated subjects legitimately carry the very phrases the strict filter bans.
   const { kept, rejects } = postFilterBriefs(candidates, alreadyPicked, {
     props: constrained ? 'light' : 'strict',
-    ...(constrained ? { examplesByTheme: EXAMPLES_BY_THEME } : {}),
+    ...(constrained ? { examplesByTheme: examplesByThemeFor(pool) } : {}),
     ...(ctx.shelfSlots?.length ? { shelfQuota: shelfQuotaCounts(ctx.shelfSlots) } : {}),
-    laneTags: LANE_TAGS_BY_THEME,
+    laneTags: laneTagsFor(pool),
   })
   const counts = countRejects(rejects)
   if (counts.props || counts.collisions) {
@@ -766,14 +799,17 @@ export function finaliseBriefs(
   // Top up, favouring the shelves this batch still owes. The sampler NEVER
   // copies an example the catalogue already has: it varies a base with a hook
   // from another example of the same theme, and moves on when a theme is spent.
+  // The merge only widens what the sampler may draw on — a routine's pool-add
+  // subjects (`ctx.poolExtras`) joining their theme's file examples for this call.
+  const mergedThemes = ctx.poolExtras?.length ? mergeThemesWithExtras(PLANNABLE_THEMES, ctx.poolExtras) : PLANNABLE_THEMES
   const wantedSlots = remainingShelfSlots(ctx, out)
-  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined)
+  const allowed = themesForShelves(ctx.shelfSlots?.length ? [...new Set(ctx.shelfSlots)] : undefined, mergedThemes)
   const exhausted = new Set<string>()
   let guard = 0
   while (out.length < count && guard++ < count * 12) {
     const slot = wantedSlots.shift()
-    const pool = (slot ? PLANNABLE_THEMES.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
-    const theme = pool.length ? pick(pool) : allowed.filter((t) => !exhausted.has(t.id))[0]
+    const themePool = (slot ? mergedThemes.filter((t) => t.shelf === slot) : allowed).filter((t) => !exhausted.has(t.id))
+    const theme = themePool.length ? pick(themePool) : allowed.filter((t) => !exhausted.has(t.id))[0]
     if (!theme) break // every theme in play is exhausted — ship a short batch
     const b = sampleXsBrief(theme, seen, taken)
     if (!b || taken(b.subjectKey)) {
