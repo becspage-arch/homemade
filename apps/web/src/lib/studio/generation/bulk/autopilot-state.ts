@@ -2,6 +2,7 @@ import 'server-only'
 import { prisma } from '@homemade/db'
 import type { Craft } from './run'
 import type { JudgingReportEntry } from './candidates'
+import type { PoolExtra } from './subject-pool'
 
 /**
  * DB-backed autopilot switch per craft. The bulk cron reads this to decide
@@ -200,4 +201,21 @@ export async function setMakerPhotoGateMode(mode: PhotoGateMode, userId?: string
 export async function judgingReports(craft: Craft): Promise<JudgingReportEntry[]> {
   const row = await prisma.bulkAutopilotState.findUnique({ where: { craft }, select: { judgingReports: true } })
   return Array.isArray(row?.judgingReports) ? (row.judgingReports as unknown as JudgingReportEntry[]) : []
+}
+
+/**
+ * ── THE POOL-EXTRAS READER ─────────────────────────────────────────────────
+ *
+ * Subject-pool additions a routine session has written without a git push
+ * (`xs-candidates.ts pool-add`, `candidates.ts`'s `addPoolExtras`), read back
+ * for `planner.ts`'s `mergeThemesWithExtras` to fold into the pool at plan
+ * time. Falls back to an empty list on any DB error, exactly like the other
+ * readers on this row: the safe answer to "can I reach the switch" is to plan
+ * from the file alone, never to throw and drop the batch.
+ */
+export async function poolExtras(craft: Craft): Promise<PoolExtra[]> {
+  const row = await prisma.bulkAutopilotState
+    .findUnique({ where: { craft }, select: { poolExtras: true } })
+    .catch(() => null)
+  return Array.isArray(row?.poolExtras) ? (row.poolExtras as unknown as PoolExtra[]) : []
 }

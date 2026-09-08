@@ -3632,6 +3632,17 @@ model BulkAutopilotState {
   /// the report lives here instead — the admin bulk-generation page already
   /// reads this row on every load.
   judgingReports Json?
+  /// SUBJECT POOL ADDITIONS a routine session has written without a git push,
+  /// as `{ theme, subject, lanes?, laneOverrides?, setOf?, addedAt, addedBy }[]`
+  /// — the same fields a hand-written entry in `subject-pool.ts` carries.
+  /// A routine session can clone the repo but cannot push a branch back to it
+  /// (no reviewer, no credential), so growing the pool from a routine firing
+  /// needs a row the planner already reads rather than a file it cannot ship.
+  /// The planner merges these into the file's themes at plan time, deduplicated
+  /// against the file's own subjects by normalised subject key; `pool-check`
+  /// counts them as pool runway alongside the file. Written by
+  /// `xs-candidates.ts pool-add`, read by `xs-candidates.ts pool-list`.
+  poolExtras Json?
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }

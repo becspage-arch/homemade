@@ -229,6 +229,26 @@ export function settleLane(lanes: readonly LaneName[]): LaneName | null {
 }
 
 /**
+ * ONE pool addition written without a git push — `xs-candidates.ts pool-add`'s
+ * unit of work, stored on `BulkAutopilotState.poolExtras` (craft
+ * 'cross-stitch'). Same fields a hand-written `examples` entry carries, plus
+ * who added it and when: `theme` names the `CrossStitchTheme.id` it joins,
+ * `lanes` is the same per-subject restriction a theme's `laneOverrides[subject]`
+ * would carry, and `setOf` raises the theme's set-size cap the way a bigger
+ * `setOf` on the theme itself would. See planner.ts's `mergeThemesWithExtras`
+ * for how these fold into the pool at plan time.
+ */
+export interface PoolExtra {
+  theme: string
+  subject: string
+  lanes?: readonly LaneName[]
+  laneOverrides?: Record<string, readonly LaneName[]>
+  setOf?: number
+  addedAt: string
+  addedBy: string
+}
+
+/**
  * Shelves are the coarse browse buckets; fine discovery is the search facets
  * (theme/occasion/item-type). Coarse-but-correct beats fragmented. This list is
  * the ALLOWED set the planner + publisher may use.

@@ -4,7 +4,7 @@ import { STYLE, type StyleKey } from './cross-stitch-style'
 import type { CrossStitchBrief, PlannerMode } from './planner'
 import { shelfDeficits } from './shelf-plan'
 import { subjectKey, findSubjectKeyMatch } from './subject-key'
-import { CROSS_STITCH_THEMES } from './subject-pool'
+import { CROSS_STITCH_THEMES, type PoolExtra, type LaneName } from './subject-pool'
 
 /**
  * THE PARKING BAY — everything that happens to a cross-stitch candidate between
@@ -597,14 +597,32 @@ export interface PoolShelfCheck {
  * at its target is never thin however empty its pool is.
  */
 export async function poolCheck(): Promise<PoolShelfCheck[]> {
-  const [counts, spent] = await Promise.all([liveShelfCountsForPool(), spentSubjectKeys()])
+  const [counts, spent, extras] = await Promise.all([liveShelfCountsForPool(), spentSubjectKeys(), poolExtrasRows()])
   const deficits = new Map(shelfDeficits(CROSS_STITCH_SHELVES, counts).map((d) => [d.slug, d]))
+
+  // Group extras by theme, same as the planner's merge — a `pool-add` subject
+  // counts as pool runway for its theme's shelf exactly like a file example.
+  const extrasByTheme = new Map<string, PoolExtra[]>()
+  for (const e of extras) {
+    if (!e?.theme || !e.subject) continue
+    extrasByTheme.set(e.theme, [...(extrasByTheme.get(e.theme) ?? []), e])
+  }
 
   const byShelf = new Map<string, string[]>()
   for (const theme of CROSS_STITCH_THEMES) {
-    const list = byShelf.get(theme.shelf) ?? []
-    list.push(...theme.examples)
-    byShelf.set(theme.shelf, list)
+    // File subjects first, then any extras for this theme not already a
+    // duplicate of a file subject (or of an earlier extra) — the same
+    // dedup rule `mergeThemesWithExtras` applies at plan time, so the count
+    // here is the runway the planner will actually see.
+    const list = [...theme.examples]
+    const seenKeys = new Set(list.map((s) => subjectKey(s)).filter(Boolean))
+    for (const extra of extrasByTheme.get(theme.id) ?? []) {
+      const key = subjectKey(extra.subject)
+      if (!key || seenKeys.has(key) || findSubjectKeyMatch(key, seenKeys)) continue
+      seenKeys.add(key)
+      list.push(extra.subject)
+    }
+    byShelf.set(theme.shelf, [...(byShelf.get(theme.shelf) ?? []), ...list])
   }
 
   const out: PoolShelfCheck[] = []
@@ -686,4 +704,187 @@ async function spentSubjectKeys(): Promise<Set<string>> {
     if (key) out.add(key)
   }
   return out
+}
+
+/** `BulkAutopilotState.poolExtras` (craft 'cross-stitch'), raw. */
+async function poolExtrasRows(): Promise<PoolExtra[]> {
+  const row = await prisma.bulkAutopilotState
+    .findUnique({ where: { craft: 'cross-stitch' }, select: { poolExtras: true } })
+    .catch(() => null)
+  return Array.isArray(row?.poolExtras) ? (row.poolExtras as unknown as PoolExtra[]) : []
+}
+
+// ─────────────────────────── pool additions (pool-add) ───────────────────────────
+
+/**
+ * GROWING THE POOL WITHOUT A GIT PUSH.
+ *
+ * A routine session can clone the repo but cannot push a branch back to it —
+ * no reviewer on the other end, no credential for it. `pool-add` is its route
+ * in instead: subjects it writes land on `BulkAutopilotState.poolExtras`
+ * (craft 'cross-stitch'), the row `pool-check` already reads and
+ * `mergeThemesWithExtras` (`planner.ts`) folds into the pool at plan time.
+ * Nothing here ever touches `subject-pool.ts` — that stays the file only a
+ * git push can change.
+ */
+export interface PoolAddInput {
+  /** A `CrossStitchTheme.id` from `subject-pool.ts` — see `pool-list` / `pool-check`. */
+  theme: string
+  subject: string
+  /** Per-subject lane restriction, same role as the theme's `laneOverrides[subject]`. */
+  lanes?: LaneName[]
+  laneOverrides?: Record<string, LaneName[]>
+  setOf?: number
+}
+
+export interface PoolAddRejection {
+  subject: string
+  reason: string
+}
+
+export interface PoolAddResult {
+  added: PoolExtra[]
+  rejected: PoolAddRejection[]
+}
+
+/**
+ * Words that mean a subject shows readable text on the piece itself — a
+ * pool-add rejection, not merely a lane restriction. `TEXT_RISK_NOUNS`
+ * (`subject-pool.ts`) tags a subject like "a corner flower shop" for the
+ * dense lane only, because the pool already has shops and jars that stitch
+ * fine at 150+ colours; this is stricter, for the words that mean the piece
+ * is asking to show actual letters, numerals or a quoted phrase — the thing
+ * the converter genuinely cannot render at any lane.
+ */
+const LETTERING_RE =
+  /\b(letters?|lettering|text|words?|alphabet|spelled|spelling|written|writing|inscri\w*|monogram(?:med)?|initials?|numerals?|caption(?:ed)?|quote[ds]?)\b/i
+const QUOTE_RE = /["“”]/
+
+/** A curated, evidence-based list rather than a theory — extend it as brands turn up. */
+const BRAND_WORDS = [
+  'disney', 'pixar', 'marvel', 'dc comics', 'warner bros', 'pokemon', 'pokémon', 'hello kitty', 'sanrio',
+  'harry potter', 'star wars', 'star trek', 'barbie', 'lego', 'nike', 'adidas', 'coca-cola', 'pepsi',
+  'starbucks', 'mcdonald', 'minecraft', 'fortnite', 'super mario', 'mario', 'sonic the hedgehog',
+  'winnie the pooh', 'paddington', 'peppa pig', 'beatrix potter', 'peter rabbit', 'frozen', 'elsa',
+  'spongebob', 'the simpsons', 'looney tunes', 'hello neighbour', 'gucci', 'chanel', 'louis vuitton',
+]
+const BRAND_RE = new RegExp(`\\b(${BRAND_WORDS.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`, 'i')
+const TRADEMARK_RE = /[™®©]/
+const BRAND_MARKER_RE = /\b(brand(?:ed)?|trademark(?:ed)?|copyright(?:ed)?|franchise|licen[cs]ed|official\s+\w+\s+merchandise)\b/i
+
+/**
+ * Every capitalised word the pool file already uses (mid-phrase, e.g. "Delft",
+ * "Fair Isle", "Talavera", "Otomi") — the vetted set. Every existing example is
+ * written lower-case apart from these; a new subject with a capitalised word
+ * NOT already in this set reads as a real person's name or an unvetted brand,
+ * which is exactly what a mechanical, evidence-grounded check can catch without
+ * having to maintain an ever-growing list of names by hand.
+ */
+function knownCapitalisedWords(): Set<string> {
+  const set = new Set<string>()
+  for (const t of CROSS_STITCH_THEMES) {
+    for (const ex of t.examples) {
+      for (const w of ex.match(/\b[A-Z][a-zA-Z'-]*\b/g) ?? []) set.add(w)
+    }
+  }
+  return set
+}
+
+/** A capitalised word past the first token that the pool has never vetted. */
+function properNounReject(subject: string, known: Set<string>): string | null {
+  const tokens = subject.trim().split(/\s+/)
+  for (let i = 1; i < tokens.length; i++) {
+    const w = (tokens[i] ?? '').replace(/[^a-zA-Z'-]/g, '')
+    if (!w || !/^[A-Z]/.test(w) || known.has(w)) continue
+    return `contains a capitalised word not already vetted in the pool ("${w}") — reads as a specific person or an un-vetted brand`
+  }
+  return null
+}
+
+/**
+ * Validate and record pool additions. Every rejection names the fault so the
+ * caller can fix and retry rather than guess; every addition is written in one
+ * upsert so a partial batch never lands half-recorded.
+ */
+export async function addPoolExtras(inputs: PoolAddInput[], addedBy: string): Promise<PoolAddResult> {
+  const added: PoolExtra[] = []
+  const rejected: PoolAddRejection[] = []
+  if (!inputs.length) return { added, rejected }
+
+  const themeById = new Map(CROSS_STITCH_THEMES.map((t) => [t.id, t]))
+  const known = knownCapitalisedWords()
+  const now = new Date().toISOString()
+  const existing = await poolExtrasRows()
+
+  // Per-theme existing keys: the file's own subjects plus whatever pool-add
+  // has already recorded for that theme — the same universe
+  // `mergeThemesWithExtras` dedups a new subject against at plan time.
+  const existingKeysByTheme = new Map<string, Set<string>>()
+  for (const t of CROSS_STITCH_THEMES) existingKeysByTheme.set(t.id, new Set(t.examples.map((e) => subjectKey(e)).filter(Boolean)))
+  for (const e of existing) existingKeysByTheme.get(e.theme)?.add(subjectKey(e.subject))
+
+  const merged = [...existing]
+  for (const input of inputs) {
+    const subject = (input.subject ?? '').trim()
+    const themeId = (input.theme ?? '').trim()
+    if (!subject || !themeId) {
+      rejected.push({ subject: subject || '(empty)', reason: 'missing theme or subject' })
+      continue
+    }
+    const theme = themeById.get(themeId)
+    if (!theme) {
+      rejected.push({ subject, reason: `unknown theme "${themeId}" — not a CrossStitchTheme.id in subject-pool.ts (see pool-list)` })
+      continue
+    }
+    if (CROSS_STITCH_SHELF_BY_SLUG[theme.shelf]?.hold) {
+      rejected.push({ subject, reason: `shelf "${theme.shelf}" is a HOLD shelf — already the size it should be, never planned into` })
+      continue
+    }
+    if (LETTERING_RE.test(subject) || QUOTE_RE.test(subject)) {
+      rejected.push({ subject, reason: 'invites lettering — references visible words, letters, numerals or a quoted phrase' })
+      continue
+    }
+    if (BRAND_RE.test(subject) || TRADEMARK_RE.test(subject) || BRAND_MARKER_RE.test(subject)) {
+      rejected.push({ subject, reason: 'reads as a specific brand, franchise or trademark' })
+      continue
+    }
+    const properNoun = properNounReject(subject, known)
+    if (properNoun) {
+      rejected.push({ subject, reason: properNoun })
+      continue
+    }
+    const key = subjectKey(subject)
+    const existingKeys = existingKeysByTheme.get(themeId)!
+    if (!key || existingKeys.has(key) || findSubjectKeyMatch(key, existingKeys)) {
+      rejected.push({ subject, reason: 'collides with a subject the pool already has for this theme' })
+      continue
+    }
+    existingKeys.add(key)
+    const entry: PoolExtra = {
+      theme: themeId,
+      subject,
+      ...(input.lanes?.length ? { lanes: input.lanes } : {}),
+      ...(input.laneOverrides ? { laneOverrides: input.laneOverrides } : {}),
+      ...(typeof input.setOf === 'number' ? { setOf: input.setOf } : {}),
+      addedAt: now,
+      addedBy,
+    }
+    merged.push(entry)
+    added.push(entry)
+  }
+
+  if (added.length) {
+    await prisma.bulkAutopilotState.upsert({
+      where: { craft: 'cross-stitch' },
+      create: { craft: 'cross-stitch', enabled: false, poolExtras: merged as unknown as Prisma.InputJsonValue },
+      update: { poolExtras: merged as unknown as Prisma.InputJsonValue },
+    })
+  }
+  return { added, rejected }
+}
+
+/** Every pool-add addition on record, optionally filtered to one theme. */
+export async function listPoolExtras(theme?: string): Promise<PoolExtra[]> {
+  const rows = await poolExtrasRows()
+  return theme ? rows.filter((r) => r.theme === theme) : rows
 }

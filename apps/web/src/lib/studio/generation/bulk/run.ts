@@ -24,7 +24,7 @@ import {
 import { judgeVividness } from './vividness'
 import { quickWinVerdict } from './quick-win'
 import { showpieceVerdict } from './showpiece'
-import { crossStitchGateMode, type XsGateMode, type XsSourceMode } from './autopilot-state'
+import { crossStitchGateMode, poolExtras as poolExtrasFor, type XsGateMode, type XsSourceMode } from './autopilot-state'
 import { CROSS_STITCH_SHELVES } from '../categories'
 import { summaryLine } from './run-status'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
@@ -484,7 +484,7 @@ export function planCrossStitchCandidateBriefs(count: number, ctx: XsPlanContext
  * the inline runner and the Inngest dispatcher so both plan identically.
  */
 export async function crossStitchPlanContext(count: number): Promise<Parameters<typeof planCrossStitchBriefs>[1]> {
-  const [counts, rowKeys, duplicateKills] = await Promise.all([
+  const [counts, rowKeys, duplicateKills, extras] = await Promise.all([
     liveShelfCounts().catch(() => ({}) as Record<string, number>),
     publicSubjectKeys().catch(() => [] as string[]),
     // Ideas recent runs killed as duplicates. They leave no row, so without this
@@ -492,6 +492,10 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
     // after firing — which it did, twice each for two subjects across three of
     // the September firings.
     recentDuplicateSubjectKeys().catch(() => [] as string[]),
+    // Pool additions a routine session wrote without a git push (pool-add) —
+    // merged onto the file's themes by `mergeThemesWithExtras`, never onto the
+    // file itself.
+    poolExtrasFor('cross-stitch').catch(() => []),
   ])
   const avoidSubjectKeys = avoidListWithDuplicateKills(rowKeys, duplicateKills)
   const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
@@ -506,6 +510,7 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
     avoidSubjectKeys,
     shelfSlots: shelfSlots(alloc),
     shelfQuota: alloc.map((a) => ({ slug: a.slug, name: a.name, briefs: a.briefs, deficit: a.deficit })),
+    poolExtras: extras,
   }
 }
 
