@@ -37,6 +37,7 @@ import {
   programToChart,
   programYarnRadiusMm,
   type CrochetProgram,
+  type YarnFibre,
 } from '../src/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, programScene, geometryHash, type Staging } from '../src/lib/loom/crochet/engine/programScene'
 import {
@@ -117,7 +118,7 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
   const scene = programScene(program, built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
-  const art = await blenderHero(scene, name, outDir, options.hero !== false)
+  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'sc', program.yarnFibre ?? 'cotton')
   return { ...result, ...art }
 }
 
@@ -133,9 +134,10 @@ async function blenderHero(
   outDir: string,
   hero: boolean,
   heroPromptKey = 'sc',
+  fibre: YarnFibre = 'cotton',
 ): Promise<{ scenePath: string; basePng: string; heroPng: string | null; fidelityScore: number | null }> {
   const { scenePath, basePng } = await renderSceneBase(scene, name, outDir)
-  const { heroPng, fidelityScore } = await photorealHero(basePng, hero, heroPromptKey)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, hero, heroPromptKey, fibre)
   return { scenePath, basePng, heroPng, fidelityScore }
 }
 
@@ -179,11 +181,12 @@ export async function photorealHero(
   basePng: string,
   hero: boolean,
   heroPromptKey = 'sc',
+  fibre: YarnFibre = 'cotton',
 ): Promise<{ heroPng: string | null; fidelityScore: number | null }> {
   if (!hero || !process.env.FAL_KEY) return { heroPng: null, fidelityScore: null }
   const { finishHero } = await aspenHero()
   try {
-    const result = await finishHero({ basePng, stitch: heroPromptKey, creativity: 0.55, resemblance: 0.82 })
+    const result = await finishHero({ basePng, stitch: heroPromptKey, creativity: 0.55, resemblance: 0.82, fibre })
     return { heroPng: result.fidelity.pass ? result.heroPng : null, fidelityScore: result.fidelity.structureScore }
   } catch (e) {
     console.warn(`[loom] photoreal finish failed (${e instanceof Error ? e.message : String(e)}) — shipping the deterministic base render`)
@@ -209,7 +212,7 @@ export async function renderComposition(program: CompositionProgram, options: Re
   if (compiled.problems.length) return result // audit gate — do NOT render
 
   const scene = compositionScene(program, compiled)
-  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'amigurumi')
+  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'amigurumi', program.yarnFibre ?? 'cotton')
   return { ...result, ...art }
 }
 
@@ -441,6 +444,9 @@ export interface ProgramRenderStart {
   handle: FargateRenderHandle | null
   /** Which aspen-hero prompt the finish uses — flat swatch or amigurumi. */
   heroPromptKey: string
+  /** The yarn fibre look the base was rendered in — carried across the two
+   *  halves so `finishProgramRender`'s Fal prompt matches it. */
+  fibre: YarnFibre
 }
 
 /** Write the scene and start its render, without waiting. */
@@ -467,7 +473,8 @@ export async function startProgramRender(
   const name = options.name ?? program.name
   const { built, yr, problems } = compileRelaxAudit(program, options.yr)
   const ghash = geometryHash(built)
-  const base = { name, problems, geometryHash: ghash, yr }
+  const fibre = program.yarnFibre ?? 'cotton'
+  const base = { name, problems, geometryHash: ghash, yr, fibre }
   // The audit gate, BEFORE a task is launched: never pay for a render of
   // geometry that is not genuinely stitched.
   if (problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'sc' }
@@ -484,7 +491,8 @@ export async function startCompositionRender(
   const outDir = options.outDir ?? OUT
   const name = options.name ?? program.name
   const compiled = compileComposition(program, options.yr)
-  const base = { name, problems: compiled.problems, geometryHash: compiled.geometryHash, yr: compiled.yr }
+  const fibre = program.yarnFibre ?? 'cotton'
+  const base = { name, problems: compiled.problems, geometryHash: compiled.geometryHash, yr: compiled.yr, fibre }
   if (compiled.problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'amigurumi' }
 
   const scene = compositionScene(program, compiled)
@@ -511,7 +519,7 @@ export async function finishProgramRender(
   mkdirSync(outDir, { recursive: true })
   const basePng = resolve(outDir, `${start.name}.png`)
   await finishBaseRender(start.handle, basePng)
-  const { heroPng, fidelityScore } = await photorealHero(basePng, options.hero !== false, start.heroPromptKey)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, options.hero !== false, start.heroPromptKey, start.fibre)
   return {
     name: start.name,
     problems: [],

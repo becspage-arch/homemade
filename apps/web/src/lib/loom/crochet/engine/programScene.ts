@@ -10,7 +10,7 @@
  * can render its OWN exact hero.
  */
 
-import { compileProgram, programYarnRadiusMm, type CrochetProgram, type Staging } from './program'
+import { compileProgram, programYarnRadiusMm, type CrochetProgram, type Staging, type YarnFibre } from './program'
 import { relax, STUFF_PRESSURE, STUFF_PRIOR } from './relax'
 import { auditProblems } from './auditChecks'
 import { STITCHES, type StitchId } from './dictionary'
@@ -129,6 +129,10 @@ export function programTiltDeg(p: CrochetProgram): number {
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
   strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
+  /** The yarn fibre look (STITCH_ENGINE yarn-fibre pass) — read by
+   *  loom_render_crochet.py's `build_yarn`/`yarn_material`. Always written
+   *  (defaulting to 'cotton') so the render script never has to guess. */
+  fibre?: YarnFibre
   view: {
     bgHex: string
     marginFactor: number
@@ -428,6 +432,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
+    fibre: p.yarnFibre ?? 'cotton',
     view,
   }
 }

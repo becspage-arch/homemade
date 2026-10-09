@@ -50,6 +50,19 @@ export const YARN_WEIGHT_RADIUS_MM: Record<YarnWeight, number> = {
   'super-bulky': 3.8,
 }
 
+/** The fibre look a program's yarn renders as (STITCH_ENGINE yarn-fibre pass).
+ *  Render-only: no fibre changes the loom's geometry (the stitch dictionary,
+ *  relax, or the audit gate), so it never moves a `geometryHash`. Defaults to
+ *  `'cotton'` — the original crisp-plied material every program rendered with
+ *  before this field existed, so an unset program is completely unaffected. */
+export type YarnFibre = 'cotton' | 'wool' | 'chenille' | 'velvet'
+
+/** Resolve a program's render fibre: an explicit choice wins, else `'cotton'`
+ *  (the historical default — every program from before this field existed). */
+export function programYarnFibre(p: { yarnFibre?: YarnFibre }): YarnFibre {
+  return p.yarnFibre ?? 'cotton'
+}
+
 /** One row of a 'grid' program — a full-width row whose cells may be different
  *  stitch types (mixed stitches per row). `stitches.length` must equal the
  *  program's `gridWidth`. Colour is optional and STORED for the pattern engine's
@@ -102,6 +115,10 @@ export interface CrochetProgram {
   /** Yarn weight → the render `yr`. Defaults to worsted when a caller omits an
    *  explicit radius. */
   yarnWeight?: YarnWeight
+  /** The yarn's fibre look (STITCH_ENGINE yarn-fibre pass). Render-only —
+   *  defaults to `'cotton'`, the original material, so every program stored
+   *  before this field existed renders unchanged. */
+  yarnFibre?: YarnFibre
   /** Base yarn colour (hex). The render's default single colour. */
   colourHex?: string
   /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */

@@ -263,7 +263,7 @@ async function main(): Promise<void> {
     console.log('\n[3/4] photoreal hero + fidelity gate')
     for (const job of jobs) {
       if (!job.basePng) continue
-      const { heroPng, fidelityScore } = await photorealHero(job.basePng, true, job.heroPromptKey)
+      const { heroPng, fidelityScore } = await photorealHero(job.basePng, true, job.heroPromptKey, job.program?.yarnFibre ?? 'cotton')
       job.heroPng = heroPng
       job.fidelityScore = fidelityScore
       console.log(

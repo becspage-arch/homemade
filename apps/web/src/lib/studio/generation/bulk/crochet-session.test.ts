@@ -259,6 +259,39 @@ check('a tapestry panel needs to say what the picture shows', () => {
   )
 })
 
+check('a design may name its yarn fibre', () => {
+  const r = CrochetDesignSchema.safeParse({ ...GOOD_DESIGN, yarnFibre: 'chenille' })
+  assert.equal(r.success, true, r.success ? '' : JSON.stringify(r.error.issues))
+})
+
+check('a design with no yarnFibre still parses (defaults to cotton downstream)', () => {
+  const r = CrochetDesignSchema.safeParse(GOOD_DESIGN)
+  assert.equal(r.success, true)
+  if (!r.success) return
+  assert.equal(r.data.yarnFibre, undefined)
+})
+
+check('an invented fibre is refused', () => {
+  const r = CrochetDesignSchema.safeParse({ ...GOOD_DESIGN, yarnFibre: 'acrylic' })
+  assert.equal(r.success, false)
+})
+
+check('an amigurumi creature may name its own yarn fibre', () => {
+  const r = CrochetDesignSchema.safeParse({
+    treatment: 'amigurumi',
+    amigurumi: { base: 'bear', size: 'M', mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, yarnFibre: 'velvet' },
+  })
+  assert.equal(r.success, true, r.success ? '' : JSON.stringify(r.error.issues))
+})
+
+check('an amigurumi creature with an invented fibre is refused', () => {
+  const r = CrochetDesignSchema.safeParse({
+    treatment: 'amigurumi',
+    amigurumi: { base: 'bear', size: 'M', mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, yarnFibre: 'nylon' },
+  })
+  assert.equal(r.success, false)
+})
+
 check('parseDesigns keys errors by the slug they came from', () => {
   const r = parseDesigns({ 'crochet-a': GOOD_DESIGN, 'crochet-b': { treatment: 'disc' } })
   assert.equal(r.ok, false)

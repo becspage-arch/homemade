@@ -24,6 +24,7 @@ import { dirname } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { loadCredentials } from './loom-hybrid-fal'
 import { fidelityGate, type FidelityVerdict } from './loom-fidelity-gate'
+import type { YarnFibre } from '../src/lib/loom/crochet/engine/program'
 
 const IS_MAIN = import.meta.url === pathToFileURL(process.argv[1] ?? '').href
 
@@ -144,6 +145,25 @@ const NEG =
 const NEG_KNIT =
   `embroidery, cross stitch, crochet, woven fabric, basket weave, smooth plastic, dough, cartoon, illustration, vector art, flat colours, 3d render, cgi, digital art, ${BG_NEG}`
 
+// Per-fibre prompt clauses (STITCH_ENGINE yarn-fibre pass): the Blender base
+// already carries the fibre in its geometry/shader (loom_render_crochet.py),
+// but the STITCH_PROMPTS/COMMON wording above always says "wool" — an
+// upscaler asked for wool on a chenille/velvet base fights the base's own
+// dense fuzzy-pile halo and tries to repaint it back into smooth plied yarn.
+// 'cotton'/unset add nothing, so every existing call (no `fibre` option) gets
+// the exact prompt string it always has. Appended AFTER the stitch + COMMON
+// text, so it reads as extra guidance rather than replacing the stitch shape
+// description.
+const FIBRE_CLAUSE: Partial<Record<YarnFibre, string>> = {
+  wool: 'Soft brushed wool yarn with a gentle halo of loose fibres and the odd stray hair, matte and cosy, not glossy.',
+  chenille: 'Thick plush chenille yarn: a dense short furry pile completely covering every stitch, like a chenille plushie toy — soft, matte, rounded and fuzzy, no visible individual plies or yarn strand structure.',
+  velvet: 'Thick plush chenille-style yarn with a soft directional sheen, like brushed velvet catching the light — dense short pile, plump and rounded, matte everywhere except a gentle brushed-fibre gloss.',
+}
+const FIBRE_NEG: Partial<Record<YarnFibre, string>> = {
+  chenille: 'smooth yarn, visible individual plies, glossy plastic, wet look, embroidery floss',
+  velvet: 'smooth yarn, visible individual plies, glossy plastic, wet look, embroidery floss',
+}
+
 interface FalImage {
   url: string
   width?: number
@@ -210,6 +230,11 @@ export interface FinishHeroOptions {
   outPng?: string
   /** Dictionary stitch (drives which prompt/negative pair is used). Default 'sc'. */
   stitch?: string
+  /** The yarn fibre look the base was rendered in (STITCH_ENGINE yarn-fibre
+   *  pass) — appends a fibre-matched clause so the upscale doesn't fight a
+   *  chenille/velvet/wool base by repainting it back to smooth plied yarn.
+   *  Default 'cotton' (no clause added — the historical prompt). */
+  fibre?: YarnFibre
   /** Fal creative-upscale creativity. Default 0.5 (the lock). */
   creativity?: number
   /** Fal creative-upscale resemblance. Default 0.85 (the lock). */
@@ -250,10 +275,15 @@ export async function finishHero(options: FinishHeroOptions): Promise<FinishHero
   if (!existsSync(base)) throw new Error(`base not found: ${base}`)
 
   const knit = stitch in KNIT_PROMPTS
+  const fibre = options.fibre ?? 'cotton'
+  const fibreClause = FIBRE_CLAUSE[fibre]
+  const fibreNeg = FIBRE_NEG[fibre]
   const prompt =
     options.promptOverride ??
-    (knit ? `${KNIT_PROMPTS[stitch]} ${COMMON_KNIT}` : `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`)
-  const negativePrompt = options.negativePromptOverride ?? (knit ? NEG_KNIT : NEG)
+    (knit ? `${KNIT_PROMPTS[stitch]} ${COMMON_KNIT}` : `${STITCH_PROMPTS[stitch] ?? STITCH_PROMPTS.sc} ${COMMON}`) +
+      (fibreClause ? ` ${fibreClause}` : '')
+  const negativePrompt =
+    options.negativePromptOverride ?? (knit ? NEG_KNIT : NEG) + (fibreNeg ? `, ${fibreNeg}` : '')
   const out = options.outPng ?? base.replace(/\.png$/, '-hero.png')
 
   console.log(`[Step 4] upscale base=${basename(base)} stitch=${stitch} creativity=${creativity} resemblance=${resemblance}`)

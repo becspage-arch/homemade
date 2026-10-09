@@ -54,27 +54,71 @@ def hex_to_lin(h):
     return (lin(r), lin(g), lin(b), 1.0)
 
 
-def yarn_material(name, hexcol, sheen):
-    """Firm PLIED wool yarn (crisp model, §11). The ply DEFINITION now comes from
-    the real ply geometry (nPly distinct tubes spiralling — yarnLoop.pliedFilaments),
-    so the material's job is only to make each ply read as firm spun yarn: a
-    satiny sheen that catches along the plies + a WHISPER of fibre haze. The old
-    material faked fibre with a coarse random noise bump + a full-strength sheen
-    halo, which felted the whole surface into soft roving and buried the plies —
-    both are dialled right down here."""
+# Per-fibre shader knobs (STITCH_ENGINE yarn-fibre pass). `cotton` is the
+# ORIGINAL crisp-plied numbers, unchanged, so a program that doesn't set
+# `fibre` (every program before this pass, and every one that stays on the
+# default) renders byte-for-byte as before. The other three retune the same
+# BSDF for a different real fibre; `chenille`/`velvet` additionally grow a
+# fuzz-shell halo object (see `fuzz_shell_material` / `build_yarn`) — the base
+# material alone cannot fake a pile that stands proud of the strand silhouette.
+FIBRE_PARAMS = {
+    "cotton": dict(
+        specular=0.18, sheen=0.55, sheen_rough=0.5, aniso=0.25,
+        subsurf=0.1, bump1=0.6, bump2=0.28, rough_lo=0.55, rough_hi=0.78,
+        flyaway=0.0, halo=None,
+    ),
+    # Softer sheen, more haze, a hint of stray fibres: less satiny than plied
+    # cotton (lower specular + anisotropic), a broader/stronger sheen halo, more
+    # bump relief on both fibre layers, and a sparse third "flyaway" bump (fine
+    # Voronoi spikes) reading as the odd stray hair catching the key light.
+    "wool": dict(
+        specular=0.12, sheen=0.7, sheen_rough=0.65, aniso=0.12,
+        subsurf=0.14, bump1=0.85, bump2=0.42, rough_lo=0.62, rough_hi=0.85,
+        flyaway=0.35, halo=None,
+    ),
+    # Matte and plump: low specular/sheen on the CORE strand (the fuzz-shell
+    # halo carries almost all of the visual texture), higher subsurface for a
+    # soft plush look, no anisotropic satin (chenille has no ply shine).
+    "chenille": dict(
+        specular=0.03, sheen=0.12, sheen_rough=0.8, aniso=0.0,
+        subsurf=0.22, bump1=0.3, bump2=0.16, rough_lo=0.75, rough_hi=0.92,
+        flyaway=0.0, halo=dict(mult=1.55, noise_scale=210.0),
+    ),
+    # Chenille's dense short pile, plus a directional sheen: real curve
+    # geometry in Cycles carries a native along-length tangent, so raising
+    # Anisotropic + Sheen here (rather than adding new geometry) gives a
+    # genuine brushed-velvet streak that runs along the strand.
+    "velvet": dict(
+        specular=0.12, sheen=0.4, sheen_rough=0.28, aniso=0.65,
+        subsurf=0.16, bump1=0.3, bump2=0.16, rough_lo=0.35, rough_hi=0.55,
+        flyaway=0.0, halo=dict(mult=1.35, noise_scale=260.0),
+    ),
+}
+
+
+def yarn_material(name, hexcol, sheen, fibre="cotton"):
+    """The CORE strand material for one yarn fibre look (STITCH_ENGINE yarn-
+    fibre pass). The ply DEFINITION comes from the real ply geometry (nPly
+    distinct tubes spiralling — yarnLoop.pliedFilaments), so this only ever
+    tunes how the surface itself reads: cotton's satiny plied sheen with a
+    whisper of haze, wool's softer matte haze with a hint of stray fibre,
+    or chenille/velvet's matte plump core (their pile halo is a separate
+    object — see `fuzz_shell_material`). `fibre` unset/unknown falls back to
+    cotton, so every pre-existing call site is unaffected."""
+    fp = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"])
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     set_in(bsdf, "Base Color", hex_to_lin(hexcol))
-    set_in(bsdf, "Specular IOR Level", 0.18)        # low spec: wool, not plastic
-    set_in(bsdf, "Sheen Weight", 0.55)              # soft wool halo, below the felting 1.0
-    set_in(bsdf, "Sheen Roughness", 0.5)
+    set_in(bsdf, "Specular IOR Level", fp["specular"])
+    set_in(bsdf, "Sheen Weight", fp["sheen"])
+    set_in(bsdf, "Sheen Roughness", fp["sheen_rough"])
     set_in(bsdf, "Sheen Tint", (1.0, 1.0, 1.0, 1.0))
-    set_in(bsdf, "Anisotropic", 0.25)
-    set_in(bsdf, "Subsurface Weight", 0.1)          # soft light through the fibre
+    set_in(bsdf, "Anisotropic", fp["aniso"])
+    set_in(bsdf, "Subsurface Weight", fp["subsurf"])
     set_in(bsdf, "Subsurface Radius", (0.6, 0.5, 0.42))
-    # Fine fibre haze only (the real ply relief is geometry now). A gentle bump
+    # Fine fibre haze (the real ply relief is geometry now). A gentle bump
     # stretched along the strand — enough to read as spun fibre, not felt.
     tex = nt.nodes.new("ShaderNodeTexCoord")
     mapp = nt.nodes.new("ShaderNodeMapping")
@@ -83,31 +127,90 @@ def yarn_material(name, hexcol, sheen):
     fib.inputs["Scale"].default_value = 8.0
     fib.inputs["Detail"].default_value = 5.0
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.6       # spun-fibre relief (1.3 felted; 0.3 read plastic)
+    bump.inputs["Strength"].default_value = fp["bump1"]   # spun-fibre relief
     bump.inputs["Distance"].default_value = 0.015
     nt.links.new(tex.outputs["Object"], mapp.inputs["Vector"])
     nt.links.new(mapp.outputs["Vector"], fib.inputs["Vector"])
     nt.links.new(fib.outputs["Fac"], bump.inputs["Height"])
-    # A finer, denser fuzz — the wool's haze of short fibres (much lighter now).
+    # A finer, denser fuzz — the fibre's haze of short fibres.
     fuzz = nt.nodes.new("ShaderNodeTexNoise")
     fuzz.inputs["Scale"].default_value = 60.0
     fuzz.inputs["Detail"].default_value = 6.0
     bump2 = nt.nodes.new("ShaderNodeBump")
-    bump2.inputs["Strength"].default_value = 0.28
+    bump2.inputs["Strength"].default_value = fp["bump2"]
     bump2.inputs["Distance"].default_value = 0.004
     nt.links.new(fuzz.outputs["Fac"], bump2.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bump2.inputs["Normal"])
-    nt.links.new(bump2.outputs["Normal"], bsdf.inputs["Normal"])
-    # Roughness varies along the fibre — satiny (plies catch light) not chalky matte.
+    last_normal = bump2.outputs["Normal"]
+    # Wool only: a sparse, sharp Voronoi spike layer — the odd stray fibre
+    # catching the light, not a uniform haze (that's what `bump2` already is).
+    if fp["flyaway"] > 0:
+        stray = nt.nodes.new("ShaderNodeTexVoronoi")
+        stray.voronoi_dimensions = "3D"
+        stray.distance = "EUCLIDEAN"
+        stray.inputs["Scale"].default_value = 140.0
+        bump3 = nt.nodes.new("ShaderNodeBump")
+        bump3.inputs["Strength"].default_value = fp["flyaway"]
+        bump3.inputs["Distance"].default_value = 0.01
+        nt.links.new(stray.outputs["Distance"], bump3.inputs["Height"])
+        nt.links.new(last_normal, bump3.inputs["Normal"])
+        last_normal = bump3.outputs["Normal"]
+    nt.links.new(last_normal, bsdf.inputs["Normal"])
+    # Roughness varies along the fibre — satiny (plies catch light) for cotton,
+    # progressively more matte for wool/chenille, a tighter glossier band for
+    # velvet's brushed sheen.
     rough = nt.nodes.new("ShaderNodeMapRange")
-    rough.inputs["To Min"].default_value = 0.55
-    rough.inputs["To Max"].default_value = 0.78
+    rough.inputs["To Min"].default_value = fp["rough_lo"]
+    rough.inputs["To Max"].default_value = fp["rough_hi"]
     nt.links.new(fib.outputs["Fac"], rough.inputs["Value"])
     nt.links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
     return mat
 
 
-def build_yarn(strokes, drape=None, z_offset=0.0):
+def fuzz_shell_material(name, hexcol, fibre):
+    """The chenille/velvet PILE HALO — a thin alpha-cutout shell wrapped just
+    outside the core strand (see `build_yarn`), read at the strand's silhouette
+    as a dense short fringe rather than a smooth outline. Cheaper and more
+    reliable in the Fargate time budget than per-fibre hair particles: one
+    extra low-poly curve object per yarn colour group, its Alpha driven by a
+    Fresnel term (near-zero face-on so the core strand's own colour and sheen
+    still read through the middle of each stitch, rising to near-opaque at
+    grazing angles) broken up by a fine noise threshold so the rim reads as
+    many short fibres, not a uniform glow ring."""
+    fp = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["chenille"])
+    halo = fp["halo"] or FIBRE_PARAMS["chenille"]["halo"]
+    mat = bpy.data.materials.new(name)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    bsdf = nt.nodes.get("Principled BSDF")
+    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    set_in(bsdf, "Roughness", 0.95)
+    set_in(bsdf, "Specular IOR Level", 0.05)
+    set_in(bsdf, "Sheen Weight", 0.0)
+    fres = nt.nodes.new("ShaderNodeFresnel")
+    fres.inputs["IOR"].default_value = 1.35
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = halo["noise_scale"]
+    noise.inputs["Detail"].default_value = 3.0
+    ramp = nt.nodes.new("ShaderNodeMapRange")
+    ramp.inputs["To Min"].default_value = -0.35   # some noise valleys cut fully through (gaps between pile fibres)
+    ramp.inputs["To Max"].default_value = 1.15
+    nt.links.new(noise.outputs["Fac"], ramp.inputs["Value"])
+    combine = nt.nodes.new("ShaderNodeMath")
+    combine.operation = "MULTIPLY_ADD"
+    # alpha = fresnel * ramp(noise) — grazing angle scales how much of the
+    # noise-broken fringe shows; face-on (fresnel≈0) the shell is invisible and
+    # the core strand's own material shows clean through the middle.
+    nt.links.new(fres.outputs["Fac"], combine.inputs[0])
+    nt.links.new(ramp.outputs["Result"], combine.inputs[1])
+    combine.inputs[2].default_value = 0.0
+    clamp = nt.nodes.new("ShaderNodeClamp")
+    nt.links.new(combine.outputs["Value"], clamp.inputs["Value"])
+    nt.links.new(clamp.outputs["Result"], bsdf.inputs["Alpha"])
+    return mat
+
+
+def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
     # One curve object per (colour, radius) for speed. Bulky yarn sits proud.
     # `drape`, if given, is (cx, cy, amp, fx, fy) — a low-frequency height field
     # that lifts the whole blanket into soft hills/valleys so it reads as draped
@@ -124,20 +227,18 @@ def build_yarn(strokes, drape=None, z_offset=0.0):
         return amp * (math.sin((bx - cx) * fx) + math.cos((by - cy) * fy)
                       + 0.5 * math.sin((bx - cx + by - cy) * fx * 0.6))
 
-    for (hexcol, radius, sheen), group in groups.items():
-        cu = bpy.data.curves.new("yarn", type="CURVE")
-        cu.dimensions = "3D"
-        cu.bevel_depth = 1.0
-        cu.bevel_resolution = 2
-        cu.resolution_u = 2
-        cu.use_fill_caps = True
+    has_halo = fibre in ("chenille", "velvet")
+
+    def write_points(cu, mult):
         for st in group:
             # radiusMm is now the PLY tube radius (crisp plied model, §11): bevel
             # it 1:1 so the nPly plies stay distinct (a fatter multiplier merges
             # them back into a smooth roving tube). The ply spread reaches the
-            # target outer radius, so the yarn still fills the fabric.
-            r = st["radiusMm"] * S * 1.02
-            zlift = r * 1.0
+            # target outer radius, so the yarn still fills the fabric. `mult` >1
+            # grows the halo shell (see build_yarn's fuzz-halo pass) outside the
+            # core strand without changing the core's own radius.
+            r = st["radiusMm"] * S * 1.02 * mult
+            zlift = st["radiusMm"] * S * 1.02  # halo lifts with the CORE strand, not its own bigger radius
             for poly in st["filaments"]:
                 if len(poly) < 2:
                     continue
@@ -148,9 +249,34 @@ def build_yarn(strokes, drape=None, z_offset=0.0):
                     by = -p[1] * S
                     sp.points[i].co = (bx, by, p[2] * S + zlift + z_offset + drape_z(bx, by), 1.0)
                     sp.points[i].radius = r
+
+    for (hexcol, radius, sheen), group in groups.items():
+        cu = bpy.data.curves.new("yarn", type="CURVE")
+        cu.dimensions = "3D"
+        cu.bevel_depth = 1.0
+        cu.bevel_resolution = 2
+        cu.resolution_u = 2
+        cu.use_fill_caps = True
+        write_points(cu, 1.0)
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
-        ob.data.materials.append(yarn_material("y_" + hexcol, hexcol, sheen))
+        ob.data.materials.append(yarn_material("y_" + hexcol, hexcol, sheen, fibre))
         bpy.context.collection.objects.link(ob)
+
+        if has_halo:
+            # The chenille/velvet PILE HALO: one extra low-poly shell per colour
+            # group (bevel_resolution 1, not 2 — the alpha cutout hides the facet
+            # look, and this keeps the extra object cheap). See fuzz_shell_material.
+            fp = FIBRE_PARAMS[fibre]
+            hcu = bpy.data.curves.new("yarn_halo", type="CURVE")
+            hcu.dimensions = "3D"
+            hcu.bevel_depth = 1.0
+            hcu.bevel_resolution = 1
+            hcu.resolution_u = 2
+            hcu.use_fill_caps = False
+            write_points(hcu, fp["halo"]["mult"])
+            hob = bpy.data.objects.new("yarnhalo_" + hexcol.lstrip("#"), hcu)
+            hob.data.materials.append(fuzz_shell_material("yh_" + hexcol, hexcol, fibre))
+            bpy.context.collection.objects.link(hob)
 
 
 def prop_material(hexcol, gloss):
@@ -300,6 +426,7 @@ def main():
     scene = bpy.context.scene
     strokes = data["strokes"]
     yarn_hex = strokes[0]["hex"] if strokes else "#efe4d6"
+    fibre = data.get("fibre", "cotton")  # yarn-fibre pass: 'cotton'|'wool'|'chenille'|'velvet'
 
     view = data.get("view", {})
     bg_hex = view.get("bgHex", "#7c6049")          # contrasting warm walnut
@@ -392,7 +519,7 @@ def main():
         surface_material(bg_hex, view.get("groundWhite", GROUND_WHITE_BOOST))
     )
 
-    build_yarn(strokes, drape, z_offset)
+    build_yarn(strokes, drape, z_offset, fibre)
 
     # Non-yarn notions (safety eyes, a nose). Absent from every scene that has
     # none, so those renders are unchanged.
