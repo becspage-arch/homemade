@@ -765,7 +765,7 @@ def _mix_rgb(nt, fac, c1, c2):
     return mx.outputs[2]
 
 
-def linen_material(name, hexcol, weave=6.0):
+def linen_material(name, hexcol, weave=5.0):
     """Oatmeal linen: a plain weave of slubby threads (two crossed wave bands),
     soft low-frequency tone mottling, a faint fibre sheen."""
     mat = _principled(name, hexcol, rough=0.9, sheen=0.35, spec=0.15)
@@ -786,8 +786,8 @@ def linen_material(name, hexcol, weave=6.0):
     nt.links.new(vec, wy.inputs["Vector"])
     weave_h = _math(nt, "MULTIPLY", wx.outputs["Fac"], wy.outputs["Fac"])
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.5
-    bump.inputs["Distance"].default_value = 0.03
+    bump.inputs["Strength"].default_value = 0.6
+    bump.inputs["Distance"].default_value = 0.12
     nt.links.new(weave_h, bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
     slub_vec = _obj_coords(nt, (0.6, 0.6, 0.6))
@@ -811,37 +811,46 @@ def linen_material(name, hexcol, weave=6.0):
 
 
 def knit_material(name, hexcol, stitch_cm=1.3, rough=0.92):
-    """A chunky stocking-stitch blanket: columns of V stitches (a chevron height
-    field), dark gaps between columns, a soft wool sheen."""
-    mat = _principled(name, hexcol, rough=rough, sheen=0.6, spec=0.1)
+    """A chunky stocking-stitch blanket: every stitch a V of two plump leaning
+    loops (each leg a rounded lozenge whose top leans outward), deep shadow
+    between columns, a fine fibre fuzz and a soft wool sheen."""
+    mat = _principled(name, hexcol, rough=rough, sheen=0.7, spec=0.1)
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     sc = 1.0 / stitch_cm
-    vec = _obj_coords(nt, (sc, sc * 1.35, sc))
+    vec = _obj_coords(nt, (sc, sc * 1.2, sc))
     sep = nt.nodes.new("ShaderNodeSeparateXYZ")
     nt.links.new(vec, sep.inputs["Vector"])
-    u = sep.outputs["X"]
-    v = sep.outputs["Y"]
-    a = _math(nt, "ABSOLUTE", _math(nt, "SUBTRACT", _math(nt, "FRACT", u), 0.5))  # 0 mid column .. 0.5 gap
-    w = _math(nt, "ADD", v, _math(nt, "MULTIPLY", a, 1.2))
-    ridge = _math(nt, "MULTIPLY_ADD", _math(nt, "SINE", _math(nt, "MULTIPLY", w, 6.2832)), 0.5)
-    ridge.node.inputs[2].default_value = 0.5
-    gap = _math(nt, "POWER", _math(nt, "MULTIPLY", a, 2.0), 5.0)
-    h = _math(nt, "MULTIPLY", ridge, _math(nt, "SUBTRACT", 1.0, gap))
+    fu = _math(nt, "FRACT", sep.outputs["X"])
+    fv = _math(nt, "FRACT", sep.outputs["Y"])
+    dy = _math(nt, "SUBTRACT", fv, 0.5)
+    lean = _math(nt, "MULTIPLY", dy, 0.22)
+
+    def leg(centre, sign):
+        # dx = fu - centre + sign*lean ; h = 1 - (dx/0.23)^2 - (dy/0.62)^2
+        dx = _math(nt, "ADD" if sign > 0 else "SUBTRACT", _math(nt, "SUBTRACT", fu, centre), lean)
+        qx = _math(nt, "POWER", _math(nt, "DIVIDE", dx, 0.23), 2.0)
+        qy = _math(nt, "POWER", _math(nt, "DIVIDE", dy, 0.62), 2.0)
+        return _math(nt, "SUBTRACT", _math(nt, "SUBTRACT", 1.0, qx), qy)
+
+    h = _math(nt, "MAXIMUM", leg(0.27, +1), leg(0.73, -1))
+    h = _math(nt, "SQRT", _math(nt, "MAXIMUM", h, 0.0))
     # A finer fibre fuzz on top.
     fz = nt.nodes.new("ShaderNodeTexNoise")
-    fz.inputs["Scale"].default_value = 90.0
+    fz.inputs["Scale"].default_value = 60.0
+    fz.inputs["Detail"].default_value = 4.0
     nt.links.new(_obj_coords(nt, (1, 1, 1)), fz.inputs["Vector"])
-    h2 = _math(nt, "MULTIPLY_ADD", fz.outputs["Fac"], 0.08)
+    h2 = _math(nt, "MULTIPLY_ADD", fz.outputs["Fac"], 0.12)
     nt.links.new(h, h2.node.inputs[2])
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.85
-    bump.inputs["Distance"].default_value = 0.35
+    bump.inputs["Strength"].default_value = 1.0
+    bump.inputs["Distance"].default_value = 0.45 * stitch_cm
     nt.links.new(h2, bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
     base = _lin(hexcol)
-    dark = tuple(c * 0.68 for c in base[:3]) + (1.0,)
-    nt.links.new(_mix_rgb(nt, h, dark, base), bsdf.inputs["Base Color"])
+    dark = tuple(c * 0.5 for c in base[:3]) + (1.0,)
+    shade = _math(nt, "POWER", h, 0.6)
+    nt.links.new(_mix_rgb(nt, shade, dark, base), bsdf.inputs["Base Color"])
     return mat
 
 
@@ -990,8 +999,9 @@ def _folds(H, R, amp, lift=0.03, seed=0.0):
     so the piece rests on it exactly as it rests on the studio ground: same
     height, same contact. Troughs never go through the table."""
     dirs = [(math.cos(a), math.sin(a)) for a in (0.35 + seed, 1.25 + seed * 0.5, 2.2 - seed * 0.3, 2.9)]
-    freqs = (1.6, 2.3, 1.1, 3.1)
-    weights = (1.0, 0.7, 0.8, 0.35)
+    # wrinkle wavelengths ~0.2-0.45 of the toy's height (2-6 cm on a 13 cm toy)
+    wls = (0.30, 0.21, 0.45, 0.16)
+    weights = (1.0, 0.6, 0.8, 0.3)
 
     def h(x, y):
         r = math.hypot(x, y * 1.1)
@@ -999,12 +1009,14 @@ def _folds(H, R, amp, lift=0.03, seed=0.0):
         if m <= 0.0:
             return lift
         f = 0.0
-        for (dx, dy), fr, w in zip(dirs, freqs, weights):
-            u = (x * dx + y * dy) / H * fr + seed * 3.1
+        # wrinkles bunch up in places and relax in others, as real cloth does
+        env = 0.55 + 0.45 * math.sin(x / H * 0.9 + seed) * math.cos(y / H * 0.7 - seed)
+        for (dx, dy), wl, w in zip(dirs, wls, weights):
+            u = (x * dx + y * dy) / (wl * H) * math.pi + seed * 3.1
             # sharpened crest: a fold, not a sine swell
             c = 1.0 - abs(math.sin(u))
             f += w * (c * c - 0.4)
-        return max(0.02, lift + amp * H * m * f)
+        return max(0.02, lift + amp * H * m * env * f)
     return h
 
 
@@ -1022,6 +1034,27 @@ def _cyl(name, root, mat, x, y, z0, r1, r2, depth, seg=48):
     bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=False, segments=seg,
                           radius1=r1, radius2=r2, depth=depth,
                           matrix=Matrix.Translation(Vector((x, y, z0 + depth * 0.5))))
+    return _bm_object(name, bm, root, mat, smooth=True)
+
+
+def _lathe(name, root, mat, x, y, profile, seg=48):
+    """A turned vessel: a (radius, height) profile spun round a vertical axis."""
+    bm = bmesh.new()
+    rings = []
+    for r, z in profile:
+        if r <= 1e-6:
+            rings.append([bm.verts.new((x, y, z))])
+            continue
+        rings.append([bm.verts.new((x + r * math.cos(2 * math.pi * k / seg),
+                                    y + r * math.sin(2 * math.pi * k / seg), z)) for k in range(seg)])
+    for a, b in zip(rings, rings[1:]):
+        if len(a) == 1:
+            for k in range(seg):
+                bm.faces.new((a[0], b[k], b[(k + 1) % seg]))
+        else:
+            for k in range(seg):
+                bm.faces.new((a[k], a[(k + 1) % seg], b[(k + 1) % seg], b[k]))
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
     return _bm_object(name, bm, root, mat, smooth=True)
 
 
@@ -1247,7 +1280,7 @@ def apply_stage(stage, scene, ctx):
     cd.dof.focus_object = None
     cd.dof.focus_distance = s
     cd.dof.aperture_fstop = view.get("stageFstop", STAGE_FSTOP)
-    cd.dof.aperture_blades = 7
+    cd.dof.aperture_blades = 0          # round bokeh
     cd.dof.aperture_rotation = 0.3
     cd.clip_end = max(cd.clip_end, D * 6)
     # Square (or `stageAspect`) frame round the same vertical field of view: the
@@ -1284,7 +1317,7 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
             return f(x, y) + heap(x, y)
     else:
         h = f
-    n = int(min(260, max(120, (2 * x1) / (0.06 * H))))
+    n = int(min(320, max(120, (2 * x1) / (0.025 * H))))
     return _cloth(name, root, mat, -x1, x1, y0, y1, n, h)
 
 
@@ -1324,17 +1357,18 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
     ob.visible_shadow = False
     # A rumpled oatmeal linen under the piece, filling the foreground.
     lin = linen_material("napkin", "#d6c9b2")
-    _throw("napkin", root, lin, vis, H, R, D, 0.07, back=0.32, seed=0.4)
+    _throw("napkin", root, lin, vis, H, R, D, 0.05, back=0.32, seed=0.4)
     # Out of focus on the sill, back right: a cream jug and a stack of books.
     glaze = _principled("jug", "#eee6d8", rough=0.3, spec=0.5, coat=0.3)
     jy = 0.55 * D
     jx = 0.62 * vis.hw(jy)
-    _cyl("jug", root, glaze, jx, jy, 0.0, 0.30 * H, 0.24 * H, 0.85 * H)
-    bm = bmesh.new()
-    bmesh.ops.create_cone(bm, cap_ends=False, cap_tris=False, segments=24, radius1=0.24 * H,
-                          radius2=0.28 * H, depth=0.12 * H,
-                          matrix=Matrix.Translation(Vector((jx, jy, 0.9 * H))))
-    _bm_object("jug_lip", bm, root, glaze, smooth=True)
+    _lathe("jug", root, glaze, jx, jy, [(r * H, z * H) for r, z in (
+        (0.0, 0.0), (0.26, 0.0), (0.30, 0.04), (0.34, 0.22), (0.34, 0.42), (0.29, 0.62),
+        (0.21, 0.78), (0.21, 0.86), (0.26, 0.96), (0.24, 0.97), (0.19, 0.87), (0.19, 0.79))])
+    hx = jx + 0.3 * H
+    _curve("jug_handle", root, glaze, [(jx + 0.2 * H, jy, 0.78 * H), (hx + 0.08 * H, jy, 0.74 * H),
+                                       (hx + 0.12 * H, jy, 0.55 * H), (hx + 0.06 * H, jy, 0.36 * H),
+                                       (jx + 0.3 * H, jy, 0.28 * H)], 0.04 * H)
     by = 0.78 * D
     bx = 0.95 * vis.hw(by)
     z0 = 0.0
@@ -1355,17 +1389,18 @@ def _dried_bunch(root, H, R, vis):
     lav = _principled("lavender", "#8a73a6", rough=0.85, sheen=0.3)
     daisy = _principled("daisy", "#f4f0e6", rough=0.8)
     eye = _principled("daisy_eye", "#d8a238", rough=0.8)
-    grass = _principled("wheat", "#cfb57c", rough=0.85)
+    grass = _principled("wheat", "#dccb9e", rough=0.85)
     # The tie point sits beside the piece; the heads fan away to the back left.
-    tx, ty = -(R * 1.35 + 0.15 * H), -0.25 * H
+    tx, ty = -(R * 1.3 + 0.12 * H), 0.05 * H
     lav_pts, dai_pts, eye_pts, gr_pts = [], [], [], []
     for kk in range(15):
-        a = math.radians(122 + (kk - 7) * 5.0)        # 0 = +x; 122 deg = back-left
-        L = (0.95 + 0.25 * _hash01(kk, 1)) * H
+        a = math.radians(112 + (kk - 7) * 4.0)        # 0 = +x; 112 deg = back-left, into the blur
+        L = (1.05 + 0.3 * _hash01(kk, 1)) * H
         dx, dy = math.cos(a), math.sin(a)
-        base = (tx - dx * 0.35 * H, ty - dy * 0.35 * H, 0.2 + 0.03 * H)
+        base = (tx - dx * 0.15 * H, ty - dy * 0.15 * H, 0.2 + 0.03 * H)
         tip = (tx + dx * L, ty + dy * L, 0.2 + (0.05 + 0.08 * _hash01(kk, 2)) * H)
-        _curve("stem%d" % kk, root, stem, [base, tip], 0.014 * H)
+        mid = ((base[0] + tip[0]) * 0.5, (base[1] + tip[1]) * 0.5, (base[2] + tip[2]) * 0.5 + 0.04 * H)
+        _curve("stem%d" % kk, root, stem, [base, mid, tip], 0.007 * H)
         kind = kk % 3
         for j in range(12):
             t = 0.62 + 0.38 * j / 11
@@ -1388,7 +1423,7 @@ def _dried_bunch(root, H, R, vis):
     _spheres("wheat", root, grass, gr_pts, 0.02 * H, subdiv=1)
     # the twine tie
     _curve("tie", root, _principled("twine", "#b59a6a", rough=0.9),
-           [(tx, ty - 0.06 * H, 0.2), (tx, ty + 0.06 * H, 0.25 + 0.04 * H)], 0.05 * H)
+           [(tx - 0.03 * H, ty - 0.05 * H, 0.2), (tx + 0.03 * H, ty + 0.05 * H, 0.25 + 0.04 * H)], 0.035 * H)
 
 
 def _stage_linen(root, H, R, s, D, vis, light):
@@ -1399,7 +1434,7 @@ def _stage_linen(root, H, R, s, D, vis, light):
         # a soft heap of the same throw rising behind the piece
         return (0.55 * H * math.exp(-((y - 0.26 * s) / (0.10 * s)) ** 2)
                 * (0.7 + 0.3 * math.sin(x / H * 1.7 + 0.6)) * _smoothstep(0.12 * s, 0.2 * s, y + 0.06 * s))
-    _throw("throw", root, lin, vis, H, R, D, 0.10, back=0.5, seed=1.1, heap=heap)
+    _throw("throw", root, lin, vis, H, R, D, 0.06, back=0.5, seed=1.1, heap=heap)
     plaster = plaster_material("wall", "#eee6d8")
     _box("wall", root, plaster, -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
     # A stoneware vase with dried pampas, out of focus back left.
@@ -1427,7 +1462,7 @@ def _stage_linen(root, H, R, s, D, vis, light):
 def _stage_nursery(root, H, R, s, D, vis, light):
     knit = knit_material("blanket", "#f2eadc", stitch_cm=1.9)
     _ground(root, _principled("dresser", "#efe7dc", rough=0.6), s, D)
-    _throw("blanket", root, knit, vis, H, R, D, 0.08, back=0.42, seed=2.2)
+    _throw("blanket", root, knit, vis, H, R, D, 0.04, back=0.42, seed=2.2)
     plaster = plaster_material("wall", "#f2ddd3")
     _box("wall", root, plaster, -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
     oak = wood_material("oak", "#dcbb90", "#b58e62", along_x=False)
@@ -1470,9 +1505,11 @@ def _stage_nursery(root, H, R, s, D, vis, light):
     lilac = knit_material("lilac", "#b8a2cb", stitch_cm=1.6)
     hx0 = max(R * 1.45, 0.5 * vis.hw(0))
 
+    wr = _folds(H, 0.0, 0.05, lift=0.0, seed=3.3)
+
     def lheap(x, y):
         u = (x - hx0) / (0.6 * vis.hw(0))
-        return 0.03 + max(0.0, 0.5 * H * _smoothstep(0.0, 0.5, u) * math.exp(-((y - 0.1 * s) / (0.3 * s)) ** 2)
+        return wr(x, y) + 0.03 + max(0.0, 0.5 * H * _smoothstep(0.0, 0.5, u) * math.exp(-((y - 0.1 * s) / (0.3 * s)) ** 2)
                           * (0.8 + 0.2 * math.sin(y / H * 2.3)))
     _cloth("lilac", root, lilac, hx0, 1.4 * vis.hw(0.3 * D), -0.15 * s, 0.4 * D, 120, lheap)
     light((-1.2 * s, 0.0, 0.9 * s), (0, 0, 0.4 * H), 0.8, 1.0 * s)
@@ -1482,7 +1519,7 @@ def _stage_nursery(root, H, R, s, D, vis, light):
 def _stage_christmas(root, H, R, s, D, vis, light):
     knit = knit_material("throw", "#f0e7d7", stitch_cm=1.8)
     _ground(root, wood_material("table", "#8f6a4a", "#5d4130"), s, D)
-    _throw("throw", root, knit, vis, H, R, D, 0.09, back=0.4, seed=0.9)
+    _throw("throw", root, knit, vis, H, R, D, 0.045, back=0.4, seed=0.9)
     plaster = plaster_material("wall", "#d6bc98", mottle=0.08)
     _box("wall", root, plaster, -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
     needle = _principled("needle", "#294a2f", rough=0.6, spec=0.3)
