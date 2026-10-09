@@ -34,6 +34,7 @@ import {
 } from '@/lib/loom/crochet/engine/compositionPattern'
 import type { BuiltContinuous } from '@/lib/loom/crochet/engine/yarnPath'
 import {
+  cropToSubject,
   motifGridSide,
   photoToTapestryGrid,
   TapestrySubjectTooSmallError,
@@ -260,6 +261,44 @@ const TAPESTRY_MINOR_COLOUR_SHARE = 0.03
 /** The even margin left round the motif, as a share of its longer side. */
 const TAPESTRY_FRAME_MARGIN = 0.06
 
+/** The smallest side a motif is searched from: about 13 cm at worsted. */
+const TAPESTRY_MIN_MOTIF_SIDE = 24
+
+/**
+ * One single-crochet stitch is wider than a row is tall (the settled cell,
+ * `SC_STITCH_PITCH_YR` / `SC_ROW_PITCH_YR` below: 2.7 / 2.4). Measured again on
+ * the reopen proof: a 32 x 32 panel settled 184 x 164 mm, 1.12 : 1.
+ */
+const TAPESTRY_CELL_ASPECT = 2.7 / 2.4
+
+/**
+ * The grid for a motif: `side` x `side` worth of stitches, reshaped so the
+ * PANEL has the motif's own aspect once the wide-and-short stitch is
+ * allowed for, each axis kept inside its envelope range and the total inside
+ * the budget. A wide sun-over-hills gets a wide panel instead of a square one
+ * with empty bands above and below.
+ */
+export function tapestryGridForMotif(input: {
+  side: number
+  subjectAspect: number
+  cols: [number, number]
+  rows: [number, number]
+  maxCells: number
+  cellAspect?: number
+}): { width: number; height: number } {
+  const a = Math.min(1.8, Math.max(1 / 1.8, input.subjectAspect))
+  const r = a / (input.cellAspect ?? TAPESTRY_CELL_ASPECT)
+  const clamp = (v: number, [lo, hi]: [number, number]): number => Math.min(hi, Math.max(lo, Math.round(v)))
+  let width = clamp(input.side * Math.sqrt(r), input.cols)
+  let height = clamp(input.side / Math.sqrt(r), input.rows)
+  while (width * height > input.maxCells && (width > input.cols[0] || height > input.rows[0])) {
+    if (width / height > r && width > input.cols[0]) width -= 1
+    else if (height > input.rows[0]) height -= 1
+    else width -= 1
+  }
+  return { width, height }
+}
+
 /**
  * The pictorial lane. A tapestry picture is not written cell by cell by a
  * model: an illustration is generated on the approved image engine, then the
@@ -282,10 +321,11 @@ async function authorTapestryProgram(
   // fallback, exactly as it was when a model wrote the brief.
   const subject = picture?.trim() || brief.subject
   const envelope = envelopeFor(brief.shelf, 'grid-tapestry')
-  const [colLo, colHi] = envelope?.cols ?? [24, 40]
-  const [rowLo, rowHi] = envelope?.rows ?? [24, 40]
-  // Square panels: one side, inside both envelope ranges and the budget.
-  const minSide = Math.max(colLo, rowLo)
+  const [colLo, colHi] = envelope?.cols ?? [20, 40]
+  const [rowLo, rowHi] = envelope?.rows ?? [20, 40]
+  // The motif's SIDE is searched from TAPESTRY_MIN_MOTIF_SIDE up; the panel's
+  // shape then follows the motif inside the envelope and the budget.
+  const minSide = Math.max(TAPESTRY_MIN_MOTIF_SIDE, colLo, rowLo)
   const maxSide = Math.max(minSide, Math.min(colHi, rowHi, Math.floor(Math.sqrt(maxCells))))
 
   // FLAT, AND EXACTLY AS WRITTEN. A tapestry stitch is a single flat block of
@@ -316,6 +356,8 @@ async function authorTapestryProgram(
   let grid: Awaited<ReturnType<typeof photoToTapestryGrid>> | null = null
   let lastCoverage = 0
   let side = minSide
+  let width = minSide
+  let height = minSide
   let mismatch: Record<number, number> = {}
   for (let attempt = 1; attempt <= TAPESTRY_ILLUSTRATION_ATTEMPTS; attempt++) {
     const illustration = await generatePatternImage(prompt, {
@@ -332,9 +374,18 @@ async function authorTapestryProgram(
       })
       side = sized.side
       mismatch = sized.mismatch
+      const { subjectAspect } = await cropToSubject(illustration.buffer, { aspect: 1, margin: TAPESTRY_FRAME_MARGIN })
+      ;({ width, height } = tapestryGridForMotif({
+        side,
+        subjectAspect,
+        cols: [colLo, colHi],
+        rows: [rowLo, rowHi],
+        maxCells,
+      }))
       grid = await photoToTapestryGrid(illustration.buffer, {
-        width: side,
-        height: side,
+        width,
+        height,
+        cellAspect: TAPESTRY_CELL_ASPECT,
         colours: TAPESTRY_MOTIF_MAX_COLOURS,
         maxColours: TAPESTRY_MOTIF_MAX_COLOURS,
         // Flat poster art needs no contrast stretch: `normalise` darkens a
@@ -372,11 +423,9 @@ async function authorTapestryProgram(
     )
   }
   console.log(
-    `${brief.slug}: motif grid ${side} x ${side} (sides ${minSide}-${maxSide}; mismatch ${JSON.stringify(mismatch)}), ` +
-      `${grid.palette.length} colours`,
+    `${brief.slug}: motif side ${side} (searched ${minSide}-${maxSide}; mismatch ${JSON.stringify(mismatch)}) ` +
+      `→ grid ${width} x ${height}, ${grid.palette.length} colours`,
   )
-  const width = side
-  const height = side
   const program = buildTapestryProgram(grid, {
     name: brief.name,
     yarnWeight: (envelope?.yarnWeight ?? 'worsted') as YarnWeight,

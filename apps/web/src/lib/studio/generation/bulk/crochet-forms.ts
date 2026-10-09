@@ -264,12 +264,14 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
   'wall-hanging': [
     {
       treatment: 'grid-tapestry',
-      // Square panels; the lane picks the side from the motif itself
-      // (`motifGridSide`), so a bold simple motif stays near the low end. The
+      // The lane picks the size from the motif itself (`motifGridSide`, from
+      // 24 a side up) and the panel's shape from the motif's aspect
+      // (`tapestryGridForMotif`, which may take one axis down to 20), so a bold
+      // simple motif stays near the low end. The
       // top of the range is only reachable under the CLI budget below — the
       // in-step budget still caps an Inngest build at 40 x 40.
-      cols: [24, 60],
-      rows: [24, 60],
+      cols: [20, 60],
+      rows: [20, 60],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A tapestry-crochet picture panel to hang, the colour changing stitch by stitch.',

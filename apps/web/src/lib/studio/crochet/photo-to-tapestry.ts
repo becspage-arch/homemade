@@ -90,6 +90,14 @@ export interface PhotoToTapestrySettings {
    * Unset means no merging, exactly as before.
    */
   minColourShare?: number
+  /**
+   * Width over height of ONE STITCH in the finished fabric. Single crochet is
+   * wider than it is tall (about 1.12 : 1 at the settled cell), so a grid of
+   * W x H stitches is a panel of aspect W x cellAspect / H, and the picture is
+   * framed to THAT shape before it is squeezed onto the grid — otherwise a
+   * round sun comes out squat. Default 1 (the old behaviour).
+   */
+  cellAspect?: number
   /** Floor for `minColourShare` merging. */
   minColours?: number
   /**
@@ -136,6 +144,9 @@ export interface SubjectCrop {
   buffer: Buffer
   /** Trimmed area over original area, 0 to 1. */
   coverage: number
+  /** Width over height of the subject's trimmed bounds plus any frame margin
+   *  (before growing to the frame aspect) — the shape the motif wants. */
+  subjectAspect: number
 }
 
 /**
@@ -160,7 +171,7 @@ export async function cropToSubject(
   const W = meta.width ?? 0
   const H = meta.height ?? 0
   const originalArea = W * H
-  if (!originalArea) return { buffer: imageBytes, coverage: 1 }
+  if (!originalArea) return { buffer: imageBytes, coverage: 1, subjectAspect: 1 }
   let box: { left: number; top: number; width: number; height: number }
   let trimmed: Buffer
   try {
@@ -181,11 +192,12 @@ export async function cropToSubject(
     box = { left: 0, top: 0, width: W, height: H }
   }
   const coverage = (box.width * box.height) / originalArea
-  if (!frame) return { buffer: trimmed, coverage }
+  if (!frame) return { buffer: trimmed, coverage, subjectAspect: box.width / box.height }
 
   const m = Math.round(Math.max(box.width, box.height) * Math.max(0, frame.margin))
   let w = box.width + 2 * m
   let h = box.height + 2 * m
+  const subjectAspect = w / h
   if (w / h < frame.aspect) w = Math.round(h * frame.aspect)
   else h = Math.round(w / frame.aspect)
   const cx = box.left + box.width / 2
@@ -210,7 +222,7 @@ export async function cropToSubject(
       background,
     })
   }
-  return { buffer: await out.png().toBuffer(), coverage }
+  return { buffer: await out.png().toBuffer(), coverage, subjectAspect }
 }
 
 /**
@@ -353,7 +365,9 @@ export async function photoToTapestryGrid(
   if (settings.cropToSubject) {
     const cropped = await cropToSubject(
       imageBytes,
-      settings.frameMargin != null ? { aspect: width / height, margin: settings.frameMargin } : undefined,
+      settings.frameMargin != null
+        ? { aspect: (width * (settings.cellAspect ?? 1)) / height, margin: settings.frameMargin }
+        : undefined,
     )
     if (settings.minSubjectCoverage != null && cropped.coverage < settings.minSubjectCoverage) {
       throw new TapestrySubjectTooSmallError(cropped.coverage, settings.minSubjectCoverage)

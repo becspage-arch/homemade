@@ -32,7 +32,7 @@ Rules for this file: only items still to do; remove a line the moment it is done
 - Yarn-fibre halo render option (chenille look matched to the pattern yarn).
 - fpdc/bpdc collars (branch claude/loom-look-pass-6; look regressed).
 - Shorter bear arms (round count), ball coil at macro.
-- Tapestry lane: the illustration must fill the frame; the routine skips that shelf until fixed.
+- Tapestry lane: the illustration must fill the frame; the routine skips that shelf until fixed. Reopen (9 Oct, branch claude/crochet-tapestry-reopen): `paused` on the wall-hanging envelope keeps it out of the context quota; poster-motif prompt, 8-colour cap, motif-sized grid, reframe round the subject, CLI_CROCHET_MAX_CELLS 3600. Proof in /mnt/project-files/homemade/crochet-tapestry-proof/: draft verdict FAIL for both pieces against the 9 Oct quality bar (no dead borders now, but yarn-shade snapping muddies greens, Flux still adds detail, and a flat render on white is not a styled listing). Shelf stays paused; Rebecca to judge.
 - Knitting: see project_knitting_state.md.
 - Cross-craft from the world-best audit: yarn/floss database, follow-along offline mode, accessibility, one-way contributions (maker photos, reviews, errata pages, feature suggestions, AI-screened), animated stitch diagrams, public errata.
 

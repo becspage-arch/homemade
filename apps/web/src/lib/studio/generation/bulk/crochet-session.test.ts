@@ -44,6 +44,7 @@ import {
   envelopeFor,
 } from './crochet-forms'
 import { TAPESTRY_MAX_CELLS } from '@/lib/studio/crochet/tapestry-program'
+import { tapestryGridForMotif } from './crochet'
 import { ideasForShelf, nextBuildableIdeas } from './crochet-idea-backlog'
 import { CROCHET_SHELF_BY_SLUG } from '../categories'
 
@@ -555,6 +556,19 @@ check('the CLI tapestry budget is its own number; the Inngest and Studio budgets
   const env = envelopeFor('wall-hanging', 'grid-tapestry')!
   // The top of the wall-hanging envelope is exactly what the CLI budget allows.
   assert.equal(env.cols![1] * env.rows![1], CLI_CROCHET_MAX_CELLS)
+})
+
+check('a tapestry panel takes the motif\'s shape, inside its envelope and budget', () => {
+  const base = { cols: [20, 60] as [number, number], rows: [20, 60] as [number, number], maxCells: 3600 }
+  // A square motif: a few more rows than stitches, because a stitch is wider than a row is tall.
+  const sq = tapestryGridForMotif({ ...base, side: 32, subjectAspect: 1 })
+  assert.ok(sq.height > sq.width, JSON.stringify(sq))
+  // A wide motif gets a wide panel, not a square one with empty bands.
+  const wide = tapestryGridForMotif({ ...base, side: 32, subjectAspect: 1.6 })
+  assert.ok(wide.width > wide.height, JSON.stringify(wide))
+  // Never past the budget or out of the envelope.
+  const big = tapestryGridForMotif({ ...base, side: 60, subjectAspect: 1.8 })
+  assert.ok(big.width * big.height <= 3600 && big.width <= 60 && big.height >= 20, JSON.stringify(big))
 })
 
 // ── Report ──────────────────────────────────────────────────────────────────
