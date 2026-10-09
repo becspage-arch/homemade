@@ -91,8 +91,13 @@ test('the embroidery is real strands ON the fabric and moves no stitch (sleepy b
   const p = buildAmigurumiProgram(choice('bunny', 'sleepy'))
   const c = compileComposition(p)
   assert.deepEqual(c.problems, [])
-  // The crocheted geometry is bit-identical to the safety-eye bunny.
-  assert.equal(c.geometryHash, PRESET_GEOMETRY_HASH_GENERATED['bunny-M'])
+  // The embroidery moves no crocheted stitch: the same program without it
+  // compiles to the same geometry hash. (The embroidered bunny shows its
+  // muzzle's magic ring rather than its closing hole, so it is not the
+  // safety-eye bunny's hash; the default face keeps that one, guarded by
+  // amigurumi-presets.test.ts.)
+  assert.equal(c.geometryHash, compileComposition({ ...p, embroidery: undefined }).geometryHash)
+  assert.notEqual(PRESET_GEOMETRY_HASH_GENERATED['bunny-M'], undefined)
   assert.ok(c.embroidery.length >= 6)
   const head = c.placed.find((x) => x.part.name === 'head')!
   const muzzle = c.placed.find((x) => x.part.name === 'muzzle')!

@@ -654,7 +654,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   // own thread, on top of the fabric.
   for (const e of compiled.embroidery ?? []) {
     for (const line of e.strands) {
-      const { radiusMm, filaments } = pliedFilaments(smooth(line, 3), e.radiusMm, 3, twist * 1.5)
+      const { radiusMm, filaments } = pliedFilaments(smooth(line, 3), e.radiusMm, 3, twist * 0.5)
       strokes.push({ hex: e.hex, sheen: 0.6, radiusMm, filaments })
     }
   }

@@ -635,7 +635,9 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : bear ? 1.15 : 0.85,
       place: {
         on: 'head', dir: faceDir({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : -0.22 }),
-        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear, surfaceFit: 'ellipsoid',
+        // An embroidered face is sewn ACROSS the muzzle front, so it wants the
+        // magic ring there (drawn to a pinprick), not the closing hole.
+        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear && (choices.face ?? 'safety') === 'safety', surfaceFit: 'ellipsoid',
       },
     },
   ]
@@ -1032,8 +1034,8 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
 const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushElev: number; blushAz: number; pinkNose: boolean; eyeHalfSt: number }> = {
   ball: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
   egg: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
-  bunny: { eyeElev: 6, eyeAz: 31, blushElev: -11, blushAz: 40, pinkNose: true, eyeHalfSt: 0.8 },
-  bear: { eyeElev: 6, eyeAz: 29, blushElev: -13, blushAz: 41, pinkNose: false, eyeHalfSt: 0.95 },
+  bunny: { eyeElev: 5, eyeAz: 33, blushElev: -11, blushAz: 42, pinkNose: true, eyeHalfSt: 1.05 },
+  bear: { eyeElev: 5, eyeAz: 31, blushElev: -13, blushAz: 43, pinkNose: false, eyeHalfSt: 1.2 },
   cat: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: true, eyeHalfSt: 0.8 },
   dog: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: false, eyeHalfSt: 0.8 },
   bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },
