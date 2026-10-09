@@ -23,6 +23,7 @@
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
+import { buildTube, tubeRibRounds, type TubeAnchor, type TubeBrimKind, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
 
 /** The fabric forms the loom can build from a program.
  *  - 'flat'   — a shaped, single-stitch flat piece (variable-width rows: incs /
@@ -31,8 +32,29 @@ import { buildContinuous, type BuiltContinuous } from './yarnPath'
  *               row (post ribbing, blo ridges, moss / textured rectangles).
  *               Every row is `gridWidth` stitches. (buildContinuous + stitchAt)
  *  - 'disc'   — a flat circle worked in the round off a magic ring. (buildRounds)
- *  - 'sphere' — an amigurumi ball. (buildSphere) */
-export type ProgramForm = 'flat' | 'grid' | 'disc' | 'sphere'
+ *  - 'sphere' — an amigurumi ball. (buildSphere)
+ *  - 'tube'   — an OPEN-ENDED round form: a hat, a cowl, a basket. Rounds that
+ *               rise, hold and fall; a magic-ring or chain-ring start; spiral or
+ *               joined rounds; a ribbed or folded brim; no stuffing. (buildTube) */
+export type ProgramForm = 'flat' | 'grid' | 'disc' | 'sphere' | 'tube'
+
+/** The construction choices of a 'tube' program (see tube.ts). */
+export interface TubeOptions {
+  /** 'ring' = magic ring, a closed crown (hat, basket); 'chain' = a foundation
+   *  chain joined into a ring, open at both ends (cowl). */
+  anchor: TubeAnchor
+  /** 'spiral' = one continuous spiral; 'joined' = sl st + ch up every round. */
+  join: TubeJoin
+  /** Off a magic ring: a doming crown or a flat base. Default 'dome'. */
+  cap?: TubeCap
+  /** A brim over the last N rounds: 1×1 front/back-post rib, or a fold. */
+  brim?: { kind: TubeBrimKind; rounds: number }
+  /** Which way up the finished object stands. 'bottom' (default): the open
+   *  end is at the bottom, the start at the top — a hat on a head. 'top': the
+   *  start is the base and the open end faces up — a basket, a pot. Render /
+   *  staging only (the piece is turned over for the hero); never geometry. */
+  openEnd?: 'bottom' | 'top'
+}
 
 /** Real yarn weights → yarn RADIUS in mm (the loom's `yr` knob). One program
  *  renders at any weight; the same stitch program is fine / worsted / bulky just
@@ -104,9 +126,16 @@ export interface CrochetProgram {
    *  its columns to 1.5 (the locked postrib swatch value) so the ribs touch. */
   gaugeYr?: number
 
-  /** disc/sphere: stitches per round. disc grows +6/round (magic-ring flat
-   *  circle); sphere follows the canonical ball recipe (±6 per round). */
+  /** disc/sphere/tube: stitches per round. disc grows +6/round (magic-ring flat
+   *  circle); sphere follows the canonical ball recipe (±6 per round); a tube's
+   *  rounds rise, hold and fall freely (≤ double / ≥ half round to round). */
   rounds?: number[]
+  /** tube: the construction choices. */
+  tube?: TubeOptions
+  /** Per-ROUND colour keys for the disc / sphere / tube forms (stripes). Each
+   *  entry is a key into `palette`; a missing entry falls back to the base
+   *  colour. Render-only: the geometry is unchanged. */
+  roundColours?: string[]
 
   // ── Yarn, colour, sizing — everything a stored pattern needs to render + list.
   //    All optional so the existing single-stitch proofs stay valid; a real
@@ -174,8 +203,12 @@ export interface CrochetProgram {
  *     of worn/standing: a gentle in-plane S-curve (not curled into a ring, not
  *     stood on end) so a long thin strip (a headband, a belt, a tie) reads as a
  *     finished item laid out for a listing photo, ribs still reading as straight
- *     bars across the curve. Presentation only — same genuinely-stitched geometry. */
-export type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband'
+ *     bars across the curve. Presentation only — same genuinely-stitched geometry.
+ *   - `standing` — a 3-D open form (a hat, a cowl, a basket) stood on the ground
+ *     and shot from a product three-quarter angle with the toy light rig. A
+ *     tube whose open end faces up (`tube.openEnd: 'top'`) is turned over for
+ *     it. Presentation only. */
+export type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband' | 'standing'
 
 /** Resolve the render yarn radius (mm) for a program: an explicit override wins,
  *  else the program's yarn weight, else worsted. */
@@ -244,8 +277,25 @@ export function compileProgram(p: CrochetProgram, yarnRadiusMm: number): BuiltCo
   if (!p.rounds || p.rounds.length === 0) throw new Error(`${p.name}: ${p.form} needs rounds`)
   if (!p.stitch) throw new Error(`${p.name}: ${p.form} needs a stitch`)
   if (p.form === 'disc') return buildRounds(p.stitch, p.rounds, yarnRadiusMm)
+  if (p.form === 'tube') return buildTube(tubeSpecOf(p), yarnRadiusMm)
   // sphere: the builder validates the counts follow the ball recipe.
   return buildSphere(p.stitch, 0, yarnRadiusMm, p.rounds)
+}
+
+/** The builder spec of a 'tube' program (throws on a malformed program). */
+export function tubeSpecOf(p: CrochetProgram): TubeSpec {
+  if (p.form !== 'tube') throw new Error(`${p.name}: not a tube program`)
+  if (!p.tube) throw new Error(`${p.name}: tube needs its construction options (anchor, join)`)
+  if (!p.rounds || !p.stitch) throw new Error(`${p.name}: tube needs rounds + a stitch`)
+  return {
+    stitch: p.stitch,
+    rounds: p.rounds,
+    anchor: p.tube.anchor,
+    join: p.tube.join,
+    cap: p.tube.cap,
+    brim: p.tube.brim,
+    gaugeYr: p.gaugeYr,
+  }
 }
 
 /** Recover a program from the product's stored ChartDefinition-shaped data.
@@ -284,7 +334,17 @@ export function programFromChart(chart: {
     // Disc if it grows +6 every round from 6 (the flat-circle recipe);
     // sphere if it rises then falls (the ball recipe).
     const isDisc = counts.every((c, i) => c === 6 * (i + 1))
-    return { name, stitch, form: isDisc ? 'disc' : 'sphere', rounds: counts }
+    if (isDisc) return { name, stitch, form: 'disc', rounds: counts }
+    // A ball comes back down to its pole; a chart that never narrows again after
+    // it has grown (a hat, a bowl, a basket) is an OPEN tube, not a bag.
+    const widest = Math.max(...counts)
+    const last = counts[counts.length - 1]!
+    const closes = last <= 6 && last < widest
+    if (!closes) {
+      const anchor: TubeAnchor = counts[0]! <= 12 ? 'ring' : 'chain'
+      return { name, stitch, form: 'tube', rounds: counts, tube: { anchor, join: 'spiral' } }
+    }
+    return { name, stitch, form: 'sphere', rounds: counts }
   }
   // flat: derive each row's ops from its count vs the row below.
   const foundation = counts[0]!
@@ -324,6 +384,8 @@ export function writeInstructions(p: CrochetProgram): string[] {
     return out
   }
 
+  if (p.form === 'tube') return writeTubeInstructions(p, uk)
+
   out.push(`Round 1: ${p.rounds![0]} ${uk} into a magic ring. (${p.rounds![0]} sts)`)
   for (let i = 1; i < p.rounds!.length; i++) {
     const prev = p.rounds![i - 1]!
@@ -335,6 +397,54 @@ export function writeInstructions(p: CrochetProgram): string[] {
       ? 'Stuff firmly, then fasten off, thread the tail through the final round and draw the opening closed.'
       : 'Fasten off and weave in the end.',
   )
+  return out
+}
+
+/** The chain-up a joined round starts with, by the body stitch's height. */
+function chainUp(stitch: StitchId): number {
+  return stitch === 'dc' ? 3 : stitch === 'hdc' ? 2 : 1
+}
+
+/**
+ * A TUBE, written the way a hat / cowl / basket pattern is written: the start
+ * (a magic ring, or a chain joined into a ring), every round with its count,
+ * the rib rounds as `[FPtr, BPtr]` repeats, joined rounds ending in their sl st
+ * and starting with their chain up, a folded brim finished by hand, and an
+ * open end that is simply fastened off.
+ */
+function writeTubeInstructions(p: CrochetProgram, uk: string): string[] {
+  const spec = tubeSpecOf(p)
+  const out: string[] = []
+  const rib = tubeRibRounds(spec)
+  const joined = spec.join === 'joined'
+  const counts = spec.rounds
+  const up = chainUp(spec.stitch)
+  const prefix = (i: number): string => (joined && i > 0 ? `ch ${up}, ` : '')
+  const suffix = joined ? ', join with a sl st to the first st' : ''
+  if (spec.anchor === 'chain') {
+    out.push(`Foundation: ch ${counts[0]}, join with a sl st into a ring, taking care not to twist. (${counts[0]} sts)`)
+    out.push(`Round 1: ch ${up}, ${uk} in each ch around${suffix}. (${counts[0]} sts)`)
+  } else {
+    out.push(`Round 1: ${counts[0]} ${uk} into a magic ring${suffix}. (${counts[0]} sts)`)
+  }
+  for (let i = 1; i < counts.length; i++) {
+    const prev = counts[i - 1]!
+    const cur = counts[i]!
+    // A round-striped tube changes yarn at the start of the round.
+    const key = p.roundColours?.[i]
+    if (key && key !== p.roundColours?.[i - 1]) out.push(`Change to the ${key} yarn.`)
+    const body = rib.has(i)
+      ? `[FPtr around next st, BPtr around next st] ${cur / 2} times`
+      : describeRound(prev, cur, uk)
+    out.push(`Round ${i + 1}: ${prefix(i)}${body}${suffix}. (${cur} sts)`)
+  }
+  if (!joined && counts.length > 1) {
+    out.push('Work in a continuous spiral without joining; mark the first stitch of each round.')
+  }
+  out.push('Fasten off and weave in the end.')
+  if (spec.brim?.kind === 'fold') {
+    out.push(`Fold the last ${spec.brim.rounds} rounds up to the outside to form the brim.`)
+  }
   return out
 }
 
@@ -439,6 +549,9 @@ const CHART_STITCH_LABEL: Partial<Record<StitchId, string>> = {
   bpdc: 'BPtr',
 }
 
+/** The rib's two stitches in the order they alternate (mirrors tube.ts RIB_PAIR). */
+const RIB_CHART: [StitchId, StitchId] = ['fpdc', 'bpdc']
+
 /** Expand a shaping op into the chart symbols it PRODUCES (what the row's cells
  *  are). 'st' → 1, 'inc' → 2, 'dec' → 1, 'shell' → SHELL_N, 'skip' → 0. */
 function opToSymbols(op: ShapeOp, sym: string): { symbol: string; label?: string }[] {
@@ -469,6 +582,35 @@ export function programToChart(p: CrochetProgram): {
 } {
   const base = { title: p.name, craft: 'crochet' as const, terminologyConvention: 'uk' as const }
   const postNote = 'Front/back-post stitches are shown with the treble glyph (FPtr/BPtr).'
+
+  if (p.form === 'tube') {
+    const spec = tubeSpecOf(p)
+    const sym = STITCH_TO_CHART_SYMBOL[spec.stitch]
+    const rib = tubeRibRounds(spec)
+    const joined = spec.join === 'joined'
+    const up = chainUp(spec.stitch)
+    const rounds = spec.rounds.map((count, i) => {
+      const cells: { symbol: string; count?: number; label?: string }[] = []
+      if (i === 0) cells.push(spec.anchor === 'ring' ? { symbol: 'magic-ring' } : { symbol: 'chain', count, label: 'ring' })
+      if (joined && (i > 0 || spec.anchor === 'chain')) cells.push({ symbol: 'chain', count: up })
+      if (rib.has(i)) {
+        for (let c = 0; c < count; c++) cells.push({ symbol: 'treble', label: CHART_STITCH_LABEL[RIB_CHART[c % 2]!] })
+      } else {
+        cells.push({ symbol: sym, count })
+      }
+      if (joined) cells.push({ symbol: 'slip-stitch', label: 'join' })
+      return { roundNumber: i + 1, label: `Rnd ${i + 1}`, stitches: cells }
+    })
+    const start = spec.anchor === 'ring' ? 'from a magic ring' : 'from a chain joined into a ring'
+    const how = joined ? 'in joined rounds' : 'in a continuous spiral'
+    const brim =
+      spec.brim?.kind === 'rib'
+        ? ` The last ${spec.brim.rounds} rounds are 1×1 post rib. ${postNote}`
+        : spec.brim?.kind === 'fold'
+          ? ` The last ${spec.brim.rounds} rounds fold up as the brim.`
+          : ''
+    return { ...base, layout: 'round', rounds, caption: `Worked ${how} ${start}; the end is left open.${brim}` }
+  }
 
   if (p.form === 'disc' || p.form === 'sphere') {
     const sym = STITCH_TO_CHART_SYMBOL[p.stitch ?? 'sc']

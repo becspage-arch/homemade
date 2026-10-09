@@ -522,6 +522,13 @@ function stitchIdsIn(program: CrochetProgram | CompositionProgram): string[] {
   if (p.form === 'grid') for (const row of p.grid ?? []) for (const s of row.stitches) ids.add(s)
   else if (p.stitch) ids.add(p.stitch)
   if (p.form === 'disc' || p.form === 'sphere') ids.delete('ch')
+  if (p.form === 'tube') {
+    // A magic-ring tube has no chain; a joined one slip-stitches every round;
+    // a ribbed brim works front- and back-post trebles.
+    if (p.tube?.anchor === 'ring') ids.delete('ch')
+    if (p.tube?.join === 'joined' || p.tube?.anchor === 'chain') ids.add('slst')
+    if (p.tube?.brim?.kind === 'rib') { ids.add('fpdc'); ids.add('bpdc') }
+  }
   return [...ids]
 }
 
@@ -1144,7 +1151,11 @@ export async function buildPatternRow(
   const craftStitchSlugs = [
     ...new Set(stitchIds.map((id) => STITCH_SLUG[id]).filter((slug): slug is string => Boolean(slug))),
   ]
-  if (isComposition || ('form' in program && (program.form === 'disc' || program.form === 'sphere'))) {
+  if (
+    isComposition ||
+    ('form' in program && (program.form === 'disc' || program.form === 'sphere')) ||
+    ('form' in program && program.form === 'tube' && program.tube?.anchor === 'ring')
+  ) {
     craftStitchSlugs.push('crochet-magic-ring')
   }
   const abbreviationsUsed = [
@@ -1178,7 +1189,9 @@ export async function buildPatternRow(
       ? 'COMPOSITE'
       : 'form' in program && program.form === 'sphere'
         ? 'SPHERE'
-        : 'NONE',
+        : 'form' in program && program.form === 'tube'
+          ? 'CYLINDER'
+          : 'NONE',
     rowsStructured,
     chartData,
     pieces,
@@ -1270,7 +1283,7 @@ function describe(
   const roundWork =
     candidate.kind !== 'amigurumi' &&
     'form' in candidate.program &&
-    (candidate.program.form === 'disc' || candidate.program.form === 'sphere')
+    (candidate.program.form === 'disc' || candidate.program.form === 'sphere' || candidate.program.form === 'tube')
   const closingLine =
     candidate.kind === 'amigurumi'
       ? 'Written in UK terms with a stitch count at the end of every round, each piece worked separately and sewn on.'

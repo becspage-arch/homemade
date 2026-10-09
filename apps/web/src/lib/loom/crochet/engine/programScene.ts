@@ -14,6 +14,7 @@ import { compileProgram, programYarnRadiusMm, type CrochetProgram, type Staging,
 import { relax, STUFF_PRESSURE, STUFF_PRIOR } from './relax'
 import { auditProblems } from './auditChecks'
 import { STITCHES, type StitchId } from './dictionary'
+import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
 
@@ -90,7 +91,9 @@ export function compileRelaxAudit(p: CrochetProgram, yrOverride?: number): Compi
   relaxProgram(built, yr)
   const problems = auditProblems({ built, recipe: undefined as never }, p.name, 0, yr)
   if (p.finishedSizeMm) {
-    const settled = settledSizeMm(built)
+    // A tube's declared size is across × TALL (a 20 cm hat, a 12 cm basket),
+    // so its height is measured up z, not across the footprint.
+    const settled = p.form === 'tube' ? tubeSettledSizeMm(built) : settledSizeMm(built)
     const { width: declW, height: declH } = p.finishedSizeMm
     const offW = Math.abs(settled.width - declW) / declW
     const offH = Math.abs(settled.height - declH) / declH
@@ -118,6 +121,7 @@ function maxHeightFactor(p: CrochetProgram): number {
  *  top-down; tall posts / post-texture / spheres tilt to show relief. */
 export function programTiltDeg(p: CrochetProgram): number {
   if (p.form === 'sphere') return 24
+  if (p.form === 'tube') return 34
   if (p.form === 'disc') return 0
   const hf = maxHeightFactor(p)
   const post = p.form === 'grid' && (p.grid ?? []).some((r) => r.stitches.some((s) => s === 'fpdc' || s === 'bpdc'))
@@ -141,6 +145,14 @@ export interface BlenderScene {
     openFabric?: boolean
     drapeAmp?: number
     minFieldMm?: number
+    /** Swing the camera round the object (deg) for a three-quarter product angle. */
+    yawDeg?: number
+    /** Aim the camera this fraction of the way up the object (0 = the table). */
+    aimHeightFrac?: number
+    /** 'product' = the toy light rig (keyed high from the camera's left). */
+    lightRig?: 'product'
+    /** Ground plane size as a multiple of the frame (a low camera sees further). */
+    groundScale?: number
   }
 }
 
@@ -171,6 +183,15 @@ function rowColourResolver(p: CrochetProgram): ((row: number) => string) | null 
   if (p.form === 'flat' && p.rowColours && pal && p.rowColours.some(Boolean)) {
     return (row) => {
       const key = p.rowColours![row]
+      return (key ? pal[key] : undefined) ?? base
+    }
+  }
+  // Round work striped by ROUND: the tube builder records the worked round per
+  // node (`nodeRow`), so a per-round key colours the spiral exactly where the
+  // yarn would be changed.
+  if (p.form === 'tube' && p.roundColours && pal && p.roundColours.some(Boolean)) {
+    return (row) => {
+      const key = p.roundColours![row]
       return (key ? pal[key] : undefined) ?? base
     }
   }
@@ -324,6 +345,19 @@ function flatbandStrip(ctrl: V3[]): V3[] {
 }
 
 /**
+ * Turn a tube OVER for its hero: a basket is built from its base disc at the
+ * top of the surface frame (the start pole, like a hat's crown) with the open
+ * rim at the bottom, which is upside down for a basket on a table. A half turn
+ * about the x-axis — (x, y, z) → (x, −y, −z) — stands it on its base. It is a
+ * rotation, not a mirror, so the spiral keeps its handedness and the render is
+ * still exactly the stitched piece. The renderer floats the lowest point onto
+ * the ground itself. Render-only: relax, audit and hash see the built frame.
+ */
+function turnOver(ctrl: V3[]): V3[] {
+  return ctrl.map((p) => ({ x: p.x, y: -p.y, z: -p.z }))
+}
+
+/**
  * Build the deterministic Blender scene for a relaxed program — the exact
  * pattern as one continuous plied yarn. Multi-colour when the program expresses
  * colourwork (per-row stripe keys): the single strand is split into per-colour
@@ -336,6 +370,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   let ctrl: V3[] = built.strandPath.map((ni) => ({ x: nodes[ni]!.x, y: nodes[ni]!.y, z: nodes[ni]!.z }))
   if (staging === 'loop') ctrl = loopStrip(ctrl, yr)
   if (staging === 'flatband') ctrl = flatbandStrip(ctrl)
+  if (p.form === 'tube' && p.tube?.openEnd === 'top') ctrl = turnOver(ctrl)
   const center = smooth(ctrl, PER_SEG)
   // Target OUTER yarn radius. MUST match the single-stitch swatch call sites
   // (scripts/loom-stitch.ts, loom-continuous.ts) which the crisp-plied-yarn pass
@@ -420,6 +455,23 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     // non-rectangular-footprint reason) leaves the plain ground showing there
     // instead, which is what a real photo of a curved strip on a table shows.
     view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100, openFabric: true }
+  } else if (staging === 'standing') {
+    // A 3-D open form stood on the ground — a hat on its crown, a cowl upright,
+    // a basket on its base — shot from a product three-quarter angle with the
+    // toy light rig (keyed high from the camera's left, the way a product is
+    // lit on a table), aimed at the object's middle rather than the table, on
+    // a wider ground because a low camera sees further across it. No backing
+    // plane: the footprint is a ring, not a filled rectangle (`openFabric`).
+    view = {
+      ...base,
+      marginFactor: 0.45,
+      tiltDeg: 56,
+      openFabric: true,
+      yawDeg: 28,
+      aimHeightFrac: 0.42,
+      lightRig: 'product',
+      groundScale: 8,
+    }
   } else {
     // `swatch` — the tight stitch-proof macro crop (the prior behaviour).
     // No `minFieldMm` floor here: swatch staging exists to show the fabric

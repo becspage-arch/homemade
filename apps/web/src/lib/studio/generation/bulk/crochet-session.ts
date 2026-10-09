@@ -36,6 +36,7 @@ export const CROCHET_TREATMENTS = [
   'disc',
   'sphere',
   'amigurumi',
+  'tube',
 ] as const
 
 /**
@@ -155,6 +156,7 @@ export const CrochetDesignSchema = z
     rounds: z.number().int().min(1).max(60).optional(),
     ballEquator: z.number().int().min(6).max(60).optional(),
     ballPlateau: z.number().int().min(1).max(20).optional(),
+    brim: z.enum(['rib', 'fold', 'none']).optional(),
     palette: z.record(z.string().regex(COLOUR_KEY), z.string().regex(HEX, 'a yarn colour is a six-digit hex like #c25a3c')).optional(),
     baseColourKey: z.string().regex(COLOUR_KEY).optional(),
     yarnFibre: YarnFibreSchema.optional(),
@@ -195,6 +197,12 @@ export const CrochetDesignSchema = z
       case 'grid-postrib':
         require('cols', 'a flat piece worked in one stitch needs its stitches across')
         require('rows', 'a flat piece worked in one stitch needs its rows up')
+        break
+      case 'tube':
+        require('cols', 'a tube needs its stitches around')
+        if (d.rows === undefined && !d.bands) {
+          ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['rows'], message: 'a tube needs its straight rounds, or bands that add up to them' })
+        }
         break
       case 'grid-stripe':
       case 'grid-texture':
