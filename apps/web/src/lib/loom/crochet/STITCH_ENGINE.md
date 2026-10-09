@@ -2865,6 +2865,175 @@ things the spend guard caps. Same columns, craft-specific meaning.
 
 ---
 
+## 8h. TUBE SHAPING — the open-ended round form (2026-10-09)
+
+The next 3D form after the sphere (§8c-3D) and its stuffed, profiled, composed
+descendants (§8f-9 … §8f-11): a tube. Hats, cowls, baskets, socks, sleeves,
+bags — about 246 catalogue targets are an open-ended tube with something at
+the open end. One builder, `engine/tube.ts` (`buildTube`), beside
+`buildSphere`, reusing `sphereProfile.ts` for a hat crown's counts, importing
+nothing a flat or sphere builder imports differently and imported by nothing
+that existed before, so by construction every existing geometry hash is
+untouched (the swatch hash script and the amigurumi presets guard both ran
+bit-identical before and after).
+
+### What a tube is, to the engine
+
+The sphere is a closed bag: magic ring at one pole, a fasten-off drawn shut at
+the other, stuffing pressing the fabric out. A tube is the same continuous
+no-turn spiral of genuinely hooked stitches laid on a surface of revolution
+with three things different, and each is a construction, not a flag:
+
+1. **One end is open.** The last round is never gathered. The tail is woven
+   back along the rim (four nodes, like a disc's) and the rim stays a rim —
+   the basket's last round settles within 1% of the radius its count makes.
+2. **The anchor may be a chain ring.** A hat starts at a magic ring (the 18
+   pinned ring nodes of §8c, round 1 hooks INTO the ring with role 'ring');
+   a cowl starts with a foundation chain joined into a ring. The joined chain
+   is the flat builder's foundation (three pinned nodes a crown, proud) bent
+   round the start of the profile instead of laid in a line: `anchorPins` is
+   3 × the first count, and round 1 hooks into those crowns exactly as row 1
+   of a swatch does.
+3. **No stuffing.** The model carries no per-node `round` index, which is the
+   gate `STUFF_PRESSURE` reads (§8f-9), so a tube settles as FABRIC held to its
+   worked shape by the `surface` layout hold — the blocked / worn / standing
+   analogue — never as a pressurised bag.
+
+On top: counts that rise, hold and FALL (`roundOps` between any two rounds,
+decreases through `emitDecrease`, so a sock toe or a pouffe that narrows but
+stays open is the same builder); spiral OR joined rounds — a joined round ends
+in a real slip stitch hooking the round's first crown (recorded, audited, role
+'hook') and a chain-up of 1/2/3 for sc/hdc/dc that is real slack like a
+turning chain, and the next round's first hook is offset past it; a body in
+sc, hdc or dc (the three locked no-turn stitches; `validateTubeSpec` refuses
+the rest); round-by-round colour (`roundColours`, the stripes of a cowl); and
+a brim.
+
+### The two brims
+
+- **Post rib** (`brim: { kind: 'rib', rounds: n }`): the last n rounds are a
+  1×1 FRONT/BACK-POST rib, fpdc / bpdc worked around the posts of the round
+  below. `emitPostStitchRound` is the flat grid builder's post branch (§8f-7)
+  traced through the surface frame: the stem's two legs trail and lead, the
+  ring around the post below is a genuine ring held by collision (role
+  'ring'), the fp post mid sits proud of the surface and the bp post mid
+  behind it (`ppz` +3 / −2.2 z, the flat builder's numbers), the head is the
+  ordinary head loop. Rib rounds are dc-tall, so the profile is
+  re-parameterised so each takes its own share of the surface (`profScale`).
+  Rib rounds must be even and unshaped — a rib pair is two stitches.
+  Measured on the beanie at worsted: fp post mid +0.84…+1.01 yr, bp post mid
+  −0.31…−1.04 yr off the round's mean radius; relief 1.3–2.0 yr.
+- **Fold** (`brim: { kind: 'fold', rounds: n }`): the last n rounds of the
+  PROFILE turn back up the outside of the body, a fabric gap (`FOLD_GAP_YR`
+  2.8) further out, climbing a pitch a round. Two Chaikin passes round the
+  turn into the U a real fold is. The fold's rounds are ordinary stitches
+  into the round below; only the surface they lie on turns. Measured: the
+  brim settles 2.0 yr outside the body wall at worsted (test gate 1.5 yr).
+
+### The cap, and why a hat crown is not a cone
+
+The first Fargate proof of the beanie stood like a tea cosy: a pointed cone
+on a straight barrel. The cause was the cap profile — the sphere's own
+`sqrt(drift² − dr²)` a round, which is exactly right for a stuffed ball
+(§8c-3D) because every round of a sphere ascent spends the same share of its
+pitch on radius, and exactly wrong for an unstuffed crown, where that rule
+makes every round descend the same amount: a cone. The fix is the dome the
+counts describe: the ascent's radii are the counts' own (so each round lands
+on the circumference its stitches make), the heights follow an elliptical
+dome whose quarter-arc equals the ascent's meridian (its rounds times their
+pitch, Ramanujan's ellipse length inverted for the height), floored at a
+shallow 0.35 R dome. Measured beanie crown at worsted: the first four rounds
+sit within 3.3 mm of height, the last four of the ascent drop 8–11 mm each,
+70 mm of crown over an 84 mm radius. A basket base is the flat case (`cap:
+'flat'`: dz 0 where the counts spend the whole pitch on radius). A chain
+anchor has no cap.
+
+This needed one more thing: the profile is parameterised by the FABRIC
+coordinate per vertex (each vertex carries `f = k × drift`, interpolated by the
+smoothing) rather than uniformly by arclength, so a dome segment shorter or
+longer than a pitch still puts round k on its own radius.
+
+### Audit, three weights, five shapes
+
+Every construction option — magic-ring hat with rib, with fold, chain-ring
+joined cowl, flat-base basket, rise-hold-fall taper — audits clean at yr 1.5,
+2.4 and 3.2 (`engine/tube.test.ts`), and the three full-size proofs do too:
+
+| proof | sts | nodes | yr 1.5 | yr 2.4 | yr 3.2 | settled at its weight |
+| --- | --- | --- | --- | --- | --- | --- |
+| ribbed-beanie (hdc, 72 around, 3 rib) | 1761 | 29743 | clean | clean | clean | 171 × 234 mm (worsted) |
+| striped-cowl (dc, 84 around, 19 joined) | 1596 | 51454 | clean | clean | clean | ≈194 × 265 mm (worsted) |
+| chunky-basket (sc, 60 around, 16 walls) | 1290 | 20662 | clean | clean | clean | ≈159 × 129 mm (bulky) |
+
+Hooks sit 1.6–3.1 yr under their crowns throughout (median −2.0 yr); the
+gate is −0.45.
+
+### Words and chart
+
+`writeInstructions` writes a tube in UK terms from the same program: a
+foundation line for a chain ring ("ch 84, join with a sl st into a ring,
+taking care not to twist"), magic-ring round 1, increases and decreases with
+their remainders, "ch 3, tr in each st around, join with a sl st to the first
+st" for joined rounds, "[FPtr around next st, BPtr around next st] 36 times"
+for rib, "Change to the sage yarn." on a colour change, the spiral note, the
+fold line, and "Fasten off and weave in the end." — never stuffing or a drawn
+pole. `programToChart` makes the round chart: a magic-ring or chain-ring
+cell, ch-up cells on joined rounds, FPtr/BPtr labels on rib, a slip-stitch
+join cell, the caption saying the end is left open. `programFromChart` reads
+a round chart whose last round is not a closing pole back as a tube.
+
+### Staging — `standing`
+
+A new staging mode for a 3D open form stood on the ground: product
+three-quarter camera (tilt 56°, yaw 28°), aimed at the object's middle, the
+product light rig, a wide ground, no backing plane (the footprint is a ring).
+A basket is built like a hat (base disc at the start pole, rim at the bottom)
+and turned over at scene time (`turnOver`, a half-turn about x — a rotation,
+so the spiral keeps its hand); the audit convention (start pole at the top,
+profile descending) is untouched. `openEnd: 'top'` is the program's word.
+
+### Rendered (Fargate, probe family, 150 samples, resY 1200)
+
+Three base renders plus one shape re-render, four tasks, about 26 task-minutes
+of Fargate (≈ $0.15). No Fal. Proofs, side-by-sides and the verdict are in
+`/mnt/project-files/homemade/crochet-tube-proof/` (project files, not the
+repo). Honest verdicts:
+
+- **chunky-basket** — the closest to the bar: dense sc walls, a true rim, a
+  basket on a table. Against the real Happy Hearts baskets it lacks only the
+  turned top edge and a little flare. Customer-ready as a base render.
+- **striped-cowl** — the fabric is right (dc rows, stripes by round, the join
+  seam), the STAGING is wrong: a cowl stood upright is a vase. A cowl is worn
+  or lies collapsed; that is a relax-with-gravity staging the engine does not
+  have yet (the `flatband` S bends a flat strip, not a tube). Fail on staging,
+  pass on fabric.
+- **ribbed-beanie** — round 1 was a cone; round 2 is a dome and reads as a
+  hat on a stand. The rib brim reads openwork rather than a snug rib — the
+  library-wide post-stitch density limit §8f-5b and §8f-2 already log, now on
+  a hat. Not yet the bunny nightcap's soft slouch, which again is a
+  gravity/worn staging. Fail against the bar on the rib and the staging.
+
+### Studio
+
+`crochet-forms.ts` gains the `tube` treatment with `CROCHET_FORMS_PENDING`
+envelopes for hat, cowl and basket (NOT in `CROCHET_FORMS`, so the planner has
+no lane yet and the backlog entries stay as they are); `crochet-design.ts`
+expands a tube design (hat crown = `sphereAscent` to the count, basket base in
+sixes, cowl bands by round); the session schema takes `brim`. A hat's
+envelope is 54–66 around and 9–13 straight rounds because the ascent at 66 is
+460 stitches on its own and the whole hat must stay inside
+`BULK_CROCHET_MAX_CELLS`.
+
+### Still open
+
+- A worn / collapsed staging for soft tubes (cowl, slouchy hat): gravity and
+  the table in the relax, the way the chenille drape pass will need.
+- Post-stitch density (inherited).
+- A turned rim and a flared wall for baskets; a crown decrease that closes a
+  hat from the brim up (bottom-up hats); fphdc/bphdc rib for hdc bodies.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
@@ -3331,6 +3500,23 @@ things the spend guard caps. Same columns, craft-specific meaning.
   though both were there and both were 11 mm proud of the body. Joined higher on
   the shoulder and aimed out at about 40 degrees below horizontal they read as
   folded wings.
+
+- **Laying a hat crown on the sphere's own `sqrt(drift² − dr²)` profile**
+  (tube shaping, 2026-10-09) → a cone. That rule gives every round the same
+  descent, which a stuffed ball then rounds under pressure (§8f-9); an
+  unstuffed crown has no pressure and keeps the cone, and the first Fargate
+  beanie was a tea cosy. A crown's heights come from the dome its ascent's
+  meridian length describes (an ellipse of the counts' radius and the
+  fabric's own arc), not from the ball's rule.
+- **Parameterising a profile uniformly by arclength when its segments are not
+  a pitch long** (tube shaping, 2026-10-09) → the rounds slide off the radii
+  their counts make the moment a cap is anything but the constant-dz cone.
+  Carry the fabric coordinate on each profile vertex and interpolate it with
+  the point.
+- **Standing a cowl up for its photo** (tube shaping, 2026-10-09) → a vase.
+  A tube with no body inside it is a product shot only when it is stiff
+  enough to stand (a basket); a soft one is worn or collapsed, and that is a
+  gravity staging, not a camera angle.
 
 ---
 
