@@ -62,6 +62,7 @@ Rebuilt 6 September 2026 by a notes audit: every file below exists, and every li
 ## Patterns, renders and the loom
 
 - [Pattern complexity = a RANGE](feedback_pattern_complexity_range.md) — every bulk run spans simple to huge-detailed; the 100+ colour end is wanted, never forced to one level
+- [Crochet quality bar](feedback_crochet_quality_bar.md) — customer-ready = as beautiful and cute as the best-selling Etsy patterns; Rebecca's five example listings live in /mnt/project-files/homemade/crochet-bar/ (not in the repo)
 - [Cross-stitch world-class bar](feedback_cross_stitch_world_class_bar.md) — best collection in the world; the NORTH_STAR references; the June cull; repair before cull; targets now 1,818 across 27 shelves
 - [Render before volume](feedback_render_before_volume.md) — pattern quality is judged only from a finished render; never build volume before the loom can show it
 - [Customer-eye renders](feedback_customer_eye_renders.md) — HARD RULE: look at every render as a customer before presenting; only bring ones a customer would be happy with
