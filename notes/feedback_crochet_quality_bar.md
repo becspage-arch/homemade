@@ -9,7 +9,7 @@ metadata:
 
 **The rule:** a crochet piece passes only when it's customer-ready. That means it would sit next to the best-selling crochet patterns on Etsy and look as beautiful and cute as they do. "Acceptable, could be better" is a tweak, never a pass. Rebecca: "If it's not customer-ready, it does not pass yet."
 
-Rebecca's five example listings (kept outside the repo, in the project's shared folder `/mnt/project-files/homemade/crochet-bar/`, because they are other shops' images and this repo is public) are examples of the level of beauty and cuteness, not a complete list. More examples from top-selling patterns are in `research-top-patterns.md`. The element-by-element audit of the engine is the Claude Doc "Crochet engine audit against the bar".
+Rebecca's five example listings (kept outside the repo, in the project's shared folder `/mnt/project-files/homemade/crochet-bar/`, because they are other shops' images and this repo is public) are examples of the level of beauty and cuteness, not a complete list. More examples from top-selling patterns are in `research-top-patterns.md`, and `real/` holds 47 checked real photos from top Ravelry patterns sorted by engine round (`real/INDEX.md`), all in that same shared folder. The element-by-element audit of the engine is the Claude Doc "Crochet engine audit against the bar".
 
 ## What customer-ready means
 
