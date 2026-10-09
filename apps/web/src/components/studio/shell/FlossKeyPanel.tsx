@@ -17,7 +17,12 @@
 
 import { useMemo, useState, useEffect } from 'react'
 import { ListChecks, X, ArrowUpDown, Check, Pin } from 'lucide-react'
-import { estimateSkeinCount, cellKey, type PatternData } from '@homemade/db/pattern'
+import {
+  countStitchProgressBySymbol,
+  estimateSkeinCount,
+  type PatternData,
+  type StitchProgress,
+} from '@homemade/db/pattern'
 import {
   buildStashIndex,
   matchStashColour,
@@ -93,42 +98,34 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
     return () => window.removeEventListener('keydown', onKey)
   }, [mobileOpen, onMobileClose])
 
+  // Every colour's counts in one pass over the chart, rather than one pass
+  // per colour. Cells of back-stitch line and knots are in there too: an
+  // outline floss can carry no full crosses at all, and a row reading "0 st"
+  // beside a skein estimate looks like a mistake rather than the colour you
+  // buy for the line work.
+  const progressBySymbol = useMemo(
+    () => countStitchProgressBySymbol(pattern, stitched),
+    [pattern, stitched],
+  )
+
   const rows = useMemo(() => {
     const out = pattern.palette.map((entry, paletteIndex) => {
-      let totalStitches = 0
-      let stitchedCount = 0
-      for (const cell of pattern.grid.cells) {
-        if (cell.s !== entry.symbol) continue
-        totalStitches++
-        if (stitched.has(cellKey(cell.x, cell.y))) stitchedCount++
-      }
-      // Cells of back-stitch line and knots in this colour. An outline floss can
-      // carry no full crosses at all, and a row reading "0 st" beside a skein
-      // estimate looks like a mistake rather than the colour you buy for the
-      // line work.
-      let lineCells = 0
-      for (const seg of pattern.grid.backstitch) {
-        if (seg.s !== entry.symbol) continue
-        lineCells += Math.hypot(seg.x2 - seg.x1, seg.y2 - seg.y1)
-      }
-      let knots = 0
-      for (const knot of pattern.grid.frenchKnots) {
-        if (knot.s === entry.symbol) knots++
-      }
-      let fractionals = 0
-      for (const f of pattern.grid.fractional) {
-        if (f.s === entry.symbol) fractionals++
-      }
+      const progress: StitchProgress =
+        progressBySymbol.get(entry.symbol) ?? EMPTY_PROGRESS
       const skein = estimateSkeinCount(pattern, entry.symbol)
       return {
         entry,
         paletteIndex,
-        totalStitches,
-        stitchedCount,
-        remaining: totalStitches - stitchedCount,
-        lineCells: Math.round(lineCells),
-        knots,
-        fractionals,
+        progress,
+        // Done and left count every kind of work this colour is used for, so
+        // a colour is only clear of the list once its line work is done too.
+        totalStitches: progress.total,
+        stitchedCount: progress.done,
+        remaining: progress.total - progress.done,
+        cellCount: progress.cellsTotal,
+        lineCells: progress.lineCellsTotal,
+        knots: progress.knotsTotal,
+        fractionals: progress.fractionalTotal,
         skein,
       }
     })
@@ -150,7 +147,7 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
       })
     }
     return out
-  }, [pattern, stitched, sortKey, parked])
+  }, [pattern, progressBySymbol, sortKey, parked])
 
   return (
     <>
@@ -197,10 +194,15 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
         </header>
 
         <ul className="studio-flosskey-list">
-          {rows.map(({ entry, totalStitches, stitchedCount, remaining, lineCells, knots, fractionals, skein }) => {
+          {rows.map(({ entry, progress, cellCount, stitchedCount, remaining, lineCells, knots, fractionals, skein }) => {
             const isIsolated = entry.symbol === isolate
             const owned = ownedSymbols.has(entry.symbol)
-            const parkedAt = parkingEnabled ? parked.get(entry.symbol) ?? null : null
+            // Parking hangs a needle in a square, so it has nothing to say
+            // about an outline. A colour is only finished when its line work
+            // is finished too, whatever the parked map thinks.
+            const parkedAt = parkingEnabled && !progress.complete
+              ? parked.get(entry.symbol) ?? null
+              : null
             const isNextUp = parkingEnabled && entry.symbol === nextUpSymbol
             return (
               <li
@@ -244,13 +246,17 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                   </span>
                   <span className="studio-flosskey-counts">
                     <span className="studio-flosskey-total">
-                      {totalStitches.toLocaleString()} st
+                      {cellCount.toLocaleString()} st
                       {fractionals > 0 && ` · ${fractionals.toLocaleString()} part`}
                       {lineCells > 0 && ` · ${lineCells.toLocaleString()} back-stitch`}
                       {knots > 0 && ` · ${knots} knot${knots === 1 ? '' : 's'}`}
                     </span>
                     {stitchedCount > 0 && (
-                      <span className="studio-flosskey-progress">{stitchedCount} done · {remaining} left</span>
+                      <span className="studio-flosskey-progress">
+                        {progress.complete
+                          ? 'all done'
+                          : `${stitchedCount.toLocaleString()} done · ${remaining.toLocaleString()} left`}
+                      </span>
                     )}
                     <span className="studio-flosskey-skein">~{formatSkein(skein)} skein{skein > 1 ? 's' : ''}</span>
                   </span>
@@ -267,8 +273,12 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
                         <Pin size={12} strokeWidth={1.8} aria-hidden="true" />
                         <span>Parked at {cellLabel(parkedAt)}</span>
                       </button>
-                    ) : (
+                    ) : progress.complete ? (
                       <span className="studio-flosskey-park-done">Finished</span>
+                    ) : (
+                      // Squares all done, line work still to go: the needle
+                      // has nowhere to park, but the colour is not finished.
+                      <span className="studio-flosskey-park-done">Line work left</span>
                     )}
                     {isNextUp && <span className="studio-flosskey-park-nextup">Next up</span>}
                   </div>
@@ -284,6 +294,22 @@ export function FlossKeyPanel({ pattern, open, onClose, onOpen, mobileOpen, onMo
       </aside>
     </>
   )
+}
+
+/** A palette entry the chart never uses. Counts as nothing, done or not. */
+const EMPTY_PROGRESS: StitchProgress = {
+  cellsDone: 0,
+  cellsTotal: 0,
+  fractionalDone: 0,
+  fractionalTotal: 0,
+  lineCellsDone: 0,
+  lineCellsTotal: 0,
+  knotsDone: 0,
+  knotsTotal: 0,
+  done: 0,
+  total: 0,
+  percent: 0,
+  complete: false,
 }
 
 function formatSkein(n: number): string {

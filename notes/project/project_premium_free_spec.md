@@ -7,9 +7,17 @@ metadata:
   originSessionId: 3269da7d-3461-4b19-8fd5-c9b792997918
 ---
 
-Canonical free-vs-premium spec. Consolidates [[free-tier-sign-in-carrots-sync-is-free-not-premium]], [[premium-gate-cleanup]], [[business-model]], [[premium-philosophy]], [[premium-translation-is-free]]. Final gating confirmed in the Part B pricing session per [[premium-philosophy]]. This file is the working spec the cleanup + paywall sessions enforce.
+Canonical free-vs-premium spec. Consolidates [[feedback_free_signin_carrots]], [[feedback_premium_gate_cleanup]], [[business-model]], [[feedback_premium_philosophy]], [[feedback_premium_translation_is_free]]. Final gating confirmed in the Part B pricing session per [[feedback_premium_philosophy]]. This file is the working spec the cleanup + paywall sessions enforce.
 
-**Revised 2026-06-20** by Rebecca, two material changes from the first draft: (1) the Studio is now FREE-SIGNED-IN, not anonymous — anonymous users view content but cannot use the Studio; (2) ALL printing + downloading (any PDF/print of any content, free or premium) is PREMIUM. This overrides the older "Studio works in anonymous mode" line in [[free-tier-sign-in-carrots-sync-is-free-not-premium]] and the "all paper sizes free" line in [[premium-gate-cleanup]].
+**Checked 2026-09-06 (notes audit).** The framework this spec describes is in the tree:
+`hasPremium` / `isPremiumContent` / `isIndependentDesignerContent` / `canAccessPremiumContent`
+in `apps/web/src/lib/entitlements.ts`, the components in `apps/web/src/components/premium/`,
+and `/premium` — which this file's older sections call unbuilt — now exists at
+`apps/web/src/app/(public)/premium/page.tsx`. Stripe checkout is still unbuilt and no user
+carries `premiumActive` yet (0 of 8 accounts), so nothing is actually charged. The gating
+decisions below are Rebecca's locks and stand as written.
+
+**Revised 2026-06-20** by Rebecca, two material changes from the first draft: (1) the Studio is now FREE-SIGNED-IN, not anonymous — anonymous users view content but cannot use the Studio; (2) ALL printing + downloading (any PDF/print of any content, free or premium) is PREMIUM. This overrides the older "Studio works in anonymous mode" line in [[feedback_free_signin_carrots]] and the "all paper sizes free" line in [[feedback_premium_gate_cleanup]].
 
 ## Three tiers
 
@@ -30,13 +38,13 @@ Canonical free-vs-premium spec. Consolidates [[free-tier-sign-in-carrots-sync-is
 - Cooking + baking: recipe scaling + meal planner + shopping list (the full planning suite)
 - Send Gifts; plus the per-category personalization hooks (below)
 
-Web-first Stripe billing to avoid app-store fees; mobile links to web checkout. Governing rule: build to free standard, free tier has to be insanely good, premium is a short list ([[premium-philosophy]]).
+Web-first Stripe billing to avoid app-store fees; mobile links to web checkout. Governing rule: build to free standard, free tier has to be insanely good, premium is a short list ([[feedback_premium_philosophy]]).
 
 ## Free for everyone (anonymous OR free signed-in)
 
 - View all Homemade-generated content: every recipe, tutorial, technique, reading, and the ~1,000 patterns per category we generate
 - Full pattern page for free patterns: instructions, materials, all metadata
-- All region derivation: cm/inches, °C/°F/gas mark, grams/oz, UK/US convention ([[premium-translation-is-free]])
+- All region derivation: cm/inches, °C/°F/gas mark, grams/oz, UK/US convention ([[feedback_premium_translation_is_free]])
 - Baking tin conversion + ingredient substitution
 - Lifestyle + step photography, video walkthroughs where the pattern carries them
 - Premium content is visible (preview) to everyone with a premium icon — never hidden, just gated past the preview
@@ -156,3 +164,5 @@ you must print to stitch), plus the tool/designer-library upsell — NOT content
 premium to feel more exclusive, invest in making the INDEPENDENT-DESIGNER + CREATOR libraries
 spectacular; that is where "premium gets the most coveted patterns" lives. Premium stays the
 locked short list above. Don't re-litigate.
+
+(Cross-reference note, 2026-09-06: `[[business-model]]` is not in notes/; the pricing and tier locks it held are restated in this file.)

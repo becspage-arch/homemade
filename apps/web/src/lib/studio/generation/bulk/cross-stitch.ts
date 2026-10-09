@@ -18,6 +18,7 @@ import { embellishChart } from './outline'
 import { deriveFractionals, smoothingWantedFor } from './fractionals'
 import {
   buildPrompt,
+  QUICK_STYLE,
   SRC_SAT,
   FABRIC,
   POST_SAT,
@@ -90,16 +91,72 @@ function imageSizeFor(w: number, h: number): 'square_hd' | 'portrait_4_3' | 'lan
   return 'square_hd'
 }
 
+/**
+ * The longest side, in pixels, of the Flux 1.1 Pro source art.
+ *
+ * 1024 for the dense tier, which is what it has always used. The heirloom tier
+ * asks for 1440 — the biggest the model takes — because that art is quantised
+ * down to a 400–600 cell chart and every pixel of source detail is a chance at
+ * one more genuinely distinct floss. The call costs the same either way: fal
+ * bills Flux 1.1 Pro per image, not per pixel.
+ */
+const PRO_LONG_PX = 1024
+export const SHOWPIECE_PRO_LONG_PX = 1440
+
 /** Flux 1.1 Pro takes pixels, not a size name. Keep the CHART's aspect so the
- *  converter never has to squash the art, at about a megapixel either way, and
- *  on the multiple of 32 the model expects. */
-function proPixelsFor(w: number, h: number): { width: number; height: number } {
+ *  converter never has to squash the art, and on the multiple of 32 the model
+ *  expects. */
+function proPixelsFor(w: number, h: number, longPx: number = PRO_LONG_PX): { width: number; height: number } {
   const ratio = w > 0 && h > 0 ? w / h : 1
-  const long = 1024
-  const short = Math.round((long / Math.max(ratio, 1 / ratio)) / 32) * 32
-  const px = Math.max(512, Math.min(1024, short))
-  return ratio >= 1 ? { width: long, height: px } : { width: px, height: long }
+  const short = Math.round((longPx / Math.max(ratio, 1 / ratio)) / 32) * 32
+  const px = Math.max(512, Math.min(longPx, short))
+  return ratio >= 1 ? { width: longPx, height: px } : { width: px, height: longPx }
 }
+
+/** The heirloom lane — 400–600 cells, 200–300 flosses, full coverage. */
+export const SHOWPIECE_LANE = 'showpiece'
+
+/** The under-60-cell one-evening tier. Named here, beside the lane it is the
+ *  mirror of, because the converter settings key off it. */
+export const QUICK_LANE = 'quick'
+
+/**
+ * The most flosses a chart may ask the converter for.
+ *
+ * Held below the symbol catalogue on purpose, and well below it: the plain
+ * single-glyph half of the catalogue runs to over five hundred marks, so a
+ * 300-colour showpiece never has to reach the rule channel and every symbol on
+ * its key is one printed character.
+ */
+export const MAX_CHART_COLOURS = 320
+
+/**
+ * The stand count the heirloom lane aims the converter at — the MIDDLE of the
+ * tier's 200–300 band, not either edge.
+ *
+ * The converter's ladder keeps the rung nearest the target and stops climbing
+ * once it reaches it, so the target is where charts cluster. Aiming at the
+ * bottom put the cluster on the wrong side of the guard: a rung landing at 195
+ * beats one landing at 235 on distance to 200, and 195 fails the tier. Aiming
+ * at the middle means both neighbouring rungs are inside the band.
+ *
+ * A subject whose gamut cannot reach the bottom of the band lands short and is
+ * caught by the lane's own guard rather than being padded out with stands that
+ * are not really in the picture.
+ */
+export const SHOWPIECE_FLOSS_TARGET = 250
+
+/**
+ * The quantiser ceiling the heirloom lane hands the converter.
+ *
+ * Not a colour count: it is how many RGB swatches the quantiser may work in
+ * before the snap to DMC turns them into stands. The converter's floss-target
+ * ladder climbs to four times the target looking for enough separable
+ * near-neighbours, so the ceiling has to sit above that or the top rung is
+ * never actually tried. Well inside the 1,584-glyph symbol catalogue either
+ * way, so no chart can outrun its own key.
+ */
+export const SHOWPIECE_QUANTISER_CEILING = 840
 
 /**
  * A repair tweak from the vision gate — applied on a re-roll to fix a fixable
@@ -124,9 +181,15 @@ export async function generateCrossStitchCandidate(
   tweak: CandidateTweak = {},
   sourceMode?: XsSourceMode,
 ): Promise<CrossStitchCandidate> {
-  const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
+  const colours = Math.max(6, Math.min(MAX_CHART_COLOURS, brief.colours + (tweak.colourDelta ?? 0)))
   const dense = colours > DENSE_COLOUR_THRESHOLD
-  const prompt = buildPrompt(brief.subject, brief.style)
+  const showpiece = brief.lane === SHOWPIECE_LANE
+  // The two deliberate tiers each have ONE look, forced here rather than left
+  // to whatever style the planner happened to pick for the subject: the
+  // heirloom tier is a full-coverage painted scene, the one-evening tier is a
+  // flat bold motif. See QUICK_STYLE.
+  const style = brief.lane === QUICK_LANE ? QUICK_STYLE : brief.style
+  const prompt = buildPrompt(brief.subject, style)
 
   // THE SOURCE MODE. In 'pro-all' every lane draws on Flux 1.1 Pro, not just the
   // dense one — the single biggest lever on yield (about two attempts in five
@@ -142,13 +205,18 @@ export async function generateCrossStitchCandidate(
   const generated = await generatePatternImage(prompt, {
     detailed: pro,
     imageSize,
-    ...(pro ? { proSize: proPixelsFor(brief.w, brief.h), proStyle: dense ? ('showpiece' as const) : ('as-written' as const) } : {}),
+    ...(pro
+      ? {
+          proSize: proPixelsFor(brief.w, brief.h, showpiece ? SHOWPIECE_PRO_LONG_PX : PRO_LONG_PX),
+          proStyle: dense ? ('showpiece' as const) : ('as-written' as const),
+        }
+      : {}),
   })
   // Fingerprint the SOURCE before anything downstream touches it.
   const sourceSha256 = sha256Hex(generated.buffer)
 
   // Per-lane source pre-saturation before the quantiser (the vivid-colour fix).
-  const srcSat = (brief.sat ?? SRC_SAT[brief.style]) * (tweak.satMul ?? 1)
+  const srcSat = (brief.sat ?? SRC_SAT[style]) * (tweak.satMul ?? 1)
   const satImage = await sharp(generated.buffer).modulate({ saturation: srcSat }).png().toBuffer()
 
   // Shared engine convert — dense tier lifts the floss ceiling + full DMC range.
@@ -158,9 +226,29 @@ export async function generateCrossStitchCandidate(
     colours,
     fabricCount: 14,
     brand: 'DMC',
-    confettiMin: dense ? 'high' : 'medium',
+    // Both ends of the range want the hard confetti pass, for opposite
+    // reasons. The dense tiers want it because a 250-floss chart has to stay
+    // stitchable. The one-evening tier wants it because at 50 cells a
+    // three-cell island is not a shape, it is a speck: the clarity guard reads
+    // colour AREAS, and at 'medium' the quick lane was coming back with fifty
+    // of them across ten flosses and failing its own tier every time. The
+    // middle of the range is where 'medium' is right — enough smoothing to
+    // stitch, not so much that a 200-cell scene loses its detail.
+    confettiMin: dense || brief.lane === QUICK_LANE ? 'high' : 'medium',
     backgroundRemoval: false,
-    ...(dense ? { maxColours: brief.colours, flossRange: 'full' as const } : {}),
+    // The dense tier lifts the floss ceiling and takes the full DMC range. The
+    // heirloom tier goes further: its headline is the STAND COUNT, and asking
+    // the quantiser for 300 RGB colours measured out at 131 stands because the
+    // snap to DMC collapses several swatches onto one. So it names the count it
+    // wants and lets the converter climb to it, with the quantiser ceiling
+    // raised out of the way so there is room to climb.
+    ...(dense
+      ? {
+          maxColours: showpiece ? SHOWPIECE_QUANTISER_CEILING : brief.colours,
+          flossRange: 'full' as const,
+          ...(showpiece ? { flossTarget: SHOWPIECE_FLOSS_TARGET } : {}),
+        }
+      : {}),
   })
   data.fabric.colourRgb = FABRIC
 
@@ -173,7 +261,7 @@ export async function generateCrossStitchCandidate(
   // (the dense lane, and large scenes / showpieces / landscapes) is exempt: its
   // background IS the design.
   const bare = bareFabricVerdict(data, {
-    fullCoverageByIntent: fullCoverageByIntent({ lane: brief.lane, style: brief.style }),
+    fullCoverageByIntent: fullCoverageByIntent({ lane: brief.lane, style }),
   })
   let shipped = data
   let cleared: CrossStitchCandidate['backgroundCleared']
@@ -195,7 +283,7 @@ export async function generateCrossStitchCandidate(
   // The lane and style decide how much: a full outline for the bold flat lanes,
   // the silhouette alone for the soft ones, nothing for line work or the dense
   // showpiece tier.
-  const embellished = embellishChart(shipped, { lane: brief.lane, style: brief.style })
+  const embellished = embellishChart(shipped, { lane: brief.lane, style })
   let outline: CrossStitchCandidate['outline']
   if (!embellished.unchanged) {
     shipped = embellished.data
@@ -216,7 +304,7 @@ export async function generateCrossStitchCandidate(
   // boundary in the same place, so the two agree about where the edge is. Line
   // work (Delft, blackwork) is left blocky on purpose.
   let fractional: CrossStitchCandidate['fractional']
-  const wanted = smoothingWantedFor(shipped)
+  const wanted = smoothingWantedFor(shipped, { lane: brief.lane, shelf: brief.shelf })
   if (wanted.yes) {
     const smoothed = deriveFractionals(shipped)
     if (smoothed.cellsShared > 0) {
@@ -257,7 +345,8 @@ export function candidateIsPro(
   sourceMode: XsSourceMode = 'schnell',
 ): boolean {
   if (sourceMode === 'pro-all') return true
-  const colours = Math.max(6, Math.min(160, brief.colours + (tweak.colourDelta ?? 0)))
+  if (brief.lane === SHOWPIECE_LANE) return true
+  const colours = Math.max(6, Math.min(MAX_CHART_COLOURS, brief.colours + (tweak.colourDelta ?? 0)))
   return colours > DENSE_COLOUR_THRESHOLD
 }
 
@@ -375,6 +464,31 @@ export async function recordRejectSample(runId: string, sample: RejectSample): P
     })
   } catch (err) {
     console.warn(`[bulk cross-stitch] could not record the reject sample for ${sample.slug}`, err)
+  }
+}
+
+/**
+ * Record the subject key of an idea the duplicate guard killed.
+ *
+ * A duplicate kill leaves no Pattern row behind, so the run is the only place
+ * the fact can live — and the planner reads it back to stop re-commissioning a
+ * subject the catalogue already has. Never throws: losing a diagnostic must not
+ * turn a kill into an error and take the run's counters with it. Read-then-write
+ * is safe here, as it is for the reject samples: the idea worker runs at
+ * concurrency 1, so a run's keys never race.
+ */
+export async function recordDuplicateSubject(runId: string, key: string): Promise<void> {
+  if (!key) return
+  try {
+    const run = await prisma.bulkRun.findUnique({ where: { id: runId }, select: { duplicateSubjectKeys: true } })
+    if (!run) return
+    if (run.duplicateSubjectKeys.includes(key)) return
+    await prisma.bulkRun.update({
+      where: { id: runId },
+      data: { duplicateSubjectKeys: [...run.duplicateSubjectKeys, key] },
+    })
+  } catch (err) {
+    console.warn(`[bulk cross-stitch] could not record the duplicate subject key "${key}"`, err)
   }
 }
 

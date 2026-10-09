@@ -73,6 +73,22 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,12,12,12,12,12,12,12,10,8,6": {
     "width": 26.8,
     "height": 54.8
+  },
+  "6,12,10,8,6": {
+    "width": 23.7,
+    "height": 24.7
+  },
+  "6,12,12,10,8,6": {
+    "width": 24.9,
+    "height": 28.3
+  },
+  "6,6,6,6,6": {
+    "width": 14,
+    "height": 27.4
+  },
+  "6,6,6,6,6,6,6,6,6": {
+    "width": 14.1,
+    "height": 48.5
   }
 }
 
@@ -126,5 +142,41 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
   "bunny-L": {
     "width": 140,
     "height": 185
+  },
+  "cat-S": {
+    "width": 95,
+    "height": 105
+  },
+  "cat-M": {
+    "width": 105,
+    "height": 130
+  },
+  "cat-L": {
+    "width": 140,
+    "height": 170
+  },
+  "dog-S": {
+    "width": 95,
+    "height": 95
+  },
+  "dog-M": {
+    "width": 105,
+    "height": 115
+  },
+  "dog-L": {
+    "width": 140,
+    "height": 150
+  },
+  "bird-S": {
+    "width": 40,
+    "height": 65
+  },
+  "bird-M": {
+    "width": 60,
+    "height": 90
+  },
+  "bird-L": {
+    "width": 80,
+    "height": 110
   }
 }

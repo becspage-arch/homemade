@@ -17,4 +17,4 @@ HARD RULE for any render shown to Rebecca: **actually LOOK at the finished image
 - Pull a real **reference photo** of the target (e.g. google the stitch) and compare against it — don't judge from memory.
 - Don't hedge or oversell. If it fails, say it fails and why, plainly.
 
-Related: [[feedback_render_before_volume]] (judge quality only from a finished render), [[project_loom_stitch_engine]] (the per-stitch process bakes this in), [[feedback_get_it_immaculate]].
+Related: [[feedback_render_before_volume]] (judge quality only from a finished render), [[project/project_loom_stitch_engine]] (the per-stitch process bakes this in), [[feedback_get_it_immaculate]].

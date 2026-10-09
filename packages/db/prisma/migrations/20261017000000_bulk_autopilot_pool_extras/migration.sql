@@ -1,0 +1,19 @@
+-- BulkAutopilotState.poolExtras — pool additions a routine session can write
+-- without a git push.
+--
+-- The subject pool in `subject-pool.ts` is a file, and a routine-fired session
+-- (the cross-stitch judging routine, six-hourly) can clone the repo but cannot
+-- push a branch back to it — there is no reviewer on the other end and no
+-- credential for it. Step 5 of the routine's doc used to ask it to write new
+-- subjects onto a `claude/xs-pool-<date>` branch for the orchestrator to merge
+-- by hand, which is exactly the kind of hand-off `judgingReports`
+-- (20261016000000) already replaced for the report itself. This does the same
+-- for pool growth: the row the planner and `pool-check` already read.
+--
+-- Additive and reversible: one nullable JSONB column, defaulting to nothing for
+-- every existing craft row. The array holds objects shaped like
+-- { theme, subject, lanes?, laneOverrides?, setOf?, addedAt, addedBy } — the
+-- same fields a hand-written `subject-pool.ts` entry carries, so the planner's
+-- merge and `pool-check`'s count treat a poolExtras row exactly like a file
+-- subject.
+ALTER TABLE "BulkAutopilotState" ADD COLUMN IF NOT EXISTS "poolExtras" JSONB;

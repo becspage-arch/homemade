@@ -46,7 +46,7 @@ export const runtime = 'nodejs'
 export const maxDuration = 60
 
 const Choices = z.object({
-  base: z.enum(['ball', 'egg', 'bear', 'bunny']),
+  base: z.enum(['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird']),
   size: z.enum(['S', 'M', 'L']),
   mainHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
   contrastHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),

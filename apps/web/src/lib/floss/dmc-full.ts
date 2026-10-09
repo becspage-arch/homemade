@@ -498,4 +498,28 @@ export function nearestDmcFull(hex: string): DmcFullEntry {
   return DMC_FULL[best]!
 }
 
+/**
+ * The full-range DMC stands nearest an arbitrary hex, closest first, with each
+ * one's CIELAB distance.
+ *
+ * `nearestDmcFull` answers "which stand is this colour?", which is the right
+ * question when one colour is being matched. It is the wrong question when a
+ * whole quantiser palette is being matched at once: several distinct swatches
+ * routinely share a single nearest stand, and taking only the nearest collapses
+ * them onto one another. A caller that is mapping a palette needs to see the
+ * runners-up so it can give a collapsed swatch the next stand along instead —
+ * see `photo-to-pattern.ts`. Additive; `nearestDmcFull` is untouched.
+ */
+export function rankedDmcFull(hex: string, k: number): Array<{ entry: DmcFullEntry; deltaE: number }> {
+  const [r, g, b] = hexToRgb(hex)
+  const [l, a, bb] = rgbToLab(r, g, b)
+  const scored: Array<{ i: number; d: number }> = []
+  for (let i = 0; i < LAB.length; i++) {
+    const dl = LAB[i]![0] - l, da = LAB[i]![1] - a, db = LAB[i]![2] - bb
+    scored.push({ i, d: dl * dl + da * da + db * db })
+  }
+  scored.sort((x, y) => x.d - y.d)
+  return scored.slice(0, Math.max(1, k)).map((s) => ({ entry: DMC_FULL[s.i]!, deltaE: Math.sqrt(s.d) }))
+}
+
 export const DMC_FULL_COUNT = DMC_FULL.length

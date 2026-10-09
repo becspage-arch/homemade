@@ -70,16 +70,23 @@ export function hexToRgb(hex: string): [number, number, number] {
 }
 
 /**
- * Name a set of yarn colours. Greedy nearest-name, each name used once, so a
- * palette never lists two shades called the same thing. Colours are handed to
- * this in the order they should claim names (most-used first reads best in the
- * key). Falls back to a numbered shade if the name list runs out.
+ * Match a set of colours to actual, buyable yarn shades. Greedy nearest-shade,
+ * each shade used once, so a palette never lists two swatches called the same
+ * thing. Colours are handed to this in the order they should claim shades
+ * (most-used first reads best in the key). Falls back to a numbered shade
+ * carrying the ORIGINAL colour if the name list runs out, rather than
+ * collapsing distinct colours onto one shade.
+ *
+ * Callers that need the finished swatch to be an actual yarn hex (the tapestry
+ * converter, so a pattern never names a shade and then renders a colour that
+ * shade doesn't make) use the returned `hex`, not the colour that was passed
+ * in.
  */
-export function nameYarnColours(hexes: string[]): string[] {
+export function matchYarnShades(hexes: string[]): YarnShade[] {
   const taken = new Set<string>()
   return hexes.map((hex, i) => {
     const [r, g, b] = hexToRgb(hex)
-    let best: string | null = null
+    let best: YarnShade | null = null
     let bestD = Infinity
     for (const shade of YARN_SHADES) {
       if (taken.has(shade.name)) continue
@@ -87,11 +94,16 @@ export function nameYarnColours(hexes: string[]): string[] {
       const d = (r - sr) ** 2 + (g - sg) ** 2 + (b - sb) ** 2
       if (d < bestD) {
         bestD = d
-        best = shade.name
+        best = shade
       }
     }
-    if (!best) best = `Shade ${i + 1}`
-    taken.add(best)
-    return best
+    const shade = best ?? { name: `Shade ${i + 1}`, hex }
+    taken.add(shade.name)
+    return shade
   })
+}
+
+/** Name a set of yarn colours — `matchYarnShades`, keeping just the name. */
+export function nameYarnColours(hexes: string[]): string[] {
+  return matchYarnShades(hexes).map((s) => s.name)
 }

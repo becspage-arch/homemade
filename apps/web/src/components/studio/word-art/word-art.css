@@ -1,0 +1,231 @@
+/* Word art — the panel on the left of the canvas and the ghost on the chart. */
+
+.word-art-panel {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 6;
+  width: 268px;
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
+  padding: 14px 15px 16px;
+  border-radius: 14px;
+  background: rgba(255, 251, 241, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(60, 48, 32, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-size: 13px;
+  color: #4a4136;
+}
+
+@media (max-width: 720px) {
+  .word-art-panel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+  }
+}
+
+.word-art-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.word-art-head h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.word-art-close {
+  border: 0;
+  background: transparent;
+  color: #7c7264;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 0;
+  border-radius: 6px;
+}
+
+.word-art-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.word-art-lede {
+  margin: 0;
+  color: #6f6558;
+  line-height: 1.45;
+}
+
+.word-art-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.word-art-field > span {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.word-art-field em {
+  font-style: normal;
+  font-weight: 400;
+  color: #857a6a;
+}
+
+.word-art-field input[type='text'],
+.word-art-field select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd3c3;
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+.word-art-field input[type='range'] {
+  width: 100%;
+}
+
+.word-art-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.word-art-note {
+  margin: -4px 0 0;
+  font-size: 11.5px;
+  color: #8b8071;
+  line-height: 1.4;
+}
+
+.word-art-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.word-art-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 84px;
+  overflow-y: auto;
+}
+
+.word-art-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  padding: 0;
+}
+
+.word-art-swatch.is-active {
+  outline: 2px solid #6d5a3d;
+  outline-offset: 1px;
+}
+
+.word-art-place {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.word-art-arrows {
+  display: flex;
+  gap: 5px;
+}
+
+.word-art-arrows button {
+  width: 30px;
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid #ddd3c3;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.word-art-coords {
+  font-weight: 400;
+  color: #857a6a;
+}
+
+.word-art-error {
+  margin: 0;
+  font-size: 12px;
+  color: #8a3a32;
+}
+
+.word-art-cta {
+  margin-top: 2px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: #6d5a3d;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.word-art-cta:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.word-art-spin {
+  animation: word-art-spin 1s linear infinite;
+}
+
+@keyframes word-art-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── the ghost on the chart ─────────────────────────────────────────────── */
+
+.word-art-ghost {
+  position: absolute;
+  z-index: 5;
+  cursor: grab;
+  touch-action: none;
+  outline: 1px dashed rgba(109, 90, 61, 0.65);
+  outline-offset: 2px;
+  opacity: 0.92;
+}
+
+.word-art-ghost:active {
+  cursor: grabbing;
+}
+
+.word-art-ghost svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

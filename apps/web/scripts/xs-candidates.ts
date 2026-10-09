@@ -15,14 +15,36 @@
  *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts reject <cull.json> [--apply]
  *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts reroll <slug…>
  *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts pool-check
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts pool-add --as <name> --file <subjects.json>
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts pool-list [--theme <id>]
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts report --as <name> [--kind judging|weekly] --text "<report>"
+ *   HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts report --as <name> [--kind judging|weekly] --file <path>
  *
+ * `pool-add` is how a routine session grows the subject pool without a git
+ * push: `subjects.json` is an array of
+ * `{ "theme": "<CrossStitchTheme.id>", "subject": "…", "lanes"?, "laneOverrides"?, "setOf"? }`
+ * — the same fields a hand-written `subject-pool.ts` entry carries, minus the
+ * theme's own scaffolding. Each subject is validated (a real, non-hold theme;
+ * no collision with a subject the pool already has for that theme; no brand,
+ * real person or lettering) and, if it passes, written to
+ * `BulkAutopilotState.poolExtras` (craft 'cross-stitch') rather than to the
+ * file — the row the planner already merges into the pool at plan time and
+ * `pool-check` already counts. `pool-list` shows what is on record.
  * `keep` and `reject` are idempotent and reversible: nothing is deleted, every
  * decision is written on the row (`candidateStatus`, `judgedAt`, `judgedBy`,
  * `judgeReasons`) and a rejected candidate keeps its thumbnail — it is the
  * reject sample now, and the calibration record for the locked bar.
  *
+ * `report` is how a routine session leaves its hand-off when it cannot push a
+ * branch or message another session: the text is prepended to
+ * `BulkAutopilotState.judgingReports` (craft 'cross-stitch'), trimmed to the
+ * last 20, and shown on the admin bulk-generation page's cross-stitch card.
+ * `--kind` defaults to 'judging'; the weekly routine passes 'weekly'.
+ *
  * `--as NAME` labels the decision (default: the CLAUDE_SESSION_ID, else
- * 'claude-session'), so `judgedBy` says which session did it.
+ * 'claude-session'), so `judgedBy` says which session did it. It takes the
+ * next argument as its value everywhere on this CLI — that value is never
+ * also read as a slug or a positional argument.
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import sharp from 'sharp'
@@ -49,19 +71,52 @@ import {
   rejectCandidates,
   rerollCandidates,
   poolCheck,
+  addJudgingReport,
+  addPoolExtras,
+  listPoolExtras,
   CANDIDATE_SWEEP_DAYS,
   MAX_CANDIDATE_REROLLS,
+  MAX_JUDGING_REPORTS,
   type PendingCandidate,
+  type JudgingReportEntry,
+  type PoolAddInput,
 } from '@/lib/studio/generation/bulk/candidates'
+import type { LaneName } from '@/lib/studio/generation/bulk/subject-pool'
 
 const CELL = 560
 const BAND = 44
 const COLS = 3
 const PER_SHEET = COLS * COLS
 
+/** Flags that take the next argv slot as their value, everywhere on this CLI. */
+const VALUE_FLAGS = new Set(['--as', '--out', '--kind', '--text', '--file', '--theme'])
+
 function arg(flag: string): string | null {
   const i = process.argv.indexOf(flag)
   return i >= 0 && process.argv[i + 1] ? process.argv[i + 1]! : null
+}
+
+/**
+ * Positional arguments (slugs, mostly) from `startIndex` on, with every
+ * `--flag` AND the value it consumes removed.
+ *
+ * Filtering only `a.startsWith('--')` — the earlier shape — dropped the flag
+ * but not its value, so `keep foo --as worker` treated `worker` as a second
+ * slug and reported it "not found". `--as` reads its value here the same way
+ * `arg()` reads it, so the two can never disagree about which token is the
+ * flag's value and which is a slug.
+ */
+function positionalArgs(startIndex: number): string[] {
+  const out: string[] = []
+  for (let i = startIndex; i < process.argv.length; i++) {
+    const a = process.argv[i]!
+    if (a.startsWith('--')) {
+      if (VALUE_FLAGS.has(a)) i++
+      continue
+    }
+    out.push(a)
+  }
+  return out
 }
 
 function judgedBy(): string {
@@ -197,7 +252,7 @@ async function cmdSheets(): Promise<void> {
 }
 
 async function cmdKeep(): Promise<void> {
-  const slugs = process.argv.slice(3).filter((a) => !a.startsWith('--'))
+  const slugs = positionalArgs(3)
   if (!slugs.length) throw new Error('usage: xs-candidates.ts keep <slug…>')
   const out = await keepCandidates(slugs, judgedBy())
   console.log(
@@ -228,7 +283,7 @@ async function cmdReject(): Promise<void> {
 }
 
 async function cmdReroll(): Promise<void> {
-  const slugs = process.argv.slice(3).filter((a) => !a.startsWith('--'))
+  const slugs = positionalArgs(3)
   if (!slugs.length) throw new Error('usage: xs-candidates.ts reroll <slug…>')
   const out = await rerollCandidates(slugs, judgedBy())
   console.log(
@@ -262,7 +317,76 @@ async function cmdPoolCheck(): Promise<void> {
   console.log('nothing small hung off the side, no lettering.')
 }
 
-const USAGE = `usage: xs-candidates.ts <list | sheets | keep | reject | reroll | pool-check> [args] [--as NAME]`
+function readPoolAddInputs(file: string): PoolAddInput[] {
+  const raw: unknown = JSON.parse(readFileSync(file, 'utf8'))
+  if (!Array.isArray(raw)) throw new Error('subjects.json must be an array of { theme, subject, lanes?, laneOverrides?, setOf? }')
+  return raw.map((r, i) => {
+    if (!r || typeof r !== 'object') throw new Error(`entry ${i} is not an object`)
+    const o = r as Record<string, unknown>
+    if (typeof o.theme !== 'string' || !o.theme.trim()) throw new Error(`entry ${i} is missing a string "theme"`)
+    if (typeof o.subject !== 'string' || !o.subject.trim()) throw new Error(`entry ${i} is missing a string "subject"`)
+    const input: PoolAddInput = { theme: o.theme, subject: o.subject }
+    if (Array.isArray(o.lanes)) input.lanes = o.lanes as LaneName[]
+    if (o.laneOverrides && typeof o.laneOverrides === 'object') input.laneOverrides = o.laneOverrides as Record<string, LaneName[]>
+    if (typeof o.setOf === 'number') input.setOf = o.setOf
+    return input
+  })
+}
+
+async function cmdPoolAdd(): Promise<void> {
+  const file = arg('--file')
+  if (!file) throw new Error('usage: xs-candidates.ts pool-add --as <name> --file <subjects.json>')
+  const inputs = readPoolAddInputs(file)
+  if (!inputs.length) throw new Error(`${file} has no entries`)
+  const out = await addPoolExtras(inputs, judgedBy())
+  console.log(`added ${out.added.length} · rejected ${out.rejected.length}`)
+  for (const a of out.added) console.log(`  + ${a.theme} · ${a.subject}`)
+  for (const r of out.rejected) console.log(`  ✕ ${r.subject} — ${r.reason}`)
+  if (out.added.length) {
+    console.log('\nWritten to BulkAutopilotState.poolExtras (craft cross-stitch) — no branch, no push.')
+    console.log('The planner merges these into the pool at plan time; run pool-check to see the shelf move.')
+  }
+}
+
+async function cmdPoolList(): Promise<void> {
+  const theme = arg('--theme') ?? undefined
+  const rows = await listPoolExtras(theme)
+  if (!rows.length) {
+    console.log(theme ? `No pool-add subjects recorded for theme "${theme}".` : 'No pool-add subjects recorded yet.')
+    return
+  }
+  const byTheme = new Map<string, typeof rows>()
+  for (const r of rows) byTheme.set(r.theme, [...(byTheme.get(r.theme) ?? []), r])
+  for (const [t, list] of byTheme) {
+    console.log(`${t} (${list.length})`)
+    for (const r of list) {
+      const lanes = r.lanes?.length ? ` · lanes ${r.lanes.join('/')}` : ''
+      console.log(`  ${r.subject} · added ${r.addedAt} by ${r.addedBy}${lanes}`)
+    }
+  }
+  console.log(`\n${rows.length} pool-add subject${rows.length === 1 ? '' : 's'} on record.`)
+}
+
+async function cmdReport(): Promise<void> {
+  const usage =
+    'usage: xs-candidates.ts report --as <name> [--kind judging|weekly] (--text "<report>" | --file <path>)'
+  const kindArg = arg('--kind') ?? 'judging'
+  if (kindArg !== 'judging' && kindArg !== 'weekly') throw new Error(usage)
+  const kind = kindArg as JudgingReportEntry['kind']
+  const textArg = arg('--text')
+  const fileArg = arg('--file')
+  if (!textArg && !fileArg) throw new Error(usage)
+  const text = (textArg ?? readFileSync(fileArg!, 'utf8')).trim()
+  if (!text) throw new Error('report text is empty')
+  const by = judgedBy()
+  const entries = await addJudgingReport('cross-stitch', { by, kind, text })
+  console.log(`report recorded for cross-stitch (${kind}) by ${by} — ${entries.length} of ${MAX_JUDGING_REPORTS} kept on the row`)
+  console.log("Shown on the admin bulk-generation page's cross-stitch card.")
+  console.log('---')
+  console.log(text)
+}
+
+const USAGE = `usage: xs-candidates.ts <list | sheets | keep | reject | reroll | pool-check | pool-add | pool-list | report> [args] [--as NAME]`
 
 async function main(): Promise<void> {
   const cmd = process.argv[2]
@@ -284,6 +408,15 @@ async function main(): Promise<void> {
       break
     case 'pool-check':
       await cmdPoolCheck()
+      break
+    case 'pool-add':
+      await cmdPoolAdd()
+      break
+    case 'pool-list':
+      await cmdPoolList()
+      break
+    case 'report':
+      await cmdReport()
       break
     default:
       throw new Error(USAGE)

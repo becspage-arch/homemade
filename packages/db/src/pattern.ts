@@ -333,13 +333,12 @@ export function computePatternMetrics(data: PatternData): PatternMetrics {
 }
 
 /**
- * Estimated skeins per palette entry, given a +25% safety margin.
+ * Estimated skeins for one palette symbol, given a +25% safety margin.
  *
- * The model is the one most pattern publishers print on their floss key:
- * a full cross-stitch on 14-count Aida with 2 strands uses roughly
- * 1/180th of a 8-yard skein (~2.4 cm of thread per stitch including
- * tail). Back-stitch + French knots add a small overhead. We round up
- * to the nearest 0.5 skein because no shop sells less.
+ * Counts that symbol's work and hands it to `skeinCountFromUsage`, which
+ * carries the model. Asking this for every colour on a chart re-walks the grid
+ * once per colour; `summarisePaletteUsage` is the one-walk answer when the
+ * whole palette is wanted.
  */
 export function estimateSkeinCount(
   data: PatternData,
@@ -348,26 +347,106 @@ export function estimateSkeinCount(
 ): number {
   const entry = data.palette.find((p) => p.symbol === symbol)
   if (!entry) return 0
+  return skeinCountFromUsage(paletteUsageOf(data, symbol), entry, data.fabric.count, safetyMargin)
+}
 
-  const fullCrossCount = data.grid.cells.filter((c) => c.s === symbol).length
-  // Back-stitch is measured in CELLS OF LINE, not in segments: a segment is one
-  // unbroken run and may be twenty cells long, so counting segments would have a
-  // chart's outline cost the same thread whether it went once round a motif or
-  // twenty times round it.
-  const backstitchCells = data.grid.backstitch
-    .filter((b) => b.s === symbol)
-    .reduce((a, b) => a + Math.hypot(b.x2 - b.x1, b.y2 - b.y1), 0)
-  const frenchKnotCount = data.grid.frenchKnots.filter((k) => k.s === symbol).length
-  // A quarter stitch is a quarter of the thread of a full cross, and a
-  // three-quarter three quarters of it.
-  const fractionalCrosses = data.grid.fractional
-    .filter((f) => f.s === symbol)
-    .reduce((a, f) => a + (f.k === 'threeQuarter' ? 0.75 : 0.25), 0)
+/**
+ * How much work one palette symbol accounts for, counted once.
+ *
+ * The four numbers are exactly what a thread estimate needs, and nothing
+ * about the chart's geometry beyond them.
+ */
+export interface PaletteUsage {
+  /** Full crosses worked in this colour. */
+  fullCrossCount: number
+  /**
+   * Back-stitch measured in CELLS OF LINE, not in segments: a segment is one
+   * unbroken run and may be twenty cells long, so counting segments would have
+   * a chart's outline cost the same thread whether it went once round a motif
+   * or twenty times round it.
+   */
+  backstitchCells: number
+  frenchKnotCount: number
+  /**
+   * Fractional stitches as full-cross equivalents. A quarter stitch is a
+   * quarter of the thread of a full cross, and a three-quarter three quarters
+   * of it.
+   */
+  fractionalCrosses: number
+}
 
+function emptyUsage(): PaletteUsage {
+  return { fullCrossCount: 0, backstitchCells: 0, frenchKnotCount: 0, fractionalCrosses: 0 }
+}
+
+/** The usage of one symbol, walking each layer once. */
+function paletteUsageOf(data: PatternData, symbol: string): PaletteUsage {
+  const usage = emptyUsage()
+  for (const c of data.grid.cells) if (c.s === symbol) usage.fullCrossCount++
+  for (const b of data.grid.backstitch) {
+    if (b.s === symbol) usage.backstitchCells += Math.hypot(b.x2 - b.x1, b.y2 - b.y1)
+  }
+  for (const k of data.grid.frenchKnots) if (k.s === symbol) usage.frenchKnotCount++
+  for (const f of data.grid.fractional) {
+    if (f.s === symbol) usage.fractionalCrosses += f.k === 'threeQuarter' ? 0.75 : 0.25
+  }
+  return usage
+}
+
+/**
+ * Usage for EVERY palette symbol in one walk of the grid.
+ *
+ * Asking `estimateSkeinCount` for each colour in turn re-walks the whole chart
+ * once per colour, which is fine for a twelve-colour motif and ruinous for a
+ * showpiece: 224 colours against 244,800 cells is 55 million comparisons for a
+ * number the page prints in a list. This walks each layer once and buckets by
+ * symbol, so the cost is the size of the chart rather than the size of the
+ * chart times the size of the palette.
+ *
+ * Symbols carrying no work are still present, with zeroes, so a caller can
+ * read every palette entry off the map without a fallback.
+ */
+export function summarisePaletteUsage(data: PatternData): Map<string, PaletteUsage> {
+  const bySymbol = new Map<string, PaletteUsage>()
+  const usageFor = (symbol: string): PaletteUsage => {
+    let usage = bySymbol.get(symbol)
+    if (!usage) {
+      usage = emptyUsage()
+      bySymbol.set(symbol, usage)
+    }
+    return usage
+  }
+  for (const p of data.palette) usageFor(p.symbol)
+  for (const c of data.grid.cells) usageFor(c.s).fullCrossCount++
+  for (const b of data.grid.backstitch) {
+    usageFor(b.s).backstitchCells += Math.hypot(b.x2 - b.x1, b.y2 - b.y1)
+  }
+  for (const k of data.grid.frenchKnots) usageFor(k.s).frenchKnotCount++
+  for (const f of data.grid.fractional) {
+    usageFor(f.s).fractionalCrosses += f.k === 'threeQuarter' ? 0.75 : 0.25
+  }
+  return bySymbol
+}
+
+/**
+ * Estimated skeins for one palette entry from its counted usage.
+ *
+ * The model is the one most pattern publishers print on their floss key:
+ * a full cross-stitch on 14-count Aida with 2 strands uses roughly
+ * 1/180th of a 8-yard skein (~2.4 cm of thread per stitch including
+ * tail). Back-stitch + French knots add a small overhead. We round up
+ * to the nearest 0.5 skein because no shop sells less.
+ */
+export function skeinCountFromUsage(
+  usage: PaletteUsage,
+  entry: Pick<PaletteEntry, 'strandsFullCross'>,
+  fabricCount: number,
+  safetyMargin = 0.25,
+): number {
   // 14-count Aida baseline: ~180 full-cross stitches with 2 strands per skein.
   // Scale by fabric count (finer cloth = shorter stitches), strand count,
   // and the published 8-yard / ~730 cm skein length.
-  const fabricFactor = 14 / data.fabric.count
+  const fabricFactor = 14 / fabricCount
   const strandFactor = entry.strandsFullCross / 2
   const stitchesPerSkein = 180 * fabricFactor / strandFactor
 
@@ -376,12 +455,64 @@ export function estimateSkeinCount(
   // French knot about the same. Cheap approximations; the safety margin absorbs
   // the rest.
   const equivalentStitches =
-    fullCrossCount + fractionalCrosses + backstitchCells * 0.25 + frenchKnotCount * 0.25
+    usage.fullCrossCount +
+    usage.fractionalCrosses +
+    usage.backstitchCells * 0.25 +
+    usage.frenchKnotCount * 0.25
 
   const raw = equivalentStitches / stitchesPerSkein
   const padded = raw * (1 + safetyMargin)
   return Math.max(0.5, Math.ceil(padded * 2) / 2)
 }
+
+// ───────────────────────────────────────────────────────────────────────────
+// Progress keys — what a stitcher has already worked
+// ───────────────────────────────────────────────────────────────────────────
+
+/**
+ * `UserPatternProgress.stitchedCells` is a set of keys, one per piece of work
+ * the stitcher has finished. Full crosses were the only kind for the first
+ * thousand charts, so their key is the bare `"x,y"` and stays that way. Line
+ * and point work carry a two-letter prefix:
+ *
+ *   "12,7"              a full cross in that square
+ *   "bs:0,0,4,0"        one back-stitch segment, by its two endpoints
+ *   "kn:9,3"            a French knot in that square
+ *   "fr:9,3,tl,q"       a quarter stitch in the top-left of that square
+ *   "fr:9,3,tl,t"       the three-quarter that leaves that quarter empty
+ *
+ * **Why coordinates and not array indices.** A key has to mean the same piece
+ * of work every time the chart is opened, and it has to survive the chart
+ * being edited. An index into `grid.backstitch` does neither: deleting one
+ * segment slides every later index down by one, so a stitcher's outline
+ * progress would silently shift onto different lines — every remaining
+ * segment corrupted by one edit. The endpoints are the segment. Edit the
+ * chart and only the elements that actually changed lose their tick; every
+ * other key still names exactly the piece of work it was ticked for.
+ *
+ * Colour is deliberately not part of a key, matching cells: recolouring a
+ * line in the editor does not un-stitch the line that was worked there.
+ *
+ * A client that predates line work reads these keys, fails to parse them as
+ * `"x,y"`, and skips them — so a new key never breaks an old tab, it is
+ * simply not drawn. (An old status bar counts the raw set size, so it will
+ * read a percentage that is too high until the tab is reloaded. Nothing is
+ * lost or corrupted; the keys are round-tripped untouched.)
+ */
+export const PROGRESS_KEY_PREFIXES = {
+  backstitch: 'bs',
+  knot: 'kn',
+  fractional: 'fr',
+} as const
+
+/** A piece of work a progress key can name. */
+export type ProgressElement =
+  | { kind: 'cell'; x: number; y: number }
+  | { kind: 'backstitch'; x1: number; y1: number; x2: number; y2: number }
+  | { kind: 'knot'; x: number; y: number }
+  | { kind: 'fractional'; x: number; y: number; q: CellQuadrant; k: FractionalKind }
+
+export type FractionalKind = FractionalStitch['k']
 
 /** Sparse-cell key encoding used by UserPatternProgress.stitchedCells. */
 export function cellKey(x: number, y: number): string {
@@ -394,6 +525,304 @@ export function parseCellKey(key: string): { x: number; y: number } | null {
   const y = Number(ys)
   if (!Number.isInteger(x) || !Number.isInteger(y)) return null
   return { x, y }
+}
+
+/**
+ * Canonical text for one coordinate. Back-stitch endpoints are allowed to sit
+ * half way along a cell edge, so they are not always integers; rounding to
+ * three decimals (a thousandth of a square — far finer than anything a chart
+ * carries) and trimming the tail keeps `4`, `4.0` and `4.0000001` all writing
+ * the same key.
+ */
+function coordText(n: number): string {
+  if (!Number.isFinite(n)) return '0'
+  const rounded = Math.round(n * 1000) / 1000
+  return Object.is(rounded, -0) ? '0' : String(rounded)
+}
+
+/**
+ * Key for one back-stitch segment. The two endpoints are sorted before they
+ * are written, so a line drawn left-to-right and the same line drawn
+ * right-to-left are one piece of work, not two.
+ */
+export function backstitchKey(
+  seg: Pick<BackstitchSegment, 'x1' | 'y1' | 'x2' | 'y2'>,
+): string {
+  const a = `${coordText(seg.x1)},${coordText(seg.y1)}`
+  const b = `${coordText(seg.x2)},${coordText(seg.y2)}`
+  const [first, second] = compareEndpoints(seg) <= 0 ? [a, b] : [b, a]
+  return `${PROGRESS_KEY_PREFIXES.backstitch}:${first},${second}`
+}
+
+function compareEndpoints(seg: Pick<BackstitchSegment, 'x1' | 'y1' | 'x2' | 'y2'>): number {
+  if (seg.x1 !== seg.x2) return seg.x1 - seg.x2
+  return seg.y1 - seg.y2
+}
+
+/** Key for one French knot. Two knots in the same square are one knot. */
+export function frenchKnotKey(knot: Pick<FrenchKnot, 'x' | 'y'>): string {
+  return `${PROGRESS_KEY_PREFIXES.knot}:${coordText(knot.x)},${coordText(knot.y)}`
+}
+
+/**
+ * Key for one quarter or three-quarter stitch. The kind is part of the key
+ * because a three-quarter and the quarter that completes it name the same
+ * quadrant — they are the pair that tiles a square, and they are two separate
+ * pieces of work.
+ */
+export function fractionalKey(
+  f: Pick<FractionalStitch, 'x' | 'y' | 'q' | 'k'>,
+): string {
+  const kind = f.k === 'threeQuarter' ? 't' : 'q'
+  return `${PROGRESS_KEY_PREFIXES.fractional}:${coordText(f.x)},${coordText(f.y)},${f.q},${kind}`
+}
+
+const QUADRANTS: readonly string[] = ['tl', 'tr', 'bl', 'br']
+
+/**
+ * Read a progress key back. Returns null for anything that is not a key this
+ * version understands, which is how a client skips work it cannot draw
+ * instead of throwing on it.
+ */
+export function parseProgressKey(key: string): ProgressElement | null {
+  const colon = key.indexOf(':')
+  if (colon < 0) {
+    const cell = parseCellKey(key)
+    return cell ? { kind: 'cell', x: cell.x, y: cell.y } : null
+  }
+  const prefix = key.slice(0, colon)
+  const parts = key.slice(colon + 1).split(',')
+  if (prefix === PROGRESS_KEY_PREFIXES.backstitch) {
+    if (parts.length !== 4) return null
+    const [x1, y1, x2, y2] = parts.map(Number) as [number, number, number, number]
+    if (![x1, y1, x2, y2].every((n) => Number.isFinite(n))) return null
+    return { kind: 'backstitch', x1, y1, x2, y2 }
+  }
+  if (prefix === PROGRESS_KEY_PREFIXES.knot) {
+    if (parts.length !== 2) return null
+    const x = Number(parts[0])
+    const y = Number(parts[1])
+    if (!Number.isInteger(x) || !Number.isInteger(y)) return null
+    return { kind: 'knot', x, y }
+  }
+  if (prefix === PROGRESS_KEY_PREFIXES.fractional) {
+    if (parts.length !== 4) return null
+    const x = Number(parts[0])
+    const y = Number(parts[1])
+    const q = parts[2]!
+    const kind = parts[3]
+    if (!Number.isInteger(x) || !Number.isInteger(y)) return null
+    if (!QUADRANTS.includes(q)) return null
+    if (kind !== 'q' && kind !== 't') return null
+    return {
+      kind: 'fractional',
+      x,
+      y,
+      q: q as CellQuadrant,
+      k: kind === 't' ? 'threeQuarter' : 'quarter',
+    }
+  }
+  return null
+}
+
+/** The key for any element, whichever kind it is. */
+export function progressKeyFor(element: ProgressElement): string {
+  switch (element.kind) {
+    case 'cell':
+      return cellKey(element.x, element.y)
+    case 'backstitch':
+      return backstitchKey(element)
+    case 'knot':
+      return frenchKnotKey(element)
+    case 'fractional':
+      return fractionalKey(element)
+  }
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+// Counting what is done
+// ───────────────────────────────────────────────────────────────────────────
+
+/**
+ * How much of a chart — or of one floss colour in it — has been worked.
+ *
+ * Back-stitch is counted in CELLS OF LINE rather than in segments, the same
+ * measure the floss key and the skein estimate already print: one segment can
+ * be twenty squares long, so counting segments would make a short tick and a
+ * long outline weigh the same. Knots and fractional stitches count one each,
+ * matching `computePatternMetrics`.
+ */
+export interface StitchProgress {
+  cellsDone: number
+  cellsTotal: number
+  fractionalDone: number
+  fractionalTotal: number
+  /** Cells of back-stitch line, not segments. Rounded for display. */
+  lineCellsDone: number
+  lineCellsTotal: number
+  knotsDone: number
+  knotsTotal: number
+  /** Everything above added together, rounded. */
+  done: number
+  total: number
+  /** 0-100, from the unrounded totals. */
+  percent: number
+  /** Nothing at all is left to work. */
+  complete: boolean
+}
+
+interface Accumulator {
+  cellsDone: number
+  cellsTotal: number
+  fractionalDone: number
+  fractionalTotal: number
+  lineDone: number
+  lineTotal: number
+  knotsDone: number
+  knotsTotal: number
+  /** Pieces of work still to do, counted one per element. */
+  outstanding: number
+  /** Pieces of work in total, counted one per element. */
+  elements: number
+}
+
+function emptyAccumulator(): Accumulator {
+  return {
+    cellsDone: 0,
+    cellsTotal: 0,
+    fractionalDone: 0,
+    fractionalTotal: 0,
+    lineDone: 0,
+    lineTotal: 0,
+    knotsDone: 0,
+    knotsTotal: 0,
+    outstanding: 0,
+    elements: 0,
+  }
+}
+
+function finishAccumulator(a: Accumulator): StitchProgress {
+  const done = a.cellsDone + a.fractionalDone + a.lineDone + a.knotsDone
+  const total = a.cellsTotal + a.fractionalTotal + a.lineTotal + a.knotsTotal
+  // A chart with nothing in it is not a finished one, it is an empty one.
+  const complete = a.elements > 0 && a.outstanding === 0
+  return {
+    cellsDone: a.cellsDone,
+    cellsTotal: a.cellsTotal,
+    fractionalDone: a.fractionalDone,
+    fractionalTotal: a.fractionalTotal,
+    lineCellsDone: Math.round(a.lineDone),
+    lineCellsTotal: Math.round(a.lineTotal),
+    knotsDone: a.knotsDone,
+    knotsTotal: a.knotsTotal,
+    done: Math.round(done),
+    total: Math.round(total),
+    // Never rounds up to 100 with work still outstanding: a chart that is
+    // 99.7% worked reads 99%, and only a finished one reads 100.
+    percent: percentDone(done, total, complete),
+    // Counted, never inferred from the two sums: a chart of nothing but
+    // half-cell back-stitch would round its way to "finished" otherwise.
+    complete,
+  }
+}
+
+function percentDone(done: number, total: number, complete: boolean): number {
+  if (complete) return 100
+  if (total <= 0) return 0
+  return Math.min(99, Math.max(0, Math.round((done / total) * 100)))
+}
+
+function segmentLengthCells(seg: BackstitchSegment): number {
+  return Math.hypot(seg.x2 - seg.x1, seg.y2 - seg.y1)
+}
+
+/** Everything in the chart, whatever colour it is worked in. */
+export function countStitchProgress(
+  data: PatternData,
+  stitched: ReadonlySet<string>,
+): StitchProgress {
+  const a = emptyAccumulator()
+  for (const cell of data.grid.cells) {
+    a.cellsTotal++
+    a.elements++
+    if (stitched.has(cellKey(cell.x, cell.y))) a.cellsDone++
+    else a.outstanding++
+  }
+  for (const f of data.grid.fractional) {
+    a.fractionalTotal++
+    a.elements++
+    if (stitched.has(fractionalKey(f))) a.fractionalDone++
+    else a.outstanding++
+  }
+  for (const seg of data.grid.backstitch) {
+    const len = segmentLengthCells(seg)
+    a.lineTotal += len
+    a.elements++
+    if (stitched.has(backstitchKey(seg))) a.lineDone += len
+    else a.outstanding++
+  }
+  for (const knot of data.grid.frenchKnots) {
+    a.knotsTotal++
+    a.elements++
+    if (stitched.has(frenchKnotKey(knot))) a.knotsDone++
+    else a.outstanding++
+  }
+  return finishAccumulator(a)
+}
+
+/**
+ * The same counts split by palette symbol, in one pass over the chart rather
+ * than one pass per colour. Every palette entry is present, including one
+ * that carries nothing but line work.
+ */
+export function countStitchProgressBySymbol(
+  data: PatternData,
+  stitched: ReadonlySet<string>,
+): Map<string, StitchProgress> {
+  const acc = new Map<string, Accumulator>()
+  const bucket = (symbol: string): Accumulator => {
+    let a = acc.get(symbol)
+    if (!a) {
+      a = emptyAccumulator()
+      acc.set(symbol, a)
+    }
+    return a
+  }
+  for (const entry of data.palette) bucket(entry.symbol)
+
+  for (const cell of data.grid.cells) {
+    const a = bucket(cell.s)
+    a.cellsTotal++
+    a.elements++
+    if (stitched.has(cellKey(cell.x, cell.y))) a.cellsDone++
+    else a.outstanding++
+  }
+  for (const f of data.grid.fractional) {
+    const a = bucket(f.s)
+    a.fractionalTotal++
+    a.elements++
+    if (stitched.has(fractionalKey(f))) a.fractionalDone++
+    else a.outstanding++
+  }
+  for (const seg of data.grid.backstitch) {
+    const a = bucket(seg.s)
+    const len = segmentLengthCells(seg)
+    a.lineTotal += len
+    a.elements++
+    if (stitched.has(backstitchKey(seg))) a.lineDone += len
+    else a.outstanding++
+  }
+  for (const knot of data.grid.frenchKnots) {
+    const a = bucket(knot.s)
+    a.knotsTotal++
+    a.elements++
+    if (stitched.has(frenchKnotKey(knot))) a.knotsDone++
+    else a.outstanding++
+  }
+
+  const out = new Map<string, StitchProgress>()
+  for (const [symbol, a] of acc) out.set(symbol, finishAccumulator(a))
+  return out
 }
 
 // ───────────────────────────────────────────────────────────────────────────

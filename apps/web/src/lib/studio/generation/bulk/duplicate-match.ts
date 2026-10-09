@@ -81,4 +81,60 @@ export function findDuplicate(candidate: CandidateFingerprints, catalogue: Catal
   return null
 }
 
+// ─────────────────────── re-rolls and remembered kills ───────────────────────
+
+/**
+ * The slugs of the earlier rolls of a re-rolled idea.
+ *
+ * A re-roll is minted as `<the row it replaces>-r<n>`, so the chain of rolls
+ * before this one is exactly the chain of slugs left when those suffixes are
+ * peeled off: `sun-moon-a1b2-r1-r2` came from `sun-moon-a1b2-r1`, which came
+ * from `sun-moon-a1b2`.
+ *
+ * WHY THIS EXISTS. A re-roll is the same brief by design — same subject, same
+ * subject key — and the row it replaces is retired PRIVATE with a reason when
+ * the request is taken off the queue, which puts it in the CULLED population
+ * this module matches subjects against. So the guard killed every re-roll as a
+ * duplicate of the very row a judging session had just asked to have rolled
+ * again ("duplicate of coastal-a-seagull-on-a-weathered-mooring-post-6vtd"),
+ * and no re-roll could ever land. The ancestors are therefore taken out of the
+ * comparison set for that one candidate, and only for it.
+ */
+export function rerollAncestorSlugs(slug: string): string[] {
+  const out: string[] = []
+  let s = slug
+  for (;;) {
+    const m = /^(.+)-r\d+$/.exec(s)
+    if (!m?.[1]) break
+    s = m[1]
+    out.push(s)
+  }
+  return out
+}
+
+/** Drop the named slugs from a comparison set. Rows with no slug are kept: a
+ *  slugless row cannot be the one being re-rolled. */
+export function withoutSlugs(entries: CatalogueEntry[], slugs: readonly string[]): CatalogueEntry[] {
+  if (slugs.length === 0) return entries
+  const skip = new Set(slugs)
+  return entries.filter((e) => !e.slug || !skip.has(e.slug))
+}
+
+/**
+ * The planner's avoid list: the subject keys drawn from ROWS, plus the keys of
+ * ideas recent runs killed as duplicates.
+ *
+ * A duplicate kill leaves no row at all — the candidate is discarded before it
+ * is written — so the row-derived list has no memory of it and the planner
+ * re-commissions the same subject on the next firing, pays for another Flux
+ * generation, and is told the same thing. Two subjects went round that loop
+ * twice each across three of the September 2026 firings.
+ */
+export function avoidListWithDuplicateKills(
+  rowKeys: readonly string[],
+  duplicateKillKeys: readonly string[],
+): string[] {
+  return [...new Set([...rowKeys, ...duplicateKillKeys].filter(Boolean))]
+}
+
 export type { ChartFingerprint }

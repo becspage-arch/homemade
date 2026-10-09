@@ -14,7 +14,16 @@
 # session is more useful degraded than blocked.
 set -uo pipefail
 
-[ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
+# Run in any Claude Code cloud session: the interactive ones set
+# CLAUDE_CODE_REMOTE=true, but a session started by a scheduled routine does not,
+# and it still needs .env.credentials (the 19:30 UTC judging routine on
+# 6 September started without it and could not reach the database). The second
+# test is the cloud VM's own signature: the environment injects DATABASE_URL and
+# the clone lives under /home/user. Rebecca's laptop has neither, so local
+# sessions are still untouched.
+if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
+  { [ -n "${DATABASE_URL:-}" ] && [ -d /home/user ] && [ -z "${USERPROFILE:-}" ]; } || exit 0
+fi
 
 cd "${CLAUDE_PROJECT_DIR:-$PWD}" || exit 0
 

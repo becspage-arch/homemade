@@ -18,6 +18,28 @@ import { getChartSymbol } from '@/lib/craft-charts/chart-symbols'
 import type { Craft } from '@/lib/craft-charts/types'
 import { STITCH_WORKING_STEPS } from '@/lib/stitch-working-steps'
 
+/**
+ * Cross-stitch `Stitch.slug` values carry a `cross-stitch-` prefix
+ * (`cross-stitch-full-cross`) that the cross-stitch `GlossaryTerm` slugs
+ * don't (`full-cross`, seeded independently by the chart-tutorial and
+ * xs-glossary work), so the two tables don't line up on slug alone. This
+ * maps the ones that are genuinely the same concept, so a reader can jump
+ * from the stitch reference straight to its glossary definition. A stitch
+ * with no real glossary term (running stitch, long stitch) is left out
+ * rather than force-matched to something close but wrong.
+ */
+const CROSS_STITCH_GLOSSARY_BY_STITCH_SLUG: Record<string, string> = {
+  'cross-stitch-full-cross': 'full-cross',
+  'cross-stitch-half-stitch': 'half-cross',
+  'cross-stitch-quarter-stitch': 'quarter-cross',
+  'cross-stitch-three-quarter-stitch': 'three-quarter-cross',
+  'cross-stitch-back-stitch': 'back-stitch',
+  'cross-stitch-french-knot': 'french-knot',
+  'cross-stitch-lazy-daisy': 'lazy-daisy',
+  'cross-stitch-satin-stitch': 'satin-stitch',
+  'cross-stitch-parking': 'parking',
+}
+
 export interface StitchReferenceEntry {
   slug: string
   canonicalName: string
@@ -38,6 +60,10 @@ export interface StitchReferenceEntry {
   workingSteps: string[] | null
   /** The published STITCH tutorial that teaches this stitch, if any. */
   tutorial: { slug: string; categorySlug: string } | null
+  /** The glossary term for this stitch, when the category's glossary has
+   *  one covering the same concept. Null for stitches with no matching
+   *  entry (see CROSS_STITCH_GLOSSARY_BY_STITCH_SLUG). */
+  glossaryTerm: { slug: string; term: string; definition: string } | null
 }
 
 export interface StitchReferenceGroup {
@@ -136,6 +162,24 @@ export async function getStitchReference(craft: Craft): Promise<StitchReferenceG
     return t ? { slug: t.slug, categorySlug: t.category.slug } : null
   }
 
+  // Glossary terms for the stitches that have a genuine match (cross-stitch
+  // only for now — see CROSS_STITCH_GLOSSARY_BY_STITCH_SLUG).
+  const glossarySlugByStitchSlug =
+    craft === 'cross-stitch' ? CROSS_STITCH_GLOSSARY_BY_STITCH_SLUG : {}
+  const glossarySlugs = Object.values(glossarySlugByStitchSlug)
+  const glossaryTerms =
+    glossarySlugs.length > 0
+      ? await prisma.glossaryTerm.findMany({
+          where: { slug: { in: glossarySlugs } },
+          select: { slug: true, term: true, definition: true },
+        })
+      : []
+  const glossaryBySlug = new Map(glossaryTerms.map((g) => [g.slug, g]))
+  const glossaryForStitchSlug = (slug: string) => {
+    const targetSlug = glossarySlugByStitchSlug[slug]
+    return targetSlug ? (glossaryBySlug.get(targetSlug) ?? null) : null
+  }
+
   const difficultyRank = (d: string | null): number =>
     d === 'BEGINNER' ? 0 : d === 'INTERMEDIATE' ? 1 : d === 'ADVANCED' ? 2 : 3
 
@@ -157,6 +201,7 @@ export async function getStitchReference(craft: Craft): Promise<StitchReferenceG
       notes: s.notes,
       workingSteps: STITCH_WORKING_STEPS[s.slug] ?? null,
       tutorial: tutorialForSlug(s.slug),
+      glossaryTerm: glossaryForStitchSlug(s.slug),
     }
     const list = byCategory.get(s.category) ?? []
     list.push(entry)

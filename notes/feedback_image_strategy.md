@@ -4,7 +4,16 @@ description: Locked image strategy across all content types — teaching content
 type: feedback
 originSessionId: 6c0cfe69-6a03-4d34-a559-3fe119b4afe7
 ---
-**2026-06-23 UPDATE — for finished recipe/dish HEROES, generation beat stock decisively. See [[project_photo_accuracy_solution]].** A strict vision pass found ~76% of cooking/baking stock heroes were wrong; the fix is generate-first (Flux Pro v1.1) + Claude vision gate, applied across cooking/baking/cross-stitch. The note below still holds for authoring-time *teaching-content* sourcing, but stock-keyword-search is no longer trusted for dish heroes.
+**2026-09-06 — read this first.** Two later rules now govern heroes and this file is
+background: for PATTERN crafts the hero is the loom's own deterministic render finished by
+a locked creative upscale behind a fidelity gate ([[feedback_hero_must_be_exact_pattern]],
+playbook Step 2a/2b); for photographic-subject heroes (cooking, baking, tutorial-led
+categories) it is generate-first with Flux 1.1 Pro plus a vision gate (playbook Step 2).
+Procedural-cards-are-last-resort, designer-assets-are-sacred and the teaching-diagram
+sourcing chain below all still stand. ([[project_photo_accuracy_solution]] is not in
+notes/; the playbook carries that method, and `[[project_master_todo]]` is not either — the running list is `todo.md`.)
+
+**2026-06-23 UPDATE — for finished recipe/dish HEROES, generation beat stock decisively.** A strict vision pass found ~76% of cooking/baking stock heroes were wrong; the fix is generate-first (Flux Pro v1.1) + Claude vision gate, applied across cooking/baking/cross-stitch. The note below still holds for authoring-time *teaching-content* sourcing, but stock-keyword-search is no longer trusted for dish heroes.
 
 The current image sourcing process during tutorial authoring is good and Rebecca is happy with it. Don't propose replacing it.
 

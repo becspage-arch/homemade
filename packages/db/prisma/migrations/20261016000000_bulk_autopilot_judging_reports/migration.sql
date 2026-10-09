@@ -1,0 +1,13 @@
+-- BulkAutopilotState.judgingReports — the routine's report, on the row the
+-- admin page already reads.
+--
+-- A routine-fired session cannot push a branch (the credentials defect meant
+-- a bare container with no repo to push from) and cannot message another
+-- session (create_trigger is blocked by the auto-mode classifier), so a
+-- git-branch hand-off is not a reliable path for it. The autopilot state row
+-- is already read by the admin bulk-generation page every load, so writing
+-- the report there needs nothing new to be wired up.
+--
+-- Additive and reversible: one nullable JSONB column, defaulting to nothing
+-- for every existing craft row.
+ALTER TABLE "BulkAutopilotState" ADD COLUMN IF NOT EXISTS "judgingReports" JSONB;

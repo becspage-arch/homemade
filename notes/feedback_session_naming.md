@@ -11,7 +11,7 @@ Examples:
 - `Homemade - Phase 2f tutorials with TipTap`
 - NOT `Build admin media CRUD with Cloudflare Images`
 
-**Why:** Rebecca runs multiple Claude Code projects on the same machine. The other active one is **Aura** (a trading bot, separate project folder). Without the prefix she can't tell at a glance which session belongs to which project.
+**Why:** Rebecca runs multiple Claude Code projects on the same account. The other active one is a trading bot in a separate repo. Without the prefix she can't tell at a glance which session belongs to which project. (Her routines list today names that project **Wildflower** (`becspage-arch/wildflower`), while `deploy_cdk_gotchas.md` still calls the AWS account **Aura**; whether it was renamed or these are two things is unverified 2026-09-06. The prefix rule is unaffected.)
 
 **How to apply:**
 - Worker prompts: the **very first line** of the pasteable prompt must be a markdown H1 starting with the prefix, e.g. `# Homemade - <task name>`. Claude Code's session auto-namer reads the first content of the pasted prompt; a "Suggested session title:" line buried in the middle gets ignored.

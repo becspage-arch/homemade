@@ -22,6 +22,8 @@ import { PalettePanel } from './PalettePanel'
 import { FlossKeyPanel } from './FlossKeyPanel'
 import { ParkingBar } from './ParkingBar'
 import { ToolDock } from './ToolDock'
+import { WordArtPanel } from '../word-art/WordArtPanel'
+import { WordArtOverlay } from '../word-art/WordArtOverlay'
 import { StudioEmptyState } from './StudioEmptyState'
 import { NewBlankPanel } from './NewBlankPanel'
 import { CreateYourOwnPanel, type DesignMode } from './CreateYourOwnPanel'
@@ -285,6 +287,16 @@ export function StudioShell({
             is on, and renders nothing when it is off. Available on library
             patterns too: parking is a way of working a chart, not an edit. */}
         <ParkingBar pattern={pattern.data} />
+
+        {/* Word art — the panel that sets the words, and the ghost the maker
+            drags into place. Both render nothing until the tool is opened, and
+            neither touches the chart until the words are added. */}
+        {pattern.ownerUserId && (
+          <>
+            <WordArtPanel pattern={pattern.data} isPremium={isPremium} />
+            <WordArtOverlay pattern={pattern.data} />
+          </>
+        )}
 
         {/* Edit-mode floating tool dock — bottom-centre on desktop. */}
         {pattern.ownerUserId && <ToolDock />}

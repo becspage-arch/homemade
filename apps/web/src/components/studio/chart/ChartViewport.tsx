@@ -28,7 +28,14 @@ import {
   type PointerEvent as ReactPointerEvent,
   type WheelEvent as ReactWheelEvent,
 } from 'react'
-import { cellKey, type PatternData } from '@homemade/db/pattern'
+import {
+  backstitchKey,
+  cellKey,
+  fractionalKey,
+  frenchKnotKey,
+  parseProgressKey,
+  type PatternData,
+} from '@homemade/db/pattern'
 import { lineBounds } from '@/lib/studio/parking'
 import { useChartStore, type ChartMode } from './chart-store'
 import { readStoredViewport, writeStoredViewport } from './viewport-memory'
@@ -43,11 +50,14 @@ import {
   frenchKnotRadius,
   groupCellsBySymbol,
   LOW_ZOOM_THRESHOLD,
+  mixColour,
   RENDER_PRECISION,
   screenToCell,
+  screenToCellPoint,
   shiftColour,
   symbolOnFill,
 } from './render-helpers'
+import { hitTestLineWork, segmentsCrossedBy, type ChartHit } from './hit-test'
 
 /** Pointer travel (px) past which a view-mode press becomes a pan rather
  *  than a mark-stitched tap. Small enough that a deliberate tap still
@@ -56,6 +66,17 @@ const PAN_THRESHOLD_PX = 4
 
 /** How long the view has to sit still before it is worth remembering. */
 const VIEW_MEMORY_DEBOUNCE_MS = 400
+
+/**
+ * How far towards the fabric colour a worked piece of line or point work is
+ * washed. Cells get a cross-hatch laid over them, which needs an area; a line
+ * has none, so the "done" reading has to be carried by the colour itself —
+ * and a colour still reads at any zoom, including the one-pixel line a chart
+ * zoomed right out draws. Once squares are big enough to see into, a
+ * fabric-toned core is drawn down the middle of the line as well, so a
+ * finished outline looks covered rather than merely pale.
+ */
+const WORKED_WASH = 0.62
 
 interface ChartViewportProps {
   pattern: PatternData
@@ -125,6 +146,11 @@ export function ChartViewport({
   const eraseCell = useChartStore((s) => s.eraseCell)
   const toggleStitched = useChartStore((s) => s.toggleStitched)
   const markStitchedBatch = useChartStore((s) => s.markStitchedBatch)
+  const toggleStitchedSegment = useChartStore((s) => s.toggleStitchedSegment)
+  const toggleStitchedKnot = useChartStore((s) => s.toggleStitchedKnot)
+  const toggleStitchedFractional = useChartStore((s) => s.toggleStitchedFractional)
+  const markSegmentsBatch = useChartStore((s) => s.markSegmentsBatch)
+  const markProgressKeys = useChartStore((s) => s.markProgressKeys)
   const setSelection = useChartStore((s) => s.setSelection)
   const setCurrentSymbol = useChartStore((s) => s.setCurrentSymbol)
   const setTool = useChartStore((s) => s.setTool)
@@ -277,7 +303,20 @@ export function ChartViewport({
   const dragRef = useRef<
     | null
     | {
-        mode: 'pan' | 'paint' | 'erase' | 'mark' | 'select' | 'maybe-mark'
+        mode:
+          | 'pan'
+          | 'paint'
+          | 'erase'
+          | 'mark'
+          | 'select'
+          | 'maybe-mark'
+          /** A press that landed on line or point work with the
+           *  mark-stitched tool: toggled on the way down, and marking
+           *  everything the finger draws along after that. */
+          | 'mark-line'
+          /** The view-mode equivalent: a tap toggles the line, a drag pans,
+           *  decided on the way up exactly as it is for a square. */
+          | 'maybe-mark-line'
         lastX: number
         lastY: number
         downX: number
@@ -289,6 +328,16 @@ export function ChartViewport({
         /** The square a mark-stitched press toggled on pointer-down, so a
          *  second finger arriving can put it back. */
         markedOnDown?: { x: number; y: number; value: boolean }
+        /** The same, for line and point work: the progress keys this press
+         *  has ticked, and which way it ticked them. */
+        markedKeysOnDown?: string[]
+        /** Where the pointer was last seen, in cell units, so a fast drag
+         *  along an outline cannot step over a short segment between two
+         *  samples. */
+        lastCellX?: number
+        lastCellY?: number
+        /** The hit a view-mode press landed on, toggled on the way up. */
+        pendingHit?: ChartHit
       }
   >(null)
 
@@ -313,6 +362,16 @@ export function ChartViewport({
     }
   }, [])
 
+  /** Tick or un-tick whatever the pointer landed on. */
+  const applyHit = useCallback(
+    (hit: ChartHit) => {
+      if (hit.kind === 'backstitch') toggleStitchedSegment(hit.index)
+      else if (hit.kind === 'knot') toggleStitchedKnot(hit.index)
+      else toggleStitchedFractional(hit.index)
+    },
+    [toggleStitchedSegment, toggleStitchedKnot, toggleStitchedFractional],
+  )
+
   const onPointerDown = useCallback(
     (e: ReactPointerEvent<SVGSVGElement>) => {
       if (e.button !== 0 && e.button !== 1) return
@@ -332,6 +391,9 @@ export function ChartViewport({
           const { x, y, value } = drag.markedOnDown
           markStitchedBatch([{ x, y }], !value)
         }
+        if (drag?.markedKeysOnDown?.length) {
+          markProgressKeys(drag.markedKeysOnDown, !(drag.markValue ?? true))
+        }
         dragRef.current = null
         pinchRef.current = readPinch()
         return
@@ -343,7 +405,54 @@ export function ChartViewport({
         return
       }
       const s = useChartStore.getState()
-      const cell = screenToCell(lx, ly, s.viewport)
+      const point = screenToCellPoint(lx, ly, s.viewport)
+      const cell = { x: Math.floor(point.x), y: Math.floor(point.y) }
+
+      // Line and point work is tested before the square underneath, because
+      // it is drawn over the square: a tap that is near an outline and on a
+      // cell means the outline. Only the two marking contexts look for it —
+      // the brush and the eraser are drawing, not ticking off.
+      if (mode === 'view' || s.tool === 'mark-stitched') {
+        const hit = hitTestLineWork(pattern, {
+          x: point.x,
+          y: point.y,
+          scaledCellPx: DEFAULT_CELL_PX * s.viewport.scale,
+          layers: s.layers,
+          isolate: s.isolateSymbol,
+          displayMode: s.displayMode,
+          stitched: s.stitchedCells,
+        })
+        if (hit) {
+          // With the mark-stitched tool the press ticks straight away and the
+          // drag carries on marking. In view mode it waits for the pointer to
+          // come up, so a drag from an outline still pans the chart — the same
+          // bargain a square makes.
+          if (s.tool === 'mark-stitched') {
+            const value = !s.stitchedCells.has(hit.key)
+            applyHit(hit)
+            dragRef.current = {
+              mode: 'mark-line',
+              ...base,
+              touched: new Set([hit.key]),
+              markValue: value,
+              markedKeysOnDown: [hit.key],
+              lastCellX: point.x,
+              lastCellY: point.y,
+            }
+          } else {
+            dragRef.current = {
+              mode: 'maybe-mark-line',
+              ...base,
+              touched: new Set(),
+              pendingHit: hit,
+              lastCellX: point.x,
+              lastCellY: point.y,
+            }
+          }
+          return
+        }
+      }
+
       if (cell.x < 0 || cell.y < 0 || cell.x >= pattern.grid.width || cell.y >= pattern.grid.height) {
         dragRef.current = { mode: 'pan', ...base, touched: new Set() }
         return
@@ -409,6 +518,8 @@ export function ChartViewport({
       eraseCell,
       toggleStitched,
       markStitchedBatch,
+      markProgressKeys,
+      applyHit,
       setSelection,
       setCurrentSymbol,
       onPickColour,
@@ -455,7 +566,7 @@ export function ChartViewport({
       }
       // A view-mode press becomes a pan once it travels past the
       // threshold; below it, it stays a candidate tap (handled on up).
-      if (drag.mode === 'maybe-mark') {
+      if (drag.mode === 'maybe-mark' || drag.mode === 'maybe-mark-line') {
         if (Math.abs(lx - drag.downX) + Math.abs(ly - drag.downY) > PAN_THRESHOLD_PX) {
           drag.mode = 'pan'
           applyPan(dx, dy)
@@ -463,6 +574,46 @@ export function ChartViewport({
         return
       }
       const s = useChartStore.getState()
+
+      // Drawing along an outline with the mark-stitched tool ticks off every
+      // segment the finger passes over — the run gesture, for line work. The
+      // test is against the whole path travelled since the last sample, not
+      // the point it ended at, so a quick sweep cannot jump a short segment.
+      if (drag.mode === 'mark-line') {
+        const point = screenToCellPoint(lx, ly, s.viewport)
+        const from = { x: drag.lastCellX ?? point.x, y: drag.lastCellY ?? point.y }
+        drag.lastCellX = point.x
+        drag.lastCellY = point.y
+        const value = drag.markValue ?? true
+        const opts = {
+          x: point.x,
+          y: point.y,
+          scaledCellPx: DEFAULT_CELL_PX * s.viewport.scale,
+          layers: s.layers,
+          isolate: s.isolateSymbol,
+          displayMode: s.displayMode,
+          stitched: s.stitchedCells,
+        }
+        const crossed = segmentsCrossedBy(pattern, from, point, opts).filter((i) => {
+          const seg = pattern.grid.backstitch[i]
+          if (!seg) return false
+          const key = backstitchKey(seg)
+          if (drag.touched.has(key)) return false
+          drag.touched.add(key)
+          drag.markedKeysOnDown?.push(key)
+          return true
+        })
+        if (crossed.length > 0) markSegmentsBatch(crossed, value)
+        // Knots and fractionals are points and patches rather than runs, so
+        // they are picked up where the finger actually is.
+        const hit = hitTestLineWork(pattern, opts)
+        if (hit && hit.kind !== 'backstitch' && !drag.touched.has(hit.key)) {
+          drag.touched.add(hit.key)
+          drag.markedKeysOnDown?.push(hit.key)
+          markProgressKeys([hit.key], value)
+        }
+        return
+      }
       const cell = screenToCell(lx, ly, s.viewport)
       if (cell.x < 0 || cell.y < 0 || cell.x >= pattern.grid.width || cell.y >= pattern.grid.height) return
       const k = cellKey(cell.x, cell.y)
@@ -490,7 +641,18 @@ export function ChartViewport({
         })
       }
     },
-    [pattern, paintCell, eraseCell, markStitchedBatch, applyPan, applyZoom, setSelection, readPinch],
+    [
+      pattern,
+      paintCell,
+      eraseCell,
+      markStitchedBatch,
+      markSegmentsBatch,
+      markProgressKeys,
+      applyPan,
+      applyZoom,
+      setSelection,
+      readPinch,
+    ],
   )
 
   const onPointerUp = useCallback(
@@ -516,9 +678,14 @@ export function ChartViewport({
       ) {
         toggleStitched(drag.startCellX, drag.startCellY)
       }
+      // The same for a tap that landed on an outline, a knot or a part
+      // stitch rather than on a square.
+      if (drag && drag.mode === 'maybe-mark-line' && drag.pendingHit) {
+        applyHit(drag.pendingHit)
+      }
       dragRef.current = null
     },
-    [toggleStitched, readPinch],
+    [toggleStitched, applyHit, readPinch],
   )
 
   const onWheel = useCallback(
@@ -593,6 +760,72 @@ export function ChartViewport({
     if (!parkingEnabled) return null
     return lineBounds(parkingLine, parkingDirection, pattern.grid.width, pattern.grid.height)
   }, [parkingEnabled, parkingLine, parkingDirection, pattern.grid.width, pattern.grid.height])
+
+  // ── Line and point work, sorted into worked and still-to-work.
+  //
+  // One path per colour per state rather than one element per segment: a
+  // 600-square chart carries thousands of segments, and four thousand <line>
+  // nodes is four thousand things for the browser to lay out and repaint on
+  // every pan. Bucketed like this it is a couple of dozen paths whatever the
+  // chart, which is what keeps a zoomed-out sweep smooth.
+  const backstitchPaths = useMemo(() => {
+    if (!layers.backstitch || pattern.grid.backstitch.length === 0) return []
+    const buckets = new Map<string, { rgb: string; done: string[]; todo: string[] }>()
+    for (const seg of pattern.grid.backstitch) {
+      if (isolate && seg.s !== isolate) continue
+      const entry = paletteIndex.bySymbol.get(seg.s)
+      if (!entry) continue
+      const worked = stitchedSet.has(backstitchKey(seg))
+      if (displayMode === 'stitched' && !worked) continue
+      if (displayMode === 'remaining' && worked) continue
+      let bucket = buckets.get(seg.s)
+      if (!bucket) {
+        bucket = { rgb: entry.rgb, done: [], todo: [] }
+        buckets.set(seg.s, bucket)
+      }
+      const d =
+        `M${(seg.x1 * cellPx).toFixed(RENDER_PRECISION)} ${(seg.y1 * cellPx).toFixed(RENDER_PRECISION)}` +
+        `L${(seg.x2 * cellPx).toFixed(RENDER_PRECISION)} ${(seg.y2 * cellPx).toFixed(RENDER_PRECISION)}`
+      ;(worked ? bucket.done : bucket.todo).push(d)
+    }
+    const out: Array<{ symbol: string; rgb: string; d: string; worked: boolean }> = []
+    for (const [symbol, bucket] of buckets) {
+      if (bucket.todo.length > 0) {
+        out.push({ symbol, rgb: bucket.rgb, d: bucket.todo.join(''), worked: false })
+      }
+      if (bucket.done.length > 0) {
+        out.push({ symbol, rgb: bucket.rgb, d: bucket.done.join(''), worked: true })
+      }
+    }
+    return out
+  }, [pattern, isolate, stitchedSet, displayMode, layers.backstitch, paletteIndex, cellPx])
+
+  // Fractional stitches that have been worked. Drawn with the same cross-hatch
+  // a finished square gets, clipped to the corner the stitch actually covers,
+  // so a part stitch reads finished the way a whole one does.
+  const workedFractionalPath = useMemo(() => {
+    if (!layers.fractional || pattern.grid.fractional.length === 0) return ''
+    const parts: string[] = []
+    for (const f of pattern.grid.fractional) {
+      if (isolate && f.s !== isolate) continue
+      if (!stitchedSet.has(fractionalKey(f))) continue
+      if (displayMode === 'remaining') continue
+      parts.push(fractionalAreaPath(f, cellPx))
+    }
+    return parts.join('')
+  }, [pattern, isolate, stitchedSet, displayMode, layers.fractional, cellPx])
+
+  // The finished squares, read off the progress set. Keys the renderer does
+  // not understand — line work from a newer client, or anything else — are
+  // skipped rather than drawn as a square at NaN.
+  const workedCells = useMemo(() => {
+    const out: Array<{ x: number; y: number }> = []
+    for (const key of stitchedSet) {
+      const element = parseProgressKey(key)
+      if (element?.kind === 'cell') out.push({ x: element.x, y: element.y })
+    }
+    return out
+  }, [stitchedSet])
 
   // Render the centre crosshairs as a + that crosses the whole grid.
   const gridW = pattern.grid.width
@@ -751,6 +984,9 @@ export function ChartViewport({
                 if (isolate && f.s !== isolate) return null
                 const entry = paletteIndex.bySymbol.get(f.s)
                 if (!entry) return null
+                const worked = stitchedSet.has(fractionalKey(f))
+                if (displayMode === 'stitched' && !worked) return null
+                if (displayMode === 'remaining' && worked) return null
                 const area = fractionalAreaPath(f, cellPx)
                 return (
                   <g key={`fr-${i}`}>
@@ -776,24 +1012,36 @@ export function ChartViewport({
             </g>
           )}
 
-          {/* Back-stitch — drawn over the cells. */}
-          {layers.backstitch && pattern.grid.backstitch.length > 0 && (
-            <g className="chart-backstitch">
-              {pattern.grid.backstitch.map((seg, i) => {
-                if (isolate && seg.s !== isolate) return null
-                const entry = paletteIndex.bySymbol.get(seg.s)
-                if (!entry) return null
+          {/* Back-stitch — drawn over the cells, one path per colour, and a
+              second path for the segments already worked. A worked line keeps
+              its place and its shape and is washed towards the fabric, with a
+              fabric-toned core down the middle once the squares are big enough
+              to see it. The wash is what carries at low zoom, where a line is
+              a single pixel and any texture would be lost. */}
+          {backstitchPaths.length > 0 && (
+            <g className="chart-backstitch" strokeLinecap="round" fill="none">
+              {backstitchPaths.map(({ symbol, rgb, d, worked }) => {
+                const thread = shiftColour(rgb, -0.22)
+                const width = backstitchStrokeWidth(cellPx)
+                if (!worked) {
+                  return <path key={`bs-${symbol}`} d={d} stroke={thread} strokeWidth={width} />
+                }
                 return (
-                  <line
-                    key={`bs-${i}`}
-                    x1={(seg.x1 * cellPx).toFixed(RENDER_PRECISION)}
-                    y1={(seg.y1 * cellPx).toFixed(RENDER_PRECISION)}
-                    x2={(seg.x2 * cellPx).toFixed(RENDER_PRECISION)}
-                    y2={(seg.y2 * cellPx).toFixed(RENDER_PRECISION)}
-                    stroke={shiftColour(entry.rgb, -0.22)}
-                    strokeWidth={backstitchStrokeWidth(cellPx)}
-                    strokeLinecap="round"
-                  />
+                  <g key={`bs-done-${symbol}`} className="is-worked">
+                    <path
+                      d={d}
+                      stroke={mixColour(thread, pattern.fabric.colourRgb, WORKED_WASH)}
+                      strokeWidth={width}
+                    />
+                    {!useLowZoom && (
+                      <path
+                        d={d}
+                        stroke={pattern.fabric.colourRgb}
+                        strokeWidth={width * 0.42}
+                        opacity={0.85}
+                      />
+                    )}
+                  </g>
                 )
               })}
             </g>
@@ -806,12 +1054,31 @@ export function ChartViewport({
                 if (isolate && k.s !== isolate) return null
                 const entry = paletteIndex.bySymbol.get(k.s)
                 if (!entry) return null
+                const worked = stitchedSet.has(frenchKnotKey(k))
+                if (displayMode === 'stitched' && !worked) return null
+                if (displayMode === 'remaining' && worked) return null
                 const cx = k.x * cellPx + cellPx / 2
                 const cy = k.y * cellPx + cellPx / 2
                 const r = frenchKnotRadius(cellPx)
+                const base = shiftColour(entry.rgb, -0.18)
+                // A worked knot is washed the same way a worked line is, and
+                // its bright highlight gives way to a fabric-toned centre.
+                if (worked) {
+                  return (
+                    <g key={`fk-${i}`} className="is-worked">
+                      <circle
+                        cx={cx}
+                        cy={cy}
+                        r={r}
+                        fill={mixColour(base, pattern.fabric.colourRgb, WORKED_WASH)}
+                      />
+                      <circle cx={cx} cy={cy} r={r * 0.42} fill={pattern.fabric.colourRgb} opacity={0.85} />
+                    </g>
+                  )
+                }
                 return (
                   <g key={`fk-${i}`}>
-                    <circle cx={cx} cy={cy} r={r} fill={shiftColour(entry.rgb, -0.18)} />
+                    <circle cx={cx} cy={cy} r={r} fill={base} />
                     <circle cx={cx - r * 0.3} cy={cy - r * 0.3} r={r * 0.35} fill={shiftColour(entry.rgb, 0.4)} />
                   </g>
                 )
@@ -823,22 +1090,21 @@ export function ChartViewport({
               so a finished cell reads "done" without erasing the colour
               underneath. */}
           {showStitchedOverlay &&
-            Array.from(stitchedSet).map((k) => {
-              const [xs, ys] = k.split(',')
-              const x = Number(xs)
-              const y = Number(ys)
-              if (!Number.isInteger(x) || !Number.isInteger(y)) return null
-              return (
-                <rect
-                  key={`st-${k}`}
-                  x={x * cellPx}
-                  y={y * cellPx}
-                  width={cellPx}
-                  height={cellPx}
-                  fill="url(#stitched-hatch)"
-                />
-              )
-            })}
+            workedCells.map(({ x, y }) => (
+              <rect
+                key={`st-${x},${y}`}
+                x={x * cellPx}
+                y={y * cellPx}
+                width={cellPx}
+                height={cellPx}
+                fill="url(#stitched-hatch)"
+              />
+            ))}
+
+          {/* The same cross-hatch over the corner a worked part stitch covers. */}
+          {workedFractionalPath !== '' && (
+            <path className="chart-fractional-worked" d={workedFractionalPath} fill="url(#stitched-hatch)" />
+          )}
 
           {/* Parking band — the row, column or block being worked now. Sits
               over the stitches so the stitcher can find their place at a

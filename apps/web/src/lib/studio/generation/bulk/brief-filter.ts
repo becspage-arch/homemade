@@ -62,10 +62,11 @@ const PROP_PATTERNS: { label: string; re: RegExp }[] = [
  * lanes with the cells to carry two shapes.
  */
 const INSIDE_A = /\binside\s+(?:an?|its|his|her|their)\b/i
-const ROOMY_LANES = new Set(['large', 'dense'])
+const ROOMY_LANES = new Set(['large', 'dense', 'showpiece'])
 
-/** The two small lanes, where the rule is stricter still. */
-const SMALL_LANES = new Set(['mini', 'small'])
+/** The small lanes, where the rule is stricter still — the quick-win tier
+ *  included: at 48 cells there is room for one shape and nothing else. */
+const SMALL_LANES = new Set(['quick', 'mini', 'small'])
 
 /**
  * At mini and small there is room for ONE noun phrase and nothing else. Twelve

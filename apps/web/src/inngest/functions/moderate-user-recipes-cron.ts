@@ -16,7 +16,7 @@ export const moderateUserRecipesCron = inngest.createFunction(
   {
     id: 'moderate-user-recipes',
     name: 'Recipes: moderation queue sweep',
-    triggers: [{ cron: '*/5 * * * *' }],
+    triggers: [{ cron: '*/30 * * * *' }],
   },
   async ({ step }) => {
     const summary = await step.run('moderate', async () => {

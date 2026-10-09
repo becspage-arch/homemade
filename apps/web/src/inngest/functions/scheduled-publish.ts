@@ -8,13 +8,13 @@ import { notifyTechniquePublished } from '@/lib/technique-sweep-events'
 
 /**
  * Flip Tutorial.SCHEDULED → PUBLISHED for any row whose scheduledFor has
- * passed. Runs every 5 minutes.
+ * passed. Runs every 30 minutes (Inngest counts every run; five-minute polling was most of the free tier).
  */
 export const scheduledPublishTutorial = inngest.createFunction(
   {
     id: 'scheduled-publish-tutorial',
     name: 'Scheduled publish: tutorials',
-    triggers: [{ cron: '*/5 * * * *' }],
+    triggers: [{ cron: '*/30 * * * *' }],
   },
   async ({ step }) => {
     const due = await step.run('find-due', async () =>

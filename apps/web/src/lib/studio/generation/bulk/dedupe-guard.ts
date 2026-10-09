@@ -4,6 +4,7 @@ import 'server-only'
 import { Prisma, prisma, Visibility, type PatternData } from '@homemade/db'
 import { imageHash, sha256Hex, chartFingerprint, type ChartFingerprint } from './similarity'
 import { subjectKey } from './subject-key'
+import { withoutSlugs } from './duplicate-match'
 import type { CandidateFingerprints, CatalogueEntry } from './duplicate-match'
 import { CROSS_STITCH_SHELVES } from '../categories'
 
@@ -94,7 +95,7 @@ export const PENDING_CANDIDATE_WHERE = {
  * exactly how a duplicate slips through.
  */
 export async function loadPublicCrossStitchFingerprints(
-  opts: { includePending?: boolean } = {},
+  opts: { includePending?: boolean; excludeSlugs?: readonly string[] } = {},
 ): Promise<CatalogueEntry[]> {
   const IMAGE_SELECT = {
     id: true,
@@ -142,7 +143,7 @@ export async function loadPublicCrossStitchFingerprints(
   for (const r of culled) {
     entries.push({ id: r.id, slug: r.slug, name: r.name, subjectKey: r.subjectKey, image: null })
   }
-  return entries
+  return opts.excludeSlugs?.length ? withoutSlugs(entries, opts.excludeSlugs) : entries
 }
 
 // ─────────────────────────── catalogue readers ───────────────────────────
@@ -167,12 +168,51 @@ export async function liveShelfCounts(): Promise<Record<string, number>> {
 }
 
 /**
+ * How many rows of each population the avoid list may hold.
+ *
+ * It was 800, and the catalogue passed 1,100 — so the OLDEST three hundred
+ * published subjects fell off the planner's avoid list while the publish guard
+ * went on comparing against all of them. The planner then re-commissioned them
+ * and the guard killed each one as a duplicate, which is where "duplicate of
+ * sun-and-moon" and "duplicate of cosy-reading-cat" came from, twice each,
+ * across three firings of the September cron. The number now sits above the
+ * catalogue's own target (1,784) with room to spare: a few thousand short
+ * strings cost nothing next to one Flux generation wasted.
+ */
+export const PUBLIC_SUBJECT_KEY_LIMIT = 4000
+
+/**
+ * The subject keys of ideas recent runs killed as duplicates.
+ *
+ * The avoid list above is drawn from ROWS — what is published, culled or
+ * parked. A duplicate kill leaves no row at all: the candidate is discarded
+ * before it is written, so the only trace is a counter and a kill reason. That
+ * means the planner could pick the same doomed subject on the next firing and
+ * the one after, paying for a Flux generation each time to be told the same
+ * thing. Each run therefore records the subject keys it killed, and the planner
+ * reads the recent ones back.
+ */
+export async function recentDuplicateSubjectKeys(runs = DUPLICATE_KILL_RUNS): Promise<string[]> {
+  const rows = await prisma.bulkRun.findMany({
+    where: { craft: 'cross-stitch' },
+    orderBy: { startedAt: 'desc' },
+    take: runs,
+    select: { duplicateSubjectKeys: true },
+  })
+  return [...new Set(rows.flatMap((r) => r.duplicateSubjectKeys).filter(Boolean))]
+}
+
+/** How many recent runs' duplicate kills the planner is shown. Twelve firings
+ *  is a day of the two-hourly cron. */
+export const DUPLICATE_KILL_RUNS = 12
+
+/**
  * The avoid list the planner is given: the normalised subject key of every
  * PUBLIC cross-stitch pattern, most recent first, capped. Rows with no stored
  * key fall back to a key derived from the name, so the list is complete from the
  * first run even before the backfill has touched everything.
  */
-export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Promise<string[]> {
+export async function publicSubjectKeys(limit = PUBLIC_SUBJECT_KEY_LIMIT, shelfSlugs?: string[]): Promise<string[]> {
   // The same populations the publish guard compares against: what is live, what
   // has been culled, and — in the candidates gate mode — what is parked waiting
   // to be judged. A culled idea is spent and a parked one is taken; the planner
@@ -213,5 +253,5 @@ export async function publicSubjectKeys(limit = 800, shelfSlugs?: string[]): Pro
   return [...seen]
 }
 
-export { findDuplicate } from './duplicate-match'
+export { findDuplicate, rerollAncestorSlugs, avoidListWithDuplicateKills } from './duplicate-match'
 export type { CandidateFingerprints, CatalogueEntry, DuplicateHit } from './duplicate-match'

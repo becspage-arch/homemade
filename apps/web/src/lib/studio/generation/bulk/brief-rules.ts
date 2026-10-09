@@ -30,11 +30,11 @@ export interface WarmFurBrief {
  * model to read; this is the mechanical form, which the pool SAMPLER obeys too.
  *
  * Only touches briefs that have not chosen their own saturation, and only in the
- * two small lanes — a large fox has the colour budget to be a proper fox, so
+ * small lanes — a large fox has the colour budget to be a proper fox, so
  * leaving those lanes releases the saturation this rule imposed.
  */
 export function applyWarmFurGuard<T extends WarmFurBrief>(b: T): T {
-  const small = b.lane === 'mini' || b.lane === 'small'
+  const small = b.lane === 'quick' || b.lane === 'mini' || b.lane === 'small'
   if (!small) return b.sat === WARM_FUR_SAT ? { ...b, sat: undefined } : b
   if (b.sat != null) return b
   if (!WARM_FUR.test(b.subject)) return b

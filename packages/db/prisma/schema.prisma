@@ -3626,6 +3626,23 @@ model BulkAutopilotState {
   /// Stored on the row with craft 'maker-photos'. MAKER_PHOTO_GATE_MODE
   /// overrides it for ops.
   photoGateMode String @default("api")
+  /// The last 20 reports a judging routine has left on this row, newest
+  /// first, as `{ at, by, kind, text }[]` (`kind` 'judging' | 'weekly').
+  /// A routine session cannot push a branch or message another session, so
+  /// the report lives here instead — the admin bulk-generation page already
+  /// reads this row on every load.
+  judgingReports Json?
+  /// SUBJECT POOL ADDITIONS a routine session has written without a git push,
+  /// as `{ theme, subject, lanes?, laneOverrides?, setOf?, addedAt, addedBy }[]`
+  /// — the same fields a hand-written entry in `subject-pool.ts` carries.
+  /// A routine session can clone the repo but cannot push a branch back to it
+  /// (no reviewer, no credential), so growing the pool from a routine firing
+  /// needs a row the planner already reads rather than a file it cannot ship.
+  /// The planner merges these into the file's themes at plan time, deduplicated
+  /// against the file's own subjects by normalised subject key; `pool-check`
+  /// counts them as pool runway alongside the file. Written by
+  /// `xs-candidates.ts pool-add`, read by `xs-candidates.ts pool-list`.
+  poolExtras Json?
   updatedById String?
   updatedAt   DateTime @default(now()) @updatedAt
 }
@@ -3687,6 +3704,13 @@ model BulkRun {
   gemSlugs    String[] @default([])
   /// Short gate reasons behind culls — feeds the panel's "why did it dip" view.
   killReasons String[] @default([])
+  /// Normalised SUBJECT KEYS of the ideas this run killed as duplicates.
+  /// A duplicate kill writes no Pattern row, so without this the only trace of
+  /// it is a counter — and the planner, which builds its avoid list from rows,
+  /// would pick the same doomed subject again on the next firing and pay for
+  /// another Flux generation to be told the same thing. The planner reads the
+  /// last few runs' worth back and avoids them.
+  duplicateSubjectKeys String[] @default([])
   /// WHAT THE GATE KILLED. Up to 20 rows of
   /// `{ slug, attempt, url, verdict, reasons, lane, shelf, colours }` — one per
   /// terminal cull and per pale skip, each pointing at the render kept under

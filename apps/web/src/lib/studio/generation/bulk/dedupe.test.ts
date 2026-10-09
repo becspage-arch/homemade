@@ -20,6 +20,13 @@ import { subjectKey, subjectTokens, subjectJaccard, findSubjectKeyMatch, SUBJECT
 import { imageHash, sha256Hex, nearDuplicateVerdict, type PatternFingerprint, type ChartFingerprint } from './similarity'
 import { shelfDeficits, allocateShelves, shelfSlots, allShelvesAtTarget } from './shelf-plan'
 import {
+  findDuplicate,
+  rerollAncestorSlugs,
+  withoutSlugs,
+  avoidListWithDuplicateKills,
+  type CatalogueEntry,
+} from './duplicate-match'
+import {
   measureVividness,
   vividnessVerdict,
   MIN_INK,
@@ -28,7 +35,7 @@ import {
   PALE_REFS,
   VIVID_REFS,
 } from './vividness'
-import { findDuplicate, type CatalogueEntry, type CandidateFingerprints } from './duplicate-match'
+import { type CandidateFingerprints } from './duplicate-match'
 import { applyWarmFurGuard, WARM_FUR_SAT, type WarmFurBrief } from './brief-rules'
 import { runIsComplete, summaryLine } from './run-status'
 import {
@@ -46,12 +53,16 @@ import {
 import { capShelfBriefs, shelfQuotaCounts, SHELF_SHARE } from './shelf-plan'
 import {
   CROSS_STITCH_THEMES,
+  LANE_ORDER,
   LANES_ALL,
   LANES_LARGE_UP,
   LANES_MEDIUM_UP,
+  LANES_QUICK,
+  LANES_SHOWPIECE_UP,
   LANES_SMALL_UP,
   TEXT_RISK_LANES,
   smallestLane,
+  settleLane,
   setShelfCaps,
   isTextRiskSubject,
 } from './subject-pool'
@@ -919,9 +930,10 @@ record('new shelves: each one has a theme in the pool that files to it', () => {
   assert.deepEqual(seasonal, ['autumn-harvest', 'easter-spring', 'valentines'])
 })
 
-record('small makes: mini and small only, and no lettering anywhere in the new themes', () => {
+record('small makes: the quick tier up to small, and no lettering anywhere in the new themes', () => {
+  // The one-evening tier's home shelf: quick, mini and small, nothing bigger.
   const smallMakes = CROSS_STITCH_THEMES.find((t) => t.id === 'small-makes')!
-  assert.deepEqual([...(smallMakes.lanes ?? [])], ['mini', 'small'])
+  assert.deepEqual([...(smallMakes.lanes ?? [])], ['quick', 'mini', 'small'])
   assert.equal(smallMakes.setOf, 6)
   for (const id of ['small-makes', 'coastal', 'folk-geometric', 'christmas']) {
     const theme = CROSS_STITCH_THEMES.find((t) => t.id === id)!
@@ -969,8 +981,8 @@ const laneTagsFor = (id: string) => {
 
 record('lanesForSubject: a theme default applies to all its subjects', () => {
   const scenes = laneTagsFor('cosy-scenes')
-  assert.deepEqual(lanesForSubject('a thatched cottage with climbing roses', scenes), LANES_LARGE_UP)
-  assert.deepEqual(lanesForSubject('a victorian greenhouse in high summer', scenes), LANES_LARGE_UP)
+  assert.deepEqual(lanesForSubject('a thatched cottage with climbing roses', scenes), LANES_SHOWPIECE_UP)
+  assert.deepEqual(lanesForSubject('a victorian greenhouse in high summer', scenes), LANES_SHOWPIECE_UP)
   // …unless the subject invites lettering, which overrules the theme entirely.
   assert.deepEqual(lanesForSubject('a corner flower shop with buckets of blooms', scenes), TEXT_RISK_LANES)
 })
@@ -989,7 +1001,7 @@ record('lanesForSubject: an override survives a re-dressing', () => {
   // The override is keyed on the example, and the brief is matched to it by head
   // noun — so changing the setting must not lose the rule.
   const witchy = laneTagsFor('witchy-gothic')
-  assert.deepEqual(lanesForSubject("a witch's apothecary shelf of potion bottles at dawn", witchy), LANES_LARGE_UP)
+  assert.deepEqual(lanesForSubject("a witch's apothecary shelf of potion bottles at dawn", witchy), LANES_SHOWPIECE_UP)
 })
 
 record('lanesForSubject: an unknown theme carries no rule', () => {
@@ -1039,16 +1051,46 @@ record('every pool subject has at least one lane it can be built in', () => {
  */
 const SIZE_CAPPED_THEMES = new Set(['small-makes'])
 
-record('a lane override is only ever a FLOOR, never a ceiling', () => {
-  // Promotion (mini → large) must always be safe, so every tag set must run to
-  // the top of the range — apart from the deliberately size-capped themes,
-  // which the range enforcement checks before it promotes.
+record('every lane tag set is a contiguous run of the lane order', () => {
+  // A gap ('mini' + 'large') would let a promotion or a demotion land in a lane
+  // the subject was never tagged for. Contiguity is what makes both directions
+  // safe, and it is the one thing a hand-written tag set can get wrong.
   for (const t of CROSS_STITCH_THEMES) {
-    if (SIZE_CAPPED_THEMES.has(t.id)) continue
     for (const lanes of [t.lanes ?? LANES_ALL, ...Object.values(t.laneOverrides ?? {})]) {
-      assert.ok(lanes.includes('dense'), `${t.id}: ${lanes.join('/')}`)
+      const idx = lanes.map((l) => LANE_ORDER.indexOf(l as (typeof LANE_ORDER)[number]))
+      assert.ok(idx.every((i) => i >= 0), `${t.id}: unknown lane in ${lanes.join('/')}`)
+      const sorted = [...idx].sort((a, b) => a - b)
+      assert.deepEqual(idx, sorted, `${t.id}: ${lanes.join('/')} is out of order`)
+      for (let i = 1; i < sorted.length; i++) {
+        assert.equal(sorted[i], sorted[i - 1]! + 1, `${t.id}: ${lanes.join('/')} has a gap`)
+      }
     }
   }
+})
+
+record('a tag set that stops short of the dense lane is a deliberate ceiling', () => {
+  // The quick tier is the only ceiling there is: a single motif written to read
+  // at 48 cells, which is exactly the set of subjects that must never be
+  // promoted into a 200-colour canvas.
+  for (const t of CROSS_STITCH_THEMES) {
+    for (const lanes of [t.lanes ?? LANES_ALL, ...Object.values(t.laneOverrides ?? {})]) {
+      if (lanes.includes('dense')) continue
+      assert.deepEqual([...lanes], [...LANES_QUICK], `${t.id}: ${lanes.join('/')} is a ceiling nobody declared`)
+    }
+  }
+})
+
+record('settleLane never lands a mis-placed brief in one of the two tiers', () => {
+  // Demotion picks the smallest ORDINARY lane. A piece reaches quick or
+  // showpiece because the range rule chose it for that tier, never because
+  // something else did not fit.
+  assert.equal(settleLane(LANES_SHOWPIECE_UP), 'large')
+  assert.equal(settleLane(LANES_QUICK), 'mini')
+  assert.equal(settleLane(LANES_ALL), 'mini')
+  assert.equal(settleLane(TEXT_RISK_LANES), 'dense')
+  // ...and a subject tagged for nothing but the quick lane still settles there,
+  // because there is nowhere else for it to go.
+  assert.equal(settleLane(['quick']), 'quick')
 })
 
 record('a size-capped theme is a contiguous run from the small end', () => {
@@ -1058,7 +1100,7 @@ record('a size-capped theme is a contiguous run from the small end', () => {
   for (const t of CROSS_STITCH_THEMES) {
     if (!SIZE_CAPPED_THEMES.has(t.id)) continue
     const lanes = t.lanes ?? LANES_ALL
-    assert.deepEqual([...lanes], LANES_ALL.slice(0, lanes.length), `${t.id}: ${lanes.join('/')}`)
+    assert.deepEqual([...lanes], LANE_ORDER.slice(0, lanes.length), `${t.id}: ${lanes.join('/')}`)
     // Nothing in it may need the dense lane, or it could never be built at all.
     for (const ex of t.examples) assert.ok(!isTextRiskSubject(ex), `${t.id}: "${ex}" needs the dense lane`)
   }
@@ -1076,6 +1118,89 @@ record('summaryLine: names which planner wrote the batch', () => {
   const base = { craft: 'cross-stitch', requested: 10, published: 3, culled: 7, duplicates: 0, skipped: 0, errors: 0, repaired: 2, generations: 30 }
   assert.ok(summaryLine({ ...base, plannerMode: 'constrained' }).includes('constrained planner'))
   assert.ok(!summaryLine(base).includes('planner'))
+})
+
+// ─── Re-rolls: an idea is never a duplicate of its own earlier roll ─────────
+
+record('rerollAncestorSlugs: peels one roll at a time', () => {
+  assert.deepEqual(rerollAncestorSlugs('coastal-a-seagull-6vtd-r1'), ['coastal-a-seagull-6vtd'])
+  assert.deepEqual(rerollAncestorSlugs('coastal-a-seagull-6vtd-r1-r2'), [
+    'coastal-a-seagull-6vtd-r1',
+    'coastal-a-seagull-6vtd',
+  ])
+})
+
+record('rerollAncestorSlugs: an ordinary slug has no ancestors', () => {
+  assert.deepEqual(rerollAncestorSlugs('coastal-a-seagull-6vtd'), [])
+  assert.deepEqual(rerollAncestorSlugs('small-makes-a-red-breasted-robin-aztt'), [])
+})
+
+record('the re-roll of a retired candidate is no longer its own duplicate', () => {
+  // Exactly the September firing: a session marks a parked candidate REROLL,
+  // the dispatcher retires that row PRIVATE with the reason 'rerolled' (which
+  // puts it in the culled population, subject key and all), and the re-roll is
+  // then generated from the very same brief.
+  const retired: CatalogueEntry = {
+    id: 'p1',
+    slug: 'coastal-a-seagull-on-a-weathered-mooring-post-6vtd',
+    name: 'A seagull on a weathered mooring post',
+    subjectKey: subjectKey('a seagull on a weathered mooring post'),
+    image: null,
+  }
+  const elsewhere: CatalogueEntry = {
+    id: 'p2',
+    slug: 'coastal-a-crab-on-pale-sand-9xk2',
+    name: 'A crab on pale sand',
+    subjectKey: subjectKey('a crab on pale sand'),
+    image: null,
+  }
+  const candidate = {
+    subjectKey: subjectKey('a seagull on a weathered mooring post'),
+    sha256: 'a'.repeat(64),
+    dhash64: '0'.repeat(16),
+    dhash256: '0'.repeat(64),
+    chart: { w: 4, h: 4, cells: '0000000000000000', colours: 4 } as unknown as ChartFingerprint,
+  }
+  const catalogue = [retired, elsewhere]
+
+  // Before the fix: killed as a duplicate of the row it is replacing.
+  assert.equal(
+    findDuplicate(candidate, catalogue)?.slug,
+    'coastal-a-seagull-on-a-weathered-mooring-post-6vtd',
+  )
+
+  // After: its own earlier rolls are taken out of the comparison set, and
+  // nothing else is.
+  const rollSlug = 'coastal-a-seagull-on-a-weathered-mooring-post-6vtd-r1'
+  const trimmed = withoutSlugs(catalogue, rerollAncestorSlugs(rollSlug))
+  assert.equal(findDuplicate(candidate, trimmed), null)
+  assert.equal(trimmed.length, 1, 'the rest of the catalogue is still compared')
+  assert.equal(trimmed[0]!.slug, 'coastal-a-crab-on-pale-sand-9xk2')
+})
+
+record('withoutSlugs never drops a slugless row', () => {
+  const slugless: CatalogueEntry = { id: 'p3', slug: null, name: 'Old import', subjectKey: 'a robin', image: null }
+  assert.deepEqual(withoutSlugs([slugless], ['anything']), [slugless])
+})
+
+// ─── Duplicate kills are remembered ────────────────────────────────────────
+
+record('a duplicate-killed subject joins the planner avoid list', () => {
+  // The kill writes no Pattern row, so without this the planner has no memory
+  // of it: "duplicate of sun-and-moon" landed twice, and "duplicate of
+  // cosy-reading-cat" twice, across three of the September firings.
+  const rowKeys = [subjectKey('a robin on a snowy holly branch')]
+  const killed = [subjectKey('the sun and moon face to face'), subjectKey('a cosy reading nook with a sleeping cat')]
+  const avoid = avoidListWithDuplicateKills(rowKeys, killed)
+  assert.equal(avoid.length, 3)
+  for (const key of killed) {
+    assert.ok(findSubjectKeyMatch(key, avoid), `${key} is not avoided`)
+  }
+})
+
+record('the avoid list never repeats a key', () => {
+  const key = subjectKey('a crab on pale sand')
+  assert.deepEqual(avoidListWithDuplicateKills([key, key], [key, '']), [key])
 })
 
 // ─── Report ────────────────────────────────────────────────────────────────

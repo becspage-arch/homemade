@@ -134,6 +134,8 @@ export {
   stitchabilityLabel,
   STITCHABILITY_BANDS,
   estimateSkeinCount,
+  summarisePaletteUsage,
+  skeinCountFromUsage,
   cellKey,
   parseCellKey,
   type PatternData,
@@ -151,6 +153,7 @@ export {
   type FlossBrand as FlossBrandName,
   type PatternMetrics,
   type StitchabilityMetrics,
+  type PaletteUsage,
 } from './pattern'
 
 declare global {

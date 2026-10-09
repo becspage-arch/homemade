@@ -46,23 +46,32 @@ it's a personal environment on Rebecca's own account.
 variables — the ops tsx scripts in `packages/db/scripts/` search upward for that
 file — and tops up anything the environment cache missed.
 
-**Memory does not travel.** Auto-memory lives on the local machine, so cloud
-sessions get the `homemade-standards` skill instead (uploaded to claude.ai,
-account-enabled skills sync into cloud sessions at start). It carries the durable
-`feedback_*` / `playbook_*` / `reference_*` rules; it deliberately excludes
-`project_*` state, which goes stale. Regenerate and re-upload it when the
-standards change. See [[feedback_no_md_handoffs]], [[master_orchestrator]].
+**Memory travels now — SUPERSEDED 2026-09-06 by Rebecca's decision (see `notes/README.md`).**
+The project memory lives in `notes/` in the repo, so every session, cloud or laptop, reads
+and updates the same files. The `homemade-standards` skill and the laptop auto-memory are
+older fallback copies, not the source. The paragraph this replaces said memory could not
+reach the cloud and the skill was the answer; that is no longer how it works.
+See [[master_orchestrator]], [[feedback_no_md_handoffs]].
 
-**Don't send to the cloud:** bulk content generation routines (need the local
-machine + local Blender — see [[feedback_continuous_bulk_mode]]), anything
-driving her browser incl. DesignSync ([[feedback_verify_by_code_not_browser]]),
-and full-monorepo `turbo build` (close to the RAM ceiling — use `--filter`).
+**Don't send to the cloud:** anything driving her browser incl. DesignSync
+([[feedback_verify_by_code_not_browser]]), and full-monorepo `turbo build` (close to the
+RAM ceiling — use `--filter`).
 
-`ANTHROPIC_API_KEY` is in the cloud env for parity, but [[feedback_no_api_spend]]
-still applies: don't build anything that bills it.
+**Bulk generation IS cloud work now — SUPERSEDED 2026-09-06, see playbook Step 6c.** Every
+model step of an autopilot (planning, authoring, judging) runs as a cloud routine on
+Rebecca's Max plan; the deterministic stages run on the server or as scripts; nothing runs
+on her laptop. Needlework's Blender render is the last piece still tied to a local Blender
+until it moves to Fargate. The old line here pointed at
+[[feedback_continuous_bulk_mode]], which is itself superseded.
 
-The repo `becspage-arch/homemade` is **public**, which is why the standards went
-into a private skill rather than `.claude/memory/` in the repo.
+`ANTHROPIC_API_KEY` is **not** in the session environment (checked 2026-09-06 — it is not
+in `.env.credentials`; it lives only on ECS via Secrets Manager). [[feedback_no_api_spend]]
+applies as Rebecca restated it on 6 September: no per-token API calls at all, with the
+maker-photo check on upload as the one agreed exception.
+
+The repo `becspage-arch/homemade` is **public** and stays so until the build is done. The
+memory in `notes/` is public with it, by Rebecca's decision; credentials, tokens and keys
+never go in.
 
 **Added 2026-09-05 (second pass, commit ab9b4f4a):** two things the first pass
 missed. The six `LOOM_RENDER_*` values come from the `HomemadeStack` CloudFormation
@@ -74,5 +83,6 @@ the cloud env (with `LOOM_RENDER=fargate`, since cloud VMs have no Blender).
 And `.secrets/gsc-homemade.json` travels as `GSC_SERVICE_ACCOUNT_JSON_B64`, which
 the SessionStart hook base64-decodes back to disk and points `GSC_KEY_PATH` at.
 
-Known bug left for the session to fix: `apps/web/scripts/gsc/gsc.ts:19` defaults
-`GSC_KEY_PATH` to the dead `C:/Users/Rebecca/Projects/code/homemade/` path.
+**FIXED (checked 2026-09-06).** `apps/web/scripts/gsc/gsc.ts` no longer hard-codes a
+Windows path: it walks up from its own directory to the repo root by looking for
+`pnpm-workspace.yaml`, and `GSC_KEY_PATH` overrides it. Nothing left to do here.

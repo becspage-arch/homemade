@@ -19,8 +19,18 @@ const Parking = z.object({
   line: z.number().int().min(0).max(100000),
 })
 
+/**
+ * Progress is a set of keys, one per piece of work finished. The shape is
+ * deliberately open: `"12,7"` is a full cross, and line and point work carry
+ * a short prefix — `"bs:0,0,4,0"` a back-stitch segment, `"kn:9,3"` a French
+ * knot, `"fr:9,3,tl,q"` a quarter stitch (see `progressKeyFor` in
+ * `@homemade/db/pattern`). New kinds of work therefore need no migration, and
+ * a client that predates a kind round-trips its keys untouched instead of
+ * dropping another device's progress. The only thing checked here is that a
+ * key is short enough to be a key at all.
+ */
 const Body = z.object({
-  stitchedCells: z.record(z.string(), z.literal(true)),
+  stitchedCells: z.record(z.string().min(1).max(64), z.literal(true)),
   notes: z.string().nullable().optional(),
   parking: Parking.optional(),
 })

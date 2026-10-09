@@ -21,7 +21,7 @@ import type {
   PaletteEntry,
   FractionalStitch,
 } from '@homemade/db/pattern'
-import { cellKey } from '@homemade/db/pattern'
+import { backstitchKey, cellKey, fractionalKey, frenchKnotKey } from '@homemade/db/pattern'
 import {
   centreCellViewport,
   DEFAULT_VIEWPORT,
@@ -213,6 +213,26 @@ export interface ChartStoreState {
   toggleStitched: (x: number, y: number) => void
   markStitchedBatch: (cells: Array<{ x: number; y: number }>, value: boolean) => void
   clearAllStitched: () => void
+
+  // ───── stitched markers for line and point work
+  //
+  // Same rules as the cell markers above: a direct write, outside the undo
+  // stack, because a stitcher re-flips these as fast as they like and
+  // Cmd+Z belongs to the chart, not to what has been worked. Each action
+  // takes the element's index in the CURRENT grid and stores it under a
+  // coordinate key, so an edit that moves the array around cannot shift a
+  // tick onto a different line.
+  /** Tick or un-tick one back-stitch segment. */
+  toggleStitchedSegment: (index: number) => void
+  /** Tick or un-tick one French knot. */
+  toggleStitchedKnot: (index: number) => void
+  /** Tick or un-tick one quarter / three-quarter stitch. */
+  toggleStitchedFractional: (index: number) => void
+  /** Mark a run of back-stitch segments in one go — the drag along a line. */
+  markSegmentsBatch: (indices: number[], value: boolean) => void
+  /** Set progress keys directly. The escape hatch the viewport's put-back
+   *  uses when a second finger arrives mid-tap. */
+  markProgressKeys: (keys: string[], value: boolean) => void
 
   // ───── parking
   setParkingEnabled: (enabled: boolean) => void
@@ -520,6 +540,37 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
       }
     }),
 
+  toggleStitchedSegment: (index) =>
+    set((state) => {
+      const seg = state.pattern?.grid.backstitch[index]
+      if (!seg) return {}
+      return toggleKeys(state, [backstitchKey(seg)])
+    }),
+  toggleStitchedKnot: (index) =>
+    set((state) => {
+      const knot = state.pattern?.grid.frenchKnots[index]
+      if (!knot) return {}
+      return toggleKeys(state, [frenchKnotKey(knot)])
+    }),
+  toggleStitchedFractional: (index) =>
+    set((state) => {
+      const f = state.pattern?.grid.fractional[index]
+      if (!f) return {}
+      return toggleKeys(state, [fractionalKey(f)])
+    }),
+  markSegmentsBatch: (indices, value) =>
+    set((state) => {
+      const grid = state.pattern?.grid
+      if (!grid) return {}
+      const keys: string[] = []
+      for (const i of indices) {
+        const seg = grid.backstitch[i]
+        if (seg) keys.push(backstitchKey(seg))
+      }
+      return setKeys(state, keys, value)
+    }),
+  markProgressKeys: (keys, value) => set((state) => setKeys(state, keys, value)),
+
   setParkingEnabled: (enabled) =>
     set((state) => {
       if (!enabled) return { parkingEnabled: false, parkingDirty: true }
@@ -641,6 +692,39 @@ export const useChartStore = create<ChartStoreState>((set, get) => ({
   clearProgressDirty: () => set({ progressDirty: false }),
   clearParkingDirty: () => set({ parkingDirty: false }),
 }))
+
+// ───────────────────────────────────────────────────────────────────────────
+// Progress-key helpers for line and point work.
+//
+// Parking is a cell method — a needle is left hanging in a square, never in
+// the middle of an outline — so these never touch the parking index. What
+// they do change is whether a colour is finished, which the floss key reads
+// off the counts rather than off parking.
+// ───────────────────────────────────────────────────────────────────────────
+
+/** Flip one or more progress keys. All of them follow the first one's new
+ *  state, so a run reads as one action rather than a checkerboard. */
+function toggleKeys(state: ChartStoreState, keys: string[]): Partial<ChartStoreState> {
+  if (keys.length === 0) return {}
+  return setKeys(state, keys, !state.stitchedCells.has(keys[0]!))
+}
+
+function setKeys(
+  state: ChartStoreState,
+  keys: string[],
+  value: boolean,
+): Partial<ChartStoreState> {
+  let changed = false
+  const next = new Set(state.stitchedCells)
+  for (const key of keys) {
+    if (value ? next.has(key) : !next.has(key)) continue
+    if (value) next.add(key)
+    else next.delete(key)
+    changed = true
+  }
+  if (!changed) return {}
+  return { stitchedCells: next, progressDirty: true }
+}
 
 // ───────────────────────────────────────────────────────────────────────────
 // Parking helpers — kept beside the store because they read and mutate the

@@ -18,6 +18,30 @@ import { ownedCountsForPatterns } from '@/lib/floss/stash-ownership'
 const DESIGNER_SPOTLIGHT_TAKE = 6
 const RECENTLY_COMPLETED_TAKE = 8
 
+/**
+ * Cross-stitch "Start here" reading path, in the order a total beginner
+ * should read them: what to buy, how to hold it, how to start and end a
+ * thread, how to read the chart, what the extra stitch layers look like,
+ * how to finish a piece, then how to pick the next one. The generic
+ * `foundational: true` query below (shared with crochet, knitting, sewing
+ * and the rest) would cap this at 6 items ordered only by publish date,
+ * which cannot express a deliberately-ordered curriculum, so cross-stitch
+ * fetches this explicit list instead. Every slug here is a published
+ * cross-stitch Tutorial (READING pieces plus the existing chart-reading
+ * TECHNIQUE) — see packages/db/scripts/xs-readings/.
+ */
+const CROSS_STITCH_READING_SLUGS = [
+  'understanding-fabric-and-count-in-cross-stitch',
+  'choosing-and-using-cross-stitch-floss',
+  'needles-hoops-and-frames-for-cross-stitch',
+  'starting-and-finishing-a-thread-without-knots',
+  'the-cross-stitch-chart-key-explained',
+  'how-to-read-a-cross-stitch-chart',
+  'back-stitch-french-knots-and-fractional-stitches-on-our-charts',
+  'caring-for-and-framing-a-finished-cross-stitch-piece',
+  'choosing-your-first-cross-stitch-pattern',
+]
+
 interface PatternLayoutCategory {
   id: string
   slug: string
@@ -264,24 +288,51 @@ export async function PatternLayout({ category, searchParams, currentUserId }: P
           },
         })
       : Promise.resolve([]),
-    prisma.tutorial.findMany({
-      where: {
-        categoryId: category.id,
-        status: TutorialStatus.PUBLISHED,
-        foundational: true,
-      },
-      orderBy: [{ publishedAt: 'asc' }],
-      take: 6,
-      select: {
-        id: true,
-        slug: true,
-        title: true,
-        excerpt: true,
-        difficulty: true,
-        category: { select: { slug: true, name: true } },
-        hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
-      },
-    }),
+    category.slug === 'cross-stitch'
+      ? prisma.tutorial
+          .findMany({
+            where: {
+              categoryId: category.id,
+              status: TutorialStatus.PUBLISHED,
+              slug: { in: CROSS_STITCH_READING_SLUGS },
+            },
+            select: {
+              id: true,
+              slug: true,
+              title: true,
+              excerpt: true,
+              difficulty: true,
+              category: { select: { slug: true, name: true } },
+              hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
+            },
+          })
+          .then((rows) =>
+            // `in` doesn't preserve array order — sort back into the curated
+            // reading-path order. A slug not yet published (or renamed) just
+            // drops out rather than breaking the page.
+            [...rows].sort(
+              (a, b) =>
+                CROSS_STITCH_READING_SLUGS.indexOf(a.slug) - CROSS_STITCH_READING_SLUGS.indexOf(b.slug),
+            ),
+          )
+      : prisma.tutorial.findMany({
+          where: {
+            categoryId: category.id,
+            status: TutorialStatus.PUBLISHED,
+            foundational: true,
+          },
+          orderBy: [{ publishedAt: 'asc' }],
+          take: 6,
+          select: {
+            id: true,
+            slug: true,
+            title: true,
+            excerpt: true,
+            difficulty: true,
+            category: { select: { slug: true, name: true } },
+            hero: { select: { cloudflareId: true, r2Key: true, alt: true } },
+          },
+        }),
     patternType
       ? prisma.pattern.findMany({
           where: {

@@ -18,12 +18,14 @@ published data. A smaller correct table beats an over-eager seed of hallucinated
 RGBs. Extending a table with real values only ever improves quality.
 
 **Current state of the tables:**
-- `apps/web/src/lib/floss/dmc-table.ts` — the curated ~139-stand subset, fine for
+- `apps/web/src/lib/floss/dmc-table.ts` — the curated subset (140 entries, counted 2026-09-06), fine for
   counted crafts / brand-equivalence mapping where a tight palette is wanted.
-- `apps/web/src/lib/floss/dmc-full.ts` — the full ~456-colour DMC set (verified
+- `apps/web/src/lib/floss/dmc-full.ts` — the full DMC set (457 entries, counted 2026-09-06) (verified
   public data) + a CIELAB matcher. Use it where fine gradations matter — surface-
   embroidery needle-painting shading needs it for smooth ramps. Shipped 2026-06-25
-  (commit 874ab76e). See [[project_needlework_signoff]].
+  (commit 874ab76e). ([[project_needlework_signoff]] is not in notes/.) The sibling
+  brand tables `anchor-table.ts`, `madeira-table.ts` and `equivalence-table.ts` are in
+  the same directory.
 - Unifying everything onto the full table later is fine if it simplifies things;
   no need to keep them split on principle. Pick per use.
 

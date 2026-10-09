@@ -38,6 +38,7 @@ import {
 import { renderPatternSvgString } from '@/components/studio/chart/render-svg-string'
 import { fractionalSymbolAnchor } from '@/components/studio/chart/render-helpers'
 import { symbolOnFill } from '@/components/studio/chart/render-helpers'
+import { parseSymbol, type SymbolDecoration } from '@/lib/studio/symbol-assignment'
 
 // Chart symbols use glyphs outside WinAnsi (Latin-Extended letters from
 // imported charts, geometric shapes ●▲◆, dingbats ✚✦). pdf-lib's standard
@@ -153,6 +154,66 @@ type Fonts = {
   /** Pass-through when the Unicode font is embedded; strips non-WinAnsi
    *  characters in the standard-font fallback so drawText never throws. */
   clean: (s: string) => string
+}
+
+/**
+ * Draw one chart symbol: the glyph, plus the second channel's rule when the
+ * symbol carries one.
+ *
+ * The rule is drawn as a real rectangle rather than as the combining mark in
+ * the string. pdf-lib encodes text glyph by glyph and does not apply the
+ * font's mark positioning, so a combining low line handed to `drawText` would
+ * be laid down beside the glyph instead of under it. Drawing it puts the rule
+ * in exactly the place the on-screen chart puts it, at the same weight.
+ *
+ * `centreX` is the middle of the cell (or of the fractional's quarter); the
+ * glyph is centred on it.
+ */
+function drawChartSymbol(
+  page: ReturnType<PDFDocument['addPage']>,
+  symbol: string,
+  opts: {
+    fonts: Fonts
+    centreX: number
+    baselineY: number
+    size: number
+    colour: ReturnType<typeof rgb>
+    opacity?: number
+    /** Memoised parse + measure, for the per-cell loop on a big chart. */
+    measure?: (symbol: string, size: number) => { text: string; decoration: SymbolDecoration; width: number }
+  },
+): void {
+  const m = opts.measure
+    ? opts.measure(symbol, opts.size)
+    : (() => {
+        const parsed = parseSymbol(symbol)
+        const t = opts.fonts.clean(parsed.glyph)
+        return { text: t, decoration: parsed.decoration, width: opts.fonts.body.widthOfTextAtSize(t, opts.size) }
+      })()
+  const { text, decoration, width } = m
+  if (text.length === 0) return
+  page.drawText(text, {
+    x: opts.centreX - width / 2,
+    y: opts.baselineY,
+    size: opts.size,
+    font: opts.fonts.body,
+    color: opts.colour,
+    ...(opts.opacity != null ? { opacity: opts.opacity } : {}),
+  })
+  if (decoration === 'none') return
+  const ruleWidth = opts.size * 0.66
+  const thickness = Math.max(0.35, opts.size * 0.08)
+  // The under-rule clears the descender line; the over-rule sits above the
+  // cap height. Both are measured off the glyph's own baseline.
+  const y = decoration === 'under' ? opts.baselineY - opts.size * 0.24 : opts.baselineY + opts.size * 0.82
+  page.drawRectangle({
+    x: opts.centreX - ruleWidth / 2,
+    y,
+    width: ruleWidth,
+    height: thickness,
+    color: opts.colour,
+    ...(opts.opacity != null ? { opacity: opts.opacity } : {}),
+  })
 }
 
 async function drawCover(
@@ -388,12 +449,12 @@ async function drawFlossKey(
         borderWidth: 0.5,
       })
 
-      page.drawText(fonts.clean(row.entry.symbol), {
-        x: x + SYMBOL_X,
-        y: y - 7,
+      drawChartSymbol(page, row.entry.symbol, {
+        fonts,
+        centreX: x + SYMBOL_X + 4,
+        baselineY: y - 7,
         size: 9,
-        font: fonts.body,
-        color: ink,
+        colour: ink,
       })
       page.drawText(fonts.clean(`${row.entry.brand} ${row.entry.code}`), {
         x: x + CODE_X,
@@ -730,15 +791,20 @@ async function drawChartPages(
 
   const symbolSize = plan.cellPt * 0.62
   const rulerSize = Math.min(7.5, Math.max(5.5, plan.cellPt * 0.58))
-  // Glyph widths are the same on every page; measure each one once.
-  const glyphWidth = new Map<string, number>()
-  const widthOf = (glyph: string): number => {
-    let w = glyphWidth.get(glyph)
-    if (w === undefined) {
-      w = fonts.body.widthOfTextAtSize(glyph, symbolSize)
-      glyphWidth.set(glyph, w)
+  // A symbol's glyph, its rule and its width are the same on every page and in
+  // every cell that carries it — and a 600-cell showpiece has a third of a
+  // million cells, so each one is worked out once and then looked up.
+  const measured = new Map<string, { text: string; decoration: SymbolDecoration; width: number }>()
+  const measure = (symbol: string, size: number): { text: string; decoration: SymbolDecoration; width: number } => {
+    const key = `${size}|${symbol}`
+    let m = measured.get(key)
+    if (m === undefined) {
+      const parsed = parseSymbol(symbol)
+      const text = fonts.clean(parsed.glyph)
+      m = { text, decoration: parsed.decoration, width: text.length ? fonts.body.widthOfTextAtSize(text, size) : 0 }
+      measured.set(key, m)
     }
-    return w
+    return m
   }
 
   for (const tile of plan.tiles) {
@@ -844,15 +910,14 @@ async function drawChartPages(
         if (symbol === undefined) continue
         const swatch = colourBySymbol.get(symbol)
         if (swatch === undefined) continue
-        const glyph = fonts.clean(symbol)
-        if (glyph.length === 0) continue
         const inCore = inCoreRow && x >= tile.core.x && x < coreMaxX
-        page.drawText(glyph, {
-          x: px(x) + plan.cellPt / 2 - widthOf(glyph) / 2,
-          y: py(y + 1) + plan.cellPt * 0.29,
+        drawChartSymbol(page, symbol, {
+          fonts,
+          measure,
+          centreX: px(x) + plan.cellPt / 2,
+          baselineY: py(y + 1) + plan.cellPt * 0.29,
           size: symbolSize,
-          font: fonts.body,
-          color: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
+          colour: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
           opacity: inCore ? 1 : 0.32,
         })
       }
@@ -868,17 +933,16 @@ async function drawChartPages(
         if (f.x < tile.region.x || f.x >= regionMaxX || f.y < tile.region.y || f.y >= regionMaxY) continue
         const swatch = colourBySymbol.get(f.s)
         if (swatch === undefined) continue
-        const glyph = fonts.clean(f.s)
-        if (glyph.length === 0) continue
         const anchor = fractionalSymbolAnchor(f, plan.cellPt)
         const inCore =
           f.x >= tile.core.x && f.x < coreMaxX && f.y >= tile.core.y && f.y < coreMaxY
-        page.drawText(glyph, {
-          x: px(f.x) + (anchor.x - f.x * plan.cellPt) - fonts.body.widthOfTextAtSize(glyph, fracSize) / 2,
-          y: py(f.y) - (anchor.y - f.y * plan.cellPt) - fracSize * 0.36,
+        drawChartSymbol(page, f.s, {
+          fonts,
+          measure,
+          centreX: px(f.x) + (anchor.x - f.x * plan.cellPt),
+          baselineY: py(f.y) - (anchor.y - f.y * plan.cellPt) - fracSize * 0.36,
           size: fracSize,
-          font: fonts.body,
-          color: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
+          colour: opts.monochrome ? ink : hexColour(symbolOnFill(swatch)),
           opacity: inCore ? 1 : 0.32,
         })
       }

@@ -23,6 +23,14 @@ older copy of the same files, not the source.)
 
 ## The environment
 
+- A routine-started session begins in an EMPTY container: no repository, no
+  `node_modules`, no `.env.credentials`, `CLAUDE_PROJECT_DIR` unset. The
+  routine's own prompt bootstraps before this file is opened: `add_repo`
+  (becspage-arch/homemade), the clone command it returns, `register_repo_root`,
+  then `bash scripts/cloud-session-setup.sh` from the clone. If you are reading
+  this and `ls .env.credentials` at the repo root fails, run that script now;
+  without the file nothing below can reach the database, and there is no other
+  way in.
 - Ubuntu VM, fresh clone of `becspage-arch/homemade`. The project memory is
   `notes/` in the repo; this file and those notes are what you get.
 - Run every script **from `apps/web`** with the env file:
@@ -90,6 +98,25 @@ simple chart that reads clearly is a keep. If your reason for rejecting starts
 You are not the gate that decides whether the catalogue is world-class. You are
 the gate that stops broken work reaching a customer.
 
+### The two deliberate tiers, and what they look like on a sheet
+
+Two lanes in the `lane` label are size tiers rather than ordinary sizes, and
+both look wrong on a contact sheet if you are not expecting them. Each one has
+already passed a deterministic guard of its own before it reached the bay — the
+arithmetic has been checked, so do not re-check it by eye.
+
+- **`showpiece`** — the heirloom tier. 400–600 cells and **200–300 flosses**, so
+  at 560 px it reads as a dense painted picture rather than a chart, and the
+  floss key is enormous. That is the tier, not a fault. Judge it as a picture:
+  is it a scene somebody would frame? Reject it for the usual genuine fails, not
+  for being busy, and not for the colour count.
+- **`quick`** — the one-evening tier. 40–60 cells and 6–14 flosses, a single
+  flat motif on bare cloth with a thick outline and nothing behind it. It is
+  meant to look like a sticker, blocky and plain. The only question is whether
+  you can name the thing from across the room. `a lemon on a leafy stem` that
+  reads as a lemon is a keep however simple it is; a shape you cannot name is
+  the ordinary "does not read as its name" reject.
+
 ## Step 4 — record the decisions
 
 Keep the ones that pass:
@@ -132,13 +159,21 @@ HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts 
 ```
 
 It lists the shelves whose deficit is bigger than the unused subjects left in
-the pool. The planner can only ever ask for a pool subject, so a shelf marked
-THIN will not reach its target however often the cron fires — the fix is more
-subjects, and only a session can write them.
+the pool (file subjects plus anything already added by a previous `pool-add`
+run). The planner can only ever ask for a pool subject, so a shelf marked THIN
+will not reach its target however often the cron fires — the fix is more
+subjects.
 
-For each thin shelf, write **6 to 10 new subjects** into that shelf's theme in
-`apps/web/src/lib/studio/generation/bulk/subject-pool.ts`, to the standard of
-the ones already there:
+**There is no branch for this any more.** A routine session can clone the repo
+but cannot push a branch back to it — no reviewer on the other end, no
+credential for it — so subjects go straight onto the row the planner already
+reads (`BulkAutopilotState.poolExtras`, craft 'cross-stitch') instead of onto
+`subject-pool.ts`. No branch, no push, nothing for the orchestrator to merge.
+
+For each thin shelf, find that shelf's theme id(s) — `grep "shelf: '<slug>'"
+apps/web/src/lib/studio/generation/bulk/subject-pool.ts`, the `CrossStitchTheme.id`
+just above the match — then write **6 to 10 new subjects** as a JSON file, to
+the standard of the ones already in that theme:
 
 - ONE dominant subject that fills the frame;
 - a hook in its pose or its setting, not a prop hung off the side;
@@ -147,17 +182,35 @@ the ones already there:
   labels, alphabets or numbers;
 - nothing recognisable as a brand, a franchise or a real person.
 
-Put them on a branch and push the branch only — the orchestrator merges:
-
-```bash
-git checkout -b claude/xs-pool-$(date +%Y%m%d)
-git add apps/web/src/lib/studio/generation/bulk/subject-pool.ts
-git commit -m "xs: new pool subjects for <shelf>"
-git push -u origin claude/xs-pool-$(date +%Y%m%d)
+```json
+[
+  { "theme": "coastal", "subject": "a rope-fendered dinghy tied to a weathered ring" },
+  { "theme": "coastal", "subject": "a row of lobster pots stacked on a stone quay" }
+]
 ```
 
-Do not merge to `main`. Do not open a PR. Do not touch anything else in the
-repo.
+A subject may also carry `"lanes"` (a per-subject lane restriction, e.g.
+`["mini", "small"]`, the same role as a hand-written `laneOverrides` entry) or
+`"setOf"` (raises the theme's set-size cap) when it genuinely needs one —
+most subjects need neither.
+
+```bash
+HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts pool-add --as <name> --file subjects.json
+```
+
+It validates every entry — a real, non-hold theme id; no collision with a
+subject the pool already has for that theme (by the same idea-normalisation
+the publish guard uses, so a re-wording is caught too, not only a verbatim
+repeat); no brand, real person or lettering — and prints what was added and
+what was rejected, with the reason. Re-run `pool-check` afterwards to see the
+shelf's `unused` count rise and, once it clears the deficit, the THIN flag
+drop.
+
+`xs-candidates.ts pool-list [--theme <id>]` shows everything on record, so a
+later firing can see what a previous one already added before writing more.
+
+Do not touch `subject-pool.ts` from this routine. Do not open a branch, a
+commit or a PR for pool work — `pool-add` is the whole mechanism now.
 
 ## Step 6 — maker photos (only when the switch says so)
 
@@ -202,12 +255,30 @@ Three lines, plain English, no headings:
 1. how many candidates you looked at, kept, rejected and re-rolled;
 2. the faults you rejected for, as a short list, and anything that repeated
    across the batch;
-3. the pool: which shelves were thin, what you added, and the branch name — or
-   "no pool work needed".
+3. the pool: which shelves were thin, how many subjects you added with
+   `pool-add` and how many it rejected (with why) — or "no pool work needed".
 
 Add a fourth line only if something is stuck: the cron has not fired, the sheets
 would not build, a script failed. Say what happened and stop rather than working
 round it.
+
+Record it with the CLI, from `apps/web` — this is how the report actually
+reaches Rebecca, not a step to skip:
+
+```bash
+HOMEMADE_ENV_FILE=../../.env.credentials pnpm exec tsx scripts/xs-candidates.ts report --as <name> --kind judging --text "<the three (or four) lines above>"
+```
+
+`--as` is the same session label the `keep`/`reject`/`reroll` commands took.
+The command prepends the report to `BulkAutopilotState.judgingReports` (craft
+`cross-stitch`), keeps the last 20, and prints what it wrote so you can check
+it landed. It shows on the admin bulk-generation page's cross-stitch card —
+the latest report at a glance, the last few behind a fold. There is no branch
+to push and nothing for the orchestrator to merge: the report lives on the row
+the admin page already reads, because a routine session cannot push a branch
+or message another session. `--file <path>` takes the text from a file
+instead of `--text`, for a report too long to fit comfortably on a command
+line.
 
 ## Never
 
