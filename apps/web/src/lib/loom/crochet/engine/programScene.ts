@@ -223,7 +223,7 @@ function cellColourResolver(p: CrochetProgram): ((row: number, col: number) => s
  * 2-sample overlap at every colour boundary means the fat tubes meet with no gap
  * (a real colour change happens at the selvedge, where these boundaries land).
  */
-function colourStrokes(
+export function colourStrokes(
   center: V3[],
   filaments: number[][][],
   radiusMm: number,

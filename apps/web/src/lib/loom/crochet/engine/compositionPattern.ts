@@ -14,7 +14,7 @@
  * itself is owned elsewhere and untouched here.
  */
 
-import { programToChart, writeInstructions, type CrochetProgram } from './program'
+import { programToChart, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
 
 export interface CompositionPiece {
@@ -32,9 +32,18 @@ export interface CompositionPiece {
   partNames: string[]
   /** What it is joined to, if anything. */
   joinsTo: string | null
+  /** How the piece is made (toy-pose pass): a stuffed 'sphere' (default), a
+   *  flat appliqué 'disc', or a 'pressed' unstuffed piece. */
+  kind?: 'sphere' | 'disc' | 'pressed'
+  /** A tapestry panel in the second yarn: per round, [first st, count]. */
+  panel?: Record<number, [number, number]>
+  /** Worked in a lighter yarn than the rest. */
+  yarnWeight?: YarnWeight
 }
 
-const SIDE_SUFFIX = /-(?:l|r|al|ar|ll|lr)$/
+// A side suffix, optionally numbered (`toe-bean-l0`): the three toe beans on
+// each foot are one piece made six times.
+const SIDE_SUFFIX = /-(?:l|r|al|ar|ll|lr)\d*$/
 
 /** "Arm" + "Leg" → "arms and legs" in a sentence. */
 function joinList(labels: string[]): string {
@@ -66,7 +75,10 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
   for (const part of p.parts) {
     // Identical work (same base name, same rounds, same colour, same scale) is
     // one piece made more than once.
-    const key = [baseName(part.name), part.rounds.join(','), part.colourHex, part.scale ?? 1].join('|')
+    const key = [
+      baseName(part.name), part.rounds.join(','), part.colourHex, part.scale ?? 1,
+      part.form ?? '', part.press ?? '', JSON.stringify(part.panel?.runs ?? null), part.yarnWeight ?? '',
+    ].join('|')
     if (!groups.has(key)) {
       groups.set(key, [])
       order.push(key)
@@ -98,6 +110,9 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
       stitchCount: first.rounds.reduce((a, b) => a + b, 0),
       partNames: parts.map((x) => x.name),
       joinsTo,
+      ...(first.form === 'disc' ? { kind: 'disc' as const } : first.press ? { kind: 'pressed' as const } : {}),
+      ...(first.panel ? { panel: first.panel.runs } : {}),
+      ...(first.yarnWeight ? { yarnWeight: first.yarnWeight } : {}),
     }
   })
 }
@@ -114,10 +129,74 @@ export function writePieceInstructions(piece: CompositionPiece): string[] {
   const program: CrochetProgram = {
     name: piece.label,
     stitch: 'sc',
-    form: 'sphere',
+    form: piece.kind === 'disc' ? 'disc' : 'sphere',
     rounds: piece.rounds,
   }
-  return writeInstructions(program)
+  const lines = writeInstructions(program)
+  if (!piece.kind && !piece.panel && !piece.yarnWeight) return lines
+  // The closing line depends on how the piece is made.
+  const body = lines.slice(0, -1)
+  const close =
+    piece.kind === 'disc'
+      ? 'Sl st into the next st and fasten off, leaving a long tail for sewing. Do not stuff.'
+      : piece.kind === 'pressed'
+        ? 'Do not stuff. Fasten off, thread the tail through the final round and draw it closed, then press the piece flat with the lining centred on the front.'
+        : lines[lines.length - 1]!
+  const out = piece.panel ? withPanel(body, piece) : body
+  const head = piece.yarnWeight ? [`Work in ${YARN_WORDS[piece.yarnWeight] ?? piece.yarnWeight} yarn with a hook to suit (about 2.5 mm).`] : []
+  return [...head, ...out, close]
+}
+
+const YARN_WORDS: Partial<Record<YarnWeight, string>> = {
+  lace: 'lace weight', fine: 'fine (4 ply)', sport: 'sport', dk: 'DK', worsted: 'worsted', aran: 'aran',
+}
+
+/**
+ * A tapestry PANEL written into the rounds: on each round it covers, the run
+ * of stitches worked in the second yarn, counted from the round's first
+ * stitch (the marker). These are exactly the stitches the render colours
+ * (`composition.ts` panelMaskOf). A panel only ever sits on rounds worked
+ * straight (sc in each st around) or covers a whole round, so each round
+ * splits cleanly into plain runs.
+ */
+/** Every composition piece is worked in sc, written in UK terms. */
+const UK_SC = 'dc'
+
+function withPanel(lines: string[], piece: CompositionPiece): string[] {
+  const runs = piece.panel!
+  const out: string[] = []
+  let inContrast = false
+  let carried = false
+  piece.rounds.forEach((count, k) => {
+    const line = lines[k]!
+    const run = runs[k]
+    const full = run && run[0] === 0 && run[1] >= count
+    if (full && !inContrast) {
+      out.push(k === 0 ? 'Start with the contrast yarn.' : 'Change to the contrast yarn.')
+      inContrast = true
+    } else if (!full && inContrast) {
+      out.push('Change to the main yarn.')
+      inContrast = false
+    }
+    if (!run || full) {
+      out.push(line)
+      return
+    }
+    if (!carried) {
+      out.push('Join the contrast yarn and carry the unused yarn inside the piece, working over it, from here to the end of the lining.')
+      carried = true
+    }
+    const [a, n] = run
+    const after = count - a - n
+    const parts = [
+      a > 0 ? `${UK_SC} in next ${a} sts` : null,
+      `change to the contrast yarn, ${UK_SC} in next ${n} sts`,
+      `change to the main yarn${after > 0 ? `, ${UK_SC} in next ${after} sts` : ''}`,
+    ].filter(Boolean)
+    out.push(`Round ${k + 1}: ${parts.join(', ')}. (${count} sts)`)
+  })
+  // Any line past the rounds (none today) is kept as written.
+  return [...out, ...lines.slice(piece.rounds.length)]
 }
 
 /** The assembly lines, read off the placements. */
@@ -126,10 +205,23 @@ export function writeAssembly(p: CompositionProgram): string[] {
   const lines: string[] = []
   for (const piece of pieces) {
     if (!piece.joinsTo) continue
-    lines.push(
-      `Sew the ${piece.label.toLowerCase()} to the ${piece.joinsTo.toLowerCase()}, ` +
-      'stuffing firmly as you close each piece.',
-    )
+    const to = piece.joinsTo.toLowerCase()
+    if (piece.kind === 'disc') {
+      lines.push(
+        /toe pad/i.test(piece.label)
+          ? `Sew a toe pad flat onto the sole of each ${to.replace(/s$/, '')}, a little below the middle, with the tail.`
+          : /toe bean/i.test(piece.label)
+            ? `Sew three toe beans flat onto each sole in an arc above its pad, with the tails.`
+          : `Sew the ${piece.label.toLowerCase()} flat onto the front of the ${to} with the tail.`,
+      )
+    } else if (piece.kind === 'pressed') {
+      lines.push(`Sew the ${piece.label.toLowerCase()} to the ${to} by the closed end, lining facing forward, so they hang down beside the face.`)
+    } else {
+      lines.push(
+        `Sew the ${piece.label.toLowerCase()} to the ${to}, ` +
+        'stuffing firmly as you close each piece.',
+      )
+    }
   }
   for (const prop of p.props ?? []) {
     const on = prettify(baseName(prop.on), 1).toLowerCase()
@@ -192,6 +284,7 @@ export function compositionRowsStructured(p: CompositionProgram): StructuredRow[
 /** The notions a composition needs beyond yarn. */
 export function compositionNotions(p: CompositionProgram): string[] {
   const notions = ['Toy stuffing', 'Tapestry needle', 'Stitch marker']
+  if (p.parts.some((x) => x.yarnWeight === 'fine')) notions.push('Fine (4 ply) yarn in the contrast colour and a 2.5 mm hook, for the toe beans')
   if ((p.props ?? []).some((x) => /eye/i.test(x.name))) {
     const eye = (p.props ?? []).find((x) => /eye/i.test(x.name))!
     notions.push(`Safety eyes, ${Math.round(eye.radiusMm * 2)} mm`)

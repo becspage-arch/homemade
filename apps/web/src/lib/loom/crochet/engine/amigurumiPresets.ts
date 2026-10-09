@@ -205,9 +205,6 @@ interface SizeProfile {
    *  Rebecca's critique that the arms read as feet and too long). The bunny,
    *  cat and dog keep `limb` for their upper limbs. */
   bearArm: number[]
-  /** The bear's head (round 11): as wide as the body, the classic teddy
-   *  proportion. The bunny, cat and dog keep `head`. */
-  bearHead: number[]
   /** Standalone single-piece profiles. */
   ball: number[]
   egg: number[]
@@ -239,6 +236,16 @@ interface SizeProfile {
   /** Round 11: the chick's teardrop wing (the tapered tube) and its tuft. */
   chickWing: number[]
   chickTuft: number[]
+  // ── The toy pose pass (bar criteria 1, 3, 5) — bear and bunny ───────────
+  /** The toy's BIG head and the smaller body under it — the bar's
+   *  proportion (big head, small soft body), shared by the bear and bunny. */
+  toyHead: number[]
+  toyBody: number[]
+  /** A big FOOT worked sole first: the magic ring and the +6 rounds are the
+   *  flat sole the toe beans are sewn on, then straight, then closed. */
+  bigFoot: number[]
+  /** A bunny's long LOP ear, worked tip first, left unstuffed and pressed flat. */
+  lopEar: number[]
 }
 
 /**
@@ -262,6 +269,36 @@ interface SizeProfile {
  * (h/w 0.75 → 1.05) which is the wrong shape for an ear. The limbs and bunny
  * ears are tubes and were never ball profiles.
  */
+/**
+ * THE LOP EAR (toy-pose pass). Worked from the TIP: a 6-st magic ring growing
+ * 3 a round (6-9-12-15 at M — a gentle cone, not a +6 disc, so it folds flat
+ * without the cap creasing), straight, then narrowed toward the top where it
+ * is sewn on, and closed. Not stuffed: pressed flat (`press`), two layers.
+ * The straight rounds carry the contrast LINING as a tapestry panel down the
+ * middle of the front face (`lopLining`).
+ */
+const LOP_EAR: Record<AmigurumiSize, number[]> = {
+  S: [6, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 9, 9, 9, 6],
+  M: [6, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 12, 12, 12, 12, 9, 6],
+  L: [6, 9, 12, 15, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 15, 15, 15, 15, 12, 9, 6],
+}
+
+/** The lining: on every straight round, the middle third of the stitches
+ *  (centred, so a cream rim shows either side once the ear is flattened). */
+export function lopLining(rounds: number[]): Record<number, [number, number]> {
+  const runs: Record<number, [number, number]> = {}
+  const widest = Math.max(...rounds)
+  for (let k = 1; k < rounds.length; k++) {
+    const n = rounds[k]!
+    // Only rounds worked straight (same count as the round below) and wide
+    // enough to frame a lining; the shaping rounds stay in the main yarn.
+    if (n !== rounds[k - 1] || n < widest - 3) continue
+    const count = Math.round(n / 3)
+    runs[k] = [Math.floor((n - count) / 2), count]
+  }
+  return runs
+}
+
 const SIZES: Record<AmigurumiSize, SizeProfile> = {
   S: {
     body: sphereRounds(24, 1),
@@ -272,7 +309,6 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 4),
     limb: tubeRounds(12, 3),
     bearArm: tubeRounds(12, 1),
-    bearHead: sphereRounds(24, 1),
     // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
     // growing to match the crease target: at 6 rounds nothing domes.
     ball: sphereRounds(12, 1),
@@ -291,6 +327,10 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickHead: sphereRounds(12, 1),
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
+    toyHead: sphereRounds(30, 1),
+    toyBody: sphereRounds(18, 3),
+    bigFoot: ballRounds(12, 3),
+    lopEar: LOP_EAR.S,
   },
   M: {
     // The signed-off bear proof's own equators, on the sphere profile.
@@ -302,7 +342,6 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 4),
     bearArm: tubeRounds(12, 2),
-    bearHead: sphereRounds(30, 1),
     ball: sphereRounds(24, 1),
     egg: sphereRounds(18, 5),
     catEar: tubeRounds(12, 0),
@@ -319,6 +358,10 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickHead: sphereRounds(18, 1),
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
+    toyHead: sphereRounds(36, 1),
+    toyBody: sphereRounds(24, 3),
+    bigFoot: ballRounds(18, 3),
+    lopEar: LOP_EAR.M,
   },
   L: {
     body: sphereRounds(36, 1),
@@ -329,7 +372,6 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 6),
     bearArm: tubeRounds(12, 4),
-    bearHead: sphereRounds(36, 1),
     ball: sphereRounds(36, 1),
     egg: sphereRounds(24, 5),
     catEar: tubeRounds(12, 0),
@@ -346,6 +388,10 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickHead: sphereRounds(24, 1),
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
+    toyHead: sphereRounds(42, 1),
+    toyBody: sphereRounds(30, 3),
+    bigFoot: ballRounds(24, 3),
+    lopEar: LOP_EAR.L,
   },
 }
 
@@ -566,6 +612,10 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   // the signed-off bear's ROUND-3 pose (see ARM_DIR_Z / ARM_AIM_Z above); the
   // leg is unchanged — it lies forward along the table so the figure sits.
   const bear = choices.base === 'bear'
+  // The toy pose pass (bar criteria 1, 3, 5) covers the bear and the bunny:
+  // big head on a smaller body, arms folded on the tummy, sole-first feet
+  // forward with toe beans, lined lop ears (bunny), a belly patch (bear).
+  const toy = bear || choices.base === 'bunny'
   const armDir = (side: -1 | 1): Dir =>
     bear
       ? { x: side * BEAR_ARM_DIR.x, y: BEAR_ARM_DIR.y, z: BEAR_ARM_DIR.z }
@@ -587,7 +637,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     onAllFours ? (side < 0 ? 'back-leg-l' : 'back-leg-r') : side < 0 ? 'leg-l' : 'leg-r'
 
   const parts: AmigurumiPart[] = [
-    { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
+    { name: 'body', stitch: 'sc', rounds: toy ? s.toyBody : s.body, colourHex: main, place: { on: 'ground' } },
     // A short narrow neck piece, so the silhouette steps body, neck, head
     // rather than the two balls merging into one loaf.
     {
@@ -595,11 +645,12 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       place: { on: 'body', overlap: 6, offset: { y: 1.5 } },
     },
     {
-      // Round 11: the bear's head is as wide as its body (`bearHead`) — the
-      // classic teddy proportion; round 10's smaller head read as a doll.
-      // Sunk 5 mm onto the neck (not 2) so no pinched neck shows under it.
-      name: 'head', stitch: 'sc', rounds: bear ? s.bearHead : s.head, colourHex: main,
-      place: { on: 'neck', overlap: bear ? 5 : 2, offset: { y: 1 } },
+      // Toy-pose pass: the bear's and bunny's head is clearly BIGGER than
+      // the body (`toyHead` on `toyBody`), the bar's cute proportion, and sunk
+      // onto the neck so no pinched neck shows under it.
+      name: 'head', stitch: 'sc',
+      rounds: toy ? s.toyHead : s.head, colourHex: main,
+      place: { on: 'neck', overlap: toy ? TOY_HEAD_SINK[choices.size] : 2, offset: { y: 1 } },
     },
     // A dog's SNOUT is one plateau round rounder than the bear's flat muzzle
     // pad and stands further off the face; a cat's is the bear's, smaller.
@@ -672,42 +723,53 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       })
     }
   } else {
-    // A bunny's ears are long tapered tubes standing up out of the crown, set
-    // closer in than a bear's and leaning back a touch.
+    // LOP EARS (toy-pose pass; the bar's sleepy bunny). Worked tip first,
+    // not stuffed, pressed flat and lined with a contrast tapestry panel down
+    // the front face. Sewn by the closed top end on the upper side of the
+    // head and hanging straight down beside the face, the lined face turned
+    // forward and out, clear of the head (measured: no free ear fabric
+    // inside the head's settled shell beyond one yarn radius).
     for (const side of [-1, 1] as const) {
       parts.push({
-        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.bunnyEar, colourHex: main, scale: 0.8,
+        name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.lopEar, colourHex: main,
+        press: LOP_PRESS_MM[choices.size],
+        panel: { hex: contrast, runs: lopLining(s.lopEar) },
         place: {
           on: 'head',
-          dir: faceDir({ x: side * 0.42, y: 0.05, z: 1 }),
-          aim: faceDir({ x: side * 0.34, y: -0.1, z: 1 }),
-          seat: 4, poleIn: true, surfaceFit: 'ellipsoid',
+          dir: faceDir({ x: side * LOP_EAR_DIR.x, y: LOP_EAR_DIR.y, z: LOP_EAR_DIR.z }),
+          aim: faceDir({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
+          spin: faceDir({ x: side * 0.6, y: 1, z: 0 }),
+          seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
         },
       })
     }
   }
 
   const lift = GROUND_LIFT[choices.size]
-  for (const side of [-1, 1] as const) {
-    parts.push({
-      name: upperName(side), stitch: 'sc',
-      rounds: choices.base === 'bear' ? s.bearArm : s.limb,
-      colourHex: main, scale: bear ? 0.9 : 0.78,
-      place: {
-        on: 'body', dir: armDir(side),
-        aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
-      },
-    })
-  }
-  for (const side of [-1, 1] as const) {
-    parts.push({
-      name: lowerName(side), stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.9,
-      place: {
-        on: 'body', dir: { x: side * 0.52, y: 0.8, z: -0.55 },
-        aim: legAim(side), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
-        offset: { z: lift.leg },
-      },
-    })
+  if (toy) {
+    pushToyLimbs(parts, choices, s)
+  } else {
+    for (const side of [-1, 1] as const) {
+      parts.push({
+        name: upperName(side), stitch: 'sc',
+        rounds: s.limb,
+        colourHex: main, scale: 0.78,
+        place: {
+          on: 'body', dir: armDir(side),
+          aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        },
+      })
+    }
+    for (const side of [-1, 1] as const) {
+      parts.push({
+        name: lowerName(side), stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.9,
+        place: {
+          on: 'body', dir: { x: side * 0.52, y: 0.8, z: -0.55 },
+          aim: legAim(side), seat: 8, poleIn: true, surfaceFit: 'ellipsoid',
+          offset: { z: lift.leg },
+        },
+      })
+    }
   }
 
   // The TAIL, and WHERE it has to go to be seen (round 2).
@@ -737,7 +799,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     })
   }
 
-  if (choices.paws && amigurumiBaseSpec(choices.base).paws) {
+  if (!toy && choices.paws && amigurumiBaseSpec(choices.base).paws) {
     const pad = (name: string, on: string, dir: Dir): AmigurumiPart => ({
       name, stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.62,
       // The bear's pads show their magic ring (a pinprick) rather than the
@@ -760,6 +822,103 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     parts,
     props: faceProps(choices, 'head'),
     notes: FIGURE_NOTES[choices.base] ?? FIGURE_NOTES.bear!,
+  }
+}
+
+/** How deep the toy's big head sinks onto the neck (mm): no pinched neck. */
+const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 5, M: 7, L: 8 }
+
+/** The lop ear's press (centre-line gap, mm). Measured: at
+ *  worsted a 15-st ear pressed to 12 mm audits clean in its settled frame;
+ *  tighter folds stretch the stitches at the fold edges past the gate. */
+const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 11, M: 12, L: 12 }
+/** Sewn on the upper side of the head, hanging down and a little out. */
+const LOP_EAR_DIR = { x: 1, y: 0, z: 0.35 }
+const LOP_EAR_AIM = { x: 0.6, y: 0.05, z: -1 }
+
+/**
+ * The toy's arms and legs (toy-pose pass).
+ *
+ * ARMS rest FOLDED ON THE TUMMY, the sleepy bunny's pose: worked from the paw
+ * (the magic ring is the paw tip), sewn by the closed top end on the front of
+ * the shoulder and laid forward, down and in across the body so the two paws
+ * meet at the middle of the tummy. LEGS are big FEET worked sole first: the
+ * flat +6 sole is the magic ring end, turned to face forward; the closed end
+ * is sewn under the front of the body so the feet stick out forward on the
+ * table. The sole carries the TOE BEANS — a pad and three toes, flat circles
+ * in a lighter yarn, sewn on. The bear's paw tips are its first two rounds
+ * worked in the contrast yarn, and the bear gets a contrast belly patch.
+ */
+const TOY_ARM_DIR = { x: 0.72, y: 0.5, z: 0.95 }
+const TOY_ARM_AIM = { x: -0.62, y: 0.75, z: -0.5 }
+const TOY_LEG_DIR = { x: 0.5, y: 0.75, z: -0.62 }
+const TOY_LEG_AIM = { x: 0.32, y: 1, z: 0.05 }
+const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 0, L: 0 }
+
+function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
+  const bear = choices.base === 'bear'
+  const main = choices.mainHex
+  const contrast = choices.contrastHex
+  const paws = choices.paws
+  const armRounds = bear ? s.bearArm : s.limb
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: armRounds, colourHex: main,
+      scale: bear ? 0.9 : 0.85,
+      // The bear's paw: rounds 1-2 in the contrast yarn.
+      ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
+      place: {
+        on: 'body',
+        dir: { x: side * TOY_ARM_DIR.x, y: TOY_ARM_DIR.y, z: TOY_ARM_DIR.z },
+        aim: { x: side * TOY_ARM_AIM.x, y: TOY_ARM_AIM.y, z: TOY_ARM_AIM.z },
+        seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
+      },
+    })
+  }
+  const legAim = (side: -1 | 1): Dir => ({ x: side * TOY_LEG_AIM.x, y: TOY_LEG_AIM.y, z: TOY_LEG_AIM.z })
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'leg-l' : 'leg-r', stitch: 'sc', rounds: s.bigFoot, colourHex: main,
+      place: {
+        on: 'body',
+        dir: { x: side * TOY_LEG_DIR.x, y: TOY_LEG_DIR.y, z: TOY_LEG_DIR.z },
+        aim: legAim(side), seat: 9, poleIn: false, surfaceFit: 'ellipsoid',
+        offset: { z: TOY_LEG_LIFT[choices.size] },
+      },
+    })
+  }
+  if (!paws) return
+  for (const side of [-1, 1] as const) {
+    const leg = side < 0 ? 'leg-l' : 'leg-r'
+    const a = legAim(side)
+    const al = Math.hypot(a.x, a.y, a.z)
+    const n = { x: a.x / al, y: a.y / al, z: a.z / al }
+    // Across the sole: up the foot, and sideways.
+    const across = { x: n.y, y: -n.x, z: 0 }
+    const xl = Math.hypot(across.x, across.y) || 1
+    const sideV = { x: across.x / xl, y: across.y / xl, z: 0 }
+    const up = { x: 0, y: 0, z: 1 }
+    const at = (u: number, v: number): Dir => ({
+      x: n.x + up.x * u + sideV.x * v, y: n.y + up.y * u + sideV.y * v, z: n.z + up.z * u + sideV.z * v,
+    })
+    parts.push({
+      name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12], colourHex: contrast,
+      form: 'disc', yarnWeight: 'fine',
+      place: { on: leg, dir: at(-0.12, 0), aim: a, seat: 0, surfaceFit: 'points' },
+    })
+    for (const [k, v] of [[0, -0.42], [1, 0], [2, 0.42]] as const) {
+      parts.push({
+        name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6], colourHex: contrast,
+        form: 'disc', yarnWeight: 'fine',
+        place: { on: leg, dir: at(k === 1 ? 0.62 : 0.5, v), aim: a, seat: 0, surfaceFit: 'points' },
+      })
+    }
+  }
+  if (bear) {
+    parts.push({
+      name: 'belly-patch', stitch: 'sc', rounds: [6, 12, 18], colourHex: contrast, form: 'disc',
+      place: { on: 'body', dir: { x: 0.1, y: 1, z: -0.2 }, aim: { x: 0.1, y: 1, z: -0.2 }, seat: 0, surfaceFit: 'points' },
+    })
   }
 }
 

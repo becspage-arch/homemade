@@ -15,8 +15,9 @@
  * no faking, no new interlock topology, no rework of the locked round builders.
  */
 
-import { buildSphere } from './shaping'
-import { relaxProgram, geometryHash } from './programScene'
+import { buildSphere, buildRounds } from './shaping'
+import { relaxProgram, geometryHash, colourStrokes } from './programScene'
+import { relax, STUFF_PRIOR } from './relax'
 import { auditProblems } from './auditChecks'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './program'
@@ -61,7 +62,12 @@ export type PartPlacement =
        *  'box' (default) = the historical half-extent sum (over-estimates on a
        *  diagonal, so seats had to be tuned per part); 'ellipsoid' = the exact
        *  ray/ellipsoid radius, so `seat` is real millimetres in any direction. */
-      surfaceFit?: 'box' | 'ellipsoid'
+      surfaceFit?: 'box' | 'ellipsoid' | 'points'
+      /** Which way a FLAT piece's face looks (toy-pose pass). After the piece's
+       *  long axis is aimed, it is turned about that axis until its pressed
+       *  face (local +x, see `AmigurumiPart.press`) points as near this
+       *  direction as it can. Absent = the minimal rotation (the original). */
+      spin?: { x: number; y: number; z: number }
       /** Final nudge in world mm after seating (e.g. drop a leg onto the table). */
       offset?: { x?: number; y?: number; z?: number }
     }
@@ -79,6 +85,38 @@ export interface AmigurumiPart {
   /** Uniform scale on the built geometry (default 1). Sizing normally comes from
    *  the round counts; scale is a fine trim only. */
   scale?: number
+  /**
+   * What KIND of crocheted piece this is (toy-pose pass, 2026-10-09).
+   *  - 'sphere' (default): a closed piece worked in a spiral from a magic ring
+   *    and stuffed — every piece before this pass.
+   *  - 'disc': a FLAT APPLIQUÉ circle — magic ring, rounds, sl st, fasten off,
+   *    sewn flat onto its parent (a toe bean, a paw pad, a belly patch). Built
+   *    by the locked round builder, never stuffed, and DRAPED onto its
+   *    parent's settled surface (see `drapeDisc`) before it is re-audited.
+   */
+  form?: 'sphere' | 'disc'
+  /**
+   * An UNSTUFFED piece pressed flat (a bunny's long ear): the two plates'
+   * final gap, centre-line to centre-line, in mm (relax.ts `press`). The piece
+   * is audited in its settled frame (`auditProblems` frame 'current').
+   */
+  press?: number
+  /**
+   * A TAPESTRY panel worked into the piece in a second colour — the lining of
+   * a lop ear. Per worked round (0-based), the run of stitches, counted from
+   * the round's first stitch, that are worked in `hex`; the main yarn is
+   * carried inside. The written pattern prints exactly these runs, and the
+   * render colours each node by the stitch of its round it belongs to.
+   */
+  panel?: { hex: string; runs: Record<number, [start: number, count: number]> }
+  /**
+   * Worked in a LIGHTER yarn than the rest of the piece (a toe bean in fine
+   * yarn on a worsted bunny — the way small appliqués are usually made). The
+   * piece is built at the composition's yarn and scaled by the two radii's
+   * ratio, which is exactly what working it in the finer yarn and hook gives,
+   * and its render yarn is that much finer too. Overrides `scale`.
+   */
+  yarnWeight?: YarnWeight
 }
 
 /**
@@ -171,6 +209,13 @@ export interface CompositionProgram {
   notes?: string
 }
 
+/** A part's geometric scale: its trim, or the ratio of its own lighter yarn
+ *  to the composition's (`AmigurumiPart.yarnWeight`). */
+export function partScale(part: AmigurumiPart, p: CompositionProgram): number {
+  if (part.yarnWeight) return YARN_WEIGHT_RADIUS_MM[part.yarnWeight] / YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted']
+  return part.scale ?? 1
+}
+
 /** Resolve the render yarn radius (mm) for a composition. */
 export function compositionYarnRadiusMm(p: CompositionProgram, override?: number): number {
   if (override != null) return override
@@ -188,6 +233,8 @@ interface PlacedPart {
    *  audit gate runs on the geometry that is actually rendered. */
   built?: BuiltContinuous
   xform?: { R: number[][]; T: V3; scale: number; c: V3 }
+  /** Per strand node: true where the node belongs to a `panel` stitch. */
+  panelMask?: boolean[]
 }
 
 /** A prop resolved into world millimetres: a centre plus three semi-axis
@@ -380,11 +427,10 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   const allNodes: V3[] = []
 
   for (const part of p.parts) {
-    // 1. Build + relax the real ball (locked geometry, untouched).
-    const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds)
-    relaxProgram(built, yr)
+    // 1. Build + relax the real piece (locked geometry, untouched).
+    const { built, panelMask } = buildPart(part, yr)
     // 2. Per-part audit gate — the part must be genuinely stitched.
-    const partProblems = auditProblems({ built, recipe: undefined as never }, part.name, 0, yr)
+    const partProblems = auditPart(built, part, yr)
     for (const pr of partProblems) problems.push(`${part.name}: ${pr}`)
 
     // 3. Local geometry + its centre (the ball's own centroid = bbox centre).
@@ -394,7 +440,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     const cx = (lb.minx + lb.maxx) / 2
     const cy = (lb.miny + lb.maxy) / 2
     const cz = (lb.minz + lb.maxz) / 2
-    const scale = part.scale ?? 1
+    const scale = partScale(part, p)
     const halfH = ((lb.maxz - lb.minz) / 2) * scale
     const c: V3 = { x: cx, y: cy, z: cz }
 
@@ -414,7 +460,8 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       aim?: { x: number; y: number; z: number }
       seat?: number
       poleIn?: boolean
-      surfaceFit?: 'box' | 'ellipsoid'
+      surfaceFit?: 'box' | 'ellipsoid' | 'points'
+      spin?: { x: number; y: number; z: number }
     }
     if (place.on === 'ground') {
       T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
@@ -438,12 +485,16 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       const poleIn = place.poleIn === true
       const w: V3 = poleIn ? { x: -a.x, y: -a.y, z: -a.z } : a
       R = rotZTo(w)
+      if (place.spin) R = spinAbout(R, w, place.spin)
       const pc: V3 = {
         x: (base.bounds.minx + base.bounds.maxx) / 2,
         y: (base.bounds.miny + base.bounds.maxy) / 2,
         z: (base.bounds.minz + base.bounds.maxz) / 2,
       }
-      const parentR = surfaceRadius(base.bounds, u, place.surfaceFit ?? 'box')
+      const parentR =
+        place.surfaceFit === 'points'
+          ? pointsRadius(base, pc, u, yr)
+          : surfaceRadius(base.bounds, u, place.surfaceFit ?? 'box')
       const seat = place.seat ?? 4
       // The join point on the parent's surface, sunk `seat` mm in.
       const jx = pc.x + u.x * (parentR - seat)
@@ -476,7 +527,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       return { x: T.x + r.x, y: T.y + r.y, z: T.z + r.z }
     })
     const worldBounds = bbox(ctrl)
-    const pp: PlacedPart = { part, ctrl, bounds: worldBounds, built, xform: { R, T, scale, c } }
+    const pp: PlacedPart = { part, ctrl, bounds: worldBounds, built, xform: { R, T, scale, c }, panelMask }
     placed.push(pp)
     byName.set(part.name, pp)
     allNodes.push(...ctrl)
@@ -489,6 +540,10 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   for (const pp of placed) {
     const on = (pp.part.place as { on: string }).on
     if (on === 'ground') continue
+    // A flat appliqué is draped, and a pressed piece is not a surface of
+    // revolution, so the shell the mutual contact pass reads would be wrong
+    // for either.
+    if (pp.part.form === 'disc' || pp.part.press) continue
     const parent = byName.get(on)
     if (parent && parent !== pp) pairs.push([pp, parent])
   }
@@ -543,12 +598,24 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
         })
         pp.bounds = bbox(pp.ctrl)
       }
-      for (const pr of auditProblems({ built: pp.built!, recipe: undefined as never }, pp.part.name, 0, yr))
+      for (const pr of auditPart(pp.built!, pp.part, yr))
         problems.push(`${pp.part.name}: ${pr}`)
     }
-    allNodes.length = 0
-    for (const pp of placed) allNodes.push(...pp.ctrl)
   }
+
+  // ---- APPLIQUÉ DISCS are sewn flat onto the parent's FINAL surface, then
+  //      re-audited on the geometry that is rendered.
+  const draped = placed.filter((pp) => pp.part.form === 'disc')
+  if (draped.length) {
+    for (const pp of draped) {
+      const parent = byName.get((pp.part.place as { on: string }).on)
+      if (parent) drapeDisc(pp, parent, yr)
+    }
+    problems.length = 0
+    for (const pp of placed) for (const pr of auditPart(pp.built!, pp.part, yr)) problems.push(`${pp.part.name}: ${pr}`)
+  }
+  allNodes.length = 0
+  for (const pp of placed) allNodes.push(...pp.ctrl)
 
   // The non-yarn notions, seated on the finished pieces. They carry NO yarn and
   // no stitches, so they are outside the geometry hash and outside the audit —
@@ -590,6 +657,213 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
 
   const ghash = geometryHash({ model: { nodes: allNodes as never } } as never)
   return { placed, props, yr, problems, geometryHash: ghash }
+}
+
+
+// ─── Toy-pose pass (2026-10-09): flat appliqués, pressed and hanging pieces ───
+
+/** Build + relax one piece the way its `form` says it is made. */
+function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; panelMask?: boolean[] } {
+  if (part.form === 'disc') {
+    // A flat circle: the locked round builder, relaxed as round work (never
+    // stuffed). Its right side is local +z.
+    const built = buildRounds(part.stitch, part.rounds, yr)
+    relaxProgram(built, yr)
+    return { built }
+  }
+  const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds)
+  let panelMask: boolean[] | undefined
+  if (part.panel) {
+    panelMask = panelMaskOf(built, part)
+    // Turn the whole piece about its own axis so the panel faces local +x —
+    // the face the press leaves on top and `spin` turns to the camera. A
+    // rigid turn about the axis: the build's meridian frame is unchanged.
+    let sx = 0, sy = 0
+    built.model.nodes.forEach((n, i) => {
+      if (!panelMask![i]) return
+      const r = Math.hypot(n.x, n.y) || 1
+      sx += n.x / r
+      sy += n.y / r
+    })
+    const phi = Math.atan2(sy, sx)
+    const c = Math.cos(-phi), sn = Math.sin(-phi)
+    for (const n of built.model.nodes) {
+      const x = n.x * c - n.y * sn
+      n.y = n.x * sn + n.y * c
+      n.x = x
+    }
+  }
+  if (part.press) {
+    // Unstuffed, pressed flat between two plates (relax.ts `press`). The same
+    // relaxer settings as every closed piece, minus the stuffing.
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9,
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06,
+      layoutMode: 'surface',
+      floorZ: 0,
+      stuffPrior: STUFF_PRIOR,
+      press: part.press,
+      iterations: 560,
+    })
+  } else {
+    relaxProgram(built, yr)
+  }
+  return { built, panelMask }
+}
+
+/** The audit gate for one piece, in the frame its settled shape needs. */
+function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
+  return auditProblems(
+    { built, recipe: undefined as never }, part.name, 0, yr,
+    part.press ? { frame: 'current' } : undefined,
+  )
+}
+
+/**
+ * Which strand nodes belong to a `panel` stitch. A spiral round is read off
+ * the build: the strand advances round the piece stitch by stitch, so a node's
+ * stitch is how far round from its round's first node it sits, in that
+ * round's own stitch pitch. Exactly the count the written pattern prints.
+ */
+function panelMaskOf(built: BuiltContinuous, part: AmigurumiPart): boolean[] {
+  const nodes = built.model.nodes
+  const round = built.model.round ?? []
+  const N = nodes.length
+  const th = new Float64Array(N)
+  for (let i = 0; i < N; i++) {
+    const a = Math.atan2(nodes[i]!.y, nodes[i]!.x)
+    if (i === 0) { th[i] = a; continue }
+    let d = a - Math.atan2(nodes[i - 1]!.y, nodes[i - 1]!.x)
+    while (d > Math.PI) d -= Math.PI * 2
+    while (d < -Math.PI) d += Math.PI * 2
+    th[i] = th[i - 1]! + d
+  }
+  const first = new Map<number, number>()
+  for (let i = 0; i < N; i++) if (round[i]! >= 0 && !first.has(round[i]!)) first.set(round[i]!, i)
+  const mask = new Array<boolean>(N).fill(false)
+  for (let i = 0; i < N; i++) {
+    const k = round[i]!
+    const run = part.panel!.runs[k]
+    if (!run) continue
+    const count = part.rounds[k]!
+    const a0 = th[first.get(k)!]!
+    const next = first.get(k + 1)
+    const pitch = next !== undefined ? (th[next]! - a0) / count : (Math.PI * 2) / count
+    const st = Math.floor((th[i]! - a0) / pitch)
+    const c = Math.max(0, Math.min(count - 1, st))
+    mask[i] = c >= run[0] && c < run[0] + run[1]
+  }
+  return mask
+}
+
+/** Turn R about the world axis `w` so the piece's local +x looks toward `spin`. */
+function spinAbout(R: number[][], w: V3, spin: { x: number; y: number; z: number }): number[][] {
+  const ex = applyRot(R, { x: 1, y: 0, z: 0 })
+  const ey = applyRot(R, { x: 0, y: 1, z: 0 })
+  const d = spin.x * w.x + spin.y * w.y + spin.z * w.z
+  const sp = { x: spin.x - d * w.x, y: spin.y - d * w.y, z: spin.z - d * w.z }
+  const psi = Math.atan2(sp.x * ey.x + sp.y * ey.y + sp.z * ey.z, sp.x * ex.x + sp.y * ex.y + sp.z * ex.z)
+  const c = Math.cos(psi), sn = Math.sin(psi)
+  const Rz = [[c, -sn, 0], [sn, c, 0], [0, 0, 1]]
+  const out: number[][] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+  for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
+    let v = 0
+    for (let k = 0; k < 3; k++) v += R[i]![k]! * Rz[k]![j]!
+    out[i]![j] = v
+  }
+  return out
+}
+
+/** The parent's REAL surface along `u`: the outermost fabric within two yarn
+ *  radii of the ray, not its bounding ellipsoid. */
+function pointsRadius(base: PlacedPart, pc: V3, u: V3, yr: number): number {
+  const lim2 = (2 * yr) ** 2
+  let best = -Infinity
+  for (const p of base.ctrl) {
+    const dx = p.x - pc.x, dy = p.y - pc.y, dz = p.z - pc.z
+    const t = dx * u.x + dy * u.y + dz * u.z
+    if (t <= 0) continue
+    if (dx * dx + dy * dy + dz * dz - t * t > lim2) continue
+    if (t > best) best = t
+  }
+  return Number.isFinite(best) ? best : surfaceRadius(base.bounds, u, 'ellipsoid')
+}
+
+/** Replace a placed piece's world geometry and carry it back onto its own
+ *  relaxed nodes (the inverse of the placement), so the audit runs on it. */
+function setWorld(pp: PlacedPart, world: V3[]): void {
+  const { R, T, scale, c } = pp.xform!
+  const nodes = pp.built!.model.nodes
+  const path = pp.built!.strandPath
+  for (let i = 0; i < path.length; i++) {
+    const d = { x: world[i]!.x - T.x, y: world[i]!.y - T.y, z: world[i]!.z - T.z }
+    const n = nodes[path[i]!]!
+    n.x = (R[0]![0]! * d.x + R[1]![0]! * d.y + R[2]![0]! * d.z) / scale + c.x
+    n.y = (R[0]![1]! * d.x + R[1]![1]! * d.y + R[2]![1]! * d.z) / scale + c.y
+    n.z = (R[0]![2]! * d.x + R[1]![2]! * d.y + R[2]![2]! * d.z) / scale + c.z
+  }
+  pp.ctrl = world
+  pp.bounds = bbox(world)
+}
+
+/**
+ * A flat APPLIQUÉ is sewn flat onto the piece under it, so its fabric follows
+ * that piece's settled surface. Each node keeps its place across the disc and
+ * its own stitch relief (its height above the disc's lowest yarn); only the
+ * base the disc lies on bends to the parent: the outermost parent fabric under
+ * that point, along the disc's normal, plus one collision gap. The height
+ * field is smoothed over two yarn radii so the parent's own stitch relief does
+ * not print through as dents.
+ */
+function drapeDisc(pp: PlacedPart, parent: PlacedPart, yr: number): void {
+  const { R, T } = pp.xform!
+  const nrm = applyRot(R, { x: 0, y: 0, z: 1 })
+  const world = pp.ctrl
+  // Disc-local height of every node above its own lowest yarn.
+  const h = world.map((p) => (p.x - T.x) * nrm.x + (p.y - T.y) * nrm.y + (p.z - T.z) * nrm.z)
+  const hMin = Math.min(...h)
+  const lim2 = (1.6 * yr) ** 2
+  // The parent's outer fabric under each node, as a height in the disc's frame.
+  const surf = new Float64Array(world.length)
+  const hit = new Array<boolean>(world.length).fill(false)
+  for (let i = 0; i < world.length; i++) {
+    const p = world[i]!
+    let best = -Infinity
+    for (const q of parent.ctrl) {
+      const dx = q.x - p.x, dy = q.y - p.y, dz = q.z - p.z
+      const t = dx * nrm.x + dy * nrm.y + dz * nrm.z
+      if (dx * dx + dy * dy + dz * dz - t * t > lim2) continue
+      if (t > best) best = t
+    }
+    if (Number.isFinite(best)) {
+      surf[i] = h[i]! + best
+      hit[i] = true
+    }
+  }
+  // Smoothed over two yarn radii; a node past the parent's edge takes its
+  // draped neighbours' surface.
+  const smoothR2 = (2 * yr) ** 2
+  const out = new Float64Array(world.length)
+  let fallback = 0, fk = 0
+  for (let i = 0; i < world.length; i++) if (hit[i]) { fallback = Math.max(fallback, surf[i]!); fk++ }
+  for (let i = 0; i < world.length; i++) {
+    let s = 0, k = 0
+    for (let j = 0; j < world.length; j++) {
+      if (!hit[j]) continue
+      const dx = world[j]!.x - world[i]!.x, dy = world[j]!.y - world[i]!.y, dz = world[j]!.z - world[i]!.z
+      if (dx * dx + dy * dy + dz * dz > smoothR2) continue
+      s += surf[j]!
+      k++
+    }
+    const S = k ? s / k : fk ? fallback : hMin
+    // New height = surface + one collision gap + the node's own relief.
+    out[i] = S + yr * 1.25 - hMin
+  }
+  setWorld(pp, world.map((p, i) => ({ x: p.x + nrm.x * out[i]!, y: p.y + nrm.y * out[i]!, z: p.z + nrm.z * out[i]! })))
 }
 
 export interface BlenderScene {
@@ -634,10 +908,18 @@ const DEFAULT_MIN_FIELD_MM = 160
  */
 export function compositionScene(p: CompositionProgram, compiled: CompiledComposition, twist = 0.08): BlenderScene {
   const yr = compiled.yr
-  const strokes: BlenderScene['strokes'] = compiled.placed.map((pp) => {
+  const strokes: BlenderScene['strokes'] = compiled.placed.flatMap((pp) => {
     const center = smooth(pp.ctrl, 4)
-    const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
-    return { hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }
+    const fine = pp.part.yarnWeight ? partScale(pp.part, p) : 1
+    const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62 * fine, 3, twist)
+    // A tapestry panel (a lined ear) is one strand cut into colour runs at
+    // the stitches the pattern changes yarn on.
+    const mask = pp.panelMask
+    if (mask && pp.part.panel) {
+      const hex = pp.part.panel.hex
+      return colourStrokes(center, filaments, radiusMm, (k) => (mask[Math.min(mask.length - 1, Math.floor(k / 4))] ? hex : pp.part.colourHex))
+    }
+    return [{ hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }]
   })
   // Full composed extent (for the fabric hint; the script frames from the strokes).
   let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity
