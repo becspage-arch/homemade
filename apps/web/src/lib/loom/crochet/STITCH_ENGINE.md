@@ -2739,6 +2739,30 @@ project files under `crochet-preset-polish/`):
   the same), the wings are small bumps in the body yarn, and head and body are
   near enough in size to read snowman at a glance.
 
+### The bases, wired end to end
+
+Walked cat, dog, bird and chick through every layer that names a base:
+`AmigurumiBase` / `AMIGURUMI_BASES`, `crochet-design.ts`, the session's zod
+schema, the Studio's designer route, the designer panel (`CrochetAmigurumiDesignerPanel`,
+reached from `CrochetCreateYourOwnPanel` — it maps `AMIGURUMI_BASES`, so a new
+base appears with no panel change), the UK piece names (`compositionPattern.ts`:
+Wings, Feet, Beak, Head, Body) and the completeness gate. Two real gaps:
+
+- **The base list was hand-copied into two zod enums** (`crochet-session.ts`
+  and `api/studio/crochet/patterns/route.ts`), so a new base was silently
+  refused by both the routine and the Studio save. Both now derive from
+  `AMIGURUMI_BASE_IDS`, the one tuple the type is built from.
+- **A one-piece composition (the ball and egg bases) failed the completeness
+  gate**: it carried no chart, and the gate rightly demands one of every
+  single-piece pattern, so a ball or egg recipe on an amigurumi shelf would be
+  built, rendered and then culled. `compositionChart` charts it as the sphere it
+  is; the bulk `buildPatternRow` uses it.
+
+`crochet-amigurumi-bases.test.ts` walks one recipe per base through the session
+schema, `designToProgram`, the audit, the written pattern and the completeness
+gate. The backlog's honest-subject regex already matched chicks; its
+`AMIGURUMI_BASES` shape guard now expects the eight bases.
+
 ---
 
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)

@@ -14,7 +14,7 @@
  * itself is owned elsewhere and untouched here.
  */
 
-import { writeInstructions, type CrochetProgram } from './program'
+import { programToChart, writeInstructions, type CrochetProgram } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
 
 export interface CompositionPiece {
@@ -198,4 +198,19 @@ export function compositionNotions(p: CompositionProgram): string[] {
   }
   if ((p.props ?? []).some((x) => /nose/i.test(x.name))) notions.push('Safety nose')
   return notions
+}
+
+/**
+ * The symbol chart of a composition, or null.
+ *
+ * A multi-piece amigurumi is written-only by design (charting one piece of
+ * nine and calling it the pattern's chart would mislead). A ONE-piece
+ * composition — the plain ball and egg bases — is a single sphere, and the
+ * completeness gate demands a chart of every single-piece pattern, so it is
+ * charted as the sphere it is.
+ */
+export function compositionChart(p: CompositionProgram): ReturnType<typeof programToChart> | null {
+  if (p.parts.length !== 1) return null
+  const only = p.parts[0]!
+  return programToChart({ name: p.name, form: 'sphere', stitch: only.stitch, rounds: only.rounds })
 }

@@ -31,6 +31,7 @@ import {
   compositionNotions,
   compositionPieces,
   compositionRowsStructured,
+  compositionChart,
 } from '@/lib/loom/crochet/engine/compositionPattern'
 import type { BuiltContinuous } from '@/lib/loom/crochet/engine/yarnPath'
 import { photoToTapestryGrid, TapestrySubjectTooSmallError } from '@/lib/studio/crochet/photo-to-tapestry'
@@ -1012,6 +1013,11 @@ export async function buildPatternRow(
     }))
     buildOrder = compositionBuildOrder(comp)
     pieceCount = parts.length
+    // A one-piece composition (the plain ball and egg bases) is a single
+    // sphere and gets its chart; before this it carried none, so a ball or egg
+    // recipe on an amigurumi shelf was rendered and then culled at the
+    // completeness gate.
+    chartData = compositionChart(comp)
     notions = compositionNotions(comp)
     const eyes = (comp.props ?? []).some((p) => /eye/i.test(p.name))
     safetyNotes = eyes

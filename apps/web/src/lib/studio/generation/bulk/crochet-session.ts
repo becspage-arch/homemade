@@ -21,6 +21,7 @@
 import { z } from 'zod'
 import { subjectKey } from './subject-key'
 import { BAND_STITCHES } from './crochet-design'
+import { AMIGURUMI_BASE_IDS } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import type { CrochetDesign } from './crochet-design'
 import type { CrochetTreatment } from './crochet-forms'
 import type { CrochetBrief } from './crochet-planner'
@@ -124,7 +125,7 @@ const BandSchema = z
 
 const AmigurumiSchema = z
   .object({
-    base: z.enum(['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird']),
+    base: z.enum(AMIGURUMI_BASE_IDS),
     size: z.enum(['S', 'M', 'L']),
     mainHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #b5814e'),
     contrastHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #e6d3ae'),

@@ -26,6 +26,7 @@ import {
 import { compileRelaxAudit, settledSizeMm, geometryHash } from '@/lib/loom/crochet/engine/programScene'
 import { compileComposition, type CompositionProgram } from '@/lib/loom/crochet/engine/composition'
 import {
+  AMIGURUMI_BASE_IDS,
   buildAmigurumiProgram,
   isAuditedProfile,
   presetSettledSizeMm,
@@ -46,7 +47,7 @@ export const runtime = 'nodejs'
 export const maxDuration = 60
 
 const Choices = z.object({
-  base: z.enum(['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird']),
+  base: z.enum(AMIGURUMI_BASE_IDS),
   size: z.enum(['S', 'M', 'L']),
   mainHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
   contrastHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
