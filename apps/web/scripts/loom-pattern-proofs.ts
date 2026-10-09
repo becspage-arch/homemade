@@ -11,6 +11,7 @@
 
 import type { CrochetProgram, GridRow } from '../src/lib/loom/crochet/engine/program'
 import type { StitchId } from '../src/lib/loom/crochet/engine/dictionary'
+import { sphereAscent } from '../src/lib/loom/crochet/engine/sphereProfile'
 
 const row = (stitches: StitchId[]): GridRow => ({ stitches })
 const fill = (n: number, id: StitchId): StitchId[] => Array(n).fill(id) as StitchId[]
@@ -302,6 +303,87 @@ function cottageTapestry(): CrochetProgram {
   }
 }
 
+// ── TUBE SHAPING — the open-ended round form (STITCH_ENGINE.md §8h) ──────────
+// Three real objects on the new `tube` form: a ribbed beanie (magic-ring crown,
+// hdc body, 1×1 post-rib brim), a striped cowl (chain ring, joined rounds of
+// dc, per-round colour) and a chunky basket (flat magic-ring base, straight sc
+// walls, standing open end up). Sizes derive from the settled cell (§8f) the
+// same way the flat proofs' do; the declared size is checked against the
+// settled geometry by the audit (across × TALL for a tube).
+
+// A: adult beanie, worsted hdc (6.62 mm a stitch, 7.85 mm a round). Head
+// circumference ~50 cm → 72 sts (47.7 cm; a beanie is worn stretched). The
+// crown is the sphere profile's own ascent to 72 (sphereProfile.ts — eased
+// increases so it domes rather than cones), then 13 straight rounds, then three
+// rounds of 1×1 FPtr/BPtr rib (dc height, 13.2 mm a round) for the brim.
+function ribbedBeanie(): CrochetProgram {
+  const { up } = sphereAscent(72, 'hdc')
+  const rounds = [...up, ...Array.from({ length: 13 }, () => 72), 72, 72, 72]
+  return {
+    name: 'ribbed-beanie',
+    form: 'tube',
+    stitch: 'hdc',
+    rounds,
+    tube: { anchor: 'ring', join: 'spiral', cap: 'dome', brim: { kind: 'rib', rounds: 3 } },
+    yarnWeight: 'worsted',
+    colourHex: '#9b8ec4',
+    palette: { lilac: '#9b8ec4' },
+    gaugeText: '15 htr x 12.5 rounds = 10 cm (UK terms) in worsted',
+    finishedSizeMm: { width: 160, height: 215 },
+    hookMm: 5,
+    staging: 'standing',
+    notes: 'A classic beanie worked top down from a magic ring in half treble, finished with a snug front- and back-post treble rib brim. Fits an adult head of 52 to 56 cm.',
+  }
+}
+
+// B: an infinity-style cowl, worsted dc (7.14 mm a stitch, 13.2 mm a round):
+// 84 ch joined into a ring → 60 cm round; 19 joined rounds → 25 cm deep.
+// Striped in two-round bands of three colours, changed at the join.
+function stripedCowl(): CrochetProgram {
+  const AROUND = 84
+  const ROUNDS = 19
+  const bands = ['cream', 'sage', 'cream', 'rust'] as const
+  const roundColours = Array.from({ length: ROUNDS }, (_, i) => bands[Math.floor(i / 2) % bands.length]!)
+  return {
+    name: 'striped-cowl',
+    form: 'tube',
+    stitch: 'dc',
+    rounds: Array.from({ length: ROUNDS }, () => AROUND),
+    tube: { anchor: 'chain', join: 'joined' },
+    yarnWeight: 'worsted',
+    colourHex: '#e9dfcf',
+    palette: { cream: '#e9dfcf', sage: '#8fa98a', rust: '#c2714f' },
+    roundColours,
+    gaugeText: '14 tr x 7.5 rounds = 10 cm (UK terms) in worsted',
+    finishedSizeMm: { width: 190, height: 250 },
+    hookMm: 5,
+    staging: 'standing',
+    notes: 'A cowl worked in joined rounds of treble from a chain ring, striped in two-round bands. Wear it loose or doubled.',
+  }
+}
+
+// C: a chunky storage basket, bulky sc (8.1 mm a stitch, 7.2 mm a round at
+// yr 3.0): a flat magic-ring base to 60 sts (15 cm across), then 16 straight
+// rounds of wall (12 cm). Open end up, standing on its base.
+function chunkyBasket(): CrochetProgram {
+  const base = [6, 12, 18, 24, 30, 36, 42, 48, 54, 60]
+  return {
+    name: 'chunky-basket',
+    form: 'tube',
+    stitch: 'sc',
+    rounds: [...base, ...Array.from({ length: 16 }, () => 60)],
+    tube: { anchor: 'ring', join: 'spiral', cap: 'flat', openEnd: 'top' },
+    yarnWeight: 'bulky',
+    colourHex: '#c9b79c',
+    palette: { oat: '#c9b79c' },
+    gaugeText: '12 dc x 14 rounds = 10 cm (UK terms) in chunky yarn',
+    finishedSizeMm: { width: 160, height: 130 },
+    hookMm: 6.5,
+    staging: 'standing',
+    notes: 'A small round basket in chunky cotton: a flat spiral base, then straight walls worked without increasing. Holds its shape on its own in a firm yarn.',
+  }
+}
+
 export const PATTERN_PROOFS: Record<string, CrochetProgram> = {
   'simple-coaster': simpleCoaster(),
   'stripe-dishcloth': stripeDishcloth(),
@@ -309,4 +391,7 @@ export const PATTERN_PROOFS: Record<string, CrochetProgram> = {
   'flat-texture-panel': flatTexturePanel(),
   'post-rib-headband': postRibHeadband(),
   'cottage-tapestry': cottageTapestry(),
+  'ribbed-beanie': ribbedBeanie(),
+  'striped-cowl': stripedCowl(),
+  'chunky-basket': chunkyBasket(),
 }

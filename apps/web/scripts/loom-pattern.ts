@@ -299,7 +299,7 @@ export function writePatternFaces(
  *  headband lays flat as a product photo (`flatband` — NOT the standing `loop`,
  *  §8e-3/§8f: the standing ring reads as a cuff/basket at this proof's height-
  *  to-diameter ratio). Override on the command line with
- *  `--staging=flatlay|loop|flatband|swatch`. Default (unlisted programs) =
+ *  `--staging=flatlay|loop|flatband|standing|swatch`. Default (unlisted programs) =
  *  'swatch'. A program that isn't a named proof (a real customer pattern) uses
  *  its own `CrochetProgram.staging` instead — see `renderProgram` above. */
 const PROOF_STAGING: Record<string, Staging> = {
@@ -309,6 +309,9 @@ const PROOF_STAGING: Record<string, Staging> = {
   'flat-texture-panel': 'flatlay',
   'post-rib-headband': 'flatband',
   'cottage-tapestry': 'flatlay',
+  'ribbed-beanie': 'standing',
+  'striped-cowl': 'standing',
+  'chunky-basket': 'standing',
 }
 /** The proof's default finished-object staging (no CLI flags involved) — what a
  *  batch run uses. */
