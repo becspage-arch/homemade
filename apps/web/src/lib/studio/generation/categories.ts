@@ -135,7 +135,7 @@ export const CROSS_STITCH_SHELVES: ShelfTarget[] = [
 // 420 to 435) and applique-flower 20 to 14 (bouquets moved out of it).
 export const CROCHET_SHELVES: ShelfTarget[] = [
   // ── Toys — the biggest seam ──
-  { slug: 'amigurumi', name: 'Amigurumi', target: 180 },
+  { slug: 'amigurumi', name: 'Amigurumi', target: 170 },
   { slug: 'animal-toy', name: 'Animal Toys', target: 85 },
   { slug: 'doll', name: 'Dolls', target: 44 },
   { slug: 'baby-toy-lovey', name: 'Baby Toys & Loveys', target: 44 },
@@ -146,7 +146,8 @@ export const CROCHET_SHELVES: ShelfTarget[] = [
   { slug: 'blanket', name: 'Blankets & Afghans', target: 130 },
   { slug: 'cushion', name: 'Cushions & Pillows', target: 32 },
   { slug: 'basket', name: 'Baskets & Storage', target: 22 },
-  { slug: 'ornament', name: 'Ornaments & Decorations', target: 30 },
+  { slug: 'ornament', name: 'Ornaments & Decorations', target: 24 },
+  { slug: 'festive-figure', name: 'Gnomes & Festive Figures', target: 16 },
   { slug: 'wreath', name: 'Wreaths', target: 12 },
   { slug: 'stocking', name: 'Stockings & Advent Calendars', target: 12 },
   { slug: 'flower-bouquet', name: 'Flowers & Bouquets', target: 30 },
@@ -203,8 +204,9 @@ export const CROCHET_SHELVES: ShelfTarget[] = [
   { slug: 'jumpsuit-romper', name: 'Jumpsuits & Rompers', target: 3 },
   // ── Doilies, motifs, components ──
   { slug: 'motif-granny-square', name: 'Motifs & Granny Squares', target: 52 },
-  { slug: 'coaster', name: 'Coasters & Placemats', target: 26 },
-  { slug: 'doily', name: 'Doilies & Lace', target: 22 },
+  { slug: 'coaster', name: 'Coasters & Placemats', target: 20 },
+  { slug: 'doily', name: 'Doilies & Lace', target: 16 },
+  { slug: 'table-linen', name: 'Table Runners, Tablecloths & Curtains', target: 12 },
   { slug: 'edging', name: 'Edgings & Trims', target: 16 },
   { slug: 'applique-flower', name: 'Appliqués & Flowers', target: 14 },
   { slug: 'bookmark', name: 'Bookmarks', target: 10 },

@@ -156,6 +156,7 @@ const SEARCH_NOUN: Record<string, string> = {
   doll: 'doll',
   'baby-toy-lovey': 'baby lovey',
   ornament: 'ornament',
+  'festive-figure': 'gnome',
   'wall-hanging': 'wall hanging',
   dishcloth: 'dishcloth',
   potholder: 'potholder',
@@ -206,6 +207,7 @@ const SEARCH_NOUN: Record<string, string> = {
   shorts: 'shorts',
   'jumpsuit-romper': 'romper',
   doily: 'doily',
+  'table-linen': 'table runner',
   edging: 'edging',
   'applique-flower': 'flower applique',
   'flower-bouquet': 'bouquet',
@@ -1437,6 +1439,20 @@ const WALL_HANGING: Row[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 const THEMES_HOME: Record<string, Theme[]> = {
+  'festive-figure': [
+    ['Nordic Christmas gnome', 'a tall cone hat over a long beard and round nose', 'winter-frost'],
+    ['Spring gnome with tulips', 'a pastel hat with a tulip held in both hands', 'nursery-pastel'],
+    ['Halloween witch gnome', 'a crooked black hat and a tiny broom', 'gothic-dusk'],
+    ['Autumn harvest gnome', 'a rust hat beside a small pumpkin', 'foxglove-autumn'],
+    ['Standing Santa figure', 'a long red coat with a white trim and sack', 'bright-pop'],
+    ['Easter bunny figure', 'a standing rabbit holding a painted egg', 'nursery-pastel'],
+    ['Valentine gnome couple', 'two gnomes sharing one red heart', 'candy-kawaii'],
+    ['Summer beach gnome', 'a sun hat and a tiny bucket and spade', 'coastal-breeze'],
+    ['Woodland mushroom gnome', 'a toadstool cap for a hat', 'mushroom-woodland'],
+    ['Snow queen figure', 'a pale gown with a frosted lace collar', 'winter-frost'],
+    ['Scarecrow figure', 'a patched coat and a straw hat with a crow', 'foxglove-autumn'],
+    ['Nativity set of three', 'Mary, Joseph and a baby in a manger', 'elegant-mono'],
+  ],
   wreath: [
     ['Spring blossom door wreath', 'blooms and buds worked round a hoop', 'nursery-pastel'],
     ['Autumn leaf and acorn ring', 'oak and maple leaves with two acorns', 'foxglove-autumn'],
@@ -2284,6 +2300,20 @@ const THEMES_TOYS: Record<string, Theme[]> = {
 /** Doilies, edgings and appliqués: fine lace and picot work the engine has no
  *  stitch vocabulary for yet, plus the small motifs that finish other pieces. */
 const THEMES_LACE: Record<string, Theme[]> = {
+  'table-linen': [
+    ['Pineapple lace table runner', 'a long band of pineapple motifs end to end', 'vintage-tea'],
+    ['Filet cottage window curtain', 'a cottage and roses in filet squares', 'elegant-mono'],
+    ['Granny hexagon tablecloth', 'joined hexagons in a soft colour wheel', 'wildflower-meadow'],
+    ['Wildflower filet cafe curtain', 'a short half-window panel of meadow blooms', 'wildflower-meadow'],
+    ['Christmas star runner', 'a row of lace stars with a scalloped edge', 'winter-frost'],
+    ['Square lace tablecloth', 'joined lace squares with a deep fringe', 'vintage-tea'],
+    ['Boho cotton table runner', 'chunky shells and tassels at each end', 'boho-earth'],
+    ['Filet bird valance', 'swallows in flight along a narrow pelmet', 'scandi-calm'],
+    ['Round lace tablecloth', 'a large wheel worked out from a centre star', 'elegant-mono'],
+    ['Autumn leaf runner', 'joined leaf motifs in rust and gold', 'foxglove-autumn'],
+    ['Sheer mesh door curtain', 'long open-mesh strips with bead ends', 'coastal-breeze'],
+    ['Easter egg table runner', 'pastel egg motifs joined with lace bars', 'nursery-pastel'],
+  ],
   doily: [
     ['Ripple-edge tray mat', 'a wavy border round a plain middle', 'scandi-calm'],
     ['Jam pot cover set', 'four small circles with a beaded edge', 'vintage-tea'],
@@ -2466,7 +2496,7 @@ export const CROCHET_IDEA_THEMES: CrochetIdea[] = CROCHET_IDEA_BACKLOG.filter((i
  */
 export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   // Toys
-  amigurumi: 180,
+  amigurumi: 170,
   'animal-toy': 85,
   doll: 44,
   'baby-toy-lovey': 44,
@@ -2477,7 +2507,8 @@ export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   blanket: 130,
   cushion: 32,
   basket: 22,
-  ornament: 30,
+  ornament: 24,
+  'festive-figure': 16,
   wreath: 12,
   stocking: 12,
   'flower-bouquet': 30,
@@ -2534,8 +2565,9 @@ export const RECOMMENDED_CROCHET_SHELF_TARGETS: Record<string, number> = {
   'jumpsuit-romper': 3,
   // Motifs and components
   'motif-granny-square': 52,
-  coaster: 26,
-  doily: 22,
+  coaster: 20,
+  doily: 16,
+  'table-linen': 12,
   edging: 16,
   'applique-flower': 14,
   bookmark: 10,
