@@ -57,10 +57,12 @@ def hex_to_lin(h):
 # Per-fibre shader knobs (STITCH_ENGINE yarn-fibre pass). `cotton` is the
 # ORIGINAL crisp-plied numbers, unchanged, so a program that doesn't set
 # `fibre` (every program before this pass, and every one that stays on the
-# default) renders byte-for-byte as before. The other three retune the same
-# BSDF for a different real fibre; `chenille`/`velvet` additionally grow a
-# fuzz-shell halo object (see `fuzz_shell_material` / `build_yarn`) — the base
-# material alone cannot fake a pile that stands proud of the strand silhouette.
+# default) renders byte-for-byte as before. `wool` and `velvet` retune the same
+# BSDF on the scene's own plies (`velvet` adds a fuzz-shell halo object, see
+# `fuzz_shell_material`). `chenille` and `fine-cotton` REBUILD the strand from
+# the plies' centreline (`strand`: "single" = one plump unplied tube,
+# "replied" = re-plied with the fibre's own twist and ply size; see
+# `strand_centre` / `replied`), render-only, so no geometry hash moves.
 FIBRE_PARAMS = {
     "cotton": dict(
         specular=0.18, sheen=0.55, sheen_rough=0.5, aniso=0.25,
@@ -76,13 +78,25 @@ FIBRE_PARAMS = {
         subsurf=0.14, bump1=0.85, bump2=0.42, rough_lo=0.62, rough_hi=0.85,
         flyaway=0.35, halo=None,
     ),
-    # Matte and plump: low specular/sheen on the CORE strand (the fuzz-shell
-    # halo carries almost all of the visual texture), higher subsurface for a
-    # soft plush look, no anisotropic satin (chenille has no ply shine).
+    # Plush chenille (bar: highland cow). No ply and no halo shell: one plump
+    # strand (`strand`), the velvet pile material (`chenille_material`: matte,
+    # microfibre sheen rim, crushed-pile value drift, soft subsurface) and a
+    # short dense fringe of real hair curves for a soft silhouette
+    # (`add_pile_hairs`). The earlier halo-shell version kept the cotton ply
+    # visible and read dark and speckled (crochet-fibre-proof/verdict.md).
     "chenille": dict(
-        specular=0.03, sheen=0.12, sheen_rough=0.8, aniso=0.0,
-        subsurf=0.22, bump1=0.3, bump2=0.16, rough_lo=0.75, rough_hi=0.92,
-        flyaway=0.0, halo=dict(mult=1.55, noise_scale=210.0),
+        specular=0.04, sheen=1.0, sheen_rough=0.3, aniso=0.0,
+        subsurf=0.2, bump1=0.3, bump2=0.16, rough_lo=0.75, rough_hi=0.92,
+        rough=0.9, sheen_tint_mix=0.45, crush_scale=7.0, crush_amt=0.14,
+        pile_scale=55.0, pile_bump=0.35,
+        pile_density=12.0, pile_children=12, pile_len_mm=0.45, pile_lean=0.7,
+        pile_radius_mm=0.03, pile_tip_lift=0.18,
+        flyaway=0.0, halo=None,
+        # Chenille has NO ply: the strand is one plump velvet tube. The renderer
+        # rebuilds it from the plies' shared centreline (see `strand_centre`) at
+        # `strand_mult` x the plied bundle's outer radius, so neighbouring
+        # stitches close up the way squashy chenille does. Pile = `chenille_material`.
+        strand="single", strand_mult=1.42,
     ),
     # Chenille's dense short pile, plus a directional sheen: real curve
     # geometry in Cycles carries a native along-length tangent, so raising
@@ -93,7 +107,77 @@ FIBRE_PARAMS = {
         subsurf=0.16, bump1=0.3, bump2=0.16, rough_lo=0.35, rough_hi=0.55,
         flyaway=0.0, halo=dict(mult=1.35, noise_scale=260.0),
     ),
+    # Fine mercerised cotton (the bar's fairy doll): small, even, DEFINED
+    # stitches with a slight sheen. Same plied construction as `cotton` but
+    # re-plied by the renderer from the centreline with a lazy twist and fat,
+    # nearly-merged plies (ply grooves read as fine lines, never a barber-pole
+    # rope), and a plumper strand so stitches sit snug with no gaps.
+    "fine-cotton": dict(
+        specular=0.22, sheen=0.35, sheen_rough=0.4, aniso=0.3,
+        subsurf=0.08, bump1=0.25, bump2=0.12, rough_lo=0.42, rough_hi=0.6,
+        flyaway=0.0, halo=None,
+        strand="replied", strand_mult=1.22, ply_frac=0.6, twist_turns_per_mm=0.09,
+    ),
 }
+
+
+def strand_centre(filaments):
+    """The yarn CENTRELINE behind a stroke's plies, plus the plied bundle's outer
+    radius offset (centre-to-ply distance). yarnLoop.pliedFilaments lays the
+    nPly plies at equal phase (2*pi*f/nPly) round the centreline, so their
+    pointwise mean IS the centreline exactly. A stroke that isn't a clean plied
+    set (one filament, or unequal lengths) is returned as-is."""
+    polys = [p for p in filaments if len(p) >= 2]
+    if len(polys) < 2 or len({len(p) for p in polys}) != 1:
+        return polys, 0.0
+    n = len(polys)
+    centre = []
+    spread = 0.0
+    for i in range(len(polys[0])):
+        c = [sum(p[i][k] for p in polys) / n for k in range(3)]
+        centre.append(c)
+        spread += math.dist(c, polys[0][i])
+    return [centre], spread / len(centre)
+
+
+def replied(centre, spread_mm, n_ply, turns_per_mm):
+    """Re-ply a centreline into `n_ply` spiralling ply paths (the same
+    parallel-transport construction as yarnLoop.pliedFilaments) with the
+    fibre's own spread and twist. Render-only."""
+    from mathutils import Vector
+    pts = [Vector(p) for p in centre]
+    n = len(pts)
+    if n < 2:
+        return [centre]
+    tans = []
+    for i in range(n):
+        d = pts[min(n - 1, i + 1)] - pts[max(0, i - 1)]
+        tans.append(d.normalized() if d.length > 1e-9 else Vector((1, 0, 0)))
+    ref = Vector((0, 0, 1)) if abs(tans[0].z) < 0.9 else Vector((1, 0, 0))
+    n1 = (ref - tans[0] * ref.dot(tans[0])).normalized()
+    frames = []
+    arc = [0.0]
+    for i in range(n):
+        t = tans[i]
+        m = n1 - t * n1.dot(t)
+        if m.length < 1e-6:
+            r2 = Vector((0, 0, 1)) if abs(t.z) < 0.9 else Vector((1, 0, 0))
+            m = r2 - t * r2.dot(t)
+        n1 = m.normalized()
+        frames.append((n1, t.cross(n1)))
+        if i:
+            arc.append(arc[-1] + (pts[i] - pts[i - 1]).length)
+    out = []
+    for f in range(n_ply):
+        ph0 = 2 * math.pi * f / n_ply
+        poly = []
+        for i in range(n):
+            ph = arc[i] * turns_per_mm * 2 * math.pi + ph0
+            a, b = frames[i]
+            q = pts[i] + a * (math.cos(ph) * spread_mm) + b * (math.sin(ph) * spread_mm)
+            poly.append((q.x, q.y, q.z))
+        out.append(poly)
+    return out
 
 
 def yarn_material(name, hexcol, sheen, fibre="cotton"):
@@ -167,6 +251,129 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
     return mat
 
 
+def chenille_material(name, hexcol, fp):
+    """CHENILLE / velvet pile on a single plump strand (no ply at all).
+
+    What makes a real chenille amigurumi read as plush, and what each node is:
+      - a dense, short cut pile: matte (high roughness, almost no specular) with
+        a soft micro-relief, so light never makes a crisp line on the strand;
+      - the velvet RIM: pile fibres seen side-on catch light, so a curved
+        stitch is brighter at its grazing edges than face-on. Principled's
+        microfibre Sheen layer is exactly that, tinted towards a lighter shade
+        of the yarn (not white, which reads dusty);
+      - crushed pile: chenille's nap lies in different directions stitch to
+        stitch, so neighbouring stitches differ slightly in value and sheen.
+        A low-frequency noise (about one stitch across) nudges colour and
+        sheen roughness;
+      - light diffusing into the pile: a little subsurface softens the
+        terminator so the bumps read soft, not hard plastic."""
+    mat = bpy.data.materials.new(name)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    bsdf = nt.nodes.get("Principled BSDF")
+    base = hex_to_lin(hexcol)
+    tex = nt.nodes.new("ShaderNodeTexCoord")
+    # crushed-pile patches (~1.5 mm, object units are cm)
+    crush = nt.nodes.new("ShaderNodeTexNoise")
+    crush.inputs["Scale"].default_value = fp.get("crush_scale", 7.0)
+    crush.inputs["Detail"].default_value = 2.0
+    nt.links.new(tex.outputs["Object"], crush.inputs["Vector"])
+    lo = tuple(c * (1.0 - fp.get("crush_amt", 0.14)) for c in base[:3]) + (1.0,)
+    hi = tuple(min(1.0, c * (1.0 + fp.get("crush_amt", 0.14))) for c in base[:3]) + (1.0,)
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    ramp.color_ramp.elements[0].position = 0.3
+    ramp.color_ramp.elements[0].color = lo
+    ramp.color_ramp.elements[1].position = 0.7
+    ramp.color_ramp.elements[1].color = hi
+    nt.links.new(crush.outputs["Fac"], ramp.inputs["Fac"])
+    nt.links.new(ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    set_in(bsdf, "Roughness", fp.get("rough", 0.9))
+    set_in(bsdf, "Specular IOR Level", fp.get("specular", 0.04))
+    set_in(bsdf, "Sheen Weight", fp.get("sheen", 1.0))
+    st = fp.get("sheen_tint_mix", 0.45)
+    tint = tuple(c * (1 - st) + st for c in base[:3]) + (1.0,)
+    set_in(bsdf, "Sheen Tint", tint)
+    sr = nt.nodes.new("ShaderNodeMapRange")
+    sr.inputs["To Min"].default_value = fp.get("sheen_rough", 0.3) - 0.08
+    sr.inputs["To Max"].default_value = fp.get("sheen_rough", 0.3) + 0.12
+    nt.links.new(crush.outputs["Fac"], sr.inputs["Value"])
+    nt.links.new(sr.outputs["Result"], bsdf.inputs["Sheen Roughness"])
+    set_in(bsdf, "Subsurface Weight", fp.get("subsurf", 0.2))
+    set_in(bsdf, "Subsurface Radius", (0.6, 0.45, 0.35))
+    set_in(bsdf, "Subsurface Scale", 0.03)
+    # short cut pile: a fine isotropic micro-relief (~0.2 mm tufts)
+    pile = nt.nodes.new("ShaderNodeTexNoise")
+    pile.inputs["Scale"].default_value = fp.get("pile_scale", 55.0)
+    pile.inputs["Detail"].default_value = 4.0
+    nt.links.new(tex.outputs["Object"], pile.inputs["Vector"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = fp.get("pile_bump", 0.35)
+    bump.inputs["Distance"].default_value = 0.006
+    nt.links.new(pile.outputs["Fac"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
+
+
+def pile_hair_material(name, hexcol, fp):
+    """The loose pile tips (see `add_pile_hairs`): the yarn colour lifted a
+    little towards a pale tint, because the tips are what catch the light on a
+    real chenille — that lighter, softer bloom over the stitch is the plush."""
+    mat = bpy.data.materials.new(name)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    bsdf = nt.nodes.get("Principled BSDF")
+    base = hex_to_lin(hexcol)
+    lift = fp.get("pile_tip_lift", 0.18)
+    set_in(bsdf, "Base Color", tuple(c * (1 - lift) + lift * min(1.0, c * 2.2) for c in base[:3]) + (1.0,))
+    set_in(bsdf, "Roughness", 0.75)
+    set_in(bsdf, "Specular IOR Level", 0.15)
+    set_in(bsdf, "Sheen Weight", 0.0)
+    set_in(bsdf, "Subsurface Weight", 0.0)
+    return mat
+
+
+def add_pile_hairs(ob, hexcol, fp):
+    """The chenille's SOFT SILHOUETTE: a short, dense fringe of real hair
+    curves standing out of the plump strand, so no stitch edge is ever a hard
+    line (the halo shell's alpha speckle could not do this — it read as dark
+    pits). The curve is baked to a hidden emitter mesh, then `pile_density`
+    hairs per mm^2 of strand surface (parents x simple children, so the
+    particle system itself stays small) of `pile_len_mm`, sprayed roughly
+    along the surface normal with a random lean."""
+    dg = bpy.context.evaluated_depsgraph_get()
+    me = bpy.data.meshes.new_from_object(ob.evaluated_get(dg))
+    if not me.polygons:
+        return
+    area_mm2 = sum(pl.area for pl in me.polygons) / (S * S)
+    total = int(area_mm2 * fp.get("pile_density", 12.0))
+    kids = int(fp.get("pile_children", 12))
+    em = bpy.data.objects.new(ob.name + "_pile", me)
+    bpy.context.collection.objects.link(em)
+    em.data.materials.clear()
+    em.data.materials.append(pile_hair_material("ph_" + hexcol, hexcol, fp))
+    mod = em.modifiers.new("pile", "PARTICLE_SYSTEM")
+    ps = mod.particle_system.settings
+    em.show_instancer_for_render = False   # the emitter copy itself never renders
+    for k, v in (
+        ("type", "HAIR"), ("use_advanced_hair", True),
+        ("count", max(1, total // max(1, kids + 1))),
+        ("hair_length", fp.get("pile_len_mm", 0.45) * S),
+        ("emit_from", "FACE"), ("use_emit_random", True), ("use_even_distribution", True),
+        ("normal_factor", 1.0), ("factor_random", fp.get("pile_lean", 0.7)),
+        ("length_random", 0.5), ("hair_step", 3), ("display_step", 1), ("render_step", 2),
+        ("child_type", "SIMPLE"), ("child_nbr", 1), ("rendered_child_count", kids),
+        ("child_radius", fp.get("pile_len_mm", 0.45) * S * 1.5), ("child_roundness", 1.0),
+        ("roughness_1", 0.015), ("roughness_1_size", 0.5), ("roughness_endpoint", 0.01),
+        ("radius_scale", fp.get("pile_radius_mm", 0.03) * S),
+        ("root_radius", 1.0), ("tip_radius", 0.3), ("material", 1),
+    ):
+        try:
+            setattr(ps, k, v)
+        except Exception as e:  # a renamed setting must not kill the render
+            print("[yarn] pile setting skipped", k, e)
+    print("[yarn] pile", ob.name, "area_mm2", int(area_mm2), "hairs", ps.count * (kids + 1))
+
+
 def fuzz_shell_material(name, hexcol, fibre):
     """The chenille/velvet PILE HALO — a thin alpha-cutout shell wrapped just
     outside the core strand (see `build_yarn`), read at the strand's silhouette
@@ -227,19 +434,39 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         return amp * (math.sin((bx - cx) * fx) + math.cos((by - cy) * fy)
                       + 0.5 * math.sin((bx - cx + by - cy) * fx * 0.6))
 
-    has_halo = fibre in ("chenille", "velvet")
+    fpb = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"])
+    has_halo = bool(fpb.get("halo"))
+    strand = fpb.get("strand", "ply")
+
+    def stroke_polys(st):
+        """The polylines to sweep for one stroke and the radius (mm) of each:
+        the scene's own plies untouched for 'ply' (cotton/wool/velvet, so their
+        renders are unchanged), or the strand rebuilt from the plies'
+        centreline for 'single' (chenille) / 'replied' (fine cotton)."""
+        if strand == "ply":
+            return st["filaments"], st["radiusMm"]
+        centre, spread = strand_centre(st["filaments"])
+        if not spread:
+            return st["filaments"], st["radiusMm"]
+        bundle = (spread + st["radiusMm"]) * fpb.get("strand_mult", 1.0)
+        if strand == "single":
+            return centre, bundle
+        ply_r = bundle * fpb.get("ply_frac", 0.52)
+        return replied(centre[0], bundle - ply_r, len(st["filaments"]),
+                       fpb.get("twist_turns_per_mm", 0.1)), ply_r
 
     def write_points(cu, mult):
         for st in group:
+            polys, rad_mm = stroke_polys(st)
             # radiusMm is now the PLY tube radius (crisp plied model, §11): bevel
             # it 1:1 so the nPly plies stay distinct (a fatter multiplier merges
             # them back into a smooth roving tube). The ply spread reaches the
             # target outer radius, so the yarn still fills the fabric. `mult` >1
             # grows the halo shell (see build_yarn's fuzz-halo pass) outside the
             # core strand without changing the core's own radius.
-            r = st["radiusMm"] * S * 1.02 * mult
+            r = rad_mm * S * 1.02 * mult
             zlift = st["radiusMm"] * S * 1.02  # halo lifts with the CORE strand, not its own bigger radius
-            for poly in st["filaments"]:
+            for poly in polys:
                 if len(poly) < 2:
                     continue
                 sp = cu.splines.new("POLY")
@@ -254,13 +481,19 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         cu = bpy.data.curves.new("yarn", type="CURVE")
         cu.dimensions = "3D"
         cu.bevel_depth = 1.0
-        cu.bevel_resolution = 2
+        cu.bevel_resolution = 3 if strand == "single" else 2
         cu.resolution_u = 2
         cu.use_fill_caps = True
         write_points(cu, 1.0)
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
-        ob.data.materials.append(yarn_material("y_" + hexcol, hexcol, sheen, fibre))
+        if strand == "single":
+            ymat = chenille_material("y_" + hexcol, hexcol, fpb)
+        else:
+            ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre)
+        ob.data.materials.append(ymat)
         bpy.context.collection.objects.link(ob)
+        if strand == "single" and fpb.get("pile_density", 0) > 0:
+            add_pile_hairs(ob, hexcol, fpb)
 
         if has_halo:
             # The chenille/velvet PILE HALO: one extra low-poly shell per colour
@@ -426,7 +659,11 @@ def main():
     scene = bpy.context.scene
     strokes = data["strokes"]
     yarn_hex = strokes[0]["hex"] if strokes else "#efe4d6"
-    fibre = data.get("fibre", "cotton")  # yarn-fibre pass: 'cotton'|'wool'|'chenille'|'velvet'
+    fibre = data.get("fibre", "cotton")  # yarn-fibre pass: 'cotton'|'wool'|'chenille'|'velvet'|'fine-cotton'
+    # Probe-only tuning hook: a scene may override its fibre's knobs (absent from
+    # every scene the engine writes, so production renders are unaffected).
+    if isinstance(data.get("fibreTune"), dict) and fibre in FIBRE_PARAMS:
+        FIBRE_PARAMS[fibre] = dict(FIBRE_PARAMS[fibre], **data["fibreTune"])
 
     view = data.get("view", {})
     bg_hex = view.get("bgHex", "#7c6049")          # contrasting warm walnut
@@ -625,6 +862,12 @@ def main():
     scene.cycles.device = "CPU"
     scene.cycles.samples = samples
     scene.cycles.use_denoising = True
+    if FIBRE_PARAMS.get(fibre, {}).get("pile_density"):
+        try:
+            scene.cycles_curves.shape = "RIBBONS"   # pile hairs: cheap camera-facing ribbons
+            scene.cycles_curves.subdivisions = 1
+        except Exception:
+            pass
     aspect = (halfW * 2) / (halfH * 2)
     res_y = int(view.get("resY", 960))
     scene.render.resolution_y = res_y

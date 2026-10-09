@@ -52,7 +52,7 @@ const COLOUR_KEY = /^[a-z0-9-]{1,24}$/i
 const SLUG = /^[a-z0-9][a-z0-9-]{2,79}$/
 
 /** Every fibre a design may name. Mirrors `YarnFibre` (engine/program.ts). */
-export const YARN_FIBRES = ['cotton', 'wool', 'chenille', 'velvet'] as const
+export const YARN_FIBRES = ['cotton', 'wool', 'chenille', 'velvet', 'fine-cotton'] as const
 const YarnFibreSchema = z.enum(YARN_FIBRES)
 
 // ── The brief the session writes ────────────────────────────────────────────
