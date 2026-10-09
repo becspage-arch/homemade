@@ -32,6 +32,30 @@ export interface BlenderFabric {
   frameType?: string | null
 }
 
+/**
+ * The styled listing-photo SET a crochet hero is shot in (bar criterion 8,
+ * "photographed like a bestseller"). Read by `loom_render_crochet.py` as
+ * `view.stage`; it only adds set dressing round the piece and moves the camera
+ * (elevation, distance, aperture), never the piece, its yarn or its colours
+ * (notes/feedback_hero_must_be_exact_pattern.md). Everything in a set is built
+ * procedurally in Blender: no downloaded or third-party photos.
+ *
+ *   studio      the clean near-white product sweep (the default; an absent
+ *               `stage` renders exactly as before)
+ *   linen       a rumpled oatmeal linen throw, cream wall, warm side light
+ *   windowsill  a wooden sill, a bright blurred window, a linen napkin, a jug,
+ *               books and a dried lavender bunch out of focus
+ *   nursery     a cream knit blanket, blush wall, picture frame, wooden star,
+ *               a glowing lantern and a lilac blanket
+ *   christmas   a cream knit throw, pine sprigs, red berries, fairy-light bokeh
+ */
+export const HERO_STAGES = ['studio', 'linen', 'windowsill', 'nursery', 'christmas'] as const
+export type HeroStage = (typeof HERO_STAGES)[number]
+
+export function isHeroStage(v: unknown): v is HeroStage {
+  return typeof v === 'string' && (HERO_STAGES as readonly string[]).includes(v)
+}
+
 export interface BlenderStroke {
   hex: string
   sheen: number
