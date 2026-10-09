@@ -39,7 +39,11 @@ import {
   shelfPausedReason,
   activeCrochetShelfSlugs,
   CROCHET_BUILDABLE_SHELF_SLUGS,
+  BULK_CROCHET_MAX_CELLS,
+  CLI_CROCHET_MAX_CELLS,
+  envelopeFor,
 } from './crochet-forms'
+import { TAPESTRY_MAX_CELLS } from '@/lib/studio/crochet/tapestry-program'
 import { ideasForShelf, nextBuildableIdeas } from './crochet-idea-backlog'
 import { CROCHET_SHELF_BY_SLUG } from '../categories'
 
@@ -542,6 +546,15 @@ check('the plan context states the pause, offers no paused idea, and still count
   assert.equal(payload.backlog.next.length, 8)
   assert.equal(payload.backlog.remaining, nextBuildableIdeas(Number.MAX_SAFE_INTEGER).length)
   assert.ok(nextBuildableIdeas(Number.MAX_SAFE_INTEGER).some((i) => i.shelf === 'wall-hanging'))
+})
+
+check('the CLI tapestry budget is its own number; the Inngest and Studio budgets are unchanged', () => {
+  assert.equal(CLI_CROCHET_MAX_CELLS, 3600)
+  if (!process.env.BULK_CROCHET_MAX_CELLS) assert.equal(BULK_CROCHET_MAX_CELLS, 1600)
+  assert.equal(TAPESTRY_MAX_CELLS, 700)
+  const env = envelopeFor('wall-hanging', 'grid-tapestry')!
+  // The top of the wall-hanging envelope is exactly what the CLI budget allows.
+  assert.equal(env.cols![1] * env.rows![1], CLI_CROCHET_MAX_CELLS)
 })
 
 // ── Report ──────────────────────────────────────────────────────────────────

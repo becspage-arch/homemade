@@ -102,6 +102,33 @@ export interface FormEnvelope {
 export const BULK_CROCHET_MAX_CELLS = Number(process.env.BULK_CROCHET_MAX_CELLS) || 1600
 
 /**
+ * THE CLI BUDGET — for the routine's `crochet-autopilot.ts expand`, and only
+ * there. A cloud session waits for its own Fargate render, so it is not bound
+ * by the in-step ceiling above; what bounds it is the render. Timed 9 October
+ * 2026 on the probe task (`homemade-loom-render-probe`, 4 vCPU / 8 GB, the
+ * production crochet script at 150 samples, resY 1100) for a grid-tapestry
+ * panel, plus the local settle on the 4-vCPU cloud VM:
+ *
+ *   cells        settle (VM)   scene JSON   Blender on Fargate (two runs)
+ *   40 x 40         24 s          18 MB       246 s, 248 s
+ *   60 x 60         66 s          41 MB       444 s, 241 s
+ *   80 x 80        154 s          72 MB       267 s, 446 s
+ *   100 x 100      320 s         113 MB      killed at 260 s (out of memory, exit 137)
+ *
+ * Blender time is NOT driven by the stitch count in this range — it is
+ * bimodal (~4 or ~7.5 minutes) by whichever Fargate host the task lands on —
+ * so the real limits are the 8 GB task (100 x 100 never renders) and the
+ * settle, which the render stage runs again before uploading. Worst case for
+ * one render-stage candidate (settle + 35 s provisioning + 7.5 min Blender +
+ * ~1 min Fal finish) is about 10 minutes at 60 x 60 and 11.5 at 80 x 80, with
+ * the out-of-memory wall one step above. 3,600 cells keeps a render under
+ * about twelve minutes with room to spare. The Inngest budget
+ * (`BULK_CROCHET_MAX_CELLS`) and the Studio's (`TAPESTRY_MAX_CELLS`) are
+ * unchanged.
+ */
+export const CLI_CROCHET_MAX_CELLS = 3600
+
+/**
  * The buildable shelves, and what each may be built as.
  *
  * A shelf listed here gets a generation lane; a shelf absent from here does
@@ -237,8 +264,12 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
   'wall-hanging': [
     {
       treatment: 'grid-tapestry',
-      cols: [24, 40],
-      rows: [24, 40],
+      // Square panels; the lane picks the side from the motif itself
+      // (`motifGridSide`), so a bold simple motif stays near the low end. The
+      // top of the range is only reachable under the CLI budget below — the
+      // in-step budget still caps an Inngest build at 40 x 40.
+      cols: [24, 60],
+      rows: [24, 60],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A tapestry-crochet picture panel to hang, the colour changing stitch by stitch.',

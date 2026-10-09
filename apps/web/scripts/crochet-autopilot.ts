@@ -289,7 +289,7 @@ async function stageExpand(args: Args): Promise<void> {
     '../src/lib/studio/generation/bulk/crochet-dedupe'
   )
   const { CROCHET_SHELF_BY_SLUG } = await import('../src/lib/studio/generation/categories')
-  const { envelopeFor } = await import('../src/lib/studio/generation/bulk/crochet-forms')
+  const { envelopeFor, CLI_CROCHET_MAX_CELLS } = await import('../src/lib/studio/generation/bulk/crochet-forms')
   const { prisma } = await import('@homemade/db')
 
   const manifest0 = loadManifest(args.run, session)
@@ -362,7 +362,7 @@ async function stageExpand(args: Args): Promise<void> {
     try {
       const authored =
         brief.treatment === 'grid-tapestry'
-          ? await buildTapestryCandidate(full, design.picture)
+          ? await buildTapestryCandidate(full, design.picture, { maxCells: CLI_CROCHET_MAX_CELLS })
           : (() => {
               const built = buildCrochetProgram(full, design, attempt)
               if (!built.ok) throw new ExpandRefused(built.problems)
