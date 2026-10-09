@@ -86,6 +86,10 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 24.9,
     "height": 28.3
   },
+  "4,5,6,7,8,4": {
+    "width": 16.6,
+    "height": 32.1
+  },
   "6,6,6,6,6": {
     "width": 14,
     "height": 27.4
@@ -124,16 +128,16 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 70
   },
   "bear-S": {
-    "width": 75,
-    "height": 105
+    "width": 60,
+    "height": 115
   },
   "bear-M": {
-    "width": 85,
-    "height": 125
+    "width": 65,
+    "height": 135
   },
   "bear-L": {
-    "width": 120,
-    "height": 160
+    "width": 80,
+    "height": 175
   },
   "bunny-S": {
     "width": 95,
@@ -184,16 +188,16 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 110
   },
   "chick-S": {
-    "width": 45,
+    "width": 40,
     "height": 65
   },
   "chick-M": {
-    "width": 65,
-    "height": 85
+    "width": 70,
+    "height": 95
   },
   "chick-L": {
-    "width": 80,
-    "height": 105
+    "width": 85,
+    "height": 125
   }
 }
 
@@ -209,9 +213,9 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "6938c75e",
-  "bear-M": "7c83a4c8",
-  "bear-L": "c9a7054a",
+  "bear-S": "1389b8b3",
+  "bear-M": "f11f766f",
+  "bear-L": "d43d3fb1",
   "bunny-S": "66ccb78a",
   "bunny-M": "3ad55da3",
   "bunny-L": "cf20b836",
@@ -221,10 +225,10 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "dog-S": "1228be29",
   "dog-M": "f60359f1",
   "dog-L": "1b0a6e40",
-  "bird-S": "01ffe84b",
-  "bird-M": "1a86c933",
-  "bird-L": "e4091d8e",
-  "chick-S": "81066222",
-  "chick-M": "55ebb3e8",
-  "chick-L": "ee42d27c"
+  "bird-S": "cbee1191",
+  "bird-M": "d2153790",
+  "bird-L": "3513694e",
+  "chick-S": "668859c3",
+  "chick-M": "5f5cfd5d",
+  "chick-L": "3c80a36c"
 }

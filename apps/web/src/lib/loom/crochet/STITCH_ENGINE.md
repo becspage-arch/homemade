@@ -2763,6 +2763,42 @@ schema, `designToProgram`, the audit, the written pattern and the completeness
 gate. The backlog's honest-subject regex already matched chicks; its
 `AMIGURUMI_BASES` shape guard now expects the eight bases.
 
+## 8f-13. ROUND 11 — the bear as a classic teddy, the chick as one teardrop (2026-10-09)
+
+Rebecca on round 10: neither is customer-ready. Four probe rounds each
+(Fargate probe task, base renders only, Fal $0), judged against the cotton
+amigurumi panda reference and the QUALITY-BAR images.
+
+**Bear** (`bear-S/M/L` hashes move):
+- `bearHead` (sphereRounds 24/30/36, one plateau) — the head as wide as the
+  body, the teddy proportion; sunk 5 mm onto the neck so no pinch shows.
+- Arms sewn on the side of the shoulder, a little forward
+  (`BEAR_ARM_DIR` 1, 0.3, 0.75), aimed forward-down (`BEAR_ARM_AIM`
+  0.1, 1, -0.6), scale 0.9: on bear-M the paw lies on the front of the tummy
+  at 0.5 of the body height, above the thighs. Steeper aims (z -1) dropped the
+  paws onto the hips; the round-10 front-of-shoulder sewing buried the arm in
+  the body.
+- Muzzle scale 1.15, a little lower; magic ring outward (`poleIn: false`) on
+  the muzzle and paw pads so no fasten-off hole shows. Ears further up onto the
+  crown (x 0.72). Eyes lower and wider, nose a broad 2.6 mm oval (props only).
+
+**Chick** (`chick-S/M/L` move) and **bird** (`bird-S/M/L` move, deliberately):
+- `CONE_ROUNDS` 4-5-6-7-8-4, a tip-first cone with the magic ring as the point
+  (`poleIn: false`) — the shared beak for both birds, so the bird hash moves.
+  6-8-10-12-6 rendered as a nub; 6-7-8-9-10-6 still read blunt.
+- Body 30 / head 18 at M (head 0.6 of the body), sunk 9 mm: one teardrop.
+- `chickWing` teardrop wings (tapered tube) high on the flanks, turned with
+  the face so the pair is square to the beak (round 10's were in world frame,
+  so one hid behind the body). `chickTuft` cord on the crown, leaning forward.
+- Feet toed out (aim x ±0.55), magic ring outward.
+
+**What the engine cannot reach** (the bar's remaining distance, not geometry):
+the yarn renders as a crisp plied rope with open gaps between stitches where
+the bar is chenille or soft cotton with tight stitches (a render-material
+change, which means an image rebuild); the face has no embroidered features
+(closed eyes, lashes, blush, mouth); and the base render is a white studio
+shot, not a styled scene (that is the Fal finish, out of scope at $0).
+
 ---
 
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)

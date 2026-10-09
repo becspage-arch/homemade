@@ -74,6 +74,19 @@ export function cordRounds(rounds: number): number[] {
 }
 
 /**
+ * A POINTED CONE worked tip first (round 11): a FOUR-stitch magic ring IS the
+ * point, growing ONE stitch a round to eight, then closed flat in one round —
+ * the flat closed end is the side sewn to the head. A small ring and one a
+ * round, not two, is what makes it a point rather than a bump: it settles
+ * 16.6 wide by 32.1 long, where the first cut, 6-8-10-12-6, settled 23.6 x
+ * 23.6 and rendered as a round nub (and 6-7-8-9-10-6 still read blunt). Worn
+ * with `poleIn: false`, so the tip the camera sees is the magic ring, which
+ * the sphere builder draws to a pinprick, not the fasten-off end, which
+ * renders as a visible closing hole. Audits clean standing alone (worsted).
+ */
+export const CONE_ROUNDS: number[] = [4, 5, 6, 7, 8, 4]
+
+/**
  * Every round profile the designer can produce, each one measured to pass the
  * loom's audit at worsted weight. The save path checks a submitted design's
  * pieces against this list; the test keeps the list true.
@@ -96,6 +109,8 @@ export const AUDITED_PROFILES: number[][] = [
   // triangle rather than the round pad a bear's ear is. Audited clean at fine
   // 1.5, worsted 2.4 and bulky 3.2 (§8f-11).
   tubeRounds(12, 0), tubeRounds(12, 1),
+  // The tip-first beak cone (round 11).
+  CONE_ROUNDS,
   // The tails. Audited clean at the same three weights.
   cordRounds(5), cordRounds(9),
 ]
@@ -190,6 +205,9 @@ interface SizeProfile {
    *  Rebecca's critique that the arms read as feet and too long). The bunny,
    *  cat and dog keep `limb` for their upper limbs. */
   bearArm: number[]
+  /** The bear's head (round 11): as wide as the body, the classic teddy
+   *  proportion. The bunny, cat and dog keep `head`. */
+  bearHead: number[]
   /** Standalone single-piece profiles. */
   ball: number[]
   egg: number[]
@@ -218,6 +236,9 @@ interface SizeProfile {
    *  proportion. The beak, wings and feet reuse the bird's pieces. */
   chickBody: number[]
   chickHead: number[]
+  /** Round 11: the chick's teardrop wing (the tapered tube) and its tuft. */
+  chickWing: number[]
+  chickTuft: number[]
 }
 
 /**
@@ -251,6 +272,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 4),
     limb: tubeRounds(12, 3),
     bearArm: tubeRounds(12, 1),
+    bearHead: sphereRounds(24, 1),
     // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
     // growing to match the crease target: at 6 rounds nothing domes.
     ball: sphereRounds(12, 1),
@@ -267,6 +289,8 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     foot: ballRounds(12, 1),
     chickBody: sphereRounds(18, 1),
     chickHead: sphereRounds(12, 1),
+    chickWing: tubeRounds(12, 1),
+    chickTuft: cordRounds(5),
   },
   M: {
     // The signed-off bear proof's own equators, on the sphere profile.
@@ -278,6 +302,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 4),
     bearArm: tubeRounds(12, 2),
+    bearHead: sphereRounds(30, 1),
     ball: sphereRounds(24, 1),
     egg: sphereRounds(18, 5),
     catEar: tubeRounds(12, 0),
@@ -290,8 +315,10 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     beak: tubeRounds(12, 0),
     wing: ballRounds(12, 2),
     foot: ballRounds(12, 1),
-    chickBody: sphereRounds(24, 1),
+    chickBody: sphereRounds(30, 1),
     chickHead: sphereRounds(18, 1),
+    chickWing: tubeRounds(12, 1),
+    chickTuft: cordRounds(5),
   },
   L: {
     body: sphereRounds(36, 1),
@@ -302,6 +329,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 6),
     bearArm: tubeRounds(12, 4),
+    bearHead: sphereRounds(36, 1),
     ball: sphereRounds(36, 1),
     egg: sphereRounds(24, 5),
     catEar: tubeRounds(12, 0),
@@ -314,8 +342,10 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     beak: tubeRounds(12, 0),
     wing: ballRounds(12, 2),
     foot: ballRounds(12, 1),
-    chickBody: sphereRounds(30, 1),
+    chickBody: sphereRounds(36, 1),
     chickHead: sphereRounds(24, 1),
+    chickWing: tubeRounds(12, 1),
+    chickTuft: cordRounds(5),
   },
 }
 
@@ -442,8 +472,22 @@ const ARM_AIM_Z = -0.4245
  * the body's half-width, minz 0.00. The bunny, cat and dog keep the round-3
  * pose and their full-length limb; their geometry is unchanged.
  */
-const BEAR_ARM_AIM_Y = 0.42
-const BEAR_ARM_AIM_Z = -0.9
+// (Round 10 hung it at aim y 0.42, z -0.9; round 11 below replaces that.)
+
+/**
+ * ROUND 11 — Rebecca's verdict on round 10: the arms stuck out from the sides
+ * as stubs. A sewn-on amigurumi arm hangs FORWARD and down and rests against
+ * the front of the body, paws meeting the tummy above the legs (the reference
+ * panda in `crochet-refs/cotton/cotton-17.png`). So the bear's arm is now
+ * sewn on the side of the shoulder, a little forward (`BEAR_ARM_DIR`), and
+ * aimed forward-down (`BEAR_ARM_AIM`), one size chunkier (scale 0.9) so it
+ * reads as an arm rather than blending into the body. Measured on bear-M: the
+ * arm runs from the shoulder at x ±32 to a paw at x ±14..30, y 28..39 against
+ * the body's front at y 31, i.e. lying on the tummy; paw pad centre 0.5 of
+ * the body height, above the thighs. Mirrored per side. Four probe rounds.
+ */
+const BEAR_ARM_DIR = { x: 1, y: 0.3, z: 0.75 }
+const BEAR_ARM_AIM = { x: 0.1, y: 1, z: -0.6 }
 
 /** The camera every figure is staged at, and therefore the angle the face is
  *  turned back through so it meets the lens. Both from the signed-off bear. */
@@ -521,10 +565,14 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   // Where each limb is sewn and which way it then points. The arm numbers are
   // the signed-off bear's ROUND-3 pose (see ARM_DIR_Z / ARM_AIM_Z above); the
   // leg is unchanged — it lies forward along the table so the figure sits.
-  const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_DIR_Y, z: ARM_DIR_Z })
+  const bear = choices.base === 'bear'
+  const armDir = (side: -1 | 1): Dir =>
+    bear
+      ? { x: side * BEAR_ARM_DIR.x, y: BEAR_ARM_DIR.y, z: BEAR_ARM_DIR.z }
+      : { x: side * 1, y: ARM_DIR_Y, z: ARM_DIR_Z }
   const armAim = (side: -1 | 1): Dir =>
-    choices.base === 'bear'
-      ? { x: side * 1, y: BEAR_ARM_AIM_Y, z: BEAR_ARM_AIM_Z }
+    bear
+      ? { x: side * BEAR_ARM_AIM.x, y: BEAR_ARM_AIM.y, z: BEAR_ARM_AIM.z }
       : { x: side * 1, y: ARM_AIM_Y, z: ARM_AIM_Z }
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: 1, z: -0.05 })
   // A bear and a bunny sit up and have ARMS; a cat and a dog are on four legs,
@@ -547,8 +595,11 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       place: { on: 'body', overlap: 6, offset: { y: 1.5 } },
     },
     {
-      name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
-      place: { on: 'neck', overlap: 2, offset: { y: 1 } },
+      // Round 11: the bear's head is as wide as its body (`bearHead`) — the
+      // classic teddy proportion; round 10's smaller head read as a doll.
+      // Sunk 5 mm onto the neck (not 2) so no pinched neck shows under it.
+      name: 'head', stitch: 'sc', rounds: bear ? s.bearHead : s.head, colourHex: main,
+      place: { on: 'neck', overlap: bear ? 5 : 2, offset: { y: 1 } },
     },
     // A dog's SNOUT is one plateau round rounder than the bear's flat muzzle
     // pad and stands further off the face; a cat's is the bear's, smaller.
@@ -558,10 +609,13 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       name: 'muzzle', stitch: 'sc',
       rounds: choices.base === 'dog' ? s.snout : s.muzzle,
       colourHex: contrast,
-      scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : 0.85,
+      // Round 11: the bear's muzzle grows with its bigger head, and shows its
+      // magic ring (drawn to a pinprick, under the nose) instead of the
+      // fasten-off end, which rendered as a hole round the nose.
+      scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : bear ? 1.15 : 0.85,
       place: {
-        on: 'head', dir: faceDir({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : -0.22 }),
-        seat: choices.base === 'dog' ? 4 : 3, poleIn: true, surfaceFit: 'ellipsoid',
+        on: 'head', dir: faceDir({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : -0.22 }),
+        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear, surfaceFit: 'ellipsoid',
       },
     },
   ]
@@ -574,7 +628,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
         name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.bearEar, colourHex: main, scale: 0.92,
         place: {
           on: 'head',
-          dir: faceDir({ x: side * 0.95, y: 0.18, z: 0.95 }),
+          // Round 11: further up onto the crown (0.72 out, not 0.95), where a
+          // teddy's ears sit; round 10's sat on the sides of the head.
+          dir: faceDir({ x: side * 0.72, y: 0.12, z: 1 }),
           aim: faceDir({ x: side * 0.8, y: 0.35, z: 1 }),
           seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
         },
@@ -636,7 +692,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     parts.push({
       name: upperName(side), stitch: 'sc',
       rounds: choices.base === 'bear' ? s.bearArm : s.limb,
-      colourHex: main, scale: 0.78,
+      colourHex: main, scale: bear ? 0.9 : 0.78,
       place: {
         on: 'body', dir: armDir(side),
         aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
@@ -684,7 +740,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   if (choices.paws && amigurumiBaseSpec(choices.base).paws) {
     const pad = (name: string, on: string, dir: Dir): AmigurumiPart => ({
       name, stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.62,
-      place: { on, dir, seat: 3, poleIn: true, surfaceFit: 'ellipsoid' },
+      // The bear's pads show their magic ring (a pinprick) rather than the
+      // fasten-off hole (round 11); the other bases are unchanged.
+      place: { on, dir, seat: 3, poleIn: !bear, surfaceFit: 'ellipsoid' },
     })
     parts.push(
       pad('paw-al', upperName(-1), armAim(-1)),
@@ -741,8 +799,10 @@ function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): C
     // The beak: the cat's ear cone, small, in the second yarn, pointing
     // forward and a shade down off the front of the head.
     {
-      name: 'beak', stitch: 'sc', rounds: s.beak, colourHex: contrast, scale: BIRD_BEAK_SCALE[choices.size],
-      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.05 }), seat: 2.5, poleIn: true, surfaceFit: 'ellipsoid' },
+      // Round 11: the tip-first cone, magic ring outward, so the point has no
+      // closing hole (it rendered as a blunt nub with a hole on bird and chick).
+      name: 'beak', stitch: 'sc', rounds: CONE_ROUNDS, colourHex: contrast, scale: BIRD_BEAK_SCALE[choices.size],
+      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.05 }), seat: 2.5, poleIn: false, surfaceFit: 'ellipsoid' },
     },
   ]
   // Two wings, joined high on the body's sides and aimed DOWN and a little
@@ -797,14 +857,15 @@ function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): C
  * proud of the breast, down until it rests on the table — and
  * `amigurumi-presets.test.ts`'s minz assertion keeps it honest.
  */
-const CHICK_HEAD_OVERLAP: Record<AmigurumiSize, number> = { S: 3, M: 4, L: 5 }
-const CHICK_BEAK_SCALE: Record<AmigurumiSize, number> = { S: 0.3, M: 0.38, L: 0.46 }
-const CHICK_WING_SCALE: Record<AmigurumiSize, number> = { S: 0.42, M: 0.55, L: 0.68 }
-const CHICK_FOOT_SCALE: Record<AmigurumiSize, number> = { S: 0.32, M: 0.42, L: 0.52 }
+const CHICK_HEAD_OVERLAP: Record<AmigurumiSize, number> = { S: 6, M: 9, L: 10 }
+const CHICK_BEAK_SCALE: Record<AmigurumiSize, number> = { S: 0.36, M: 0.5, L: 0.6 }
+const CHICK_WING_SCALE: Record<AmigurumiSize, number> = { S: 0.55, M: 0.8, L: 0.95 }
+const CHICK_TUFT_SCALE: Record<AmigurumiSize, number> = { S: 0.4, M: 0.52, L: 0.62 }
+const CHICK_FOOT_SCALE: Record<AmigurumiSize, number> = { S: 0.32, M: 0.48, L: 0.56 }
 const CHICK_FOOT_OFFSET: Record<AmigurumiSize, { y: number; z: number }> = {
   S: { y: 8, z: -2.8 },
-  M: { y: 11, z: -2.4 },
-  L: { y: 13, z: -2.0 },
+  M: { y: 13, z: -2.4 },
+  L: { y: 15, z: -2.8 },
 }
 
 /**
@@ -821,23 +882,39 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
   const contrast = choices.contrastHex
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.chickBody, colourHex: main, place: { on: 'ground' } },
+    // Round 11: the head is clearly SMALLER than the body (0.6 of its width)
+    // and sunk well into it, so body and head read as one teardrop rather
+    // than two balls stacked like a snowman.
     {
       name: 'head', stitch: 'sc', rounds: s.chickHead, colourHex: main,
       place: { on: 'body', overlap: CHICK_HEAD_OVERLAP[choices.size], offset: { y: 1 } },
     },
+    // The tip-first cone, magic ring outward: a small point with no hole.
     {
-      name: 'beak', stitch: 'sc', rounds: s.beak, colourHex: contrast, scale: CHICK_BEAK_SCALE[choices.size],
-      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: 0 }), seat: 2.5, poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'beak', stitch: 'sc', rounds: CONE_ROUNDS, colourHex: contrast, scale: CHICK_BEAK_SCALE[choices.size],
+      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: 0 }), seat: 2.5, poleIn: false, surfaceFit: 'ellipsoid' },
+    },
+    // A little tuft standing up out of the crown and leaning forward: a short
+    // cord, magic ring at its tip.
+    {
+      name: 'tuft', stitch: 'sc', rounds: s.chickTuft, colourHex: main, scale: CHICK_TUFT_SCALE[choices.size],
+      place: {
+        on: 'head', dir: faceDir({ x: 0, y: 0.15, z: 1 }), aim: faceDir({ x: 0, y: 1.3, z: 0.7 }),
+        seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
+      },
     },
   ]
+  // TEARDROP wings (round 11): the tapered tube, joined by its round end high
+  // on the flank and running down and back along the side to its point.
+  // Turned with the face (`faceDir`) so the pair sits square to the beak.
   for (const side of [-1, 1] as const) {
     parts.push({
-      name: side < 0 ? 'wing-l' : 'wing-r', stitch: 'sc', rounds: s.wing, colourHex: main,
+      name: side < 0 ? 'wing-l' : 'wing-r', stitch: 'sc', rounds: s.chickWing, colourHex: main,
       scale: CHICK_WING_SCALE[choices.size],
       place: {
         on: 'body',
-        dir: { x: side * 1, y: 0.1, z: 0.25 },
-        aim: { x: side * 0.75, y: -0.05, z: -0.6 },
+        dir: faceDir({ x: side * 1, y: 0.05, z: 0.55 }),
+        aim: faceDir({ x: side * 0.45, y: -0.25, z: -0.9 }),
         seat: 4, poleIn: true, surfaceFit: 'ellipsoid',
       },
     })
@@ -846,14 +923,13 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
     parts.push({
       name: side < 0 ? 'foot-l' : 'foot-r', stitch: 'sc', rounds: s.foot, colourHex: contrast,
       scale: CHICK_FOOT_SCALE[choices.size],
-      // Turned with the face (`faceDir`), unlike the bird's: on a round body
-      // with the head straight above it, feet left on the body's own front
-      // render as a pair off to one side of the face.
+      // Turned with the face (`faceDir`) so the pair sits under the beak, each
+      // toed OUT a little (round 11), magic ring outward so no hole shows.
       place: {
         on: 'body',
         dir: faceDir({ x: side * 0.3, y: 0.7, z: -1.2 }),
-        aim: faceDir({ x: side * 0.2, y: 1, z: -0.02 }),
-        seat: 5, poleIn: true, surfaceFit: 'ellipsoid',
+        aim: faceDir({ x: side * 0.55, y: 1, z: -0.02 }),
+        seat: 5, poleIn: false, surfaceFit: 'ellipsoid',
         offset: faceDir({ x: 0, y: CHICK_FOOT_OFFSET[choices.size].y, z: CHICK_FOOT_OFFSET[choices.size].z }),
       },
     })
@@ -866,8 +942,8 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
     parts,
     props: faceProps(choices, 'head'),
     notes:
-      'A little chick: a stuffed round body, a big round head, a pointed beak, two ' +
-      'small wings and two flat feet, each worked as a spiral from a magic ring and sewn on.',
+      'A little chick: a stuffed round body, a smaller round head with a tuft, a pointed beak, ' +
+      'two teardrop wings and two flat feet, each worked as a spiral from a magic ring and sewn on.',
   }
 }
 
@@ -880,6 +956,19 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
  * its equator at the wool surface and the whole dome proud of it, which is where
  * a real safety eye's dome sits once the shank is through the fabric.
  */
+/**
+ * Where the safety eyes sit on the face, per base. Round 11 (Rebecca's bar:
+ * "eyes set low and wide"): the bear's and the chick's come down and out from
+ * the 0.62 / 0.42 every base used. Props are notions, outside the geometry
+ * hash, so this moves no hash.
+ */
+const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
+  ball: { x: 0.62, z: 0.42 }, egg: { x: 0.62, z: 0.42 }, bunny: { x: 0.62, z: 0.42 },
+  cat: { x: 0.62, z: 0.42 }, dog: { x: 0.62, z: 0.42 }, bird: { x: 0.62, z: 0.42 },
+  bear: { x: 0.72, z: 0.16 },
+  chick: { x: 0.66, z: 0.2 },
+}
+
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []
   if (choices.eyeMm > 0) {
@@ -888,7 +977,7 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
       props.push({
         name: side < 0 ? 'eye-l' : 'eye-r',
         on,
-        dir: faceDir({ x: side * 0.62, y: 1, z: 0.42 }),
+        dir: faceDir({ x: side * EYE_SET[choices.base].x, y: 1, z: EYE_SET[choices.base].z }),
         radiusMm: r,
         seat: -(r + 0.2),
         colourHex: EYE_HEX,
@@ -901,8 +990,9 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
       name: 'nose',
       on: 'muzzle',
       dir: faceDir({ x: 0, y: 1, z: 0.42 }),
-      radiusMm: 1.9,
-      seat: -1.8,
+      // The bear's nose is a teddy's broad oval (round 11); the rest unchanged.
+      radiusMm: choices.base === 'bear' ? 2.6 : 1.9,
+      seat: choices.base === 'bear' ? -2.4 : -1.8,
       flatten: 0.65,
       widen: 1.4,
       colourHex: NOSE_HEX,
