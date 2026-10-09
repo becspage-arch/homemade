@@ -16,6 +16,7 @@
 
 import { programToChart, writeInstructions, type CrochetProgram } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
+import { writeFaceInstructions } from './faceEmbroidery'
 
 export interface CompositionPiece {
   /** Display label: "Body", "Ears". */
@@ -135,6 +136,12 @@ export function writeAssembly(p: CompositionProgram): string[] {
     const on = prettify(baseName(prop.on), 1).toLowerCase()
     lines.push(`Fit the ${prop.name.replace(SIDE_SUFFIX, '').replace(/[-_]+/g, ' ')} to the ${on} and fasten the washer behind it.`)
   }
+  // The embroidered face, from the same round-and-stitch spots the render
+  // lays the strands on.
+  if (p.embroidery?.length) {
+    const headName = p.embroidery[0]!.on
+    lines.push(...writeFaceInstructions(p.embroidery, prettify(baseName(headName), 1).toLowerCase()))
+  }
   lines.push('Weave in every end and give the finished piece a gentle shape with your hands.')
   return lines
 }
@@ -197,6 +204,7 @@ export function compositionNotions(p: CompositionProgram): string[] {
     notions.push(`Safety eyes, ${Math.round(eye.radiusMm * 2)} mm`)
   }
   if ((p.props ?? []).some((x) => /nose/i.test(x.name))) notions.push('Safety nose')
+  for (const label of new Set((p.embroidery ?? []).map((e) => e.threadLabel))) notions.push(`${label}, for the face`)
   return notions
 }
 
