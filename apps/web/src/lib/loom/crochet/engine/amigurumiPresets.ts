@@ -107,7 +107,10 @@ export function isAuditedProfile(rounds: number[]): boolean {
   return PROFILE_KEYS.has(rounds.join(','))
 }
 
-export type AmigurumiBase = 'ball' | 'egg' | 'bear' | 'bunny' | 'cat' | 'dog' | 'bird'
+/** Every base the designer builds, as a const tuple so a zod schema can be
+ *  derived from it instead of hand-copying the list (it was copied twice). */
+export const AMIGURUMI_BASE_IDS = ['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird', 'chick'] as const
+export type AmigurumiBase = (typeof AMIGURUMI_BASE_IDS)[number]
 export type AmigurumiSize = 'S' | 'M' | 'L'
 
 export interface AmigurumiChoices {
@@ -156,6 +159,7 @@ export const AMIGURUMI_BASES: AmigurumiBaseSpec[] = [
   { id: 'cat', label: 'Cat', blurb: 'Pointed ears, a small muzzle, four legs and a long tail.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
   { id: 'dog', label: 'Dog', blurb: 'A round snout, two floppy ears, four legs and a short tail.', nose: true, paws: true, contrastFor: 'The snout and the paw pads.' },
   { id: 'bird', label: 'Bird', blurb: 'An egg body sitting on its base, a small head, a beak, two wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
+  { id: 'chick', label: 'Chick', blurb: 'A round ball body, a big round head, a little beak, two small wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
 ]
 
 /** The spec for one base (falls back to the bear's, which is the full set). */
@@ -209,6 +213,11 @@ interface SizeProfile {
   beak: number[]
   wing: number[]
   foot: number[]
+  /** The chick (round 10): a BALL body — the sphere profile, not the bird's
+   *  egg — and a head one equator step smaller, which is a chick's big-headed
+   *  proportion. The beak, wings and feet reuse the bird's pieces. */
+  chickBody: number[]
+  chickHead: number[]
 }
 
 /**
@@ -256,6 +265,8 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     beak: tubeRounds(12, 0),
     wing: ballRounds(12, 2),
     foot: ballRounds(12, 1),
+    chickBody: sphereRounds(18, 1),
+    chickHead: sphereRounds(12, 1),
   },
   M: {
     // The signed-off bear proof's own equators, on the sphere profile.
@@ -279,6 +290,8 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     beak: tubeRounds(12, 0),
     wing: ballRounds(12, 2),
     foot: ballRounds(12, 1),
+    chickBody: sphereRounds(24, 1),
+    chickHead: sphereRounds(18, 1),
   },
   L: {
     body: sphereRounds(36, 1),
@@ -301,6 +314,8 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     beak: tubeRounds(12, 0),
     wing: ballRounds(12, 2),
     foot: ballRounds(12, 1),
+    chickBody: sphereRounds(30, 1),
+    chickHead: sphereRounds(24, 1),
   },
 }
 
@@ -499,6 +514,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   }
 
   if (choices.base === 'bird') return birdProgram(choices, s, name)
+  if (choices.base === 'chick') return chickProgram(choices, s, name)
 
   const main = choices.mainHex
   const contrast = choices.contrastHex
@@ -769,6 +785,89 @@ function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): C
       'A little sitting bird: a stuffed egg body on its own base, a small round head, ' +
       'a pointed beak, two folded wings and two flat feet, each worked as a spiral ' +
       'from a magic ring and sewn on.',
+  }
+}
+
+/**
+ * The chick's per-size trims (round 10), measured off each size's settled
+ * chain the way the bird's were. A chick is the bird's construction on a BALL
+ * body: no neck, the head sitting straight on the crown, a small cone beak in
+ * the second yarn, two small wings and two flat feet. `CHICK_FOOT_OFFSET`
+ * plays the same part `BIRD_FOOT_OFFSET` does — forward until the foot is
+ * proud of the breast, down until it rests on the table — and
+ * `amigurumi-presets.test.ts`'s minz assertion keeps it honest.
+ */
+const CHICK_HEAD_OVERLAP: Record<AmigurumiSize, number> = { S: 3, M: 4, L: 5 }
+const CHICK_BEAK_SCALE: Record<AmigurumiSize, number> = { S: 0.3, M: 0.38, L: 0.46 }
+const CHICK_WING_SCALE: Record<AmigurumiSize, number> = { S: 0.42, M: 0.55, L: 0.68 }
+const CHICK_FOOT_SCALE: Record<AmigurumiSize, number> = { S: 0.32, M: 0.42, L: 0.52 }
+const CHICK_FOOT_OFFSET: Record<AmigurumiSize, { y: number; z: number }> = {
+  S: { y: 8, z: -2.8 },
+  M: { y: 11, z: -2.4 },
+  L: { y: 13, z: -2.0 },
+}
+
+/**
+ * THE CHICK (round 10). Not a bird on an egg: a round ball body — the sphere
+ * profile — with a big round head straight on top of it, which is the
+ * proportion that says "chick" rather than "robin". The face is the bird's
+ * (safety eyes on the head, a crocheted cone beak a shade below them), the
+ * wings are small pads low on the flanks, and the feet sit at the front of the
+ * base on the table. Like the bird it has no moulded nose and no paw pads; the
+ * second yarn makes the beak and the feet.
+ */
+function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): CompositionProgram {
+  const main = choices.mainHex
+  const contrast = choices.contrastHex
+  const parts: AmigurumiPart[] = [
+    { name: 'body', stitch: 'sc', rounds: s.chickBody, colourHex: main, place: { on: 'ground' } },
+    {
+      name: 'head', stitch: 'sc', rounds: s.chickHead, colourHex: main,
+      place: { on: 'body', overlap: CHICK_HEAD_OVERLAP[choices.size], offset: { y: 1 } },
+    },
+    {
+      name: 'beak', stitch: 'sc', rounds: s.beak, colourHex: contrast, scale: CHICK_BEAK_SCALE[choices.size],
+      place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: 0 }), seat: 2.5, poleIn: true, surfaceFit: 'ellipsoid' },
+    },
+  ]
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'wing-l' : 'wing-r', stitch: 'sc', rounds: s.wing, colourHex: main,
+      scale: CHICK_WING_SCALE[choices.size],
+      place: {
+        on: 'body',
+        dir: { x: side * 1, y: 0.1, z: 0.25 },
+        aim: { x: side * 0.75, y: -0.05, z: -0.6 },
+        seat: 4, poleIn: true, surfaceFit: 'ellipsoid',
+      },
+    })
+  }
+  for (const side of [-1, 1] as const) {
+    parts.push({
+      name: side < 0 ? 'foot-l' : 'foot-r', stitch: 'sc', rounds: s.foot, colourHex: contrast,
+      scale: CHICK_FOOT_SCALE[choices.size],
+      // Turned with the face (`faceDir`), unlike the bird's: on a round body
+      // with the head straight above it, feet left on the body's own front
+      // render as a pair off to one side of the face.
+      place: {
+        on: 'body',
+        dir: faceDir({ x: side * 0.3, y: 0.7, z: -1.2 }),
+        aim: faceDir({ x: side * 0.2, y: 1, z: -0.02 }),
+        seat: 5, poleIn: true, surfaceFit: 'ellipsoid',
+        offset: faceDir({ x: 0, y: CHICK_FOOT_OFFSET[choices.size].y, z: CHICK_FOOT_OFFSET[choices.size].z }),
+      },
+    })
+  }
+  return {
+    name,
+    yarnWeight: 'worsted',
+    hookMm: 4,
+    ...FIGURE_VIEW,
+    parts,
+    props: faceProps(choices, 'head'),
+    notes:
+      'A little chick: a stuffed round body, a big round head, a pointed beak, two ' +
+      'small wings and two flat feet, each worked as a spiral from a magic ring and sewn on.',
   }
 }
 

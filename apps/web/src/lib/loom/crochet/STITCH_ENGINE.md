@@ -2693,6 +2693,52 @@ swatch hashes are unmoved (`loom-geom-hash.ts` diffed either side).
 it — so the next change can only move the presets it meant to, and the diff of
 the generated file says exactly which ones did.
 
+### A CHICK base
+
+The bird (§8f-11) is an egg standing on its base with a small head: a robin,
+or a chick drawn tall. The backlog's chick ideas ("a tiny yellow chick", "a
+yellow ball with a folded orange beak") are the other shape — a round ball body
+and a big round head — so `chick` is its own base, built the bird's way:
+
+- body `sphereRounds` S 18 / M 24 / L 30 (all `+1`), head `sphereRounds` one
+  equator step smaller (S 12 / M 18 / L 24) sitting straight on the crown with
+  no neck (`CHICK_HEAD_OVERLAP` 3 / 4 / 5 mm), which is the big-headed
+  proportion that says chick;
+- the bird's pieces for the rest: the cone beak (`tubeRounds(12, 0)`, scale
+  0.30 / 0.38 / 0.46) in the second yarn, two small wings (`ballRounds(12, 2)`,
+  0.42 / 0.55 / 0.68) low on the flanks, two flat feet (`ballRounds(12, 1)`)
+  at the front, nudged forward and down by `CHICK_FOOT_OFFSET` (measured: each
+  foot 1–2.5 mm proud of the breast and on the table);
+- the feet are turned WITH the face (`faceDir`), unlike the bird's: on a round
+  body with the head straight above, feet on the body's own front rendered as
+  a pair off to one side of the beak (the first render showed it). Turned,
+  they sit under it.
+- no moulded nose and no paw pads (`nose: false`, `paws: false`), the eyes on
+  the head. Seven pieces; S 46.6 x 64.7, M 64.3 x 85.5, L 81.5 x 105.9 mm
+  settled, every size audit-clean and on the table.
+
+Hashes (new): `chick-S` **81066222**, `chick-M` **55ebb3e8** (= the new
+`amigurumi-chick` proof), `chick-L` **ee42d27c**. Every existing hash
+unchanged by this part.
+
+### Rendered (Fargate probe, base only)
+
+`bear-M` and `chick-M` presets, the production render script in the image,
+resY 1200, 150 samples, no Fal finish; two probe tasks, about $0.09 all in.
+Draft verdicts (Rebecca signs off; the PNGs and the full draft are in the
+project files under `crochet-preset-polish/`):
+
+- **Bear** — the cream paws now sit at the sides of the tummy, well above and
+  apart from the feet; nothing reads as a third and fourth foot. Residual: the
+  arms are short stubs held out from the sides rather than limbs lying along
+  the front, and in the body's own yarn only the paws separate them from it.
+  The next lever is a little more forward aim, not more length.
+- **Chick** — reads as a simple toy chick: big round head straight on a round
+  body, eyes, an orange beak between them, orange feet at the front.
+  Residuals: the beak is a blunt nub showing its closing hole (the bird's has
+  the same), the wings are small bumps in the body yarn, and head and body are
+  near enough in size to read snowman at a glance.
+
 ---
 
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)

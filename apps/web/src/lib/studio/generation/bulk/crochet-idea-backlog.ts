@@ -262,11 +262,11 @@ function pad(n: number): string {
  * treatments) is 'amigurumi' — the shaped-figure builder that only knows how
  * to lay out a bear body or a bunny body (`amigurumiFromDesign` in
  * `crochet-design.ts`). Belt and braces: fails loudly if the engine ever
- * grows a base beyond the seven this file was written against, so the regex
+ * grows a base beyond the eight this file was written against, so the regex
  * below gets revisited rather than silently under- or over-matching.
  */
 const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
-if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,dog,egg') {
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,chick,dog,egg') {
   throw new Error(
     'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
   )
@@ -289,7 +289,7 @@ const HONEST_AMIGURUMI_BASE_RE =
  */
 const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
 
-/** True when `motif` is honestly one of the seven bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird). */
+/** True when `motif` is honestly one of the eight bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick). */
 export function isHonestAmigurumiSubject(motif: string): boolean {
   return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
 }

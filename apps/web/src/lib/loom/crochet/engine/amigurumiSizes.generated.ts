@@ -182,6 +182,18 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
   "bird-L": {
     "width": 80,
     "height": 110
+  },
+  "chick-S": {
+    "width": 45,
+    "height": 65
+  },
+  "chick-M": {
+    "width": 65,
+    "height": 85
+  },
+  "chick-L": {
+    "width": 80,
+    "height": 105
   }
 }
 
@@ -211,5 +223,8 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "dog-L": "1b0a6e40",
   "bird-S": "01ffe84b",
   "bird-M": "1a86c933",
-  "bird-L": "e4091d8e"
+  "bird-L": "e4091d8e",
+  "chick-S": "81066222",
+  "chick-M": "55ebb3e8",
+  "chick-L": "ee42d27c"
 }

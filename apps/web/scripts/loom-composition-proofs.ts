@@ -496,11 +496,15 @@ const amigurumiCat = presetProof('cat', 'M', '#8d8b86', '#e6d3ae', 9)
 const amigurumiDog = presetProof('dog', 'M', '#c0965f', '#efe3cd', 9)
 /** A yellow chick with an orange beak and feet. */
 const amigurumiBird = presetProof('bird', 'M', '#e9c95c', '#d9822b', 9)
+/** Round 10: the chick, a ball body with a big round head, in the same yellow
+ *  and orange so it can be judged beside the bird. */
+const amigurumiChick = presetProof('chick', 'M', '#e9c95c', '#d9822b', 9)
 
 export const COMPOSITION_PROOFS: Record<string, CompositionProgram> = {
   'amigurumi-cat': amigurumiCat,
   'amigurumi-dog': amigurumiDog,
   'amigurumi-bird': amigurumiBird,
+  'amigurumi-chick': amigurumiChick,
   'amigurumi-ball': amigurumiBall,
   'amigurumi-creature': amigurumiCreature,
   'amigurumi-bear': amigurumiBear,
