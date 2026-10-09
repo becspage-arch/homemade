@@ -89,6 +89,8 @@ export const AUDITED_PROFILES: number[][] = [
   ballRounds(12, 1), ballRounds(12, 2), ballRounds(12, 3),
   ballRounds(18, 2),
   tubeRounds(12, 3), tubeRounds(12, 4), tubeRounds(12, 6),
+  // The bear's shortened M arm (round 10): the limb tube two rounds shorter.
+  tubeRounds(12, 2),
   // The pointed CONES a cat's ear and a bird's beak are: the tube's climb to
   // twelve, then straight into the taper, so what stands out of the head is a
   // triangle rather than the round pad a bear's ear is. Audited clean at fine
@@ -180,6 +182,10 @@ interface SizeProfile {
   bearEar: number[]
   bunnyEar: number[]
   limb: number[]
+  /** The BEAR's arm: the limb tube with its straight run cut (round 10 —
+   *  Rebecca's critique that the arms read as feet and too long). The bunny,
+   *  cat and dog keep `limb` for their upper limbs. */
+  bearArm: number[]
   /** Standalone single-piece profiles. */
   ball: number[]
   egg: number[]
@@ -235,6 +241,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 4),
     limb: tubeRounds(12, 3),
+    bearArm: tubeRounds(12, 1),
     // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
     // growing to match the crease target: at 6 rounds nothing domes.
     ball: sphereRounds(12, 1),
@@ -259,6 +266,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bearEar: ballRounds(12, 2),
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 4),
+    bearArm: tubeRounds(12, 2),
     ball: sphereRounds(24, 1),
     egg: sphereRounds(18, 5),
     catEar: tubeRounds(12, 0),
@@ -280,6 +288,7 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     bearEar: ballRounds(12, 3),
     bunnyEar: tubeRounds(12, 6),
     limb: tubeRounds(12, 6),
+    bearArm: tubeRounds(12, 4),
     ball: sphereRounds(36, 1),
     egg: sphereRounds(24, 5),
     catEar: tubeRounds(12, 0),
@@ -401,6 +410,26 @@ const ARM_DIR_Y = 0.325
 const ARM_AIM_Y = 0.3822
 const ARM_AIM_Z = -0.4245
 
+/**
+ * ROUND 10 — the BEAR's shorter arm, and the pose it now wants (Rebecca's
+ * critique of the round-3 bear: the arms read as feet, too long).
+ *
+ * Round 3 logged the cause and the cure: the arm+paw chain was 0.71 of the
+ * body height where a real bear's arm is nearer half, so the only pose that
+ * kept the paw off the feet held the arm out at 68° off vertical. The bear's
+ * arm is now `bearArm` — the limb tube with two straight rounds cut at M (one
+ * at S, two at L) — and on that shorter arm the round-3 pose lifts the paw to
+ * 0.63 of the body height, nearly up at the shoulder. So the arm comes back
+ * DOWN toward the body, 50° off vertical (round 3: 68°), and the paw lands at
+ * mid-body.
+ * Measured on bear-M (body 60.3 mm tall): paw pad centre z 29.8 = 0.494 of the
+ * body height, 13.3 mm (0.221) above the foot pads, paw centre 6 mm outside
+ * the body's half-width, minz 0.00. The bunny, cat and dog keep the round-3
+ * pose and their full-length limb; their geometry is unchanged.
+ */
+const BEAR_ARM_AIM_Y = 0.42
+const BEAR_ARM_AIM_Z = -0.9
+
 /** The camera every figure is staged at, and therefore the angle the face is
  *  turned back through so it meets the lens. Both from the signed-off bear. */
 const FIGURE_YAW = 26
@@ -477,7 +506,10 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   // the signed-off bear's ROUND-3 pose (see ARM_DIR_Z / ARM_AIM_Z above); the
   // leg is unchanged — it lies forward along the table so the figure sits.
   const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_DIR_Y, z: ARM_DIR_Z })
-  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: ARM_AIM_Y, z: ARM_AIM_Z })
+  const armAim = (side: -1 | 1): Dir =>
+    choices.base === 'bear'
+      ? { x: side * 1, y: BEAR_ARM_AIM_Y, z: BEAR_ARM_AIM_Z }
+      : { x: side * 1, y: ARM_AIM_Y, z: ARM_AIM_Z }
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: 1, z: -0.05 })
   // A bear and a bunny sit up and have ARMS; a cat and a dog are on four legs,
   // and the written pattern has to say so. The piece is the same tapered tube
@@ -586,7 +618,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   const lift = GROUND_LIFT[choices.size]
   for (const side of [-1, 1] as const) {
     parts.push({
-      name: upperName(side), stitch: 'sc', rounds: s.limb, colourHex: main, scale: 0.78,
+      name: upperName(side), stitch: 'sc',
+      rounds: choices.base === 'bear' ? s.bearArm : s.limb,
+      colourHex: main, scale: 0.78,
       place: {
         on: 'body', dir: armDir(side),
         aim: armAim(side), seat: 6, poleIn: true, surfaceFit: 'ellipsoid',

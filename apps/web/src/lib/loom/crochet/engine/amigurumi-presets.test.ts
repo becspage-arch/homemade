@@ -23,7 +23,11 @@ import {
   isAuditedProfile,
   presetSettledSizeMm,
 } from './amigurumiPresets'
-import { PRESET_SETTLED_SIZE_MM_GENERATED, PROFILE_SIZE_MM_GENERATED } from './amigurumiSizes.generated'
+import {
+  PRESET_GEOMETRY_HASH_GENERATED,
+  PRESET_SETTLED_SIZE_MM_GENERATED,
+  PROFILE_SIZE_MM_GENERATED,
+} from './amigurumiSizes.generated'
 
 /** How far a settled measurement may drift from the checked-in generated
  *  table before the build fails — the guard against a re-cut round builder
@@ -106,6 +110,17 @@ for (const choices of allPresetChoices()) {
     assert.ok(
       Math.abs(minz) <= MINZ_TOLERANCE_MM,
       `${label} does not sit on the table: minz ${minz.toFixed(2)} mm (want within ${MINZ_TOLERANCE_MM} mm of 0)`,
+    )
+    // THE HASH GUARD. A preset's settled geometry is bit-identical unless a
+    // change meant to move it: a moved hash fails here until the generated
+    // table is regenerated, and every preset that moves needs a fresh render
+    // judged against its reference before it ships (STITCH_ENGINE.md §8f-12).
+    const expectedHash = PRESET_GEOMETRY_HASH_GENERATED[`${choices.base}-${choices.size}`]
+    assert.ok(expectedHash, `${label} has no recorded geometry hash — run \`npx tsx scripts/loom-preset-sizes.ts\``)
+    assert.equal(
+      compiled.geometryHash.slice(0, 8),
+      expectedHash,
+      `${label} geometry hash moved — if that is intended, regenerate with \`npx tsx scripts/loom-preset-sizes.ts\``,
     )
     const width = maxx - minx
     const height = maxz - minz

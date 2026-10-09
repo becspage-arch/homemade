@@ -31,7 +31,7 @@ Rules for this file: only items still to do; remove a line the moment it is done
 ## Parked to save credits
 - Yarn-fibre halo render option (chenille look matched to the pattern yarn).
 - fpdc/bpdc collars (branch claude/loom-look-pass-6; look regressed).
-- Shorter bear arms (round count), ball coil at macro.
+- Ball coil at macro. (Shorter bear arms: built on branch claude/loom-preset-polish, STITCH_ENGINE §8f-12, awaiting Rebecca's verdict on the render.)
 - Tapestry lane: the illustration must fill the frame; the routine skips that shelf until fixed.
 - Knitting: see project_knitting_state.md.
 - Cross-craft from the world-best audit: yarn/floss database, follow-along offline mode, accessibility, one-way contributions (maker photos, reviews, errata pages, feature suggestions, AI-screened), animated stitch diagrams, public errata.

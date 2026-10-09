@@ -148,6 +148,10 @@ const BEAR_NECK = [6, 12, 12, 6]
 const BEAR_MUZZLE = [6, 12, 12, 6]
 const BEAR_EAR = [6, 12, 12, 12, 6]
 const BEAR_LIMB = [6, 12, 12, 12, 12, 12, 10, 8, 6]
+/** Round 10: the arm is the limb tube two straight rounds shorter, so the paw
+ *  lands at mid-body instead of reading as a third and fourth foot. The legs
+ *  keep BEAR_LIMB. Same as the Studio `bear-M` preset's `bearArm`. */
+const BEAR_ARM = [6, 12, 12, 12, 10, 8, 6]
 
 const TAN = '#b5814e'
 const CREAM = '#e6d3ae'
@@ -212,9 +216,14 @@ function faceDir(f: 1 | -1, d: Dir): Dir {
  *  front — the shoulder slope, join at 0.75 of the body height. */
 const ARM_DIR_Z = 1.0
 const ARM_DIR_Y = 0.325
-/** Arm aim: tan 67° out of vertical in the side plane, tan 42° forward. */
-const ARM_AIM_Y = 0.3822
-const ARM_AIM_Z = -0.4245
+/** Round 3's arm aim was tan 67° out of vertical in the side plane, tan 42°
+ *  forward (y 0.3822, z -0.4245) — the pose the bunny, cat and dog presets
+ *  still carry. ROUND 10: on the shorter BEAR_ARM that aim lifts the paw
+ *  almost to the shoulder, so the arm comes back down to 50° off vertical and
+ *  the paw lands at mid-body — the Studio preset's BEAR_ARM_AIM_* (see
+ *  amigurumiPresets.ts for the measured numbers). */
+const BEAR_ARM_AIM_Y = 0.42
+const BEAR_ARM_AIM_Z = -0.9
 
 /** The shared bear. The knobs are the round-2 questions: how the head meets the
  *  body, how big the ears are, and how big/glossy the safety eyes are. */
@@ -240,7 +249,7 @@ function bear(opts: {
   // points (ARM_AIM_*). The paw pad on the end of each arm is placed along the
   // same aim vector, so it travels with the arm.
   const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_DIR_Y, z: ARM_DIR_Z })
-  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_AIM_Y, z: ARM_AIM_Z })
+  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: f * BEAR_ARM_AIM_Y, z: BEAR_ARM_AIM_Z })
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: f * 1, z: -0.05 })
   // The ear leans forward-and-up out of its join, so both ears clear the crown
   // and land in the silhouette from the three-quarter front.
@@ -296,14 +305,14 @@ function bear(opts: {
     // existed only to stop a straight-down arm's paw pad reaching below the
     // table, and this arm's lowest point is 12 mm clear of it (minz 0.00).
     {
-      name: 'arm-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
+      name: 'arm-l', stitch: 'sc', rounds: BEAR_ARM, colourHex: TAN, scale: 0.78,
       place: {
         on: 'body', dir: armDir(-1),
         aim: armAim(-1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
     {
-      name: 'arm-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
+      name: 'arm-r', stitch: 'sc', rounds: BEAR_ARM, colourHex: TAN, scale: 0.78,
       place: {
         on: 'body', dir: armDir(1),
         aim: armAim(1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',

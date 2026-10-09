@@ -2639,6 +2639,62 @@ HONEST RESIDUALS, for the orchestrator's verdict:
 
 ---
 
+## 8f-12. ROUND 10 — the bear's shorter arm, a chick base, and the bases wired end to end (2026-10-09)
+
+### The bear's arm, shortened (Rebecca: the arms read as feet, too long)
+
+Round 3 (§8e-2) logged the cause and named the cure: the arm+paw chain was 0.71
+of the body height where a real amigurumi bear's arm is nearer half, so the
+only pose that kept the paws off the feet held the arms out at 68° off
+vertical, and "closing the rest of that gap means a SHORTER ARM, not another
+placement number." This is that change, on the bear only.
+
+- **A `bearArm` profile per size**: the limb tube with its straight run cut —
+  S `tubeRounds(12, 1)` (was 12,3), M `tubeRounds(12, 2)` (was 12,4), L
+  `tubeRounds(12, 4)` (was 12,6). The M arm `6,12,12,12,10,8,6` is new to
+  `AUDITED_PROFILES` and audits clean standing alone (25.7 x 33.6 mm). The legs
+  keep the full limb.
+- **The pose comes back down.** On the shorter arm the round-3 aim lifts the
+  paw to 0.63 of the body height, nearly up at the shoulder (measured, bear-M).
+  So the bear's arm aim is now `(±1, 0.42, -0.9)` — 50° off vertical against
+  round 3's 68° — and the paw lands at mid-body. The bunny, cat and dog keep the
+  round-3 pose and their full-length limbs; their geometry is unchanged.
+- The `amigurumi-bear` proofs in `loom-composition-proofs.ts` carry the same
+  arm (`BEAR_ARM`) and pose, so the signed-off proof and the Studio's `bear-M`
+  stay the same bear.
+
+Measured on the settled geometry (paw pad centre as a fraction of the body
+height; all clean, all minz 0.00):
+
+| | paw pad z / body h | paw above foot pad | width |
+|---|---|---|---|
+| bear-S | 0.601 -> **0.462** | 7.6 mm (0.150) | 95 -> 75 mm |
+| bear-M | 0.626 -> **0.494** | **13.3 mm (0.221)** | 105 -> 85 mm |
+| bear-L | 0.621 -> **0.480** | 13.9 mm (0.182) | 140 -> 120 mm |
+| `amigurumi-bear` proof | 0.593 -> **0.472** | 10.0 mm (0.164) | |
+
+(The "before" column is round 3's geometry after §8f-10's sphere bodies; the
+0.493 recorded in §8e-2 was the pre-sphere body.) The quoted width drops 20 mm
+at every size because the across-the-arms extent was the widest dimension and
+the arms are now shorter and held closer in; heights are unchanged.
+
+**Hashes — bear family only moved.** Presets `bear-S` 2ca36985 -> **6938c75e**,
+`bear-M` 5cc60096 -> **7c83a4c8**, `bear-L` 76d62b3d -> **c9a7054a**; proofs
+`amigurumi-bear` 0db38d65 -> **420af0c5**, `-perch` 43bbddeb -> **88e358fb**,
+`-bigear` aad24ff0 -> **23d4da88**, `-plain` d39aef41 -> **af180a16**,
+`-mirror` 87921021 -> **459f031f**. Every other preset (ball, egg, bunny, cat,
+dog, bird at S/M/L) and proof (`amigurumi-ball` 2ff70d93, `-creature`
+c03d1014, `-cat`, `-dog`, `-bird`) is bit-identical, and all 36 dictionary
+swatch hashes are unmoved (`loom-geom-hash.ts` diffed either side).
+
+**A preset hash guard now exists.** `loom-preset-sizes.ts` writes
+`PRESET_GEOMETRY_HASH_GENERATED` beside the size tables and
+`amigurumi-presets.test.ts` fails on any preset whose fresh compile moves off
+it — so the next change can only move the presets it meant to, and the diff of
+the generated file says exactly which ones did.
+
+---
+
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
 
 The engine can build, render and word a pattern; §8g is the machinery that
