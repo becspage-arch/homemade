@@ -2639,6 +2639,168 @@ HONEST RESIDUALS, for the orchestrator's verdict:
 
 ---
 
+## 8f-12. ROUND 10 — the bear's shorter arm, a chick base, and the bases wired end to end (2026-10-09)
+
+### The bear's arm, shortened (Rebecca: the arms read as feet, too long)
+
+Round 3 (§8e-2) logged the cause and named the cure: the arm+paw chain was 0.71
+of the body height where a real amigurumi bear's arm is nearer half, so the
+only pose that kept the paws off the feet held the arms out at 68° off
+vertical, and "closing the rest of that gap means a SHORTER ARM, not another
+placement number." This is that change, on the bear only.
+
+- **A `bearArm` profile per size**: the limb tube with its straight run cut —
+  S `tubeRounds(12, 1)` (was 12,3), M `tubeRounds(12, 2)` (was 12,4), L
+  `tubeRounds(12, 4)` (was 12,6). The M arm `6,12,12,12,10,8,6` is new to
+  `AUDITED_PROFILES` and audits clean standing alone (25.7 x 33.6 mm). The legs
+  keep the full limb.
+- **The pose comes back down.** On the shorter arm the round-3 aim lifts the
+  paw to 0.63 of the body height, nearly up at the shoulder (measured, bear-M).
+  So the bear's arm aim is now `(±1, 0.42, -0.9)` — 50° off vertical against
+  round 3's 68° — and the paw lands at mid-body. The bunny, cat and dog keep the
+  round-3 pose and their full-length limbs; their geometry is unchanged.
+- The `amigurumi-bear` proofs in `loom-composition-proofs.ts` carry the same
+  arm (`BEAR_ARM`) and pose, so the signed-off proof and the Studio's `bear-M`
+  stay the same bear.
+
+Measured on the settled geometry (paw pad centre as a fraction of the body
+height; all clean, all minz 0.00):
+
+| | paw pad z / body h | paw above foot pad | width |
+|---|---|---|---|
+| bear-S | 0.601 -> **0.462** | 7.6 mm (0.150) | 95 -> 75 mm |
+| bear-M | 0.626 -> **0.494** | **13.3 mm (0.221)** | 105 -> 85 mm |
+| bear-L | 0.621 -> **0.480** | 13.9 mm (0.182) | 140 -> 120 mm |
+| `amigurumi-bear` proof | 0.593 -> **0.472** | 10.0 mm (0.164) | |
+
+(The "before" column is round 3's geometry after §8f-10's sphere bodies; the
+0.493 recorded in §8e-2 was the pre-sphere body.) The quoted width drops 20 mm
+at every size because the across-the-arms extent was the widest dimension and
+the arms are now shorter and held closer in; heights are unchanged.
+
+**Hashes — bear family only moved.** Presets `bear-S` 2ca36985 -> **6938c75e**,
+`bear-M` 5cc60096 -> **7c83a4c8**, `bear-L` 76d62b3d -> **c9a7054a**; proofs
+`amigurumi-bear` 0db38d65 -> **420af0c5**, `-perch` 43bbddeb -> **88e358fb**,
+`-bigear` aad24ff0 -> **23d4da88**, `-plain` d39aef41 -> **af180a16**,
+`-mirror` 87921021 -> **459f031f**. Every other preset (ball, egg, bunny, cat,
+dog, bird at S/M/L) and proof (`amigurumi-ball` 2ff70d93, `-creature`
+c03d1014, `-cat`, `-dog`, `-bird`) is bit-identical, and all 36 dictionary
+swatch hashes are unmoved (`loom-geom-hash.ts` diffed either side).
+
+**A preset hash guard now exists.** `loom-preset-sizes.ts` writes
+`PRESET_GEOMETRY_HASH_GENERATED` beside the size tables and
+`amigurumi-presets.test.ts` fails on any preset whose fresh compile moves off
+it — so the next change can only move the presets it meant to, and the diff of
+the generated file says exactly which ones did.
+
+### A CHICK base
+
+The bird (§8f-11) is an egg standing on its base with a small head: a robin,
+or a chick drawn tall. The backlog's chick ideas ("a tiny yellow chick", "a
+yellow ball with a folded orange beak") are the other shape — a round ball body
+and a big round head — so `chick` is its own base, built the bird's way:
+
+- body `sphereRounds` S 18 / M 24 / L 30 (all `+1`), head `sphereRounds` one
+  equator step smaller (S 12 / M 18 / L 24) sitting straight on the crown with
+  no neck (`CHICK_HEAD_OVERLAP` 3 / 4 / 5 mm), which is the big-headed
+  proportion that says chick;
+- the bird's pieces for the rest: the cone beak (`tubeRounds(12, 0)`, scale
+  0.30 / 0.38 / 0.46) in the second yarn, two small wings (`ballRounds(12, 2)`,
+  0.42 / 0.55 / 0.68) low on the flanks, two flat feet (`ballRounds(12, 1)`)
+  at the front, nudged forward and down by `CHICK_FOOT_OFFSET` (measured: each
+  foot 1–2.5 mm proud of the breast and on the table);
+- the feet are turned WITH the face (`faceDir`), unlike the bird's: on a round
+  body with the head straight above, feet on the body's own front rendered as
+  a pair off to one side of the beak (the first render showed it). Turned,
+  they sit under it.
+- no moulded nose and no paw pads (`nose: false`, `paws: false`), the eyes on
+  the head. Seven pieces; S 46.6 x 64.7, M 64.3 x 85.5, L 81.5 x 105.9 mm
+  settled, every size audit-clean and on the table.
+
+Hashes (new): `chick-S` **81066222**, `chick-M` **55ebb3e8** (= the new
+`amigurumi-chick` proof), `chick-L` **ee42d27c**. Every existing hash
+unchanged by this part.
+
+### Rendered (Fargate probe, base only)
+
+`bear-M` and `chick-M` presets, the production render script in the image,
+resY 1200, 150 samples, no Fal finish; two probe tasks, about $0.09 all in.
+Draft verdicts (Rebecca signs off; the PNGs and the full draft are in the
+project files under `crochet-preset-polish/`):
+
+- **Bear** — the cream paws now sit at the sides of the tummy, well above and
+  apart from the feet; nothing reads as a third and fourth foot. Residual: the
+  arms are short stubs held out from the sides rather than limbs lying along
+  the front, and in the body's own yarn only the paws separate them from it.
+  The next lever is a little more forward aim, not more length.
+- **Chick** — reads as a simple toy chick: big round head straight on a round
+  body, eyes, an orange beak between them, orange feet at the front.
+  Residuals: the beak is a blunt nub showing its closing hole (the bird's has
+  the same), the wings are small bumps in the body yarn, and head and body are
+  near enough in size to read snowman at a glance.
+
+### The bases, wired end to end
+
+Walked cat, dog, bird and chick through every layer that names a base:
+`AmigurumiBase` / `AMIGURUMI_BASES`, `crochet-design.ts`, the session's zod
+schema, the Studio's designer route, the designer panel (`CrochetAmigurumiDesignerPanel`,
+reached from `CrochetCreateYourOwnPanel` — it maps `AMIGURUMI_BASES`, so a new
+base appears with no panel change), the UK piece names (`compositionPattern.ts`:
+Wings, Feet, Beak, Head, Body) and the completeness gate. Two real gaps:
+
+- **The base list was hand-copied into two zod enums** (`crochet-session.ts`
+  and `api/studio/crochet/patterns/route.ts`), so a new base was silently
+  refused by both the routine and the Studio save. Both now derive from
+  `AMIGURUMI_BASE_IDS`, the one tuple the type is built from.
+- **A one-piece composition (the ball and egg bases) failed the completeness
+  gate**: it carried no chart, and the gate rightly demands one of every
+  single-piece pattern, so a ball or egg recipe on an amigurumi shelf would be
+  built, rendered and then culled. `compositionChart` charts it as the sphere it
+  is; the bulk `buildPatternRow` uses it.
+
+`crochet-amigurumi-bases.test.ts` walks one recipe per base through the session
+schema, `designToProgram`, the audit, the written pattern and the completeness
+gate. The backlog's honest-subject regex already matched chicks; its
+`AMIGURUMI_BASES` shape guard now expects the eight bases.
+
+## 8f-13. ROUND 11 — the bear as a classic teddy, the chick as one teardrop (2026-10-09)
+
+Rebecca on round 10: neither is customer-ready. Four probe rounds each
+(Fargate probe task, base renders only, Fal $0), judged against the cotton
+amigurumi panda reference and the QUALITY-BAR images.
+
+**Bear** (`bear-S/M/L` hashes move):
+- `bearHead` (sphereRounds 24/30/36, one plateau) — the head as wide as the
+  body, the teddy proportion; sunk 5 mm onto the neck so no pinch shows.
+- Arms sewn on the side of the shoulder, a little forward
+  (`BEAR_ARM_DIR` 1, 0.3, 0.75), aimed forward-down (`BEAR_ARM_AIM`
+  0.1, 1, -0.6), scale 0.9: on bear-M the paw lies on the front of the tummy
+  at 0.5 of the body height, above the thighs. Steeper aims (z -1) dropped the
+  paws onto the hips; the round-10 front-of-shoulder sewing buried the arm in
+  the body.
+- Muzzle scale 1.15, a little lower; magic ring outward (`poleIn: false`) on
+  the muzzle and paw pads so no fasten-off hole shows. Ears further up onto the
+  crown (x 0.72). Eyes lower and wider, nose a broad 2.6 mm oval (props only).
+
+**Chick** (`chick-S/M/L` move) and **bird** (`bird-S/M/L` move, deliberately):
+- `CONE_ROUNDS` 4-5-6-7-8-4, a tip-first cone with the magic ring as the point
+  (`poleIn: false`) — the shared beak for both birds, so the bird hash moves.
+  6-8-10-12-6 rendered as a nub; 6-7-8-9-10-6 still read blunt.
+- Body 30 / head 18 at M (head 0.6 of the body), sunk 9 mm: one teardrop.
+- `chickWing` teardrop wings (tapered tube) high on the flanks, turned with
+  the face so the pair is square to the beak (round 10's were in world frame,
+  so one hid behind the body). `chickTuft` cord on the crown, leaning forward.
+- Feet toed out (aim x ±0.55), magic ring outward.
+
+**What the engine cannot reach** (the bar's remaining distance, not geometry):
+the yarn renders as a crisp plied rope with open gaps between stitches where
+the bar is chenille or soft cotton with tight stitches (a render-material
+change, which means an image rebuild); the face has no embroidered features
+(closed eyes, lashes, blush, mouth); and the base render is a white studio
+shot, not a styled scene (that is the Fal finish, out of scope at $0).
+
+---
+
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
 
 The engine can build, render and word a pattern; §8g is the machinery that

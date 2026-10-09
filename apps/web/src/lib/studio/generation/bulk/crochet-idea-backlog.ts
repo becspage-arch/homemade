@@ -48,14 +48,15 @@
  * A THIRD, FINER-GRAINED CASE (6 September 2026, evening): on the four
  * amigurumi-treatment shelves (amigurumi, animal-toy, doll, baby-toy-lovey),
  * "the shelf is buildable" is not the same question as "this idea is
- * buildable" — the amigurumi engine only builds FOUR bodies today (ball, egg,
- * bear, bunny; `AMIGURUMI_BASES` in `loom/crochet/engine/amigurumiPresets.ts`),
+ * buildable" — the amigurumi engine only builds the bodies in `AMIGURUMI_BASES`
+ * (`loom/crochet/engine/amigurumiPresets.ts`: ball, egg, bear, bunny, and since
+ * §8f-11 cat, dog and bird, and since round 10 chick),
  * so a brief for an otter or a border collie has nowhere honest to land even
  * though its shelf has a working treatment. `isHonestAmigurumiSubject` below
  * is the per-idea gate: an amigurumi-treatment row on one of these shelves is
- * `buildable: true` only when its motif IS one of those four bodies (any bear
- * species, any rabbit/hare, a plain ball or egg, or a named colour/pattern
- * variant of one) — everything else keeps its treatment (informational: this
+ * `buildable: true` only when its motif IS one of those bodies (any bear
+ * species, any rabbit/hare, a plain ball or egg, a cat, a dog, a bird or chick,
+ * or a named colour/pattern variant of one) — everything else keeps its treatment (informational: this
  * is what it WOULD build as, once the engine grows more bases) but is
  * `buildable: false`, so `nextBuildableIdeas` never hands the routine a shape
  * the loom cannot honestly render. A `baby-toy-lovey` row on the `sphere`
@@ -98,7 +99,7 @@ export interface CrochetIdea {
   /** Normalised key, by the same rule as the publish guard's subject key. */
   dedupeKey: string
   /** Can the loom build it today? Shelf-buildable AND, on the four
-   *  amigurumi-treatment shelves, honestly one of the four bodies the engine
+   *  amigurumi-treatment shelves, honestly one of the bodies the engine
    *  actually builds — see `isHonestAmigurumiSubject`. `treatment` can still
    *  be set when this is false (informational: what it would build as). */
   buildable: boolean
@@ -264,11 +265,11 @@ function pad(n: number): string {
  * treatments) is 'amigurumi' — the shaped-figure builder that only knows how
  * to lay out a bear body or a bunny body (`amigurumiFromDesign` in
  * `crochet-design.ts`). Belt and braces: fails loudly if the engine ever
- * grows a base beyond the seven this file was written against, so the regex
+ * grows a base beyond the eight this file was written against, so the regex
  * below gets revisited rather than silently under- or over-matching.
  */
 const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', 'doll', 'baby-toy-lovey'])
-if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,dog,egg') {
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,chick,dog,egg') {
   throw new Error(
     'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
   )
@@ -291,7 +292,7 @@ const HONEST_AMIGURUMI_BASE_RE =
  */
 const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
 
-/** True when `motif` is honestly one of the seven bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird). */
+/** True when `motif` is honestly one of the eight bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick). */
 export function isHonestAmigurumiSubject(motif: string): boolean {
   return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
 }
@@ -317,7 +318,7 @@ function buildIdeas(shelf: string, rows: Row[]): CrochetIdea[] {
       ...(sourceSlug ? { source: { kind: 'draft-tutorial' as const, slug: sourceSlug } } : {}),
       brief: buildable
         ? `${motif}: ${hook}. ${colourway} palette, built as ${treatment}${envelope ? ` (${envelope.note.replace(/\.$/, '')})` : ''}.`
-        : `${motif}: ${hook}. ${colourway} palette. Needs a body beyond the four the amigurumi engine builds today (ball, egg, bear, bunny), so not buildable yet.`,
+        : `${motif}: ${hook}. ${colourway} palette. Needs a body beyond the ones the amigurumi engine builds today (${AMIGURUMI_BASES.map((b) => b.id).join(', ')}), so not buildable yet.`,
     }
   })
 }

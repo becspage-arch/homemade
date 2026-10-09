@@ -60,8 +60,9 @@ for (const idea of CROCHET_IDEA_BACKLOG) {
 
 // 3. A buildable idea names a treatment inside its shelf's envelope, and sits
 //    on a shelf the loom actually agrees it can build. On the four
-//    amigurumi-treatment shelves, it must also be an honest bear/bunny/
-//    ball/egg subject — the shelf having a treatment is not enough.
+//    amigurumi-treatment shelves, it must also honestly be one of the bases
+//    the engine builds (AMIGURUMI_BASES: ball, egg, bear, bunny, cat, dog, bird,
+//    chick) — the shelf having a treatment is not enough.
 for (const idea of CROCHET_BUILDABLE_IDEAS) {
   if (!shelfIsBuildable(idea.shelf)) {
     fail(`${idea.id} is marked buildable but ${idea.shelf} has no loom envelope`)
@@ -82,13 +83,13 @@ for (const idea of CROCHET_BUILDABLE_IDEAS) {
     idea.treatment === 'amigurumi' &&
     !isHonestAmigurumiSubject(idea.motif)
   ) {
-    fail(`${idea.id} is buildable amigurumi but "${idea.motif}" is not a bear/bunny/ball/egg`)
+    fail(`${idea.id} is buildable amigurumi but "${idea.motif}" is not one of the amigurumi bases`)
   }
 }
 
 // 4. A theme carries no treatment and sits on a shelf the loom cannot build —
 //    UNLESS it is one of the amigurumi-family shelves, where a theme can also
-//    be an idea-level "not one of the four bases" flag on an otherwise
+//    be an idea-level "not one of the bases" flag on an otherwise
 //    buildable shelf. There the treatment may stay set (informational) but
 //    must still be a real treatment for that shelf, and the subject must
 //    genuinely fail the honesty test (never a theme just because someone
@@ -99,7 +100,7 @@ for (const idea of CROCHET_IDEA_THEMES) {
       fail(`${idea.id} theme names a treatment "${idea.treatment}" outside the ${idea.shelf} envelope`)
     }
     if (idea.treatment === 'amigurumi' && isHonestAmigurumiSubject(idea.motif)) {
-      fail(`${idea.id} is a theme but "${idea.motif}" IS a bear/bunny/ball/egg — should be buildable`)
+      fail(`${idea.id} is a theme but "${idea.motif}" IS one of the amigurumi bases, so it should be buildable`)
     }
     continue
   }

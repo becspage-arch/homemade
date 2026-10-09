@@ -13,7 +13,9 @@
  * fails the build if either table drifts more than 10% from what is here, so
  * a re-cut round builder can never leave the Studio quoting a stale number.
  *
- * Two tables, because they serve two different callers:
+ * Two size tables, because they serve two different callers (plus the
+ * presets' geometry hashes, the guard that a change moved only what it meant
+ * to):
  *   - `PROFILE_SIZE_MM_GENERATED` — one PIECE built alone on the ground, keyed
  *     by its round-count profile. The designer's live schematic
  *     (`CrochetAmigurumiDesignerPanel`) reads this per part so it can lay out
@@ -73,6 +75,7 @@ function main(): void {
 
   console.log('\nMeasuring every full designer preset (every part assembled)...')
   const presetSizes: Record<string, { width: number; height: number }> = {}
+  const presetHashes: Record<string, string> = {}
   const minzBySize: Record<string, number> = {}
   for (const choices of allPresetChoices()) {
     const program = buildAmigurumiProgram(choices)
@@ -86,6 +89,7 @@ function main(): void {
     // a real pattern's finished-size line does.
     presetSizes[key] = { width: roundTo(s.width, 5), height: roundTo(s.height, 5) }
     minzBySize[key] = Math.round(s.minz * 100) / 100
+    presetHashes[key] = compiled.geometryHash.slice(0, 8)
     console.log(
       `  ${key.padEnd(10)} ${presetSizes[key]!.width} x ${presetSizes[key]!.height} mm` +
       `  (settled ${s.width.toFixed(1)} x ${s.height.toFixed(1)}, minz ${minzBySize[key]!.toFixed(2)})`,
@@ -120,6 +124,13 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
 /** The whole finished piece's settled size (rounded to the nearest 5 mm, the
  *  way a pattern's finished-size line is), by \`\${base}-\${size}\`. */
 export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; height: number }> = ${JSON.stringify(presetSizes, null, 2)}
+
+/** The settled GEOMETRY HASH of every preset (first 8 hex of
+ *  \`compileComposition(...).geometryHash\`), by \`\${base}-\${size}\`. The hash
+ *  guard: \`amigurumi-presets.test.ts\` fails if a fresh compile moves any of
+ *  these, so a change can only move the presets it meant to — and every one
+ *  that moves needs a fresh look against its reference before it ships. */
+export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = ${JSON.stringify(presetHashes, null, 2)}
 `
   writeFileSync(OUT_FILE, file)
   console.log(`\nWrote ${path.relative(process.cwd(), OUT_FILE)}`)

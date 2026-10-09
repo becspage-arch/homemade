@@ -74,6 +74,10 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 26.8,
     "height": 54.8
   },
+  "6,12,12,12,10,8,6": {
+    "width": 25.7,
+    "height": 33.6
+  },
   "6,12,10,8,6": {
     "width": 23.7,
     "height": 24.7
@@ -81,6 +85,10 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,12,12,10,8,6": {
     "width": 24.9,
     "height": 28.3
+  },
+  "4,5,6,7,8,4": {
+    "width": 16.6,
+    "height": 32.1
   },
   "6,6,6,6,6": {
     "width": 14,
@@ -120,16 +128,16 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 70
   },
   "bear-S": {
-    "width": 95,
-    "height": 105
+    "width": 60,
+    "height": 115
   },
   "bear-M": {
-    "width": 105,
-    "height": 125
+    "width": 65,
+    "height": 135
   },
   "bear-L": {
-    "width": 140,
-    "height": 160
+    "width": 80,
+    "height": 175
   },
   "bunny-S": {
     "width": 95,
@@ -178,5 +186,49 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
   "bird-L": {
     "width": 80,
     "height": 110
+  },
+  "chick-S": {
+    "width": 40,
+    "height": 65
+  },
+  "chick-M": {
+    "width": 70,
+    "height": 95
+  },
+  "chick-L": {
+    "width": 85,
+    "height": 125
   }
+}
+
+/** The settled GEOMETRY HASH of every preset (first 8 hex of
+ *  `compileComposition(...).geometryHash`), by `${base}-${size}`. The hash
+ *  guard: `amigurumi-presets.test.ts` fails if a fresh compile moves any of
+ *  these, so a change can only move the presets it meant to — and every one
+ *  that moves needs a fresh look against its reference before it ships. */
+export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
+  "ball-S": "5867862c",
+  "ball-M": "532617ca",
+  "ball-L": "b7819654",
+  "egg-S": "b66b1897",
+  "egg-M": "257908e7",
+  "egg-L": "3f11a2c3",
+  "bear-S": "1389b8b3",
+  "bear-M": "f11f766f",
+  "bear-L": "d43d3fb1",
+  "bunny-S": "66ccb78a",
+  "bunny-M": "3ad55da3",
+  "bunny-L": "cf20b836",
+  "cat-S": "393281f6",
+  "cat-M": "bdb741b0",
+  "cat-L": "5f10b0c8",
+  "dog-S": "1228be29",
+  "dog-M": "f60359f1",
+  "dog-L": "1b0a6e40",
+  "bird-S": "cbee1191",
+  "bird-M": "d2153790",
+  "bird-L": "3513694e",
+  "chick-S": "668859c3",
+  "chick-M": "5f5cfd5d",
+  "chick-L": "3c80a36c"
 }

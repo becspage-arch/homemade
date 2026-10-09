@@ -85,19 +85,19 @@ test('a buildable idea names a treatment inside its shelf envelope', () => {
   }
 })
 
-test('a buildable amigurumi-family idea is honestly a bear, bunny, ball or egg', () => {
+test('a buildable amigurumi-family idea is honestly one of the amigurumi bases', () => {
   for (const idea of CROCHET_BUILDABLE_IDEAS) {
     if (!AMIGURUMI_BASE_SHELVES.has(idea.shelf) || idea.treatment !== 'amigurumi') continue
-    assert.ok(isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" is not one of the four bases`)
+    assert.ok(isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" is not one of the amigurumi bases`)
   }
 })
 
-test('a theme carries no treatment and no engine lane — except an amigurumi-family idea flagged not one of the four bases, which may keep its treatment', () => {
+test('a theme carries no treatment and no engine lane — except an amigurumi-family idea flagged not one of the bases, which may keep its treatment', () => {
   for (const idea of CROCHET_IDEA_THEMES) {
     if (AMIGURUMI_BASE_SHELVES.has(idea.shelf)) {
       if (idea.treatment) assert.ok(envelopeFor(idea.shelf, idea.treatment), `${idea.id}: treatment outside envelope`)
       if (idea.treatment === 'amigurumi') {
-        assert.ok(!isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" IS one of the four bases`)
+        assert.ok(!isHonestAmigurumiSubject(idea.motif), `${idea.id}: "${idea.motif}" IS one of the amigurumi bases`)
       }
       continue
     }

@@ -143,11 +143,16 @@ const amigurumiCreature: CompositionProgram = {
 // muzzle, neck and ear stay on the old profile — measured, a 4–5-round piece
 // does not dome on any counts, and a spherical ear is the wrong shape anyway.
 const BEAR_BODY = sphereRounds(30, 1)
-const BEAR_HEAD = sphereRounds(24, 1)
+// Round 11: the head as wide as the body (the Studio `bear-M`'s `bearHead`).
+const BEAR_HEAD = sphereRounds(30, 1)
 const BEAR_NECK = [6, 12, 12, 6]
 const BEAR_MUZZLE = [6, 12, 12, 6]
 const BEAR_EAR = [6, 12, 12, 12, 6]
 const BEAR_LIMB = [6, 12, 12, 12, 12, 12, 10, 8, 6]
+/** Round 10: the arm is the limb tube two straight rounds shorter, so the paw
+ *  lands at mid-body instead of reading as a third and fourth foot. The legs
+ *  keep BEAR_LIMB. Same as the Studio `bear-M` preset's `bearArm`. */
+const BEAR_ARM = [6, 12, 12, 12, 10, 8, 6]
 
 const TAN = '#b5814e'
 const CREAM = '#e6d3ae'
@@ -208,13 +213,16 @@ function faceDir(f: 1 | -1, d: Dir): Dir {
  * gap properly means a shorter arm (a `scale`/round-count change), not a
  * placement change.
  */
-/** Arm attach direction on the body ellipsoid: 45° elevation, 18° toward the
- *  front — the shoulder slope, join at 0.75 of the body height. */
-const ARM_DIR_Z = 1.0
-const ARM_DIR_Y = 0.325
-/** Arm aim: tan 67° out of vertical in the side plane, tan 42° forward. */
-const ARM_AIM_Y = 0.3822
-const ARM_AIM_Z = -0.4245
+/** Round 3 sewed the arm on at 45° elevation, 18° toward the front (dir
+ *  y 0.325, z 1.0) and aimed it tan 67° out, tan 42° forward (y 0.3822,
+ *  z -0.4245) — the pose the bunny, cat and dog presets still carry. Round 10
+ *  shortened the arm (BEAR_ARM) and brought it down to 50° off vertical; it
+ *  still read as a stub sticking out of the side. */
+/** ROUND 11: the arm sewn on the side of the shoulder, a little forward, and
+ *  hung forward-down so the paw rests on the front of the tummy at mid-body;
+ *  a chunkier arm (scale 0.9) so it reads — the preset's BEAR_ARM_DIR / _AIM. */
+const BEAR_ARM_DIR = { x: 1, y: 0.3, z: 0.75 }
+const BEAR_ARM_AIM = { x: 0.1, y: 1, z: -0.6 }
 
 /** The shared bear. The knobs are the round-2 questions: how the head meets the
  *  body, how big the ears are, and how big/glossy the safety eyes are. */
@@ -236,11 +244,11 @@ function bear(opts: {
   notes: string
 }): CompositionProgram {
   const f = opts.facing
-  // ROUND 3 — WHERE the arm is sewn (see ARM_DIR_Z above) and WHICH WAY it then
-  // points (ARM_AIM_*). The paw pad on the end of each arm is placed along the
+  // ROUND 11 — WHERE the arm is sewn (BEAR_ARM_DIR) and WHICH WAY it then
+  // points (BEAR_ARM_AIM). The paw pad on the end of each arm is placed along the
   // same aim vector, so it travels with the arm.
-  const armDir = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_DIR_Y, z: ARM_DIR_Z })
-  const armAim = (side: -1 | 1): Dir => ({ x: side * 1, y: f * ARM_AIM_Y, z: ARM_AIM_Z })
+  const armDir = (side: -1 | 1): Dir => ({ x: side * BEAR_ARM_DIR.x, y: f * BEAR_ARM_DIR.y, z: BEAR_ARM_DIR.z })
+  const armAim = (side: -1 | 1): Dir => ({ x: side * BEAR_ARM_AIM.x, y: f * BEAR_ARM_AIM.y, z: BEAR_ARM_AIM.z })
   const legAim = (side: -1 | 1): Dir => ({ x: side * 0.26, y: f * 1, z: -0.05 })
   // The ear leans forward-and-up out of its join, so both ears clear the crown
   // and land in the silhouette from the three-quarter front.
@@ -258,7 +266,7 @@ function bear(opts: {
     })
     parts.push({
       name: 'head', stitch: 'sc', rounds: BEAR_HEAD, colourHex: TAN,
-      place: { on: 'neck', overlap: mm(2), offset: { y: mm(f * 1) } },
+      place: { on: 'neck', overlap: mm(5), offset: { y: mm(f * 1) } },
     })
   } else {
     // No neck piece: the head is perched on the body's crown with a shallow
@@ -271,22 +279,22 @@ function bear(opts: {
   parts.push(
     // The muzzle: a cream pad on the FRONT of the face, tipped slightly down.
     {
-      name: 'muzzle', stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.85,
-      place: { on: 'head', dir: faceDir(f, { x: 0, y: f * 1, z: -0.22 }), seat: mm(3), poleIn: true, surfaceFit: 'ellipsoid' },
+      name: 'muzzle', stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 1.15,
+      place: { on: 'head', dir: faceDir(f, { x: 0, y: f * 1, z: -0.32 }), seat: mm(3), poleIn: false, surfaceFit: 'ellipsoid' },
     },
     // Ears: high on the SIDES of the crown, leaning forward, seated only 3.5 mm
     // so most of each ear stands off the head. Ring pole buried in the join.
     {
       name: 'ear-l', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
       place: {
-        on: 'head', dir: faceDir(f, { x: -0.95, y: f * 0.18, z: 0.95 }), aim: earAim(-1),
+        on: 'head', dir: faceDir(f, { x: -0.72, y: f * 0.12, z: 1 }), aim: earAim(-1),
         seat: mm(3.5), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
     {
       name: 'ear-r', stitch: 'sc', rounds: BEAR_EAR, colourHex: TAN, scale: opts.earScale,
       place: {
-        on: 'head', dir: faceDir(f, { x: 0.95, y: f * 0.18, z: 0.95 }), aim: earAim(1),
+        on: 'head', dir: faceDir(f, { x: 0.72, y: f * 0.12, z: 1 }), aim: earAim(1),
         seat: mm(3.5), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
@@ -296,14 +304,14 @@ function bear(opts: {
     // existed only to stop a straight-down arm's paw pad reaching below the
     // table, and this arm's lowest point is 12 mm clear of it (minz 0.00).
     {
-      name: 'arm-l', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
+      name: 'arm-l', stitch: 'sc', rounds: BEAR_ARM, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: armDir(-1),
         aim: armAim(-1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
       },
     },
     {
-      name: 'arm-r', stitch: 'sc', rounds: BEAR_LIMB, colourHex: TAN, scale: 0.78,
+      name: 'arm-r', stitch: 'sc', rounds: BEAR_ARM, colourHex: TAN, scale: 0.9,
       place: {
         on: 'body', dir: armDir(1),
         aim: armAim(1), seat: mm(6), poleIn: true, surfaceFit: 'ellipsoid',
@@ -334,7 +342,7 @@ function bear(opts: {
     // the limbs merged into the body, so they earn their place.
     const paw = (name: string, on: string, dir: Dir): CompositionProgram['parts'][number] => ({
       name, stitch: 'sc', rounds: BEAR_MUZZLE, colourHex: CREAM, scale: 0.62,
-      place: { on, dir, seat: mm(3), poleIn: true, surfaceFit: 'ellipsoid' },
+      place: { on, dir, seat: mm(3), poleIn: false, surfaceFit: 'ellipsoid' },
     })
     parts.push(
       paw('paw-al', 'arm-l', armAim(-1)),
@@ -371,11 +379,11 @@ function bear(opts: {
       // which is exactly where a real safety eye's dome sits once the shank is
       // pushed through the fabric.
       {
-        name: 'eye-l', on: 'head', dir: faceDir(f, { x: -0.62, y: f * 1, z: 0.42 }),
+        name: 'eye-l', on: 'head', dir: faceDir(f, { x: -0.72, y: f * 1, z: 0.16 }),
         radiusMm: mm(opts.eyeRadiusMm), seat: -mm(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
       },
       {
-        name: 'eye-r', on: 'head', dir: faceDir(f, { x: 0.62, y: f * 1, z: 0.42 }),
+        name: 'eye-r', on: 'head', dir: faceDir(f, { x: 0.72, y: f * 1, z: 0.16 }),
         radiusMm: mm(opts.eyeRadiusMm), seat: -mm(opts.eyeRadiusMm + 0.2), colourHex: EYE, gloss: opts.eyeGloss,
       },
       // The nose: small, near-black, satin rather than wet-look, sitting on the
@@ -384,7 +392,7 @@ function bear(opts: {
       // list offers instead.
       {
         name: 'nose', on: 'muzzle', dir: faceDir(f, { x: 0, y: f * 1, z: 0.42 }),
-        radiusMm: mm(1.9), seat: -mm(1.8), flatten: 0.65, widen: 1.4, colourHex: NOSE, gloss: 0.4,
+        radiusMm: mm(2.6), seat: -mm(2.4), flatten: 0.65, widen: 1.4, colourHex: NOSE, gloss: 0.4,
       },
     ],
     gaugeText: 'sc worked in the round, each piece stuffed firm and sewn on',
@@ -487,11 +495,15 @@ const amigurumiCat = presetProof('cat', 'M', '#8d8b86', '#e6d3ae', 9)
 const amigurumiDog = presetProof('dog', 'M', '#c0965f', '#efe3cd', 9)
 /** A yellow chick with an orange beak and feet. */
 const amigurumiBird = presetProof('bird', 'M', '#e9c95c', '#d9822b', 9)
+/** Round 10: the chick, a ball body with a big round head, in the same yellow
+ *  and orange so it can be judged beside the bird. */
+const amigurumiChick = presetProof('chick', 'M', '#e9c95c', '#d9822b', 9)
 
 export const COMPOSITION_PROOFS: Record<string, CompositionProgram> = {
   'amigurumi-cat': amigurumiCat,
   'amigurumi-dog': amigurumiDog,
   'amigurumi-bird': amigurumiBird,
+  'amigurumi-chick': amigurumiChick,
   'amigurumi-ball': amigurumiBall,
   'amigurumi-creature': amigurumiCreature,
   'amigurumi-bear': amigurumiBear,
