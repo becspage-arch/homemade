@@ -76,6 +76,15 @@ export interface FormEnvelope {
   yarnWeight: 'dk' | 'worsted' | 'aran'
   /** A one-line description of the object, for the planner prompt. */
   note: string
+  /**
+   * Set (to the reason, in plain words) to take this envelope out of the
+   * autopilot's hands for now. A paused envelope is still BUILDABLE — the
+   * backlog keeps counting its ideas, `shelfIsBuildable` still says yes and a
+   * hand-run proof can still build it — but the `context` stage hands out no
+   * quota for it, and a shelf whose every envelope is paused gets no briefs at
+   * all. Unpausing is deleting the line, once the reason is resolved.
+   */
+  paused?: string
 }
 
 /**
@@ -233,6 +242,11 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A tapestry-crochet picture panel to hang, the colour changing stitch by stitch.',
+      // Rebecca, 7 September 2026: the routine skips this shelf until the
+      // tapestry reopen proof (flat poster motifs, fill the frame, legible at
+      // thumbnail size) has her sign-off. Do not remove without it.
+      paused:
+        'Tapestry reopen: wall-hanging pictures left dead borders and read poorly at thumbnail size; paused until Rebecca signs off the flat-motif proof.',
     },
   ],
   ornament: [
@@ -297,6 +311,36 @@ export const CROCHET_BUILDABLE_SHELF_SLUGS: string[] = Object.keys(CROCHET_FORMS
 /** Can the loom build anything at all for this shelf today? */
 export function shelfIsBuildable(slug: string): boolean {
   return (CROCHET_FORMS[slug]?.length ?? 0) > 0
+}
+
+/**
+ * Why the autopilot is not filling this shelf right now, or null when it is.
+ * A shelf is paused only when EVERY envelope it has is paused; a shelf with
+ * one live envelope still gets quota, and the paused envelopes simply drop out
+ * of what the session is offered (`activeEnvelopesForShelf`).
+ */
+export function shelfPausedReason(slug: string): string | null {
+  const envelopes = envelopesForShelf(slug)
+  if (!envelopes.length || envelopes.some((e) => !e.paused)) return null
+  return envelopes[0]!.paused!
+}
+
+/** The buildable shelves the autopilot may hand quota to today. */
+export function activeCrochetShelfSlugs(): string[] {
+  return CROCHET_BUILDABLE_SHELF_SLUGS.filter((slug) => shelfPausedReason(slug) === null)
+}
+
+/** Every paused shelf with its reason, for the plan context to state openly. */
+export function pausedCrochetShelves(): { slug: string; reason: string }[] {
+  return CROCHET_BUILDABLE_SHELF_SLUGS.flatMap((slug) => {
+    const reason = shelfPausedReason(slug)
+    return reason ? [{ slug, reason }] : []
+  })
+}
+
+/** A shelf's envelopes minus the paused ones — what a session may plan in. */
+export function activeEnvelopesForShelf(slug: string): FormEnvelope[] {
+  return envelopesForShelf(slug).filter((e) => !e.paused)
 }
 
 /** The envelopes a shelf may be built in, or an empty list. */

@@ -244,6 +244,11 @@ async function stageContext(args: Args): Promise<void> {
   console.log(
     `Shelf quota: ${payload.shelfQuota.map((q) => `${q.slug} x${q.briefs} (${q.published}/${q.target})`).join(', ')}`,
   )
+  if (payload.pausedShelves.length) {
+    console.log(
+      `Paused (no quota, still buildable): ${payload.pausedShelves.map((p) => `${p.slug} — ${p.reason}`).join('; ')}`,
+    )
+  }
   console.log(`Avoid list: ${payload.avoidSubjectKeys.length} subject keys already in the catalogue`)
   console.log(
     `Backlog: ${payload.backlog.remaining} buildable ideas still queued; ${payload.backlog.next.length} offered as the head of the queue`,

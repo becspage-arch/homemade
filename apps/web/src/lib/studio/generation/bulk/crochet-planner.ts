@@ -11,7 +11,10 @@ import { CROCHET_SHELF_BY_SLUG, type ShelfTarget } from '../categories'
 import { shelfDeficits, allocateShelves, capShelfBriefs, shelfSlots } from './shelf-plan'
 import {
   CROCHET_BUILDABLE_SHELF_SLUGS,
-  envelopesForShelf,
+  activeCrochetShelfSlugs,
+  activeEnvelopesForShelf,
+  pausedCrochetShelves,
+  shelfPausedReason,
   treatmentsForShelf,
   BULK_CROCHET_MAX_CELLS,
   type CrochetTreatment,
@@ -78,12 +81,21 @@ export const CROCHET_LANE_SHELVES: ShelfTarget[] = CROCHET_BUILDABLE_SHELF_SLUGS
 /**
  * The shelf quota for one batch: every buildable shelf weighted by its gap to
  * target, then capped so one shelf cannot take the whole batch.
+ *
+ * A PAUSED shelf (`paused` on every one of its envelopes in `crochet-forms.ts`)
+ * gets no quota: it is still buildable and its backlog still counts, but the
+ * routine is not to fill it until the reason is resolved. Its share of the
+ * batch goes to the live shelves instead.
  */
 export function crochetShelfPlan(
   counts: Record<string, number>,
   count: number,
 ): { slots: string[]; quota: { slug: string; name: string; briefs: number; deficit: number }[] } {
-  const deficits = shelfDeficits(CROCHET_LANE_SHELVES, counts)
+  const active = new Set(activeCrochetShelfSlugs())
+  const deficits = shelfDeficits(
+    CROCHET_LANE_SHELVES.filter((s) => active.has(s.slug)),
+    counts,
+  )
   const alloc = capShelfBriefs(allocateShelves(deficits, count), count)
   return {
     slots: shelfSlots(alloc),
@@ -119,6 +131,12 @@ export interface CrochetPlanContextPayload {
       staging: string
     }[]
   }[]
+  /**
+   * Buildable shelves the routine is told to leave alone for now, with the
+   * reason. They get no quota and no backlog offers; the backlog still counts
+   * their ideas in `remaining`.
+   */
+  pausedShelves: { slug: string; reason: string }[]
   /** Every subject key already in the public catalogue. Nothing may repeat one. */
   avoidSubjectKeys: string[]
   /** The shared design-direction axes a brief is dressed from. */
@@ -207,7 +225,11 @@ export function crochetPlanContextPayload(input: {
   const isTaken = (idea: CrochetIdea): boolean =>
     findSubjectKeyMatch(subjectKey(idea.motif), taken) !== null
 
-  const next = nextBuildableIdeas(input.batchSize, taken)
+  // The head of the queue skips paused shelves, so the session is never offered
+  // an idea it has been told not to commission.
+  const next = nextBuildableIdeas(Number.MAX_SAFE_INTEGER, taken)
+    .filter((i) => shelfPausedReason(i.shelf) === null)
+    .slice(0, input.batchSize)
   const byShelf = plan.quota.map((q) => {
     const queue = ideasForShelf(q.slug).filter((i) => i.buildable && !isTaken(i))
     return {
@@ -226,10 +248,10 @@ export function crochetPlanContextPayload(input: {
       published: input.counts[q.slug] ?? 0,
       target: CROCHET_SHELF_BY_SLUG[q.slug]?.target ?? 0,
     })),
-    buildableShelves: (quotaSlugs.length ? quotaSlugs : CROCHET_BUILDABLE_SHELF_SLUGS).map((slug) => ({
+    buildableShelves: (quotaSlugs.length ? quotaSlugs : activeCrochetShelfSlugs()).map((slug) => ({
       slug,
       name: CROCHET_SHELF_BY_SLUG[slug]?.name ?? slug,
-      treatments: envelopesForShelf(slug).map((e) => ({
+      treatments: activeEnvelopesForShelf(slug).map((e) => ({
         treatment: e.treatment,
         note: e.note,
         ...(e.cols ? { cols: e.cols } : {}),
@@ -239,6 +261,7 @@ export function crochetPlanContextPayload(input: {
         staging: e.staging,
       })),
     })),
+    pausedShelves: pausedCrochetShelves(),
     avoidSubjectKeys: input.avoidSubjectKeys,
     axes: {
       looks: LOOKS.map((l) => ({ slug: l.slug, name: l.name, vibe: l.vibe })),
