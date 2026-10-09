@@ -38,6 +38,7 @@ import {
 } from './faceEmbroidery'
 
 export { sphereRounds }
+export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
 
 /**
  * A ball: climbs in sixes to the equator, holds, comes back down in sixes.
@@ -1031,8 +1032,8 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
 const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushElev: number; blushAz: number; pinkNose: boolean; eyeHalfSt: number }> = {
   ball: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
   egg: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
-  bunny: { eyeElev: 7, eyeAz: 38, blushElev: -9, blushAz: 50, pinkNose: true, eyeHalfSt: 0.8 },
-  bear: { eyeElev: 7, eyeAz: 33, blushElev: -12, blushAz: 47, pinkNose: false, eyeHalfSt: 0.95 },
+  bunny: { eyeElev: 6, eyeAz: 31, blushElev: -11, blushAz: 40, pinkNose: true, eyeHalfSt: 0.8 },
+  bear: { eyeElev: 6, eyeAz: 29, blushElev: -13, blushAz: 41, pinkNose: false, eyeHalfSt: 0.95 },
   cat: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: true, eyeHalfSt: 0.8 },
   dog: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: false, eyeHalfSt: 0.8 },
   bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },

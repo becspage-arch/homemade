@@ -27,6 +27,7 @@ import { compileRelaxAudit, settledSizeMm, geometryHash } from '@/lib/loom/croch
 import { compileComposition, type CompositionProgram } from '@/lib/loom/crochet/engine/composition'
 import {
   AMIGURUMI_BASE_IDS,
+  FACE_STYLE_IDS,
   buildAmigurumiProgram,
   isAuditedProfile,
   presetSettledSizeMm,
@@ -54,6 +55,7 @@ const Choices = z.object({
   eyeMm: z.number().int().min(0).max(20),
   nose: z.boolean(),
   paws: z.boolean(),
+  face: z.enum(FACE_STYLE_IDS).optional(),
   name: z.string().max(120).optional(),
 })
 

@@ -38,12 +38,14 @@ import {
   AMIGURUMI_BASES,
   AMIGURUMI_SIZES,
   EYE_SIZES,
+  FACE_STYLE_IDS,
   sphereRounds,
   buildAmigurumiProgram,
   isAuditedProfile,
   type AmigurumiBase,
   type AmigurumiChoices,
   type AmigurumiSize,
+  type FaceStyle,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import { BULK_CROCHET_MAX_CELLS, envelopeFor, type CrochetTreatment, type FormEnvelope } from './crochet-forms'
 
@@ -99,6 +101,8 @@ export interface CrochetDesign {
     eyeMm: number
     nose: boolean
     paws: boolean
+    /** The face (embroidered or safety eyes). Defaults to 'safety'. */
+    face?: FaceStyle
     /** The yarn's fibre look. Defaults to 'cotton' when absent. */
     yarnFibre?: YarnFibre
   }
@@ -445,6 +449,7 @@ function amigurumiFromDesign(design: CrochetDesign, name: string): BuiltDesign {
     eyeMm,
     nose: Boolean(a.nose),
     paws: Boolean(a.paws),
+    ...(a.face && (FACE_STYLE_IDS as readonly string[]).includes(a.face) ? { face: a.face } : {}),
     name,
   }
   const program = buildAmigurumiProgram(choices)

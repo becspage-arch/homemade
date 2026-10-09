@@ -249,22 +249,23 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
   if (style === 'sleepy') {
     for (const side of [-1, 1] as const) {
       const c: SurfaceSpot = { round: eyeRound, st: side * half(eyeSt) }
-      const arc = arcStitches(c, halfSt, 0.42, 4, side)
+      const arc = arcStitches(c, halfSt, 0.45, 6, side)
       const stitches = [...arc.stitches]
       // Three lashes on the outer half of the lid, each a short straight
       // stitch out of the curve, down and a little outward.
-      for (const [i, len, out_] of [[2, 0.5, 0.1], [3, 0.55, 0.22], [4, 0.5, 0.38]] as const) {
+      for (const [i, len, out_] of [[3, 0.5, 0.08], [4, 0.55, 0.2], [5, 0.5, 0.34]] as const) {
         const p = arc.pts[i]!
         stitches.push({ from: p, to: { round: p.round + len, st: p.st + side * out_ } })
       }
-      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM, 'Black embroidery thread', stitches))
+      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 1.2, 'Black embroidery thread', stitches))
     }
   } else if (style === 'stitched') {
     for (const side of [-1, 1] as const) {
       const cs = side * half(eyeSt)
       const hRounds = 0.62
       const wSt = halfSt * 0.55
-      const fill = satinColumns(cs - wSt, cs + wSt, 0.11, eyeRound, (s) => {
+      // Worked from the inner edge outward on each side (mirror images).
+      const fill = satinColumns(cs - side * wSt, cs + side * wSt, 0.11, eyeRound, (s) => {
         const u = (s - cs) / wSt
         return hRounds * Math.sqrt(Math.max(0, 1 - u * u))
       })
@@ -285,10 +286,12 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const cs = side * half(bs)
       const hw = 0.55
       const hh = 0.38
+      // Worked from the inner edge outward on each side, so the two cheeks
+      // are exact mirror images stitch for stitch.
       const fill = satinRows(br - hh, br + hh, 0.16, cs, (r) => {
         const u = (r - br) / hh
         return hw * Math.sqrt(Math.max(0, 1 - u * u))
-      })
+      }).map((s) => (side < 0 ? { from: s.to, to: s.from } : s))
       out.push(headFeature(side < 0 ? 'blush-l' : 'blush-r', BLUSH_PINK, BLUSH_YARN_MM, 'Pink yarn (a soft DK)', fill))
     }
   }
@@ -306,50 +309,44 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
     const muzzleFeature = (name: string, hex: string, label: string, stitches: EmbroideryStitch[]): EmbroideryFeature => ({
       name, on: M.name, zeroDir: up, rightDir: L.right, colourHex: hex, threadMm: FLOSS_MM, threadLabel: label, stitches,
     })
+    // A spot `i` rings out from the muzzle's front centre, `deg` round from
+    // the top of the muzzle (positive toward the toy's right). The stitch
+    // offset is counted along the round the spot is on, exactly as the
+    // sampler (and the maker) counts it.
+    const spot = (i: number, deg: number): SurfaceSpot => {
+      const round = fr(i)
+      return { round, st: (countAt(M.rounds, round) * deg) / 360 }
+    }
     // The NOSE: a satin triangle, point down, on the top half of the muzzle
-    // front. Its top edge lies along the second ring out from the centre,
-    // and its point comes down to half a ring above the centre. Rows run
-    // across (along the rings), each a little shorter, so the fill is a
-    // triangle of parallel straight stitches. Half-widths are in stitches of
-    // the ring the row lies on.
-    const topI = 1.7
-    const tipI = 0.55
-    const ringCount = (i: number): number => countAt(M.rounds, fr(Math.max(1, Math.round(i))))
-    // Physical half-width at the top edge ≈ 0.42 of the ring radius each way;
-    // expressed as the angle on each ring so every row is a true straight
-    // stitch of shrinking length.
-    const topHalfDeg = 34
+    // front. Rows run across (along the rings), each a little shorter and
+    // a little lower, so the fill is a triangle of parallel straight
+    // stitches; its point comes down to just above the centre.
+    const topI = 1.3
+    const tipI = 0.45
+    const topHalfMm = 0.62 // half-width at the top edge, in ring units
     const rows: EmbroideryStitch[] = []
     const nRows = 9
     for (let k = 0; k <= nRows; k++) {
-      const i = topI + ((tipI - topI) * k) / nRows
-      const frac = 1 - k / nRows // 1 at the top edge, 0 at the point
-      // Same physical width shrinks linearly; on a ring of radius ∝ i the
-      // angle is width / i.
-      const deg = Math.min(80, (topHalfDeg * topI * Math.max(frac, 0.06)) / i)
-      const w = (ringCount(i) * deg) / 360
-      rows.push({ from: { round: fr(i), st: -w }, to: { round: fr(i), st: w } })
+      const frac_ = 1 - k / nRows // 1 at the top edge, 0 at the point
+      // Each row is a straight stitch of half-width w (ring units) at height
+      // y above the centre: its two ends are at ring radius hypot(w, y) and
+      // angle atan(w / y) either side of the top.
+      const y = tipI + (topI - tipI) * frac_
+      const w = Math.max(0.05, topHalfMm * frac_)
+      const i = Math.hypot(w, y)
+      const deg = (Math.atan2(w, y) * 180) / Math.PI
+      rows.push({ from: spot(i, -deg), to: spot(i, deg) })
     }
     out.push(muzzleFeature('nose', noseHex, noseLabel, rows))
-    // The MOUTH: a short straight stitch down from the point of the nose
-    // through the centre, then a small V each side (the "w" of a sleepy
-    // bunny or a smiling bear), all in the eye thread.
-    const tip: SurfaceSpot = { round: fr(tipI), st: 0 }
-    // Down past the centre: the same ring index on the opposite side of the
-    // muzzle is stitch count / 2 round from the top.
-    const downI = 0.85
-    const downSt = ringCount(downI) / 2
-    const bottom: SurfaceSpot = { round: fr(downI), st: downSt }
-    const mouth: EmbroideryStitch[] = [{ from: tip, to: { round: fr(0.25), st: 0 } }, { from: { round: fr(0.25), st: 0 }, to: bottom }]
+    // The MOUTH: a short straight stitch down from the point of the nose to
+    // just below the centre, then a small V each side, down-and-out then
+    // up-and-out, so it reads as a "w" (a sleepy bunny's, a smiling bear's).
+    const tip = spot(tipI, 0)
+    const bottom = spot(0.1, 180)
+    const mouth: EmbroideryStitch[] = [{ from: tip, to: bottom }]
     for (const side of [-1, 1] as const) {
-      // From the bottom of the stem out and up, a shallow V: down to the
-      // lower ring, then up again to the side.
-      const lowI = 1.3
-      const lowC = ringCount(lowI)
-      const low: SurfaceSpot = { round: fr(lowI), st: downSt - side * lowC * (32 / 360) }
-      const endI = 1.55
-      const endC = ringCount(endI)
-      const end: SurfaceSpot = { round: fr(endI), st: downSt - side * endC * (64 / 360) }
+      const low = spot(0.4, 180 - side * 36)
+      const end = spot(0.64, 180 - side * 76)
       mouth.push({ from: bottom, to: low }, { from: low, to: end })
     }
     out.push(muzzleFeature('mouth', EYE_THREAD, 'Black embroidery thread', mouth))
@@ -397,12 +394,12 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
   const eyeL = features.find((f) => f.name === 'eye-l')
   if (eyeL && style === 'sleepy') {
     const a = eyeL.stitches[0]!.from
-    const end = eyeL.stitches[3]!.to
-    const mid = eyeL.stitches[1]!.to
+    const end = eyeL.stitches[5]!.to
+    const mid = eyeL.stitches[2]!.to
     const apart = Math.abs(a.st) * 2
     lines.push(
       `Sleeping eyes (black embroidery thread): bring the needle up ${roundWords(a.round)}, ` +
-        `${frac(a.st)} stitches from centre front. Work 4 small backstitches outward in a smile-shaped curve that dips to ` +
+        `${frac(a.st)} stitches from centre front. Work 6 small backstitches outward in a smile-shaped curve that dips to ` +
         `${roundWords(mid.round)} at its middle and comes back up ${roundWords(end.round)}, ${frac(end.st)} stitches from centre front. ` +
         'Add 3 lashes on the outer half of the curve: from the curve, a short straight stitch down into the next round and slightly outward. ' +
         `Work the other eye as a mirror image, so the inner corners are ${frac(apart)} stitches apart.`,
@@ -659,6 +656,7 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
     const bundle = yr * YARN_BUNDLE_FRAC
     const rt = f.threadMm
     const strands: V3[][] = []
+    let prevTo: SurfaceSpot | null = null
     for (const st of f.stitches) {
       // The two ends are where the pattern says: found on the fabric by
       // round and stitch. The thread between them is STRAIGHT (a straight
@@ -691,20 +689,33 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
         for (let j = Math.max(0, i - 2); j <= Math.min(sm.length - 1, i + 2); j++) { a += sm[j]!; w++ }
         return a / w
       })
-      const line: V3[] = []
-      // Up out of the gap: it starts below the yarn's surface.
+      // BACKSTITCH: a stitch that comes up in the hole the last one went down
+      // in continues the same visible line (the thread goes down and up
+      // through one gap), so it is drawn on as one strand with a small dip
+      // at the shared hole instead of two separate dives.
+      const prev = prevTo
+      const chained = prev != null && Math.abs(prev.round - st.from.round) < 1e-9 && Math.abs(prev.st - st.from.st) < 1e-9
+      prevTo = st.to
+      const nextSt = f.stitches[f.stitches.indexOf(st) + 1]
+      const chainsOn = nextSt != null && Math.abs(nextSt.from.round - st.to.round) < 1e-9 && Math.abs(nextSt.from.st - st.to.st) < 1e-9
       const dive = bundle + rt * 1.8
-      line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
-      for (let i = 0; i <= nSeg; i++) {
+      const line: V3[] = chained && strands.length ? strands.pop()! : []
+      if (!chained) line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
+      for (let i = chained ? 1 : 0; i <= nSeg; i++) {
         const s = surf[i]!
-        // The ends are pulled down into the gap they pass through; the run
-        // in between rests on the crowns.
+        // The ends are pulled down into the gap they pass through (only a
+        // little at a shared backstitch hole); the run in between rests on
+        // the crowns.
         const e = Math.min(1, Math.min(i, nSeg - i) / Math.max(1, Math.min(2, nSeg / 2)))
-        const h = sm2[i]! + bundle + rt * (0.2 + 0.6 * e) - rt * 0.9 * (1 - e)
+        const atShared = (i === 0 && chained) || (i === nSeg && chainsOn)
+        const pull = atShared ? 0.35 : 0.9
+        const h = sm2[i]! + bundle + rt * (0.2 + 0.6 * e) - rt * pull * (1 - e)
         line.push(toWorld(add(s.p, mul(s.n, h))))
       }
-      const last = surf[nSeg]!
-      line.push(toWorld(add(last.p, mul(last.n, sm2[nSeg]! + bundle - dive))))
+      if (!chainsOn) {
+        const last = surf[nSeg]!
+        line.push(toWorld(add(last.p, mul(last.n, sm2[nSeg]! + bundle - dive))))
+      }
       strands.push(line)
     }
     out.push({ name: f.name, hex: f.colourHex, radiusMm: rt, strands })
