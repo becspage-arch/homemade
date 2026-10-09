@@ -33,6 +33,20 @@ import {
 } from './crochet-session'
 import { findSubjectKeyMatch } from './subject-key'
 import { estimateCrochetCost, fargateRenderUsd, ASSUMED_PASS_RATE } from './crochet-cost'
+import { crochetShelfPlan, crochetPlanContextPayload } from './crochet-planner'
+import {
+  shelfIsBuildable,
+  shelfPausedReason,
+  activeCrochetShelfSlugs,
+  CROCHET_BUILDABLE_SHELF_SLUGS,
+  BULK_CROCHET_MAX_CELLS,
+  CLI_CROCHET_MAX_CELLS,
+  envelopeFor,
+} from './crochet-forms'
+import { TAPESTRY_MAX_CELLS } from '@/lib/studio/crochet/tapestry-program'
+import { tapestryGridForMotif } from './crochet'
+import { ideasForShelf, nextBuildableIdeas } from './crochet-idea-backlog'
+import { CROCHET_SHELF_BY_SLUG } from '../categories'
 
 const results: { name: string; passed: boolean; detail?: string }[] = []
 
@@ -526,6 +540,68 @@ check('the assumed pass rate is stated, not hidden inside the arithmetic', () =>
   assert.ok(ASSUMED_PASS_RATE > 0 && ASSUMED_PASS_RATE <= 1)
   const e = estimateCrochetCost(10)
   assert.ok(Math.abs(e.candidates - 10 / ASSUMED_PASS_RATE) < 0.001)
+})
+
+// ── Paused shelves ─────────────────────────────────────────────────────────
+
+check('wall-hanging is paused with a reason but is still buildable', () => {
+  const reason = shelfPausedReason('wall-hanging')
+  assert.ok(reason && reason.length > 20, 'wall-hanging carries no pause reason')
+  assert.equal(shelfIsBuildable('wall-hanging'), true)
+  assert.ok(CROCHET_BUILDABLE_SHELF_SLUGS.includes('wall-hanging'))
+  assert.ok(!activeCrochetShelfSlugs().includes('wall-hanging'))
+  assert.ok(ideasForShelf('wall-hanging').some((i) => i.buildable), 'the backlog stopped counting its ideas')
+})
+
+check('the shelf quota never hands a paused shelf a brief, and still fills the batch', () => {
+  for (const count of [1, 8, 24, 100]) {
+    const plan = crochetShelfPlan({}, count)
+    assert.ok(!plan.quota.some((q) => q.slug === 'wall-hanging'), `wall-hanging got quota at ${count}`)
+    assert.ok(!plan.slots.includes('wall-hanging'))
+    assert.equal(plan.slots.length, count)
+  }
+})
+
+check('when only a paused shelf is behind target, the quota is empty rather than handing it out', () => {
+  const counts: Record<string, number> = {}
+  for (const slug of CROCHET_BUILDABLE_SHELF_SLUGS) {
+    counts[slug] = slug === 'wall-hanging' ? 0 : (CROCHET_SHELF_BY_SLUG[slug]?.target ?? 0)
+  }
+  assert.equal(crochetShelfPlan(counts, 8).quota.length, 0)
+})
+
+check('the plan context states the pause, offers no paused idea, and still counts its backlog', () => {
+  const payload = crochetPlanContextPayload({ batchSize: 8, counts: {}, avoidSubjectKeys: [] })
+  assert.ok(payload.pausedShelves.some((p) => p.slug === 'wall-hanging' && p.reason.length > 0))
+  assert.ok(!payload.shelfQuota.some((q) => q.slug === 'wall-hanging'))
+  assert.ok(!payload.buildableShelves.some((b) => b.slug === 'wall-hanging'))
+  assert.ok(!payload.backlog.next.some((i) => i.shelf === 'wall-hanging'), 'a paused idea was offered')
+  assert.ok(!payload.backlog.byShelf.some((b) => b.shelf === 'wall-hanging'))
+  assert.equal(payload.backlog.next.length, 8)
+  assert.equal(payload.backlog.remaining, nextBuildableIdeas(Number.MAX_SAFE_INTEGER).length)
+  assert.ok(nextBuildableIdeas(Number.MAX_SAFE_INTEGER).some((i) => i.shelf === 'wall-hanging'))
+})
+
+check('the CLI tapestry budget is its own number; the Inngest and Studio budgets are unchanged', () => {
+  assert.equal(CLI_CROCHET_MAX_CELLS, 3600)
+  if (!process.env.BULK_CROCHET_MAX_CELLS) assert.equal(BULK_CROCHET_MAX_CELLS, 1600)
+  assert.equal(TAPESTRY_MAX_CELLS, 700)
+  const env = envelopeFor('wall-hanging', 'grid-tapestry')!
+  // The top of the wall-hanging envelope is exactly what the CLI budget allows.
+  assert.equal(env.cols![1] * env.rows![1], CLI_CROCHET_MAX_CELLS)
+})
+
+check('a tapestry panel takes the motif\'s shape, inside its envelope and budget', () => {
+  const base = { cols: [20, 60] as [number, number], rows: [20, 60] as [number, number], maxCells: 3600 }
+  // A square motif: a few more rows than stitches, because a stitch is wider than a row is tall.
+  const sq = tapestryGridForMotif({ ...base, side: 32, subjectAspect: 1 })
+  assert.ok(sq.height > sq.width, JSON.stringify(sq))
+  // A wide motif gets a wide panel, not a square one with empty bands.
+  const wide = tapestryGridForMotif({ ...base, side: 32, subjectAspect: 1.6 })
+  assert.ok(wide.width > wide.height, JSON.stringify(wide))
+  // Never past the budget or out of the envelope.
+  const big = tapestryGridForMotif({ ...base, side: 60, subjectAspect: 1.8 })
+  assert.ok(big.width * big.height <= 3600 && big.width <= 60 && big.height >= 20, JSON.stringify(big))
 })
 
 // ── Report ──────────────────────────────────────────────────────────────────

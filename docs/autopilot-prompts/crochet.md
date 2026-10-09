@@ -267,6 +267,13 @@ Per treatment:
   a bird's beak and feet are crocheted in the second yarn, and it has
   no limbs for paw pads, so both flags are ignored there.
 - `grid-tapestry` — `picture`, one sentence saying what the panel shows.
+  ONE bold motif, poster-flat, in four to eight colours (the lane caps the
+  palette at eight and sizes the grid from the motif, so a simple motif makes
+  a small, quick panel). Name the colours, and name a background colour that
+  contrasts with every part of the motif ("a red toadstool with a cream stalk
+  on a deep green background"): a cream stalk on a cream ground vanishes in
+  the stitches. The wall-hanging shelf is paused (`paused` in
+  `crochet-forms.ts`) until Rebecca signs off the tapestry reopen proof.
   The grid comes from an illustration, not from you.
 
 Band stitches are `sc` (UK double crochet), `hdc` (UK half treble),

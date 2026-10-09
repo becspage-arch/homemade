@@ -76,6 +76,15 @@ export interface FormEnvelope {
   yarnWeight: 'dk' | 'worsted' | 'aran'
   /** A one-line description of the object, for the planner prompt. */
   note: string
+  /**
+   * Set (to the reason, in plain words) to take this envelope out of the
+   * autopilot's hands for now. A paused envelope is still BUILDABLE — the
+   * backlog keeps counting its ideas, `shelfIsBuildable` still says yes and a
+   * hand-run proof can still build it — but the `context` stage hands out no
+   * quota for it, and a shelf whose every envelope is paused gets no briefs at
+   * all. Unpausing is deleting the line, once the reason is resolved.
+   */
+  paused?: string
 }
 
 /**
@@ -91,6 +100,33 @@ export interface FormEnvelope {
  * BULK_CROCHET_MAX_CELLS.
  */
 export const BULK_CROCHET_MAX_CELLS = Number(process.env.BULK_CROCHET_MAX_CELLS) || 1600
+
+/**
+ * THE CLI BUDGET — for the routine's `crochet-autopilot.ts expand`, and only
+ * there. A cloud session waits for its own Fargate render, so it is not bound
+ * by the in-step ceiling above; what bounds it is the render. Timed 9 October
+ * 2026 on the probe task (`homemade-loom-render-probe`, 4 vCPU / 8 GB, the
+ * production crochet script at 150 samples, resY 1100) for a grid-tapestry
+ * panel, plus the local settle on the 4-vCPU cloud VM:
+ *
+ *   cells        settle (VM)   scene JSON   Blender on Fargate (two runs)
+ *   40 x 40         24 s          18 MB       246 s, 248 s
+ *   60 x 60         66 s          41 MB       444 s, 241 s
+ *   80 x 80        154 s          72 MB       267 s, 446 s
+ *   100 x 100      320 s         113 MB      killed at 260 s (out of memory, exit 137)
+ *
+ * Blender time is NOT driven by the stitch count in this range — it is
+ * bimodal (~4 or ~7.5 minutes) by whichever Fargate host the task lands on —
+ * so the real limits are the 8 GB task (100 x 100 never renders) and the
+ * settle, which the render stage runs again before uploading. Worst case for
+ * one render-stage candidate (settle + 35 s provisioning + 7.5 min Blender +
+ * ~1 min Fal finish) is about 10 minutes at 60 x 60 and 11.5 at 80 x 80, with
+ * the out-of-memory wall one step above. 3,600 cells keeps a render under
+ * about twelve minutes with room to spare. The Inngest budget
+ * (`BULK_CROCHET_MAX_CELLS`) and the Studio's (`TAPESTRY_MAX_CELLS`) are
+ * unchanged.
+ */
+export const CLI_CROCHET_MAX_CELLS = 3600
 
 /**
  * The buildable shelves, and what each may be built as.
@@ -228,11 +264,22 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
   'wall-hanging': [
     {
       treatment: 'grid-tapestry',
-      cols: [24, 40],
-      rows: [24, 40],
+      // The lane picks the size from the motif itself (`motifGridSide`, from
+      // 24 a side up) and the panel's shape from the motif's aspect
+      // (`tapestryGridForMotif`, which may take one axis down to 20), so a bold
+      // simple motif stays near the low end. The
+      // top of the range is only reachable under the CLI budget below — the
+      // in-step budget still caps an Inngest build at 40 x 40.
+      cols: [20, 60],
+      rows: [20, 60],
       staging: 'flatlay',
       yarnWeight: 'worsted',
       note: 'A tapestry-crochet picture panel to hang, the colour changing stitch by stitch.',
+      // Rebecca, 7 September 2026: the routine skips this shelf until the
+      // tapestry reopen proof (flat poster motifs, fill the frame, legible at
+      // thumbnail size) has her sign-off. Do not remove without it.
+      paused:
+        'Tapestry reopen: wall-hanging pictures left dead borders and read poorly at thumbnail size; paused until Rebecca signs off the flat-motif proof.',
     },
   ],
   ornament: [
@@ -297,6 +344,36 @@ export const CROCHET_BUILDABLE_SHELF_SLUGS: string[] = Object.keys(CROCHET_FORMS
 /** Can the loom build anything at all for this shelf today? */
 export function shelfIsBuildable(slug: string): boolean {
   return (CROCHET_FORMS[slug]?.length ?? 0) > 0
+}
+
+/**
+ * Why the autopilot is not filling this shelf right now, or null when it is.
+ * A shelf is paused only when EVERY envelope it has is paused; a shelf with
+ * one live envelope still gets quota, and the paused envelopes simply drop out
+ * of what the session is offered (`activeEnvelopesForShelf`).
+ */
+export function shelfPausedReason(slug: string): string | null {
+  const envelopes = envelopesForShelf(slug)
+  if (!envelopes.length || envelopes.some((e) => !e.paused)) return null
+  return envelopes[0]!.paused!
+}
+
+/** The buildable shelves the autopilot may hand quota to today. */
+export function activeCrochetShelfSlugs(): string[] {
+  return CROCHET_BUILDABLE_SHELF_SLUGS.filter((slug) => shelfPausedReason(slug) === null)
+}
+
+/** Every paused shelf with its reason, for the plan context to state openly. */
+export function pausedCrochetShelves(): { slug: string; reason: string }[] {
+  return CROCHET_BUILDABLE_SHELF_SLUGS.flatMap((slug) => {
+    const reason = shelfPausedReason(slug)
+    return reason ? [{ slug, reason }] : []
+  })
+}
+
+/** A shelf's envelopes minus the paused ones — what a session may plan in. */
+export function activeEnvelopesForShelf(slug: string): FormEnvelope[] {
+  return envelopesForShelf(slug).filter((e) => !e.paused)
 }
 
 /** The envelopes a shelf may be built in, or an empty list. */

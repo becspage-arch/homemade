@@ -244,6 +244,11 @@ async function stageContext(args: Args): Promise<void> {
   console.log(
     `Shelf quota: ${payload.shelfQuota.map((q) => `${q.slug} x${q.briefs} (${q.published}/${q.target})`).join(', ')}`,
   )
+  if (payload.pausedShelves.length) {
+    console.log(
+      `Paused (no quota, still buildable): ${payload.pausedShelves.map((p) => `${p.slug} — ${p.reason}`).join('; ')}`,
+    )
+  }
   console.log(`Avoid list: ${payload.avoidSubjectKeys.length} subject keys already in the catalogue`)
   console.log(
     `Backlog: ${payload.backlog.remaining} buildable ideas still queued; ${payload.backlog.next.length} offered as the head of the queue`,
@@ -284,7 +289,7 @@ async function stageExpand(args: Args): Promise<void> {
     '../src/lib/studio/generation/bulk/crochet-dedupe'
   )
   const { CROCHET_SHELF_BY_SLUG } = await import('../src/lib/studio/generation/categories')
-  const { envelopeFor } = await import('../src/lib/studio/generation/bulk/crochet-forms')
+  const { envelopeFor, CLI_CROCHET_MAX_CELLS } = await import('../src/lib/studio/generation/bulk/crochet-forms')
   const { prisma } = await import('@homemade/db')
 
   const manifest0 = loadManifest(args.run, session)
@@ -357,7 +362,7 @@ async function stageExpand(args: Args): Promise<void> {
     try {
       const authored =
         brief.treatment === 'grid-tapestry'
-          ? await buildTapestryCandidate(full, design.picture)
+          ? await buildTapestryCandidate(full, design.picture, { maxCells: CLI_CROCHET_MAX_CELLS })
           : (() => {
               const built = buildCrochetProgram(full, design, attempt)
               if (!built.ok) throw new ExpandRefused(built.problems)
