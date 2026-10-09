@@ -30,6 +30,7 @@ import {
   type Staging,
   type YarnWeight,
 } from '@/lib/loom/crochet/engine/program'
+import { sphereAscent } from '@/lib/loom/crochet/engine/sphereProfile'
 import type { StitchId } from '@/lib/loom/crochet/engine/dictionary'
 import type { CompositionProgram } from '@/lib/loom/crochet/engine/composition'
 import {
@@ -43,7 +44,7 @@ import {
   type AmigurumiChoices,
   type AmigurumiSize,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
-import { BULK_CROCHET_MAX_CELLS, envelopeFor, type CrochetTreatment } from './crochet-forms'
+import { BULK_CROCHET_MAX_CELLS, envelopeFor, type CrochetTreatment, type FormEnvelope } from './crochet-forms'
 
 // ── The recipe the planner model returns ────────────────────────────────────
 
@@ -77,6 +78,8 @@ export interface CrochetDesign {
   /** The ball's widest round and how many rounds it holds there (sphere). */
   ballEquator?: number
   ballPlateau?: number
+  /** The brim of a tube hat: a 1×1 post rib, a folded edge, or none. */
+  brim?: 'rib' | 'fold' | 'none'
   /** key -> six-digit hex. The yarns the finished piece uses. */
   palette?: Record<string, string>
   /** Which palette key is the main yarn. */
@@ -202,6 +205,12 @@ export function designToProgram(
     }
   }
 
+  if (design.treatment === 'tube') {
+    const program = tubeFromDesign(design, envelope, ctx.name, palette, base, problems)
+    if (problems.length || !program) return { kind: 'none', program: null, problems }
+    return { kind: 'piece', problems: [], program }
+  }
+
   if (design.treatment === 'disc') {
     const [lo, hi] = envelope.rounds ?? [7, 10]
     const n = clampInt(design.rounds, lo, hi, lo)
@@ -304,6 +313,94 @@ export function designToProgram(
       hookMm: hookForWeight(yarnWeight),
       staging,
     },
+  }
+}
+
+/** Rounds of a tube-hat brim, by kind: three rounds of rib, four folded. */
+const BRIM_ROUNDS = { rib: 3, fold: 4 } as const
+
+/**
+ * A TUBE (STITCH_ENGINE.md §8h): the design chooses how many stitches around
+ * and how many straight rounds, the brim on a hat, and the round stripes on a
+ * cowl; the envelope fixes the construction (stitch, anchor, join, cap, which
+ * way up it stands). The crown of a hat is the sphere profile's own ascent to
+ * the chosen circumference (eased increases, so it domes); a basket's base
+ * climbs in sixes to a flat disc; a cowl is a chain ring worked straight up.
+ */
+function tubeFromDesign(
+  design: CrochetDesign,
+  envelope: FormEnvelope,
+  name: string,
+  palette: Record<string, string>,
+  base: string,
+  problems: string[],
+): CrochetProgram | null {
+  const t = envelope.tube
+  if (!t) {
+    problems.push('This shelf names no tube construction.')
+    return null
+  }
+  const [colLo, colHi] = envelope.cols ?? [48, 96]
+  const [rowLo, rowHi] = envelope.rounds ?? [8, 24]
+  let around = clampInt(design.cols, colLo, colHi, colLo)
+  let body = clampInt(design.rows, rowLo, rowHi, rowLo)
+  const rounds: number[] = []
+  let roundColours: string[] | undefined
+  const tube: CrochetProgram['tube'] = { anchor: t.anchor, join: t.join, cap: t.cap, openEnd: t.openEnd }
+
+  if (t.shape === 'hat') {
+    rounds.push(...sphereAscent(around, t.stitch).up)
+    for (let i = 0; i < body; i++) rounds.push(around)
+    const brim = design.brim ?? 'none'
+    if (!(t.brims ?? ['none']).includes(brim)) {
+      problems.push(`A "${brim}" brim is not one this hat can have (${(t.brims ?? ['none']).join(', ')}).`)
+    } else if (brim !== 'none') {
+      if (brim === 'rib' && around % 2 !== 0) {
+        problems.push(`A post-rib brim needs an even number of stitches around; ${around} is odd.`)
+      }
+      for (let i = 0; i < BRIM_ROUNDS[brim]; i++) rounds.push(around)
+      tube.brim = { kind: brim, rounds: BRIM_ROUNDS[brim] }
+    }
+  } else if (t.shape === 'basket') {
+    // A flat base climbs in sixes, so the walls are a multiple of six around.
+    around = Math.max(6, Math.round(around / 6) * 6)
+    for (let n = 6; n <= around; n += 6) rounds.push(n)
+    for (let i = 0; i < body; i++) rounds.push(around)
+  } else {
+    // cowl: a chain ring, then straight rounds; bands stripe it by round.
+    const bands = Array.isArray(design.bands) ? design.bands : []
+    if (bands.length) {
+      checkBandColours(bands, palette, problems)
+      roundColours = []
+      for (const band of bands) {
+        if (band.stitch !== t.stitch) problems.push(`A cowl band is worked in ${t.stitch}; "${band.stitch}" cannot change the stitch.`)
+        const n = clampInt(band.rows, 1, 12, 2)
+        for (let i = 0; i < n; i++) roundColours.push(band.colourKey && palette[band.colourKey] ? band.colourKey : base)
+      }
+      body = roundColours.length
+      if (body < rowLo || body > rowHi) problems.push(`The bands add up to ${body} rounds; this piece wants between ${rowLo} and ${rowHi}.`)
+    }
+    for (let i = 0; i < body; i++) rounds.push(around)
+  }
+
+  const cells = rounds.reduce((a, b) => a + b, 0)
+  if (cells > BULK_CROCHET_MAX_CELLS) {
+    problems.push(`That comes to ${cells} stitches. Keep it to ${BULK_CROCHET_MAX_CELLS} or fewer so it compiles inside one step.`)
+  }
+  if (problems.length) return null
+  const yarnWeight = envelope.yarnWeight as YarnWeight
+  return {
+    name,
+    form: 'tube',
+    stitch: t.stitch,
+    rounds,
+    tube,
+    ...(roundColours ? { roundColours } : {}),
+    yarnWeight,
+    colourHex: palette[base]!,
+    palette,
+    hookMm: hookForWeight(yarnWeight),
+    staging: envelope.staging,
   }
 }
 

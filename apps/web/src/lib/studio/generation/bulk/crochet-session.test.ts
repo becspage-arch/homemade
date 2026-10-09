@@ -31,6 +31,7 @@ import {
   MAX_DESIGN_ATTEMPTS,
   type ManifestCandidate,
 } from './crochet-session'
+import { designToProgram } from './crochet-design'
 import { findSubjectKeyMatch } from './subject-key'
 import { estimateCrochetCost, fargateRenderUsd, ASSUMED_PASS_RATE } from './crochet-cost'
 
@@ -264,6 +265,92 @@ check('parseDesigns keys errors by the slug they came from', () => {
   assert.equal(r.ok, false)
   if (r.ok) return
   assert.ok(r.errors.some((e) => e.includes('crochet-b')), r.errors.join(' | '))
+})
+
+// ── Tubes (STITCH_ENGINE.md §8h) ────────────────────────────────────────────
+
+check('a tube needs its stitches around and its rounds (or bands)', () => {
+  const base = { treatment: 'tube' as const, palette: { m: '#9b8ec4' }, baseColourKey: 'm' }
+  const r = CrochetDesignSchema.safeParse({ ...base, cols: 72 })
+  assert.equal(r.success, false)
+  if (r.success) return
+  assert.ok(r.error.issues.some((i) => i.path.includes('rows')))
+  assert.equal(CrochetDesignSchema.safeParse({ ...base, cols: 72, rows: 12, brim: 'rib' }).success, true)
+  assert.equal(
+    CrochetDesignSchema.safeParse({
+      ...base,
+      cols: 84,
+      bands: [
+        { stitch: 'dc', rows: 2, colourKey: 'm' },
+        { stitch: 'dc', rows: 2 },
+      ],
+    }).success,
+    true,
+  )
+  assert.equal(CrochetDesignSchema.safeParse({ ...base, cols: 72, rows: 12, brim: 'lace' }).success, false)
+})
+
+check('a hat design becomes a ribbed tube off a magic ring, a basket stands on its open end, a cowl stripes by round', () => {
+  const hat = designToProgram(
+    { treatment: 'tube', cols: 66, rows: 10, brim: 'rib', palette: { m: '#9b8ec4' }, baseColourKey: 'm' },
+    { shelf: 'hat', name: 'test-hat' },
+  )
+  assert.equal(hat.kind, 'piece', hat.problems.join(' | '))
+  if (hat.kind !== 'piece') return
+  assert.equal(hat.program.form, 'tube')
+  assert.equal(hat.program.stitch, 'hdc')
+  assert.deepEqual(hat.program.tube, { anchor: 'ring', join: 'spiral', cap: 'dome', openEnd: undefined, brim: { kind: 'rib', rounds: 3 } })
+  const rounds = hat.program.rounds!
+  assert.equal(rounds[0], 6)
+  assert.equal(rounds[rounds.length - 1], 66)
+  // the ascent's own last round, ten straight, three of rib
+  assert.equal(rounds.filter((n) => n === 66).length, 1 + 10 + 3)
+  assert.ok(rounds.reduce((a, b) => a + b, 0) <= 1600, 'fits the one-step compile budget')
+  assert.equal(hat.program.staging, 'standing')
+
+  const basket = designToProgram(
+    { treatment: 'tube', cols: 60, rows: 14, palette: { m: '#c9b79c' }, baseColourKey: 'm' },
+    { shelf: 'basket', name: 'test-basket' },
+  )
+  assert.equal(basket.kind, 'piece', basket.problems.join(' | '))
+  if (basket.kind !== 'piece') return
+  assert.equal(basket.program.tube?.openEnd, 'top')
+  assert.equal(basket.program.tube?.cap, 'flat')
+  assert.deepEqual(basket.program.rounds!.slice(0, 10), [6, 12, 18, 24, 30, 36, 42, 48, 54, 60])
+  assert.equal(basket.program.yarnWeight, 'bulky')
+
+  const cowl = designToProgram(
+    {
+      treatment: 'tube',
+      cols: 84,
+      bands: [
+        { stitch: 'dc', rows: 7, colourKey: 'a' },
+        { stitch: 'dc', rows: 7, colourKey: 'b' },
+      ],
+      palette: { a: '#e9dfcf', b: '#8fa98a' },
+      baseColourKey: 'a',
+    },
+    { shelf: 'cowl', name: 'test-cowl' },
+  )
+  assert.equal(cowl.kind, 'piece', cowl.problems.join(' | '))
+  if (cowl.kind !== 'piece') return
+  assert.equal(cowl.program.tube?.anchor, 'chain')
+  assert.equal(cowl.program.rounds!.length, 14)
+  assert.deepEqual(cowl.program.roundColours, [...Array(7).fill('a'), ...Array(7).fill('b')])
+})
+
+check('a tube is refused on a shelf that has no tube construction, and a rib brim on an odd count', () => {
+  const r = designToProgram(
+    { treatment: 'tube', cols: 72, rows: 12, palette: { m: '#9b8ec4' }, baseColourKey: 'm' },
+    { shelf: 'wall-hanging', name: 'x' },
+  )
+  assert.equal(r.kind, 'none')
+  const odd = designToProgram(
+    { treatment: 'tube', cols: 65, rows: 12, brim: 'rib', palette: { m: '#9b8ec4' }, baseColourKey: 'm' },
+    { shelf: 'hat', name: 'x' },
+  )
+  assert.equal(odd.kind, 'none')
+  assert.ok(odd.problems.some((p) => p.includes('even')), odd.problems.join(' | '))
 })
 
 // ── Verdicts ────────────────────────────────────────────────────────────────

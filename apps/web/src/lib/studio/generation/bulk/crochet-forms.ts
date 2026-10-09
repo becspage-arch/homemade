@@ -29,7 +29,7 @@
  * the range where the settled size will be a real object.
  */
 
-import type { Staging } from '@/lib/loom/crochet/engine/program'
+import type { Staging, TubeOptions } from '@/lib/loom/crochet/engine/program'
 
 /**
  * The treatments the engine builds. Each maps onto one `CrochetProgram.form`
@@ -52,6 +52,10 @@ export type CrochetTreatment =
   | 'sphere'
   /** Several audited balls and tapered tubes, sewn into a figure. */
   | 'amigurumi'
+  /** An open-ended round form worked in a spiral or joined rounds: a hat off a
+   *  magic ring with a ribbed or folded brim, a cowl off a chain ring, a basket
+   *  standing on a flat base. (STITCH_ENGINE.md §8h) */
+  | 'tube'
 
 /** The forms that come out of the grid builder (mixed stitches per row). */
 export const GRID_TREATMENTS: CrochetTreatment[] = [
@@ -62,18 +66,35 @@ export const GRID_TREATMENTS: CrochetTreatment[] = [
   'grid-tapestry',
 ]
 
+/** The fixed construction of a tube shelf: what the design may NOT choose. */
+export interface TubeEnvelope {
+  shape: 'hat' | 'cowl' | 'basket'
+  /** The body stitch. */
+  stitch: 'sc' | 'hdc' | 'dc'
+  anchor: TubeOptions['anchor']
+  join: TubeOptions['join']
+  cap?: TubeOptions['cap']
+  openEnd?: TubeOptions['openEnd']
+  /** The brims a hat may choose from ('none' = a plain edge). */
+  brims?: ('rib' | 'fold' | 'none')[]
+}
+
 export interface FormEnvelope {
   treatment: CrochetTreatment
-  /** Stitches across, [min, max]. Grid + disc treatments only. */
+  /** Stitches across, [min, max]. Grid + disc treatments; a tube's stitches
+   *  AROUND (its widest round). */
   cols?: [number, number]
   /** Rows up, [min, max]. Grid treatments only. */
   rows?: [number, number]
-  /** Rounds worked, [min, max]. Disc only. */
+  /** Rounds worked, [min, max]. Disc; a tube's STRAIGHT body rounds (the crown,
+   *  base and brim rounds come on top). */
   rounds?: [number, number]
+  /** Tube treatment only: the fixed construction. */
+  tube?: TubeEnvelope
   /** How the finished object is staged for its hero. */
   staging: Staging
   /** The yarn weight this treatment is built at. */
-  yarnWeight: 'dk' | 'worsted' | 'aran'
+  yarnWeight: 'dk' | 'worsted' | 'aran' | 'bulky'
   /** A one-line description of the object, for the planner prompt. */
   note: string
 }
@@ -291,6 +312,53 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
   ],
 }
 
+/**
+ * BUILT, NOT YET SIGNED OFF. The tube form (§8h) builds, audits and renders a
+ * hat, a cowl and a basket, but Rebecca has not yet passed the proofs against
+ * the customer bar, so these shelves get NO generation lane yet: the planner,
+ * the admin card and the backlog all read `CROCHET_FORMS` and still see them
+ * as waiting. `envelopeFor` does find them, so a hand-written tube design can
+ * be expanded and tested. Moving an entry into `CROCHET_FORMS` is the sign-off.
+ */
+export const CROCHET_FORMS_PENDING: Record<string, FormEnvelope[]> = {
+  hat: [
+    {
+      treatment: 'tube',
+      // 66 around in hdc is a 49 cm band (the fabric stretches to an adult
+      // head); the crown's own ascent (460 sts at 66) plus up to 13 straight
+      // rounds and a brim keeps the whole hat inside BULK_CROCHET_MAX_CELLS.
+      cols: [54, 66],
+      rounds: [9, 13],
+      staging: 'standing',
+      yarnWeight: 'worsted',
+      tube: { shape: 'hat', stitch: 'hdc', anchor: 'ring', join: 'spiral', cap: 'dome', brims: ['rib', 'fold', 'none'] },
+      note: 'A beanie worked top down from a magic ring in half treble, 18 to 20 cm tall, with a post-rib or folded brim.',
+    },
+  ],
+  cowl: [
+    {
+      treatment: 'tube',
+      cols: [72, 96],
+      rounds: [14, 22],
+      staging: 'standing',
+      yarnWeight: 'worsted',
+      tube: { shape: 'cowl', stitch: 'dc', anchor: 'chain', join: 'joined' },
+      note: 'A cowl about 60 cm round and 25 cm deep, worked in joined rounds of treble from a chain ring, striped by round.',
+    },
+  ],
+  basket: [
+    {
+      treatment: 'tube',
+      cols: [48, 72],
+      rounds: [10, 20],
+      staging: 'standing',
+      yarnWeight: 'bulky',
+      tube: { shape: 'basket', stitch: 'sc', anchor: 'ring', join: 'spiral', cap: 'flat', openEnd: 'top' },
+      note: 'A round storage basket about 15 cm across and 12 cm tall in chunky yarn: a flat spiral base, then straight walls.',
+    },
+  ],
+}
+
 /** Every shelf the loom can build for today. */
 export const CROCHET_BUILDABLE_SHELF_SLUGS: string[] = Object.keys(CROCHET_FORMS)
 
@@ -304,9 +372,15 @@ export function envelopesForShelf(slug: string): FormEnvelope[] {
   return CROCHET_FORMS[slug] ?? []
 }
 
-/** One envelope by shelf + treatment, or null when the pairing is not allowed. */
+/** One envelope by shelf + treatment, or null when the pairing is not allowed.
+ *  Looks in the live table first, then the built-but-unsigned one, so a tube
+ *  design can be expanded before its shelf has a lane. */
 export function envelopeFor(slug: string, treatment: string): FormEnvelope | null {
-  return envelopesForShelf(slug).find((e) => e.treatment === treatment) ?? null
+  return (
+    envelopesForShelf(slug).find((e) => e.treatment === treatment) ??
+    (CROCHET_FORMS_PENDING[slug] ?? []).find((e) => e.treatment === treatment) ??
+    null
+  )
 }
 
 /** The treatments a shelf allows, as a plain list for the planner prompt. */
