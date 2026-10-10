@@ -92,15 +92,16 @@ check('the joining round is both legs plus the bridging chains, and the words sa
     const p = dollProgram({ size, mainHex: '#eeeeee', contrastHex: '#aaccaa', eyeMm: 0 }, 'd')
     const lines = writeCompositionInstructions(p)
     const join = lines.find((l) => /^Round 1 \(joining round\)/.test(l))!
+    assert.ok(/\(\d+ sts\)$/.test(join), 'the joining round ends with its count')
     assert.ok(join, 'a joining round')
     assert.ok(join.includes(`(${2 * L + 2 * s.bridge} sts)`), join)
-    assert.ok(join.includes(`Ch ${s.bridge},`), join)
+    assert.ok(join.includes(`ch ${s.bridge},`), join)
     assert.ok(lines.some((l) => l.startsWith(`Change to the skin colour: work the last stitch of round ${s.skinFrom - 1}`)), 'colour change line')
     // The legs are one piece made twice, and they are not "sewn" on.
     const pieces = compositionPieces(p)
     assert.equal(pieces.find((x) => x.label === 'Legs')?.makeQuantity, 2)
     assert.ok(!lines.some((l) => /Sew the legs/.test(l)))
-    assert.ok(lines.some((l) => /^Second leg: do not fasten off/.test(l)))
+    assert.ok(lines.some((l) => /^Stuff the second leg firmly but do not fasten off/.test(l)))
   }
 })
 

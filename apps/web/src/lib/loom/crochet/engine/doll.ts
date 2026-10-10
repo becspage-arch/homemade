@@ -104,8 +104,8 @@ function armRounds(hand: number, width: number, handRounds: number, rounds: numb
 
 /**
  * The sizes. Fine-gauge counts: at 4 ply on a 2.5 mm hook one dc is ~3.5 mm
- * wide and a round ~3.3 mm tall, so the M head (60 sts round) is ~67 mm across
- * and the doll ~22 cm tall, the bar fairy's build. The S size is a KEYRING
+ * wide and a round ~3.3 mm tall, so the M head (66 sts round) is ~74 mm across
+ * and the doll ~23 cm tall, the bar fairy's build (about 26 stitches across her face). The S size is a KEYRING
  * charm (~9 cm) with a split ring through the crown.
  */
 export const DOLL_SIZES: Record<Size, DollSize> = {
@@ -117,36 +117,36 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     body: [24, 26, 27, 27, 27, 26, 24, 22, 18, 12, 12],
     skinFrom: 8,
     head: sphereRounds(36, 1),
-    arm: armRounds(9, 7, 2, 9),
+    arm: armRounds(9, 7, 2, 8),
     legApart: 7.4,
     headOverlap: 4,
     keyring: true,
   },
   M: {
     label: 'doll',
-    leg: legRounds(16, 14, 2, 28),
+    leg: legRounds(18, 16, 2, 33),
     bridge: 3,
-    // joining round 2·14 + 2·3 = 34; an egg-shaped torso, the shoulders
-    // sloping in over four rounds rather than one flat step.
-    body: [34, 36, 38, 40, 40, 40, 39, 38, 36, 34, 32, 30, 30, 28, 24, 20, 16, 12, 12, 12],
-    skinFrom: 12,
-    head: sphereRounds(54, 1),
-    arm: armRounds(10, 8, 3, 22),
-    legApart: 10.2,
-    headOverlap: 7,
+    // joining round 2·16 + 2·3 = 38; an egg-shaped torso, the shoulders
+    // sloping in over several rounds rather than one flat step.
+    body: [38, 40, 42, 44, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 32, 28, 24, 20, 16, 12, 12, 12],
+    skinFrom: 13,
+    head: sphereRounds(66, 1),
+    arm: armRounds(11, 9, 3, 22),
+    legApart: 11.5,
+    headOverlap: 8,
     keyring: false,
   },
   L: {
     label: 'large doll',
-    leg: legRounds(18, 16, 2, 32),
+    leg: legRounds(21, 18, 2, 37),
     bridge: 3,
-    // joining round 2·16 + 2·3 = 38
-    body: [38, 40, 42, 44, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 32, 28, 24, 20, 16, 12, 12, 12],
-    skinFrom: 13,
-    head: sphereRounds(60, 1),
-    arm: armRounds(11, 9, 3, 25),
-    legApart: 11.5,
-    headOverlap: 8,
+    // joining round 2·18 + 2·3 = 42
+    body: [42, 44, 46, 48, 50, 50, 50, 50, 48, 46, 44, 42, 40, 38, 38, 36, 32, 28, 24, 20, 16, 12, 12, 12],
+    skinFrom: 14,
+    head: sphereRounds(72, 1),
+    arm: armRounds(12, 10, 3, 25),
+    legApart: 12.8,
+    headOverlap: 9,
     keyring: false,
   },
 }
@@ -199,7 +199,7 @@ function withColourChange(lines: string[], fromRound: number, colourLabel: strin
     if (m && Number(m[1]) === fromRound) {
       out.push(
         `Change to ${colourLabel}: work the last stitch of round ${fromRound - 1} up to its final yarn over, ` +
-          `then pull the ${colourLabel} through to finish it. Carry on in ${colourLabel}; cut the old yarn, leaving a tail to weave in inside.`,
+          `then pull ${colourLabel} through to finish it. Carry on in ${colourLabel}; cut the old yarn, leaving a tail to weave in inside.`,
       )
     }
     out.push(line)
@@ -212,12 +212,10 @@ function legWords(s: DollSize): string[] {
   const lines = writeInstructions(p).filter((l) => !/^Fasten off/.test(l))
   const sole = s.leg.findIndex((c, i) => i > 0 && c === s.leg[i - 1]) // first foot-wall round
   return [
-    ...lines.map((l) =>
-      /^Round 1:/.test(l) ? `${l} The first rounds lie flat: this is the sole she stands on.` : l,
-    ),
-    `Rounds ${sole + 1} to ${sole + 2} are the sides of the foot; the decrease after them shapes the ankle.`,
-    'First leg: fasten off and weave in the end. Stuff it firmly, keeping the sole flat.',
-    'Second leg: do not fasten off. Stuff it firmly and go straight on to the body with the yarn still attached.',
+    `Start with the sole: rounds 1 to ${sole} lie flat (the sole she stands on), rounds ${sole + 1} to ${sole + 2} are the sides of the foot, and the decrease after them shapes the ankle.`,
+    ...lines,
+    'Fasten off the first leg and weave in the end. Stuff it firmly, keeping the sole flat.',
+    'Stuff the second leg firmly but do not fasten off: go straight on to the body with the yarn still attached.',
   ]
 }
 
@@ -232,12 +230,12 @@ function bodyWords(s: DollSize, skinLabel: string, dressLabel: string): string[]
   // bridging chains, on both sides).
   const rest = raw.filter((l) => !/^Foundation:/.test(l) && !/^Round 1:/.test(l) && !/^Fasten off/.test(l) && !/^Work in a continuous/.test(l))
   const joining =
-    `Round 1 (joining round): change to ${dressLabel} as you finish the last stitch of the second leg. ` +
-    `Ch ${c}, then dc into the first stitch of the first leg (place the marker here: it is the new start of the round), ` +
+    `Round 1 (joining round): ch ${c}, then dc into the first stitch of the first leg (place the marker here: it is the new start of the round), ` +
     `dc in the next ${L - 1} sts of the first leg, dc in each of the ${c} ch, dc in each of the ${L} sts of the second leg, ` +
-    `and dc in the other side of each of the ${c} ch. (${2 * L + 2 * c} sts) Line the feet up so both toes point forward before you start.`
+    `and dc in the other side of each of the ${c} ch. (${2 * L + 2 * c} sts)`
   return [
-    'Worked straight on from the second leg, in a continuous spiral without joining; mark the first stitch of each round.',
+    'Work every stitch of the body straight on from the second leg, in a continuous spiral without joining; mark the first stitch of each round.',
+    `Change to ${dressLabel} as you finish the last stitch of the second leg, and line the two legs up side by side with both feet pointing forward.`,
     joining,
     ...withColourChange(rest, s.skinFrom, skinLabel),
     `Stuff the body firmly through the neck as you go, pushing a little into the top of each leg so the hips are round.`,
@@ -247,20 +245,15 @@ function bodyWords(s: DollSize, skinLabel: string, dressLabel: string): string[]
 
 function headWords(s: DollSize): string[] {
   const p: CrochetProgram = { name: 'Head', form: 'sphere', stitch: 'sc', rounds: s.head }
-  return writeInstructions(p).map((l) =>
-    /^Stuff firmly/.test(l)
-      ? 'Embroider the face before the last few rounds (see Assembly). ' + l
-      : l,
-  )
+  return ['Start at the crown. Embroider the face (see Assembly) before the last few rounds, while the head is still open.', ...writeInstructions(p)]
 }
 
 function armWords(s: DollSize): string[] {
   const p: CrochetProgram = { name: 'Arm', form: 'sphere', stitch: 'sc', rounds: s.arm }
   const lines = writeInstructions(p)
-  return lines.map((l) =>
-    /^Round 1:/.test(l)
-      ? `${l} The first ${2 + Math.max(0, s.arm.indexOf(s.arm[2]!, 2) - 1)} rounds are the hand.`
-      : /^Stuff firmly/.test(l)
+  const handRounds = s.arm.findIndex((c, i) => i > 1 && c < s.arm[1]!)
+  return [`Start with the hand: rounds 1 to ${handRounds} are the hand.`, ...lines].map((l) =>
+    /^Stuff firmly/.test(l)
         ? 'Stuff the hand lightly and the arm only a little, so it hangs softly. Close the top, fasten off and leave a tail for sewing.'
         : l,
   )
@@ -268,7 +261,7 @@ function armWords(s: DollSize): string[] {
 
 // ── The face (doll proportions on the fine-gauge head) ──────────────────────
 
-const EYE_BLACK = '#1e1714'
+const EYE_BLACK = '#0b0908'
 const LID_BROWN = '#3a2a22'
 const BROW = '#8a6a55'
 const WHITE = '#f4f1ea'
@@ -288,10 +281,10 @@ const stAt = (rounds: number[], r: number, azDeg: number): number => (countAt(ro
 const DOLL_FACE = { eyeElev: -7, eyeAz: 30, blushElev: -22, blushAz: 42, mouthElev: -28, browElev: 11 }
 
 /** The face's size in the head's own stitches and rounds, scaled from the M
- *  head (54 sts, 28 rounds) so the keyring charm's face is the same SHAPE on
+ *  head (66 sts, 34 rounds) so the keyring charm's face is the same SHAPE on
  *  fewer stitches, not a bigger face. */
 function faceScale(head: number[]): { kSt: number; kR: number } {
-  return { kSt: Math.max(...head) / 54, kR: head.length / 28 }
+  return { kSt: Math.max(...head) / 66, kR: head.length / 34 }
 }
 
 /**
@@ -322,7 +315,7 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       if (style === 'stitched') {
         // The eye: an almond ~3 sts wide and 2 rounds tall at M (scaled with
         // the head), fuller toward the outer corner, satin columns 0.14 st apart worked inner to outer.
-        const w = 1.6 * kSt
+        const w = 1.8 * kSt
         const hTop = 1.1 * kR
         const hBot = 0.9 * kR
         const fill: EmbroideryStitch[] = []
@@ -333,7 +326,10 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
           if (k < 0.08) continue
           fill.push({ from: S(eyeR - hTop * k, u * w), to: S(eyeR + hBot * k, u * w) })
         }
-        out.push(feat(side < 0 ? 'eye-l' : 'eye-r', EYE_BLACK, 0.5, 'Black embroidery thread', fill))
+        // Rendered in the plump unplied strand (`chenille` look) so the satin
+        // reads as one deep black almond: the plied fine-cotton look turned
+        // a black satin fill grey (faces job, r5/r6).
+        out.push(feat(side < 0 ? 'eye-l' : 'eye-r', EYE_BLACK, 0.55, 'Black embroidery thread', fill, 'chenille'))
         // Catch-light: two tiny white stitches high on the inner side.
         const hl = S(eyeR - 0.5 * kR, -0.6 * kSt)
         out.push(feat(side < 0 ? 'eye-light-l' : 'eye-light-r', WHITE, 0.42, 'White embroidery thread', [
@@ -347,14 +343,14 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       for (let i = 0; i <= 6; i++) {
         const u = -1.05 + (2.3 * i) / 6
         const k = Math.sqrt(Math.max(0, 1 - Math.min(1, u * u))) * (1 + 0.12 * Math.min(u, 1))
-        lid.push(S(eyeR - 1.1 * kR * k - 0.22, u * 1.6 * kSt))
+        lid.push(S(eyeR - 1.1 * kR * k - 0.22, u * 1.8 * kSt))
       }
       const lidSt: EmbroideryStitch[] = []
       for (let i = 0; i < lid.length - 1; i++) lidSt.push({ from: lid[i]!, to: lid[i + 1]! })
       const tip = lid[lid.length - 1]!
       const prev = lid[lid.length - 2]!
-      lidSt.push({ from: tip, to: { round: tip.round - 0.7 * kR, st: tip.st + side * 0.45 * kSt }, taut: true })
-      lidSt.push({ from: prev, to: { round: prev.round - 0.75 * kR, st: prev.st + side * 0.15 * kSt }, taut: true })
+      lidSt.push({ from: tip, to: { round: tip.round - 0.35 * kR, st: tip.st + side * 0.6 * kSt }, taut: true })
+      lidSt.push({ from: prev, to: { round: prev.round - 0.5 * kR, st: prev.st + side * 0.35 * kSt }, taut: true })
       out.push(feat(side < 0 ? 'lid-l' : 'lid-r', LID_BROWN, 0.42, 'Dark brown embroidery thread', lidSt))
       // A short soft brow, a little above and arched.
       const br = half(roundAt(head, DOLL_FACE.browElev))
@@ -439,10 +435,10 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
   if (style === 'stitched') {
     lines.push(
       `Eyes (black embroidery thread): centre each eye ${roundWords(eyeR)}, ${sts(eyeC)} either side of centre front. ` +
-        `Satin stitch an almond ${sts(3.2 * kSt)} wide and ${rnds(2 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner. ` +
+        `Satin stitch an almond ${sts(3.6 * kSt)} wide and ${rnds(2 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner. ` +
         'With white thread, work two tiny stitches side by side high on the inner side of each eye for the catch-light.',
       `Lids and lashes (dark brown embroidery thread): backstitch along the top edge of each eye, half a round above the black, ` +
-        `running a little past the outer corner; from the last two holes work two short lashes up and outward, about ${rnds(0.75 * kR)} long.`,
+        `running a little past the outer corner; from the last two holes work two short lashes outward and a little up, about ${sts(0.6 * kSt)} long.`,
       `Brows (light brown embroidery thread): ${roundWords(half(roundAt(head, DOLL_FACE.browElev)))}, above each eye, two straight stitches in a gentle arch, about ${sts(1.8 * kSt)} wide.`,
     )
   } else if (style === 'sleepy') {
@@ -471,7 +467,7 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
  *  turn, the lens a little above her waist (tilt 82 = just above eye level of
  *  a figure this tall), framed tall. */
 const DOLL_VIEW = {
-  tiltDeg: 80,
+  tiltDeg: 70,
   yawDeg: 14,
   aimHeightFrac: 0.5,
   distScale: 1.0,
@@ -578,7 +574,9 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     gaugeText: '4 ply cotton on a 2.5 mm hook, worked tightly: about 28 dc and 30 rounds to 10 cm',
     ...DOLL_VIEW,
     // A standing doll is tall and narrow; frame her, not a 160 mm field.
-    minFieldMm: choices.size === 'S' ? 120 : 160,
+    // The script frames off the FOOTPRINT; a standing figure needs the field
+    // set from her HEIGHT (plus the keyring above the charm's head).
+    minFieldMm: Math.round((DOLL_SETTLED_SIZE_MM[`doll-${choices.size}`]?.height ?? 200) * 1.25 + (s.keyring ? 30 : 0)),
     parts,
     props: props.length ? props : undefined,
     notes:
@@ -605,12 +603,12 @@ export function dollPresetChoices(): Array<DollChoices & { base: 'doll' }> {
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
   'doll-S': { width: 46.2, height: 99.7 },
-  'doll-M': { width: 70.7, height: 200.1 },
-  'doll-L': { width: 79.8, height: 225.6 },
+  'doll-M': { width: 84, height: 232.4 },
+  'doll-L': { width: 91.5, height: 258.8 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
-  'doll-S': '1334b029',
-  'doll-M': '1d158baa',
-  'doll-L': '82a375cf',
+  'doll-S': '810ba413',
+  'doll-M': 'a7c409aa',
+  'doll-L': 'f14e7042',
 }
 

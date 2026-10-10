@@ -726,18 +726,20 @@ const DEFAULT_MIN_FIELD_MM = 160
 export function compositionScene(p: CompositionProgram, compiled: CompiledComposition, twist = 0.08): BlenderScene {
   const yr = compiled.yr
   const strokes: BlenderScene['strokes'] = compiled.placed.flatMap((pp) => {
-    const center = smooth(pp.ctrl, 4)
     if (pp.part.colourChanges?.length && pp.built) {
       // A COLOUR CHANGE cuts the one strand where the new yarn is first
       // worked; each run is its own plied stroke in its own colour, sharing
       // the cut point so no gap opens. Plying each run separately (rather than
       // cutting the plied strand) restarts the twist at the change, the way a
       // freshly joined yarn does.
+      // (Runs index the control points; each run is smoothed on its own, and
+      // the shared cut point is an endpoint of both, so they still meet.)
       return colourRuns(pp).map(({ hex, from, to }) => {
-        const { radiusMm, filaments } = pliedFilaments(center.slice(from, to + 1), yr * 0.62, 3, twist)
+        const { radiusMm, filaments } = pliedFilaments(smooth(pp.ctrl.slice(from, to + 1), 4), yr * 0.62, 3, twist)
         return { hex, sheen: 0.85, radiusMm, filaments }
       })
     }
+    const center = smooth(pp.ctrl, 4)
     const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
     return [{ hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }]
   })
