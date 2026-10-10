@@ -1880,8 +1880,10 @@ def _dried_bunch(root, H, R, vis):
     # tied back-left (just inside the frame), the heads fanning forward and
     # right to rest beside the piece's feet, in focus; the stems' cut ends run
     # away out of frame.
-    tx, ty = -(0.72 * vis.hw(0) + 0.1 * H), 0.12 * H
-    a0 = math.radians(-38)                          # 0 = +x; -38 deg = forward-right
+    # r6b: the bundle must lie BESIDE the piece, never across its feet: tied out
+    # past the left edge, the heads reach the piece's near-left corner and stop.
+    tx, ty = -(0.9 * vis.hw(0) + 0.1 * H), 0.1 * H
+    a0 = math.radians(-50)                          # 0 = +x; -50 deg = forward-right
     ax, ay = math.cos(a0), math.sin(a0)
     px, py = -ay, ax                                # across the bundle
     lav_pts, lav2_pts, dai_pts, eye_pts, gr_pts, gyp_pts = [], [], [], [], [], []
@@ -1889,7 +1891,7 @@ def _dried_bunch(root, H, R, vis):
     for kk in range(N):
         lane = (kk - (N - 1) / 2) / ((N - 1) / 2)   # -1..1 across the bundle
         lane = lane * (0.7 + 0.3 * _hash01(kk, 5))
-        L = (0.55 + 0.45 * _hash01(kk, 1)) * H
+        L = (0.36 + 0.26 * _hash01(kk, 1)) * H
         spread = 0.04 * H + 0.2 * H * abs(lane)
         zb = 0.22 + 0.06 * H * _hash01(kk, 6)      # stems pile up on each other
         base = (tx - ax * 0.9 * H + px * lane * 0.07 * H, ty - ay * 0.9 * H + py * lane * 0.07 * H, zb)
@@ -1910,13 +1912,13 @@ def _dried_bunch(root, H, R, vis):
                 # a lavender spike: whorls of florets packed round the stem
                 for q in range(3):
                     ang = j * 1.9 + q * 2.1
-                    off = 0.022 * H
+                    off = 0.016 * H
                     (lav_pts if (kk + q) % 2 else lav2_pts).append(
                         (p[0] - dy * off * math.cos(ang), p[1] + dx * off * math.cos(ang),
-                         p[2] + off * math.sin(ang), (0.02 + 0.008 * (q % 2)) * H))
+                         p[2] + off * math.sin(ang), (0.012 + 0.005 * (q % 2)) * H))
             elif kind == 2 and j == 15:
-                dai_pts.append((p[0], p[1], p[2], (0.055 + 0.02 * _hash01(kk, 3)) * H))
-                eye_pts.append((p[0], p[1], p[2] + 0.028 * H, 0.024 * H))
+                dai_pts.append((p[0], p[1], p[2], (0.038 + 0.014 * _hash01(kk, 3)) * H))
+                eye_pts.append((p[0], p[1], p[2] + 0.02 * H, 0.016 * H))
             elif kind == 3 and j > 8:
                 off = 0.016 * H * (1 if j % 2 else -1)
                 gr_pts.append((p[0] - dy * off, p[1] + dx * off, p[2], 0.02 * H))
