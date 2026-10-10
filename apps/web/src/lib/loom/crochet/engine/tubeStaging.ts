@@ -151,6 +151,11 @@ export interface TubeCollapse {
    *  point). When given it replaces the height-bin estimate — exact for a
    *  dome, whose rounds climb mostly in radius and share a thin slab of z. */
   roundRadius?: number[]
+  /** Each control point's position ALONG THE FABRIC (meridian arclength from
+   *  the start, mm, one per ctrl point). When given it replaces height as the
+   *  lying length: a flat dome has almost no height but a quarter-circle of
+   *  fabric, and laid flat that fabric is what spreads. */
+  axial?: number[]
 }
 
 /**
@@ -189,6 +194,9 @@ export function collapseTube(ctrl: V3[], c: TubeCollapse): V3[] {
     const w = f - i
     return Rb[i]! * (1 - w) + Rb[i + 1]! * w
   }
+  let axMin = 0, axMax = Lax
+  if (c.axial) { axMin = Infinity; axMax = -Infinity; for (const a of c.axial) { if (a < axMin) axMin = a; if (a > axMax) axMax = a } }
+  const LaxEff = c.axial ? axMax - axMin : Lax
   const gapMid = yr * 2.6
   const amp = c.foldAmpMm ?? 0
   const waves = c.foldWaves ?? 2.5
@@ -205,8 +213,8 @@ export function collapseTube(ctrl: V3[], c: TubeCollapse): V3[] {
     const Ls = Math.max(0, C / 2 - Math.PI * rhoL) // each straight run
     const th = Math.atan2(p.y, p.x)
     const a = ((th + Math.PI) / (2 * Math.PI)) * C // 0..C round the loop
-    const u = p.z - zmin // 0..Lax along the table
-    const f = u / Math.max(Lax, 1e-6)
+    const u = c.axial ? c.axial[idx]! - axMin : p.z - zmin // 0..Lax along the table
+    const f = u / Math.max(LaxEff, 1e-6)
     const sag = amp * Math.sin(waves * Math.PI * f) * Math.sin(Math.PI * f)
     // Walk the flattened loop: bottom straight (a in [0, Ls]), far fold
     // (semicircle up), top straight back, near fold (semicircle down).
@@ -235,7 +243,7 @@ export function collapseTube(ctrl: V3[], c: TubeCollapse): V3[] {
     z += yr * 1.2
     x += nx * n
     z += nz * n
-    const y = u - Lax / 2
+    const y = u - LaxEff / 2
     const xc = x + curl * Math.sin(Math.PI * f)
     return { x: xc * ca - y * sa, y: xc * sa + y * ca, z }
   })
