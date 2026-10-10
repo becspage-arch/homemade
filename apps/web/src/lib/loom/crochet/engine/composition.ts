@@ -161,6 +161,14 @@ export interface CompositionAccessory {
   colourHex: string
   headRadiusMm: number
   yarnWeight?: YarnWeight
+  /** Where the band's middle sits above the head's centre (fraction of its
+   *  radius; hatAccessory default 0.6). A toy with low-set eyes wants it
+   *  higher so the band clears the brow and the ears hang out from under it. */
+  brimHeightFrac?: number
+  /** The tail's flop (hatAccessory `WearOptions.bend`): where above the band
+   *  it starts (fraction of the head radius), its ramp length (mm) and final
+   *  angle (deg). The bar's nightcap folds right off the crown. */
+  bend?: { startFrac?: number; lengthMm?: number; angleDeg?: number; dirDeg?: number }
 }
 
 export interface CompositionProgram {
@@ -974,7 +982,11 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   // Accessories: a hat is a second stitched piece worn on the compiled toy.
   for (const a of p.accessories ?? []) {
     if (a.kind !== 'nightcap') continue
-    const hat = wearNightcap(compiled, a.on, { headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight })
+    const hat = wearNightcap(
+      compiled, a.on,
+      { headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight },
+      { ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}), ...(a.bend ? { bend: a.bend } : {}) },
+    )
     for (const st of [...hat.strokes, ...hat.pompom]) strokes.push(st as BlenderScene['strokes'][number])
   }
   // Full composed extent (for the fabric hint; the script frames from the strokes).
