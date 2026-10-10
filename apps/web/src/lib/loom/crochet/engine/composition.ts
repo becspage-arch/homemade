@@ -28,6 +28,7 @@ import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from '
 import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
 import type { HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
+import { rootedHairStrokes, type RootedHairSpec } from './dollHair'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -198,7 +199,9 @@ export interface CompositionProp {
 
 /** A nightcap worn on the head: the sleepy bunny's. `headRadiusMm` sizes the
  *  band (the head's settled radius; 0 = measured off the compiled head). */
-export interface CompositionAccessory {
+export type CompositionAccessory = NightcapAccessory | RootedHairSpec
+
+export interface NightcapAccessory {
   kind: 'nightcap'
   on: string
   colourHex: string
@@ -310,7 +313,7 @@ export function compositionYarnRadiusMm(p: CompositionProgram, override?: number
   return YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted']
 }
 
-interface PlacedPart {
+export interface PlacedPart {
   part: AmigurumiPart
   /** The relaxed, TRANSFORMED strand centre-line control points (world mm). */
   ctrl: V3[]
@@ -1101,6 +1104,11 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   }
   // Accessories: a hat is a second stitched piece worn on the compiled toy.
   for (const a of p.accessories ?? []) {
+    if (a.kind === 'rooted-hair') {
+      // A doll's rooted hair: loose yarn ends from the hair cap's last round.
+      for (const st of rootedHairStrokes(compiled, a, twist)) strokes.push(st as BlenderScene['strokes'][number])
+      continue
+    }
     if (a.kind !== 'nightcap') continue
     const hat = wearNightcap(
       compiled, a.on,
@@ -1159,7 +1167,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
 /** The worked round (1-based, as the pattern counts it) each strand point of
  *  a piece belongs to: the sphere's stuffing index or the tube's row index,
  *  both 0-based over worked rounds (-1 = the ring / anchor). */
-function strandRounds(pp: PlacedPart): number[] {
+export function strandRounds(pp: PlacedPart): number[] {
   const built = pp.built!
   const per = built.model.round ?? built.nodeRow ?? []
   return built.strandPath.map((ni) => (per[ni] ?? -1) + 1)
