@@ -5,7 +5,7 @@
  *
  * Worked in the round from a magic ring: a flat centre growing by five a round,
  * then ONE round whose outline is the star — into each group of five stitches
- * a sl st, tr, trtr, tr, sl st (UK): the heights rise to the point and fall to the
+ * a dc, tr, dtr, tr, dc (UK): the heights rise to the point and fall to the
  * valley, nothing places them — and an edging round of dc (UK) all round it,
  * fanned three into each point stitch and two either side of it, which crisps
  * and rounds the points the way the bar star's outline does.
@@ -14,7 +14,10 @@
  * graded stitches; the points came out long, thin and twisted at the tip — the
  * bar's are fat and short — and its chain edge could not take an edging: every
  * stitch worked into a chain's free leg dragged that chain's own crossings out
- * of their folds. Heights across the round give the bar's shape directly.)
+ * of their folds. Heights across the round give the bar's shape directly.
+ * Round 2 tried sl st, tr, trtr, tr, sl st for deeper valleys: the trtr posts
+ * stood apart and the points rendered as open, spiky loops — the bar star is
+ * dense — so the points are a step lower.)
  */
 
 import { rowPitchYr, type StitchId } from '../dictionary'
@@ -23,12 +26,12 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions } from './types'
 
-export const STAR_COLOURS = { main: '#b8913f' } // antique gold
+export const STAR_COLOURS = { main: '#a8843a' } // antique gold (r2's #b8913f still rendered yellow)
 const POINTS = 5
 /** The flat centre: stitches per round (a round of +5 each time). */
 export const STAR_ROUNDS = [5, 10, 15, 20, 25]
 /** The points round, into each group of five: valley → point → valley. */
-export const STAR_POINT: StitchId[] = ['slst', 'dc', 'dtr', 'dc', 'slst']
+export const STAR_POINT: StitchId[] = ['sc', 'dc', 'tr', 'dc', 'sc']
 /** The edging round: dc (UK) into each points-round stitch, this many each. */
 export const STAR_EDGE: number[] = [1, 2, 3, 2, 1]
 

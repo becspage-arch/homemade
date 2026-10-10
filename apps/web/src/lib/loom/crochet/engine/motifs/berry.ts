@@ -15,7 +15,7 @@ import { assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './commo
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const BERRY_COLOURS = { berry: '#c8735a', stalk: '#8d9c7c' } // terracotta, sage
+export const BERRY_COLOURS = { berry: '#b5675b', stalk: '#7b8660' } // dusty terracotta, olive
 export const BERRY_ROUNDS = [6, 12, 12, 12, 12, 6]
 export const STALK_CH = 8
 
@@ -47,14 +47,14 @@ export function buildBerry(o?: MotifOptions): BuiltMotif {
   m.fastenOff({ x: 0, y: 1 })
   const sb = m.finish(yr * 4, yr * 2.6 * STALK_CH)
   const stalk = pieceOf('stalk', m, sb, (p) => ({ x: p.x, y: p.y - yr * 1.5, z: p.z + yr * 1.2 }))
-  return assemble('berry', 'Berry', o, [ball, stalk], berryWords(o), materialsLine(o, ['terracotta', 'sage']).concat(['A pinch of toy stuffing.']))
+  return assemble('berry', 'Berry', o, [ball, stalk], berryWords(o), materialsLine(o, ['terracotta', 'olive']).concat(['A pinch of toy stuffing.']))
 }
 
 export function berryWords(o?: MotifOptions): string[] {
   return [
     'With terracotta:',
     ...writeInstructions(berryProgram(o)).map((s) => s.replace('Stuff firmly', 'Stuff lightly')),
-    `Stalk: with sage, ch ${STALK_CH}; fasten off. Sew one end to the top of the berry.`,
+    `Stalk: with olive, ch ${STALK_CH}; fasten off. Sew one end to the top of the berry.`,
   ]
 }
 

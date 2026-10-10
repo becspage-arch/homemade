@@ -3,23 +3,27 @@
  * bar-flower-wall-hanging.png; built-how ref real/9-big-rose-stem.jpg, graded
  * petals in layers).
  *
- * Three pieces stacked and sewn, the way layered roses are made: two flat petal
- * layers worked in the round — a small flat centre, then one round whose
- * outline is the petals (into each group of stitches short, tall, tall, short:
- * the heights make the rounded petal) — a large one
- * underneath and a smaller one on top turned half a petal, and a rolled bud of
- * small petals (rolled-rose.ts) sewn in the middle.
+ * Two pieces sewn together: a flat petal base worked in the round (a small flat
+ * centre, then a round whose outline is five petals — into each group of
+ * stitches short, tall, tall, short: the heights make the rounded petal) and,
+ * on it, a cupped heart of petals: a strip of graded petals worked along a
+ * chain (rolled-rose.ts), rolled tightly with the petals standing nearly
+ * upright, so the layers of the rose are the turns of the roll.
+ *
+ * (Round 2 stacked two flat petal layers under a small rolled bud: it rendered
+ * as a flat scruffy disc, nothing like the bar's small cupped roses.)
  */
 
 import type { StitchId } from '../dictionary'
 import { rowPitchYr } from '../dictionary'
 import { MotifStrand, crownRound, intoRingRound, shapedRound, sub, unit, type Crown } from './kit'
 import { rolledStrip } from './rolled-rose'
+import { runWords } from './leaf'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const LAYERED_ROSE_COLOURS = { main: '#d4919a' } // rose pink
+export const LAYERED_ROSE_COLOURS = { main: '#dba3a6', base: '#c98589' } // rose pink, deeper pink
 
 interface Layer {
   name: string
@@ -42,7 +46,10 @@ const PETALS = 5
 export const BUD_PETALS: StitchId[][] = [
   ['sc', 'hdc', 'hdc', 'sc'],
   ['sc', 'hdc', 'dc', 'hdc', 'sc'],
+  ['sc', 'hdc', 'dc', 'hdc', 'sc'],
   ['hdc', 'dc', 'dc', 'dc', 'hdc'],
+  ['hdc', 'dc', 'dc', 'dc', 'hdc'],
+  ['hdc', 'dc', 'tr', 'dc', 'hdc'],
 ]
 
 function layerPiece(yr: number, hex: string, L: Layer): MotifPiece {
@@ -71,15 +78,13 @@ export function buildLayeredRose(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(LAYERED_ROSE_COLOURS, o)
   const yr = y.yr
-  const outer = layerPiece(yr, col.main!, LAYERS[0]!)
-  const innerRaw = layerPiece(yr, col.main!, LAYERS[1]!)
-  const half = Math.PI / PETALS
-  const cs = Math.cos(half), sn = Math.sin(half)
-  // Each layer sewn on the one below, a yarn's thickness up, turned half a petal.
-  const inner: MotifPiece = { ...innerRaw, pose: (p) => ({ x: p.x * cs - p.y * sn, y: p.x * sn + p.y * cs, z: p.z + yr * 2.2 }) }
-  const budRaw = rolledStrip(yr, col.main!, BUD_PETALS, 'bud', { pitchYr: 3.6, r0Yr: 1.2, lean0: 4, lean1: 22, turnsFull: 1.5 })
-  const bud: MotifPiece = { ...budRaw, pose: (p, i) => { const q = budRaw.pose!(p, i); return { x: q.x, y: q.y, z: q.z + yr * 3.4 } } }
-  return assemble('layered-rose', 'Layered rose', o, [outer, inner, bud], layeredRoseWords(), materialsLine(o, ['rose pink']))
+  // The petal base (one flat layer of five petals) under a cupped rolled heart
+  // of petals that grow outward — the rose's layers are the turns of the roll,
+  // each petal standing nearly upright so the heart is a cup, not a disc.
+  const base = layerPiece(yr, col.base!, LAYERS[1]!)
+  const budRaw = rolledStrip(yr, col.main!, BUD_PETALS, 'petals', { pitchYr: 3.6, r0Yr: 1.2, lean0: 2, lean1: 24, turnsFull: 2.4 })
+  const bud: MotifPiece = { ...budRaw, pose: (p, i) => { const q = budRaw.pose!(p, i); return { x: q.x, y: q.y, z: q.z + yr * 2.0 } } }
+  return assemble('layered-rose', 'Layered rose', o, [base, bud], layeredRoseWords(), materialsLine(o, ['rose pink', 'deeper pink']))
 }
 
 function layerWords(L: Layer): string[] {
@@ -99,11 +104,15 @@ function layerWords(L: Layer): string[] {
 }
 
 export function layeredRoseWords(): string[] {
+  const nCh = BUD_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1
+  const petals = BUD_PETALS.map((p) => `[${runWords(p)}, sl st in next ch]`).join(', ')
   return [
-    'Outer layer:', ...layerWords(LAYERS[0]!).map((s) => `  ${s}`),
-    'Inner layer:', ...layerWords(LAYERS[1]!).map((s) => `  ${s}`),
-    `Bud: ch ${BUD_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1}; starting in the 2nd ch from hook, work ${BUD_PETALS.length} petals [the petal's sts, one in each ch, then sl st in next ch], growing from ${BUD_PETALS[0]!.map((id) => UK[id]).join(', ')} to ${BUD_PETALS[BUD_PETALS.length - 1]!.map((id) => UK[id]).join(', ')}. Fasten off; roll up tightly from the small end and stitch through the base.`,
-    'Sew the inner layer on the outer, turned so its petals sit between the outer petals; sew the bud in the middle.',
+    'Base, with deeper pink:', ...layerWords(LAYERS[1]!).map((s) => `  ${s}`),
+    'Petals, with rose pink:',
+    `  Ch ${nCh}.`,
+    `  Row 1: starting in the 2nd ch from hook, ${petals}. (${BUD_PETALS.length} petals)`,
+    '  Fasten off, leaving a long tail.',
+    'Roll the petal strip up tightly from the small petals, keeping the chain edge level at the bottom and the petals standing up so the rose is cupped; stitch through all the layers at the base. Sew the rose to the middle of the base.',
   ]
 }
 

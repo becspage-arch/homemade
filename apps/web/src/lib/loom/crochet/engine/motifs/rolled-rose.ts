@@ -18,7 +18,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const ROLLED_ROSE_COLOURS = { main: '#c98a90' } // dusty pink
+export const ROLLED_ROSE_COLOURS = { main: '#c27f8a' } // dusty mauve-pink
 
 /** The petals in work order (the first ones roll into the centre). */
 export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [
@@ -29,10 +29,10 @@ export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [
 
 /** Spiral pitch (radial growth per turn) as a multiple of the yarn radius, and
  *  the outward lean of the rolled petals from centre to rim (deg). */
-const ROLL_PITCH_YR = 4.4
+const ROLL_PITCH_YR = 3.8
 const ROLL_R0_YR = 1.6
 const LEAN0 = 6
-const LEAN1 = 48
+const LEAN1 = 32
 
 export function rosePetalList(): StitchId[][] {
   const out: StitchId[][] = []

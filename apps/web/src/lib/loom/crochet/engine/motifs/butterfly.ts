@@ -3,11 +3,11 @@
  * bar-flower-wall-hanging.png; built-how ref real/8-butterflies.jpg).
  *
  * Rounds 1-2: 10 then 20 sc (UK dc) — a flat centre. Round 3: four wings, each
- * over five sts — a chain standing up to the wing's height, a tall stitch into
- * each of the next four sts (tr, UK dtr, for the big upper wings; hdc, UK htr,
- * for the small lower wings, so the waist between them is a deep notch), a
- * chain back down and a sl st into the fifth st, which makes the notch between
- * wings. A short chain body is sewn down the middle and its tail knotted for an
+ * over five sts — a chain standing up to the first stitch's height, one stitch
+ * into each of the next four sts, short at the edges and tall in the middle so
+ * each wing is a rounded lobe (tr, dtr, dtr, tr UK for the big upper wings;
+ * htr, tr, tr, htr for the small lower ones), a chain back down and a sl st
+ * into the fifth st, which makes the notch between wings. A short chain body is sewn down the middle and its tail knotted for an
  * antenna.
  *
  * (Tried first: all four wings straight into the ring — 26 stitches and chains
@@ -20,6 +20,7 @@
 import type { StitchId } from '../dictionary'
 import { rowPitchYr } from '../dictionary'
 import { MotifStrand, crownRound, intoRingRound, polar, polarV, nearAngle, type Crown, type Ring } from './kit'
+import { runWords } from './leaf'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
@@ -37,18 +38,20 @@ const FANW = 0.35
 
 interface Wing {
   name: string
-  /** The tall stitch and the chain standing up to its height. */
-  id: StitchId
+  /** The wing's stitches, one into each st, edge to edge: lower at the edges,
+   *  tall in the middle, so each wing is a rounded lobe. */
+  sts: StitchId[]
+  /** The chain standing up to the first stitch's height (and back down). */
   ch: number
 }
 
-/** Round 2: four wings, each over three sts of round 1 — chain up, two tall sts
- *  in each of the next two sts, chain down, sl st in the third. */
+/** Round 3: four wings, each over five sts of round 2 — chain up, a stitch in
+ *  each of the next four sts, chain down, sl st in the fifth. */
 export const WINGS: Wing[] = [
-  { name: 'upper right', id: 'tr', ch: 3 },
-  { name: 'upper left', id: 'tr', ch: 3 },
-  { name: 'lower left', id: 'hdc', ch: 1 },
-  { name: 'lower right', id: 'hdc', ch: 1 },
+  { name: 'upper right', sts: ['dc', 'tr', 'tr', 'dc'], ch: 2 },
+  { name: 'upper left', sts: ['dc', 'tr', 'tr', 'dc'], ch: 2 },
+  { name: 'lower left', sts: ['hdc', 'dc', 'dc', 'hdc'], ch: 1 },
+  { name: 'lower right', sts: ['hdc', 'dc', 'dc', 'hdc'], ch: 1 },
 ]
 
 export function buildButterfly(o?: MotifOptions): BuiltMotif {
@@ -71,12 +74,11 @@ export function buildButterfly(o?: MotifOptions): BuiltMotif {
   m.sectionName = 'wings'
   for (let k = 0; k < WINGS.length; k++) {
     const w = WINGS[k]!
-    const rK = rPrev + yr * rowPitchYr(w.id)
-    const f = polar(c, rK)
+    const rK0 = rPrev + yr * rowPitchYr(w.sts[0]!)
     const base = PER_WING * k
     const aj = th[base + WING_OPS.length]!
     // the chain standing up to the wing's height, at the wing's leading edge
-    m.chain(w.ch, [m.cursor, polarV(c, rK, th[base]! - step * 0.55)], { turning: 1 })
+    m.chain(w.ch, [m.cursor, polarV(c, rK0, th[base]! - step * 0.55)], { turning: 1 })
     // the tall sts, fanned across the wing (2 into the middle st)
     const nT = WING_OPS.reduce((a, b) => a + b, 0)
     const lo = th[base]! - step * FANW, hi = th[base + WING_OPS.length - 1]! + step * FANW
@@ -87,7 +89,10 @@ export function buildButterfly(o?: MotifOptions): BuiltMotif {
       for (let s = 0; s < WING_OPS[q]!; s++, t++) {
         const two = WING_OPS[q]! === 2
         const a = lo + ((t + 0.5) / nT) * (hi - lo)
-        m.stitch({ id: w.id, frame: f, xCrown: a * rK, xHook: thB * rK, into: { kind: 'crown', crown: b }, by: rPrev, ty: rK, spread: two ? (s ? -0.6 : 0.6) : 0, hookDepthScale: two && s ? 1.5 : 1 })
+        const id = w.sts[t]!
+        const rK = rPrev + yr * rowPitchYr(id)
+        const f = polar(c, rK)
+        m.stitch({ id, frame: f, xCrown: a * rK, xHook: thB * rK, into: { kind: 'crown', crown: b }, by: rPrev, ty: rK, spread: two ? (s ? -0.6 : 0.6) : 0, hookDepthScale: two && s ? 1.5 : 1 })
       }
     }
     // the chain back down, and a sl st into the next st
@@ -137,9 +142,7 @@ function buildBody(yr: number, hex: string): MotifPiece {
 
 export function butterflyWords(): string[] {
   const up = WINGS[0]!, low = WINGS[2]!
-  const sts = (w: Wing): string => WING_OPS.every((n) => n === 1)
-    ? `${UK[w.id]} in each of the next ${WING_OPS.length} sts`
-    : WING_OPS.map((n) => (n === 1 ? `${UK[w.id]} in next st` : `${n} ${UK[w.id]} in next st`)).join(', ')
+  const sts = (w: Wing): string => runWords(w.sts, 'st')
   const wing = (w: Wing): string => `ch ${w.ch}, ${sts(w)}, ch ${w.ch}, sl st in next st`
   return [
     'With dusty blue, make a magic ring.',

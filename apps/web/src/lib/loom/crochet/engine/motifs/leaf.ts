@@ -106,7 +106,7 @@ export function runWords(ids: StitchId[], unit = 'ch'): string {
     let j = i
     while (j < ids.length && ids[j] === ids[i]) j++
     const k = j - i
-    parts.push(k === 1 ? `${UK[ids[i]!]} in next ${unit}` : `${UK[ids[i]!]} in each of the next ${k} ${unit}`)
+    parts.push(k === 1 ? `${UK[ids[i]!]} in next ${unit}` : `${UK[ids[i]!]} in each of the next ${k} ${unit === 'st' ? 'sts' : unit}`)
     i = j
   }
   return parts.join(', ')

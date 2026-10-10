@@ -257,7 +257,7 @@ export class MotifStrand {
     const def = STITCHES[id]
     const from = this.S.nodes.length
     const linksFrom = this.S.links.length
-    let bcBack: number, bcFront: number, belowP: V2, role: 'hook' | 'ring' = 'hook'
+    let bcBack: number, bcFront: number, role: 'hook' | 'ring' = 'hook'
     if (spec.into.kind === 'crown') {
       bcBack = spec.into.crown.back
       bcFront = spec.into.crown.front
@@ -272,7 +272,7 @@ export class MotifStrand {
       role = 'ring'
     }
     const bn = this.S.nodes[bcBack]!
-    belowP = v(bn.x, bn.y)
+    const belowP = v(bn.x, bn.y)
     const bl = frame.local(belowP)
     const xHook0 = spec.xHook ?? bl.lx
     const xHook = xHook0 + yr * HOOK_SPREAD_YR * (spec.spread ?? 0)

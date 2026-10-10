@@ -19,7 +19,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions } from './types'
 
-export const DAISY_COLOURS = { centre: '#c9a03c', petal: '#f1e8d6' } // mustard, cream
+export const DAISY_COLOURS = { centre: '#c39433', petal: '#e9dcc3' } // ochre mustard, warm cream (r2's #f1e8d6 rendered white)
 
 /** A petal, tip to base. */
 export const DAISY_PETAL: StitchId[] = ['dc', 'tr', 'tr', 'tr', 'dc', 'hdc']
