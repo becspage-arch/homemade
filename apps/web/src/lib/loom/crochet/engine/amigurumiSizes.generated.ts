@@ -14,6 +14,10 @@
 /** One piece's settled width x height in mm at worsted weight, by round profile
  *  (`rounds.join(',')`). Built and measured standing alone on the ground. */
 export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: number }> = {
+  "6": {
+    "width": 13.6,
+    "height": 8.9
+  },
   "6,11,12,12,11,6": {
     "width": 26.1,
     "height": 28.8
@@ -97,6 +101,78 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,6,6,6,6,6,6,6,6": {
     "width": 14.1,
     "height": 48.5
+  },
+  "6,12,18,24,28,33,36,39,41,42,42,42,42,41,39,36,33,28,24,18,12,6": {
+    "width": 87.1,
+    "height": 85.9
+  },
+  "6,12,18,24,29,34,37,41,44,46,47,48,48,48,47,46,44,41,37,34,29,24,18,12,6": {
+    "width": 99.2,
+    "height": 97.2
+  },
+  "6,12,18,24,30,34,39,42,46,49,51,53,54,54,54,54,53,51,49,46,42,39,34,30,24,18,12,6": {
+    "width": 111.3,
+    "height": 107.4
+  },
+  "6,12,18,24,30,35,39,44,47,51,54,56,58,59,60,60,60,60,59,58,56,54,51,47,44,39,35,30,24,18,12,6": {
+    "width": 123.6,
+    "height": 123.9
+  },
+  "6,12,18,24,30,35,40,45,49,52,56,59,61,63,65,66,66,66,66,65,63,61,59,56,52,49,45,40,35,30,24,18,12,6": {
+    "width": 135.8,
+    "height": 129.7
+  },
+  "6,12,18,18,18,18,12,6": {
+    "width": 38,
+    "height": 29.4
+  },
+  "6,12,18,24,24,24,24,18,12,6": {
+    "width": 50.4,
+    "height": 32.7
+  },
+  "6,12,18,24,30,30,30,30,24,18,12,6": {
+    "width": 62.6,
+    "height": 35.8
+  },
+  "6,12,18,24,30,36,36,36,36,30,24,18,12,6": {
+    "width": 74.6,
+    "height": 39.1
+  },
+  "6,12,18,24,24,24,18,12,6": {
+    "width": 50.1,
+    "height": 27.4
+  },
+  "6,12,12,12,12,12,12,10,8,6": {
+    "width": 26.7,
+    "height": 49.5
+  },
+  "6,12,18,18,18,18,18,18,18,16,14,12,10,8,6": {
+    "width": 38.4,
+    "height": 71.2
+  },
+  "6,9,12,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,12,12,9,9,6,6": {
+    "width": 32.7,
+    "height": 139.6
+  },
+  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,15,15,12,12,9,6": {
+    "width": 38.7,
+    "height": 176.3
+  },
+  "6,9,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
+    "width": 44.6,
+    "height": 204.9
+  },
+  "6,12": {
+    "width": 27.8,
+    "height": 8.2
+  },
+  "6,12,18": {
+    "width": 39.2,
+    "height": 9.5
+  },
+  "6,12,18,24": {
+    "width": 50,
+    "height": 10.4
   }
 }
 
@@ -132,24 +208,24 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 115
   },
   "bear-M": {
-    "width": 65,
-    "height": 135
+    "width": 75,
+    "height": 145
   },
   "bear-L": {
-    "width": 80,
-    "height": 175
+    "width": 85,
+    "height": 160
   },
   "bunny-S": {
-    "width": 95,
-    "height": 125
+    "width": 80,
+    "height": 110
   },
   "bunny-M": {
-    "width": 105,
-    "height": 155
+    "width": 95,
+    "height": 140
   },
   "bunny-L": {
-    "width": 140,
-    "height": 185
+    "width": 110,
+    "height": 150
   },
   "cat-S": {
     "width": 95,
@@ -213,12 +289,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "1389b8b3",
-  "bear-M": "f11f766f",
-  "bear-L": "d43d3fb1",
-  "bunny-S": "66ccb78a",
-  "bunny-M": "3ad55da3",
-  "bunny-L": "cf20b836",
+  "bear-S": "cb211625",
+  "bear-M": "cb97be2a",
+  "bear-L": "b1c588ef",
+  "bunny-S": "aeceb382",
+  "bunny-M": "82251d38",
+  "bunny-L": "87a671a7",
   "cat-S": "393281f6",
   "cat-M": "bdb741b0",
   "cat-L": "5f10b0c8",
