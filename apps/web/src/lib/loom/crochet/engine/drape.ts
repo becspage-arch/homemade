@@ -728,7 +728,7 @@ export function drapedView(o: DrapeOptions): {
     // A styled set keeps its own eye-level camera unless told: the same tilt
     // from above, framed tighter than a toy (the piece is wide and low).
     stageTiltDeg: tilt,
-    stageZoom: v.stageZoom ?? 0.72,
+    stageZoom: v.stageZoom ?? 1.45,
     openFabric: true,
     yawDeg: v.yawDeg ?? 18,
     aimHeightFrac: v.aimHeightFrac ?? 0.08,
