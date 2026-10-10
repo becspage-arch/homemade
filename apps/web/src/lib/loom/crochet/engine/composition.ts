@@ -25,6 +25,7 @@ import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
 import type { HeroStage } from '../../render/blenderScene'
+import { wearNightcap } from './hatAccessory'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -152,6 +153,16 @@ export interface CompositionProp {
   surfaceFit?: 'box' | 'ellipsoid'
 }
 
+/** A nightcap worn on the head: the sleepy bunny's. `headRadiusMm` sizes the
+ *  band (the head's settled radius; 0 = measured off the compiled head). */
+export interface CompositionAccessory {
+  kind: 'nightcap'
+  on: string
+  colourHex: string
+  headRadiusMm: number
+  yarnWeight?: YarnWeight
+}
+
 export interface CompositionProgram {
   name: string
   parts: AmigurumiPart[]
@@ -194,6 +205,12 @@ export interface CompositionProgram {
   /** The styled listing-photo set (see `HeroStage`). Unset / 'studio' = the
    *  clean product sweep, unchanged. Render-only: never touches the geometry. */
   stage?: HeroStage
+  /** ACCESSORIES worn on the finished toy (toy-pose round 6): each is a
+   *  separate genuinely-stitched piece (hatAccessory.ts) built, audited and
+   *  seated on a named part of the COMPILED composition, its strokes appended
+   *  to the scene and its pattern appended to the words. Outside the geometry
+   *  hash (the toy is the toy); a composition without them is unchanged. */
+  accessories?: CompositionAccessory[]
   /** Key+fill energy scale (renderer default 0.65 — eased for pale wool). */
   light?: number
   /** AgX exposure (renderer default 0.2). */
@@ -953,6 +970,12 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
       const { radiusMm, filaments } = pliedFilaments(smooth(line, 2), e.radiusMm, 3, twist * 0.4)
       strokes.push({ hex: e.hex, sheen: 0.6, radiusMm, filaments, ...(e.fibre ? { fibre: e.fibre } : {}) })
     }
+  }
+  // Accessories: a hat is a second stitched piece worn on the compiled toy.
+  for (const a of p.accessories ?? []) {
+    if (a.kind !== 'nightcap') continue
+    const hat = wearNightcap(compiled, a.on, { headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight })
+    for (const st of [...hat.strokes, ...hat.pompom]) strokes.push(st as BlenderScene['strokes'][number])
   }
   // Full composed extent (for the fabric hint; the script frames from the strokes).
   let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity

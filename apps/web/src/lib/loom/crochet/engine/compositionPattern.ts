@@ -17,6 +17,7 @@
 import { programToChart, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
 import { writeFaceInstructions } from './faceEmbroidery'
+import { nightcapInstructions } from './hatAccessory'
 
 export interface CompositionPiece {
   /** Display label: "Body", "Ears". */
@@ -255,6 +256,12 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
   }
   out.push('Assembly')
   out.push(...writeAssembly(p))
+  for (const a of p.accessories ?? []) {
+    if (a.kind !== 'nightcap') continue
+    out.push('Nightcap')
+    out.push(...nightcapInstructions({ headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight }))
+    out.push(`Sit the hat on the ${baseName(a.on)} with the band just above the eyes and let the tip flop to one side; a few stitches through the band hold it.`)
+  }
   return out
 }
 
@@ -302,6 +309,7 @@ export function compositionNotions(p: CompositionProgram): string[] {
   }
   if ((p.props ?? []).some((x) => /nose/i.test(x.name))) notions.push('Safety nose')
   for (const label of new Set((p.embroidery ?? []).map((e) => e.threadLabel))) notions.push(`${label}, for the face`)
+  if ((p.accessories ?? []).some((a) => a.kind === 'nightcap')) notions.push('A third yarn for the nightcap, and card or a pompom maker for its pompom')
   return notions
 }
 

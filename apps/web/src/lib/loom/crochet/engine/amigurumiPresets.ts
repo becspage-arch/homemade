@@ -199,8 +199,15 @@ export interface AmigurumiChoices {
    *  eyes and moulded nose, so every existing preset is unchanged. The
    *  embroidered styles replace the safety eyes / nose with sewn features. */
   face?: FaceStyle
+  /** A HAT (toy-pose round 6): the sleepy bunny's nightcap, worn on the head
+   *  of a bear or bunny, in `hatHex` (default a soft lilac). Absent = none. */
+  hat?: 'nightcap'
+  hatHex?: string
   name?: string
 }
+
+/** The nightcap's default lilac (the bar's). */
+export const HAT_HEX_DEFAULT = '#b7a4d8'
 
 /**
  * What one base IS, and which of the maker's toggles it can honour.
@@ -227,8 +234,8 @@ export interface AmigurumiBaseSpec {
 export const AMIGURUMI_BASES: AmigurumiBaseSpec[] = [
   { id: 'ball', label: 'Ball', blurb: 'One stuffed ball. The amigurumi starting point.', nose: false, paws: false, contrastFor: 'Not used on a plain ball.' },
   { id: 'egg', label: 'Egg', blurb: 'A taller, rounded body on its own.', nose: false, paws: false, contrastFor: 'Not used on a plain egg.' },
-  { id: 'bear', label: 'Bear', blurb: 'Body, head, muzzle, round ears, four limbs.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
-  { id: 'bunny', label: 'Bunny', blurb: 'The same body with long ears standing up.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
+  { id: 'bear', label: 'Bear', blurb: 'A big head on a small body, a muzzle, round ears, arms folded on the tummy, toe-bean feet and a belly patch.', nose: true, paws: true, contrastFor: 'The muzzle, belly patch, paw tips and toe beans.' },
+  { id: 'bunny', label: 'Bunny', blurb: 'A big head on a small body, long lined lop ears, arms folded on the tummy and toe-bean feet.', nose: true, paws: true, contrastFor: 'The ear linings and the toe beans.' },
   { id: 'cat', label: 'Cat', blurb: 'Pointed ears, a small muzzle, four legs and a long tail.', nose: true, paws: true, contrastFor: 'The muzzle and the paw pads.' },
   { id: 'dog', label: 'Dog', blurb: 'A round snout, two floppy ears, four legs and a short tail.', nose: true, paws: true, contrastFor: 'The snout and the paw pads.' },
   { id: 'bird', label: 'Bird', blurb: 'An egg body sitting on its base, a small head, a beak, two wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
@@ -677,6 +684,13 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
+  if (choices.hat === 'nightcap' && isToy(choices.base)) {
+    const head = program.parts.find((x) => x.name === 'head')!
+    // The band is sized to the head's MEASURED settled radius (the same number
+    // the words and the render use), in the toy's own yarn.
+    const headRadiusMm = profileSizeMm(head.rounds, program.yarnWeight).width / 2
+    program.accessories = [{ kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight }]
+  }
   return program
 }
 
@@ -758,7 +772,10 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     {
       name: 'muzzle', stitch: 'sc',
       rounds: choices.base === 'dog' ? s.snout : toy ? s.toyMuzzle : s.muzzle,
-      colourHex: contrast,
+      // Round 6: the bunny's muzzle is in the MAIN yarn (the bar's cream
+      // muzzle — a contrast disc read as a pig's snout); the pink is only the
+      // embroidered nose. The bear keeps its contrast muzzle (the cow's).
+      colourHex: choices.base === 'bunny' ? main : contrast,
       // Round 11: the bear's muzzle grows with its bigger head, and shows its
       // magic ring (drawn to a pinprick, under the nose) instead of the
       // fasten-off end, which rendered as a hole round the nose.
@@ -969,17 +986,17 @@ const TOY_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.85, M: 0.95, L: 1.0 
  * tips are its first two rounds in the contrast yarn, and the bear gets a
  * contrast belly patch above the paws.
  */
-const TOY_ARM_DIR = { x: 0.8, y: 0.55, z: 0.68 }
-const TOY_ARM_AIM = { x: -0.4, y: 0.62, z: -1 }
-const TOY_ARM_PROUD: Record<AmigurumiSize, number> = { S: 3, M: 3.5, L: 4.5 }
+const TOY_ARM_DIR = { x: 0.75, y: 0.85, z: 0.6 }
+const TOY_ARM_AIM = { x: -0.42, y: 1.05, z: -1 }
+const TOY_ARM_PROUD: Record<AmigurumiSize, number> = { S: 4.5, M: 6, L: 7 }
 const TOY_LEG_DIR = { x: 0.45, y: 0.8, z: -0.5 }
 const TOY_LEG_AIM = { x: 0.28, y: 1, z: 0.16 }
-const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: -4, M: -5, L: -6 }
+const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: -4, M: -5, L: -4.5 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
-const TOE_PAD_U = -0.38
-const TOE_BEAN_U = { outer: 0.55, middle: 0.78 }
-const TOE_BEAN_V = 0.6
+const TOE_PAD_U = -0.42
+const TOE_BEAN_U = { outer: 0.6, middle: 0.84 }
+const TOE_BEAN_V = 0.64
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
   const bear = choices.base === 'bear'
@@ -1029,7 +1046,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     })
     parts.push({
       name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12, 18], colourHex: contrast,
-      form: 'disc', scale: 0.85,
+      form: 'disc', scale: 0.72,
       place: { on: leg, dir: at(TOE_PAD_U, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
     for (const [k, v] of [[0, -TOE_BEAN_V], [1, 0], [2, TOE_BEAN_V]] as const) {
@@ -1386,9 +1403,14 @@ export function profileSizeMm(rounds: number[], yarnWeight: YarnWeight = 'worste
   const measured = PROFILE_SIZE_MM[rounds.join(',')]
   if (measured) return { width: measured.width * k, height: measured.height * k }
   const widest = Math.max(...rounds)
-  // ~3.8 mm a stitch around, ~3.3 mm a round up: the pitches the settled
-  // measurements above work out to.
-  return { width: (widest * 3.8 * k) / Math.PI, height: rounds.length * 3.3 * k }
+  const yr = YARN_WEIGHT_RADIUS_MM[yarnWeight]
+  // Off the measured table (round 5): a closed round piece settles ~0.98 yarn
+  // radii of width per stitch round its widest and ~1.84 yarn radii of height
+  // per round (sphereRounds(36,1) at worsted 74 x 77 mm over 20 rounds;
+  // sphereRounds(60,1) at fine 76.5 x 76.7 over 32 rounds). The old "3.8 mm
+  // a stitch" guess was half that and sized a nightcap for a head half the
+  // real one.
+  return { width: widest * yr * 0.98, height: rounds.length * yr * 1.84 }
 }
 
 /** The whole finished piece's settled size, by preset and size. */
