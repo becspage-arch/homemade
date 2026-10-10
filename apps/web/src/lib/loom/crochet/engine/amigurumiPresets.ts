@@ -28,8 +28,17 @@ import {
   PRESET_SETTLED_SIZE_MM_GENERATED,
 } from './amigurumiSizes.generated'
 import { sphereRounds } from './sphereProfile'
+import {
+  buildFaceEmbroidery,
+  faceUsesSafetyEyes,
+  faceUsesSafetyNose,
+  type EmbroideryFeature,
+  type FaceLayout,
+  type FaceStyle,
+} from './faceEmbroidery'
 
 export { sphereRounds }
+export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
 
 /**
  * A ball: climbs in sixes to the equator, holds, comes back down in sixes.
@@ -141,6 +150,10 @@ export interface AmigurumiChoices {
   nose: boolean
   /** Add contrast paw pads on the ends of the limbs. */
   paws: boolean
+  /** The face (faceEmbroidery.ts). Absent = 'safety', the original safety
+   *  eyes and moulded nose, so every existing preset is unchanged. The
+   *  embroidered styles replace the safety eyes / nose with sewn features. */
+  face?: FaceStyle
   name?: string
 }
 
@@ -538,6 +551,13 @@ export function amigurumiPresetName(choices: AmigurumiChoices): string {
 
 /** The maker's choices → a composition the loom can build. */
 export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionProgram {
+  const program = buildBaseProgram(choices)
+  const embroidery = faceEmbroidery(choices, program)
+  if (embroidery.length) program.embroidery = embroidery
+  return program
+}
+
+function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
   const s = SIZES[choices.size]
   const name = amigurumiPresetName(choices)
 
@@ -615,7 +635,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : bear ? 1.15 : 0.85,
       place: {
         on: 'head', dir: faceDir({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : -0.22 }),
-        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear, surfaceFit: 'ellipsoid',
+        // An embroidered face is sewn ACROSS the muzzle front, so it wants the
+        // magic ring there (drawn to a pinprick), not the closing hole.
+        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear && (choices.face ?? 'safety') === 'safety', surfaceFit: 'ellipsoid',
       },
     },
   ]
@@ -971,7 +993,8 @@ const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
 
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []
-  if (choices.eyeMm > 0) {
+  const style = choices.face ?? 'safety'
+  if (choices.eyeMm > 0 && faceUsesSafetyEyes(style)) {
     const r = choices.eyeMm / 2
     for (const side of [-1, 1] as const) {
       props.push({
@@ -985,7 +1008,7 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
       })
     }
   }
-  if (choices.nose && amigurumiBaseSpec(choices.base).nose) {
+  if (choices.nose && amigurumiBaseSpec(choices.base).nose && faceUsesSafetyNose(style)) {
     props.push({
       name: 'nose',
       on: 'muzzle',
@@ -1000,6 +1023,56 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
     })
   }
   return props.length ? props : undefined
+}
+
+/**
+ * Where an embroidered face sits, per base: elevation above the head's equator
+ * and azimuth either side of centre front, in degrees. Low and wide (the bar):
+ * the eyes level with the top of the muzzle and well out to the sides, the
+ * blush below and outside them on the cheek.
+ */
+const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushElev: number; blushAz: number; pinkNose: boolean; eyeHalfSt: number }> = {
+  ball: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
+  egg: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
+  bunny: { eyeElev: 5, eyeAz: 33, blushElev: -15, blushAz: 41, pinkNose: true, eyeHalfSt: 1.05 },
+  bear: { eyeElev: 5, eyeAz: 31, blushElev: -16, blushAz: 42, pinkNose: false, eyeHalfSt: 1.2 },
+  cat: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: true, eyeHalfSt: 0.8 },
+  dog: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: false, eyeHalfSt: 0.8 },
+  bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },
+  chick: { eyeElev: 12, eyeAz: 36, blushElev: -6, blushAz: 52, pinkNose: false, eyeHalfSt: 0.6 },
+}
+
+/** The embroidered face for a preset, in pattern coordinates (empty for the
+ *  default safety-eye face). */
+function faceEmbroidery(choices: AmigurumiChoices, program: CompositionProgram): EmbroideryFeature[] {
+  const style = choices.face ?? 'safety'
+  if (style === 'safety') return []
+  const headName = program.parts.some((x) => x.name === 'head') ? 'head' : 'body'
+  const head = program.parts.find((x) => x.name === headName)!
+  const muzzle = program.parts.find((x) => x.name === 'muzzle')
+  const set = FACE_SET[choices.base]
+  const layout: FaceLayout = {
+    head: { name: head.name, rounds: head.rounds },
+    muzzle:
+      muzzle && amigurumiBaseSpec(choices.base).nose && choices.nose
+        ? {
+            name: muzzle.name,
+            rounds: muzzle.rounds,
+            // `poleIn` seats the magic ring into the head, so the closing
+            // point faces out; otherwise the ring does.
+            frontIsRing: !(muzzle.place as { poleIn?: boolean }).poleIn,
+          }
+        : undefined,
+    forward: faceDir({ x: 0, y: 1, z: 0 }),
+    right: faceDir({ x: 1, y: 0, z: 0 }),
+    eyeElevDeg: set.eyeElev,
+    eyeAzDeg: set.eyeAz,
+    blushElevDeg: set.blushElev,
+    blushAzDeg: set.blushAz,
+    eyeHalfSt: set.eyeHalfSt,
+    pinkNose: set.pinkNose,
+  }
+  return buildFaceEmbroidery(style, layout)
 }
 
 /** Every combination the designer can produce — what the audit test walks. */

@@ -18,6 +18,7 @@ import {
   AMIGURUMI_BASES,
   AMIGURUMI_SIZES,
   EYE_SIZES,
+  FACE_STYLES,
   amigurumiBaseSpec,
   buildAmigurumiProgram,
   amigurumiPresetName,
@@ -195,6 +196,25 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
         />
 
         <fieldset className="crochet-designer-group">
+          <legend>Face</legend>
+          <div className="crochet-designer-chips">
+            {FACE_STYLES.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                title={f.blurb}
+                aria-pressed={(choices.face ?? 'safety') === f.id}
+                className={`crochet-designer-chip${(choices.face ?? 'safety') === f.id ? ' is-active' : ''}`}
+                onClick={() => set({ face: f.id })}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+
+        {(choices.face ?? 'safety') !== 'sleepy' && (choices.face ?? 'safety') !== 'stitched' && (
+        <fieldset className="crochet-designer-group">
           <legend>Safety eyes</legend>
           <div className="crochet-designer-chips">
             {EYE_SIZES.map((mm) => (
@@ -215,6 +235,7 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
             </p>
           )}
         </fieldset>
+        )}
 
         {spec.nose && (
           <label className="studio-p2c-checkbox">
