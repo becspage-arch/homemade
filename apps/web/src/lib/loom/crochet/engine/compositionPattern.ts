@@ -42,6 +42,8 @@ export interface CompositionPiece {
   panel?: Record<number, [number, number]>
   /** Worked in a lighter yarn than the rest. */
   yarnWeight?: YarnWeight
+  /** How the piece is sewn on (AmigurumiPart.sewNote). */
+  sewNote?: string
 }
 
 // A side suffix, optionally numbered (`toe-bean-l0`): the three toe beans on
@@ -116,6 +118,7 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
       ...(first.form === 'disc' ? { kind: 'disc' as const } : first.press ? { kind: 'pressed' as const } : {}),
       ...(first.panel ? { panel: first.panel.runs } : {}),
       ...(first.yarnWeight ? { yarnWeight: first.yarnWeight } : {}),
+      ...(first.sewNote ? { sewNote: first.sewNote } : {}),
     }
   })
 }
@@ -225,8 +228,9 @@ export function writeAssembly(p: CompositionProgram): string[] {
       lines.push(`Sew the ${piece.label.toLowerCase()} to the ${to} by the closed end, lining facing forward, so they hang down beside the face.`)
     } else {
       lines.push(
-        `Sew the ${piece.label.toLowerCase()} to the ${to}, ` +
-        'stuffing firmly as you close each piece.',
+        piece.sewNote
+          ? `Sew the ${piece.label.toLowerCase()} to the ${to} ${piece.sewNote}, stuffing firmly as you close each piece.`
+          : `Sew the ${piece.label.toLowerCase()} to the ${to}, ` + 'stuffing firmly as you close each piece.',
       )
     }
   }

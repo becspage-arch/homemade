@@ -125,6 +125,7 @@ export interface RelaxConfig {
    * gravity (every existing build is bit-identical).
    */
   gravity?: { x: number; y: number; z: number }
+  /**
    * PRESSED FLAT (toy-pose pass, 2026-10-09). An UNSTUFFED piece — a bunny's
    * long ear, an inner-ear lining — is a closed tube of fabric with nothing in
    * it, and a maker flattens it between finger and thumb before sewing it on,

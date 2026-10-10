@@ -456,12 +456,18 @@ export function buildRounds(
    * LOOP-STITCH rounds (§8j, the fringe / hair patch): `roundStitch(k)` names
    * the stitch worked in round k (default: `st` every round) — a loop stitch
    * has the same cell as dc (UK), so only its insertion changes — and `loop`
-   * overrides the dictionary loop shape. Absent = the disc exactly as before.
+   * overrides the dictionary loop shape; `loopByRound(k)` overrides it again
+   * per round (a tuft whose centre loops are longer than its edge loops —
+   * the stacked Highland-cow fringe). Absent = the disc exactly as before.
    */
-  loopOpts?: { roundStitch?: (k: number) => StitchId; loop?: Partial<LoopShape> },
+  loopOpts?: { roundStitch?: (k: number) => StitchId; loop?: Partial<LoopShape>; loopByRound?: (k: number) => Partial<LoopShape> | undefined },
 ): BuiltContinuous {
   const yr = yarnRadiusMm
   const idAt = (k: number): StitchId => loopOpts?.roundStitch?.(k) ?? st
+  const loopAt = (k: number): Partial<LoopShape> | undefined => {
+    const per = loopOpts?.loopByRound?.(k)
+    return per ? { ...loopOpts?.loop, ...per } : loopOpts?.loop
+  }
   // The real cell (§8f-3) — the same one the flat grid builder takes, including
   // the head as a two-strand LOOP. The canopy below is re-derived from it in the
   // same pass, because the two are one mechanism: the canopy says where a crown
@@ -563,7 +569,7 @@ export function buildRounds(
           j: k,
           c: i,
           id: idAt(k),
-          loop: loopOpts?.loop,
+          loop: loopAt(k),
           s: 1,
           fz: 1, // no turn in the round — every round works the same face
           by: rPrev,
@@ -609,7 +615,7 @@ export function buildRounds(
             j: k,
             c: oi,
             id: idAt(k),
-            loop: loopOpts?.loop,
+            loop: loopAt(k),
             s: 1,
             fz: 1,
             by: rPrev,

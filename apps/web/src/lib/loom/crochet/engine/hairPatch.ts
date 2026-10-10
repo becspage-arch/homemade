@@ -49,12 +49,24 @@ export interface HairPatch {
   firstLoopRound: number
   /** Overrides of the dictionary loop shape for this patch. */
   loop?: Partial<LoopShape>
+  /** Further overrides per round (0-based): the Highland cow's tuft is
+   *  STACKED — the loops nearest the ring are worked over two fingers and
+   *  stand tallest, the edge loops over one, so the tuft mounds up in the
+   *  middle instead of lying as one flat layer. */
+  loopByRound?: (k: number) => Partial<LoopShape> | undefined
+  /** The loose loops' rendered strand radius, in yarn radii (default 0.62,
+   *  the plied bundle every stitch is drawn at). A loop of chenille that is
+   *  not pulled tight into a stitch plumps up to its full pile, so the cow's
+   *  curls are drawn fatter than the fabric they stand on. */
+  strandYr?: number
   colourHex: string
 }
 
 export interface PlacedHair {
   name: string
   hex: string
+  /** Rendered strand radius in yarn radii (see HairPatch.strandYr). */
+  strandYr?: number
   /** The relaxed, conformed strand centre-line (world mm). */
   ctrl: V3[]
   built: BuiltContinuous
@@ -87,6 +99,7 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (k >= h.firstLoopRound ? h.stitch : 'sc'),
     loop: h.loop,
+    loopByRound: h.loopByRound,
   })
   const { e1, e2, w } = patchFrame(h.dir)
   const g = yr * HAIR_GRAVITY
@@ -178,7 +191,7 @@ export function placeHair(
     if (!host) throw new Error(`hair '${h.name}' is sewn to unknown part '${h.on}'`)
     const built = buildHairPatch(h, yr)
     problems.push(...hairPatchProblems(h, built, yr))
-    placed.push({ name: h.name, hex: h.colourHex, ctrl: conformHairPatch(h, built, host, yr), built })
+    placed.push({ name: h.name, hex: h.colourHex, ...(h.strandYr ? { strandYr: h.strandYr } : {}), ctrl: conformHairPatch(h, built, host, yr), built })
   }
   return { placed, problems }
 }
@@ -204,20 +217,28 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
       'The loop forms on the side facing away from you. Work every round with the same side facing you: ' +
       `that side is sewn against the ${hostLabel}, and the loops stand out on the other.`,
   )
+  // The finger the loops are worked over, from the same loop length the
+  // geometry is built with: a loop over two fingers is about half as long
+  // again as one over one (the stacked tuft's crown loops).
+  const baseLen = h.loop?.lengthYr ?? STITCHES[h.stitch].loop?.lengthYr ?? 3
+  const fingers = (k: number): string => {
+    const len = h.loopByRound?.(k)?.lengthYr ?? baseLen
+    return len >= baseLen * 1.3 ? ' (wrap the yarn round two fingers for these taller loops)' : len <= baseLen * 0.95 && h.loopByRound?.(k) ? ' (wrap the yarn round one finger only, for short loops)' : ''
+  }
   h.rounds.forEach((count, k) => {
     const lp = k >= h.firstLoopRound
     if (k === 0) {
-      lines.push(`Round 1: ${count} ${lp ? 'lp st' : 'dc'} into a magic ring. (${count})`)
+      lines.push(`Round 1: ${count} ${lp ? 'lp st' : 'dc'} into a magic ring${lp ? fingers(k) : ''}. (${count})`)
       return
     }
     const per = h.rounds[k - 1]! / 6
     const body = per === 1 ? (lp ? '2 lp st in each st' : '2 dc in each st') : lp ? `*${per - 1} lp st, 2 lp st in next st* 6 times` : `*${per - 1} dc, 2 dc in next st* 6 times`
     lines.push(
-      `Round ${k + 1}: ${body}. (${count})`,
+      `Round ${k + 1}: ${body}${lp ? fingers(k) : ''}. (${count})`,
     )
   })
   lines.push(
-    `Fasten off, leaving a long tail. Sew the circle to the top of the ${hostLabel}, loops outward, with its edge just above the eyes, ` +
+    `Fasten off, leaving a long tail. Sew the circle to the top of the ${hostLabel}, loops outward, with its front edge about one round above the eyes, ` +
       'then fluff the loops forward with your fingers so they fall over the forehead.',
   )
   return lines

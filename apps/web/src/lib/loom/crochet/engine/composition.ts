@@ -121,6 +121,10 @@ export interface AmigurumiPart {
    * and its render yarn is that much finer too. Overrides `scale`.
    */
   yarnWeight?: YarnWeight
+  /** How this piece is sewn on, in the maker's words, when the generic
+   *  "sew the X to the Y" line is not enough (a horn's tip up and out, a
+   *  muzzle's ring facing out). Appended to the assembly line. */
+  sewNote?: string
 }
 
 /**
@@ -983,7 +987,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   })
   // Each hair patch is one continuous plied strand of the toy's own yarn.
   for (const ph of compiled.hair ?? []) {
-    const { radiusMm, filaments } = pliedFilaments(smooth(ph.ctrl, 4), yr * 0.62, 3, twist)
+    const { radiusMm, filaments } = pliedFilaments(smooth(ph.ctrl, 4), yr * (ph.strandYr ?? 0.62), 3, twist)
     strokes.push({ hex: ph.hex, sheen: 0.85, radiusMm, filaments })
   }
   // Each embroidered straight stitch is its own short plied strand, in its
