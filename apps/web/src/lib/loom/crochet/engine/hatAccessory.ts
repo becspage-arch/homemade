@@ -39,6 +39,11 @@ export interface NightcapOptions {
   /** Extra slow rounds at the tip (each count held twice; default 5) so the
    *  tail is slender and long like a real nightcap's. */
   slowTipRounds?: number
+  /** Stitches added a round up the cone after the slow tip (default 2: a
+   *  long slender cone). The sleepy bunny's cap is a SHORT steep cone (4): at
+   *  +2 the cone was ~55 rounds on a 54-st band and curled up on the crown as
+   *  a turban (crochet-bar/proofs/bunny r3-r4). */
+  coneStep?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
   /** The pompom's own yarn when it is not the hat's: colour and fibre look
@@ -76,9 +81,10 @@ export function nightcapRounds(o: NightcapOptions): number[] {
     rounds.push(c, c)
     c += 2
   }
+  const step = Math.max(2, o.coneStep ?? 2)
   while (c < N) {
     rounds.push(c)
-    c += 2
+    c += step
   }
   for (let i = 0; i < band; i++) rounds.push(N)
   for (let i = 0; i < brim; i++) rounds.push(N)

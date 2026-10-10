@@ -199,6 +199,8 @@ export interface CompositionAccessory {
   pompomHex?: string
   pompomFibre?: YarnFibre
   pompomRadiusFrac?: number
+  /** Stitches added a round up the cone (hatAccessory default 2). */
+  coneStep?: number
 }
 
 export interface CompositionProgram {
@@ -1046,6 +1048,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
         ...(a.pompomHex ? { pompomHex: a.pompomHex } : {}),
         ...(a.pompomFibre ? { pompomFibre: a.pompomFibre } : {}),
         ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
+        ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
       },
       { ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}), ...(a.bend ? { bend: a.bend } : {}) },
     )

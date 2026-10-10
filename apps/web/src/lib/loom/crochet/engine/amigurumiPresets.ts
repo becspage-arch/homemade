@@ -233,7 +233,13 @@ const TOY_HAT_BRIM_FRAC = 0.7
 /** The nightcap's flop (round 8): the bar's cone folds over right at the
  *  crown and falls steeply beside the ear; the hat's default stood 0.55R
  *  straight up first and read as a tall stiff cone. */
-const TOY_HAT_BEND = { startFrac: 0.14, angleDeg: 150, dirDeg: 12 }
+/** Round 4: the fold starts a little up the dome (0.14 lay on the crown like
+ *  a slug) but creases SHARPLY (ramp 0.7R, not the hat's 1.3R) so the cone
+ *  never stands as a tall ridge before it falls. */
+const TOY_HAT_BEND = { startFrac: 0.22, angleDeg: 150, dirDeg: 12 }
+const TOY_HAT_BEND_LENGTH_FRAC = 0.7
+/** Round 5: a short steep cone (+4 a round) — at +2 the cone curled up on the crown as a turban. */
+const TOY_HAT_CONE_STEP = 4
 /** The bar's pompom: cream, fluffy, on the lilac cap. */
 export const POMPOM_HEX_DEFAULT = '#f4ecdd'
 const TOY_POMPOM_FIBRE: YarnFibre = 'fluff'
@@ -726,7 +732,8 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     program.accessories = [{
       kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight,
       brimHeightFrac: TOY_HAT_BRIM_FRAC,
-      bend: TOY_HAT_BEND,
+      bend: { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
+      coneStep: TOY_HAT_CONE_STEP,
       pompomHex: choices.pompomHex ?? POMPOM_HEX_DEFAULT,
       pompomFibre: TOY_POMPOM_FIBRE,
     }]
@@ -1046,6 +1053,7 @@ const TOY_ARM_DIR = { x: 0.75, y: 0.85, z: 0.6 }
  *  the tummy (the bar's; round 6's -0.42 left a gap between them). */
 const TOY_ARM_AIM = { x: -0.95, y: 1.05, z: -1 }
 const TOY_ARM_PROUD: Record<AmigurumiSize, number> = { S: 4.5, M: 6, L: 7 }
+const TOY_ARM_SCALE = 1.12
 const TOY_LEG_DIR = { x: 0.45, y: 0.8, z: -0.5 }
 /** Sleepy-bunny pass: the bar's feet are splayed a touch wider and the soles
  *  tip further up to the lens. */
@@ -1053,11 +1061,11 @@ const TOY_LEG_AIM = { x: 0.34, y: 1, z: 0.26 }
 const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: -4, M: -5, L: -2.4 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
-const TOE_PAD_U = -0.5
+const TOE_PAD_U = -0.55
 /** Sleepy-bunny pass: FOUR toe beans in an arc over a big pad (the bar's):
  *  the outer pair low and wide, the inner pair high and close. */
-const TOE_BEAN_U = { outer: 0.62, inner: 0.92 }
-const TOE_BEAN_V = { outer: 0.72, inner: 0.27 }
+const TOE_BEAN_U = { outer: 0.62, inner: 0.98 }
+const TOE_BEAN_V = { outer: 0.82, inner: 0.3 }
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
   const bear = choices.base === 'bear'
@@ -1068,6 +1076,8 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: armRounds, colourHex: main,
+      // Round 4 (sleepy bunny): a touch chunkier, the bar's bold folded arms.
+      scale: TOY_ARM_SCALE,
       // The bear's paw: rounds 1-2 in the contrast yarn.
       ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
       place: {
@@ -1107,7 +1117,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     })
     parts.push({
       name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12, 18, 24], colourHex: contrast,
-      form: 'disc', scale: 0.72,
+      form: 'disc', scale: 0.6,
       place: { on: leg, dir: at(TOE_PAD_U, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
     const beans: Array<[number, number]> = [
@@ -1117,7 +1127,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     beans.forEach(([u, v], k) => {
       parts.push({
         name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6, 12], colourHex: contrast,
-        form: 'disc', scale: 0.55,
+        form: 'disc', scale: 0.42,
         place: { on: leg, dir: at(u, v), aim: a, seat: 0, surfaceFit: 'points' },
       })
     })
