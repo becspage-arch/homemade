@@ -120,6 +120,11 @@ export interface EmbroideryFeature {
    *  pad). Unset: rendered in the scene's fibre, as before. */
   fibre?: 'cotton' | 'wool' | 'chenille' | 'velvet'
   stitches: EmbroideryStitch[]
+  /** The maker's line for this feature, written by whoever laid it out
+   *  (the Highland cow's nostrils on a capsule muzzle, whose rounds run
+   *  across the face, not out from a ring). Used verbatim in place of the
+   *  generic words for that feature name. Absent = the words below. */
+  words?: string
 }
 
 // ── Building a face ─────────────────────────────────────────────────────────
@@ -463,7 +468,9 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
     )
   }
   const nose = features.find((f) => f.name === 'nose')
-  if (nose && style === 'safety-stitched' && nose.stitches.length === 2) {
+  if (nose?.words) {
+    lines.push(nose.words)
+  } else if (nose && style === 'safety-stitched' && nose.stitches.length === 2) {
     const a = nose.stitches[1]!
     lines.push(
       `Nostrils (dark brown embroidery thread): on the muzzle, a little above its centre, work one short straight stitch each side: ` +

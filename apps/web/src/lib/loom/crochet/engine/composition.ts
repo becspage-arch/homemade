@@ -42,7 +42,17 @@ import { wearNightcap } from './hatAccessory'
  *    at an angle, standing out — not a ball half-buried on the crown. */
 export type PartPlacement =
   | { on: 'ground'; offset?: { x?: number; y?: number } }
-  | { on: string; overlap?: number; offset?: { x?: number; y?: number; z?: number } }
+  | {
+      on: string
+      overlap?: number
+      offset?: { x?: number; y?: number; z?: number }
+      /** Which way the stacked piece's pole-to-pole (magic ring → fasten-off)
+       *  axis points (Highland cow, 2026-10-10). A head worked SIDE TO SIDE —
+       *  the magic ring under one ear, fastened off under the other — stacks
+       *  on the neck with its axis across, so its straight rounds make it
+       *  wider than it is tall. Absent = upright (every existing stack). */
+      axis?: { x: number; y: number; z: number }
+    }
   | {
       on: string
       /** WHERE on the parent the piece is sewn: the direction from the parent's
@@ -74,6 +84,12 @@ export type PartPlacement =
       spin?: { x: number; y: number; z: number }
       /** Final nudge in world mm after seating (e.g. drop a leg onto the table). */
       offset?: { x?: number; y?: number; z?: number }
+      /** Sewn on by its SIDE, not by a pole (Highland cow, 2026-10-10): the
+       *  piece's centre, not its seated pole, goes `seat` mm under the
+       *  parent's surface along `dir`, and `aim` lays its axis across — a
+       *  capsule muzzle worked end to end and sewn lying across the face, so
+       *  it reads as a wide oval. Absent = seated by a pole (the original). */
+      centred?: boolean
     }
 
 export interface AmigurumiPart {
@@ -225,6 +241,11 @@ export interface CompositionProgram {
   /** Multiplies the stage's per-set zoom (render-only; a calf with horns
    *  wants a touch more room than the bear the sets were framed on). */
   stageZoom?: number
+  /** Render-only overrides of the fibre's look (loom_render_crochet.py
+   *  `FIBRE_PARAMS`, merged over the fibre's defaults): the Highland cow's
+   *  brown chenille carries a short pile of real hair curves on its dark
+   *  yarn (`pile_density`, `pile_dark_only`). Absent = the fibre as it is. */
+  fibreTune?: Record<string, number | boolean>
   /** ACCESSORIES worn on the finished toy (toy-pose round 6): each is a
    *  separate genuinely-stitched piece (hatAccessory.ts) built, audited and
    *  seated on a named part of the COMPILED composition, its strokes appended
@@ -512,6 +533,8 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       poleIn?: boolean
       surfaceFit?: 'box' | 'ellipsoid' | 'points'
       spin?: { x: number; y: number; z: number }
+      axis?: { x: number; y: number; z: number }
+      centred?: boolean
     }
     if (place.on === 'ground') {
       T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
@@ -554,7 +577,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       // the ring pole's max-z), which the rotation maps to hBase·w in the world.
       // Solve T so that pole lands exactly on the join point. With the defaults
       // (w = u, hBase = min-z) this is the original  pc + u·(parentR − seat − base).
-      const hBase = scale * ((poleIn ? lb.maxz : lb.minz) - cz)
+      const hBase = place.centred ? 0 : scale * ((poleIn ? lb.maxz : lb.minz) - cz)
       T = { x: jx - hBase * w.x, y: jy - hBase * w.y, z: jz - hBase * w.z }
       if (place.offset) {
         T = { x: T.x + (place.offset.x ?? 0), y: T.y + (place.offset.y ?? 0), z: T.z + (place.offset.z ?? 0) }
@@ -563,11 +586,19 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       const base = byName.get(place.on)
       if (!base) throw new Error(`${p.name}: part '${part.name}' stacks on unknown/later part '${place.on}'`)
       const overlap = place.overlap ?? 0
+      // A piece stacked with its axis turned (a side-to-side head): the same
+      // stack, measured on the turned piece's own bounds.
+      let halfHStack = halfH
+      if (place.axis) {
+        R = rotZTo(unit(place.axis))
+        const rb = bbox(local.map((v) => applyRot(R, { x: scale * (v.x - cx), y: scale * (v.y - cy), z: scale * (v.z - cz) })))
+        halfHStack = (rb.maxz - rb.minz) / 2
+      }
       T = {
         x: (base.bounds.minx + base.bounds.maxx) / 2 + (place.offset?.x ?? 0),
         y: (base.bounds.miny + base.bounds.maxy) / 2 + (place.offset?.y ?? 0),
         // Its bottom sits at (base top − overlap), plus optional z nudge.
-        z: base.bounds.maxz - overlap + halfH + (place.offset?.z ?? 0),
+        z: base.bounds.maxz - overlap + halfHStack + (place.offset?.z ?? 0),
       }
     }
 
@@ -950,6 +981,10 @@ export interface BlenderScene {
    *  loom_render_crochet.py's `build_yarn`/`yarn_material`. Always written
    *  (defaulting to 'cotton') so the render script never has to guess. */
   fibre?: YarnFibre
+  /** Per-scene overrides of the fibre's render knobs (`FIBRE_PARAMS` in
+   *  loom_render_crochet.py, merged over the fibre's defaults). Written only
+   *  when the program carries `fibreTune`, so every other scene is unchanged. */
+  fibreTune?: Record<string, number | boolean>
   view: {
     bgHex: string
     marginFactor: number
@@ -1055,6 +1090,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.stage && p.stage !== 'studio') scene.view.stage = p.stage
   if (p.stage && p.stage !== 'studio' && p.stageZoom != null) scene.view.stageZoom = p.stageZoom
   scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
+  if (p.fibreTune && Object.keys(p.fibreTune).length) scene.fibreTune = { ...p.fibreTune }
   if (compiled.props.length) {
     scene.props = compiled.props.map((pr) => ({
       centre: [pr.centre.x, pr.centre.y, pr.centre.z],

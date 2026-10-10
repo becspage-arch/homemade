@@ -665,7 +665,11 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         ob.data.materials.append(ymat)
         bpy.context.collection.objects.link(ob)
         if strand == "single" and fpb.get("pile_density", 0) > 0:
-            add_pile_hairs(ob, hexcol, fpb)
+            # `pile_dark_only` (Highland cow, 2026-10-10): the hair-curve pile
+            # on the mid/dark yarn only — on cream it reads as grey whiskers
+            # (proofs/yarn r6-bunny-chenille), on deep brown as lit pile tips.
+            if not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75:
+                add_pile_hairs(ob, hexcol, fpb)
 
         if has_halo:
             # The chenille/velvet PILE HALO: one extra low-poly shell per colour
