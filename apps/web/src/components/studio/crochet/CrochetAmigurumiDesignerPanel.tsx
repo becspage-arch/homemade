@@ -19,6 +19,10 @@ import {
   AMIGURUMI_SIZES,
   EYE_SIZES,
   FACE_STYLES,
+  HATS,
+  HAT_HEX_DEFAULT,
+  POMPOM_HEX_DEFAULT,
+  isToy,
   amigurumiBaseSpec,
   buildAmigurumiProgram,
   amigurumiPresetName,
@@ -235,6 +239,49 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
             </p>
           )}
         </fieldset>
+        )}
+
+        {isToy(choices.base) && (
+          <fieldset className="crochet-designer-group">
+            <legend>Hat</legend>
+            <div className="crochet-designer-chips">
+              <button
+                type="button"
+                aria-pressed={!choices.hat}
+                className={`crochet-designer-chip${!choices.hat ? ' is-active' : ''}`}
+                onClick={() => set({ hat: undefined })}
+              >
+                None
+              </button>
+              {HATS.map((h) => (
+                <button
+                  key={h.id}
+                  type="button"
+                  title={h.blurb}
+                  aria-pressed={choices.hat === h.id}
+                  className={`crochet-designer-chip${choices.hat === h.id ? ' is-active' : ''}`}
+                  onClick={() => set({ hat: h.id })}
+                >
+                  {h.label}
+                </button>
+              ))}
+            </div>
+            {choices.hat && (
+              <>
+                <ShadePicker
+                  label="Hat yarn"
+                  value={choices.hatHex ?? HAT_HEX_DEFAULT}
+                  onChange={(hex) => set({ hatHex: hex })}
+                />
+                <ShadePicker
+                  label="Pompom yarn"
+                  hint="A soft fluffy yarn, cream on a lilac cap."
+                  value={choices.pompomHex ?? POMPOM_HEX_DEFAULT}
+                  onChange={(hex) => set({ pompomHex: hex })}
+                />
+              </>
+            )}
+          </fieldset>
         )}
 
         {spec.nose && (

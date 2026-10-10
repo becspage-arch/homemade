@@ -39,11 +39,13 @@ import {
   AMIGURUMI_SIZES,
   EYE_SIZES,
   FACE_STYLE_IDS,
+  HAT_IDS,
   sphereRounds,
   buildAmigurumiProgram,
   isAuditedProfile,
   type AmigurumiBase,
   type AmigurumiChoices,
+  type AmigurumiHat,
   type AmigurumiSize,
   type FaceStyle,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
@@ -103,6 +105,10 @@ export interface CrochetDesign {
     paws: boolean
     /** The face (embroidered or safety eyes). Defaults to 'safety'. */
     face?: FaceStyle
+    /** A hat (the sleepy bunny's nightcap) and its yarns. Absent = none. */
+    hat?: AmigurumiHat
+    hatHex?: string
+    pompomHex?: string
     /** The yarn's fibre look. Defaults to 'cotton' when absent. */
     yarnFibre?: YarnFibre
   }
@@ -450,6 +456,9 @@ function amigurumiFromDesign(design: CrochetDesign, name: string): BuiltDesign {
     nose: Boolean(a.nose),
     paws: Boolean(a.paws),
     ...(a.face && (FACE_STYLE_IDS as readonly string[]).includes(a.face) ? { face: a.face } : {}),
+    ...(a.hat && (HAT_IDS as readonly string[]).includes(a.hat) ? { hat: a.hat } : {}),
+    ...(a.hatHex && HEX.test(a.hatHex) ? { hatHex: a.hatHex.toLowerCase() } : {}),
+    ...(a.pompomHex && HEX.test(a.pompomHex) ? { pompomHex: a.pompomHex.toLowerCase() } : {}),
     name,
   }
   const program = buildAmigurumiProgram(choices)

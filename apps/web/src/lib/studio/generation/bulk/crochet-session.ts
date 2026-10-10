@@ -21,7 +21,7 @@
 import { z } from 'zod'
 import { subjectKey } from './subject-key'
 import { BAND_STITCHES } from './crochet-design'
-import { AMIGURUMI_BASE_IDS, FACE_STYLE_IDS } from '@/lib/loom/crochet/engine/amigurumiPresets'
+import { AMIGURUMI_BASE_IDS, FACE_STYLE_IDS, HAT_IDS } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import type { CrochetDesign } from './crochet-design'
 import type { CrochetTreatment } from './crochet-forms'
 import type { CrochetBrief } from './crochet-planner'
@@ -138,6 +138,9 @@ const AmigurumiSchema = z
     nose: z.boolean(),
     paws: z.boolean(),
     face: z.enum(FACE_STYLE_IDS).optional(),
+    hat: z.enum(HAT_IDS).optional(),
+    hatHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #b7a4d8').optional(),
+    pompomHex: z.string().regex(HEX, 'a yarn colour is a six-digit hex like #f4ecdd').optional(),
     yarnFibre: YarnFibreSchema.optional(),
   })
   .strict()

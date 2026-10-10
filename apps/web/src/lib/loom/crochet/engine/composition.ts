@@ -26,6 +26,7 @@ import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
 import type { HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
+import { bendTube } from './tubeStaging'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -120,6 +121,28 @@ export interface AmigurumiPart {
    * and its render yarn is that much finer too. Overrides `scale`.
    */
   yarnWeight?: YarnWeight
+  /**
+   * A soft CURVE in a pressed piece as it is worn (sleepy-bunny pass): a lop
+   * ear that leaves the head, bows out and comes to rest forward against the
+   * shoulder. STAGING ONLY, like the nightcap's flop (tubeStaging.bendTube):
+   * the piece is built, relaxed and audited straight, and its settled
+   * centreline is bent on the way to the composed world — above `startFrac`
+   * of its length from the seated end, the axis turns by `angleDeg` over
+   * `lengthFrac` of the length, leaning toward azimuth `dirDeg` in the
+   * piece's own x-y plane (0 = +x, the pressed face a `spin` turns to the
+   * camera; a flat ear bends OUT of its plane, never in it). A second,
+   * optional bend further down (`then`) lets the tip curl back. The written
+   * pattern is unchanged: a maker sews the ear on and it falls like this.
+   */
+  bend?: PartBend
+}
+
+export interface PartBend {
+  startFrac: number
+  lengthFrac: number
+  angleDeg: number
+  dirDeg: number
+  then?: { startFrac: number; lengthFrac: number; angleDeg: number; dirDeg: number }
 }
 
 /**
@@ -169,6 +192,13 @@ export interface CompositionAccessory {
    *  it starts (fraction of the head radius), its ramp length (mm) and final
    *  angle (deg). The bar's nightcap folds right off the crown. */
   bend?: { startFrac?: number; lengthMm?: number; angleDeg?: number; dirDeg?: number }
+  /** The pompom's yarn, when it is not the hat's (the bar's cream pompom on
+   *  a lilac cap): its colour, its fibre look (a fluffy wool or chenille
+   *  pompom on a cotton hat) and its trimmed radius as a fraction of the
+   *  head radius (hatAccessory default 0.5). */
+  pompomHex?: string
+  pompomFibre?: YarnFibre
+  pompomRadiusFrac?: number
 }
 
 export interface CompositionProgram {
@@ -557,6 +587,11 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       }
     }
 
+    // 4b. A worn curve in a pressed piece (`bend`, staging only): the settled
+    //     centreline is bent above the seated end before it is placed, so the
+    //     seated pole and the join are exactly where the straight piece's are.
+    if (part.bend) bendLocal(local, part.bend, lb, place.poleIn === true)
+
     // 5. Apply the transform to the settled centre-line into the composed world.
     const ctrl = local.map((v) => {
       const r = applyRot(R, { x: scale * (v.x - c.x), y: scale * (v.y - c.y), z: scale * (v.z - c.z) })
@@ -699,6 +734,28 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   return { placed, props, embroidery, yr, problems, geometryHash: ghash }
 }
 
+
+/**
+ * Bend a piece's settled local centreline as worn (`AmigurumiPart.bend`). The
+ * piece's axis is local z; the seated pole is its min-z end (or max-z with
+ * `poleIn`, in which case z is mirrored for the bend and back). In place.
+ */
+function bendLocal(local: V3[], b: PartBend, lb: ReturnType<typeof bbox>, poleIn: boolean): void {
+  const len = lb.maxz - lb.minz
+  if (len <= 0) return
+  const flip = (p: V3): V3 => (poleIn ? { x: p.x, y: p.y, z: lb.minz + lb.maxz - p.z } : p)
+  let pts = local.map(flip)
+  const steps = [b, ...(b.then ? [b.then] : [])]
+  for (const s of steps) {
+    pts = bendTube(pts, {
+      startZ: lb.minz + len * s.startFrac,
+      lengthMm: Math.max(1, len * s.lengthFrac),
+      angleDeg: s.angleDeg,
+      dirDeg: s.dirDeg,
+    })
+  }
+  for (let i = 0; i < local.length; i++) local[i] = flip(pts[i]!)
+}
 
 // ─── Toy-pose pass (2026-10-09): flat appliqués, pressed and hanging pieces ───
 
@@ -984,7 +1041,12 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     if (a.kind !== 'nightcap') continue
     const hat = wearNightcap(
       compiled, a.on,
-      { headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight },
+      {
+        headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight,
+        ...(a.pompomHex ? { pompomHex: a.pompomHex } : {}),
+        ...(a.pompomFibre ? { pompomFibre: a.pompomFibre } : {}),
+        ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
+      },
       { ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}), ...(a.bend ? { bend: a.bend } : {}) },
     )
     for (const st of [...hat.strokes, ...hat.pompom]) strokes.push(st as BlenderScene['strokes'][number])

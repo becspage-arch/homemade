@@ -17,7 +17,7 @@
  */
 
 import { STITCHES } from './dictionary'
-import { YARN_WEIGHT_RADIUS_MM, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
+import { YARN_WEIGHT_RADIUS_MM, writeInstructions, type CrochetProgram, type YarnFibre, type YarnWeight } from './program'
 import { compileRelaxAudit } from './programScene'
 import type { CompiledComposition } from './composition'
 import type { BuiltContinuous } from './yarnPath'
@@ -41,6 +41,10 @@ export interface NightcapOptions {
   slowTipRounds?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
+  /** The pompom's own yarn when it is not the hat's: colour and fibre look
+   *  (the bar's sleepy bunny wears a cream fluffy pompom on a lilac cap). */
+  pompomHex?: string
+  pompomFibre?: YarnFibre
   name?: string
 }
 
@@ -101,7 +105,7 @@ export function nightcapProgram(o: NightcapOptions): CrochetProgram {
 export function nightcapInstructions(o: NightcapOptions): string[] {
   const lines = writeInstructions(nightcapProgram(o))
   const pr = o.pompomRadiusMm ?? o.headRadiusMm * 0.5
-  if (pr > 0) lines.push(pompomInstruction(pr, 'the tip of the hat'))
+  if (pr > 0) lines.push(pompomInstruction(pr, 'the tip of the hat', o.pompomHex && o.pompomHex !== o.colourHex ? 'the pompom yarn' : undefined))
   return lines
 }
 
@@ -229,9 +233,9 @@ export function wearNightcap(compiled: CompiledComposition, headName: string, o:
           centre: { x: tip.x + (dir.x / dl) * pr * 0.78, y: tip.y + (dir.y / dl) * pr * 0.78, z: tip.z + (dir.z / dl) * pr * 0.78 },
           radiusMm: pr,
           yarnRadiusMm: yr,
-          colourHex: opts.colourHex,
+          colourHex: opts.pompomHex ?? opts.colourHex,
           seed: w.seed,
-        })
+        }).map((st) => (opts.pompomFibre ? { ...st, fibre: opts.pompomFibre } : st))
       : []
   return { program, yr, problems, strokes, pompom, tip, instructions: nightcapInstructions(opts) }
 }

@@ -40,6 +40,8 @@ export interface YarnStrokeOut {
   sheen: number
   radiusMm: number
   filaments: number[][][]
+  /** A fibre look of its own (loom_render_crochet.py groups strokes by it). */
+  fibre?: string
 }
 
 /** mulberry32 — a tiny deterministic PRNG so a pompom is reproducible. */
@@ -128,10 +130,10 @@ export function pompomStrokes(spec: PompomSpec, twist = 0.08): YarnStrokeOut[] {
 }
 
 /** The maker's line for a pompom of this size (UK pattern wording). */
-export function pompomInstruction(radiusMm: number, where: string): string {
+export function pompomInstruction(radiusMm: number, where: string, yarn = 'the yarn'): string {
   const cm = (2 * radiusMm) / 10
   const card = Math.round(cm * 1.5 * 2) / 2
-  return `Make a pompom: wrap the yarn about ${Math.round(40 + cm * 25)} times round a ${card} cm card (or a pompom maker), tie tightly through the middle with a length of yarn, cut the loops and trim to a ${cm.toFixed(1).replace(/\.0$/, '')} cm ball. Sew it to ${where} with the tie ends.`
+  return `Make a pompom: wrap ${yarn} about ${Math.round(40 + cm * 25)} times round a ${card} cm card (or a pompom maker), tie tightly through the middle with a length of yarn, cut the loops and trim to a ${cm.toFixed(1).replace(/\.0$/, '')} cm ball. Sew it to ${where} with the tie ends.`
 }
 
 function cross(a: V3, b: V3): V3 {
