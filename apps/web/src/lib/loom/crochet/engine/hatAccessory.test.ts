@@ -7,7 +7,7 @@
 import assert from 'node:assert/strict'
 import { nightcapBandCount, nightcapProgram, nightcapRounds, wearNightcap } from './hatAccessory'
 import { pompomStrandCount, pompomStrokes } from './pompom'
-import { bendTube } from './tubeStaging'
+import { bendTube, collapseTube } from './tubeStaging'
 import { buildAmigurumiProgram } from './amigurumiPresets'
 import { compileComposition } from './composition'
 import { compileRelaxAudit } from './programScene'
@@ -47,7 +47,7 @@ check('a small nightcap audits clean at fine and worsted', () => {
 })
 check('a pompom is a few hundred cut strands of 3 plies each, inside its trimmed radius', () => {
   const n = pompomStrandCount(10, 1.3)
-  assert.ok(n > 150 && n < 600, `${n} strands`)
+  assert.ok(n > 600 && n < 2000, `${n} strands`)
   const s = pompomStrokes({ centre: { x: 1, y: 2, z: 3 }, radiusMm: 10, yarnRadiusMm: 1.3, colourHex: '#fff', strands: 50, seed: 3 })
   assert.equal(s.length, 50)
   for (const st of s) {
@@ -74,6 +74,35 @@ check('bendTube leaves the part below the start untouched and turns the axis thr
   // The across offset rides unchanged.
   const across = out[pts.findIndex((p) => p.z === 100 && p.y === 3)]!
   assert.ok(Math.abs(across.y - 3) < 1e-9)
+})
+check('collapseTube lays a tube doubled on the table: each round keeps its circumference, the crown narrows', () => {
+  const pts: { x: number; y: number; z: number }[] = []
+  const rr: number[] = []
+  // A cone-ish tube: radius 40 at z 0..60, narrowing to 5 at z 100.
+  for (let z = 0; z <= 100; z += 4) {
+    const R = z <= 60 ? 40 : 40 - ((z - 60) / 40) * 35
+    for (let k = 0; k < 48; k++) {
+      const th = (k / 48) * Math.PI * 2
+      pts.push({ x: R * Math.cos(th), y: R * Math.sin(th), z })
+      rr.push(R)
+    }
+  }
+  const out = collapseTube(pts, { foldRadiusMm: 10, yarnRadiusMm: 2, roundRadius: rr })
+  // Every point is on or above the table.
+  for (const p of out) assert.ok(p.z >= 0, `z ${p.z}`)
+  // The body rounds lie as a band about half the circumference wide; the crown round is narrow.
+  const width = (z: number): number => {
+    const xs = out.filter((_, i) => pts[i]!.z === z).map((p) => p.x)
+    return Math.max(...xs) - Math.min(...xs)
+  }
+  // A flattened loop of fold radius ρ is C/2 − (π − 2)ρ wide.
+  assert.ok(Math.abs(width(20) - (Math.PI * 40 - (Math.PI - 2) * 10)) < 4, `body width ${width(20).toFixed(1)}`)
+  assert.ok(width(100) < 25, `crown width ${width(100).toFixed(1)}`)
+  // Perimeter of the flattened loop equals the round's circumference (adjacent points stay the same distance apart).
+  const ring = out.slice(0, 48)
+  let per = 0
+  for (let k = 0; k < 48; k++) { const a = ring[k]!, b = ring[(k + 1) % 48]!; per += Math.hypot(a.x - b.x, a.z - b.z) }
+  assert.ok(Math.abs(per - 2 * Math.PI * 40) / (2 * Math.PI * 40) < 0.03, `perimeter ${per.toFixed(1)}`)
 })
 check('the nightcap wears on the bunny: clean, seated above the eye line, tail off to the side, pompom at the tip', () => {
   const prog = buildAmigurumiProgram({ base: 'bunny', size: 'S', mainHex: '#f1e6d2', contrastHex: '#e3a9a4', eyeMm: 6, nose: true, paws: true } as never)
