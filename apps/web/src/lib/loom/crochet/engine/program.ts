@@ -439,11 +439,12 @@ function writeTubeInstructions(p: CrochetProgram, uk: string): string[] {
     const body = rib.has(i)
       ? `[FPtr around next st, BPtr around next st] ${cur / 2} times`
       : ridge.has(i)
-        ? `${uk} in the ${ridgeLoop} loop only of each st around`
+        ? `${STITCH_TO_UK.sc} in the ${ridgeLoop} loop only of each st around`
         : describeRound(prev, cur, uk)
     out.push(`Round ${i + 1}: ${prefix(i)}${body}${suffix}. (${cur} sts)`)
   }
   if (ridge.size) {
+    if (spec.stitch !== 'sc') out.push(`The band rounds are worked in ${STITCH_TO_UK.sc} (a shorter stitch than the body).`)
     out.push(
       ridgeLoop === 'front'
         ? 'The unworked back loops form the ridges that show on the outside once the brim is folded up.'

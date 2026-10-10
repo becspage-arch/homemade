@@ -132,3 +132,107 @@ export function rigidPlace(ctrl: V3[], o: { tiltDeg?: number; turnDeg?: number; 
     return { x: x2 + o.T.x, y: y2 + o.T.y, z: z1 + o.T.z }
   })
 }
+
+export interface TubeCollapse {
+  /** Fold radius where the flattened loop turns (mm): how tightly the fabric
+   *  bends at the two edges of a tube lying flat. A few yarn diameters. */
+  foldRadiusMm: number
+  /** The piece's own yarn radius (sets the layer gap). */
+  yarnRadiusMm: number
+  /** Soft folds in the top layer: amplitude (mm) and how many waves run
+   *  along the tube's axis. 0 = a flat doubled band. */
+  foldAmpMm?: number
+  foldWaves?: number
+  /** A gentle plan-view curl of the lying piece (mm). */
+  curlMm?: number
+  /** Azimuth the piece is laid along (deg from +x). */
+  dirDeg?: number
+}
+
+/**
+ * COLLAPSED staging for a tube: lay it on the table the way a soft cowl or a
+ * beanie lies when it is put down — its axis horizontal, every round
+ * flattened into two layers joined by two soft folded edges, the top layer
+ * settling in gentle waves. Each round keeps its own circumference (each
+ * point keeps its arc position round the flattened loop of its OWN worked
+ * radius, so a beanie's crown narrows to its pole), the axis direction
+ * becomes length along the table, and the stitch relief rides the local
+ * surface normal of the flattened loop. Staging only, like `bendTube`.
+ *
+ * Local frame in: axis z, centred on x = y = 0. Out: world mm on the table.
+ */
+export function collapseTube(ctrl: V3[], c: TubeCollapse): V3[] {
+  const yr = c.yarnRadiusMm
+  const rho = Math.max(c.foldRadiusMm, yr * 2)
+  let zmin = Infinity, zmax = -Infinity
+  for (const p of ctrl) { if (p.z < zmin) zmin = p.z; if (p.z > zmax) zmax = p.z }
+  const Lax = zmax - zmin
+  // The worked radius ALONG the axis: mean radius per height bin, smoothed.
+  const BINS = 24
+  const sumR = new Float64Array(BINS + 1)
+  const cnt = new Float64Array(BINS + 1)
+  for (const p of ctrl) {
+    const k = Math.max(0, Math.min(BINS, Math.round(((p.z - zmin) / Math.max(Lax, 1e-6)) * BINS)))
+    sumR[k]! += Math.hypot(p.x, p.y)
+    cnt[k]! += 1
+  }
+  const Rb = new Float64Array(BINS + 1)
+  for (let k = 0; k <= BINS; k++) Rb[k] = cnt[k]! ? sumR[k]! / cnt[k]! : k > 0 ? Rb[k - 1]! : 0
+  for (let pass = 0; pass < 2; pass++) for (let k = 1; k < BINS; k++) Rb[k] = (Rb[k - 1]! + 2 * Rb[k]! + Rb[k + 1]!) / 4
+  const radiusAt = (z: number): number => {
+    const f = ((z - zmin) / Math.max(Lax, 1e-6)) * BINS
+    const i = Math.max(0, Math.min(BINS - 1, Math.floor(f)))
+    const w = f - i
+    return Rb[i]! * (1 - w) + Rb[i + 1]! * w
+  }
+  const gapMid = yr * 2.6
+  const amp = c.foldAmpMm ?? 0
+  const waves = c.foldWaves ?? 2.5
+  const curl = c.curlMm ?? 0
+  const az = ((c.dirDeg ?? 0) * Math.PI) / 180
+  const ca = Math.cos(az), sa = Math.sin(az)
+  return ctrl.map((p) => {
+    const r = Math.hypot(p.x, p.y)
+    const R = radiusAt(p.z)
+    const n = r - R // relief: outward of the worked surface
+    const C = 2 * Math.PI * R
+    // The fold radius shrinks with the round near a closed crown.
+    const rhoL = Math.min(rho, Math.max(yr * 1.5, R * 0.9))
+    const Ls = Math.max(0, C / 2 - Math.PI * rhoL) // each straight run
+    const th = Math.atan2(p.y, p.x)
+    const a = ((th + Math.PI) / (2 * Math.PI)) * C // 0..C round the loop
+    const u = p.z - zmin // 0..Lax along the table
+    const f = u / Math.max(Lax, 1e-6)
+    const sag = amp * Math.sin(waves * Math.PI * f) * Math.sin(Math.PI * f)
+    // Walk the flattened loop: bottom straight (a in [0, Ls]), far fold
+    // (semicircle up), top straight back, near fold (semicircle down).
+    let x = 0, z = 0, nx = 0, nz = 0
+    const sep = (s: number): number =>
+      Math.min(2 * rhoL, gapMid + (2 * rhoL - gapMid) * Math.min(1, (Math.abs(s - Ls / 2) / Math.max(Ls / 2, 1e-6)) ** 2))
+    if (a < Ls) {
+      x = a; z = 0; nx = 0; nz = -1
+    } else if (a < Ls + Math.PI * rhoL) {
+      const ph = (a - Ls) / rhoL
+      x = Ls + rhoL * Math.sin(ph)
+      z = rhoL - rhoL * Math.cos(ph)
+      nx = Math.sin(ph); nz = -Math.cos(ph)
+    } else if (a < 2 * Ls + Math.PI * rhoL) {
+      const sb = a - Ls - Math.PI * rhoL
+      x = Ls - sb
+      z = sep(x) + sag
+      nx = 0; nz = 1
+    } else {
+      const ph = (a - 2 * Ls - Math.PI * rhoL) / rhoL
+      x = -rhoL * Math.sin(ph)
+      z = rhoL + rhoL * Math.cos(ph)
+      nx = -Math.sin(ph); nz = Math.cos(ph)
+    }
+    x -= Ls / 2
+    z += yr * 1.2
+    x += nx * n
+    z += nz * n
+    const y = u - Lax / 2
+    const xc = x + curl * Math.sin(Math.PI * f)
+    return { x: xc * ca - y * sa, y: xc * sa + y * ca, z }
+  })
+}

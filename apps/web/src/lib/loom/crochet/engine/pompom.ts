@@ -58,12 +58,13 @@ function prng(seed: number): () => number {
  *  surface divided by the footprint of two cut ends, packed a little loose. */
 export function pompomStrandCount(radiusMm: number, yarnRadiusMm: number): number {
   // Cut ends do not tile the surface: strands leave it at every angle and the
-  // trimmed ball is packed solid underneath, so a full pompom carries about
-  // three strands per end-footprint of surface (counted on a real 4 cm pompom
-  // in DK: ~350 strands).
+  // trimmed ball is packed solid underneath, so a full pompom carries several
+  // strands per end-footprint of surface (a real 4 cm pompom in DK is wound
+  // ~150 times round a 3-arm maker: ~450 cut strands; r1 at 1.9 per footprint
+  // rendered as a sparse knobbly ball).
   const surface = 4 * Math.PI * radiusMm * radiusMm
   const endArea = Math.PI * yarnRadiusMm * yarnRadiusMm
-  return Math.max(120, Math.min(1200, Math.round((surface / (2 * endArea)) * 1.9)))
+  return Math.max(200, Math.min(2000, Math.round((surface / (2 * endArea)) * 4.5)))
 }
 
 /**

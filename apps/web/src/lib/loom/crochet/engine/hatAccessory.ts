@@ -39,7 +39,7 @@ export interface NightcapOptions {
   /** Extra slow rounds at the tip (each count held twice; default 4) so the
    *  tail is slender and long like a real nightcap's. */
   slowTipRounds?: number
-  /** Pompom radius (mm; default 0.42 × head radius). 0 = none. */
+  /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
   name?: string
 }
@@ -100,14 +100,14 @@ export function nightcapProgram(o: NightcapOptions): CrochetProgram {
 /** The full written pattern for the nightcap, including the pompom. */
 export function nightcapInstructions(o: NightcapOptions): string[] {
   const lines = writeInstructions(nightcapProgram(o))
-  const pr = o.pompomRadiusMm ?? o.headRadiusMm * 0.42
+  const pr = o.pompomRadiusMm ?? o.headRadiusMm * 0.5
   if (pr > 0) lines.push(pompomInstruction(pr, 'the tip of the hat'))
   return lines
 }
 
 export interface WearOptions {
   /** How far up the head (fraction of its radius above centre) the brim band's
-   *  middle sits (default 0.38: just above the eye line). */
+   *  middle sits (default 0.6: the band's lower edge clears the eye line). */
   brimHeightFrac?: number
   /** Tilt the hat back off the face (deg, default 10). */
   tiltBackDeg?: number
@@ -168,8 +168,8 @@ export function wearTube(
     return n ? s / n : 0
   }
   const brimMid = (zOfRound(rounds.length - brimN) + zOfRound(rounds.length - 1)) / 2
-  const brimFrac = w.brimHeightFrac ?? 0.38
-  const d = w.bendDefaults ?? { startFrac: 0.72, lengthFrac: 1.3, angleDeg: 118, dirDeg: 20 }
+  const brimFrac = w.brimHeightFrac ?? 0.6
+  const d = w.bendDefaults ?? { startFrac: 0.55, lengthFrac: 1.3, angleDeg: 124, dirDeg: 20 }
   const startZ = brimMid + R * (w.bend?.startFrac ?? d.startFrac)
   ctrl = bendTube(ctrl, {
     startZ,
@@ -221,7 +221,7 @@ export function wearNightcap(compiled: CompiledComposition, headName: string, o:
   const center = smooth(world, 4)
   const { radiusMm, filaments } = pliedFilaments(center, yr * 0.85, 3, twist)
   const strokes: YarnStrokeOut[] = [{ hex: opts.colourHex, sheen: 0.85, radiusMm, filaments }]
-  const pr = opts.pompomRadiusMm ?? R * 0.42
+  const pr = opts.pompomRadiusMm ?? R * 0.5
   const pompom =
     pr > 0
       ? pompomStrokes({
