@@ -147,6 +147,10 @@ export interface TubeCollapse {
   curlMm?: number
   /** Azimuth the piece is laid along (deg from +x). */
   dirDeg?: number
+  /** The worked radius of each control point's own ROUND (mm, one per ctrl
+   *  point). When given it replaces the height-bin estimate — exact for a
+   *  dome, whose rounds climb mostly in radius and share a thin slab of z. */
+  roundRadius?: number[]
 }
 
 /**
@@ -191,9 +195,9 @@ export function collapseTube(ctrl: V3[], c: TubeCollapse): V3[] {
   const curl = c.curlMm ?? 0
   const az = ((c.dirDeg ?? 0) * Math.PI) / 180
   const ca = Math.cos(az), sa = Math.sin(az)
-  return ctrl.map((p) => {
+  return ctrl.map((p, idx) => {
     const r = Math.hypot(p.x, p.y)
-    const R = radiusAt(p.z)
+    const R = c.roundRadius ? Math.max(c.roundRadius[idx] ?? radiusAt(p.z), yr * 0.6) : radiusAt(p.z)
     const n = r - R // relief: outward of the worked surface
     const C = 2 * Math.PI * R
     // The fold radius shrinks with the round near a closed crown.
