@@ -214,6 +214,9 @@ export interface CompositionProgram {
   /** The styled listing-photo set (see `HeroStage`). Unset / 'studio' = the
    *  clean product sweep, unchanged. Render-only: never touches the geometry. */
   stage?: HeroStage
+  /** Multiplies the stage's per-set zoom (render-only; a calf with horns
+   *  wants a touch more room than the bear the sets were framed on). */
+  stageZoom?: number
   /** ACCESSORIES worn on the finished toy (toy-pose round 6): each is a
    *  separate genuinely-stitched piece (hatAccessory.ts) built, audited and
    *  seated on a named part of the COMPILED composition, its strokes appended
@@ -954,6 +957,8 @@ export interface BlenderScene {
     lightRig?: 'product'
     minFieldMm?: number
     stage?: HeroStage
+    /** Multiplies the stage's own zoom (a tall piece — horns — pulls back). */
+    stageZoom?: number
   }
 }
 
@@ -1036,6 +1041,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.exposure != null) scene.view.exposure = p.exposure
   // Written only for a styled set, so every studio scene JSON is unchanged.
   if (p.stage && p.stage !== 'studio') scene.view.stage = p.stage
+  if (p.stage && p.stage !== 'studio' && p.stageZoom != null) scene.view.stageZoom = p.stageZoom
   scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   if (compiled.props.length) {
     scene.props = compiled.props.map((pr) => ({

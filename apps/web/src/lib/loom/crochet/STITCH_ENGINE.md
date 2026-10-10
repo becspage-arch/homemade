@@ -3384,6 +3384,25 @@ What the looking taught (rounds 1-4, beside bar-highland-cow.png):
 - Loop-plane yaw must vary widely (±45°) or the curls all face the same way and read combed.
 - Loop stitch straight into the magic ring (round 1) audits clean (root A takes the ring link role).
 
+**The Highland cow** (`engine/cowPreset.ts`, Fable pass 2026-10-10, judged beside bar-highland-cow.png). A seated
+calf built entirely from the composition's existing pieces: body sphere(54,1) / neck / head sphere(60,1) sunk 12 mm,
+a WIDE cream muzzle ball(30,2) sewn ring-out so the two `safety-stitched` nostrils are stitched across it, cream
+HORNS as tip-first cones (`COW_HORN_ROUNDS` = 4,5,…,12,12,6: a four-stitch ring is the point, one more stitch a
+round, two straight rounds, closed flat — the §8f-11 cone rule) sewn high on the crown pointing up and out, round
+ears ball(18,2) straight out to the sides, front legs tube(18,9) hung from the shoulder corners to the table, back
+legs ball(24,4) sole-first forward (the toy-pose lane's numbers), a cord tail, 12 mm safety eyes at the muzzle's
+top corners, and the fringe. Worked in WORSTED chenille at the toy-pose stitch counts, so the stitches are the
+bar's size against the toy and the calf is ~26 cm tall. Own module; the bear/bunny bases and size tables are
+untouched, and the cow is not yet in `AMIGURUMI_BASE_IDS` (that walks the presets test through the generated size
+table, which needs regenerating).
+- The STACKED tuft: `HairPatch.loopByRound(k)` (→ `buildRounds` loopOpts) gives the ring round loops over two
+  fingers (4.4 yr) and the edge round short ones (2.8 yr, droop 12°), so the mound is 2–3 curls deep in the middle
+  and spills onto the forehead at the edge. The words say which finger from the same lengths.
+- `HairPatch.strandYr` → `PlacedHair.strandYr` → the loose loops render at a plumper strand (0.82 yr vs the
+  0.62 plied bundle): a chenille loop not pulled into a stitch plumps to its full pile.
+- `AmigurumiPart.sewNote` (composition.ts) → appended to the assembly line, so the horns' "tips pointing up and
+  out" and the muzzle's "ring facing out" are in the written pattern, read off the same placement.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

@@ -98,24 +98,24 @@ interface CowProfile {
  * point, two a round is a bump), two straight rounds for the thick base,
  * closed flat in one round. Sewn by the flat end, tip out.
  */
-export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 6]
+export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 6]
 
 const PROFILES: Record<AmigurumiSize, CowProfile> = {
   S: {
     body: sphereRounds(42, 1), neck: ballRounds(18, 2), head: sphereRounds(48, 1),
-    muzzle: ballRounds(24, 2), horn: COW_HORN_ROUNDS.slice(0, 8).concat([11, 6]), ear: ballRounds(18, 2),
+    muzzle: ballRounds(30, 2), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: ballRounds(18, 2),
     frontLeg: tubeRounds(18, 6), backLeg: ballRounds(18, 4), tail: cordRounds(4),
     headSink: 9, muzzleScale: 1.0, earScale: 0.85, legLift: -4, frontLegLift: 0,
   },
   M: {
     body: sphereRounds(54, 1), neck: ballRounds(18, 2), head: sphereRounds(60, 1),
-    muzzle: ballRounds(30, 2), horn: COW_HORN_ROUNDS, ear: ballRounds(18, 2),
+    muzzle: ballRounds(36, 2), horn: COW_HORN_ROUNDS, ear: ballRounds(18, 2),
     frontLeg: tubeRounds(18, 9), backLeg: ballRounds(24, 4), tail: cordRounds(5),
-    headSink: 12, muzzleScale: 1.0, earScale: 1.0, legLift: -5, frontLegLift: 5.1,
+    headSink: 12, muzzleScale: 0.95, earScale: 1.0, legLift: -5, frontLegLift: 5.1,
   },
   L: {
     body: sphereRounds(60, 1), neck: ballRounds(24, 2), head: sphereRounds(66, 1),
-    muzzle: ballRounds(36, 2), horn: [...COW_HORN_ROUNDS.slice(0, 10), 12, 6], ear: ballRounds(24, 2),
+    muzzle: ballRounds(42, 2), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: ballRounds(24, 2),
     frontLeg: tubeRounds(18, 11), backLeg: ballRounds(30, 4), tail: cordRounds(6),
     headSink: 14, muzzleScale: 0.95, earScale: 1.0, legLift: -4.5, frontLegLift: 0,
   },
@@ -135,6 +135,9 @@ const COW_VIEW = {
   bgHex: '#faf8f5',
   exposure: 0.34,
 }
+/** The listing sets frame a 10 cm bear at ~85% of the frame; the calf's horns
+ *  want the bar's ~75%. */
+const COW_STAGE_ZOOM = 1.22
 const COW_YARN: YarnWeight = 'worsted'
 const COW_HOOK_MM = 4
 const COW_FIBRE: YarnFibre = 'chenille'
@@ -156,15 +159,15 @@ function faceDir(d: Dir, yaw = COW_YAW): Dir {
 /** Where the pieces are sewn and which way they point (M, measured by the
  *  preview dumps in the hair job log). */
 const MUZZLE_DIR = { x: 0, y: 1, z: -0.4 }
-const HORN_DIR = { x: 0.55, y: 0.1, z: 1 }
-const HORN_AIM = { x: 1, y: 0.12, z: 0.8 }
+const HORN_DIR = { x: 0.7, y: 0.1, z: 0.9 }
+const HORN_AIM = { x: 1, y: 0.12, z: 0.5 }
 const EAR_DIR = { x: 1, y: 0.15, z: 0.22 }
 const EAR_AIM = { x: 1, y: 0.3, z: 0.15 }
 /** Front legs: sewn at the front corner of the shoulder and hung straight
  *  down, a little forward and out, so each paw rests on the table outside
  *  its foot (the pose lane's round-4 "highland-cow way"). */
-const FRONT_LEG_DIR = { x: 0.8, y: 0.5, z: 0.4 }
-const FRONT_LEG_AIM = { x: 0.3, y: 0.5, z: -1 }
+const FRONT_LEG_DIR = { x: 0.8, y: 0.6, z: 0.4 }
+const FRONT_LEG_AIM = { x: 0.25, y: 0.72, z: -1 }
 /** Back legs: worked sole first, sewn low under the front of the body, the
  *  rounded foot pointing at the lens between the front paws. */
 const BACK_LEG_DIR = { x: 0.45, y: 0.8, z: -0.5 }
@@ -173,13 +176,13 @@ const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 /** The fringe circle's centre on the crown, tipped well forward so its lower
  *  loops fall to about a row above the eyes (the bar). */
-const HAIR_DIR = { x: 0, y: 1.15, z: 1 }
+const HAIR_DIR = { x: 0, y: 1.4, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
 export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
-  const rounds = size === 'S' ? [6, 12, 18, 24] : size === 'L' ? [6, 12, 18, 24, 30, 36] : [6, 12, 18, 24, 30]
+  const rounds = size === 'S' ? [6, 12, 18] : size === 'L' ? [6, 12, 18, 24, 30] : [6, 12, 18, 24]
   const last = rounds.length - 1
   return {
     name: 'fringe',
@@ -188,17 +191,21 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     stitch: 'loopst',
     rounds,
     firstLoopRound: 0,
-    // Plump, short, round loops — a chenille loop over one finger, about as
-    // wide as it is long — in every direction (vary 0.3 turns the plane ±54°).
-    loop: { lengthYr: 3.0, halfWidthYr: 1.4, droopDeg: 0, vary: 0.3 },
+    // BIG open round loops — the bar's curls are rings about a tenth of the
+    // head's width across (~11 mm on this calf), so each loop is worked over
+    // two fingers, about as wide as it is long, in every direction (vary 0.3
+    // turns the plane ±54°). Fewer, bigger loops: round 5 packed ninety small
+    // loops into a flat mat that read as a skullcap of noodles.
+    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: 0, vary: 0.3 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 4.4, halfWidthYr: 1.6 } // over two fingers: the crown of the tuft
+        ? { lengthYr: 6.5, halfWidthYr: 2.8 } // over three fingers: the crown of the tuft
         : k === 1
-          ? { lengthYr: 3.8, halfWidthYr: 1.5 }
+          ? { lengthYr: 5.8, halfWidthYr: 2.6 }
           : k === last
-            ? { lengthYr: 2.8, halfWidthYr: 1.35, droopDeg: 12 } // the spill onto the forehead
+            ? { lengthYr: 4.6, halfWidthYr: 2.3, droopDeg: 15 } // the spill onto the forehead
             : undefined,
+    gravity: 0.0015,
     strandYr: 0.82,
     colourHex,
   }
@@ -224,7 +231,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       // The wide cream muzzle: a flat oval low on the face, magic ring out
       // (the nostrils are stitched across it; the closing end is in the join).
       name: 'muzzle', stitch: 'sc', rounds: s.muzzle, colourHex: cream, scale: s.muzzleScale,
-      place: { on: 'head', dir: fd(MUZZLE_DIR), seat: 6, poleIn: false, surfaceFit: 'ellipsoid' },
+      place: { on: 'head', dir: fd(MUZZLE_DIR), seat: 9, poleIn: false, surfaceFit: 'ellipsoid' },
       sewNote: 'centred on the lower half of the face with its magic ring facing out, its top edge level with the eyes',
     },
   ]
@@ -315,7 +322,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     props,
     embroidery,
     hair: [cowFringe(main, choices.size)],
-    ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage } : {}),
+    ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed body, a short neck and a big round head, a wide cream muzzle, two cream horns, two round ears, ' +
       'two front legs, two back legs and a tail, each worked as a spiral from a magic ring and sewn on, with a loop-stitch fringe sewn between the horns.',

@@ -54,6 +54,10 @@ export interface HairPatch {
    *  stand tallest, the edge loops over one, so the tuft mounds up in the
    *  middle instead of lying as one flat layer. */
   loopByRound?: (k: number) => Partial<LoopShape> | undefined
+  /** Gravity on the loose loops per relax iteration, in yarn radii (default
+   *  HAIR_GRAVITY). A big chenille ring is springy and holds itself open, so
+   *  a long-looped tuft wants less than the small-looped default. */
+  gravity?: number
   /** The loose loops' rendered strand radius, in yarn radii (default 0.62,
    *  the plied bundle every stitch is drawn at). A loop of chenille that is
    *  not pulled tight into a stitch plumps up to its full pile, so the cow's
@@ -102,7 +106,7 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
     loopByRound: h.loopByRound,
   })
   const { e1, e2, w } = patchFrame(h.dir)
-  const g = yr * HAIR_GRAVITY
+  const g = yr * (h.gravity ?? HAIR_GRAVITY)
   // World down in the patch frame: toward the head (+z) on a crown patch, and
   // down the face along it — so the front loops fall over the forehead.
   const down: V3 = { x: 0, y: 0, z: -1 }
@@ -223,7 +227,11 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   const baseLen = h.loop?.lengthYr ?? STITCHES[h.stitch].loop?.lengthYr ?? 3
   const fingers = (k: number): string => {
     const len = h.loopByRound?.(k)?.lengthYr ?? baseLen
-    return len >= baseLen * 1.3 ? ' (wrap the yarn round two fingers for these taller loops)' : len <= baseLen * 0.95 && h.loopByRound?.(k) ? ' (wrap the yarn round one finger only, for short loops)' : ''
+    const base = baseLen >= 4.5 ? 2 : 1
+    const n = len >= baseLen * 1.25 ? base + 1 : len <= baseLen * 0.95 && h.loopByRound?.(k) ? Math.max(1, base - 1) : base
+    const word = ['one finger', 'two fingers', 'three fingers'][n - 1]!
+    if (n === base && k > 0) return ''
+    return n > base ? ` (wrap the yarn round ${word} for these taller loops)` : n < base ? ` (wrap the yarn round ${word} only, for shorter loops)` : ` (wrap the yarn round ${word})`
   }
   h.rounds.forEach((count, k) => {
     const lp = k >= h.firstLoopRound
