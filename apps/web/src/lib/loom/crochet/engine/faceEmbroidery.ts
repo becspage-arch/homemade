@@ -123,7 +123,7 @@ const NOSE_PINK = '#c9737d'
 const BLUSH_PINK = '#eaa3a3'
 const HIGHLIGHT = '#f4f1ea'
 const FLOSS_MM = 0.5
-const BLUSH_YARN_MM = 0.6
+const BLUSH_YARN_MM = 0.5
 
 export interface FaceLayout {
   /** The head (or body) the eyes and blush go on, and its round counts. */
@@ -257,7 +257,7 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const stitches = [...arc.stitches]
       // Three lashes on the outer half of the lid, each a short straight
       // stitch out of the curve, down and a little outward.
-      for (const [i, len, out_] of [[2, 0.42, 0.0], [3, 0.48, 0.08], [4, 0.5, 0.18], [5, 0.46, 0.3], [6, 0.36, 0.38]] as const) {
+      for (const [i, len, out_] of [[3, 0.5, 0.04], [4, 0.56, 0.14], [5, 0.54, 0.26], [6, 0.44, 0.36]] as const) {
         const p = arc.pts[i]!
         stitches.push({ from: p, to: { round: p.round + len, st: p.st + side * out_ } })
       }
@@ -266,8 +266,8 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
   } else if (style === 'stitched') {
     for (const side of [-1, 1] as const) {
       const cs = side * half(eyeSt)
-      const hRounds = 0.62
-      const wSt = Math.min(halfSt * 0.55, 0.55)
+      const hRounds = 0.68
+      const wSt = Math.min(halfSt * 0.55, 0.45)
       // Worked from the inner edge outward on each side (mirror images).
       const fill = satinColumns(cs - side * wSt, cs + side * wSt, 0.11, eyeRound, (s) => {
         const u = (s - cs) / wSt
@@ -292,7 +292,7 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const hh = 0.48
       // Worked from the inner edge outward on each side, so the two cheeks
       // are exact mirror images stitch for stitch.
-      const fill = satinRows(br - hh, br + hh, 0.12, cs, (r) => {
+      const fill = satinRows(br - hh, br + hh, 0.1, cs, (r) => {
         const u = (r - br) / hh
         return hw * Math.sqrt(Math.max(0, 1 - u * u))
       }).map((s) => (side < 0 ? { from: s.to, to: s.from } : s))
@@ -411,7 +411,7 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
       `Sleeping eyes (black embroidery thread): bring the needle up ${roundWords(a.round)}, ` +
         `${sts(a.st)} from centre front. Work 6 small backstitches outward in a smile-shaped curve that dips to ` +
         `${roundWords(mid.round)} at its middle and comes back up ${roundWords(end.round)}, ${sts(end.st)} from centre front. ` +
-        'Add 5 lashes along the outer two thirds of the curve, one at each backstitch hole: a short straight stitch from the curve down into the next round, fanning slightly outward toward the outer corner. ' +
+        'Add 4 lashes along the outer half of the curve, one at each backstitch hole: a short straight stitch from the curve down into the next round, fanning slightly outward toward the outer corner. ' +
         `Work the other eye as a mirror image, so the inner corners are ${sts(apart)} apart.`,
     )
   } else if (eyeL && style === 'stitched') {
@@ -708,17 +708,24 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
       prevTo = st.to
       const nextSt = f.stitches[f.stitches.indexOf(st) + 1]
       const chainsOn = nextSt != null && Math.abs(nextSt.from.round - st.to.round) < 1e-9 && Math.abs(nextSt.from.st - st.to.st) < 1e-9
-      const dive = bundle + rt * 1.8
+      // A stitch that starts in a hole an EARLIER stitch already used (a
+      // lash coming out of the lid's backstitch hole) shows no dive at its
+      // root: the visible thread starts at the lid.
+      const same = (a: SurfaceSpot, b: SurfaceSpot): boolean => Math.abs(a.round - b.round) < 1e-9 && Math.abs(a.st - b.st) < 1e-9
+      const idx = f.stitches.indexOf(st)
+      const rootShared = !chained && f.stitches.slice(0, idx).some((o) => same(o.from, st.from) || same(o.to, st.from))
+      // Short stitches (lashes) go in at a shallower angle, or the smoothing
+      // curls the dive into a hook.
+      const dive = bundle + rt * (chord < 4 ? 1.0 : 1.8)
       const line: V3[] = chained && strands.length ? strands.pop()! : []
-      if (!chained) line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
+      if (!chained && !rootShared) line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
       for (let i = chained ? 1 : 0; i <= nSeg; i++) {
         const s = surf[i]!
         // The ends are pulled down into the gap they pass through (only a
-        // little at a shared backstitch hole); the run in between rests on
-        // the crowns.
+        // little at a shared hole); the run in between rests on the crowns.
         const e = Math.min(1, Math.min(i, nSeg - i) / Math.max(1, Math.min(2, nSeg / 2)))
-        const atShared = (i === 0 && chained) || (i === nSeg && chainsOn)
-        const pull = atShared ? 0.35 : 0.9
+        const atShared = (i === 0 && (chained || rootShared)) || (i === nSeg && chainsOn)
+        const pull = atShared ? 0.3 : chord < 4 ? 0.5 : 0.9
         const h = sm2[i]! + bundle + rt * (0.2 + 0.6 * e) - rt * pull * (1 - e)
         line.push(toWorld(add(s.p, mul(s.n, h))))
       }

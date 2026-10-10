@@ -1034,8 +1034,8 @@ function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | u
 const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushElev: number; blushAz: number; pinkNose: boolean; eyeHalfSt: number }> = {
   ball: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
   egg: { eyeElev: 22, eyeAz: 26, blushElev: 6, blushAz: 40, pinkNose: true, eyeHalfSt: 0.7 },
-  bunny: { eyeElev: 5, eyeAz: 33, blushElev: -11, blushAz: 42, pinkNose: true, eyeHalfSt: 1.05 },
-  bear: { eyeElev: 5, eyeAz: 31, blushElev: -13, blushAz: 43, pinkNose: false, eyeHalfSt: 1.2 },
+  bunny: { eyeElev: 5, eyeAz: 33, blushElev: -15, blushAz: 41, pinkNose: true, eyeHalfSt: 1.05 },
+  bear: { eyeElev: 5, eyeAz: 31, blushElev: -16, blushAz: 42, pinkNose: false, eyeHalfSt: 1.2 },
   cat: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: true, eyeHalfSt: 0.8 },
   dog: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: false, eyeHalfSt: 0.8 },
   bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },
