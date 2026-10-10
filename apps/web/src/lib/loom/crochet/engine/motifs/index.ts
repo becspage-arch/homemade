@@ -10,6 +10,7 @@ import './butterfly'
 import './berry'
 import './leaf-vine'
 import './rolled-rose'
+import './layered-rose'
 
 export { getMotif, listMotifs, registerMotif } from './registry'
 export type { BuiltMotif, MotifDef, MotifId, MotifOptions, MotifPiece } from './types'

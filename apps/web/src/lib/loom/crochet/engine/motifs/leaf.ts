@@ -4,7 +4,7 @@
  *
  * Chain and work BOTH sides with graded stitch heights: a chain is made from
  * the leaf tip to the stem end; the stem is worked back in sl sts; then up one
- * side of the chain dc, htr, tr, tr, tr, htr, dc (UK) to the tip, a (dc, ch 2,
+ * side of the chain dc, htr, tr, dtr, dtr, tr, htr, dc (UK) to the tip, a (dc, ch 2,
  * dc) point in the first chain, and back down the other side of the chain to
  * the stem. The chain is the centre spine; the outline is the stitch heights.
  */
@@ -19,8 +19,8 @@ export const LEAF_COLOURS = { main: '#9aab8a' } // sage
 
 /** One side of the leaf, from the stem end to the tip (the other side is
  *  worked tip to stem with the same heights reversed). */
-export const LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'hdc', 'sc', 'sc']
-export const LEAF_STEM = 6
+export const LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'tr', 'tr', 'dc', 'hdc', 'sc']
+export const LEAF_STEM = 4
 
 /** Work a stitch into a chain loop from one side ('L' = the chain's left leg
  *  while travelling back toward its start, 'R' = the right leg travelling

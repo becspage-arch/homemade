@@ -2,12 +2,14 @@
  * DAISY (audit round 9; bar: the cream-petalled daisies with mustard centres on
  * bar-flower-wall-hanging.png).
  *
- * A two-round centre (5, 10 dc, UK) in mustard, then ten petals in cream, each
- * CHAINED OUT from the centre and WORKED BACK down the chain with graded
- * stitches — dc at the tip, tr, two dtr at the widest, tr, dc at the base —
- * and anchored with a sl st into the next centre stitch. The chain is one edge
- * of each petal, the stitch tops the other; the rounded petal emerges from the
- * heights.
+ * A three-round centre (8, 16, 24 dc, UK) in mustard, then eight petals in
+ * cream, each CHAINED OUT from the centre and WORKED BACK down the chain with
+ * graded stitches — tr at the tip, three dtr, tr, htr at the base (UK) — and
+ * anchored with a sl st two stitches on. The chain is one edge of each petal,
+ * the stitch tops the other; the broad rounded petal emerges from the heights.
+ *
+ * (Round 1 of the audit had ten petals rising from dc at the tip: pointed and
+ * star-like next to the bar's broad round petals and wide centre.)
  */
 
 import { rowPitchYr, type StitchId } from '../dictionary'
@@ -20,8 +22,8 @@ import type { BuiltMotif, MotifOptions } from './types'
 export const DAISY_COLOURS = { centre: '#c9a03c', petal: '#f1e8d6' } // mustard, cream
 
 /** A petal, tip to base. */
-export const DAISY_PETAL: StitchId[] = (process.env.DPETAL ?? 'dc,tr,tr,tr,dc,hdc').split(',') as StitchId[]
-export const DAISY_CENTRE = (process.env.DCENTRE ?? '8,16,24').split(',').map(Number)
+export const DAISY_PETAL: StitchId[] = ['dc', 'tr', 'tr', 'tr', 'dc', 'hdc']
+export const DAISY_CENTRE = [8, 16, 24]
 export const DAISY_PETALS = 8
 
 export function buildDaisy(o?: MotifOptions): BuiltMotif {

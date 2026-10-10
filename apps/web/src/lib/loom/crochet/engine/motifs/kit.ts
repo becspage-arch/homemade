@@ -336,7 +336,7 @@ export class MotifStrand {
     const yr = this.yr
     const p = yr * (opts.pitchYr ?? CHAIN_PITCH_YR)
     const hw = yr * 1.05
-    const r = yr * Number(process.env.CHAIN_REACH ?? 1.2)
+    const r = yr * CHAIN_REACH_YR
     const zf = yr * 0.45
     const zfold = -yr * 0.5
     const zb = yr * 1.4
@@ -487,9 +487,12 @@ export class MotifStrand {
  *  standalone drawn-tight chain swatch (2.2) because a motif is relaxed with the
  *  worked fabric's firmer collision (1.25 yr, not the chain's squashed 1.0), and
  *  a loop must be fed enough yarn to contain what passes through it. */
-export const CHAIN_PITCH_YR = Number(process.env.CHAIN_PITCH ?? 2.6)
+export const CHAIN_PITCH_YR = 2.6
+/** How far a chain's fold reaches past its pitch (yr): 0.7 left the crossings of
+ *  a chain worked on both sides sliding round the fold; 0.9-1.4 are all clean. */
+export const CHAIN_REACH_YR = 1.2
 const CANOPY_FRAC = 0.65
-const CHAIN_SUBDIV = process.env.CHAIN_SUBDIV !== '0'
+const CHAIN_SUBDIV = true
 
 /** Relax a motif: worked-fabric collision, blocked along each stitch's own
  *  axis, a table under it. */

@@ -2,16 +2,19 @@
  * BUTTERFLY (audit round 8; bar: the dusty-blue and peach butterflies on
  * bar-flower-wall-hanging.png; built-how ref real/8-butterflies.jpg).
  *
- * Round 1: 12 sc (UK dc) into a magic ring. Round 2: four wings, each over
- * three sts — a chain standing up to the wing's height, two tall sts into each
- * of the next two sts (tr, UK dtr, for the big upper wings; dc, UK tr, for the
- * lower wings), a chain back down and a sl st into the third st, which makes
- * the notch between wings. A short chain body is sewn down the middle and its
- * tail knotted for an antenna.
+ * Rounds 1-2: 10 then 20 sc (UK dc) — a flat centre. Round 3: four wings, each
+ * over five sts — a chain standing up to the wing's height, a tall stitch into
+ * each of the next four sts (tr, UK dtr, for the big upper wings; hdc, UK htr,
+ * for the small lower wings, so the waist between them is a deep notch), a
+ * chain back down and a sl st into the fifth st, which makes the notch between
+ * wings. A short chain body is sewn down the middle and its tail knotted for an
+ * antenna.
  *
- * (A first try put all four wings straight into the ring — 26 stitches and
- * chains into a ring 2.4yr across: the chains standing beside the tall legs
- * were crowded out of their own folds. The 12-st first round spreads them.)
+ * (Tried first: all four wings straight into the ring — 26 stitches and chains
+ * into a ring 2.4yr across crowded the chains standing beside the tall legs out
+ * of their own folds; then 12 and 16-st first rounds with two tall sts fanned
+ * into one st — the second post was crowded out of its own yarn-over collars.
+ * Two flat rounds and one tall st per st are clean.)
  */
 
 import type { StitchId } from '../dictionary'
@@ -44,8 +47,8 @@ interface Wing {
 export const WINGS: Wing[] = [
   { name: 'upper right', id: 'tr', ch: 3 },
   { name: 'upper left', id: 'tr', ch: 3 },
-  { name: 'lower left', id: 'dc', ch: 2 },
-  { name: 'lower right', id: 'dc', ch: 2 },
+  { name: 'lower left', id: 'hdc', ch: 1 },
+  { name: 'lower right', id: 'hdc', ch: 1 },
 ]
 
 export function buildButterfly(o?: MotifOptions): BuiltMotif {

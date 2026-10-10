@@ -49,7 +49,7 @@ export function buildHeart(o?: MotifOptions): BuiltMotif {
   const yr = y.yr
   const m = new MotifStrand(yr, col.main!)
   const c = { x: 0, y: 0 }
-  const ring: Ring = m.magicRing(c, Number(process.env.HRING ?? 2.4))
+  const ring: Ring = m.magicRing(c, 2.4)
   // Built turned so the first chain leaves where the ring's working end is.
   const off = RING_PHASE - (HEART_SLOTS[0]!.deg * Math.PI) / 180
   const A = (deg: number): number => (deg * Math.PI) / 180 + off

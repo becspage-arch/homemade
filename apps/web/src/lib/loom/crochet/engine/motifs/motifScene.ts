@@ -34,7 +34,10 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}) {
   const cs = Math.cos(spin), sn = Math.sin(spin)
   const strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[] = []
   for (const piece of m.pieces) {
-    const ctrl: V3[] = posedPoints(piece).map((p) => ({ x: p.x * cs - p.y * sn, y: p.x * sn + p.y * cs, z: p.z }))
+    // The renderer shows the engine's +y toward the bottom of the frame (a
+    // motif posed upright — a heart's dip, a butterfly's head — came out upside
+    // down and mirrored in round 1), so the scene is written with y flipped.
+    const ctrl: V3[] = posedPoints(piece).map((p) => ({ x: p.x * cs - p.y * sn, y: -(p.x * sn + p.y * cs), z: p.z }))
     const center = smooth(ctrl, PER_SEG)
     const { radiusMm, filaments } = pliedFilaments(center, m.yr * 0.85, 3, twist)
     const path = piece.built.strandPath

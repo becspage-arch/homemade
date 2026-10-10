@@ -31,7 +31,7 @@ export function colourOpts(defaults: Record<string, string>, o?: MotifOptions): 
 
 /** Relax + audit one strand into a piece. */
 export function pieceOf(name: string, m: MotifStrand, built: BuiltContinuous, pose?: MotifPiece['pose'], iterations?: number): MotifPiece {
-  if (!process.env.MOTIF_NORELAX) relaxMotif(built, iterations ?? (Number(process.env.MOTIF_ITERS) || undefined))
+  relaxMotif(built, iterations)
   const problems = auditMotif(built, name)
   const colours = m.nodeColour.slice()
   return { name, built, colourOf: (i) => colours[i] ?? m.colour, pose, problems }

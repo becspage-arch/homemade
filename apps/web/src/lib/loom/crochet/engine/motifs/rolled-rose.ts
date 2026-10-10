@@ -16,7 +16,7 @@ import { MotifStrand } from './kit'
 import { intoChain, runWords } from './leaf'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
-import type { BuiltMotif, MotifOptions, V3 } from './types'
+import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
 export const ROLLED_ROSE_COLOURS = { main: '#c98a90' } // dusty pink
 
@@ -40,15 +40,17 @@ export function rosePetalList(): StitchId[][] {
   return out
 }
 
-export function buildRolledRose(o?: MotifOptions): BuiltMotif {
-  const y = motifYarn(o)
-  const col = colourOpts(ROLLED_ROSE_COLOURS, o)
-  const yr = y.yr
-  const petals = rosePetalList()
+/** A rolled strip as one piece: the foundation chain, one row of `petals`
+ *  (each a run of stitches, then a sl st) worked back along it, relaxed and
+ *  audited flat, then posed rolled. */
+export function rolledStrip(
+  yr: number, hex: string, petals: StitchId[][], name = 'rose',
+  roll: { pitchYr?: number; r0Yr?: number; lean0?: number; lean1?: number; turnsFull?: number } = {},
+): MotifPiece {
   const worked = petals.reduce((a, p) => a + p.length + 1, 0) // each petal + its sl st
   const nCh = worked + 1 // + the turning chain
   const pitch = yr * 2.6
-  const m = new MotifStrand(yr, col.main!)
+  const m = new MotifStrand(yr, hex)
   // The foundation chain, made along −x; the row is worked back along +x with
   // the petals standing toward −y.
   m.slipKnot({ x: 0, y: 0 }, { x: -1, y: 0 })
@@ -64,7 +66,17 @@ export function buildRolledRose(o?: MotifOptions): BuiltMotif {
   const built = m.finish(pitch * nCh, yr * 14)
   // Where the row starts (the first petal): the far end of the chain.
   const x0 = Math.max(...built.model.nodes.slice(4).map((n) => n.x))
-  const piece = pieceOf('rose', m, built, (p) => rollPose(p, x0, yr))
+  const o = {
+    pitch: yr * (roll.pitchYr ?? ROLL_PITCH_YR), r0: yr * (roll.r0Yr ?? ROLL_R0_YR),
+    lean0: roll.lean0 ?? LEAN0, lean1: roll.lean1 ?? LEAN1, turnsFull: roll.turnsFull ?? 3.2,
+  }
+  return pieceOf(name, m, built, (p) => rollPose(p, x0, yr, o))
+}
+
+export function buildRolledRose(o?: MotifOptions): BuiltMotif {
+  const y = motifYarn(o)
+  const col = colourOpts(ROLLED_ROSE_COLOURS, o)
+  const piece = rolledStrip(y.yr, col.main!, rosePetalList())
   return assemble('rolled-rose', 'Rolled rose', o, [piece], rolledRoseWords(), materialsLine(o, ['dusty pink']))
 }
 
@@ -76,15 +88,15 @@ export function buildRolledRose(o?: MotifOptions): BuiltMotif {
  * maker's rolling — so the audited stitches are not moved relative to one
  * another along the strip.
  */
-function rollPose(p: V3, x0: number, yr: number): V3 {
+function rollPose(p: V3, x0: number, yr: number, o: { pitch: number; r0: number; lean0: number; lean1: number; turnsFull: number }): V3 {
   const s = Math.max(0, x0 - p.x)
-  const b = (yr * ROLL_PITCH_YR) / (Math.PI * 2)
-  const r0 = yr * ROLL_R0_YR
+  const b = o.pitch / (Math.PI * 2)
+  const r0 = o.r0
   // arclength of r = r0 + bθ ≈ r0θ + bθ²/2 → θ(s)
   const th = (-r0 + Math.sqrt(r0 * r0 + 2 * b * s)) / b
   const r = r0 + b * th
   const turns = th / (Math.PI * 2)
-  const lean = ((LEAN0 + (LEAN1 - LEAN0) * Math.min(1, turns / 3.2)) * Math.PI) / 180
+  const lean = ((o.lean0 + (o.lean1 - o.lean0) * Math.min(1, turns / o.turnsFull)) * Math.PI) / 180
   const h = Math.max(0, -p.y) // height up the strip
   const rr = r + p.z + h * Math.sin(lean)
   return { x: rr * Math.cos(th), y: rr * Math.sin(th), z: h * Math.cos(lean) + yr }

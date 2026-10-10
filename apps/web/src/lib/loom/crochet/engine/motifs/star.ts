@@ -1,33 +1,36 @@
 /**
  * FIVE-POINT STAR (audit round 8; bar: the gold star toppers on
- * bar-spiral-trees.png, the stars on the nativity wreath in real/).
+ * bar-spiral-trees.png — fat, short, rounded points round a radiating centre,
+ * outlined by an edging round; the nativity-wreath stars in real/).
  *
- * Worked in the round from a magic ring (5, 10, 15 sts), then the points are
- * CHAINED OUT and WORKED BACK along the chain with graded stitches — sl st at
- * the tip, then dc, htr, tr, dtr (UK) down to the base — and each point is
- * anchored by a sl st into the round, two stitches on. The chain is one edge of
- * the point, the tops of the graded stitches the other: the triangle EMERGES
- * from the stitch heights, nothing places it.
+ * Worked in the round from a magic ring: a flat centre growing by five a round,
+ * then ONE round whose outline is the star — into each group of five stitches
+ * a sl st, tr, trtr, tr, sl st (UK): the heights rise to the point and fall to the
+ * valley, nothing places them — and an edging round of dc (UK) all round it,
+ * fanned three into each point stitch and two either side of it, which crisps
+ * and rounds the points the way the bar star's outline does.
+ *
+ * (Round 1 of this audit chained each point out and worked back along it with
+ * graded stitches; the points came out long, thin and twisted at the tip — the
+ * bar's are fat and short — and its chain edge could not take an edging: every
+ * stitch worked into a chain's free leg dragged that chain's own crossings out
+ * of their folds. Heights across the round give the bar's shape directly.)
  */
 
 import { rowPitchYr, type StitchId } from '../dictionary'
-import {
-  MotifStrand, crownRound, intoRingRound, nearAngle, polar, along, polarV, sub, unit, add, mul, len,
-  RING_PHASE, type Crown,
-} from './kit'
+import { MotifStrand, crownRound, intoRingRound, shapedRound, sub, unit, type Crown } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions } from './types'
 
-export const STAR_COLOURS = { main: '#c9a24a' } // a soft antique gold
-
-/** The point, from the tip down: the stitch worked into each chain. */
-export const STAR_POINT: StitchId[] = ['slst', 'sc', 'hdc', 'dc', 'tr']
-export const STAR_ROUNDS = [5, 10, 15]
+export const STAR_COLOURS = { main: '#b8913f' } // antique gold
 const POINTS = 5
-const TIP_REACH = Number(process.env.TIP_REACH ?? 0.8)
-const TIP_LIFT = Number(process.env.TIP_LIFT ?? 0.4)
-const SKIP = 2 // round-3 stitches skipped between a point's base and its sl st
+/** The flat centre: stitches per round (a round of +5 each time). */
+export const STAR_ROUNDS = [5, 10, 15, 20, 25]
+/** The points round, into each group of five: valley → point → valley. */
+export const STAR_POINT: StitchId[] = ['slst', 'dc', 'dtr', 'dc', 'slst']
+/** The edging round: dc (UK) into each points-round stitch, this many each. */
+export const STAR_EDGE: number[] = [1, 2, 3, 2, 1]
 
 export function buildStar(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
@@ -39,73 +42,42 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
   m.sectionName = 'centre'
   let below: Crown[] = intoRingRound(m, ring, new Array(STAR_ROUNDS[0]).fill('sc'))
   let r = ring.r + yr * rowPitchYr('sc')
-  {
-    const a = crownRound(m, c, below, below.map(() => 'inc'), 'sc', r)
+  for (let q = 1; q < STAR_ROUNDS.length; q++) {
+    const every = below.length / POINTS // one increase in every `every` sts
+    const a = crownRound(m, c, below, below.map((_, i) => (i % every === every - 1 ? 'inc' : 'st')), 'sc', r)
     below = a.crowns
     r = a.r
   }
-  {
-    const a = crownRound(m, c, below, below.map((_, i) => (i % 2 === 1 ? 'inc' : 'st')), 'sc', r)
-    below = a.crowns
-    r = a.r
-  }
-  const rim = below // 15
-  const nRim = rim.length
-  const thOf = (k: number): number => Math.atan2(rim[((k % nRim) + nRim) % nRim]!.p.y, rim[((k % nRim) + nRim) % nRim]!.p.x)
-  const per = nRim / POINTS
   m.sectionName = 'points'
-  for (let k = 0; k < POINTS; k++) {
-    const s0 = k * per - 1 // the stitch the point's chain starts from
-    const sTo = s0 + SKIP + 1 // the stitch its sl st goes into
-    const th0 = thOf(s0)
-    const thTo = nearAngle(thOf(sTo), th0)
-    // The point's axis is half way across its base; its tip stands out along it.
-    const thAx = (th0 + thTo) / 2
-    const nCh = STAR_POINT.length + 1
-    const B = m.cursor
-    const tip = polarV(c, r + yr * 2.6 * nCh * 0.92, thAx)
-    const loops = m.chain(nCh, [B, tip], { turning: 1 })
-    // Work back from the tip: skip the last chain (it turns the point).
-    for (let i = 0; i < STAR_POINT.length; i++) {
-      const L = loops[nCh - 2 - i]!
-      const f = along(L.c, mul(L.u, -1))
-      const leg = m.nodes[L.legL]!
-      const lx = f.local({ x: leg.x, y: leg.y }).lx
-      // The sl st at the tip is worked into the 2nd ch with the turning chain
-      // still on the hook, so its head closes AT the tip: it sits out over the
-      // skipped chain, not over its own insertion.
-      const tipPull = i === 0 ? yr * 2.6 * TIP_REACH : 0
-      const ly = f.local({ x: leg.x, y: leg.y }).ly
-      m.stitch({ id: STAR_POINT[i]!, frame: f, xCrown: lx - tipPull, into: { kind: 'node', node: L.legL }, ...(i === 0 ? { ty: ly + yr * TIP_LIFT } : {}) })
-    }
-    // sl st into the round, SKIP stitches on.
-    const target = rim[((sTo % nRim) + nRim) % nRim]!
-    const fr = polar(c, r)
-    const thT = Math.atan2(target.p.y, target.p.x)
-    m.stitch({ id: 'slst', frame: fr, xCrown: nearAngle(thT, thT) * r, xHook: thT * r, into: { kind: 'crown', crown: target }, by: r })
-  }
-  const end = m.cursor
-  m.fastenOff(unit(sub({ x: 0, y: 0 }, end)))
-  const R = r + yr * 2.6 * (STAR_POINT.length + 1)
+  const per = below.length / POINTS
+  if (per !== STAR_POINT.length) throw new Error('star: the last centre round must give one point group per point')
+  const pts = shapedRound(m, c, below, below.map((_, i) => ({ id: STAR_POINT[i % per]!, n: 1 })), r)
+  m.sectionName = 'edging'
+  shapedRound(m, c, pts, pts.map((_, i) => ({ id: 'sc' as StitchId, n: STAR_EDGE[i % per]! })), r + yr * rowPitchYr('sc'), { spreadRad: 0.07 })
+  m.fastenOff(unit(sub(c, m.cursor)))
+  const R = r + yr * (rowPitchYr('tr') + rowPitchYr('sc'))
   const built = m.finish(R * 2, R * 2)
   const piece = pieceOf('star', m, built)
-  void add; void len
-  const words = starWords()
-  return assemble('star', 'Five-point star', o, [piece], words, materialsLine(o, ['gold']))
+  return assemble('star', 'Five-point star', o, [piece], starWords(), materialsLine(o, ['gold']))
 }
 
 export function starWords(): string[] {
-  const [a, b, cc] = STAR_ROUNDS as [number, number, number]
-  const pt = STAR_POINT.map((id, i) => (i === 0 ? `${UK[id]} in 2nd ch from hook` : `${UK[id]} in next ch`)).join(', ')
-  return [
-    'Make a magic ring.',
-    `Round 1: ${a} ${UK.sc} into the ring. (${a} sts)`,
-    `Round 2: 2 ${UK.sc} in each st around. (${b} sts)`,
-    `Round 3: [${UK.sc} in next st, 2 ${UK.sc} in next st] ${a} times. (${cc} sts)`,
-    'Work rounds 1 to 3 in a continuous spiral without joining; mark the first stitch of each round.',
-    `Round 4 (points): [ch ${STAR_POINT.length + 1}, ${pt}, skip next ${SKIP} sts of round 3, sl st in next st] ${POINTS} times. (${POINTS} points)`,
-    'Fasten off, pull the magic ring tight and weave in the ends.',
-  ]
+  const lines = ['Make a magic ring.', `Round 1: ${STAR_ROUNDS[0]} ${UK.sc} into the ring. (${STAR_ROUNDS[0]} sts)`]
+  for (let q = 1; q < STAR_ROUNDS.length; q++) {
+    const every = STAR_ROUNDS[q - 1]! / POINTS
+    const run = every === 2 ? `${UK.sc} in next st` : `${UK.sc} in each of the next ${every - 1} sts`
+    lines.push(every === 1
+      ? `Round ${q + 1}: 2 ${UK.sc} in each st around. (${STAR_ROUNDS[q]} sts)`
+      : `Round ${q + 1}: [${run}, 2 ${UK.sc} in next st] ${POINTS} times. (${STAR_ROUNDS[q]} sts)`)
+  }
+  lines.push('Work the rounds in a continuous spiral without joining; mark the first stitch of each round.')
+  const n = STAR_ROUNDS.length
+  lines.push(`Round ${n + 1} (points): [${STAR_POINT.map((id) => `${UK[id]} in next st`).join(', ')}] ${POINTS} times. (${POINTS} points)`)
+  const edge = STAR_EDGE.map((k) => (k === 1 ? `${UK.sc} in next st` : `${k} ${UK.sc} in next st`)).join(', ')
+  const tot = STAR_EDGE.reduce((a, b) => a + b, 0) * POINTS
+  lines.push(`Round ${n + 2} (edging): [${edge}] ${POINTS} times. (${tot} sts)`)
+  lines.push('Fasten off, pull the magic ring tight and weave in the ends.')
+  return lines
 }
 
 registerMotif({ id: 'star', label: 'Five-point star', round: 8, colours: STAR_COLOURS, build: buildStar })
