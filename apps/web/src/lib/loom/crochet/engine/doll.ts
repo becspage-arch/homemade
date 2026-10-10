@@ -114,12 +114,12 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     leg: legRounds(12, 10, 2, 10),
     bridge: 2,
     // joining round 2·10 + 2·2 = 24
-    body: [24, 26, 27, 27, 27, 26, 24, 22, 18, 12, 12],
+    body: [24, 26, 27, 27, 27, 26, 24, 22, 18, 12],
     skinFrom: 8,
     head: sphereRounds(36, 1),
     arm: armRounds(9, 7, 2, 8),
     legApart: 7.4,
-    headOverlap: 4,
+    headOverlap: 5,
     keyring: true,
   },
   M: {
@@ -128,12 +128,12 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     bridge: 3,
     // joining round 2·16 + 2·3 = 38; an egg-shaped torso, the shoulders
     // sloping in over several rounds rather than one flat step.
-    body: [38, 40, 42, 44, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 32, 28, 24, 20, 16, 12, 12, 12],
+    body: [38, 40, 42, 44, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 32, 28, 24, 20, 16, 12, 12],
     skinFrom: 13,
     head: sphereRounds(66, 1),
     arm: armRounds(11, 9, 3, 22),
     legApart: 11.5,
-    headOverlap: 8,
+    headOverlap: 10,
     keyring: false,
   },
   L: {
@@ -141,12 +141,12 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     leg: legRounds(21, 18, 2, 37),
     bridge: 3,
     // joining round 2·18 + 2·3 = 42
-    body: [42, 44, 46, 48, 50, 50, 50, 50, 48, 46, 44, 42, 40, 38, 38, 36, 32, 28, 24, 20, 16, 12, 12, 12],
+    body: [42, 44, 46, 48, 50, 50, 50, 50, 48, 46, 44, 42, 40, 38, 38, 36, 32, 28, 24, 20, 16, 12, 12],
     skinFrom: 14,
     head: sphereRounds(72, 1),
     arm: armRounds(12, 10, 3, 25),
     legApart: 12.8,
-    headOverlap: 9,
+    headOverlap: 11,
     keyring: false,
   },
 }
@@ -263,7 +263,8 @@ function armWords(s: DollSize): string[] {
 
 const EYE_BLACK = '#0b0908'
 const LID_BROWN = '#3a2a22'
-const BROW = '#8a6a55'
+const LID_BLACK = '#0b0908'
+const BROW = '#6b4f3f'
 const WHITE = '#f4f1ea'
 const BLUSH = '#efbdb8'
 const MOUTH = '#b9706b'
@@ -319,7 +320,7 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
         const hTop = 1.1 * kR
         const hBot = 0.9 * kR
         const fill: EmbroideryStitch[] = []
-        const n = Math.round((2 * w) / 0.13)
+        const n = Math.round((2 * w) / 0.1)
         for (let i = 0; i <= n; i++) {
           const u = -1 + (2 * i) / n // inner → outer
           const k = Math.sqrt(Math.max(0, 1 - u * u)) * (1 + 0.12 * u)
@@ -329,13 +330,16 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
         // Rendered in the plump unplied strand (`chenille` look) so the satin
         // reads as one deep black almond: the plied fine-cotton look turned
         // a black satin fill grey (faces job, r5/r6).
-        out.push(feat(side < 0 ? 'eye-l' : 'eye-r', EYE_BLACK, 0.55, 'Black embroidery thread', fill, 'chenille'))
-        // Catch-light: two tiny white stitches high on the inner side.
-        const hl = S(eyeR - 0.5 * kR, -0.6 * kSt)
-        out.push(feat(side < 0 ? 'eye-light-l' : 'eye-light-r', WHITE, 0.42, 'White embroidery thread', [
-          { from: hl, to: { round: hl.round + 0.32, st: hl.st }, taut: true },
-          { from: { round: hl.round, st: hl.st + side * 0.18 }, to: { round: hl.round + 0.3, st: hl.st + side * 0.18 }, taut: true },
-        ]))
+        out.push(feat(side < 0 ? 'eye-l' : 'eye-r', EYE_BLACK, 0.6, 'Black embroidery thread', fill, 'chenille'))
+        // Catch-light: three short white stitches side by side on the inner
+        // upper side (a small bright oval, the bar's), in the plump strand so
+        // the white stays solid on the black.
+        const hl = S(eyeR - 0.55 * kR, -0.62 * kSt)
+        out.push(feat(side < 0 ? 'eye-light-l' : 'eye-light-r', WHITE, 0.5, 'White embroidery thread', [0, 1, 2].map((j) => {
+          const st = hl.st + side * (j - 1) * 0.2 * kSt
+          const h = j === 1 ? 0.62 : 0.48
+          return { from: { round: hl.round, st }, to: { round: hl.round + h * kR, st }, taut: true }
+        }), 'chenille'))
       }
       // The upper lid: backstitch along the top edge of the eye, running a
       // little past the outer corner, then two short lashes up and out.
@@ -349,9 +353,11 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       for (let i = 0; i < lid.length - 1; i++) lidSt.push({ from: lid[i]!, to: lid[i + 1]! })
       const tip = lid[lid.length - 1]!
       const prev = lid[lid.length - 2]!
-      lidSt.push({ from: tip, to: { round: tip.round - 0.35 * kR, st: tip.st + side * 0.6 * kSt }, taut: true })
-      lidSt.push({ from: prev, to: { round: prev.round - 0.5 * kR, st: prev.st + side * 0.35 * kSt }, taut: true })
-      out.push(feat(side < 0 ? 'lid-l' : 'lid-r', LID_BROWN, 0.42, 'Dark brown embroidery thread', lidSt))
+      lidSt.push({ from: tip, to: { round: tip.round - 0.45 * kR, st: tip.st + side * 0.85 * kSt }, taut: true })
+      lidSt.push({ from: prev, to: { round: prev.round - 0.7 * kR, st: prev.st + side * 0.5 * kSt }, taut: true })
+      // Black like the bar's lid line, in the plump strand (a dark plied
+      // thread on cotton read grey in r2).
+      out.push(feat(side < 0 ? 'lid-l' : 'lid-r', LID_BLACK, 0.5, 'Black embroidery thread', lidSt, 'chenille'))
       // A short soft brow, a little above and arched.
       const br = half(roundAt(head, DOLL_FACE.browElev))
       out.push(feat(side < 0 ? 'brow-l' : 'brow-r', BROW, 0.36, 'Light brown embroidery thread', [
@@ -372,7 +378,7 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
         const p = pts[i]!
         st.push({ from: p, to: { round: p.round + len * kR, st: p.st + side * o * kSt }, taut: true })
       }
-      out.push(feat(side < 0 ? 'eye-l' : 'eye-r', LID_BROWN, 0.45, 'Dark brown embroidery thread', st))
+      out.push(feat(side < 0 ? 'eye-l' : 'eye-r', LID_BROWN, 0.48, 'Dark brown embroidery thread', st, 'chenille'))
     }
   }
   if (style !== 'safety-stitched') {
@@ -436,9 +442,9 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
     lines.push(
       `Eyes (black embroidery thread): centre each eye ${roundWords(eyeR)}, ${sts(eyeC)} either side of centre front. ` +
         `Satin stitch an almond ${sts(3.6 * kSt)} wide and ${rnds(2 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner. ` +
-        'With white thread, work two tiny stitches side by side high on the inner side of each eye for the catch-light.',
-      `Lids and lashes (dark brown embroidery thread): backstitch along the top edge of each eye, half a round above the black, ` +
-        `running a little past the outer corner; from the last two holes work two short lashes outward and a little up, about ${sts(0.6 * kSt)} long.`,
+        'With white thread, work three tiny stitches side by side high on the inner side of each eye for the catch-light, the middle one a little longer.',
+      `Lids and lashes (black embroidery thread): backstitch along the top edge of each eye, half a round above the black, ` +
+        `running a little past the outer corner; from the last two holes work two short lashes outward and a little up, about ${sts(0.9 * kSt)} long.`,
       `Brows (light brown embroidery thread): ${roundWords(half(roundAt(head, DOLL_FACE.browElev)))}, above each eye, two straight stitches in a gentle arch, about ${sts(1.8 * kSt)} wide.`,
     )
   } else if (style === 'sleepy') {
@@ -463,6 +469,16 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
 
 // ── The program ─────────────────────────────────────────────────────────────
 
+/**
+ * TENSION. Fine-cotton dolls are worked TIGHTLY (a 2.0–2.5 mm hook on 4 ply)
+ * so no stuffing shows between the stitches. The builders' density knob packs
+ * the stitches closer round each round than the dictionary's relaxed sc (2.7
+ * yarn radii): 2.4 for the legs, body and arms; 2.5 for the head, which is the
+ * tightest its 1554 interlocks audit clean at (2.4 fails one).
+ */
+const DOLL_GAUGE_YR = 2.4
+const DOLL_HEAD_GAUGE_YR = 2.5
+
 /** The camera a standing doll is photographed from: front-on with a slight
  *  turn, the lens a little above her waist (tilt 82 = just above eye level of
  *  a figure this tall), framed tall. */
@@ -478,6 +494,12 @@ const DOLL_VIEW = {
   exposure: 0.34,
 }
 
+/** Rotate a face direction about z through the camera's yaw. */
+function turnToCamera(d: { x: number; y: number; z: number }): { x: number; y: number; z: number } {
+  const t = (-DOLL_VIEW.yawDeg * Math.PI) / 180
+  return { x: d.x * Math.cos(t) - d.y * Math.sin(t), y: d.x * Math.sin(t) + d.y * Math.cos(t), z: d.z }
+}
+
 const SKIN_LABEL = 'the skin colour'
 const DRESS_LABEL = 'the dress colour'
 
@@ -488,6 +510,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   const style = choices.face ?? 'stitched'
   const legs: AmigurumiPart[] = ([-1, 1] as const).map((side) => ({
     name: side < 0 ? 'leg-l' : 'leg-r',
+    gaugeYr: DOLL_GAUGE_YR,
     stitch: 'sc',
     rounds: s.leg,
     colourHex: skin,
@@ -502,6 +525,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     ...legs,
     {
       name: 'body',
+    gaugeYr: DOLL_GAUGE_YR,
       stitch: 'sc',
       rounds: s.body,
       colourHex: dress,
@@ -517,6 +541,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     },
     {
       name: 'head',
+      gaugeYr: DOLL_HEAD_GAUGE_YR,
       stitch: 'sc',
       rounds: s.head,
       colourHex: skin,
@@ -531,12 +556,13 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r',
+    gaugeYr: DOLL_GAUGE_YR,
       stitch: 'sc',
       rounds: s.arm,
       colourHex: skin,
       place: {
         on: 'body',
-        dir: { x: side * 1, y: 0.05, z: 0.62 },
+        dir: { x: side * 1, y: 0.05, z: 0.45 },
         aim: { x: side * 0.16, y: 0.12, z: -1 },
         seat: 3,
         surfaceFit: 'ellipsoid',
@@ -561,7 +587,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
       const el = (DOLL_FACE.eyeElev * Math.PI) / 180
       props.push({
         name: side < 0 ? 'eye-l' : 'eye-r', on: 'head',
-        dir: { x: side * Math.sin(az) * Math.cos(el), y: Math.cos(az) * Math.cos(el), z: Math.sin(el) },
+        dir: turnToCamera({ x: side * Math.sin(az) * Math.cos(el), y: Math.cos(az) * Math.cos(el), z: Math.sin(el) }),
         radiusMm: r, seat: -(r + 0.2), colourHex: '#080706', gloss: 0.85,
       })
     }
@@ -571,7 +597,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     yarnWeight: 'fine',
     yarnFibre: 'fine-cotton',
     hookMm: 2.5,
-    gaugeText: '4 ply cotton on a 2.5 mm hook, worked tightly: about 28 dc and 30 rounds to 10 cm',
+    gaugeText: '4 ply cotton on a 2.5 mm hook, worked tightly: about 32 dc and 30 rounds to 10 cm',
     ...DOLL_VIEW,
     // A standing doll is tall and narrow; frame her, not a 160 mm field.
     // The script frames off the FOOTPRINT; a standing figure needs the field
@@ -584,7 +610,9 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
         ? 'A little standing doll keyring charm in 4 ply cotton: legs worked up from the soles and joined into the body, a round head, slim arms, an embroidered face and a split ring through the crown.'
         : 'A slim standing doll in 4 ply cotton: legs worked up from the soles and joined into the body, a round head on a narrow neck, slim arms with small hands, and an embroidered face. Her dress colour is worked into the body.',
   }
-  const face = dollFace(style, s.head)
+  // The face is turned through the camera's yaw so it meets the lens (a head
+  // turn; the body keeps the three-quarter view), as the toy presets do.
+  const face = dollFace(style, s.head, turnToCamera({ x: 0, y: 1, z: 0 }), turnToCamera({ x: 1, y: 0, z: 0 }))
   if (face.length) {
     program.embroidery = face
     program.faceWords = dollFaceWords(style, s.head)
@@ -593,22 +621,22 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
 }
 
 /** Every combination the doll test walks (and the generated size table holds). */
-export function dollPresetChoices(): Array<DollChoices & { base: 'doll' }> {
+export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: boolean; paws: boolean }> {
   return (['S', 'M', 'L'] as const).map((size) => ({
-    base: 'doll' as const, size, mainHex: '#e9cfb4', contrastHex: '#b9cb9b', eyeMm: 0, face: 'stitched' as const,
+    base: 'doll' as const, size, mainHex: '#e9cfb4', contrastHex: '#b9cb9b', eyeMm: 0, face: 'stitched' as const, nose: false, paws: false,
   }))
 }
 
 /** The doll's measured sizes and geometry hashes (written from `doll.test.ts`'s
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
-  'doll-S': { width: 46.2, height: 99.7 },
-  'doll-M': { width: 84, height: 232.4 },
-  'doll-L': { width: 91.5, height: 258.8 },
+  'doll-S': { width: 43.4, height: 100.9 },
+  'doll-M': { width: 78.4, height: 235.6 },
+  'doll-L': { width: 85.3, height: 262.6 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
-  'doll-S': '810ba413',
-  'doll-M': 'a7c409aa',
-  'doll-L': 'f14e7042',
+  'doll-S': 'defedba1',
+  'doll-M': '73ed377b',
+  'doll-L': 'e20610e5',
 }
 

@@ -108,6 +108,10 @@ export interface AmigurumiPart {
    *  the maker does (a leg is joined in the body's first round, not sewn). An
    *  empty string = nothing to assemble. */
   joinWords?: string
+  /** Stitch gauge override in yarn radii (the builders' density knob): a doll
+   *  worked TIGHTLY on a small hook packs its stitches closer than the
+   *  dictionary's relaxed sc (2.7). Unset = the dictionary gauge, as before. */
+  gaugeYr?: number
 }
 
 /**
@@ -435,8 +439,8 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   for (const part of p.parts) {
     // 1. Build + relax the real ball (locked geometry, untouched).
     const built: BuiltContinuous = part.tube
-      ? buildTube({ stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap }, yr)
-      : buildSphere(part.stitch, 0, yr, part.rounds)
+      ? buildTube({ stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap, gaugeYr: part.gaugeYr }, yr)
+      : buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr)
     relaxProgram(built, yr)
     // 2. Per-part audit gate — the part must be genuinely stitched.
     const partProblems = auditProblems({ built, recipe: undefined as never }, part.name, 0, yr)
