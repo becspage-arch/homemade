@@ -22,6 +22,7 @@
 
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
 import type { HeroStage } from '../../render/blenderScene'
+import type { DrapeOptions } from './drape'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
 import { buildTube, tubeRibRounds, tubeRidgeLoop, tubeRidgeRounds, tubeFoldRounds, type TubeAnchor, type TubeBrim, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
@@ -154,6 +155,11 @@ export interface CrochetProgram {
    *  a cowl, a basket) is shot in — see `HeroStage`. Render-only: unset /
    *  'studio' is the clean sweep, exactly as before. Ignored by `swatch`. */
   stage?: HeroStage
+  /** DRAPE staging for a soft tube (engine/drape.ts): the built piece is put
+   *  down and settles under gravity on the table before it is rendered. Staging
+   *  only — the stitches and the written pattern are unchanged. Absent = the
+   *  piece is shown as worked (every existing program). */
+  drape?: DrapeOptions
   /** Base yarn colour (hex). The render's default single colour. */
   colourHex?: string
   /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */

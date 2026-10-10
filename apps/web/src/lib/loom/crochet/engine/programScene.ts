@@ -18,6 +18,7 @@ import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
 import type { HeroStage } from '../../render/blenderScene'
+import { drapeTube, drapedView } from './drape'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
 
@@ -374,6 +375,9 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   if (staging === 'loop') ctrl = loopStrip(ctrl, yr)
   if (staging === 'flatband') ctrl = flatbandStrip(ctrl)
   if (p.form === 'tube' && p.tube?.openEnd === 'top') ctrl = turnOver(ctrl)
+  // A soft tube put down on the table (engine/drape.ts): staging only, opt-in.
+  const draped = p.form === 'tube' && !!p.drape
+  if (draped) ctrl = drapeTube(built, yr, p.drape).world
   const center = smooth(ctrl, PER_SEG)
   // Target OUTER yarn radius. MUST match the single-stitch swatch call sites
   // (scripts/loom-stitch.ts, loom-continuous.ts) which the crisp-plied-yarn pass
@@ -458,6 +462,8 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
     // non-rectangular-footprint reason) leaves the plain ground showing there
     // instead, which is what a real photo of a curved strip on a table shows.
     view = { ...base, marginFactor: 0.35, tiltDeg: 22, drapeAmp: 0.04, resY: 1100, openFabric: true }
+  } else if (draped) {
+    view = { ...base, ...drapedView(p.drape!) }
   } else if (staging === 'standing') {
     // A 3-D open form stood on the ground — a hat on its crown, a cowl upright,
     // a basket on its base — shot from a product three-quarter angle with the
@@ -486,7 +492,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   }
   // A styled set round a finished object stood on the table (a hat, a cowl, a
   // basket). Only written when asked for, so every existing scene is unchanged.
-  if (staging === 'standing' && p.stage && p.stage !== 'studio') view.stage = p.stage
+  if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') view.stage = p.stage
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
