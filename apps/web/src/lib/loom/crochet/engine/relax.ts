@@ -125,6 +125,17 @@ export interface RelaxConfig {
    * gravity (every existing build is bit-identical).
    */
   gravity?: { x: number; y: number; z: number }
+   * PRESSED FLAT (toy-pose pass, 2026-10-09). An UNSTUFFED piece — a bunny's
+   * long ear, an inner-ear lining — is a closed tube of fabric with nothing in
+   * it, and a maker flattens it between finger and thumb before sewing it on,
+   * so it settles as two layers lying on each other. Modelled the way the
+   * table is: two plates either side of x = 0 close slowly to `press` mm
+   * apart (centre-line to centre-line), one-sided contact each, and
+   * self-collision is what keeps the two layers a yarn apart. The worked-profile hold then keeps only each
+   * node's HEIGHT along the piece (its round), not its radius, since a
+   * flattened round no longer has one. 0 / absent = off (bit-identical).
+   */
+  press?: number
   iterations: number
 }
 
@@ -343,6 +354,8 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     }
   }
   if (stuffing > 0) refreshNormals()
+  const press = cfg.press ?? 0
+  const pressX0 = press > 0 ? Math.max(...nodes.map((n) => Math.abs(n.x))) : 0
 
   const N = nodes.length
   const bonded = new Set<number>()
@@ -429,6 +442,22 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       for (const n of nodes) {
         if (n.w === 0) continue
         n.z += (cfg.planeZ - n.z) * cfg.planeK
+      }
+    }
+
+    // 4a. Pressed flat (an unstuffed ear): draw every free node toward x = 0;
+    // collision keeps the two layers apart.
+    if (press > 0) {
+      // Two plates closing slowly from the piece's own width to `press` mm
+      // apart over the first 70% of the relax, then holding: one-sided
+      // contact like the table, so collision has time to spread the fabric
+      // sideways as it flattens instead of being crushed through itself.
+      const f = Math.min(1, it / (cfg.iterations * 0.7))
+      const X = pressX0 + (press / 2 - pressX0) * f
+      for (const n of nodes) {
+        if (n.w === 0) continue
+        if (n.x > X) n.x = X
+        else if (n.x < -X) n.x = -X
       }
     }
 
@@ -524,7 +553,16 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     // node's OWN worked offset (not a common surface), relative interlock
     // relief is preserved — and it stays soft enough for collision to win
     // locally.
-    if (s0) {
+    if (s0 && press > 0) {
+      // Pressed flat: a flattened round has no radius left to hold, so only its
+      // height along the piece is kept (rounds stay in order up the ear).
+      const kL = cfg.layoutK * (cfg.stuffPrior ?? 0.25)
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        n.z += (s0[i]!.z - n.z) * kL
+      }
+    } else if (s0) {
       const mer = model.meridian!
       // Stuffed, the worked profile is only a SOFT PRIOR (cfg.stuffPrior): it
       // stops rounds wandering along the meridian, and the pressure and the

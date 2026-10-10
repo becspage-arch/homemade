@@ -19,8 +19,128 @@
 import type { StitchLink } from './yarnPath'
 import type { BuiltSwatch } from './buildSwatch'
 
-export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr: number): string[] {
+export interface AuditOptions {
+  /**
+   * Which frame the interlock offsets are measured in on a curved surface.
+   * 'built' (default, every existing caller): the surface of revolution the
+   * piece was worked on — its meridian tangents captured at build time.
+   * 'current': the piece's SETTLED surface, read back off the relaxed nodes
+   * (see `currentFrame`). Needed only by a piece whose settled shape is no
+   * longer a surface of revolution — an unstuffed ear pressed flat — where the
+   * built frame would call a healthy stitch on the flat face "off its crown"
+   * just because the round is no longer a circle.
+   */
+  frame?: 'built' | 'current'
+}
+
+/**
+ * The local fabric frame at every node of a SETTLED piece worked in rounds,
+ * read back off the geometry rather than the build: the outward normal is the
+ * smallest principal axis of the node's neighbourhood (radius 3 yr), turned
+ * to point away from the centroid of the node's own round; the meridian is the
+ * direction the round index grows across that neighbourhood (a least-squares
+ * gradient in the tangent plane); the along-round direction completes the
+ * frame. On an unflattened ball this reproduces the built frame; on a pressed
+ * ear the normal on each face is the face's, which is what "under its crown"
+ * means there.
+ */
+function currentFrame(built: BuiltSwatch['built'], yr: number): { n: V3[]; m: V3[]; t: V3[] } | null {
+  const nodes = built.model.nodes
+  const round = built.model.round
+  if (!round) return null
+  const R = yr * 3
+  const cell = R
+  const key = (x: number, y: number, z: number): string => `${Math.floor(x / cell)},${Math.floor(y / cell)},${Math.floor(z / cell)}`
+  const grid = new Map<string, number[]>()
+  nodes.forEach((p, i) => {
+    const k = key(p.x, p.y, p.z)
+    const a = grid.get(k)
+    if (a) a.push(i)
+    else grid.set(k, [i])
+  })
+  const nR = Math.max(...round) + 1
+  const cs = Array.from({ length: Math.max(nR, 1) }, () => ({ x: 0, y: 0, z: 0, k: 0 }))
+  nodes.forEach((p, i) => {
+    const r = round[i]!
+    if (r < 0) return
+    const c = cs[r]!
+    c.x += p.x; c.y += p.y; c.z += p.z; c.k++
+  })
+  for (const c of cs) if (c.k) { c.x /= c.k; c.y /= c.k; c.z /= c.k }
+  const n: V3[] = [], m: V3[] = [], t: V3[] = []
+  for (let i = 0; i < nodes.length; i++) {
+    const p = nodes[i]!
+    const cx = Math.floor(p.x / cell), cy = Math.floor(p.y / cell), cz = Math.floor(p.z / cell)
+    const nb: number[] = []
+    for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) for (let dz = -1; dz <= 1; dz++) {
+      for (const j of grid.get(`${cx + dx},${cy + dy},${cz + dz}`) ?? []) {
+        const q = nodes[j]!
+        if ((q.x - p.x) ** 2 + (q.y - p.y) ** 2 + (q.z - p.z) ** 2 <= R * R) nb.push(j)
+      }
+    }
+    // Covariance of the neighbourhood.
+    let mx = 0, my = 0, mz = 0
+    for (const j of nb) { mx += nodes[j]!.x; my += nodes[j]!.y; mz += nodes[j]!.z }
+    mx /= nb.length; my /= nb.length; mz /= nb.length
+    const C = new Float64Array(6) // xx xy xz yy yz zz
+    for (const j of nb) {
+      const a = nodes[j]!.x - mx, b = nodes[j]!.y - my, c = nodes[j]!.z - mz
+      C[0]! += a * a; C[1]! += a * b; C[2]! += a * c; C[3]! += b * b; C[4]! += b * c; C[5]! += c * c
+    }
+    // Smallest eigenvector by power iteration on (tr·I − C).
+    const tr = C[0]! + C[3]! + C[5]!
+    let v = { x: 0.577, y: 0.577, z: 0.577 }
+    const r0 = round[i]! >= 0 ? cs[round[i]!]! : null
+    if (r0) {
+      const ox = p.x - r0.x, oy = p.y - r0.y, oz = p.z - r0.z
+      const l = Math.hypot(ox, oy, oz)
+      if (l > 1e-6) v = { x: ox / l, y: oy / l, z: oz / l }
+    }
+    for (let it = 0; it < 30; it++) {
+      const w = {
+        x: tr * v.x - (C[0]! * v.x + C[1]! * v.y + C[2]! * v.z),
+        y: tr * v.y - (C[1]! * v.x + C[3]! * v.y + C[4]! * v.z),
+        z: tr * v.z - (C[2]! * v.x + C[4]! * v.y + C[5]! * v.z),
+      }
+      const l = Math.hypot(w.x, w.y, w.z) || 1
+      v = { x: w.x / l, y: w.y / l, z: w.z / l }
+    }
+    if (r0 && (p.x - r0.x) * v.x + (p.y - r0.y) * v.y + (p.z - r0.z) * v.z < 0) v = { x: -v.x, y: -v.y, z: -v.z }
+    // Round-index gradient in the tangent plane (least squares, 2x2 solve).
+    const e1 = Math.abs(v.x) < 0.9 ? cross(v, { x: 1, y: 0, z: 0 }) : cross(v, { x: 0, y: 1, z: 0 })
+    const l1 = Math.hypot(e1.x, e1.y, e1.z) || 1
+    const u1 = { x: e1.x / l1, y: e1.y / l1, z: e1.z / l1 }
+    const u2 = cross(v, u1)
+    let a11 = 0, a12 = 0, a22 = 0, b1 = 0, b2 = 0, rm = 0, rk = 0
+    for (const j of nb) if (round[j]! >= 0) { rm += round[j]!; rk++ }
+    rm = rk ? rm / rk : 0
+    for (const j of nb) {
+      if (round[j]! < 0) continue
+      const q = nodes[j]!
+      const s1 = (q.x - mx) * u1.x + (q.y - my) * u1.y + (q.z - mz) * u1.z
+      const s2 = (q.x - mx) * u2.x + (q.y - my) * u2.y + (q.z - mz) * u2.z
+      const f = round[j]! - rm
+      a11 += s1 * s1; a12 += s1 * s2; a22 += s2 * s2; b1 += s1 * f; b2 += s2 * f
+    }
+    const det = a11 * a22 - a12 * a12
+    let g1 = 0, g2 = 1
+    if (Math.abs(det) > 1e-9) { g1 = (a22 * b1 - a12 * b2) / det; g2 = (a11 * b2 - a12 * b1) / det }
+    const gl = Math.hypot(g1, g2) || 1
+    const mm = { x: (g1 * u1.x + g2 * u2.x) / gl, y: (g1 * u1.y + g2 * u2.y) / gl, z: (g1 * u1.z + g2 * u2.z) / gl }
+    n.push(v); m.push(mm); t.push(cross(v, mm))
+  }
+  return { n, m, t }
+}
+
+function cross(a: V3, b: V3): V3 {
+  return { x: a.y * b.z - a.z * b.y, y: a.z * b.x - a.x * b.z, z: a.x * b.y - a.y * b.x }
+}
+
+interface V3 { x: number; y: number; z: number }
+
+export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr: number, opts?: AuditOptions): string[] {
   const { built } = swatch
+  const cur = opts?.frame === 'current' && built.frame === 'surface' ? currentFrame(built, yr) : null
   const { nodes, dist, bend } = built.model
   const problems: string[] = []
 
@@ -59,6 +179,11 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
   const rel = (hi: number, bi: number): { x: number; y: number } => {
     const h = nodes[hi]!
     const b = nodes[bi]!
+    if (cur) {
+      const t = cur.t[bi]!, m = cur.m[bi]!
+      const dx = h.x - b.x, dy = h.y - b.y, dz = h.z - b.z
+      return { x: dx * t.x + dy * t.y + dz * t.z, y: dx * m.x + dy * m.y + dz * m.z }
+    }
     if (built.frame === 'polar' || built.frame === 'surface') {
       const rh = Math.hypot(h.x, h.y)
       const rb = Math.hypot(b.x, b.y)
@@ -84,7 +209,11 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
       // curved surface "side" is the local NORMAL, not global z: n = (-tz, tr)
       // rotated from the below node's meridian tangent; our rounds always hook
       // INWARD, so the hook must sit clearly on the inward-normal side.
-      if (built.frame === 'surface' && mer) {
+      if (cur) {
+        const nn = cur.n[l.below]!
+        const dn = (h.x - b.x) * nn.x + (h.y - b.y) * nn.y + (h.z - b.z) * nn.z
+        if (dn > -yr * 0.45) return `hook did not get under its crown (dn=${(dn / yr).toFixed(2)}yr)`
+      } else if (built.frame === 'surface' && mer) {
         const t = mer[l.below]!
         const rh = Math.hypot(h.x, h.y)
         const rb = Math.hypot(b.x, b.y)

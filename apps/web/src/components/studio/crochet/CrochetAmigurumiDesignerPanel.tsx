@@ -329,7 +329,7 @@ function AmigurumiSchematic({ choices }: { choices: AmigurumiChoices }) {
     const byName = new Map<string, Ellipse>()
     const out: Ellipse[] = []
     for (const part of program.parts) {
-      const base = profileSizeMm(part.rounds)
+      const base = profileSizeMm(part.rounds, program.yarnWeight)
       const scale = part.scale ?? 1
       const rx = (base.width / 2) * scale
       const rz = (base.height / 2) * scale
