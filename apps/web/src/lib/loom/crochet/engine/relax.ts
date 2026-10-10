@@ -116,6 +116,16 @@ export interface RelaxConfig {
    */
   floorZ?: number
   /**
+   * GRAVITY on free-hanging yarn (loopStitch.ts, §8j): a per-iteration
+   * displacement (mm) applied to every LOOSE node (YarnModel.loose) only. The
+   * fabric's own weight is carried by the blocked/stuffed layout hold and the
+   * table; a loop-stitch loop or a hair strand has nothing but its own
+   * stiffness, collision and gravity to say where it lies, so without this it
+   * would stand out stiffly in whatever direction it was built. Absent = no
+   * gravity (every existing build is bit-identical).
+   */
+  gravity?: { x: number; y: number; z: number }
+  /**
    * PRESSED FLAT (toy-pose pass, 2026-10-09). An UNSTUFFED piece — a bunny's
    * long ear, an inner-ear lining — is a closed tube of fabric with nothing in
    * it, and a maker flattens it between finger and thumb before sewing it on,
@@ -180,6 +190,15 @@ export interface YarnModel {
   radialBand?: ({ lo?: number; hi?: number } | null)[]
   /** Centre point for radialBand distances (the sphere centre). */
   radialCenter?: { x: number; y: number; z: number }
+  /**
+   * Per-node FREE-HANGING flag (loopStitch.ts, §8j): the body of a loop-stitch
+   * loop or a hair strand. Loose yarn is not part of the blocked fabric, so the
+   * layout hold (rows at their worked line, rounds at their worked radius /
+   * latitude) does not act on it, and it is the only yarn gravity acts on.
+   * Collision, length and bending act on it exactly as on any yarn. Absent =
+   * no loose yarn (every existing build is bit-identical).
+   */
+  loose?: boolean[]
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -345,7 +364,21 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   for (const c of dist) bonded.add(key(c.a, c.b))
   for (const c of bend) bonded.add(key(c.a, c.b))
 
+  const loose = model.loose
+  const grav = cfg.gravity && loose ? cfg.gravity : null
+
   for (let it = 0; it < cfg.iterations; it++) {
+    // 0. Gravity on free-hanging yarn only (see RelaxConfig.gravity).
+    if (grav) {
+      for (let i = 0; i < nodes.length; i++) {
+        if (!loose![i]) continue
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        n.x += grav.x
+        n.y += grav.y
+        n.z += grav.z
+      }
+    }
     // 1. Yarn length.
     for (const c of dist) projectDistance(nodes, c)
     // 2. Bending (softer).
@@ -480,7 +513,7 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     if (y0) {
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i]!
-        if (n.w === 0) continue
+        if (n.w === 0 || loose?.[i]) continue
         n.y += (y0[i]! - n.y) * cfg.layoutK
       }
     }
@@ -502,7 +535,7 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       const kN = cfg.layoutK * 0.4
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i]!
-        if (n.w === 0) continue
+        if (n.w === 0 || loose?.[i]) continue
         const r = Math.hypot(n.x, n.y)
         if (r < 1e-6) continue
         const f = 1 + ((r0[i]! - r) / r) * cfg.layoutK
@@ -540,7 +573,7 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       const kN = kL * 0.4
       for (let i = 0; i < nodes.length; i++) {
         const n = nodes[i]!
-        if (n.w === 0) continue
+        if (n.w === 0 || loose?.[i]) continue
         const t = mer[i]!
         const r = Math.hypot(n.x, n.y)
         const dr = s0[i]!.r - r

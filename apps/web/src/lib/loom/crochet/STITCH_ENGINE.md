@@ -197,6 +197,7 @@ stockinette re-rendered (gate 0.884), both consistent with their 07-10 looks.
 | **picot** (ch-3 nub on sc) | sc + a fed ch-3 loop over the head, closed by a SLIP STITCH that genuinely dives under the stitch's own crown (a recorded, audited hook); top-row edging placement | ◔ audit-clean (116/116 — 112 sc + 4 picot sl-sts) first build 2026-07-11. RENDERED 2026-07-11: four evenly-spaced nub loops stand along the top edge, folding back into the sl-st closure; matches the reference edging's open loopy character. Rebecca verdict pending. TIGHTEN 2026-07-11 (Opus round-2): the picots hung as long floppy dangling loops (fed 2.2yr tall, cw·0.55 wide — too much yarn). Feed less — a short 1.35yr nub, narrow (cw·0.3), sides converging to a point apex, sl-st drawn tight — so each stands as a short FIRM nub (perky-point character). Audit 116/116. Residual heaviness vs the reference's delicate points is the chunky yarn weight (library-wide). Rebecca verdict pending. |
 | **garter** (KNIT) | stockinette loop + worked-face flip per course + per-course CORRUGATION (`bz = 0.7yr·fz`, gated — stockinette + rib untouched) | ◔ audit-clean (240/240) — the corrugation restores a full collision diameter between each leg crossing and the head it passes. Rendered 2026-07-10 (gate 0.954): the alternating ridge rows read clearly and the loops are tidy, but the fabric is TOO OPEN vs the reference (see-through gaps; real garter is dense packed bumps). Density is identity — needs a garter-specific gauge/courseH calibration pass. Rebecca confirmed NOT passing 2026-07-10. DENSITY CALIBRATED 2026-07-11 (Opus worker): the see-through was VERTICAL (dark gaps between courses); courseScale 0.7→0.65 + gaugeScale 0.85→0.95 (edge legs need sideways slack — every tight-both-ways combo failed the audit at c0/c11, and bz below 0.55 loses the through-clearance). Audit 240/240; re-render is solid fabric, gaps closed. Two limits logged: settled z-thickness (~5.7yr) is the corrugation model's own (does not shrink with bz), and the truly-packed reference bump look still needs the parked accordion. Rebecca verdict pending. |
 | **mrdisc look** (addendum) | crownLay (heads lying flat) tried at lay=1 + deeper dive | Both look-attempts FAILED the audit (flat crowns lose interlock disambiguity in relax — 13/126 same-side) → reverted to proud crowns under the two-attempt cap; audit-clean again. The knotty look remains open; note the raffamusa ball reference shows real amigurumi fabric IS visibly bumpy per stitch — the sin is bump SCALE, not existence. The `crownLay` capability stays in the emitter (identity at 0) for the next attempt. |
+| **loopst / loopcurl** (loop stitch, §8j) | dc (UK) whose insertion carries a finger-wrapped loop to the far side; both loop roots audited hooks; loop body LOOSE (gravity, no layout hold) | ◔ audit-clean (84/84 each) first build 2026-10-10. Swatch reads as loop stitch in cotton; on the toy the plain short loops make the cow's curly fringe (hairPatch.ts). Twisted variant reads worm-like on a toy. Rebecca verdict pending. |
 | **ball** (3D SPHERE) | full amigurumi ball on the curved-surface machinery (§8c-3D) | ◔ **audit-clean (320/320)** — the first 3D object: MR pole anchor, 6-in-ring, canonical ±6 staggered rounds, equator 30, mirrored decs, fasten-off into the bottom pole. Rendered 2026-07-10 (gate 0.774): true spherical silhouette, sits on the table, and the LOWER hemisphere reads as shingled crochet rounds — but the top cap is a jumble of fat loops (the disc's same-face-rounds knottiness, worst at the crowded pole). CANOPY GENERALISED TO THE SPHERE 2026-07-11 (Opus worker): the flat disc's z-canopy became a RADIAL band (YarnModel.radialBand + radialCenter — distance-from-centre bounds, the normal on a sphere being radial-from-centre). Non-crown nodes get a ceiling (R + crownNz·0.65 → the crowded pole legs resolve INWARD toward the stuffing, not out between the Vs); crowns a floor at/below their built relief so the pole is NOT pushed off-surface (ballooning is the documented failure). Ceiling ≤0.55·crownNz drops an interlock; 0.65 is the clean tuck. Audit still 320/320. Rebecca verdict pending on the re-render. DENSITY + FRAMING PASS 2026-07-11 (Opus round-2): three fixes. (1) DENSITY — a `gaugeYr` override on buildSphere packs the stitches around each round; equatorCount 30→36 at gauge 1.5 holds the ball size (R = eq·sw/2π = 30·1.8 = 36·1.5 constant) so it densifies without shrinking or losing rounds. Meridian pitch stays at the row height — tying it to sw floated a round-2 inc hook 1.49yr up-meridian (the sphere's tangential packing comes from the count derivation, not the meridian). (2) POLE — analytic magic ring 1.15→0.85yr closes the open top-pole hole to a pinprick (pattern-driven balls via program.ts keep rrHoist, unchanged). (3) FRAMING — a per-recipe `viewMargin` (0.35) threaded through loom-stitch.ts frames the FULL silhouette the tilted camera was clipping. Audit 388/388 clean. Render: full sphere in frame, pole closed, denser packed spiral rounds — a clear step from the cropped/open-hole/coiled version. Residual = the same per-stitch bulbousness (pinecone texture vs the reference's smooth ball) = the exhausted relief lever. Rebecca verdict pending. ROUND-WORK LOOK PASS 2026-09-06 (§8f-5): the same `surfaceLay` construction as the disc, and the OPEN POLE traced to its real cause — the ±6 cap gives a cap round fewer stitches than the analytic sphere's latitude wants, so the fabric was stretched to fit it (round 1 settled at 1.51× its own stitch gauge, round 2 at 1.27×: six stitches held apart round a hole). The fabric is now laid on the surface the COUNTS make (the intrinsic profile every pattern-driven ball already used), so the swatch ball and the ball a bear is made of are one model and no round is stretched; top-pole rounds 1.51×/1.27× → 1.35×/1.10×, mound 1.15 → 1.10, crown proud 0.59 → 0.54. The radial canopy went with it (nothing stretched left to tuck) and the audit is clean at three weights without it. Rebecca verdict pending. |
 
 **Regenerating / building a stitch — use THE PIPELINE (one command, gates built in):**
@@ -3343,6 +3344,64 @@ Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
   `crochet-bar/proofs/yarn/`, log `crochet-bar/jobs/yarn.md`.
 
 ---
+
+## 8j. LOOP STITCH AND HAIR — loose yarn, and a fringe sewn onto a head (2026-10-10)
+
+**The stitch** (`engine/loopStitch.ts`, dictionary `loopst` / `loopcurl`). UK loop stitch is a dc (US sc)
+worked with the working yarn wrapped round a finger behind the work: the loop forms on the side AWAY from the
+worker, so it is worked on wrong-side rows (or with the inside of a circle facing you). Traced as the strand does
+it, inside `emitPlainStitch`'s non-yarn-over branch: approach → **root A** under the head below (audited 'hook')
+→ through the work → the loop body → back through → **root B** = the stitch's own hook (audited) → up-leg →
+head. Both loop strands are clamped under the head below, which is why a loop stitch cannot pull out. Loop side
+is `−fz`. `LoopShape` (lengthYr, halfWidthYr, twist half-turns, curl turns, droopDeg, vary) lives on the
+StitchDef; builders may override it per call (`PlainStitchSpec.loop`).
+
+**Loose yarn** (`relax.ts`): `YarnModel.loose` marks the loop bodies. Loose nodes skip the layout holds (they
+are not blocked fabric) and are the only nodes `RelaxConfig.gravity` moves. Both absent → bit-identical (every
+hash unchanged). Gravity is a per-iteration displacement; at 0.012 yr/iter the swatch's loops tunnelled through
+the fabric's node gaps and dragged the whole swatch onto the table — keep it ≤ 0.008 (swatch) / 0.0025 (patch).
+
+**Swatches:** sc RS rows, lp st WS rows, the EDGE stitch of a loop row plain (a loop on the turn strangled the
+c0 hook: the grid builder only has a turning chain into row 0). Relax profile `'loop'` = worked + floor −2.4yr +
+gravity. Audit 84/84 both; no loop node behind the fabric. Rendered (Fargate, crochet-bar/proofs/hair/r1):
+cotton reads as a loop-stitch swatch. Rebecca verdict pending. Reference: the crochetspot tutorial page (egress
+blocked every craft site from the cloud session, so the comparison was against the crochet-bar real/4-*.jpg
+Ravelry photos instead).
+
+**The fringe patch** (`engine/hairPatch.ts`): a separate 6/12/18 circle off the magic ring (`buildRounds`
+gains an optional `loopOpts` = per-round stitch + loop override), relaxed in its own frame with gravity =
+world-down expressed in that frame and the head as a one-sided `zBand` ceiling on the loose nodes (the worked
+face is sewn against the head), audited in the polar frame, then CONFORMED onto the head's ellipsoid (distance
+along the surface + height off the face). `CompositionProgram.hair` (hashed only when present),
+`AmigurumiChoices.hair` ('fringe' | 'curly-fringe'), words via `writeHairInstructions` in the assembly.
+
+What the looking taught (rounds 1-4, beside bar-highland-cow.png):
+- Long loops + strong gravity lie flat as worm-like "C"s. The bar's curls are SHORT loops about as wide as long,
+  standing off the head: lengthYr ~3.2, halfWidthYr ~1.25, droop 0, low gravity.
+- The TWISTED loop (`loopcurl`) reads as intestines on a toy: the twist collapses the ring into an S. The cow
+  preset uses the plain loop stitch; `loopcurl` stays for corkscrew work (lion mane) once that has its own pass.
+- A 4-round patch is ear to ear and covers the eyes; the bar's tuft is ~half the head width, between the horns.
+- Loop-plane yaw must vary widely (±45°) or the curls all face the same way and read combed.
+- Loop stitch straight into the magic ring (round 1) audits clean (root A takes the ring link role).
+
+**The Highland cow** (`engine/cowPreset.ts`, Fable pass 2026-10-10, judged beside bar-highland-cow.png). A seated
+calf built entirely from the composition's existing pieces: body sphere(54,1) / neck / head sphere(60,1) sunk 12 mm,
+a WIDE cream muzzle ball(30,2) sewn ring-out so the two `safety-stitched` nostrils are stitched across it, cream
+HORNS as tip-first cones (`COW_HORN_ROUNDS` = 4,5,…,12,12,6: a four-stitch ring is the point, one more stitch a
+round, two straight rounds, closed flat — the §8f-11 cone rule) sewn high on the crown pointing up and out, round
+ears ball(18,2) straight out to the sides, front legs tube(18,9) hung from the shoulder corners to the table, back
+legs ball(24,4) sole-first forward (the toy-pose lane's numbers), a cord tail, 12 mm safety eyes at the muzzle's
+top corners, and the fringe. Worked in WORSTED chenille at the toy-pose stitch counts, so the stitches are the
+bar's size against the toy and the calf is ~26 cm tall. Own module; the bear/bunny bases and size tables are
+untouched, and the cow is not yet in `AMIGURUMI_BASE_IDS` (that walks the presets test through the generated size
+table, which needs regenerating).
+- The STACKED tuft: `HairPatch.loopByRound(k)` (→ `buildRounds` loopOpts) gives the ring round loops over two
+  fingers (4.4 yr) and the edge round short ones (2.8 yr, droop 12°), so the mound is 2–3 curls deep in the middle
+  and spills onto the forehead at the edge. The words say which finger from the same lengths.
+- `HairPatch.strandYr` → `PlacedHair.strandYr` → the loose loops render at a plumper strand (0.82 yr vs the
+  0.62 plied bundle): a chenille loop not pulled into a stitch plumps to its full pile.
+- `AmigurumiPart.sewNote` (composition.ts) → appended to the assembly line, so the horns' "tips pointing up and
+  out" and the muzzle's "ring facing out" are in the written pattern, read off the same placement.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 
