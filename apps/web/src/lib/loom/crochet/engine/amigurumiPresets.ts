@@ -620,7 +620,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   // leg is unchanged — it lies forward along the table so the figure sits.
   const bear = choices.base === 'bear'
   // The toy pose pass (bar criteria 1, 3, 5) covers the bear and the bunny:
-  // big head on a smaller body, arms folded on the tummy, sole-first feet
+  // big head on a smaller body, arms resting down the front, sole-first feet
   // forward with toe beans, lined lop ears (bunny), a belly patch (bear).
   const toy = bear || choices.base === 'bunny'
   const armDir = (side: -1 | 1): Dir =>
@@ -846,20 +846,22 @@ const LOP_EAR_AIM = { x: 0.32, y: 0.08, z: -1 }
 /**
  * The toy's arms and legs (toy-pose pass).
  *
- * ARMS rest FOLDED ON THE TUMMY, the sleepy bunny's pose: worked from the paw
- * (the magic ring is the paw tip), sewn by the closed top end on the front of
- * the shoulder and laid forward, down and in across the body so the two paws
- * meet at the middle of the tummy. LEGS are big FEET worked sole first: the
+ * ARMS rest DOWN THE FRONT CORNERS of the body, the highland cow's pose:
+ * worked from the paw (the magic ring is the paw tip), sewn by the closed top
+ * end on the front of the shoulder and laid down, a little forward and out,
+ * so each paw rests on the table just outside its foot and the arm's outline
+ * breaks the body's (folded across the tummy, round 3, the same-colour arms
+ * merged into the tummy and did not read). LEGS are big FEET worked sole first: the
  * flat +6 sole is the magic ring end, turned to face forward; the closed end
  * is sewn under the front of the body so the feet stick out forward on the
  * table. The sole carries the TOE BEANS — a pad and three toes, flat circles
  * in a lighter yarn, sewn on. The bear's paw tips are its first two rounds
  * worked in the contrast yarn, and the bear gets a contrast belly patch.
  */
-const TOY_ARM_DIR = { x: 0.85, y: 0.45, z: 0.8 }
-const TOY_ARM_AIM = { x: -0.42, y: 0.8, z: -0.5 }
-const TOY_LEG_DIR = { x: 0.5, y: 0.75, z: -0.62 }
-const TOY_LEG_AIM = { x: 0.32, y: 1, z: 0.05 }
+const TOY_ARM_DIR = { x: 0.8, y: 0.45, z: 0.6 }
+const TOY_ARM_AIM = { x: 0.35, y: 0.45, z: -1 }
+const TOY_LEG_DIR = { x: 0.55, y: 0.65, z: -0.6 }
+const TOY_LEG_AIM = { x: 0.4, y: 1, z: 0.05 }
 const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 1.05, L: 2.7 }
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
@@ -924,7 +926,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
   if (bear) {
     parts.push({
       name: 'belly-patch', stitch: 'sc', rounds: [6, 12, 18], colourHex: contrast, form: 'disc',
-      place: { on: 'body', dir: { x: 0.1, y: 1, z: -0.2 }, aim: { x: 0.1, y: 1, z: -0.2 }, seat: 0, surfaceFit: 'points' },
+      place: { on: 'body', dir: { x: 0, y: 1, z: 0.22 }, aim: { x: 0, y: 1, z: 0.22 }, seat: 0, surfaceFit: 'points' },
     })
   }
 }

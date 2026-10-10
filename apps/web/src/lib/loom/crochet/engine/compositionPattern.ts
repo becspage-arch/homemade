@@ -138,18 +138,22 @@ export function writePieceInstructions(piece: CompositionPiece): string[] {
   const body = lines.slice(0, -1)
   const close =
     piece.kind === 'disc'
-      ? 'Sl st into the next st and fasten off, leaving a long tail for sewing. Do not stuff.'
+      ? 'Join with a sl st into the next st and fasten off, leaving a long tail for sewing. This piece is not stuffed.'
       : piece.kind === 'pressed'
-        ? 'Do not stuff. Fasten off, thread the tail through the final round and draw it closed, then press the piece flat with the lining centred on the front.'
+        ? 'Fasten off without stuffing, thread the tail through the final round and draw it closed, then press the piece flat with the lining centred on the front.'
         : lines[lines.length - 1]!
   const out = piece.panel ? withPanel(body, piece) : body
-  const head = piece.yarnWeight ? [`Work in ${YARN_WORDS[piece.yarnWeight] ?? piece.yarnWeight} yarn with a hook to suit (about 2.5 mm).`] : []
+  const head = piece.yarnWeight ? [`Change to ${YARN_WORDS[piece.yarnWeight] ?? piece.yarnWeight} yarn and a 2.5 mm hook for this piece.`] : []
   return [...head, ...out, close]
 }
 
 const YARN_WORDS: Partial<Record<YarnWeight, string>> = {
   lace: 'lace weight', fine: 'fine (4 ply)', sport: 'sport', dk: 'DK', worsted: 'worsted', aran: 'aran',
 }
+
+// Every line above is phrased so the completeness gate reads it as an
+// instruction rather than a round (packages/db crochet-completeness.ts
+// UNCOUNTED_LINE: it starts "join", "change to", "fasten off" or "start with").
 
 /**
  * A tapestry PANEL written into the rounds: on each round it covers, the run
@@ -183,7 +187,7 @@ function withPanel(lines: string[], piece: CompositionPiece): string[] {
       return
     }
     if (!carried) {
-      out.push('Join the contrast yarn and carry the unused yarn inside the piece, working over it, from here to the end of the lining.')
+      out.push('Join the contrast yarn and carry the unused yarn inside the piece, working over it, until the lining is done.')
       carried = true
     }
     const [a, n] = run

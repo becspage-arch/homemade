@@ -14,6 +14,10 @@
 /** One piece's settled width x height in mm at worsted weight, by round profile
  *  (`rounds.join(',')`). Built and measured standing alone on the ground. */
 export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: number }> = {
+  "6": {
+    "width": 13.6,
+    "height": 8.9
+  },
   "6,11,12,12,11,6": {
     "width": 26.1,
     "height": 28.8
@@ -97,6 +101,38 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,6,6,6,6,6,6,6,6": {
     "width": 14.1,
     "height": 48.5
+  },
+  "6,12,18,24,28,33,36,39,41,42,42,42,42,41,39,36,33,28,24,18,12,6": {
+    "width": 87.1,
+    "height": 85.9
+  },
+  "6,12,18,18,18,18,12,6": {
+    "width": 38,
+    "height": 29.4
+  },
+  "6,12,18,24,24,24,24,18,12,6": {
+    "width": 50.4,
+    "height": 32.7
+  },
+  "6,9,12,12,12,12,12,12,12,12,12,9,9,9,6": {
+    "width": 26.8,
+    "height": 78
+  },
+  "6,9,12,15,15,15,15,15,15,15,15,15,15,12,12,12,12,9,6": {
+    "width": 32.6,
+    "height": 98
+  },
+  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,15,15,15,15,12,9,6": {
+    "width": 39,
+    "height": 112.6
+  },
+  "6,12": {
+    "width": 27.8,
+    "height": 8.2
+  },
+  "6,12,18": {
+    "width": 39.2,
+    "height": 9.5
   }
 }
 
@@ -128,28 +164,28 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 70
   },
   "bear-S": {
-    "width": 60,
-    "height": 115
+    "width": 75,
+    "height": 120
   },
   "bear-M": {
-    "width": 65,
-    "height": 135
+    "width": 85,
+    "height": 140
   },
   "bear-L": {
-    "width": 80,
+    "width": 100,
     "height": 175
   },
   "bunny-S": {
-    "width": 95,
-    "height": 125
+    "width": 100,
+    "height": 110
   },
   "bunny-M": {
-    "width": 105,
-    "height": 155
+    "width": 120,
+    "height": 130
   },
   "bunny-L": {
     "width": 140,
-    "height": 185
+    "height": 165
   },
   "cat-S": {
     "width": 95,
@@ -213,12 +249,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "1389b8b3",
-  "bear-M": "f11f766f",
-  "bear-L": "d43d3fb1",
-  "bunny-S": "66ccb78a",
-  "bunny-M": "3ad55da3",
-  "bunny-L": "cf20b836",
+  "bear-S": "8e6fa5c8",
+  "bear-M": "f8259be4",
+  "bear-L": "9d674734",
+  "bunny-S": "b3f4cc9e",
+  "bunny-M": "66c21336",
+  "bunny-L": "0d326e9c",
   "cat-S": "393281f6",
   "cat-M": "bdb741b0",
   "cat-L": "5f10b0c8",
