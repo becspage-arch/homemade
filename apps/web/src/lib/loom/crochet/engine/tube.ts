@@ -275,8 +275,7 @@ export function validateTubeSpec(spec: TubeSpec): void {
       for (let k = rounds.length - spec.brim.rounds; k < rounds.length; k++)
         if (rounds[k] !== rounds[k - 1]) throw new Error(`tube: a ${spec.brim.kind} brim cannot shape (round ${k + 1})`)
     }
-    if (spec.brim.kind === 'ridge' && spec.stitch !== 'sc')
-      throw new Error(`tube: a ridge brim (sc in one loop) needs an sc body (got ${spec.stitch})`)
+
   }
 }
 
@@ -383,6 +382,11 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   const ribPack = sw / (yr * STITCHES.fpdc.gaugeYr)
   const ribRowH = yr * rowPitchYr('fpdc') * DRIFT_SCALE
   const ribHeadLoopMm = yr * (STITCHES.fpdc.headLoopYr ?? 0) * ribPack
+  // A ridge round is sc in one loop whatever the body stitch (an hdc beanie
+  // with an sc-blo band): its own cell, pitch and head loop, packed to the
+  // body's column gauge exactly as the rib is.
+  const ridgeRounds = tubeRidgeRounds(spec)
+  const ridgeRowH = yr * rowPitchYr('sc') * DRIFT_SCALE
 
   const S = createStrand()
   const { nodes, push } = S
@@ -397,7 +401,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   {
     let m = rr
     for (let k = 0; k < counts.length; k++) {
-      m += ribRounds.has(k) ? ribRowH : drift
+      m += ribRounds.has(k) ? ribRowH : ridgeRounds.has(k) && st !== 'sc' ? ridgeRowH : drift
       rounds.push(m)
     }
   }
@@ -553,6 +557,11 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
       // the crown below (sc blo / flo — yarnPath's loopMode); every other
       // round is the body stitch. Same dims, same pitch, same gauge as sc.
       const rid = tubeRoundStitch(spec, k)
+      const dK = rid === st ? dims : dimsFor(yr, rid)
+      const hlK = rid === st ? headLoopMm : yr * (STITCHES[rid].headLoopYr ?? 0)
+      const yoK = rid === st ? yarnOvers : (STITCHES[rid].yarnOvers ?? 0)
+      const crownNzK = rid === st ? crownNz : hlK > 0 ? headApexRelief(dK.zh, SURFACE_LAY) : dK.zh * 1.15
+      const postLzK = rid === st ? bodyPostLz : yoK > 0 ? -dK.z * 3.56 + (dK.z * 3.56 + dK.z * 0.6) * 0.65 : -dK.z * 2.13
       const ops = roundOps(prev, count, (k % 2) * 0.5)
       let bi = 0
       let li = 0
@@ -587,13 +596,13 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
                   ? -yr * HOOK_SPREAD_YR * 0.6
                   : 0
             const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1
-            const r = emitPlainStitch(S, dims, {
+            const r = emitPlainStitch(S, dK, {
               j: k, c: oi, id: rid, s: 1, fz: 1, by, ty, xCrown: xC,
               xHook: b.theta * rRef + hookOff, bcBack: b.back, bcFront: b.front,
-              cyBelow: b.m, bcNormalZ: b.nz, place3, hookDepthScale, headLoopMm,
-              yarnOvers, yarnOverMm, surfaceLay: SURFACE_LAY, backCross: BACK_CROSS,
+              cyBelow: b.m, bcNormalZ: b.nz, place3, hookDepthScale, headLoopMm: hlK,
+              yarnOvers: yoK, yarnOverMm, surfaceLay: SURFACE_LAY, backCross: BACK_CROSS,
             })
-            crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz, post: { node: r.postMid, ly: by + px * 0.52, lz: bodyPostLz } })
+            crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNzK, post: { node: r.postMid, ly: by + px * 0.52, lz: postLzK } })
             li++
           }
         }
@@ -611,7 +620,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   const rEnd = Math.max(prof.rOfRound(counts.length - 1), 1e-3)
   roundNow = counts.length - 1
   const placeEnd = mkPlace3(rEnd)
-  const lastRowH = ribRounds.has(counts.length - 1) ? ribRowH : drift
+  const lastRowH = ribRounds.has(counts.length - 1) ? ribRowH : ridgeRounds.has(counts.length - 1) && st !== 'sc' ? ridgeRowH : drift
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
     const ly = mPrev - lastRowH * 0.12 * t

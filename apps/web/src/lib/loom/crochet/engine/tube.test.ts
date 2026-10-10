@@ -74,6 +74,14 @@ const ridgeHat: CrochetProgram = {
   rounds: [6, 12, 18, 24, 24, 24, 24, 24, 24],
   tube: { anchor: 'ring', join: 'spiral', cap: 'dome', brim: { kind: 'ridge', rounds: 3 } },
 }
+/** An hdc beanie with an sc-blo band (mixed-stitch rounds). */
+const beanie: CrochetProgram = {
+  name: 'test-beanie',
+  form: 'tube',
+  stitch: 'hdc',
+  rounds: [8, 16, 24, 24, 24, 24, 24, 24],
+  tube: { anchor: 'ring', join: 'spiral', cap: 'dome', brim: { kind: 'ridge', rounds: 3 } },
+}
 /** Rise, hold, FALL: a sock-toe / pouffe shape that narrows again but stays open. */
 const taper: CrochetProgram = {
   name: 'test-taper',
@@ -114,7 +122,7 @@ check('rib rounds are the last N, and must be even and unshaped', () => {
 })
 
 console.log('\naudit at fine, worsted and bulky')
-for (const p of [hat, foldHat, cowl, basket, taper, nightcap, ridgeHat]) {
+for (const p of [hat, foldHat, cowl, basket, taper, nightcap, ridgeHat, beanie]) {
   for (const yr of WEIGHTS) {
     check(`${p.name} yr ${yr}`, () => {
       const { built, problems } = compileRelaxAudit(p, yr)
@@ -190,7 +198,7 @@ check('ridge rounds are sc in one loop: a hook a stitch, no post rings, the loop
   const k = 11
   assert.equal(built.links.filter((l) => l.j === k && l.role === 'hook').length, 20)
   assert.equal(built.links.filter((l) => l.j === k && l.role === 'ring').length, 0)
-  assert.throws(() => validateTubeSpec({ ...spec, stitch: 'hdc' }), /sc body/)
+  validateTubeSpec({ ...spec, stitch: 'hdc' }) // an hdc body may carry an sc ridge band
   assert.throws(() => validateTubeSpec({ ...spec, rounds: [6, 6, 8, 10, 12, 14, 16, 18, 20, 20, 20, 20, 22] }), /cannot shape/)
 })
 check('a folded ridge brim settles outside the body wall', () => {
