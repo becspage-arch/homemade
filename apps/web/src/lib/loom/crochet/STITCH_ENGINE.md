@@ -3196,6 +3196,60 @@ envelope is 54–66 around and 9–13 straight rounds because the ascent at 66 i
 
 ---
 
+## 8i. YARN LOOK — chenille plush and fine cotton (2026-10-09/10)
+
+Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
+`scripts/loom_render_crochet.py`; no geometry hash moves.
+
+- **The lever.** A scene stroke is 3 ply tubes laid at equal phase round the
+  yarn centreline (`yarnLoop.pliedFilaments`), so their pointwise mean IS the
+  centreline (`strand_centre`). A fibre with `strand` set rebuilds the strand
+  from it: `"single"` = one plump unplied tube, `"replied"` = re-plied with
+  the fibre's own ply size and twist (`replied`). `"ply"` (default; cotton,
+  wool, velvet) sweeps the scene's plies exactly as before.
+- **`chenille`**: one tube at 1.38x the plied bundle radius (stitches close
+  up and squash together), `chenille_material`: roughness 1.0, specular 0.04,
+  a soft sheen (0.35 at roughness 0.5) tinted to a lighter yarn shade,
+  crushed-pile value drift about one stitch across, pale pile-tip flecks,
+  a fine pile bump, NO subsurface. The old halo shell is gone from chenille.
+- **Chenille depth (Fable, 10 Oct, r5-r7).** The same dye reads darker in
+  chenille than in cotton, and the bar cow's crevices go deep warm brown; the
+  r4 render had no crevice range and drifted orange (hue +8 deg, from the
+  1.2 saturation grade under AgX). Now: `base_mult` 0.76 on the albedo, an
+  AO cavity term (`cavity_nodes`: distance 2 mm, mixed towards a darker,
+  slightly redder crevice shade), a chroma-preserving rim lift at grazing
+  angles (`rim_mode: lift`, fakes lit pile tips without hairs), and a
+  per-fibre `sat_mult` 0.92 on the grade. Pale colours take 40% of the
+  depth (`depth_weight`) so a cream muzzle stays cream.
+- **`fine-cotton`** (new `YarnFibre`): the bar bunny's milk cotton shows NO
+  ply at close range, so the plies overlap heavily (0.62 of a 1.15x bundle,
+  0.22 turns/mm) leaving only a faint spun grain, matte (rough 0.7-0.85,
+  spec 0.08, sheen 0.6, no anisotropy) with a gentle cavity term (0.3).
+- **`fibreTune`** in a scene JSON overrides a fibre's knobs for probe sweeps;
+  the engine never writes it.
+- **Hair-curve pile (`add_pile_hairs`)** works and is cheap (1.6 M hairs at
+  3/mm2 on the bear hero: +80 s) but stays OFF: on cream it reads as grey
+  whiskers, not nap. The "never finished" r2/r4 hair renders were a length
+  bug: with `use_advanced_hair` Blender grows hair from the emission
+  velocity (~4 BU per unit of `normal_factor`), not `hair_length`, so they
+  were millions of 3 cm hairs. Opt in per scene with `pile_density`.
+- **Did not work:** the halo shell (dark speckle, ply still visible); one
+  smooth strand for cotton, satin or matte (plastic pasta / clay, three
+  times); ply 0.6 / twist 0.09 (doughy); ply 0.42 (rope); Principled sheen
+  1.0 on chenille (pale rim on every stitch edge = leather); a white-mix rim
+  tint (dusty); the full depth treatment on cream chenille (dirty grey);
+  subsurface on interpenetrating plump strands (dark specks on pale yarn);
+  a transparent silhouette edge (`rim_alpha`, +50% render time for less
+  than the hairs give).
+- **Still short of the bar:** the stitches are bigger relative to the toy
+  than the bar's, and loose loops read as bobbles where the bar's tight Vs
+  read as ridged rows (stitch count / yarn weight = geometry, wave 2 gauge);
+  the cow is still a shade redder. At matched close-up crops the material is
+  now the same kind of yarn; the rest is gauge. Proofs:
+  `crochet-bar/proofs/yarn/`, log `crochet-bar/jobs/yarn.md`.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
