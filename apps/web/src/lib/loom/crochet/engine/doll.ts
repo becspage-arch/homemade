@@ -42,8 +42,10 @@
 
 import type { AmigurumiPart, CompositionProgram, CompositionProp } from './composition'
 import { writeInstructions, type CrochetProgram } from './program'
-import { sphereRounds } from './sphereProfile'
+import { sphereRounds, SPHERE_DRIFT_SCALE, SPHERE_RING_YR } from './sphereProfile'
+import { STITCHES, rowPitchYr } from './dictionary'
 import type { EmbroideryFeature, EmbroideryStitch, FaceStyle, SurfaceSpot } from './faceEmbroidery'
+import { hairCapPart, type RootedHairSpec } from './dollHair'
 
 type Size = 'S' | 'M' | 'L'
 
@@ -57,6 +59,17 @@ export interface DollChoices {
   contrastHex: string
   eyeMm: number
   face?: FaceStyle
+  /** Her HAIR colour (hair cap + rooted strands). Unset = no hair (the bare
+   *  base, as audited in rounds 1-5). */
+  hairHex?: string
+  /** Her SKIRT (worked into the front loops of the waist round) and its hem
+   *  colour. Unset = no skirt. */
+  skirt?: { hex: string; hemHex: string }
+  /** A pair of WINGS on her back: each an unstuffed oval (a ball shape
+   *  pressed flat) in this colour, sewn on between the shoulder blades. */
+  wingsHex?: string
+  /** Two small flat flowers (rosettes) on the hair cap in this colour. */
+  flowersHex?: string
 }
 
 /** One size of doll, in stitch counts. */
@@ -82,6 +95,22 @@ interface DollSize {
   armRound: number
   /** A keyring charm: a jump ring and split ring through the crown. */
   keyring: boolean
+  /** The skirt, from the waist round it is worked into (rounds[0] = that
+   *  round's count) to the hem; the last round is the hem colour. */
+  skirt: number[]
+  /** The stacking overlap that puts the skirt's first round on the waist
+   *  round: body height above the waist plus the skirt's own height, measured
+   *  off the settled placement (mm). */
+  skirtOverlap: number
+  /** Hanging length of each rooted hair end (mm). */
+  hairMm: number
+  /** A wing: a slim closed oval, left unstuffed. (Pressing it flat with the
+   *  relaxer's `press`, the way the lop ear is, fails the audit at this fine
+   *  gauge for every gap from 6 to 13 mm: the +3 tip rounds tear. So the
+   *  wing is an unpressed oval for now; a flat lace wing is a later round.) */
+  wing: number[]
+  /** A flat flower: the magic-ring disc rounds. */
+  flower: number[]
 }
 
 /** The leg: a flat sole of `sole` stitches (6, 12, … climbing in sixes, the
@@ -94,6 +123,60 @@ function legRounds(sole: number, width: number, wall: number, rounds: number): n
   const out = [...up, ...Array.from({ length: wall }, () => sole)]
   while (out.length < rounds) out.push(width)
   return out
+}
+
+/**
+ * A DOLL'S HEAD: wider than it is tall. The bar fairy's head is a flattened
+ * ball (its width about 1.2 x its height, the eyes on the widest round), the
+ * shape fine-cotton doll designers get by increasing a little faster to the
+ * widest round and decreasing a little faster after it than a true sphere.
+ * The counts are `sphereRounds`' own walk (sphereProfile.ts) down the meridian
+ * of an OBLATE spheroid instead of a sphere: at each round's meridian distance
+ * the latitude wants 2πr/sw stitches, moved toward in at most sixes, the
+ * descent mirrored (a palindrome a maker can write). `flatten` is the polar
+ * radius over the equatorial (1 = `sphereRounds`' sphere).
+ */
+export function dollHeadRounds(equator: number, flatten = 0.82): number[] {
+  const sw = STITCHES.sc.gaugeYr
+  const drift = rowPitchYr('sc') * SPHERE_DRIFT_SCALE
+  const R = (equator * sw) / (2 * Math.PI)
+  const c = flatten * R
+  // Walk the ellipse x = R sin t, z = c cos t from the pole by arclength.
+  const up: number[] = []
+  let t = 0
+  let spent = 0
+  let prev = 0
+  let widest = 0
+  const dt = 1e-3
+  let nextAt = SPHERE_RING_YR + drift
+  while (t < Math.PI / 2) {
+    const ds = Math.hypot(R * Math.cos(t), c * Math.sin(t)) * dt
+    spent += ds
+    t += dt
+    if (spent >= nextAt) {
+      nextAt += drift
+      const target = Math.max(4, Math.round((2 * Math.PI * R * Math.sin(Math.min(t, Math.PI / 2))) / sw))
+      prev = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
+      up.push(prev)
+      if (prev > widest) widest = prev
+    }
+  }
+  // Hold the widest round once at the equator, then mirror.
+  const ascent = up.slice(0, up.indexOf(widest) + 1)
+  return [...ascent, widest, ...ascent.slice(0, -1).reverse()]
+}
+
+/** A WING: a long oval worked from its tip, +3 a round (a gentle point, the
+ *  way the lop ear is built), a straight middle, and a close at the end that
+ *  is sewn to the back. */
+function wingRounds(width: number, length: number): number[] {
+  const up: number[] = []
+  for (let n = 6; n < width; n += 3) up.push(n)
+  const top = [width - 3, width - 3, width - 6, width - 6]
+  for (let n = width - 9; n > 12; n -= 3) top.push(n)
+  top.push(12, 6)
+  const straight = Math.max(2, length - up.length - top.length)
+  return [...up, ...Array.from({ length: straight }, () => width), ...top]
 }
 
 /** An arm from the hand: 6 in the ring, up to the hand, `handRounds` of hand,
@@ -125,35 +208,51 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     headOverlap: 5,
     armRound: 6,
     keyring: true,
+    skirt: [27, 28, 30, 33, 36, 40, 44],
+    skirtOverlap: 31,
+    hairMm: 32,
+    wing: wingRounds(15, 11),
+    flower: [6, 10],
   },
   M: {
     label: 'doll',
-    leg: legRounds(18, 16, 2, 33),
+    leg: legRounds(18, 16, 2, 29),
     bridge: 3,
     // joining round 2·16 + 2·3 = 38; an egg-shaped torso, the shoulders
-    // sloping in over several rounds rather than one flat step.
-    body: [38, 40, 42, 44, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 32, 30, 27, 22, 16, 12],
-    skinFrom: 13,
-    head: sphereRounds(66, 1),
-    arm: armRounds(11, 9, 3, 22),
+    // sloping in over several rounds rather than one flat step, and a 15-st
+    // neck (the bar's neck is a good third of her head's width).
+    body: [38, 40, 42, 44, 45, 45, 45, 45, 44, 42, 40, 38, 36, 34, 34, 34, 32, 30, 28, 24, 19, 15],
+    skinFrom: 15,
+    head: dollHeadRounds(66),
+    arm: armRounds(11, 9, 3, 20),
     legApart: 11.5,
-    headOverlap: 10,
+    headOverlap: 13,
     armRound: 11,
     keyring: false,
+    skirt: [44, 46, 48, 52, 56, 60, 64, 68, 72, 78, 84],
+    skirtOverlap: 70,
+    hairMm: 80,
+    wing: wingRounds(27, 20),
+    flower: [6, 12, 18],
   },
   L: {
     label: 'large doll',
-    leg: legRounds(21, 18, 2, 37),
+    leg: legRounds(21, 18, 2, 33),
     bridge: 3,
     // joining round 2·18 + 2·3 = 42
-    body: [42, 44, 46, 48, 50, 50, 50, 50, 48, 46, 44, 42, 40, 38, 38, 36, 34, 30, 24, 18, 12],
-    skinFrom: 14,
-    head: sphereRounds(72, 1),
-    arm: armRounds(12, 10, 3, 25),
+    body: [42, 44, 46, 48, 50, 50, 50, 50, 50, 48, 46, 44, 42, 40, 38, 38, 38, 36, 34, 31, 27, 21, 16],
+    skinFrom: 16,
+    head: dollHeadRounds(72),
+    arm: armRounds(12, 10, 3, 23),
     legApart: 12.8,
-    headOverlap: 11,
+    headOverlap: 14,
     armRound: 12,
     keyring: false,
+    skirt: [48, 50, 52, 56, 60, 64, 68, 72, 76, 82, 88, 94],
+    skirtOverlap: 83,
+    hairMm: 90,
+    wing: wingRounds(30, 22),
+    flower: [6, 12, 18],
   },
 }
 
@@ -162,7 +261,7 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
 export const DOLL_AUDITED_PROFILE_KEYS: Set<string> = new Set(
   (['S', 'M', 'L'] as const).flatMap((k) => {
     const s = DOLL_SIZES[k]
-    return [s.leg, s.body, s.head, s.arm].map((r) => r.join(','))
+    return [s.leg, s.body, s.head, s.arm, s.skirt, s.wing, s.flower].map((r) => r.join(','))
   }),
 )
 
@@ -253,6 +352,39 @@ function bodyWords(s: DollSize, skinLabel: string, dressLabel: string): string[]
   ]
 }
 
+function skirtWords(s: DollSize, waistRound: number, dressLabel: string, hemLabel: string): string[] {
+  const p: CrochetProgram = { name: 'Skirt', form: 'tube', stitch: 'sc', rounds: s.skirt, tube: { anchor: 'chain', join: 'spiral' } }
+  const raw = writeInstructions(p)
+  const rest = raw.filter((l) => !/^Foundation:/.test(l) && !/^Round 1:/.test(l) && !/^Fasten off/.test(l) && !/^Work in a continuous/.test(l))
+  const n = s.skirt[0]!
+  return [
+    `Start with the body: the skirt is worked straight onto it, into the FRONT loops of round ${waistRound} (the first round above the widest part of the hips), with the body held upside down so the skirt hangs toward the feet.`,
+    `Round 1: join ${dressLabel} with a sl st in the front loop of any stitch of round ${waistRound} of the body, then dc in the front loop of that stitch and of each stitch round. (${n} sts)`,
+    'Work every stitch of the skirt in a continuous spiral without joining; mark the first stitch of each round.',
+    ...withColourChange(rest, s.skirt.length, hemLabel),
+    'Fasten off and weave in the end. Pull the hem gently round so the skirt flares evenly.',
+  ]
+}
+
+function wingWords(s: DollSize): string[] {
+  const p: CrochetProgram = { name: 'Wing', form: 'sphere', stitch: 'sc', rounds: s.wing }
+  return [
+    'Start with the magic ring at the wing tip, in the wing colour. The wing is a slim oval worked from the tip and left UNSTUFFED; the closed end is sewn to the back.',
+    ...writeInstructions(p).map((l) => (/^Stuff firmly/.test(l) ? 'Work every stitch without stuffing; close the last round and fasten off, leaving a tail for sewing.' : l)),
+  ]
+}
+
+function flowerWords(s: DollSize): string[] {
+  const p: CrochetProgram = { name: 'Flower', form: 'tube', stitch: 'sc', rounds: s.flower, tube: { anchor: 'ring', join: 'spiral', cap: 'flat' } }
+  return [
+    'Start with the magic ring at the centre of the flower, in the flower colour. Each flower is a small flat circle.',
+    ...writeInstructions(p)
+      .filter((l) => !/^Fasten off/.test(l))
+      .map((l) => (/^Work in a continuous spiral/.test(l) ? 'Work every stitch in a continuous spiral without joining; mark the first stitch of each round.' : l)),
+    'Fasten off with a sl st, leaving a tail for sewing.',
+  ]
+}
+
 function headWords(s: DollSize): string[] {
   const p: CrochetProgram = { name: 'Head', form: 'sphere', stitch: 'sc', rounds: s.head }
   return ['Start with the crown (the magic ring). Embroider the face (see Assembly) before the last few rounds, while the head is still open.', ...writeInstructions(p)]
@@ -289,13 +421,17 @@ const stAt = (rounds: number[], r: number, azDeg: number): number => (countAt(ro
 /** Where the face sits on a doll head: a doll's eyes are big, set a little
  *  BELOW the equator and wide (the bar fairy's sit just under the middle of
  *  the face, the width of an eye apart and more). Degrees. */
-const DOLL_FACE = { eyeElev: -7, eyeAz: 30, blushElev: -22, blushAz: 42, mouthElev: -28, browElev: 11 }
+const DOLL_FACE = { eyeElev: -3, eyeAz: 30, blushElev: -19, blushAz: 42, mouthElev: -25, browElev: 14 }
 
 /** The face's size in the head's own stitches and rounds, scaled from the M
  *  head (66 sts, 34 rounds) so the keyring charm's face is the same SHAPE on
  *  fewer stitches, not a bigger face. */
 function faceScale(head: number[]): { kSt: number; kR: number } {
-  return { kSt: Math.max(...head) / 66, kR: head.length / 34 }
+  // Rounds are the same height in every size (one gauge), so the vertical
+  // scale follows the stitch scale, not the round count (a flattened doll head
+  // has fewer rounds than a ball of the same width, and the same-sized eyes).
+  const k = Math.max(...head) / 66
+  return { kSt: k, kR: k }
 }
 
 /**
@@ -341,17 +477,19 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
         // reads as one deep black almond: the plied fine-cotton look turned
         // a black satin fill grey (faces job, r5/r6).
         out.push(feat(side < 0 ? 'eye-l' : 'eye-r', EYE_BLACK, 0.6, 'Black embroidery thread', fill, 'chenille'))
-        // Catch-light: three short white stitches side by side on the inner
-        // upper side (a small bright oval, the bar's), in the plump strand so
-        // the white stays solid on the black.
-        // A thicker thread than the black (0.85 vs 0.6 mm) so it rides ON the
-        // satin rather than sinking level with it (r3: the catch-light vanished).
-        const hl = S(eyeR - 0.2 * kR, -0.6 * kSt)
-        out.push(feat(side < 0 ? 'eye-light-l' : 'eye-light-r', WHITE, 0.85, 'White embroidery thread', [0, 1, 2].map((j) => {
-          const st = hl.st + side * (j - 1) * 0.24 * kSt
-          const h = (j === 1 ? 0.8 : 0.6) * kR
-          return { from: { round: hl.round, st }, to: { round: hl.round + h, st }, taut: true }
-        }), 'chenille'))
+        // Catch-light: two short white stitches end to end in a small CURVE
+        // near the top inner corner of the eye (a crescent, the bar's), in the
+        // plump strand so the white stays solid on the black. A thicker thread
+        // than the black (0.85 vs 0.6 mm) so it rides ON the satin rather than
+        // sinking level with it (r3: the catch-light vanished; r4's three
+        // parallel columns read as a white block).
+        const a = S(eyeR - 0.75 * kR, -0.95 * kSt)
+        const b = S(eyeR - 0.25 * kR, -0.55 * kSt)
+        const c = S(eyeR + 0.15 * kR, -0.5 * kSt)
+        out.push(feat(side < 0 ? 'eye-light-l' : 'eye-light-r', WHITE, 0.85, 'White embroidery thread', [
+          { from: a, to: b, taut: true },
+          { from: b, to: c, taut: true },
+        ], 'chenille'))
       }
       // The upper lid: backstitch along the top edge of the eye, running a
       // little past the outer corner, then two short lashes up and out.
@@ -366,7 +504,7 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       const tip = lid[lid.length - 1]!
       const prev = lid[lid.length - 2]!
       lidSt.push({ from: tip, to: { round: tip.round - 0.45 * kR, st: tip.st + side * 0.85 * kSt }, taut: true })
-      lidSt.push({ from: prev, to: { round: prev.round - 0.7 * kR, st: prev.st + side * 0.5 * kSt }, taut: true })
+      lidSt.push({ from: prev, to: { round: prev.round - 0.5 * kR, st: prev.st + side * 0.4 * kSt }, taut: true })
       // Black like the bar's lid line, in the plump strand (a dark plied
       // thread on cotton read grey in r2).
       out.push(feat(side < 0 ? 'lid-l' : 'lid-r', LID_BLACK, 0.5, 'Black embroidery thread', lidSt, 'chenille'))
@@ -454,7 +592,7 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
     lines.push(
       `Eyes (black embroidery thread): centre each eye ${roundWords(eyeR)}, ${sts(eyeC)} either side of centre front. ` +
         `Satin stitch an almond ${sts(3.4 * kSt)} wide and ${rnds(2.5 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner. ` +
-        'With white thread, work three short stitches side by side over the black on the inner side of each eye, from its middle down, the middle one a little longer, for the catch-light.',
+        'With white thread, work two short stitches one after the other over the black near the top inner corner of each eye, the first leaning in and up, the second straight down, for the catch-light.',
       `Lids and lashes (black embroidery thread): backstitch along the top edge of each eye, half a round above the black, ` +
         `running a little past the outer corner; from the last two holes work two short lashes outward and a little up, about ${sts(0.9 * kSt)} long.`,
       `Brows (light brown embroidery thread): ${roundWords(half(roundAt(head, DOLL_FACE.browElev)))}, above each eye, two straight stitches in a gentle arch, about ${sts(1.8 * kSt)} wide.`,
@@ -514,6 +652,7 @@ function turnToCamera(d: { x: number; y: number; z: number }): { x: number; y: n
 
 const SKIN_LABEL = 'the skin colour'
 const DRESS_LABEL = 'the dress colour'
+const HEM_LABEL = 'the hem colour'
 
 export function dollProgram(choices: DollChoices, name: string): CompositionProgram {
   const s = DOLL_SIZES[choices.size]
@@ -562,26 +701,93 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
       joinWords: 'Sew the head onto the neck, the closing point of the head centred on the neck opening, adding a little stuffing to the neck before the last stitches so it stays upright.',
     },
   ]
-  // Arms: sewn at the side of the shoulder, hanging down along the body with
-  // the hands a little forward and clear of the hips.
-
+  // Arms: sewn at the side of the shoulder and FOLDED FORWARD, each arm
+  // angled down and in across the front of the body so the two hands meet
+  // just under the chest (the bar fairy's pose; the hands are sewn to each
+  // other and to the dress front so they stay there).
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r',
-    gaugeYr: DOLL_GAUGE_YR,
+      gaugeYr: DOLL_GAUGE_YR,
       stitch: 'sc',
       rounds: s.arm,
       colourHex: skin,
       place: {
         on: 'body',
-        dir: { x: side * 1, y: 0.05, z: 0.32 },
-        aim: { x: side * 0.14, y: 0.12, z: -1 },
+        dir: { x: side * 1, y: 0.05, z: 0.22 },
+        aim: { x: -side * 0.3, y: 0.76, z: -0.46 },
         seat: 4.5,
         surfaceFit: 'ellipsoid',
       },
       words: armWords(s),
-      joinWords: `Sew the top of each arm to the side of the body over rounds ${s.armRound} and ${s.armRound + 1}, just under the shoulder decreases, so the arms hang down at her sides.`,
+      joinWords:
+        `Sew the top of each arm to the side of the body over rounds ${s.armRound} and ${s.armRound + 1}, just under the shoulder decreases. ` +
+        'Bring both arms forward and down across the front so the hands meet just under the chest, and sew the hands to each other and to the front of the body with a few stitches so they stay folded.',
     })
+  }
+  const forward = turnToCamera({ x: 0, y: 1, z: 0 })
+  if (choices.skirt) {
+    const waist = dollHooks(choices.size).body.waist
+    parts.push({
+      name: 'skirt',
+      gaugeYr: DOLL_GAUGE_YR,
+      stitch: 'sc',
+      rounds: s.skirt,
+      colourHex: choices.skirt.hex,
+      colourChanges: [{ fromRound: s.skirt.length, hex: choices.skirt.hemHex, label: HEM_LABEL }],
+      tube: { anchor: 'chain', join: 'spiral' },
+      // Not flipped: a chain-anchored tube is built start-up, and the skirt's
+      // start IS its top. Its first round sits on the waist round (overlap
+      // measured per size).
+      place: { on: 'body', overlap: s.skirtOverlap },
+      words: skirtWords(s, waist, DRESS_LABEL, HEM_LABEL),
+      joinWords: 'The skirt is worked onto the body, so there is nothing to sew: arrange its hem evenly round her.',
+    })
+  }
+  if (choices.wingsHex) {
+    // Wings: a slim unstuffed oval each, sewn by the closed end on the back
+    // between the shoulder blades, standing up and out (the bar's are flat
+    // lace; see `DollSize.wing`).
+    const seat = dollHooks(choices.size).wings
+    for (const side of [-1, 1] as const) {
+      parts.push({
+        name: side < 0 ? 'wing-l' : 'wing-r',
+        // The dictionary's relaxed sc gauge: a pressed-flat piece needs the
+        // slack (the tight doll gauge tears the tip rounds when pressed).
+        stitch: 'sc',
+        rounds: s.wing,
+        colourHex: choices.wingsHex,
+        place: {
+          on: 'body',
+          dir: turnToCamera({ x: side * 0.4, y: seat.dir.y, z: seat.dir.z }),
+          aim: turnToCamera({ x: side * 0.85, y: -0.25, z: 0.6 }),
+          seat: 3,
+          poleIn: false,
+          surfaceFit: 'ellipsoid',
+        },
+        words: wingWords(s),
+        joinWords: `Sew the wings to the back of the body at round ${seat.round}, between the shoulder blades, by their closed ends, each pointing up and out.`,
+      })
+    }
+  }
+  if (choices.hairHex) {
+    parts.push(hairCapPart(s.head, choices.hairHex, DOLL_HEAD_GAUGE_YR, forward))
+    if (choices.flowersHex) {
+      // Two flat flowers sewn on the hair cap, high on either side of the crown.
+      for (const side of [-1, 1] as const) {
+        parts.push({
+          name: side < 0 ? 'flower-l' : 'flower-r',
+          gaugeYr: DOLL_GAUGE_YR,
+          stitch: 'sc',
+          rounds: s.flower,
+          colourHex: choices.flowersHex,
+          form: 'disc',
+          place: { on: 'hair-cap', dir: turnToCamera({ x: side * 0.8, y: 0.45, z: 0.7 }), aim: turnToCamera({ x: side * 0.8, y: 0.45, z: 0.7 }), seat: 0, surfaceFit: 'points' },
+          words: flowerWords(s),
+          joinWords: 'Sew a flower flat onto the hair cap on each side, high up near the crown, with its tail.',
+        })
+      }
+    }
   }
   const props: CompositionProp[] = []
   if (s.keyring) {
@@ -624,18 +830,35 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   }
   // The face is turned through the camera's yaw so it meets the lens (a head
   // turn; the body keeps the three-quarter view), as the toy presets do.
-  const face = dollFace(style, s.head, turnToCamera({ x: 0, y: 1, z: 0 }), turnToCamera({ x: 1, y: 0, z: 0 }))
+  const face = dollFace(style, s.head, forward, turnToCamera({ x: 1, y: 0, z: 0 }))
   if (face.length) {
     program.embroidery = face
     program.faceWords = dollFaceWords(style, s.head)
   }
+  if (choices.hairHex) {
+    const hair: RootedHairSpec = {
+      kind: 'rooted-hair', on: 'hair-cap', clear: ['head', 'body'], colourHex: choices.hairHex, lengthMm: s.hairMm, forward,
+    }
+    program.accessories = [...(program.accessories ?? []), hair]
+  }
   return program
 }
+
+/** The fairy's dressing (the bar doll's colours): hair, skirt with a pink hem,
+ *  lace-blue wings and flowers in the hair. */
+export const DOLL_FAIRY_DRESSING = {
+  hairHex: '#e8c9c4',
+  skirt: { hex: '#b9cb9b', hemHex: '#efb8c0' },
+  wingsHex: '#bcc9d6',
+  flowersHex: '#d9a2a8',
+} as const
 
 /** Every combination the doll test walks (and the generated size table holds). */
 export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: boolean; paws: boolean }> {
   return (['S', 'M', 'L'] as const).map((size) => ({
     base: 'doll' as const, size, mainHex: '#e9cfb4', contrastHex: '#b9cb9b', eyeMm: 0, face: 'stitched' as const, nose: false, paws: false,
+    // The dolls are dressed fairies; the keyring charm is the bare base.
+    ...(size === 'S' ? {} : DOLL_FAIRY_DRESSING),
   }))
 }
 

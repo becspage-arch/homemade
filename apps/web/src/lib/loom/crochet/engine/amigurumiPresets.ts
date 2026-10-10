@@ -205,6 +205,14 @@ export interface AmigurumiChoices {
    *  of a bear or bunny, in `hatHex` (default a soft lilac). Absent = none. */
   hat?: 'nightcap'
   hatHex?: string
+  /** The DOLL's dressing (doll.ts, rounds 6-8): hair cap + rooted strands in
+   *  `hairHex`, a skirt worked into the waist round with a hem colour, a pair
+   *  of pressed-flat wings and two flat flowers on the hair. All optional and
+   *  doll-only; every other base ignores them. */
+  hairHex?: string
+  skirt?: { hex: string; hemHex: string }
+  wingsHex?: string
+  flowersHex?: string
   name?: string
 }
 

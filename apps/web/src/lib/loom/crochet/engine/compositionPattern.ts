@@ -18,6 +18,7 @@ import { programToChart, writeInstructions, type CrochetProgram, type YarnWeight
 import type { AmigurumiPart, CompositionProgram } from './composition'
 import { writeFaceInstructions } from './faceEmbroidery'
 import { nightcapInstructions } from './hatAccessory'
+import { rootedHairWords } from './dollHair'
 
 export interface CompositionPiece {
   /** Display label: "Body", "Ears". */
@@ -270,6 +271,11 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
   out.push('Assembly')
   out.push(...writeAssembly(p))
   for (const a of p.accessories ?? []) {
+    if (a.kind === 'rooted-hair') {
+      const cap = p.parts.find((x) => x.name === a.on)
+      out.push(...rootedHairWords(a, cap ? cap.rounds[cap.rounds.length - 1]! : 0))
+      continue
+    }
     if (a.kind !== 'nightcap') continue
     out.push('Nightcap')
     out.push(...nightcapInstructions({ headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight }))
