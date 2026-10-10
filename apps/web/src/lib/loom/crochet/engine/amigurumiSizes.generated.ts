@@ -225,7 +225,7 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
   },
   "bunny-L": {
     "width": 110,
-    "height": 155
+    "height": 150
   },
   "cat-S": {
     "width": 95,
@@ -289,12 +289,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "785db006",
-  "bear-M": "5b2876ef",
-  "bear-L": "2c7bd9bd",
-  "bunny-S": "3208e350",
-  "bunny-M": "d9f91de4",
-  "bunny-L": "b82f53d8",
+  "bear-S": "cb211625",
+  "bear-M": "cb97be2a",
+  "bear-L": "b1c588ef",
+  "bunny-S": "aeceb382",
+  "bunny-M": "82251d38",
+  "bunny-L": "87a671a7",
   "cat-S": "393281f6",
   "cat-M": "bdb741b0",
   "cat-L": "5f10b0c8",

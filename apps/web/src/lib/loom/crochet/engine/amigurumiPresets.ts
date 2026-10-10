@@ -212,6 +212,14 @@ export interface AmigurumiChoices {
 
 /** The nightcap's default lilac (the bar's). */
 export const HAT_HEX_DEFAULT = '#b7a4d8'
+/** The nightcap band's middle, above the head centre (fraction of the head
+ *  radius). Round 6 at the hat's own 0.6 put the band's lower edge on the
+ *  eye line and the hat swallowed the top half of the head. */
+const TOY_HAT_BRIM_FRAC = 0.8
+/** The nightcap's flop (round 8): the bar's cone folds over right at the
+ *  crown and falls steeply beside the ear; the hat's default stood 0.55R
+ *  straight up first and read as a tall stiff cone. */
+const TOY_HAT_BEND = { startFrac: 0.28, angleDeg: 142, dirDeg: 24 }
 
 /**
  * What one base IS, and which of the maker's toggles it can honour.
@@ -695,7 +703,14 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     // The band is sized to the head's MEASURED settled radius (the same number
     // the words and the render use), in the toy's own yarn.
     const headRadiusMm = profileSizeMm(head.rounds, program.yarnWeight).width / 2
-    program.accessories = [{ kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight }]
+    // Round 7: the toy's eyes are low (FACE_SET elev 5 deg), so the band
+    // sits higher than the hat's default — the brow and the lop-ear joins
+    // (+0.5R) show under it, as on the bar bunny.
+    program.accessories = [{
+      kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight,
+      brimHeightFrac: TOY_HAT_BRIM_FRAC,
+      bend: TOY_HAT_BEND,
+    }]
   }
   return program
 }
