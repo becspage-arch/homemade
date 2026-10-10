@@ -208,6 +208,7 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
   const check = (l: StitchLink): string | null => {
     const h = nodes[l.hook]!
     const b = nodes[l.below]!
+    if (l.frame3) return check3(l)
     const d = rel(l.hook, l.below, l.axis)
     if (l.role === 'hook') {
       // Dives under the crown to its far side and stays beside/below it. On a
@@ -255,6 +256,38 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
     if (dx > yr * 2.6) return `crossing slid back out of its loop (dx=${(dx / yr).toFixed(2)}yr)`
     if (Math.abs(dyc) > yr * 1.6) return `crossing outside the loop's mouth (dy=${(dyc / yr).toFixed(2)}yr) — expelled sideways`
     if (h.z < b.z - yr * 0.15) return 'crossing settled UNDER the fold it should ride over'
+    return null
+  }
+  // A link worked on a 3D surface with no global frame (spiralTree's helicoid):
+  // the flat rules, measured in the frame the link records.
+  function check3(l: StitchLink): string | null {
+    const F = l.frame3!
+    const h = nodes[l.hook]!
+    const b = nodes[l.below]!
+    const dot = (v: [number, number, number], x: number, y: number, z: number): number => v[0] * x + v[1] * y + v[2] * z
+    const px = h.x - b.x, py = h.y - b.y, pz = h.z - b.z
+    const dx = dot(F.a, px, py, pz)
+    const dy = dot(F.h, px, py, pz)
+    const zh = dot(F.n, h.x - F.o[0], h.y - F.o[1], h.z - F.o[2])
+    const zb = dot(F.n, b.x - F.o[0], b.y - F.o[1], b.z - F.o[2])
+    if (l.role === 'hook') {
+      if (zh * zb > 0 && Math.abs(zh - zb) < yr * 0.45) return 'hook settled on the SAME side as its crown'
+      if (Math.abs(dx) > yr * 2.5) return `hook slipped sideways off its crown (dx=${(dx / yr).toFixed(2)}yr)`
+      if (dy > yr * 1.2) return `hook floated above its crown (dy=${(dy / yr).toFixed(2)}yr)`
+      return null
+    }
+    if (l.role === 'ring') {
+      if (Math.abs(dx) > yr * 2.5) return `ring slipped off its stem (dx=${(dx / yr).toFixed(2)}yr)`
+      if (Math.abs(dy) > yr * 3.0) return `ring slid up/down its stem (dy=${(dy / yr).toFixed(2)}yr)`
+      return null
+    }
+    if (l.role === 'through') return null
+    // 'cross': a = the chain's direction of travel, the fold lies beyond the crossing.
+    const fx = -dx
+    if (fx < 0) return `crossing is past its loop's fold (dx=${(fx / yr).toFixed(2)}yr) — expelled forward`
+    if (fx > yr * 2.6) return `crossing slid back out of its loop (dx=${(fx / yr).toFixed(2)}yr)`
+    if (Math.abs(dy) > yr * 1.6) return `crossing outside the loop's mouth (dy=${(dy / yr).toFixed(2)}yr) — expelled sideways`
+    if (zh < zb - yr * 0.15) return 'crossing settled UNDER the fold it should ride over'
     return null
   }
   for (const l of built.links) {

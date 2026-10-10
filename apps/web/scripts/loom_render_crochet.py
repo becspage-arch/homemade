@@ -733,6 +733,11 @@ def build_props(props, z_offset):
         return (v[0] * S, -v[1] * S, v[2] * S)
 
     for pr in props:
+        if pr.get("branch"):
+            # A hanging branch (spiral trees, round 11): a bark-covered twig
+            # along a polyline in loom mm, its radius tapering along it.
+            build_branch(pr, z_offset)
+            continue
         if pr.get("torusMinor") is not None:
             # A metal ring (the doll keyring): a unit-radius torus in its local
             # x/y plane, carried by the same axes matrix as an ellipsoid.
@@ -756,6 +761,55 @@ def build_props(props, z_offset):
             ob.data.materials.append(metal_material(pr["hex"]))
         else:
             ob.data.materials.append(prop_material(pr["hex"], float(pr.get("gloss", 0.85))))
+
+
+def bark_material(hexcol):
+    """Grey-brown twig bark: dark furrows (stretched voronoi cracks along the
+    branch), lighter weathered ridges, rough, with a strong bump."""
+    mat = _principled("bark", hexcol, rough=0.92, spec=0.15)
+    nt = mat.node_tree
+    bsdf = nt.nodes.get("Principled BSDF")
+    vec = _obj_coords(nt, (0.35, 3.0, 3.0))
+    vo = nt.nodes.new("ShaderNodeTexVoronoi")
+    vo.feature = "DISTANCE_TO_EDGE"
+    vo.inputs["Scale"].default_value = 3.5
+    nt.links.new(vec, vo.inputs["Vector"])
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 6.0
+    nz.inputs["Detail"].default_value = 8.0
+    nt.links.new(vec, nz.inputs["Vector"])
+    crack = _math(nt, "POWER", _math(nt, "MULTIPLY", vo.outputs["Distance"], 4.0, clamp=True), 0.6)
+    tone = _math(nt, "MULTIPLY", crack, nz.outputs["Fac"])
+    base = hex_to_lin(hexcol)
+    dark = tuple(c * 0.35 for c in base[:3]) + (1.0,)
+    light = tuple(min(1.0, c * 1.6 + 0.02) for c in base[:3]) + (1.0,)
+    nt.links.new(_mix_rgb(nt, tone, dark, light), bsdf.inputs["Base Color"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.7
+    nt.links.new(tone, bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
+
+
+def build_branch(pr, z_offset):
+    """`pr.branch` = list of [x, y, z, radius] in loom mm (same y flip and
+    z_offset as the yarn)."""
+    pts = pr["branch"]
+    cu = bpy.data.curves.new("branch", type="CURVE")
+    cu.dimensions = "3D"
+    cu.bevel_depth = 1.0
+    cu.bevel_resolution = 6
+    cu.use_fill_caps = True
+    sp = cu.splines.new("NURBS")
+    sp.points.add(len(pts) - 1)
+    for i, q in enumerate(pts):
+        sp.points[i].co = (q[0] * S, -q[1] * S, q[2] * S + z_offset, 1.0)
+        sp.points[i].radius = q[3] * S
+    sp.use_endpoint_u = True
+    sp.order_u = 3
+    ob = bpy.data.objects.new("branch", cu)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.data.materials.append(bark_material(pr.get("hex", "#6e5a48")))
 
 
 def metal_material(hexcol):
@@ -917,6 +971,9 @@ def main():
     # sits just above the table, and slip the backing just under it — otherwise the
     # back-worked rows clip through the table or hide behind the backing.
     z_offset = 0.08 - minz
+    # A HUNG piece (spiral trees on a branch) floats `liftMm` above the table.
+    # Absent from every other scene, so they are unchanged.
+    z_offset += view.get("liftMm", 0.0) * S
     backing_z = 0.04
 
     # Backing right under the loops (yarn colour, darker) so no gap shows surface.
