@@ -86,6 +86,16 @@ FIBRE_PARAMS = {
     # visible and read dark and speckled (crochet-fibre-proof/verdict.md).
     "chenille": dict(
         specular=0.04, sheen=0.35, sheen_rough=0.5, aniso=0.0,
+        # Depth (Fable r5-r7, proofs/yarn r5-*/r6-*): the pile swallows light,
+        # so the same dye reads darker in chenille than in cotton, with deep
+        # warm crevices between stitches. `base_mult` scales the albedo for
+        # mid/dark colours only (a cream muzzle stays cream: see
+        # `depth_weight`), the AO cavity term darkens where strands are hemmed
+        # in, the rim lifts silhouettes without losing chroma, and the warm-up
+        # saturation grade is eased (1.2 pushed brown orange).
+        base_mult=0.76, cavity_amt=0.7, cavity_dist_mm=2.0, cavity_pow=1.5,
+        cavity_shade=0.32, rim_amt=0.45, rim_mode="lift", rim_tint=0.45,
+        rim_pow=2.5, rim_blend=0.5, rim_alpha=0.0, sat_mult=0.92, depth_by_lum=True,
         # subsurface OFF: the plump strands interpenetrate where stitches
         # squash together, and random-walk SSS trapped inside an overlap
         # rendered as dark specks on pale chenille (proofs/yarn r1, r4).
@@ -93,12 +103,13 @@ FIBRE_PARAMS = {
         rough=1.0, sheen_tint_mix=0.45, crush_scale=7.0, crush_amt=0.14,
         fleck_scale=45.0, fleck_amt=0.45,
         pile_scale=90.0, pile_bump=0.45,
-        # Hair-curve pile fringe (`add_pile_hairs`) is OFF by default: ~46 m
-        # of yarn on a toy is ~530,000 mm2 of strand, so even 2 hairs/mm2 ran
-        # well past 10 min per hero on the 4 vCPU probe. Opt in per scene
-        # (fibreTune pile_density) once renders have a bigger budget.
-        pile_density=0.0, pile_children=8, pile_len_mm=0.6, pile_lean=0.7,
-        pile_radius_mm=0.045, pile_tip_lift=0.18,
+        # Hair-curve pile fringe (`add_pile_hairs`) is OFF by default. It is
+        # cheap now that the length is right (r6: 1.6 M hairs at 3/mm2 on the
+        # bear hero cost +80 s), and it does soften the brown silhouette, but
+        # on cream it reads as grey whiskers rather than nap (proofs/yarn
+        # r6-bunny-chenille). Opt in per scene with fibreTune pile_density.
+        pile_density=0.0, pile_children=10, pile_len_mm=1.0, pile_lean=0.7,
+        pile_radius_mm=0.04, pile_tip_lift=0.12,
         flyaway=0.0, halo=None,
         # Chenille has NO ply: the strand is one plump velvet tube. The renderer
         # rebuilds it from the plies' shared centreline (see `strand_centre`) at
@@ -123,11 +134,19 @@ FIBRE_PARAMS = {
     # strand (1.15x) so stitches sit snug with no daylight between them.
     # Probe r1-r3: ply 0.6 / twist 0.09 read doughy; one smooth strand read
     # as plastic pasta; this was the clear winner (proofs/yarn/r3-*).
+    # Fable r6 (proofs/yarn/r6-finecotton*.png, beside the bar bunny): the
+    # bunny's milk cotton shows NO ply at close range, only a smooth matte
+    # stitch with a faint spun grain. Plies overlapping heavily (0.62) with
+    # a moderate twist leave just that grain; the satin sheen and anisotropy
+    # went (they read as plastic pasta on a smooth strand, r3/r5/r6), the
+    # surface is matte, and a gentle cavity term shades the valleys between
+    # stitches the way the bunny's do.
     "fine-cotton": dict(
-        specular=0.22, sheen=0.35, sheen_rough=0.4, aniso=0.3,
-        subsurf=0.08, bump1=0.25, bump2=0.12, rough_lo=0.42, rough_hi=0.6,
+        specular=0.08, sheen=0.6, sheen_rough=0.7, aniso=0.0,
+        subsurf=0.08, bump1=0.5, bump2=0.3, rough_lo=0.7, rough_hi=0.85,
         flyaway=0.0, halo=None,
-        strand="replied", strand_mult=1.15, ply_frac=0.5, twist_turns_per_mm=0.2,
+        strand="replied", strand_mult=1.15, ply_frac=0.62, twist_turns_per_mm=0.22,
+        cavity_amt=0.3, cavity_dist_mm=1.5, cavity_pow=1.2, cavity_shade=0.45,
     ),
 }
 
@@ -205,7 +224,15 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
-    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    base = hex_to_lin(hexcol)
+    set_in(bsdf, "Base Color", base)
+    if fp.get("cavity_amt", 0.0) > 0:
+        # fine cotton (and any fibre that asks): shade the valleys between
+        # stitches, see `cavity_nodes`. Absent from cotton/wool/velvet, so
+        # their renders are unchanged.
+        rgb = nt.nodes.new("ShaderNodeRGB")
+        rgb.outputs[0].default_value = base
+        nt.links.new(cavity_nodes(nt, rgb.outputs[0], base, fp), bsdf.inputs["Base Color"])
     set_in(bsdf, "Specular IOR Level", fp["specular"])
     set_in(bsdf, "Sheen Weight", fp["sheen"])
     set_in(bsdf, "Sheen Roughness", fp["sheen_rough"])
@@ -262,6 +289,51 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
     return mat
 
 
+def depth_weight(base):
+    """How much of a fibre's 'depth' treatment a colour takes: 1 for mid and
+    dark dyes, fading to 0 for pale ones (the bar cow's cream muzzle is still
+    bright cream in chenille; proofs/yarn r6-bunny-chenille went dirty grey
+    with the full treatment)."""
+    lum = 0.2126 * base[0] + 0.7152 * base[1] + 0.0722 * base[2]
+    srgb = lum ** (1 / 2.2)
+    t = min(1.0, max(0.0, (srgb - 0.45) / 0.4))
+    return 1.0 - 0.6 * t * t * (3 - 2 * t)   # pale colours keep 40% of the depth
+
+
+def cavity_nodes(nt, col, base, fp):
+    """Crevice shadow (Fable r5): on a real toy the valleys between stitches
+    go deep, warm and slightly redder while the stitch tops stay lit, and that
+    value range is most of what reads as plush depth rather than flat tubing.
+    Cycles' own bounce light fills those valleys because the strands are
+    bright and close together, so an AO term mixes the colour towards a dark
+    crevice shade where the strand is hemmed in. Returns the new colour socket
+    (unchanged when `cavity_amt` is 0)."""
+    cav = fp.get("cavity_amt", 0.0) * (depth_weight(base) if fp.get("depth_by_lum") else 1.0)
+    if cav <= 0:
+        return col
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.samples = int(fp.get("cavity_samples", 8))
+    ao.only_local = False
+    ao.inputs["Distance"].default_value = fp.get("cavity_dist_mm", 1.5) * S
+    aw = nt.nodes.new("ShaderNodeMath")
+    aw.operation = "POWER"
+    nt.links.new(ao.outputs["AO"], aw.inputs[0])
+    aw.inputs[1].default_value = fp.get("cavity_pow", 1.5)
+    am = nt.nodes.new("ShaderNodeMath")
+    am.operation = "MULTIPLY_ADD"
+    nt.links.new(aw.outputs[0], am.inputs[0])
+    am.inputs[1].default_value = cav
+    am.inputs[2].default_value = 1.0 - cav
+    cs = fp.get("cavity_shade", 0.32)
+    crev = (base[0] * cs * 1.1, base[1] * cs * 0.9, base[2] * cs * 0.85, 1.0)
+    cm = nt.nodes.new("ShaderNodeMix")
+    cm.data_type = "RGBA"
+    nt.links.new(am.outputs[0], cm.inputs[0])
+    cm.inputs[6].default_value = crev
+    nt.links.new(col, cm.inputs[7])
+    return cm.outputs[2]
+
+
 def chenille_material(name, hexcol, fp):
     """CHENILLE / velvet pile on a single plump strand (no ply at all).
 
@@ -287,7 +359,7 @@ def chenille_material(name, hexcol, fp):
     # cotton, because the pile swallows light (the bar cow at #7a4a35 reads
     # value ~0.36 where our r4 render read ~0.48). `base_mult` scales the
     # albedo for the pile; the crevice darkening below does the rest.
-    bm = fp.get("base_mult", 1.0)
+    bm = 1.0 - (1.0 - fp.get("base_mult", 1.0)) * (depth_weight(base) if fp.get("depth_by_lum") else 1.0)
     base = tuple(c * bm for c in base[:3]) + (1.0,)
     tex = nt.nodes.new("ShaderNodeTexCoord")
     # crushed-pile patches (~1.5 mm, object units are cm)
@@ -330,31 +402,7 @@ def chenille_material(name, hexcol, fp):
     # orange tubing. Cycles' own bounce light fills those valleys because the
     # plump strands are bright and close together, so an AO term darkens the
     # colour towards a saturated crevice shade where the strand is hemmed in.
-    cav = fp.get("cavity_amt", 0.0)
-    if cav > 0:
-        ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
-        ao.samples = int(fp.get("cavity_samples", 8))
-        ao.only_local = False
-        ao.inputs["Distance"].default_value = fp.get("cavity_dist_mm", 1.5) * S
-        aw = nt.nodes.new("ShaderNodeMath")
-        aw.operation = "POWER"
-        nt.links.new(ao.outputs["AO"], aw.inputs[0])
-        aw.inputs[1].default_value = fp.get("cavity_pow", 1.5)
-        am = nt.nodes.new("ShaderNodeMath")
-        am.operation = "MULTIPLY_ADD"
-        nt.links.new(aw.outputs[0], am.inputs[0])
-        am.inputs[1].default_value = cav
-        am.inputs[2].default_value = 1.0 - cav
-        # crevice shade: the yarn colour at ~1/3 value, pushed a little redder
-        # (the pile's own inter-reflection warms it), never grey.
-        cs = fp.get("cavity_shade", 0.32)
-        crev = (base[0] * cs * 1.1, base[1] * cs * 0.9, base[2] * cs * 0.85, 1.0)
-        cm = nt.nodes.new("ShaderNodeMix")
-        cm.data_type = "RGBA"
-        nt.links.new(am.outputs[0], cm.inputs[0])
-        cm.inputs[6].default_value = crev
-        nt.links.new(col, cm.inputs[7])
-        col = cm.outputs[2]
+    col = cavity_nodes(nt, col, base, fp)
     # Fuzzy rim without hairs (Fable r5): pile fibres seen side-on at a
     # stitch's silhouette are lit from behind and scatter, so the edge of
     # every bump fades to a paler, softer tint instead of ending in a clean
