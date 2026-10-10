@@ -519,7 +519,14 @@ def main():
         surface_material(bg_hex, view.get("groundWhite", GROUND_WHITE_BOOST))
     )
 
-    build_yarn(strokes, drape, z_offset, fibre)
+    # Per-stroke fibre (embroidered faces): a stroke may carry its own
+    # `fibre` (blush sewn in a soft wool on a cotton toy); every stroke without
+    # one is the scene's fibre, built exactly as before.
+    by_fibre = {}
+    for st in strokes:
+        by_fibre.setdefault(st.get("fibre", fibre), []).append(st)
+    for stroke_fibre, fibre_strokes in by_fibre.items():
+        build_yarn(fibre_strokes, drape, z_offset, stroke_fibre)
 
     # Non-yarn notions (safety eyes, a nose). Absent from every scene that has
     # none, so those renders are unchanged.

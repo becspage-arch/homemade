@@ -67,12 +67,12 @@ test('eyes are set low and wide: below the crown third, well apart', () => {
 test('pattern words place every feature by round and stitch, in the notions too', () => {
   const p = buildAmigurumiProgram(choice('bunny', 'sleepy'))
   const words = writeAssembly(p).join('\n')
-  assert.match(words, /Sleeping eyes \(black embroidery thread\): bring the needle up (in round|between rounds) \d+/)
+  assert.match(words, /Sleeping eyes \(dark brown embroidery thread\): bring the needle up (in round|between rounds) \d+/)
   assert.match(words, /stitches from centre front/)
   assert.match(words, /Nose \(pink embroidery thread\)/)
   assert.match(words, /Mouth/)
-  assert.match(words, /Blush \(pink yarn\)/)
-  assert.ok(compositionNotions(p).some((n) => /Black embroidery thread/.test(n)))
+  assert.match(words, /Blush \(soft pink wool\)/)
+  assert.ok(compositionNotions(p).some((n) => /Dark brown embroidery thread/.test(n)))
   assert.equal(roundWords(6.5), 'between rounds 6 and 7')
   assert.equal(roundWords(7), 'in round 7')
 })
@@ -120,5 +120,5 @@ test('the embroidery is real strands ON the fabric and moves no stitch (sleepy b
   // The scene carries them as extra plied strokes in their thread colours.
   const scene = compositionScene(p, c)
   assert.ok(scene.strokes.length > c.placed.length)
-  assert.ok(scene.strokes.some((s) => s.hex === '#1e1714'))
+  assert.ok(scene.strokes.some((s) => s.hex === '#3a2a22'))
 })

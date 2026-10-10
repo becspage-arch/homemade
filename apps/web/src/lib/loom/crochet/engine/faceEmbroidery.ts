@@ -91,10 +91,13 @@ export interface SurfaceSpot {
   st: number
 }
 
-/** One straight stitch: up at `from`, down at `to`. */
+/** One straight stitch: up at `from`, down at `to`. `taut`: laid as a
+ *  dead-straight thread from hole to hole (a short lash over one crown)
+ *  instead of riding every crown it crosses. */
 export interface EmbroideryStitch {
   from: SurfaceSpot
   to: SurfaceSpot
+  taut?: boolean
 }
 
 export interface EmbroideryFeature {
@@ -112,18 +115,28 @@ export interface EmbroideryFeature {
   threadMm: number
   /** What the maker sews it with, for the notions list. */
   threadLabel: string
+  /** The thread's own fibre look in the render, when it is not the toy's
+   *  yarn (blush in a soft wool reads as a pale fuzzy patch, not a satin
+   *  pad). Unset: rendered in the scene's fibre, as before. */
+  fibre?: 'cotton' | 'wool' | 'chenille' | 'velvet'
   stitches: EmbroideryStitch[]
 }
 
 // ── Building a face ─────────────────────────────────────────────────────────
 
-const EYE_THREAD = '#1e1714'
+// Dark brown, not black: the bar's lids and mouth are sewn in a brown floss
+// that reads as a soft line on cream, where black reads as wire.
+const EYE_THREAD = '#3a2a22'
+// An open embroidered eye is black (a dark brown one reads as a bruise).
+const OPEN_EYE_THREAD = '#1e1714'
 const NOSE_DARK = '#2a1c16'
-const NOSE_PINK = '#c9737d'
-const BLUSH_PINK = '#eaa3a3'
+// A dusty pale pink for the nose, a paler one for the blush (the bar's nose
+// is a shade deeper than its cheeks, neither of them saturated).
+const NOSE_PINK = '#e39d9a'
+const BLUSH_PINK = '#efbdb8'
 const HIGHLIGHT = '#f4f1ea'
 const FLOSS_MM = 0.5
-const BLUSH_YARN_MM = 0.5
+const BLUSH_YARN_MM = 0.42
 
 export interface FaceLayout {
   /** The head (or body) the eyes and blush go on, and its round counts. */
@@ -255,25 +268,27 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const c: SurfaceSpot = { round: eyeRound, st: side * ((inner + outer) / 2) }
       const arc = arcStitches(c, (outer - inner) / 2, 0.45, 6, side)
       const stitches = [...arc.stitches]
-      // Three lashes on the outer half of the lid, each a short straight
-      // stitch out of the curve, down and a little outward.
-      for (const [i, len, out_] of [[3, 0.5, 0.04], [4, 0.56, 0.14], [5, 0.54, 0.26], [6, 0.44, 0.36]] as const) {
+      // Four short lashes along the outer half of the lid, evenly spaced,
+      // one out of each backstitch hole: each a straight stitch down and a
+      // little outward, the outermost from the corner fanning out most (the
+      // bar's lashes are short, straight and even, about a third of the lid).
+      for (const [i, len, out_] of [[3, 0.4, 0.05], [4, 0.44, 0.13], [5, 0.44, 0.22], [6, 0.38, 0.32]] as const) {
         const p = arc.pts[i]!
-        stitches.push({ from: p, to: { round: p.round + len, st: p.st + side * out_ } })
+        stitches.push({ from: p, to: { round: p.round + len, st: p.st + side * out_ }, taut: true })
       }
-      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 1.2, 'Black embroidery thread', stitches))
+      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 0.9, 'Dark brown embroidery thread', stitches))
     }
   } else if (style === 'stitched') {
     for (const side of [-1, 1] as const) {
       const cs = side * half(eyeSt)
       const hRounds = 0.68
-      const wSt = Math.min(halfSt * 0.55, 0.45)
+      const wSt = Math.min(halfSt * 0.55, 0.55)
       // Worked from the inner edge outward on each side (mirror images).
       const fill = satinColumns(cs - side * wSt, cs + side * wSt, 0.11, eyeRound, (s) => {
         const u = (s - cs) / wSt
         return hRounds * Math.sqrt(Math.max(0, 1 - u * u))
       })
-      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM, 'Black embroidery thread', fill))
+      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', OPEN_EYE_THREAD, FLOSS_MM, 'Black embroidery thread', fill))
       // The catch-light: one small white stitch high on the eye.
       const hs: SurfaceSpot = { round: eyeRound - hRounds * 0.45, st: cs - side * wSt * 0.25 }
       out.push(headFeature(side < 0 ? 'eye-light-l' : 'eye-light-r', HIGHLIGHT, FLOSS_MM * 0.8, 'White embroidery thread', [
@@ -288,15 +303,17 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
     const bs = stitchesAtAzimuth(H.rounds, br, L.blushAzDeg)
     for (const side of [-1, 1] as const) {
       const cs = side * half(bs)
-      const hw = 0.7
-      const hh = 0.48
+      // A rounder, softer patch than a satin pad: rows a little looser, in a
+      // soft wool so the render shows a fuzzy pale pink, not a shiny pad.
+      const hw = 0.62
+      const hh = 0.55
       // Worked from the inner edge outward on each side, so the two cheeks
       // are exact mirror images stitch for stitch.
-      const fill = satinRows(br - hh, br + hh, 0.1, cs, (r) => {
+      const fill = satinRows(br - hh, br + hh, 0.11, cs, (r) => {
         const u = (r - br) / hh
         return hw * Math.sqrt(Math.max(0, 1 - u * u))
       }).map((s) => (side < 0 ? { from: s.to, to: s.from } : s))
-      out.push(headFeature(side < 0 ? 'blush-l' : 'blush-r', BLUSH_PINK, BLUSH_YARN_MM, 'Pink yarn (a soft DK)', fill))
+      out.push({ ...headFeature(side < 0 ? 'blush-l' : 'blush-r', BLUSH_PINK, BLUSH_YARN_MM, 'Pink yarn (a soft DK wool)', fill), fibre: 'wool' })
     }
   }
 
@@ -334,9 +351,11 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const frac_ = 1 - k / nRows // 1 at the top edge, 0 at the point
       // Each row is a straight stitch of half-width w (ring units) at height
       // y above the centre: its two ends are at ring radius hypot(w, y) and
-      // angle atan(w / y) either side of the top.
+      // angle atan(w / y) either side of the top. The width profile is a
+      // ROUNDED triangle (the bar's nose): it fills out quickly below the
+      // top edge, and the top row is a touch shorter so the corners are soft.
       const y = tipI + (topI - tipI) * frac_
-      const w = Math.max(0.05, topHalfMm * frac_)
+      const w = Math.max(0.06, topHalfMm * Math.pow(frac_, 0.72) * (k === 0 ? 0.88 : 1))
       const i = Math.hypot(w, y)
       const deg = (Math.atan2(w, y) * 180) / Math.PI
       rows.push({ from: spot(i, -deg), to: spot(i, deg) })
@@ -346,14 +365,14 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
     // just below the centre, then a small V each side, down-and-out then
     // up-and-out, so it reads as a "w" (a sleepy bunny's, a smiling bear's).
     const tip = spot(tipI, 0)
-    const bottom = spot(0.1, 180)
+    const bottom = spot(0.12, 180)
     const mouth: EmbroideryStitch[] = [{ from: tip, to: bottom }]
     for (const side of [-1, 1] as const) {
-      const low = spot(0.4, 180 - side * 36)
-      const end = spot(0.64, 180 - side * 76)
-      mouth.push({ from: bottom, to: low }, { from: low, to: end })
+      const low = spot(0.4, 180 - side * 34)
+      const end = spot(0.6, 180 - side * 72)
+      mouth.push({ from: bottom, to: low, taut: true }, { from: low, to: end, taut: true })
     }
-    out.push(muzzleFeature('mouth', EYE_THREAD, 'Black embroidery thread', mouth))
+    out.push({ ...muzzleFeature('mouth', EYE_THREAD, 'Dark brown embroidery thread', mouth), threadMm: FLOSS_MM * 0.9 })
   } else if (L.noseOnHeadElevDeg != null) {
     const nr = half(roundAtElevation(H.rounds, L.noseOnHeadElevDeg))
     const rows = satinRows(nr - 0.35, nr + 0.35, 0.12, 0, (r) => 0.5 * (1 - (r - (nr - 0.35)) / 0.7) + 0.06)
@@ -408,7 +427,7 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
     const mid = eyeL.stitches[2]!.to
     const apart = Math.abs(a.st) * 2
     lines.push(
-      `Sleeping eyes (black embroidery thread): bring the needle up ${roundWords(a.round)}, ` +
+      `Sleeping eyes (dark brown embroidery thread): bring the needle up ${roundWords(a.round)}, ` +
         `${sts(a.st)} from centre front. Work 6 small backstitches outward in a smile-shaped curve that dips to ` +
         `${roundWords(mid.round)} at its middle and comes back up ${roundWords(end.round)}, ${sts(end.st)} from centre front. ` +
         'Add 4 lashes along the outer half of the curve, one at each backstitch hole: a short straight stitch from the curve down into the next round, fanning slightly outward toward the outer corner. ' +
@@ -429,7 +448,7 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
   if (nose) {
     const first = nose.stitches[0]!
     const last = nose.stitches[nose.stitches.length - 1]!
-    const colour = /c9737d/i.test(nose.colourHex) ? 'pink' : 'dark brown'
+    const colour = nose.colourHex.toLowerCase() === NOSE_PINK ? 'pink' : 'dark brown'
     if (nose.on !== features[0]?.on || features.some((f) => f.name === 'mouth')) {
       lines.push(
         `Nose (${colour} embroidery thread): on the top half of the muzzle front, satin stitch a small triangle, point down. ` +
@@ -445,7 +464,7 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
   const mouth = features.find((f) => f.name === 'mouth')
   if (mouth) {
     lines.push(
-      'Mouth (black embroidery thread): from the point of the nose, work one straight stitch down through the centre of the muzzle, ' +
+      'Mouth (dark brown embroidery thread): from the point of the nose, work one straight stitch down through the centre of the muzzle, ' +
         'just past it. From the bottom of that stitch, work two short straight stitches each side in a shallow V, ' +
         'down and then up and out, so the mouth reads as a small "w".',
     )
@@ -456,8 +475,8 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
     const cr = (Math.min(...rs) + Math.max(...rs)) / 2
     const cs = (blushL.stitches[0]!.from.st + blushL.stitches[0]!.to.st) / 2
     lines.push(
-      `Blush (pink yarn): ${roundWords(cr)}, ${sts(cs)} either side of centre front (below and outside each eye), ` +
-        'satin stitch an oval about 1½ stitches wide and 1 round high, the stitches lying along the round.',
+      `Blush (soft pink wool): ${roundWords(cr)}, ${sts(cs)} either side of centre front (below and outside each eye), ` +
+        'satin stitch a small round patch about 1 stitch wide and 1 round high, the stitches lying along the round, pulled just snug so it sits soft.',
     )
   }
   lines.push('Fasten off each colour inside the head and trim the ends so none show.')
@@ -477,6 +496,8 @@ export interface EmbroideryHost {
 export interface PlacedEmbroidery {
   name: string
   hex: string
+  /** The thread's own fibre look, if it differs from the toy's yarn. */
+  fibre?: EmbroideryFeature['fibre']
   /** Thread bundle radius (mm). */
   radiusMm: number
   /** One centre-line per straight stitch, world mm, diving into the fabric
@@ -666,76 +687,102 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
     const bundle = yr * YARN_BUNDLE_FRAC
     const rt = f.threadMm
     const strands: V3[][] = []
-    let prevTo: SurfaceSpot | null = null
-    for (const st of f.stitches) {
-      // The two ends are where the pattern says: found on the fabric by
-      // round and stitch. The thread between them is STRAIGHT (a straight
-      // stitch is taut), laid over the surface: each point of the chord is
-      // lifted onto the tops of the crocheted stitches under it.
-      const ta = thOf(st.from)
-      const tb = thOf(st.to)
-      const pa = S.at(st.from.round, ta)
-      const pb = S.at(st.to.round, tb)
-      const na = S.normal(st.from.round, ta)
-      const nb = S.normal(st.to.round, tb)
-      const chord = lenv(sub(pb, pa)) * x.scale
-      const nSeg = Math.max(3, Math.ceil(chord / 0.5))
-      const surf: { p: V3; n: V3; h: number }[] = []
-      for (let i = 0; i <= nSeg; i++) {
-        const t = i / nSeg
-        const n = normv(lerpv(na, nb, t))
-        const q = lerpv(pa, pb, t)
-        surf.push({ p: q, n, h: S.height(q, n) })
+    const same = (a: SurfaceSpot, b: SurfaceSpot): boolean => Math.abs(a.round - b.round) < 1e-9 && Math.abs(a.st - b.st) < 1e-9
+    // BACKSTITCH: a stitch that comes up in the hole the last one went down
+    // in continues the same visible line (the thread goes down and up through
+    // one gap), so a chain of them is laid as ONE run, smoothed as one curve,
+    // with a small dip at each shared hole instead of a dive. A lid is one
+    // such run; a lash or a mouth stitch is a run of one.
+    const runs: EmbroideryStitch[][] = []
+    f.stitches.forEach((st, idx) => {
+      const prev = idx > 0 ? f.stitches[idx - 1]! : null
+      if (prev && same(prev.to, st.from) && !st.taut && !prev.taut) runs[runs.length - 1]!.push(st)
+      else runs.push([st])
+    })
+    for (const run of runs) {
+      const first = run[0]!
+      const firstIdx = f.stitches.indexOf(first)
+      // A stitch that starts in a hole an EARLIER stitch already used (a lash
+      // coming out of the lid's backstitch hole) shows no dive at its root:
+      // the visible thread starts where it leaves the lid.
+      const rootShared = f.stitches.slice(0, firstIdx).some((o) => same(o.from, first.from) || same(o.to, first.from))
+      // Sample the run: each stitch's chord is straight between its two
+      // holes (a straight stitch is taut), lifted onto the tops of the
+      // crocheted stitches under it.
+      const surf: { p: V3; n: V3; h: number; hole: boolean }[] = []
+      let runChord = 0
+      for (const st of run) {
+        const ta = thOf(st.from)
+        const tb = thOf(st.to)
+        const pa = S.at(st.from.round, ta)
+        const pb = S.at(st.to.round, tb)
+        const na = S.normal(st.from.round, ta)
+        const nb = S.normal(st.to.round, tb)
+        const chord = lenv(sub(pb, pa)) * x.scale
+        runChord += chord
+        const nSeg = Math.max(3, Math.ceil(chord / 0.5))
+        for (let i = surf.length ? 1 : 0; i <= nSeg; i++) {
+          const t = i / nSeg
+          const n = normv(lerpv(na, nb, t))
+          const q = lerpv(pa, pb, t)
+          // A long run (a lid) rides the crowns over a wider reach, so it is
+          // one smooth arc rather than a trace of every bump under it.
+          surf.push({ p: q, n, h: S.height(q, n, first.taut ? 2.6 : 3.2), hole: i === nSeg && st !== run[run.length - 1] })
+        }
+      }
+      const N = surf.length - 1
+      const dive = bundle + rt * (runChord < 4 ? 1.0 : 1.8)
+      if (first.taut) {
+        // A TAUT short stitch (a lash): a dead-straight thread from its root
+        // to its tip, over the highest crown between them, then down into
+        // the fabric at the tip. Nothing follows the crowns, so it never kinks.
+        let top = -Infinity
+        for (const q of surf) top = Math.max(top, q.h)
+        const rootH = (rootShared ? Math.max(surf[0]!.h, top - rt) : top) + bundle + rt * 0.7
+        const tipH = top + bundle + rt * 0.25
+        const a = add(surf[0]!.p, mul(surf[0]!.n, rootH))
+        const b = add(surf[N]!.p, mul(surf[N]!.n, tipH))
+        const line: V3[] = []
+        if (!rootShared) line.push(toWorld(add(a, mul(surf[0]!.n, -dive))))
+        const k = 6
+        for (let i = 0; i <= k; i++) line.push(toWorld(lerpv(a, b, i / k)))
+        // The dive at the tip: straight on a little, then down.
+        const dir = normv(sub(b, a))
+        line.push(toWorld(add(add(b, mul(dir, rt * 0.6)), mul(surf[N]!.n, -dive * 0.5))))
+        line.push(toWorld(add(add(b, mul(dir, rt * 0.9)), mul(surf[N]!.n, -dive))))
+        strands.push(line)
+        continue
       }
       // A taut thread bridges the dips between stitches: it rests on the
-      // highest crown within a couple of samples either side.
+      // highest crown within a couple of samples either side, smoothed along
+      // the whole run.
       const sm = surf.map((_, i) => {
         let m = -Infinity
-        for (let j = Math.max(0, i - 3); j <= Math.min(surf.length - 1, i + 3); j++) m = Math.max(m, surf[j]!.h)
+        for (let j = Math.max(0, i - 3); j <= Math.min(N, i + 3); j++) m = Math.max(m, surf[j]!.h)
         return m
       })
       const sm2 = sm.map((_, i) => {
         let a = 0, w = 0
-        for (let j = Math.max(0, i - 4); j <= Math.min(sm.length - 1, i + 4); j++) { a += sm[j]!; w++ }
+        for (let j = Math.max(0, i - 5); j <= Math.min(N, i + 5); j++) { a += sm[j]!; w++ }
         return a / w
       })
-      // BACKSTITCH: a stitch that comes up in the hole the last one went down
-      // in continues the same visible line (the thread goes down and up
-      // through one gap), so it is drawn on as one strand with a small dip
-      // at the shared hole instead of two separate dives.
-      const prev = prevTo
-      const chained = prev != null && Math.abs(prev.round - st.from.round) < 1e-9 && Math.abs(prev.st - st.from.st) < 1e-9
-      prevTo = st.to
-      const nextSt = f.stitches[f.stitches.indexOf(st) + 1]
-      const chainsOn = nextSt != null && Math.abs(nextSt.from.round - st.to.round) < 1e-9 && Math.abs(nextSt.from.st - st.to.st) < 1e-9
-      // A stitch that starts in a hole an EARLIER stitch already used (a
-      // lash coming out of the lid's backstitch hole) shows no dive at its
-      // root: the visible thread starts at the lid.
-      const same = (a: SurfaceSpot, b: SurfaceSpot): boolean => Math.abs(a.round - b.round) < 1e-9 && Math.abs(a.st - b.st) < 1e-9
-      const idx = f.stitches.indexOf(st)
-      const rootShared = !chained && f.stitches.slice(0, idx).some((o) => same(o.from, st.from) || same(o.to, st.from))
-      // Short stitches (lashes) go in at a shallower angle, or the smoothing
-      // curls the dive into a hook.
-      const dive = bundle + rt * (chord < 4 ? 1.0 : 1.8)
-      const line: V3[] = chained && strands.length ? strands.pop()! : []
-      if (!chained && !rootShared) line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
-      for (let i = chained ? 1 : 0; i <= nSeg; i++) {
+      const line: V3[] = []
+      if (!rootShared) line.push(toWorld(add(surf[0]!.p, mul(surf[0]!.n, sm2[0]! + bundle - dive))))
+      for (let i = 0; i <= N; i++) {
         const s = surf[i]!
-        // The ends are pulled down into the gap they pass through (only a
-        // little at a shared hole); the run in between rests on the crowns.
-        const e = Math.min(1, Math.min(i, nSeg - i) / Math.max(1, Math.min(2, nSeg / 2)))
-        const atShared = (i === 0 && (chained || rootShared)) || (i === nSeg && chainsOn)
-        const pull = atShared ? 0.3 : chord < 4 ? 0.5 : 0.9
-        const h = sm2[i]! + bundle + rt * (0.2 + 0.6 * e) - rt * pull * (1 - e)
+        // The two ends are pulled down into the gap they pass through (only a
+        // little at a shared root); the run in between rests on the crowns,
+        // dipping a touch at each shared backstitch hole.
+        const e = Math.min(1, Math.min(i, N - i) / 2)
+        const endPull = i === 0 && rootShared ? 0.3 : runChord < 4 ? 0.5 : 0.9
+        const holeDip = s.hole ? 0.25 : 0
+        const h = sm2[i]! + bundle + rt * (0.2 + 0.6 * e) - rt * endPull * (1 - e) - rt * holeDip
         line.push(toWorld(add(s.p, mul(s.n, h))))
       }
-      if (!chainsOn) {
-        const last = surf[nSeg]!
-        line.push(toWorld(add(last.p, mul(last.n, sm2[nSeg]! + bundle - dive))))
-      }
+      line.push(toWorld(add(surf[N]!.p, mul(surf[N]!.n, sm2[N]! + bundle - dive))))
       strands.push(line)
     }
-    out.push({ name: f.name, hex: f.colourHex, radiusMm: rt, strands })
+    out.push({ name: f.name, hex: f.colourHex, radiusMm: rt, strands, ...(f.fibre ? { fibre: f.fibre } : {}) })
   }
   return out
 }

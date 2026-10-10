@@ -605,7 +605,16 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
 
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
-  strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
+  strokes: {
+    hex: string
+    sheen: number
+    radiusMm: number
+    filaments: number[][][]
+    /** This stroke's own fibre look, when it differs from the scene's
+     *  `fibre` (an embroidery thread in a soft wool on a cotton toy). Absent
+     *  on every yarn stroke, so unembroidered scenes are byte-identical. */
+    fibre?: YarnFibre
+  }[]
   /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
    *  that has none, so those scenes are byte-identical to before. */
   props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
@@ -654,8 +663,8 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   // own thread, on top of the fabric.
   for (const e of compiled.embroidery ?? []) {
     for (const line of e.strands) {
-      const { radiusMm, filaments } = pliedFilaments(smooth(line, 3), e.radiusMm, 3, twist * 0.5)
-      strokes.push({ hex: e.hex, sheen: 0.6, radiusMm, filaments })
+      const { radiusMm, filaments } = pliedFilaments(smooth(line, 2), e.radiusMm, 3, twist * 0.4)
+      strokes.push({ hex: e.hex, sheen: 0.6, radiusMm, filaments, ...(e.fibre ? { fibre: e.fibre } : {}) })
     }
   }
   // Full composed extent (for the fabric hint; the script frames from the strokes).
