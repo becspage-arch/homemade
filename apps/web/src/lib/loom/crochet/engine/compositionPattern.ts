@@ -146,7 +146,7 @@ export function writePieceInstructions(piece: CompositionPiece): string[] {
     piece.kind === 'disc'
       ? 'Join with a sl st into the next st and fasten off, leaving a long tail for sewing. This piece is not stuffed.'
       : piece.kind === 'pressed'
-        ? 'Fasten off without stuffing, thread the tail through the final round and draw it closed, then press the piece flat with the lining centred on the front.'
+        ? `Fasten off without stuffing, thread the tail through the final round and draw it closed, then press the piece flat${piece.panel ? ' with the lining centred on the front' : ''}.`
         : lines[lines.length - 1]!
   const out = piece.panel ? withPanel(body, piece) : body
   const head = piece.yarnWeight ? [`Change to ${YARN_WORDS[piece.yarnWeight] ?? piece.yarnWeight} yarn and a 2.5 mm hook for this piece.`] : []
@@ -225,7 +225,11 @@ export function writeAssembly(p: CompositionProgram): string[] {
           : `Sew the ${piece.label.toLowerCase()} flat onto the front of the ${to} with the tail.`,
       )
     } else if (piece.kind === 'pressed') {
-      lines.push(`Sew the ${piece.label.toLowerCase()} to the ${to} by the closed end, lining facing forward, so they hang down beside the face.`)
+      lines.push(
+        piece.sewNote
+          ? `Sew the ${piece.label.toLowerCase()} to the ${to} ${piece.sewNote}.`
+          : `Sew the ${piece.label.toLowerCase()} to the ${to} by the closed end, lining facing forward, so they hang down beside the face.`,
+      )
     } else {
       lines.push(
         piece.sewNote

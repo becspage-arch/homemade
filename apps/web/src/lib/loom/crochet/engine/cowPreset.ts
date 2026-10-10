@@ -161,8 +161,14 @@ function faceDir(d: Dir, yaw = COW_YAW): Dir {
 const MUZZLE_DIR = { x: 0, y: 1, z: -0.4 }
 const HORN_DIR = { x: 0.7, y: 0.1, z: 0.9 }
 const HORN_AIM = { x: 1, y: 0.12, z: 0.5 }
-const EAR_DIR = { x: 1, y: 0.15, z: 0.22 }
-const EAR_AIM = { x: 1, y: 0.3, z: 0.15 }
+const EAR_DIR = { x: 1, y: 0.18, z: 0.18 }
+/** Out to the side and turned a little forward, so the ear's face shows to
+ *  the lens (the bar's ears are flat leaves seen face-on, not pucks edge-on). */
+const EAR_AIM = { x: 1, y: 0.55, z: 0.05 }
+// (Round 8 tried the ear unstuffed and pressed flat like the lop ear: a 7-round
+// ball(18,2) puck fails 14-17 interlocks at 12-15 mm — its +6 cap rounds have
+// no straight run to fold on. A flat leaf ear is its own construction; the
+// ear stays a stuffed puck turned to the lens for now.)
 /** Front legs: sewn at the front corner of the shoulder and hung straight
  *  down, a little forward and out, so each paw rests on the table outside
  *  its foot (the pose lane's round-4 "highland-cow way"). */
@@ -205,15 +211,19 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // plane ±63°), so each ring lies tilted with its face to the viewer and
     // the rings tile over each other out to the edge — round 6's loops stood
     // straight out and read end-on as a small flat whorl.
-    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -70, vary: 0.35 },
+    // Round 8: more variation (vary 0.45: lengths ±45%, planes ±80°) so no
+    // two rings match — round 7's tiled like onion rings — and the loose
+    // loops drawn at a full yarn radius: a chenille loop off the hook is as
+    // fat as the yarn, not the 0.62 the stitches are pulled down to.
+    loop: { lengthYr: 5.0, halfWidthYr: 2.5, droopDeg: -68, vary: 0.45 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 6.2, halfWidthYr: 2.8, droopDeg: -55 } // over three fingers: the crown of the tuft
+        ? { lengthYr: 6.2, halfWidthYr: 2.9, droopDeg: -50 } // over three fingers: the crown of the tuft
         : k === last
           ? { lengthYr: 4.6, halfWidthYr: 2.3, droopDeg: -80 } // the spill onto the forehead and over the horn roots
           : undefined,
     gravity: 0.0015,
-    strandYr: 0.82,
+    strandYr: 1.0,
     colourHex,
   }
 }
@@ -257,11 +267,12 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.ear, colourHex: main, scale: s.earScale,
-      sewNote: 'on the sides of the head just below the horns, standing straight out to the sides',
+      sewNote: 'on the sides of the head just below the horns, standing out to the sides and turned a little forward',
       place: {
         on: 'head',
         dir: fd({ x: side * EAR_DIR.x, y: EAR_DIR.y, z: EAR_DIR.z }),
         aim: fd({ x: side * EAR_AIM.x, y: EAR_AIM.y, z: EAR_AIM.z }),
+        spin: fd({ x: side * 0.3, y: 1, z: 0 }),
         seat: 4, poleIn: true, surfaceFit: 'ellipsoid',
       },
     })
