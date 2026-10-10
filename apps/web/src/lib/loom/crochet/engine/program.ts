@@ -79,7 +79,7 @@ export const YARN_WEIGHT_RADIUS_MM: Record<YarnWeight, number> = {
  *  relax, or the audit gate), so it never moves a `geometryHash`. Defaults to
  *  `'cotton'` — the original crisp-plied material every program rendered with
  *  before this field existed, so an unset program is completely unaffected. */
-export type YarnFibre = 'cotton' | 'wool' | 'chenille' | 'velvet' | 'fine-cotton'
+export type YarnFibre = 'cotton' | 'wool' | 'chenille' | 'velvet' | 'fine-cotton' | 'fluff'
 
 /** Resolve a program's render fibre: an explicit choice wins, else `'cotton'`
  *  (the historical default — every program from before this field existed). */

@@ -3344,6 +3344,56 @@ Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
 
 ---
 
+## 8j. THE SLEEPY BUNNY, ROUND 2 — the whole figure beside the bar (2026-10-10)
+
+Bar `bar-sleepy-bunny.png`, judged at listing size. Log `crochet-bar/jobs/bunny.md`,
+proofs `crochet-bar/proofs/bunny/`. The bear shares every toy number below.
+
+- **Shape.** Body one equator step WIDER than the head (M: body eq66 under a
+  head eq60; S 54/48, L 66/66) and the head sunk 24 mm (S 19, L 26) so no
+  neck shows: a soft wide pear, the bar's silhouette, instead of round 5's
+  narrow tall stack.
+- **Feet.** `bigFoot` ballRounds(30,3) at M (24/36), aimed up to the lens
+  (z 0.26) and splayed (x 0.34); a [6,12,18,24] toe pad (x0.72) low on the
+  sole and FOUR [6,12] beans (x0.55) in an arc above it, the outer pair low and
+  wide, the inner pair high and close. Round 1 had the beans touching the pad
+  (one pink mass): the pad sits at u -0.5, the beans at u 0.62 / 0.92.
+- **Ears.** `lopEarRounds(21, 40)` at M (18x32 S, 21x46 L), lining 42% of the
+  width, press 13.5 / 10 / 15. A 24-st ear with a panel fails ONE interlock at
+  its spiral step (j13 c0) at every press 12-18 and passes without the panel
+  or at 21 wide: so 21 (25.7 mm = 0.34 of the head, the bar's ratio). The ear
+  is sewn higher (dir z 0.65), aimed a touch out (x 0.2), lined face turned
+  forward (spin x 0.4), and WORN with a curve: `AmigurumiPart.bend` (staging
+  only, `bendTube` on the settled centreline above `startFrac` of the length
+  before placement; audit and words untouched, hash moves) — 24 deg over the
+  lower half toward the lined face, so the lower ear comes forward and out to
+  rest beside the body with the tip at the table. A flat ear only ever bends
+  out of its plane (±x); `then` allows a second bend.
+- **Arms.** Aimed x -0.95: the paws meet at the tummy's centre.
+- **Muzzle.** `palerShade(main, 0.38)`: the main yarn a few steps paler, the
+  bar's subtle cream-on-cream oval (a pink one read as a pig).
+- **Hat.** Band at 0.7R; fold startFrac 0.06 / 156 deg / dir 12 so the cone
+  folds right off the crown and falls down the side; pompom in its OWN yarn
+  (`CompositionAccessory.pompomHex / pompomFibre / pompomRadiusFrac` →
+  `NightcapOptions.pompomHex / pompomFibre`, strokes carry `fibre`; words say
+  "wrap the pompom yarn", notion added). Toy default cream #f4ecdd in the new
+  `fluff` render fibre: chenille's plump matte strand with NO depth treatment
+  plus a 1.2/mm2 x 2.2 mm hair fringe. A cream pompom in wool OR chenille
+  rendered as a grey knobbly ball (the strands shade each other); 5/mm2 hairs
+  on 3000 pompom strands was 4.5 M hairs and OOM-killed the 8 GB probe.
+- **Stitch look (render only) — what did NOT work.** strand_mult 1.32 alone
+  does not flatten the beaded look (the crown relief is geometry), and a
+  moving-average low-pass of the settled centreline (±2 and ±5 nodes, tried
+  as a render-only step) shrinks every loop so the fabric opens into netting
+  with daylight between stitches (proofs/bunny/r2-face-lp2-lp5-vs-bar.png).
+  Removed. The flat-V look is the loop builder's crown relief at gauge.
+- **Studio.** `HAT_IDS`/`HATS`, `AmigurumiChoices.hat/hatHex/pompomHex`, zod in
+  the patterns route and `crochet-session`, the design recipe, and a Hat chip
+  row with hat / pompom yarn pickers on the toy bases.
+- **Framing.** `TOY_VIEW.distScale` 0.92: the toy sat small in the frame.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
