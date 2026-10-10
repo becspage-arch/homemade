@@ -284,15 +284,15 @@ if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,
  * cannot lay out and stay off this list).
  */
 const HONEST_AMIGURUMI_BASE_RE =
-  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b/i
+  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b|\bdolls?\b/i
 
 /**
  * Bases the engine cannot lay out even though the word above might match:
  * a dachshund needs a long body, an owl is not an egg with a beak.
  */
-const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
+const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b|\bdolls?'?s? (?:clothes|dress(?:es)?|outfits?|hats?|shoes|wardrobe|accessor(?:y|ies)|house|bed|pram)\b/i
 
-/** True when `motif` is honestly one of the eight bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick). */
+/** True when `motif` is honestly one of the nine bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick, doll). */
 export function isHonestAmigurumiSubject(motif: string): boolean {
   return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
 }

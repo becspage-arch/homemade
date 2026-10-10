@@ -16,6 +16,7 @@
  */
 
 import { buildSphere } from './shaping'
+import { buildTube, type TubeAnchor, type TubeCap, type TubeJoin } from './tube'
 import { relaxProgram, geometryHash } from './programScene'
 import { auditProblems } from './auditChecks'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
@@ -81,6 +82,32 @@ export interface AmigurumiPart {
   /** Uniform scale on the built geometry (default 1). Sizing normally comes from
    *  the round counts; scale is a fine trim only. */
   scale?: number
+  // ── Doll pass (doll.ts, 10 Oct 2026). All optional; a part without them is
+  //    built, placed and rendered exactly as before. ──
+  /** An OPEN piece (tube.ts) instead of a closed stuffed ball: a doll's leg is
+   *  worked up from a magic-ring sole and left open at the top to be joined;
+   *  her body starts from the joining round (`anchor: 'chain'` — the round the
+   *  two legs' stitches plus the bridging chains make) and is left open at
+   *  the neck. Built by `buildTube`, audited like every other piece. */
+  tube?: { anchor: TubeAnchor; join: TubeJoin; cap?: TubeCap }
+  /** Turn the piece over (180° about x) before it is placed on the ground or
+   *  stacked: a piece worked UPWARD from its start (a leg from the sole, a body
+   *  from the hips) stands start-down. Rigid, so it moves no stitch. */
+  flip?: boolean
+  /** COLOUR CHANGES: from pattern round `fromRound` (1-based, the round the
+   *  new colour is first worked in) the yarn is `hex`, until the next change.
+   *  Rendered by cutting the one strand at the change (render only — the
+   *  geometry and its hash do not move). */
+  colourChanges?: { fromRound: number; hex: string; label?: string }[]
+  /** The piece's written rounds, when they are not the plain closed-ball words
+   *  (`compositionPattern.writePieceInstructions`): a joined body, a leg left
+   *  open, the colour changes. Written by the module that builds the piece,
+   *  from the same counts. */
+  words?: string[]
+  /** The assembly line for this piece, when "sew it to its parent" is not what
+   *  the maker does (a leg is joined in the body's first round, not sewn). An
+   *  empty string = nothing to assemble. */
+  joinWords?: string
 }
 
 /**
@@ -112,6 +139,13 @@ export interface CompositionProp {
   /** Exact-ellipsoid surface fit for the parent (default true — props are new,
    *  so there is no historical placement to preserve). */
   surfaceFit?: 'box' | 'ellipsoid'
+  /** Doll pass: a metal RING (a keyring's split ring or jump ring) instead of a
+   *  moulded ellipsoid. `radiusMm` is the ring's radius to the wire centre,
+   *  `wireMm` the wire's radius, and `ringNormal` the ring plane's normal (the
+   *  plane contains `dir`, so the ring stands out of the surface). */
+  ring?: { wireMm: number; ringNormal: { x: number; y: number; z: number } }
+  /** Doll pass: render as polished metal (a keyring), not plastic. */
+  metal?: boolean
 }
 
 export interface CompositionProgram {
@@ -124,6 +158,10 @@ export interface CompositionProgram {
    *  sewn onto the finished pieces as real strands. Optional, outside the
    *  geometry hash like the props; a composition without it is unchanged. */
   embroidery?: EmbroideryFeature[]
+  /** The face's written lines, when the module that built the embroidery
+   *  wrote its own (the doll's face is not the toy face `writeFaceInstructions`
+   *  describes). Unset = the toy face words, as before. */
+  faceWords?: string[]
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
@@ -208,6 +246,10 @@ export interface PlacedProp {
   axes: [V3, V3, V3]
   hex: string
   gloss: number
+  /** A torus (the doll keyring) rather than an ellipsoid: wire radius as a
+   *  fraction of the ring radius. Absent = an ellipsoid, as before. */
+  torusMinor?: number
+  metal?: boolean
 }
 
 export interface CompiledComposition {
@@ -392,7 +434,9 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
 
   for (const part of p.parts) {
     // 1. Build + relax the real ball (locked geometry, untouched).
-    const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds)
+    const built: BuiltContinuous = part.tube
+      ? buildTube({ stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap }, yr)
+      : buildSphere(part.stitch, 0, yr, part.rounds)
     relaxProgram(built, yr)
     // 2. Per-part audit gate — the part must be genuinely stitched.
     const partProblems = auditProblems({ built, recipe: undefined as never }, part.name, 0, yr)
@@ -411,7 +455,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
 
     // 4. Placement → a rigid transform  world = T + scale · R · (local − centre).
     //    R is identity for ground/overlap; a real rotation for a protruding limb.
-    let R: number[][] = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    let R: number[][] = part.flip ? [[1, 0, 0], [0, -1, 0], [0, 0, -1]] : [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
     let T: V3 = { x: 0, y: 0, z: 0 }
     // PartPlacement's three shapes share a non-literal `on`, so TypeScript can't
     // narrow the union from `on === 'ground'`. One widened view of the same
@@ -584,6 +628,28 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     const Rp = rotZTo(u)
     const across1 = applyRot(Rp, { x: 1, y: 0, z: 0 })
     const across2 = applyRot(Rp, { x: 0, y: 1, z: 0 })
+    if (pr.ring) {
+      // A ring standing out of the surface: its plane holds `dir` and is
+      // square to `ringNormal`. The torus primitive lies in its local x/y.
+      const n0 = unit(pr.ring.ringNormal)
+      const k = n0.x * u.x + n0.y * u.y + n0.z * u.z
+      const n = unit({ x: n0.x - k * u.x, y: n0.y - k * u.y, z: n0.z - k * u.z })
+      const side = { x: u.y * n.z - u.z * n.y, y: u.z * n.x - u.x * n.z, z: u.x * n.y - u.y * n.x }
+      const r = pr.radiusMm
+      return {
+        name: pr.name,
+        centre,
+        axes: [
+          { x: side.x * r, y: side.y * r, z: side.z * r },
+          { x: u.x * r, y: u.y * r, z: u.z * r },
+          { x: n.x * r, y: n.y * r, z: n.z * r },
+        ] as [V3, V3, V3],
+        hex: pr.colourHex,
+        gloss: pr.gloss ?? 0.85,
+        torusMinor: pr.ring.wireMm / r,
+        ...(pr.metal ? { metal: true } : {}),
+      }
+    }
     const rw = pr.radiusMm * (pr.widen ?? 1)
     const rf = pr.radiusMm * (pr.flatten ?? 1)
     return {
@@ -621,7 +687,7 @@ export interface BlenderScene {
   }[]
   /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
    *  that has none, so those scenes are byte-identical to before. */
-  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
+  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number; torusMinor?: number; metal?: boolean }[]
   /** The yarn fibre look (STITCH_ENGINE yarn-fibre pass) — read by
    *  loom_render_crochet.py's `build_yarn`/`yarn_material`. Always written
    *  (defaulting to 'cotton') so the render script never has to guess. */
@@ -659,10 +725,21 @@ const DEFAULT_MIN_FIELD_MM = 160
  */
 export function compositionScene(p: CompositionProgram, compiled: CompiledComposition, twist = 0.08): BlenderScene {
   const yr = compiled.yr
-  const strokes: BlenderScene['strokes'] = compiled.placed.map((pp) => {
+  const strokes: BlenderScene['strokes'] = compiled.placed.flatMap((pp) => {
     const center = smooth(pp.ctrl, 4)
+    if (pp.part.colourChanges?.length && pp.built) {
+      // A COLOUR CHANGE cuts the one strand where the new yarn is first
+      // worked; each run is its own plied stroke in its own colour, sharing
+      // the cut point so no gap opens. Plying each run separately (rather than
+      // cutting the plied strand) restarts the twist at the change, the way a
+      // freshly joined yarn does.
+      return colourRuns(pp).map(({ hex, from, to }) => {
+        const { radiusMm, filaments } = pliedFilaments(center.slice(from, to + 1), yr * 0.62, 3, twist)
+        return { hex, sheen: 0.85, radiusMm, filaments }
+      })
+    }
     const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
-    return { hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }
+    return [{ hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }]
   })
   // Each embroidered straight stitch is its own short plied strand, in its
   // own thread, on top of the fabric.
@@ -711,7 +788,45 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
       axes: pr.axes.map((a) => [a.x, a.y, a.z]),
       hex: pr.hex,
       gloss: pr.gloss,
+      ...(pr.torusMinor != null ? { torusMinor: pr.torusMinor } : {}),
+      ...(pr.metal ? { metal: true } : {}),
     }))
   }
   return scene
+}
+
+/** The worked round (1-based, as the pattern counts it) each strand point of
+ *  a piece belongs to: the sphere's stuffing index or the tube's row index,
+ *  both 0-based over worked rounds (-1 = the ring / anchor). */
+function strandRounds(pp: PlacedPart): number[] {
+  const built = pp.built!
+  const per = built.model.round ?? built.nodeRow ?? []
+  return built.strandPath.map((ni) => (per[ni] ?? -1) + 1)
+}
+
+/** The colour runs of a piece with `colourChanges`, as index ranges over its
+ *  strand (inclusive, consecutive runs share their cut point). A change takes
+ *  effect at the FIRST point of its round, so the rounds before it are wholly
+ *  the old colour. The ring/anchor (round 0) and any fasten-off tail belong to
+ *  the run they sit in. Exported for the doll test. */
+export function colourRuns(pp: PlacedPart): { hex: string; from: number; to: number }[] {
+  const rounds = strandRounds(pp)
+  const changes = [...(pp.part.colourChanges ?? [])].sort((a, b) => a.fromRound - b.fromRound)
+  const hexAt = (r: number): string => {
+    let hex = pp.part.colourHex
+    for (const c of changes) if (r >= c.fromRound) hex = c.hex
+    return hex
+  }
+  const out: { hex: string; from: number; to: number }[] = []
+  // Rounds never go back down along the strand except for the tail; carry the
+  // running maximum so a stray tail point does not flip the colour back.
+  let maxR = 0
+  for (let i = 0; i < rounds.length; i++) {
+    maxR = Math.max(maxR, rounds[i]!)
+    const hex = hexAt(maxR)
+    const last = out[out.length - 1]
+    if (last && last.hex === hex) last.to = i
+    else out.push({ hex, from: last ? last.to : i, to: i })
+  }
+  return out
 }

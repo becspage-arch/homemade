@@ -33,6 +33,10 @@ export interface CompositionPiece {
   partNames: string[]
   /** What it is joined to, if anything. */
   joinsTo: string | null
+  /** The piece's own written rounds and assembly line, when the module that
+   *  built it wrote them (`AmigurumiPart.words` / `joinWords`, the doll). */
+  words?: string[]
+  joinWords?: string
 }
 
 const SIDE_SUFFIX = /-(?:l|r|al|ar|ll|lr)$/
@@ -99,6 +103,8 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
       stitchCount: first.rounds.reduce((a, b) => a + b, 0),
       partNames: parts.map((x) => x.name),
       joinsTo,
+      ...(first.words ? { words: first.words } : {}),
+      ...(first.joinWords != null ? { joinWords: first.joinWords } : {}),
     }
   })
 }
@@ -112,6 +118,7 @@ export function compositionBuildOrder(p: CompositionProgram): string[] {
 /** One piece's round-by-round words, from the same sphere program the geometry
  *  is built from. */
 export function writePieceInstructions(piece: CompositionPiece): string[] {
+  if (piece.words) return piece.words
   const program: CrochetProgram = {
     name: piece.label,
     stitch: 'sc',
@@ -126,6 +133,10 @@ export function writeAssembly(p: CompositionProgram): string[] {
   const pieces = compositionPieces(p)
   const lines: string[] = []
   for (const piece of pieces) {
+    if (piece.joinWords != null) {
+      if (piece.joinWords) lines.push(piece.joinWords)
+      continue
+    }
     if (!piece.joinsTo) continue
     lines.push(
       `Sew the ${piece.label.toLowerCase()} to the ${piece.joinsTo.toLowerCase()}, ` +
@@ -138,7 +149,9 @@ export function writeAssembly(p: CompositionProgram): string[] {
   }
   // The embroidered face, from the same round-and-stitch spots the render
   // lays the strands on.
-  if (p.embroidery?.length) {
+  if (p.faceWords?.length) {
+    lines.push(...p.faceWords)
+  } else if (p.embroidery?.length) {
     const headName = p.embroidery[0]!.on
     lines.push(...writeFaceInstructions(p.embroidery, prettify(baseName(headName), 1).toLowerCase()))
   }
@@ -181,7 +194,7 @@ export function compositionRowsStructured(p: CompositionProgram): StructuredRow[
         rowNumber: i + 1,
         rowLabel: line.split(':')[0] ?? `Round ${i + 1}`,
         instruction: line,
-        stitchCount: piece.rounds[i],
+        stitchCount: piece.words ? undefined : piece.rounds[i],
       })
     })
   }
