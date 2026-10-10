@@ -786,8 +786,8 @@ def linen_material(name, hexcol, weave=5.0):
     nt.links.new(vec, wy.inputs["Vector"])
     weave_h = _math(nt, "MULTIPLY", wx.outputs["Fac"], wy.outputs["Fac"])
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.6
-    bump.inputs["Distance"].default_value = 0.12
+    bump.inputs["Strength"].default_value = 0.5
+    bump.inputs["Distance"].default_value = 0.08
     nt.links.new(weave_h, bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
     slub_vec = _obj_coords(nt, (0.6, 0.6, 0.6))
@@ -993,7 +993,7 @@ def _smoothstep(e0, e1, x):
     return t * t * (3 - 2 * t)
 
 
-def _folds(H, R, amp, lift=0.03, seed=0.0):
+def _folds(H, R, amp, lift=0.03, seed=0.0, wl_scale=1.0):
     """Soft cloth wrinkles — rounded ridges and troughs in a few directions —
     that settle to perfectly flat under the piece (radius ~R round the origin),
     so the piece rests on it exactly as it rests on the studio ground: same
@@ -1012,7 +1012,7 @@ def _folds(H, R, amp, lift=0.03, seed=0.0):
         # wrinkles bunch up in places and relax in others, as real cloth does
         env = 0.55 + 0.45 * math.sin(x / H * 0.9 + seed) * math.cos(y / H * 0.7 - seed)
         for (dx, dy), wl, w in zip(dirs, wls, weights):
-            u = (x * dx + y * dy) / (wl * H) * math.pi + seed * 3.1
+            u = (x * dx + y * dy) / (wl * wl_scale * H) * math.pi + seed * 3.1
             # sharpened crest: a fold, not a sine swell
             c = 1.0 - abs(math.sin(u))
             f += w * (c * c - 0.4)
@@ -1145,7 +1145,7 @@ def _fairy_string(name, root, wire_mat, bulb_mat, a, b, sag, count, bulb_r):
                     a[2] + (b[2] - a[2]) * t - sag * math.sin(math.pi * t)))
     wire = [a] + pts + [b]
     _curve(name + "_wire", root, wire_mat, wire, bulb_r * 0.12)
-    return _spheres(name, root, bulb_mat, pts, bulb_r, subdiv=1)
+    return _spheres(name, root, bulb_mat, pts, bulb_r, subdiv=3)
 
 
 def _area(name, root_loc, loc, target, energy, size, color):
@@ -1305,13 +1305,13 @@ def _ground(root, mat, s, D, z=0.0):
     return _box("stage_ground", root, mat, -3 * s, 3 * s, -3 * s, D + 2, z - 2.0, z)
 
 
-def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, heap=None):
+def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, heap=None, wl_scale=1.0):
     """A cloth that fills the whole bottom of the frame and runs back into the
     room, flat under the piece, folding everywhere else."""
     y0 = min(vis.y_near() - 4.0, -R * 2)
     y1 = back * D
     x1 = vis.hw(y1) * 1.15
-    f = _folds(H, R, amp, lift=lift, seed=seed)
+    f = _folds(H, R, amp, lift=lift, seed=seed, wl_scale=wl_scale)
     if heap:
         def h(x, y):
             return f(x, y) + heap(x, y)
@@ -1357,7 +1357,7 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
     ob.visible_shadow = False
     # A rumpled oatmeal linen under the piece, filling the foreground.
     lin = linen_material("napkin", "#d6c9b2")
-    _throw("napkin", root, lin, vis, H, R, D, 0.05, back=0.32, seed=0.4)
+    _throw("napkin", root, lin, vis, H, R, D, 0.06, back=0.32, seed=0.4, wl_scale=1.8)
     # Out of focus on the sill, back right: a cream jug and a stack of books.
     glaze = _principled("jug", "#eee6d8", rough=0.3, spec=0.5, coat=0.3)
     jy = 0.55 * D
@@ -1385,36 +1385,45 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
 
 
 def _dried_bunch(root, H, R, vis):
-    stem = _principled("stem", "#a3935e", rough=0.8)
+    stem = _principled("stem", "#8e8a5e", rough=0.8)
     lav = _principled("lavender", "#8a73a6", rough=0.85, sheen=0.3)
     daisy = _principled("daisy", "#f4f0e6", rough=0.8)
     eye = _principled("daisy_eye", "#d8a238", rough=0.8)
     grass = _principled("wheat", "#dccb9e", rough=0.85)
-    # The tie point sits beside the piece; the heads fan away to the back left.
-    tx, ty = -(R * 1.3 + 0.12 * H), 0.05 * H
+    # A loose bundle: near-parallel stems tied beside the piece, heads splaying a
+    # little as they run away to the back left (into the blur), staggered lengths.
+    tx, ty = -(R * 1.3 + 0.12 * H), 0.0
+    a0 = math.radians(118)                          # 0 = +x; 118 deg = back-left
+    ax, ay = math.cos(a0), math.sin(a0)
+    px, py = -ay, ax                                # across the bundle
     lav_pts, dai_pts, eye_pts, gr_pts = [], [], [], []
-    for kk in range(15):
-        a = math.radians(112 + (kk - 7) * 4.0)        # 0 = +x; 112 deg = back-left, into the blur
-        L = (1.05 + 0.3 * _hash01(kk, 1)) * H
-        dx, dy = math.cos(a), math.sin(a)
-        base = (tx - dx * 0.15 * H, ty - dy * 0.15 * H, 0.2 + 0.03 * H)
-        tip = (tx + dx * L, ty + dy * L, 0.2 + (0.05 + 0.08 * _hash01(kk, 2)) * H)
-        mid = ((base[0] + tip[0]) * 0.5, (base[1] + tip[1]) * 0.5, (base[2] + tip[2]) * 0.5 + 0.04 * H)
-        _curve("stem%d" % kk, root, stem, [base, mid, tip], 0.007 * H)
-        kind = kk % 3
-        for j in range(12):
-            t = 0.62 + 0.38 * j / 11
-            p = (base[0] + (tip[0] - base[0]) * t, base[1] + (tip[1] - base[1]) * t,
-                 base[2] + (tip[2] - base[2]) * t + 0.025 * H)
+    for kk in range(18):
+        lane = (kk - 8.5) / 8.5                     # -1..1 across the bundle
+        L = (0.9 + 0.45 * _hash01(kk, 1)) * H
+        spread = 0.04 * H + 0.16 * H * abs(lane)
+        base = (tx - ax * 0.3 * H + px * lane * 0.03 * H, ty - ay * 0.3 * H + py * lane * 0.03 * H, 0.22)
+        tip = (tx + ax * L + px * lane * spread * 2.2, ty + ay * L + py * lane * spread * 2.2,
+               0.22 + (0.03 + 0.1 * _hash01(kk, 2)) * H)
+        mid = (tx + ax * L * 0.4 + px * lane * spread * 0.6, ty + ay * L * 0.4 + py * lane * spread * 0.6,
+               0.22 + 0.05 * H)
+        _curve("stem%d" % kk, root, stem, [base, (tx, ty, 0.24 + 0.03 * H), mid, tip], 0.006 * H)
+        kind = (kk * 7) % 3
+        dx, dy = (tip[0] - mid[0]), (tip[1] - mid[1])
+        n = math.hypot(dx, dy) or 1.0
+        dx, dy = dx / n, dy / n
+        for j in range(14):
+            t = 0.55 + 0.45 * j / 13
+            p = (mid[0] + (tip[0] - mid[0]) * (t - 0.4) / 0.6, mid[1] + (tip[1] - mid[1]) * (t - 0.4) / 0.6,
+                 mid[2] + (tip[2] - mid[2]) * (t - 0.4) / 0.6 + 0.02 * H)
             if kind == 0:
-                off = 0.022 * H * (1 if j % 2 else -1)
-                lav_pts.append((p[0] - dy * off, p[1] + dx * off, p[2], 0.03 * H))
-            elif kind == 1 and j % 4 == 3:
-                dai_pts.append((p[0], p[1], p[2], 0.065 * H))
-                eye_pts.append((p[0], p[1], p[2] + 0.03 * H, 0.03 * H))
-            elif kind == 2:
-                off = 0.02 * H * (1 if j % 2 else -1)
-                gr_pts.append((p[0] - dy * off, p[1] + dx * off, p[2], 0.024 * H))
+                off = 0.018 * H * (1 if j % 2 else -1)
+                lav_pts.append((p[0] - dy * off, p[1] + dx * off, p[2], 0.026 * H))
+            elif kind == 1 and j == 13:
+                dai_pts.append((p[0], p[1], p[2], 0.06 * H))
+                eye_pts.append((p[0], p[1], p[2] + 0.03 * H, 0.026 * H))
+            elif kind == 2 and j > 6:
+                off = 0.016 * H * (1 if j % 2 else -1)
+                gr_pts.append((p[0] - dy * off, p[1] + dx * off, p[2], 0.02 * H))
     _spheres("lavender", root, lav, lav_pts, 0.03 * H, subdiv=1)
     d = _spheres("daisies", root, daisy, dai_pts, 0.05 * H, subdiv=2)
     d.scale = (1.0, 1.0, 0.35)                          # flat-faced daisy heads
@@ -1434,7 +1443,7 @@ def _stage_linen(root, H, R, s, D, vis, light):
         # a soft heap of the same throw rising behind the piece
         return (0.55 * H * math.exp(-((y - 0.26 * s) / (0.10 * s)) ** 2)
                 * (0.7 + 0.3 * math.sin(x / H * 1.7 + 0.6)) * _smoothstep(0.12 * s, 0.2 * s, y + 0.06 * s))
-    _throw("throw", root, lin, vis, H, R, D, 0.06, back=0.5, seed=1.1, heap=heap)
+    _throw("throw", root, lin, vis, H, R, D, 0.07, back=0.5, seed=1.1, heap=heap, wl_scale=2.0)
     plaster = plaster_material("wall", "#eee6d8")
     _box("wall", root, plaster, -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
     # A stoneware vase with dried pampas, out of focus back left.
@@ -1499,7 +1508,7 @@ def _stage_nursery(root, H, R, s, D, vis, light):
     _cyl("lroof", root, white, lx, ly, lh + 0.08 * H, 0.75 * lw, 0.06 * lw, 0.45 * H, seg=4)
     glow = _emit_mat("lglow", (1.0, 0.74, 0.45), 30.0)
     _spheres("lbulbs", root, glow, [(lx + 0.25 * lw * (_hash01(kk, 3) - 0.5), ly + 0.25 * lw * (_hash01(kk, 4) - 0.5),
-                                     0.2 * lh + 0.6 * lh * _hash01(kk, 5)) for kk in range(9)], 0.05 * H, subdiv=1)
+                                     0.2 * lh + 0.6 * lh * _hash01(kk, 5)) for kk in range(9)], 0.05 * H, subdiv=3)
     light((lx, ly, 0.5 * lh), (lx, ly - 5, 0.0), 0.04, 0.5 * lw, (1.0, 0.72, 0.42))
     # A lilac knit blanket heaped up on the right.
     lilac = knit_material("lilac", "#b8a2cb", stitch_cm=1.6)
@@ -1559,7 +1568,7 @@ def _stage_christmas(root, H, R, s, D, vis, light):
             continue
         x = (2 * _hash01(kk, 9) - 1) * 1.15 * vis.hw(y)
         pts.append((x, y, z, (0.06 + 0.04 * _hash01(kk, 10)) * H))
-    _spheres("fairy_bg", root, bulb, pts, 0.07 * H, subdiv=1)
+    _spheres("fairy_bg", root, bulb, pts, 0.07 * H, subdiv=3)
     _fairy_string("fl_l", root, wire, bulb, (-1.25 * vis.hw(y1), y1 + 0.5, 1.35 * H), (-0.55 * vis.hw(y1), y1 - 1.5, 0.95 * H), 0.12 * H, 6, 0.04 * H)
     _fairy_string("fl_r", root, wire, bulb, (1.25 * vis.hw(y1), y1 + 0.5, 1.55 * H), (0.58 * vis.hw(y1), y1 - 1.5, 1.1 * H), 0.12 * H, 6, 0.04 * H)
     _fairy_string("fl_back", root, wire, bulb, (-1.3 * vis.hw(yb), yb - 1, zb + 0.15 * H),
