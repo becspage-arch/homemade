@@ -47,6 +47,11 @@ export interface HairPatch {
   /** Rounds from this index on are loop-stitch rounds (0-based; 0 = loop
    *  stitches straight into the magic ring, clamped round the ring strand). */
   firstLoopRound: number
+  /** Instead of "every round from `firstLoopRound`": exactly these rounds
+   *  (0-based) are loop-stitch rounds, the others plain dc — loops on every
+   *  OTHER round is how a maker keeps a long-looped fringe from matting, and
+   *  it is what lets each ring lie open on the one below. */
+  loopRounds?: number[]
   /** Overrides of the dictionary loop shape for this patch. */
   loop?: Partial<LoopShape>
   /** Further overrides per round (0-based): the Highland cow's tuft is
@@ -76,6 +81,11 @@ export interface PlacedHair {
   built: BuiltContinuous
 }
 
+/** Is round k (0-based) of the patch a loop-stitch round? */
+export function isLoopRound(h: HairPatch, k: number): boolean {
+  return h.loopRounds ? h.loopRounds.includes(k) : k >= h.firstLoopRound
+}
+
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
 export const HAIR_GRAVITY = 0.0025
 
@@ -101,7 +111,7 @@ function patchFrame(dir: { x: number; y: number; z: number }): { u: V3; e1: V3; 
 /** Build + relax one patch in its own frame (worked face +z, loops −z). */
 export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   const built = buildRounds('sc', h.rounds, yr, undefined, {
-    roundStitch: (k) => (k >= h.firstLoopRound ? h.stitch : 'sc'),
+    roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
     loopByRound: h.loopByRound,
   })
@@ -234,7 +244,7 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
     return n > base ? ` (wrap the yarn round ${word} for these taller loops)` : n < base ? ` (wrap the yarn round ${word} only, for shorter loops)` : ` (wrap the yarn round ${word})`
   }
   h.rounds.forEach((count, k) => {
-    const lp = k >= h.firstLoopRound
+    const lp = isLoopRound(h, k)
     if (k === 0) {
       lines.push(`Round 1: ${count} ${lp ? 'lp st' : 'dc'} into a magic ring${lp ? fingers(k) : ''}. (${count})`)
       return

@@ -182,8 +182,13 @@ const HAIR_DIR = { x: 0, y: 1.4, z: 1 }
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
 export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
-  const rounds = size === 'S' ? [6, 12, 18] : size === 'L' ? [6, 12, 18, 24, 30] : [6, 12, 18, 24]
+  // Five rounds at M (a circle ~60 mm across on the crown), loop stitch on
+  // rounds 1, 3 and 5 and plain dc between: loops on every other round is
+  // how a maker keeps a long-looped fringe from matting, and it is what lets
+  // each ring lie open on the one below instead of standing in a crowd.
+  const rounds = size === 'S' ? [6, 12, 18, 24] : size === 'L' ? [6, 12, 18, 24, 30, 36] : [6, 12, 18, 24, 30]
   const last = rounds.length - 1
+  const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || k === last)
   return {
     name: 'fringe',
     on: 'head',
@@ -191,20 +196,22 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     stitch: 'loopst',
     rounds,
     firstLoopRound: 0,
+    loopRounds,
     // BIG open round loops — the bar's curls are rings about a tenth of the
-    // head's width across (~11 mm on this calf), so each loop is worked over
-    // two fingers, about as wide as it is long, in every direction (vary 0.3
-    // turns the plane ±54°). Fewer, bigger loops: round 5 packed ninety small
-    // loops into a flat mat that read as a skullcap of noodles.
-    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: 0, vary: 0.3 },
+    // head's width across (~11 mm on this calf): each loop is worked over two
+    // fingers, about as wide as it is long. The loops LEAN OUTWARD from the
+    // circle's centre (droop < 0: a loop pulled down the work away from the
+    // ring), 70° off the head, in a fan of directions (vary 0.35 turns the
+    // plane ±63°), so each ring lies tilted with its face to the viewer and
+    // the rings tile over each other out to the edge — round 6's loops stood
+    // straight out and read end-on as a small flat whorl.
+    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -70, vary: 0.35 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 6.5, halfWidthYr: 2.8 } // over three fingers: the crown of the tuft
-        : k === 1
-          ? { lengthYr: 5.8, halfWidthYr: 2.6 }
-          : k === last
-            ? { lengthYr: 4.6, halfWidthYr: 2.3, droopDeg: 15 } // the spill onto the forehead
-            : undefined,
+        ? { lengthYr: 6.2, halfWidthYr: 2.8, droopDeg: -55 } // over three fingers: the crown of the tuft
+        : k === last
+          ? { lengthYr: 4.6, halfWidthYr: 2.3, droopDeg: -80 } // the spill onto the forehead and over the horn roots
+          : undefined,
     gravity: 0.0015,
     strandYr: 0.82,
     colourHex,
