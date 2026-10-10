@@ -29,6 +29,9 @@ export interface MotifOptions {
   yarnFibre?: YarnFibre
   /** Colour overrides by role (each motif names its roles, e.g. 'main', 'centre'). */
   colours?: Record<string, string>
+  /** A smaller version where the motif has one (the star: 'small', a tree
+   *  topper). Default 'standard'. */
+  size?: 'standard' | 'small'
 }
 
 export interface V3 {

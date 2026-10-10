@@ -20,7 +20,7 @@
 import { rowPitchYr, type StitchId } from '../dictionary'
 import {
   MotifStrand, crownRound, intoRingRound, nearAngle, polar, along, polarV, sub, unit, add, mul, len,
-  RING_PHASE, type Crown,
+  type Crown,
 } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
@@ -36,7 +36,18 @@ const TIP_REACH = 0.8
 const TIP_LIFT = 0.4
 const SKIP = 2 // round-3 stitches skipped between a point's base and its sl st
 
+interface StarSpec { rounds: number[]; point: StitchId[]; skip: number }
+/** The sizes: 'standard' (~63 mm at fine cotton) and 'small' (a tree topper:
+ *  one round of 5 and ch-3 points, ~37 mm at fine, ~28 mm at lace — the chains
+ *  set the floor; two rounds with ch-4 points settled 40-46 mm). */
+export const STAR_SIZES: Record<'standard' | 'small', StarSpec> = {
+  standard: { rounds: STAR_ROUNDS, point: STAR_POINT, skip: SKIP },
+  small: { rounds: [5], point: ['slst', 'sc'], skip: 0 },
+}
+
 export function buildStar(o?: MotifOptions): BuiltMotif {
+  const spec = STAR_SIZES[o?.size ?? 'standard']
+  const STAR_ROUNDS = spec.rounds, STAR_POINT = spec.point, SKIP = spec.skip
   const y = motifYarn(o)
   const col = colourOpts(STAR_COLOURS, o)
   const yr = y.yr
@@ -46,17 +57,13 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
   m.sectionName = 'centre'
   let below: Crown[] = intoRingRound(m, ring, new Array(STAR_ROUNDS[0]).fill('sc'))
   let r = ring.r + yr * rowPitchYr('sc')
-  {
-    const a = crownRound(m, c, below, below.map(() => 'inc'), 'sc', r)
+  for (let q = 1; q < STAR_ROUNDS.length; q++) {
+    const every = below.length / POINTS // one increase in every `every` sts
+    const a = crownRound(m, c, below, below.map((_, i) => (i % every === every - 1 ? 'inc' : 'st')), 'sc', r)
     below = a.crowns
     r = a.r
   }
-  {
-    const a = crownRound(m, c, below, below.map((_, i) => (i % 2 === 1 ? 'inc' : 'st')), 'sc', r)
-    below = a.crowns
-    r = a.r
-  }
-  const rim = below // 15
+  const rim = below
   const nRim = rim.length
   const thOf = (k: number): number => Math.atan2(rim[((k % nRim) + nRim) % nRim]!.p.y, rim[((k % nRim) + nRim) % nRim]!.p.x)
   const per = nRim / POINTS
@@ -97,22 +104,25 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
   const built = m.finish(R * 2, R * 2)
   const piece = pieceOf('star', m, built)
   void add; void len
-  const words = starWords()
+  const words = starWords(spec)
   return assemble('star', 'Five-point star', o, [piece], words, materialsLine(o, ['gold']))
 }
 
-export function starWords(): string[] {
-  const [a, b, cc] = STAR_ROUNDS as [number, number, number]
-  const pt = STAR_POINT.map((id, i) => (i === 0 ? `${UK[id]} in 2nd ch from hook` : `${UK[id]} in next ch`)).join(', ')
-  return [
-    'Make a magic ring.',
-    `Round 1: ${a} ${UK.sc} into the ring. (${a} sts)`,
-    `Round 2: 2 ${UK.sc} in each st around. (${b} sts)`,
-    `Round 3: [${UK.sc} in next st, 2 ${UK.sc} in next st] ${a} times. (${cc} sts)`,
-    'Work rounds 1 to 3 in a continuous spiral without joining; mark the first stitch of each round.',
-    `Round 4 (points): [ch ${STAR_POINT.length + 1}, ${pt}, skip next ${SKIP} sts of round 3, sl st in next st] ${POINTS} times. (${POINTS} points)`,
-    'Fasten off, pull the magic ring tight and weave in the ends.',
-  ]
+export function starWords(spec: StarSpec = STAR_SIZES.standard): string[] {
+  const { rounds, point, skip } = spec
+  const pt = point.map((id, i) => (i === 0 ? `${UK[id]} in 2nd ch from hook` : `${UK[id]} in next ch`)).join(', ')
+  const lines = ['Make a magic ring.', `Round 1: ${rounds[0]} ${UK.sc} into the ring. (${rounds[0]} sts)`]
+  for (let q = 1; q < rounds.length; q++) {
+    const every = rounds[q - 1]! / POINTS
+    lines.push(every === 1
+      ? `Round ${q + 1}: 2 ${UK.sc} in each st around. (${rounds[q]} sts)`
+      : `Round ${q + 1}: [${every === 2 ? `${UK.sc} in next st` : `${UK.sc} in each of the next ${every - 1} sts`}, 2 ${UK.sc} in next st] ${POINTS} times. (${rounds[q]} sts)`)
+  }
+  const n = rounds.length
+  lines.push(n === 1 ? 'Do not join.' : `Work rounds 1 to ${n} in a continuous spiral without joining; mark the first stitch of each round.`)
+  lines.push(`Round ${n + 1} (points): [ch ${point.length + 1}, ${pt}, ${skip === 0 ? '' : `skip next ${skip === 1 ? 'st' : `${skip} sts`} of round ${n}, `}sl st in next st] ${POINTS} times. (${POINTS} points)`)
+  lines.push('Fasten off, pull the magic ring tight and weave in the ends.')
+  return lines
 }
 
 registerMotif({ id: 'star', label: 'Five-point star', round: 8, colours: STAR_COLOURS, build: buildStar })

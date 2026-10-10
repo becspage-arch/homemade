@@ -4,7 +4,8 @@
  *
  * A three-round centre (8, 16, 24 dc, UK) in mustard, then eight petals in
  * cream, each CHAINED OUT from the centre and WORKED BACK down the chain with
- * graded stitches — tr at the tip, three dtr, tr, htr at the base (UK) — and
+ * graded stitches — htr at the tip (r3's tr tip left a sharp corner), three
+ * dtr, tr, htr at the base (UK) — and
  * anchored with a sl st two stitches on. The chain is one edge of each petal,
  * the stitch tops the other; the broad rounded petal emerges from the heights.
  *
@@ -22,7 +23,7 @@ import type { BuiltMotif, MotifOptions } from './types'
 export const DAISY_COLOURS = { centre: '#c39433', petal: '#e9dcc3' } // ochre mustard, warm cream (r2's #f1e8d6 rendered white)
 
 /** A petal, tip to base. */
-export const DAISY_PETAL: StitchId[] = ['dc', 'tr', 'tr', 'tr', 'dc', 'hdc']
+export const DAISY_PETAL: StitchId[] = ['hdc', 'tr', 'tr', 'tr', 'dc', 'hdc']
 export const DAISY_CENTRE = [8, 16, 24]
 export const DAISY_PETALS = 8
 
