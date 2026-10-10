@@ -157,6 +157,11 @@ export interface BlenderScene {
     groundScale?: number
     /** The styled listing-photo set (see `HeroStage`); absent = studio. */
     stage?: HeroStage
+    /** On a styled stage the camera is the set's (a toy at eye level) unless
+     *  these say otherwise: the tilt to use instead of the stage's, and a zoom
+     *  factor on the set's framing (< 1 = closer). A draped flat-lay sets both. */
+    stageTiltDeg?: number
+    stageZoom?: number
   }
   /** Matte ellipsoid props (a pouffe under a draped blanket, a bust under a
    *  cowl) — the drape's coloured colliders, built by loom_render_crochet.py's

@@ -95,7 +95,7 @@ export interface DrapeOptions {
   /** Deterministic jitter seed (default 1) so symmetric folds choose a side. */
   seed?: number
   /** Camera overrides for the draped hero (see `drapedView`). */
-  view?: { marginFactor?: number; tiltDeg?: number; yawDeg?: number; aimHeightFrac?: number; groundScale?: number }
+  view?: { marginFactor?: number; tiltDeg?: number; yawDeg?: number; aimHeightFrac?: number; groundScale?: number; stageZoom?: number }
 }
 
 export interface DrapeResult {
@@ -718,11 +718,17 @@ export function shellRoundTrip(built: BuiltContinuous, cols = 72): { maxErr: num
  *  aimed just above the table, on a wide ground. */
 export function drapedView(o: DrapeOptions): {
   marginFactor: number; tiltDeg: number; openFabric: true; yawDeg: number; aimHeightFrac: number; lightRig: 'product'; groundScale: number
+  stageTiltDeg: number; stageZoom: number
 } {
   const v = o.view ?? {}
+  const tilt = v.tiltDeg ?? 24
   return {
     marginFactor: v.marginFactor ?? 0.1,
-    tiltDeg: v.tiltDeg ?? 24,
+    tiltDeg: tilt,
+    // A styled set keeps its own eye-level camera unless told: the same tilt
+    // from above, framed tighter than a toy (the piece is wide and low).
+    stageTiltDeg: tilt,
+    stageZoom: v.stageZoom ?? 0.72,
     openFabric: true,
     yawDeg: v.yawDeg ?? 18,
     aimHeightFrac: v.aimHeightFrac ?? 0.08,

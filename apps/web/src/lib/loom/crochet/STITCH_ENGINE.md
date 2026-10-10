@@ -3344,6 +3344,46 @@ Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
 
 ---
 
+## 8j. DRAPE RELAX — gravity, a table and self-collision for soft fabric (2026-10-10)
+
+`engine/drape.ts`. Why: §8h-2's beanie flat-lay and cowl stagings failed — a space warp of
+the worked surface (`bendTube`, `collapseTube`) bends a tube but cannot make its fabric
+BUNCH: a flattened dome's rounds settle into each other, folds pick their own radius, layers
+press on each other. Those need gravity, a ground plane and self-collision.
+
+**Staging only, like bendTube / loopStrip / turnOver.** The stitched geometry, the audit, the
+pattern and `geometryHash` never see it. Opt-in through `CrochetProgram.drape` (program.ts);
+`programScene` swaps the strand for `drapeTube(...).world` (tubes) or `drapeFlat(...).world`
+(grid/flat pieces) and takes the `drapedView()` camera. No `drape` = every scene identical
+(drape.test.ts, yarn-fibre and preset hash guards).
+
+**Two levels, because a yarn is a chain and a fabric is a sheet.** A yarn-level gravity relax
+would let the stitches themselves deform and would be slow on 25k–100k nodes.
+1. SHELL MAP: every yarn node gets (v, u, n) on a coarse quad mesh sampled from the piece's own
+   relaxed profile — v along the rounds (projected onto the per-round mean (r, z) polyline
+   with its interpolated normal, extrapolated past the end rows), u its angle, n its relief.
+   Round trip with no drape: 0.07 mm mean on the beanie (exact on a flat square).
+2. CLOTH: the mesh is relaxed as a sheet (PBD, Verlet velocities): hoop, meridian and diagonal
+   lengths held; two-apart distance constraints for bending whose REST lengths carry the worked
+   curvature (a dome remembers it was a dome, as a blocked hat does); gravity; a floor with
+   friction; point self-collision at the fabric's own measured thickness (2–98 % relief band +
+   the yarn); optional props (ellipsoid, capsule, table edge). The pole rows (radius < the
+   thickness) are tied all-pairs so the crown centre is a firm little disc, not a sheet that
+   crumples. One coarse column a stitch, one row a round: beanie 1800 nodes, ~6 s.
+3. SKIN: the yarn rides the settled sheet at its (v, u, n). Stitches keep their shape inside
+   a quad; across a fold the outside stretches / inside gathers by (1 ± n·κ). Measured mean
+   segment change on the draped beanie 4 % (a 36-stitch toy hat 8 %, crumpling tightly).
+
+Starts: `collapsed` (from `collapseTube`, a beanie put down flat: the crown gathers into
+radial folds), `side` (rolled over and dropped: a rounded crown lying flat), `standing` (a
+cowl ring left to slump — needs bendK ≈ 0.4 or it crumples into a heap), `flat`, `custom`.
+Camera: `drapedView` — NB in loom_render_crochet.py a HIGHER `tiltDeg` is a LOWER camera, so
+a flat-lay wants ~24, not the standing 56. Coloured ellipsoid colliders are written as scene
+`props` (a pouffe under a blanket). Known limit: a distance-based bend constraint cannot hold
+a soft wave against gravity, so a doubled cowl settles flat (a rounded fold edge, no sag
+waves); a dihedral bending term would be the next step. Proofs and verdicts:
+`/mnt/project-files/homemade/crochet-bar/jobs/drape.md`.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
