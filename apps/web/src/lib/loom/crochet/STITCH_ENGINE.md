@@ -3222,6 +3222,74 @@ envelope is 54–66 around and 9–13 straight rounds because the ascent at 66 i
 
 ---
 
+## 8h-2. TUBE SHAPING, FINE-TUNE — the nightcap, worn staging, pompom, ridge brim (2026-10-10)
+
+Round 5 of the audit against the bar's sleepy bunny (its lilac nightcap).
+Fable fine-tune on `claude/loom-tube-shaping-fine`; job log and proofs in
+`/mnt/project-files/homemade/crochet-bar/jobs/tube.md` and `proofs/tube/`.
+
+- **A cone cap** (`cap: 'cone'`). A nightcap is worked TIP-FIRST, +2 sts a
+  round, and the dome rule (§8h) would bend that ascent into a dome. `'cone'`
+  is the pitch-continuity rule with no ascent: each round sits on its count's
+  radius and spends what the radius change leaves of its pitch on height, so
+  a +2-a-round taper is a straight-sided cone (test: the drop a round is
+  constant within 15%).
+- **A ridge brim** (`brim: { kind: 'ridge', rounds, fold?, loop? }`). The
+  post rib rendered as an open lattice (§8h). A hat band in real patterns is
+  sc worked in ONE loop — the unworked loop floats as a dense horizontal
+  ridge a round — and that is what a ridge round is: the plain sc excursion
+  of yarnPath (`scblo` / `scflo`, loopMode) hooked under one loop of the
+  crown below, its own cell and pitch on any body stitch (an hdc beanie with
+  an sc band). A FOLDED brim shows the wrong side of its rounds (the fold's
+  surface normal points at the body), so a folded ridge brim is worked in the
+  FRONT loop (the back loop floats as the ridge on the face the fold turns
+  out) and an unfolded one in the back loop; `tubeRidgeLoop` decides, the
+  instructions say "dc in the front loop only of each st around" and note
+  where the ridges show, the chart labels the round FLO/BLO.
+- **The pompom** (`engine/pompom.ts`). A real pompom is yarn wrapped, tied,
+  cut and trimmed: a few hundred cut STRANDS through a tie bundle, their ends
+  on a sphere. `pompomStrokes` builds exactly that (deterministic, one
+  3-ply stroke a strand so the fibre re-ply treats it as yarn), with the
+  bow a wound strand keeps; `pompomInstruction` writes the wrap/tie/cut/trim
+  line. Measured on the bunny: 250 strands at the yarn's radius read as a
+  sparse knobbly ball; 850 as a ball of beads; the cut ends untwist and
+  fluff, so the strands render at 0.62 of the yarn radius and ~9 per
+  end-footprint of surface (1700 on a 12.5 mm pompom in fine yarn).
+- **Worn staging** (`engine/tubeStaging.ts`). A tube is relaxed as fabric
+  held to its worked surface; a soft hat on a head BENDS. `bendTube` replaces
+  the straight axis above a start height by a planar curve whose heading
+  ramps (smootherstep, so curvature starts at zero: no crease) to a final
+  angle, and every point rides the moving frame. On the axis an isometry;
+  off it the outside stretches and the inside gathers by 1 ± r·κ, which a
+  bent sleeve of fabric does too. Staging only, like `loopStrip`/`turnOver`:
+  relax, audit and hash see the built piece. `collapseTube` lays a tube on
+  the table the way a cowl or a beanie is put down: every round flattened
+  into two layers joined by two folded edges of its OWN worked radius (a
+  beanie's crown narrows to its pole), the axis along the table, relief on
+  the fold's normal, soft waves in the top layer.
+- **The nightcap as an accessory** (`engine/hatAccessory.ts`). Sized from the
+  head: the band's count is the head circumference at the brim line in the
+  hat's own sc gauge (`nightcapBandCount`), the rounds climb from a 6-stitch
+  tip (held twice for the first five counts so the tail is slender), then
+  the band, then a 4-round folded ridge brim. Built/relaxed/audited as a
+  tube, bent over above the crown (`wearTube`: start 0.55 R above the band,
+  ramp 1.2 R, 134°), seated with the band's middle 0.6 R above the head's
+  centre (0.38 R sat over the eyes; tilting back 10° lowered the front onto
+  them, so no tilt), pompom 0.5 R at the tip. Its strokes are appended to
+  the compiled composition's scene; composition.ts is untouched (the
+  toy-pose lane rewrites it). Gauge: the bar hat shows ~44–48 sts round a
+  70 mm head; FINE yarn (yr 1.3) on the 50 mm bunny-M head gives 48 around,
+  the same stitch-to-head ratio; sport 38 is a touch chunky, worsted 32 is
+  the toy's own chunky gauge.
+- **Beanie** (`beanieProgram`): magic-ring crown +8 hdc a round to the body
+  count (8% under the head circumference, in sixes/eights), straight body,
+  sc-blo band. Shown on a matte display-form egg it FAILED as a listing (a
+  grey egg, the slouch tipped the crown away); a beanie listing is a
+  flat-lay (`collapseTube`, crown up).
+- **Basket**: the turned rim is the existing fold brim on a basket (open end
+  up: the fold rolls DOWN the outside of the wall after `turnOver`) after a
+  60→66 flare, at bulky with the gauge packed to 2.45 yr for a stiffer wall.
+
 ## 8i. YARN LOOK — chenille plush and fine cotton (2026-10-09/10)
 
 Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in

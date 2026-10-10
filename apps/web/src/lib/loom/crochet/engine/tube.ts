@@ -43,11 +43,30 @@ import { emitDecrease, roundOps } from './shaping'
 export type TubeAnchor = 'ring' | 'chain'
 /** How one round runs into the next. */
 export type TubeJoin = 'spiral' | 'joined'
-/** The brim at the open end. */
-export type TubeBrimKind = 'rib' | 'fold'
+/** The brim at the open end: a 1×1 post rib, a plain fold, or a RIDGE brim —
+ *  the last rounds worked in one loop only (sc blo / flo), the unworked loop
+ *  floating as a dense horizontal ridge a round: the closed, snug rib a hat
+ *  band or a nightcap's folded brim really has (a post rib is an open lattice
+ *  by comparison). */
+export type TubeBrimKind = 'rib' | 'fold' | 'ridge'
 /** How the first rounds off a magic ring are laid: a hat crown domes, a
- *  basket base is a flat disc. Ignored for a chain anchor. */
-export type TubeCap = 'dome' | 'flat'
+ *  basket base is a flat disc, a nightcap / sock toe is a CONE (every round
+ *  spends what its radius change leaves on height — the tapered tail a
+ *  nightcap is worked tip-first). Ignored for a chain anchor. */
+export type TubeCap = 'dome' | 'flat' | 'cone'
+
+/** A brim over the LAST `rounds` rounds of the profile. */
+export interface TubeBrim {
+  kind: TubeBrimKind
+  rounds: number
+  /** ridge: fold the brim up the outside of the body as well (a nightcap's
+   *  turned-up band). A folded brim shows the WRONG side of its rounds, so a
+   *  folded ridge brim is worked in the FRONT loop (the back loop floats as
+   *  the ridge on the back, which the fold turns out) and an unfolded one in
+   *  the BACK loop. `loop` overrides that choice. */
+  fold?: boolean
+  loop?: 'back' | 'front'
+}
 
 export interface TubeSpec {
   /** The body stitch: sc, hdc or dc. */
@@ -59,7 +78,7 @@ export interface TubeSpec {
   join: TubeJoin
   cap?: TubeCap
   /** A brim over the LAST `rounds` rounds of the profile. */
-  brim?: { kind: TubeBrimKind; rounds: number }
+  brim?: TubeBrim
   /** Column-gauge override (yarn radii), the density knob — same as buildSphere. */
   gaugeYr?: number
 }
@@ -96,7 +115,7 @@ interface Profile {
 function tubeProfile(spec: TubeSpec, counts: number[], sw: number, rr: number, drift: number, yr: number): Profile {
   const cap = spec.cap ?? 'dome'
   const chain = spec.anchor === 'chain'
-  const fold = spec.brim?.kind === 'fold' ? spec.brim.rounds : 0
+  const fold = tubeFoldRounds(spec)
   const body = counts.length - fold
   const rOf = (c: number): number => Math.max((c * sw) / (2 * Math.PI), yr * 0.6)
   // The start: a magic ring's own radius, or the chain ring at the first round's
@@ -112,6 +131,9 @@ function tubeProfile(spec: TubeSpec, counts: number[], sw: number, rr: number, d
   // round); it is wrong for a crown — the first Fargate proof stood like a
   // tea cosy. A basket base is a genuinely flat disc (dz 0 where the counts
   // spend the whole pitch on radius).
+  // A CONE (`cap: 'cone'`) is the pitch-continuity rule with no ascent at all:
+  // the counts' own radii and whatever each round's radius change leaves of its
+  // pitch as height, so a tip-first +2-a-round taper is a straight-sided cone.
   let ascent = 0
   if (!chain && cap === 'dome') {
     while (ascent < body - 1 && counts[ascent + 1]! > counts[ascent]!) ascent++
@@ -198,6 +220,36 @@ export function tubeRibRounds(spec: TubeSpec): Set<number> {
   return out
 }
 
+/** The rounds of a RIDGE brim (sc in one loop only). */
+export function tubeRidgeRounds(spec: TubeSpec): Set<number> {
+  const out = new Set<number>()
+  if (spec.brim?.kind !== 'ridge') return out
+  for (let k = spec.rounds.length - spec.brim.rounds; k < spec.rounds.length; k++) if (k >= 0) out.add(k)
+  return out
+}
+
+/** The loop a ridge brim is worked in: the front loop when the brim folds up
+ *  (so the ridge floats on the face the fold turns out), else the back loop. */
+export function tubeRidgeLoop(spec: TubeSpec): 'back' | 'front' {
+  if (spec.brim?.kind !== 'ridge') return 'back'
+  return spec.brim.loop ?? (spec.brim.fold ? 'front' : 'back')
+}
+
+/** The stitch worked on round k: the body stitch, or the one-loop sc of a
+ *  ridge brim round (rib rounds are the post pair, handled by the builder). */
+export function tubeRoundStitch(spec: TubeSpec, k: number): StitchId {
+  if (tubeRidgeRounds(spec).has(k)) return tubeRidgeLoop(spec) === 'front' ? 'scflo' : 'scblo'
+  return spec.stitch
+}
+
+/** How many of the last rounds turn back up the outside of the body. */
+export function tubeFoldRounds(spec: TubeSpec): number {
+  if (!spec.brim) return 0
+  if (spec.brim.kind === 'fold') return spec.brim.rounds
+  if (spec.brim.kind === 'ridge' && spec.brim.fold) return spec.brim.rounds
+  return 0
+}
+
 /** Validate a tube spec the way the builder will — thrown as a plain Error so
  *  the program layer can report it before anything is built. */
 export function validateTubeSpec(spec: TubeSpec): void {
@@ -219,10 +271,11 @@ export function validateTubeSpec(spec: TubeSpec): void {
       if (rounds[k]! % 2 !== 0) throw new Error(`tube: a 1×1 rib round needs an even count (round ${k + 1} has ${rounds[k]})`)
       if (rounds[k] !== rounds[k - 1]) throw new Error(`tube: a rib round cannot shape (round ${k + 1}: ${rounds[k - 1]} → ${rounds[k]})`)
     }
-    if (spec.brim.kind === 'fold') {
+    if (spec.brim.kind === 'fold' || spec.brim.kind === 'ridge') {
       for (let k = rounds.length - spec.brim.rounds; k < rounds.length; k++)
-        if (rounds[k] !== rounds[k - 1]) throw new Error(`tube: a folded brim cannot shape (round ${k + 1})`)
+        if (rounds[k] !== rounds[k - 1]) throw new Error(`tube: a ${spec.brim.kind} brim cannot shape (round ${k + 1})`)
     }
+
   }
 }
 
@@ -329,6 +382,11 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   const ribPack = sw / (yr * STITCHES.fpdc.gaugeYr)
   const ribRowH = yr * rowPitchYr('fpdc') * DRIFT_SCALE
   const ribHeadLoopMm = yr * (STITCHES.fpdc.headLoopYr ?? 0) * ribPack
+  // A ridge round is sc in one loop whatever the body stitch (an hdc beanie
+  // with an sc-blo band): its own cell, pitch and head loop, packed to the
+  // body's column gauge exactly as the rib is.
+  const ridgeRounds = tubeRidgeRounds(spec)
+  const ridgeRowH = yr * rowPitchYr('sc') * DRIFT_SCALE
 
   const S = createStrand()
   const { nodes, push } = S
@@ -343,7 +401,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   {
     let m = rr
     for (let k = 0; k < counts.length; k++) {
-      m += ribRounds.has(k) ? ribRowH : drift
+      m += ribRounds.has(k) ? ribRowH : ridgeRounds.has(k) && st !== 'sc' ? ridgeRowH : drift
       rounds.push(m)
     }
   }
@@ -495,6 +553,15 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
         crowns.push({ back: r.crown, front: r.crown, theta: th, m: mK, nz: headApexRelief(ribDims.zh, SURFACE_LAY), post: { node: r.postMid, ly: by + px * 0.52, lz: r.postLz } })
       }
     } else {
+      // A ridge-brim round is the same sc excursion hooked under ONE loop of
+      // the crown below (sc blo / flo — yarnPath's loopMode); every other
+      // round is the body stitch. Same dims, same pitch, same gauge as sc.
+      const rid = tubeRoundStitch(spec, k)
+      const dK = rid === st ? dims : dimsFor(yr, rid)
+      const hlK = rid === st ? headLoopMm : yr * (STITCHES[rid].headLoopYr ?? 0)
+      const yoK = rid === st ? yarnOvers : (STITCHES[rid].yarnOvers ?? 0)
+      const crownNzK = rid === st ? crownNz : hlK > 0 ? headApexRelief(dK.zh, SURFACE_LAY) : dK.zh * 1.15
+      const postLzK = rid === st ? bodyPostLz : yoK > 0 ? -dK.z * 3.56 + (dK.z * 3.56 + dK.z * 0.6) * 0.65 : -dK.z * 2.13
       const ops = roundOps(prev, count, (k % 2) * 0.5)
       let bi = 0
       let li = 0
@@ -529,13 +596,13 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
                   ? -yr * HOOK_SPREAD_YR * 0.6
                   : 0
             const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1
-            const r = emitPlainStitch(S, dims, {
-              j: k, c: oi, id: st, s: 1, fz: 1, by, ty, xCrown: xC,
+            const r = emitPlainStitch(S, dK, {
+              j: k, c: oi, id: rid, s: 1, fz: 1, by, ty, xCrown: xC,
               xHook: b.theta * rRef + hookOff, bcBack: b.back, bcFront: b.front,
-              cyBelow: b.m, bcNormalZ: b.nz, place3, hookDepthScale, headLoopMm,
-              yarnOvers, yarnOverMm, surfaceLay: SURFACE_LAY, backCross: BACK_CROSS,
+              cyBelow: b.m, bcNormalZ: b.nz, place3, hookDepthScale, headLoopMm: hlK,
+              yarnOvers: yoK, yarnOverMm, surfaceLay: SURFACE_LAY, backCross: BACK_CROSS,
             })
-            crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNz, post: { node: r.postMid, ly: by + px * 0.52, lz: bodyPostLz } })
+            crowns.push({ back: r.crownBack, front: r.crownFront, theta: th, m: mK, nz: crownNzK, post: { node: r.postMid, ly: by + px * 0.52, lz: postLzK } })
             li++
           }
         }
@@ -553,7 +620,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   const rEnd = Math.max(prof.rOfRound(counts.length - 1), 1e-3)
   roundNow = counts.length - 1
   const placeEnd = mkPlace3(rEnd)
-  const lastRowH = ribRounds.has(counts.length - 1) ? ribRowH : drift
+  const lastRowH = ribRounds.has(counts.length - 1) ? ribRowH : ridgeRounds.has(counts.length - 1) && st !== 'sc' ? ridgeRowH : drift
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
     const ly = mPrev - lastRowH * 0.12 * t
@@ -565,7 +632,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
     throw new Error(`tube frame capture out of sync: ${merArr.length} frames for ${nodes.length} nodes`)
   const strand = new Array(nodes.length).fill(0)
   const along = nodes.map((_, i) => i)
-  const halfSpan = Math.max(...counts.map((c) => (c * sw) / (2 * Math.PI))) + yr * (3 + (spec.brim?.kind === 'fold' ? FOLD_GAP_YR : 0))
+  const halfSpan = Math.max(...counts.map((c) => (c * sw) / (2 * Math.PI))) + yr * (3 + (tubeFoldRounds(spec) > 0 ? FOLD_GAP_YR : 0))
   return {
     // No `round` index on purpose: that is the relaxer's stuffing gate, and a
     // tube is fabric, not a bag.
