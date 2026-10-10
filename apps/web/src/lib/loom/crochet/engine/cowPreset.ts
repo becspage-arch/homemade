@@ -58,7 +58,10 @@ export const COW_DEFAULTS: CowChoices = {
   size: 'M',
   // A red-brown (hue ~16°): the bar's chenille is a redder brown than the
   // hair job's #7a4a35, which the warm windowsill light pushed to orange.
-  mainHex: '#74412f',
+  // Round 12: the set's warm light and the chenille grade push a brown ~+7° hue
+  // and +0.2 saturation (measured: #74412f rendered h 22° s 0.92 where the bar
+  // is h 15° s 0.73), so the yarn is dyed redder and softer than it will read.
+  mainHex: '#6b3f33',
   contrastHex: '#ead9bf',
   eyeMm: 12,
 }
@@ -133,7 +136,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: sphereRounds(54, 1), neck: ballRounds(18, 2), head: sphereRounds(60, 2),
     muzzle: sphereRounds(24, 5), horn: COW_HORN_ROUNDS, ear: COW_EAR_ROUNDS,
     frontLeg: tubeRounds(18, 9), backLeg: ballRounds(24, 4), tail: cordRounds(5),
-    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -8.5, frontLegLift: 4.0, eyeMm: 16,
+    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -8.5, frontLegLift: 4.0, eyeMm: 18,
   },
   L: {
     body: sphereRounds(60, 1), neck: ballRounds(24, 2), head: sphereRounds(66, 2),
@@ -204,8 +207,8 @@ const HORN_AIM = { x: 1, y: 0.12, z: 0.5 }
 /** The flat ears: sewn by the closed end on the sides of the head, level
  *  with the brow, standing out sideways and a touch down, the pressed face
  *  turned to the lens. */
-const EAR_DIR = { x: 1, y: 0.1, z: 0.22 }
-const EAR_AIM = { x: 1, y: 0.22, z: -0.12 }
+const EAR_DIR = { x: 1, y: 0.1, z: 0.15 }
+const EAR_AIM = { x: 1, y: 0.22, z: -0.28 }
 const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
@@ -221,7 +224,7 @@ const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 /** The fringe circle's centre on the crown, tipped well forward so its lower
  *  loops fall to about a row above the eyes (the bar). */
-const HAIR_DIR = { x: 0, y: 1.0, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.95, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -235,7 +238,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
   // head from ear to ear between the horns, not a patch on the crown.
   // Round 11: six rounds at M (seven fell over the eyes as a mop), loops on
   // the even rounds only; the last round plain is the neat edge it is sewn by.
-  const rounds = size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36]
+  // Round 13: seven rounds again (six was a compact cap) but seated high on
+  // the crown with short edge loops, so it spreads horn to horn without
+  // spilling over the eyes the way round 10's low patch did.
+  const rounds = size === 'S' ? [6, 12, 18, 24, 30, 36] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42, 48] : [6, 12, 18, 24, 30, 36, 42]
   const last = rounds.length - 1
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
   return {
@@ -258,7 +264,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // two rings match — round 7's tiled like onion rings — and the loose
     // loops drawn at a full yarn radius: a chenille loop off the hook is as
     // fat as the yarn, not the 0.62 the stitches are pulled down to.
-    loop: { lengthYr: 5.0, halfWidthYr: 2.5, droopDeg: -68, vary: 0.45 },
+    loop: { lengthYr: 5.4, halfWidthYr: 2.7, droopDeg: -68, vary: 0.45 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -270,7 +276,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
       k === 0
         ? { lengthYr: 6.2, halfWidthYr: 2.9, droopDeg: -50 } // over three fingers: the crown of the tuft
         : k === last
-          ? { lengthYr: 4.6, halfWidthYr: 2.3, droopDeg: -80 } // the spill onto the forehead and over the horn roots
+          ? { lengthYr: 4.0, halfWidthYr: 2.2, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
     strandYr: 1.0,
@@ -403,7 +409,7 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
   // 1.5/mm² x 6 children: ~1.3 M hairs on the calf's ~120 000 mm² of brown.
   // 5/mm² x 10 (the yarn lane's bear number scaled up) was ~7 M and the
   // 8 GB render task was OOM-killed at scene sync (cow r9, S3 cow-1a).
-  pile_density: 2.5, pile_children: 6, pile_len_mm: 0.8, pile_radius_mm: 0.03, pile_dark_only: true,
+  pile_density: 3, pile_children: 6, pile_len_mm: 1.2, pile_radius_mm: 0.03, pile_dark_only: true,
 }
 
 /** The NOSTRILS: two bold diagonal straight stitches in dark brown yarn
@@ -437,7 +443,7 @@ function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir): EmbroideryFeature[]
     words:
       'Nostrils (dark brown DK yarn): the muzzle\'s rounds run across the face, so count rounds sideways from its middle round and stitches up or down from the centre line. ' +
       `Work one bold straight stitch each side: bring the needle up ${r(outer)} rounds out from the middle and ${st(upSt)} above the centre line, ` +
-      `and take it down ${r(inner)} round${inner === 1 ? '' : 's'} out and ${st(downSt)} below it, so the two stitches slant toward each other in a wide open "v". Pull snug, not tight.`,
+      `and take it down ${r(inner)} round${Math.round(inner * 2) === 2 ? '' : 's'} out and ${st(downSt)} below it, so the two stitches slant toward each other in a wide open "v". Pull snug, not tight.`,
   }]
 }
 // A dark brown yarn, not black: black reads as wire on the cream muzzle.
