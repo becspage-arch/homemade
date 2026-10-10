@@ -377,7 +377,13 @@ def chenille_material(name, hexcol, fp):
         nt.links.new(facing, rs.inputs[0])
         rs.inputs[1].default_value = rim
         rt = fp.get("rim_tint", 0.55)
-        rim_col = tuple(c * (1 - rt) + rt for c in base[:3]) + (1.0,)
+        if fp.get("rim_mode", "pale") == "lift":
+            # lift the yarn colour towards light WITHOUT losing its chroma (a
+            # white mix read dusty on the r5 bear): a gamma lift in linear
+            # light keeps brown brown as it brightens.
+            rim_col = tuple(c ** (1.0 - rt) for c in base[:3]) + (1.0,)
+        else:
+            rim_col = tuple(c * (1 - rt) + rt for c in base[:3]) + (1.0,)
         rm = nt.nodes.new("ShaderNodeMix")
         rm.data_type = "RGBA"
         nt.links.new(rs.outputs[0], rm.inputs[0])
@@ -472,9 +478,14 @@ def add_pile_hairs(ob, hexcol, fp):
         ("count", max(1, total // max(1, kids + 1))),
         ("hair_length", fp.get("pile_len_mm", 0.45) * S),
         ("emit_from", "FACE"), ("use_emit_random", True), ("use_even_distribution", True),
-        ("normal_factor", 1.0), ("factor_random", fp.get("pile_lean", 0.7)),
+        # With use_advanced_hair the hair grows from its emission VELOCITY, not
+        # `hair_length` (Blender grows ~4 BU of hair per unit of velocity), so
+        # the length is set through normal_factor. (The r2/r4 "hung" hair renders
+        # were millions of 3 cm hairs at normal_factor 1.0: r5 probe h1.)
+        ("normal_factor", fp.get("pile_len_mm", 0.45) * S / 4.0),
+        ("factor_random", fp.get("pile_lean", 0.7) * fp.get("pile_len_mm", 0.45) * S / 4.0),
         ("length_random", 0.5), ("hair_step", 3), ("display_step", 1), ("render_step", 2),
-        ("child_type", "SIMPLE"), ("child_nbr", 1), ("rendered_child_count", kids),
+        ("child_type", "SIMPLE"), ("child_percent", 1), ("rendered_child_count", kids),
         ("child_radius", fp.get("pile_len_mm", 0.45) * S * 1.5), ("child_roundness", 1.0),
         ("roughness_1", 0.015), ("roughness_1_size", 0.5), ("roughness_endpoint", 0.01),
         ("radius_scale", fp.get("pile_radius_mm", 0.03) * S),
@@ -988,7 +999,9 @@ def main():
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Base Contrast"
     scene.view_settings.exposure = view.get("exposure", 0.2)  # lower: stop pale wool blowing white
-    grade_saturation(scene, view.get("saturation", 1.2))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
+    # a fibre may ease the warm-up grade (chenille: the 1.2 boost tuned for
+    # plied cotton pushed brown chenille orange, proofs/yarn r4-r5)
+    grade_saturation(scene, view.get("saturation", 1.2) * FIBRE_PARAMS.get(fibre, {}).get("sat_mult", 1.0))  # bring warmth back after AgX desaturates (1.4 oversaturated the crisper, less-felted yarn)
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
