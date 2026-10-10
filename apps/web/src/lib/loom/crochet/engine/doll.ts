@@ -45,7 +45,7 @@ import { writeInstructions, type CrochetProgram } from './program'
 import { sphereRounds, SPHERE_DRIFT_SCALE, SPHERE_RING_YR } from './sphereProfile'
 import { STITCHES, rowPitchYr } from './dictionary'
 import type { EmbroideryFeature, EmbroideryStitch, FaceStyle, SurfaceSpot } from './faceEmbroidery'
-import { hairCapPart, type RootedHairSpec } from './dollHair'
+import { hairCapPart, hairCapRounds, type RootedHairSpec } from './dollHair'
 
 type Size = 'S' | 'M' | 'L'
 
@@ -261,7 +261,7 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
 export const DOLL_AUDITED_PROFILE_KEYS: Set<string> = new Set(
   (['S', 'M', 'L'] as const).flatMap((k) => {
     const s = DOLL_SIZES[k]
-    return [s.leg, s.body, s.head, s.arm, s.skirt, s.wing, s.flower].map((r) => r.join(','))
+    return [s.leg, s.body, s.head, s.arm, s.skirt, s.wing, s.flower, hairCapRounds(s.head)].map((r) => r.join(','))
   }),
 )
 
@@ -462,16 +462,18 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       if (style === 'stitched') {
         // The eye: an almond ~3 sts wide and 2 rounds tall at M (scaled with
         // the head), fuller toward the outer corner, satin columns 0.14 st apart worked inner to outer.
-        const w = 1.7 * kSt
-        const hTop = 1.35 * kR
-        const hBot = 1.1 * kR
+        const w = 1.45 * kSt
+        const hTop = 1.6 * kR
+        const hBot = 1.25 * kR
         const fill: EmbroideryStitch[] = []
         const n = Math.round((2 * w) / 0.1)
         for (let i = 0; i <= n; i++) {
           const u = -1 + (2 * i) / n // inner → outer
           const k = Math.sqrt(Math.max(0, 1 - u * u)) * (1 + 0.12 * u)
           if (k < 0.08) continue
-          fill.push({ from: S(eyeR - hTop * k, u * w), to: S(eyeR + hBot * k, u * w) })
+          // The almond leans: its top edge rises toward the outer corner.
+          const lift = 0.35 * kR * (u + 1) / 2
+          fill.push({ from: S(eyeR - hTop * k - lift, u * w), to: S(eyeR + hBot * k - lift, u * w) })
         }
         // Rendered in the plump unplied strand (`chenille` look) so the satin
         // reads as one deep black almond: the plied fine-cotton look turned
@@ -497,7 +499,7 @@ export function dollFace(style: FaceStyle, head: number[], forward = { x: 0, y: 
       for (let i = 0; i <= 6; i++) {
         const u = -1.05 + (2.3 * i) / 6
         const k = Math.sqrt(Math.max(0, 1 - Math.min(1, u * u))) * (1 + 0.12 * Math.min(u, 1))
-        lid.push(S(eyeR - 1.35 * kR * k - 0.22, u * 1.7 * kSt))
+        lid.push(S(eyeR - 1.6 * kR * k - 0.22 - 0.35 * kR * (Math.min(u, 1) + 1) / 2, u * 1.45 * kSt))
       }
       const lidSt: EmbroideryStitch[] = []
       for (let i = 0; i < lid.length - 1; i++) lidSt.push({ from: lid[i]!, to: lid[i + 1]! })
@@ -591,7 +593,7 @@ export function dollFaceWords(style: FaceStyle, head: number[]): string[] {
   if (style === 'stitched') {
     lines.push(
       `Eyes (black embroidery thread): centre each eye ${roundWords(eyeR)}, ${sts(eyeC)} either side of centre front. ` +
-        `Satin stitch an almond ${sts(3.4 * kSt)} wide and ${rnds(2.5 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner. ` +
+        `Satin stitch an almond ${sts(2.9 * kSt)} wide and ${rnds(2.9 * kR)} tall (straight stitches side by side, top to bottom), a touch fuller at the outer corner and its top edge rising a little toward it. ` +
         'With white thread, work two short stitches one after the other over the black near the top inner corner of each eye, the first leaning in and up, the second straight down, for the catch-light.',
       `Lids and lashes (black embroidery thread): backstitch along the top edge of each eye, half a round above the black, ` +
         `running a little past the outer corner; from the last two holes work two short lashes outward and a little up, about ${sts(0.9 * kSt)} long.`,
@@ -866,12 +868,12 @@ export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: b
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
   'doll-S': { width: 43.4, height: 100.9 },
-  'doll-M': { width: 78.4, height: 231.9 },
-  'doll-L': { width: 85.3, height: 254.5 },
+  'doll-M': { width: 110, height: 214.4 },
+  'doll-L': { width: 121.1, height: 237.4 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
-  'doll-S': '04c82f0c',
-  'doll-M': '84c3ff0e',
-  'doll-L': '72e4b4b7',
+  'doll-S': '05e8497a',
+  'doll-M': '44fc563d',
+  'doll-L': '6eb01e73',
 }
 

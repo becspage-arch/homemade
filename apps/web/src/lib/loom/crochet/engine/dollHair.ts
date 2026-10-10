@@ -217,7 +217,10 @@ export function rootedHairStrokes(compiled: CompiledComposition, spec: RootedHai
       const driftK = 0.02 + 0.05 * rnd()
       let travelled = 0
       const phase0 = 2 * Math.PI * rnd()
-      const curlFrom = len * (0.45 + 0.1 * rnd())
+      const curlFrom = len * (0.35 + 0.25 * rnd())
+      // Every ringlet its own: radius and turns vary strand to strand.
+      const myR = curlR * (0.7 + 0.6 * rnd())
+      const myTurns = turns * (0.7 + 0.6 * rnd())
       const steps = Math.ceil(len / step)
       // Each ringlet winds about its own hanging axis.
       let axisU: V3 = { x: 1, y: 0, z: 0 }
@@ -233,8 +236,8 @@ export function rootedHairStrokes(compiled: CompiledComposition, spec: RootedHai
         if (curlR > 0 && travelled > curlFrom) {
           // Wind round the hanging line: a helix of `turns` over the curled part.
           const u = (travelled - curlFrom) / Math.max(1, len - curlFrom)
-          const ph = phase0 + side * u * turns * 2 * Math.PI
-          const r = curlR * Math.min(1, u * 3) * (1 - 0.15 * u)
+          const ph = phase0 + side * u * myTurns * 2 * Math.PI
+          const r = myR * Math.min(1, u * 3) * (1 - 0.15 * u)
           const ref: V3 = Math.abs(dir.z) < 0.9 ? { x: 0, y: 0, z: 1 } : { x: 1, y: 0, z: 0 }
           axisU = norm({ x: dir.y * ref.z - dir.z * ref.y, y: dir.z * ref.x - dir.x * ref.z, z: dir.x * ref.y - dir.y * ref.x })
           axisV = { x: dir.y * axisU.z - dir.z * axisU.y, y: dir.z * axisU.x - dir.x * axisU.z, z: dir.x * axisU.y - dir.y * axisU.x }
