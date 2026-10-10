@@ -24,6 +24,7 @@ import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './progra
 import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
+import type { HeroStage } from '../../render/blenderScene'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -190,6 +191,9 @@ export interface CompositionProgram {
   lightRig?: 'product'
   /** Ground colour (default the off-white the finished-object bar uses). */
   bgHex?: string
+  /** The styled listing-photo set (see `HeroStage`). Unset / 'studio' = the
+   *  clean product sweep, unchanged. Render-only: never touches the geometry. */
+  stage?: HeroStage
   /** Key+fill energy scale (renderer default 0.65 — eased for pale wool). */
   light?: number
   /** AgX exposure (renderer default 0.2). */
@@ -910,6 +914,7 @@ export interface BlenderScene {
     groundScale?: number
     lightRig?: 'product'
     minFieldMm?: number
+    stage?: HeroStage
   }
 }
 
@@ -979,6 +984,8 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.lightRig != null) scene.view.lightRig = p.lightRig
   if (p.light != null) scene.view.light = p.light
   if (p.exposure != null) scene.view.exposure = p.exposure
+  // Written only for a styled set, so every studio scene JSON is unchanged.
+  if (p.stage && p.stage !== 'studio') scene.view.stage = p.stage
   scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   if (compiled.props.length) {
     scene.props = compiled.props.map((pr) => ({

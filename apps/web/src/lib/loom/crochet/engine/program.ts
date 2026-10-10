@@ -21,6 +21,7 @@
  */
 
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
+import type { HeroStage } from '../../render/blenderScene'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
 import { buildTube, tubeRibRounds, type TubeAnchor, type TubeBrimKind, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
@@ -148,6 +149,10 @@ export interface CrochetProgram {
    *  defaults to `'cotton'`, the original material, so every program stored
    *  before this field existed renders unchanged. */
   yarnFibre?: YarnFibre
+  /** The styled listing-photo set a finished-object staging (`standing`: a hat,
+   *  a cowl, a basket) is shot in — see `HeroStage`. Render-only: unset /
+   *  'studio' is the clean sweep, exactly as before. Ignored by `swatch`. */
+  stage?: HeroStage
   /** Base yarn colour (hex). The render's default single colour. */
   colourHex?: string
   /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */
