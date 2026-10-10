@@ -226,7 +226,7 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
  *  loops fall to about a row above the eyes (the bar). */
 // Round 14: nearer the top of the crown — at y 0.95 the seven-round circle's
 // front edge still reached the eyes.
-const HAIR_DIR = { x: 0, y: 0.7, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.82, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -278,7 +278,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
       k === 0
         ? { lengthYr: 6.2, halfWidthYr: 2.9, droopDeg: -50 } // over three fingers: the crown of the tuft
         : k === last
-          ? { lengthYr: 4.0, halfWidthYr: 2.2, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short: round 10's fell over the eyes)
+          ? { lengthYr: 4.0, halfWidthYr: 2.2, droopDeg: -86 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
     strandYr: 1.0,
