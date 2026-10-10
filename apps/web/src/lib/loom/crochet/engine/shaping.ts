@@ -19,7 +19,7 @@
  *    faces the same way, exactly like the real fabric.
  */
 
-import { STITCHES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
+import { STITCHES, SHELL_N, type StitchId, type ShapeOp, type LoopShape } from './dictionary'
 import {
   createStrand,
   stitchDims,
@@ -27,6 +27,7 @@ import {
   HOOK_SPREAD_YR,
   rowPitchYr,
   emitPlainStitch,
+  looseFlags,
   emitHeadLoop,
   headApexRelief,
   BASE_ROW_YR,
@@ -451,8 +452,16 @@ export function buildRounds(
    * one. Absent → the stitch's own row pitch, which is what a round of fabric is.
    */
   radialPitchYr?: number,
+  /**
+   * LOOP-STITCH rounds (§8j, the fringe / hair patch): `roundStitch(k)` names
+   * the stitch worked in round k (default: `st` every round) — a loop stitch
+   * has the same cell as dc (UK), so only its insertion changes — and `loop`
+   * overrides the dictionary loop shape. Absent = the disc exactly as before.
+   */
+  loopOpts?: { roundStitch?: (k: number) => StitchId; loop?: Partial<LoopShape> },
 ): BuiltContinuous {
   const yr = yarnRadiusMm
+  const idAt = (k: number): StitchId => loopOpts?.roundStitch?.(k) ?? st
   // The real cell (§8f-3) — the same one the flat grid builder takes, including
   // the head as a two-strand LOOP. The canopy below is re-derived from it in the
   // same pass, because the two are one mechanism: the canopy says where a crown
@@ -553,7 +562,8 @@ export function buildRounds(
         const r = emitPlainStitch(S, dims, {
           j: k,
           c: i,
-          id: st,
+          id: idAt(k),
+          loop: loopOpts?.loop,
           s: 1,
           fz: 1, // no turn in the round — every round works the same face
           by: rPrev,
@@ -598,7 +608,8 @@ export function buildRounds(
           const r = emitPlainStitch(S, dims, {
             j: k,
             c: oi,
-            id: st,
+            id: idAt(k),
+            loop: loopOpts?.loop,
             s: 1,
             fz: 1,
             by: rPrev,
@@ -656,8 +667,9 @@ export function buildRounds(
   const crownZ = headLoopMm > 0 ? headApexRelief(zh, SURFACE_LAY) : zh * 1.15
   const CANOPY = crownZ * 0.65
   const APEX_LO = crownZ
+  const loose = looseFlags(S)
   const zBand = nodes.map((n, i) =>
-    n.w === 0
+    n.w === 0 || loose?.[i]
       ? null
       : canopyApex.has(i)
         ? { lo: APEX_LO }
@@ -666,7 +678,7 @@ export function buildRounds(
           : { hi: CANOPY },
   )
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along, zBand },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, zBand, ...(loose ? { loose } : {}) },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,

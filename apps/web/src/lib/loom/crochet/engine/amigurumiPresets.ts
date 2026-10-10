@@ -22,6 +22,7 @@
  * only imported here, never edited.
  */
 
+import { hairPatchesFor, type HairStyle } from './hairPatch'
 import type { AmigurumiPart, CompositionProgram, CompositionProp } from './composition'
 import {
   PROFILE_SIZE_MM_GENERATED,
@@ -154,6 +155,9 @@ export interface AmigurumiChoices {
    *  eyes and moulded nose, so every existing preset is unchanged. The
    *  embroidered styles replace the safety eyes / nose with sewn features. */
   face?: FaceStyle
+  /** Hair (hairPatch.ts): a loop-stitch fringe sewn to the crown. Absent /
+   *  'none' = no hair, so every existing preset is unchanged. */
+  hair?: HairStyle
   name?: string
 }
 
@@ -554,6 +558,8 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
+  const hair = hairPatchesFor(choices.hair, 'head', choices.mainHex, faceDir(HAIR_DIR))
+  if (hair.length) program.hair = hair
   return program
 }
 
@@ -990,6 +996,10 @@ const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
   bear: { x: 0.72, z: 0.16 },
   chick: { x: 0.66, z: 0.2 },
 }
+
+/** Where the fringe circle's centre sits on the head: on the crown, tipped
+ *  forward so its front edge lies just above the eyes. */
+const HAIR_DIR = { x: 0, y: 0.5, z: 1 }
 
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []

@@ -21,7 +21,8 @@
  */
 
 import { type RNode, type DistConstraint, type YarnModel } from './relax'
-import { STITCHES, rowPitchYr, BASE_ROW_YR, type StitchId } from './dictionary'
+import { STITCHES, rowPitchYr, BASE_ROW_YR, type StitchId, type LoopShape } from './dictionary'
+import { emitLoop } from './loopStitch'
 
 /**
  * One genuine interlock, recorded at build time so it can be VERIFIED in data
@@ -193,7 +194,19 @@ export interface StrandCtx {
   bend: DistConstraint[]
   strandPath: number[]
   links: StitchLink[]
+  /** Nodes of FREE-HANGING yarn (loop-stitch loops, §8j) — see YarnModel.loose.
+   *  Empty for every build without a loop stitch. */
+  loose: number[]
   push: (x: number, y: number, z: number, w?: number) => number
+}
+
+/** The per-node loose flags for a model, or undefined when the build has no
+ *  loose yarn (so every build without a loop stitch is unchanged). */
+export function looseFlags(S: StrandCtx): boolean[] | undefined {
+  if (!S.loose.length) return undefined
+  const f = new Array<boolean>(S.nodes.length).fill(false)
+  for (const i of S.loose) f[i] = true
+  return f
 }
 
 export function createStrand(): StrandCtx {
@@ -221,7 +234,7 @@ export function createStrand(): StrandCtx {
     prev = idx
     return idx
   }
-  return { nodes, dist, bend, strandPath, links, push }
+  return { nodes, dist, bend, strandPath, links, loose: [], push }
 }
 
 /** The shared per-stitch construction scales — all in yarn radii off `yr`. */
@@ -433,6 +446,12 @@ export interface PlainStitchSpec {
    * two-diameter thickness can come from in fabric that never turns.
    */
   backCross?: number
+  /**
+   * LOOP STITCH (§8j): per-call overrides of the stitch's dictionary loop shape
+   * (a fringe patch works shorter loops than the swatch). Only read when the
+   * stitch has a `loop` in the dictionary.
+   */
+  loop?: Partial<LoopShape>
 }
 
 /**
@@ -683,6 +702,18 @@ export function emitPlainStitch(
     dbgLegs.push(push(xa(0.65) + sd * legHalf(0.65), by + px * 0.52, legZAt(legZ, -z * 2.13)))
     dbgLegs.push(push(xa(0.33) + sd * legHalf(0.33), by + px * 0.26, legZAt(legZHi, -z * 3.56)))
     push(xH + sd * pw * nearHalf, cy + dh * 0.5, nearZB) // approach the below crown
+    // LOOP STITCH (§8j): the yarn wrapped round the finger behind the work is
+    // pulled through the insertion with the hook — root A under the head below,
+    // the loose loop out on the far side, back through beside it.
+    const loopDef = STITCHES[id].loop
+    if (loopDef) {
+      const lp = emitLoop(push, {
+        xH, yRoot: cy - dh, hookZ, side: -fz, s, yr: d.yr,
+        shape: { ...loopDef, ...spec.loop }, j, c,
+      })
+      S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: lp.rootA, below: bc })
+      S.loose.push(...lp.body)
+    }
     // Hook UNDER the crown below — tuck to the far z-side of it. Collision (neither
     // can pass through the other) holds the link — no spring.
     hookIdx = push(xH, cy - dh, hookZ)
@@ -1185,8 +1216,9 @@ export function buildContinuous(
     const end = i + 1 < colSpans.length ? colSpans[i + 1]!.start : nodes.length
     for (let k = colSpans[i]!.start; k < end; k++) nodeCol[k] = colSpans[i]!.c
   }
+  const loose = looseFlags(S)
   return {
-    model: { nodes, dist, bend, strand, along },
+    model: { nodes, dist, bend, strand, along, ...(loose ? { loose } : {}) },
     strandPath,
     links,
     yarnRadiusMm: yr,

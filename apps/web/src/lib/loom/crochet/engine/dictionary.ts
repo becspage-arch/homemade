@@ -19,7 +19,28 @@ import type { KnitStitchOp } from './knitPath'
 export type StitchId =
   | 'ch' | 'slst' | 'sc' | 'hdc' | 'dc' | 'tr' | 'dtr'
   | 'scblo' | 'scflo' | 'fpdc' | 'bpdc' | 'bobble' | 'picot'
+  | 'loopst' | 'loopcurl'
   | 'k'
+
+/**
+ * A LOOP STITCH's loop (loopStitch.ts, §8j): the length of yarn wrapped round
+ * the finger behind the work before the hook catches it. All in yarn radii /
+ * plain numbers so it scales with the yarn like the rest of the cell.
+ */
+export interface LoopShape {
+  /** How far the loop reaches out of the fabric (finger depth), in yarn radii. */
+  lengthYr: number
+  /** Half-width of the open loop at its widest, in yarn radii. */
+  halfWidthYr: number
+  /** Half-turns the loop is twisted before the stitch is finished (0 = open loop). */
+  twist: number
+  /** How far the loop's axis curls round, in turns over its length (0 = straight). */
+  curl: number
+  /** Angle the loop is pulled DOWN the fabric from straight out, degrees. */
+  droopDeg: number
+  /** ± fraction the finger wrap varies stitch to stitch (deterministic per stitch). */
+  vary: number
+}
 
 /**
  * One shaping instruction, in crochet-pattern terms, applied to the row's stitch:
@@ -100,6 +121,12 @@ export interface StitchDef {
    * tall stitch's yarn-per-stitch on its real published figure.
    */
   yarnOverYr?: number
+  /**
+   * LOOP STITCH (§8j): the stitch is a plain dc (UK) whose insertion carries a
+   * long loop of the working yarn out to the far side of the work — the loop
+   * wrapped round a finger behind the fabric. Absent = no loop.
+   */
+  loop?: LoopShape
 }
 
 export const STITCHES: Record<StitchId, StitchDef> = {
@@ -184,6 +211,23 @@ export const STITCHES: Record<StitchId, StitchDef> = {
   picot: {
     id: 'picot', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
     rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+  },
+  // LOOP STITCH (UK lp st, §8j): worked like dc (UK; US sc) on a wrong-side row
+  // with the working yarn wrapped round a finger behind the work, so a long
+  // loop of yarn is caught in the stitch and stands out on the RIGHT side. Same
+  // body and cell as sc — only the insertion carries the loop (loopStitch.ts).
+  loopst: {
+    id: 'loopst', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+    loop: { lengthYr: 6.5, halfWidthYr: 1.6, twist: 0, curl: 0, droopDeg: 35, vary: 0.15 },
+  },
+  // TWISTED (curly) loop stitch: the same stitch, the loop twisted before the
+  // stitch is closed so its two strands ply round each other and the loop
+  // curls back on itself — the curly fringe of a Highland cow in chenille.
+  loopcurl: {
+    id: 'loopcurl', heightFactor: 1.0, gaugeYr: 2.7, topLoops: 2,
+    rowYr: 2.4, postHalfYr: 1.05, crownHalfYr: 0.55, headLoopYr: 2.0, reliefScale: 1.3,
+    loop: { lengthYr: 7.5, halfWidthYr: 0.75, twist: 3, curl: 0.75, droopDeg: 20, vary: 0.2 },
   },
   // KNIT (new craft, same engine — own path builder in knitPath.ts). Stockinette
   // stitches are a touch wider than tall: ~5 sts + ~7 rows per inch in worsted.
@@ -278,7 +322,7 @@ export interface SwatchRecipe {
   equatorCount?: number
   /** Chain relaxes with its own profile (soft squash + table floor); rounds hold
    *  their radius; curved surfaces hold their worked latitude (the stuffing). */
-  relaxProfile: 'worked' | 'chain' | 'round' | 'surface'
+  relaxProfile: 'worked' | 'chain' | 'round' | 'surface' | 'loop'
   /** Hero camera tilt (0 = flat top-down; 16 = tall posts; 40 = side-on for relief). */
   tiltDeg: number
   /** Render ply twist (0.1 = rustic wool; 0.05 = calmer, for clean columns). */
@@ -540,6 +584,31 @@ export const SWATCH_RECIPES: Record<SwatchArg, SwatchRecipe> = {
     stitch: 'sc', rows: 8, auditW: 14, relaxProfile: 'worked', tiltDeg: 24, twist: 0.05,
     pattern: (j, c) => (j === 7 && c >= 2 && c <= 11 && (c - 2) % 3 === 0 ? 'picot' : 'sc'),
     referenceUrl: 'https://nanascraftyhome.com/wp-content/uploads/2021/02/Picot-Stitch-1-1024x1024.jpg', // nanascraftyhome — picot swatch (edging + dotted rows)
+    status: 'wip',
+  },
+  // LOOP STITCH (§8j): dc (UK) on every right-side row, loop stitch on every
+  // wrong-side row — the loops stand out on the right side, which faces the
+  // camera. Relaxed flat on the table with gravity on the loose loops
+  // ('loop' profile), so they lie over the fabric the way a real swatch does.
+  loopst: {
+    stitch: 'sc', rows: 6, auditW: 10, relaxProfile: 'loop', tiltDeg: 40, twist: 0.08,
+    // Edge stitches stay plain dc (the usual "1 dc, lp st to last st, 1 dc"):
+    // a loop on the turn strangles the corner hook (audit, c0 of every WS row).
+    pattern: (j, c) => (j % 2 === 1 && c > 0 && c < 9 ? 'loopst' : 'sc'),
+    viewMargin: 0.3,
+    // The tutorial page (its swatch photo); this session's egress could not fetch
+    // it, so the comparison was made against the round-4 Ravelry photos in the
+    // crochet-bar real/ folder (4-cow-fringe, 4-lion-curl-mane).
+    referenceUrl: 'https://www.crochetspot.com/how-to-crochet-loop-stitch/', // crochetspot — loop stitch photo tutorial (rows of loops on the RS)
+    status: 'wip',
+  },
+  // TWISTED loop stitch: the same swatch with every loop twisted before the
+  // stitch is closed — the curly chenille fringe of a Highland cow.
+  loopcurl: {
+    stitch: 'sc', rows: 6, auditW: 10, relaxProfile: 'loop', tiltDeg: 40, twist: 0.08,
+    pattern: (j, c) => (j % 2 === 1 && c > 0 && c < 9 ? 'loopcurl' : 'sc'),
+    viewMargin: 0.3,
+    referenceUrl: 'https://www.ravelry.com/patterns/library/fergus-the-highland-cow', // Yarnhild's Fergus — curly chenille fringe (crochet-bar real/4-cow-fringe.jpg)
     status: 'wip',
   },
   // Flat amigurumi circle: magic ring, 6 sc, +6 per round in a continuous spiral.

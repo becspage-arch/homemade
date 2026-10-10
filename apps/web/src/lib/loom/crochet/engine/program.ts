@@ -541,12 +541,16 @@ const STITCH_TO_CHART_SYMBOL: Record<StitchId, string> = {
   bpdc: 'treble',
   bobble: 'bobble',
   picot: 'picot',
+  loopst: 'double-crochet-uk',
+  loopcurl: 'double-crochet-uk',
   k: 'knit',
 }
 
 const CHART_STITCH_LABEL: Partial<Record<StitchId, string>> = {
   fpdc: 'FPtr',
   bpdc: 'BPtr',
+  loopst: 'lp st',
+  loopcurl: 'lp st',
 }
 
 /** The rib's two stitches in the order they alternate (mirrors tube.ts RIB_PAIR). */

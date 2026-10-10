@@ -23,6 +23,7 @@ import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './progra
 import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
+import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -123,6 +124,10 @@ export interface CompositionProgram {
    *  sewn onto the finished pieces as real strands. Optional, outside the
    *  geometry hash like the props; a composition without it is unchanged. */
   embroidery?: EmbroideryFeature[]
+  /** HAIR (hairPatch.ts, §8j): loop-stitch patches sewn onto a finished part
+   *  (a fringe on the crown). Real crocheted pieces, built and audited like
+   *  every part; optional, and a composition without it is unchanged. */
+  hair?: HairPatch[]
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
@@ -211,6 +216,8 @@ export interface CompiledComposition {
   props: PlacedProp[]
   /** The embroidery laid on the settled fabric (empty when there is none). */
   embroidery: PlacedEmbroidery[]
+  /** The hair patches, conformed onto their parts (empty when there are none). */
+  hair: PlacedHair[]
   yr: number
   /** Empty = every part is genuinely stitched. Non-empty = a part failed the
    *  audit gate (prefixed with the part name); do NOT render. */
@@ -599,8 +606,19 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   // it. No yarn of the pieces moves, so the hash is unchanged by it.
   const embroidery = p.embroidery?.length ? placeEmbroidery(p.embroidery, byName, yr) : []
 
+  // Hair: separate crocheted patches, built + audited on their own, then
+  // sewn onto the settled pieces. They are yarn, so they join the hash —
+  // but only when present, so every hairless composition hashes as before.
+  let hair: PlacedHair[] = []
+  if (p.hair?.length) {
+    const h = placeHair(p.hair, byName, yr)
+    hair = h.placed
+    problems.push(...h.problems)
+    for (const ph of hair) allNodes.push(...ph.ctrl)
+  }
+
   const ghash = geometryHash({ model: { nodes: allNodes as never } } as never)
-  return { placed, props, embroidery, yr, problems, geometryHash: ghash }
+  return { placed, props, embroidery, hair, yr, problems, geometryHash: ghash }
 }
 
 export interface BlenderScene {
@@ -659,6 +677,11 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     const { radiusMm, filaments } = pliedFilaments(center, yr * 0.62, 3, twist)
     return { hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }
   })
+  // Each hair patch is one continuous plied strand of the toy's own yarn.
+  for (const ph of compiled.hair ?? []) {
+    const { radiusMm, filaments } = pliedFilaments(smooth(ph.ctrl, 4), yr * 0.62, 3, twist)
+    strokes.push({ hex: ph.hex, sheen: 0.85, radiusMm, filaments })
+  }
   // Each embroidered straight stitch is its own short plied strand, in its
   // own thread, on top of the fabric.
   for (const e of compiled.embroidery ?? []) {

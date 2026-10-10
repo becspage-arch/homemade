@@ -17,6 +17,7 @@
 import { programToChart, writeInstructions, type CrochetProgram } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
 import { writeFaceInstructions } from './faceEmbroidery'
+import { writeHairInstructions } from './hairPatch'
 
 export interface CompositionPiece {
   /** Display label: "Body", "Ears". */
@@ -142,6 +143,8 @@ export function writeAssembly(p: CompositionProgram): string[] {
     const headName = p.embroidery[0]!.on
     lines.push(...writeFaceInstructions(p.embroidery, prettify(baseName(headName), 1).toLowerCase()))
   }
+  // The hair: a separate loop-stitch circle, worked and sewn on.
+  for (const h of p.hair ?? []) lines.push(...writeHairInstructions(h, prettify(baseName(h.on), 1).toLowerCase()))
   lines.push('Weave in every end and give the finished piece a gentle shape with your hands.')
   return lines
 }

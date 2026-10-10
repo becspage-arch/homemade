@@ -11,6 +11,9 @@ import { buildKnit } from './knitPath'
 import { relax, STUFF_PRESSURE, STUFF_PRIOR } from './relax'
 import { SWATCH_RECIPES, type SwatchArg, type SwatchRecipe, type StitchId } from './dictionary'
 
+/** Gravity on loose yarn, per relax iteration, in yarn radii (§8j). */
+export const LOOP_GRAVITY = 0.008
+
 export interface BuiltSwatch {
   built: BuiltContinuous
   recipe: SwatchRecipe
@@ -77,6 +80,22 @@ export function buildRelaxedSwatch(arg: SwatchArg, W: number, yr: number): Built
       layoutMode: 'radial',
       floorZ: -yr * 2.2, // two yarn-layers of room under the canopy — the crowd resolves DOWN, not up between the Vs (a real disc is ~2 diameters thick)
       iterations: 360,
+    })
+  } else if (recipe.relaxProfile === 'loop') {
+    // LOOP STITCH (§8j): the worked flat profile, on the table, with gravity on
+    // the loose loops only (the fabric is blocked; the loops are free yarn).
+    // The swatch lies right side UP (+z, the camera) so gravity is −z: the
+    // loops fall over onto the fabric they stand out of.
+    relax(built.model, {
+      collMinDist: yr * 1.25,
+      collK: 0.28,
+      collAdjacency: 9,
+      planeZ: 0,
+      planeK: 0,
+      layoutK: 0.06,
+      floorZ: -yr * 2.4,
+      gravity: { x: 0, y: 0, z: -yr * LOOP_GRAVITY },
+      iterations: 420,
     })
   } else if (recipe.relaxProfile === 'chain') {
     // A chain's links are consecutive along the strand, so collision must act between
