@@ -113,8 +113,10 @@ export const CONE_ROUNDS: number[] = [4, 5, 6, 7, 8, 4]
  */
 export function lopEarRounds(width: number, length: number): number[] {
   // The tip: a +6 round first (a ROUNDED tip, the bar's), then +3 a round.
-  const up: number[] = [6]
-  for (let n = 12; n < width; n += 3) up.push(n)
+  // Measured: an 18-st ear with the +6 tip fails one interlock at that
+  // round (j2) at every press, so the narrow S ear keeps the +3 cone tip.
+  const up: number[] = width >= 21 ? [6] : []
+  for (let n = width >= 21 ? 12 : 6; n < width; n += 3) up.push(n)
   // The top narrows in threes (the first two steps held a round each) down
   // to twelve or fewer, then closes: a round can never less than halve.
   const top = [width - 3, width - 3, width - 6, width - 6]
@@ -229,17 +231,19 @@ export const HAT_HEX_DEFAULT = '#b7a4d8'
 /** The nightcap band's middle, above the head centre (fraction of the head
  *  radius). Round 6 at the hat's own 0.6 put the band's lower edge on the
  *  eye line and the hat swallowed the top half of the head. */
-const TOY_HAT_BRIM_FRAC = 0.7
+const TOY_HAT_BRIM_FRAC = 0.66
 /** The nightcap's flop (round 8): the bar's cone folds over right at the
  *  crown and falls steeply beside the ear; the hat's default stood 0.55R
  *  straight up first and read as a tall stiff cone. */
 /** Round 4: the fold starts a little up the dome (0.14 lay on the crown like
  *  a slug) but creases SHARPLY (ramp 0.7R, not the hat's 1.3R) so the cone
  *  never stands as a tall ridge before it falls. */
-const TOY_HAT_BEND = { startFrac: 0.22, angleDeg: 150, dirDeg: 12 }
-const TOY_HAT_BEND_LENGTH_FRAC = 0.7
-/** Round 5: a short steep cone (+4 a round) — at +2 the cone curled up on the crown as a turban. */
-const TOY_HAT_CONE_STEP = 4
+const TOY_HAT_BEND = { startFrac: 0.42, angleDeg: 140, dirDeg: 12 }
+const TOY_HAT_BEND_LENGTH_FRAC = 1.0
+/** Round 5-6: the cone's rate. At +2 a round (the hat's default) the cone was
+ *  ~55 rounds on a 70-st band and curled up on the crown as a turban (r4);
+ *  at +4 it was so short the whole cap flopped flat like a lid (r5). +3. */
+const TOY_HAT_CONE_STEP = 3
 /** The bar's pompom: cream, fluffy, on the lilac cap. */
 export const POMPOM_HEX_DEFAULT = '#f4ecdd'
 const TOY_POMPOM_FIBRE: YarnFibre = 'fluff'
