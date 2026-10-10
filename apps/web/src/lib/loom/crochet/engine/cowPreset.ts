@@ -130,7 +130,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: sphereRounds(42, 1), neck: ballRounds(18, 2), head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 5), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 15, 12, 9, 6],
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -9, frontLegLift: 11, eyeMm: 12,
+    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -9, frontLegLift: 9, eyeMm: 12,
   },
   M: {
     body: sphereRounds(54, 1), neck: ballRounds(18, 2), head: sphereRounds(60, 2),
@@ -142,7 +142,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: sphereRounds(60, 1), neck: ballRounds(24, 2), head: sphereRounds(66, 2),
     muzzle: sphereRounds(24, 7), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: [6, 9, 12, 15, 18, 21, 21, 21, 18, 15, 12, 9, 6],
     frontLeg: tubeRounds(18, 11), backLeg: ballRounds(30, 4), tail: cordRounds(6),
-    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -8.5, frontLegLift: 3.8, eyeMm: 18,
+    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -8.5, frontLegLift: 1.8, eyeMm: 18,
   },
 }
 
@@ -224,7 +224,9 @@ const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 /** The fringe circle's centre on the crown, tipped well forward so its lower
  *  loops fall to about a row above the eyes (the bar). */
-const HAIR_DIR = { x: 0, y: 0.95, z: 1 }
+// Round 14: nearer the top of the crown — at y 0.95 the seven-round circle's
+// front edge still reached the eyes.
+const HAIR_DIR = { x: 0, y: 0.7, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -264,7 +266,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // two rings match — round 7's tiled like onion rings — and the loose
     // loops drawn at a full yarn radius: a chenille loop off the hook is as
     // fat as the yarn, not the 0.62 the stitches are pulled down to.
-    loop: { lengthYr: 5.4, halfWidthYr: 2.7, droopDeg: -68, vary: 0.45 },
+    loop: { lengthYr: 5.0, halfWidthYr: 2.5, droopDeg: -68, vary: 0.45 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -280,8 +282,19 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
           : undefined,
     gravity: 0.0015,
     strandYr: 1.0,
-    colourHex,
+    // Render-only (outside the geometry hash): a loop of chenille that is not
+    // pulled into a stitch shows its full, uncrushed pile, and in the bar's
+    // photo the fringe reads a shade lighter than the crushed fabric of the
+    // head it stands on. Same yarn in the words; a lighter shade on the loops.
+    colourHex: lighten(colourHex, 0.16),
   }
+}
+
+/** Lift a hex colour's value by `f` (0..1), hue and saturation kept. */
+function lighten(hex: string, f: number): string {
+  const n = parseInt(hex.slice(1), 16)
+  const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => Math.min(255, Math.round(c + (255 - c) * f)))
+  return '#' + ch.map((c) => c.toString(16).padStart(2, '0')).join('')
 }
 
 export function cowPresetName(choices: CowChoices): string {
