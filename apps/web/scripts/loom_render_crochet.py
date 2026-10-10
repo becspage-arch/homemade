@@ -283,6 +283,12 @@ def chenille_material(name, hexcol, fp):
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     base = hex_to_lin(hexcol)
+    # Chenille DEPTH (Fable r5): the same dye looks darker in chenille than in
+    # cotton, because the pile swallows light (the bar cow at #7a4a35 reads
+    # value ~0.36 where our r4 render read ~0.48). `base_mult` scales the
+    # albedo for the pile; the crevice darkening below does the rest.
+    bm = fp.get("base_mult", 1.0)
+    base = tuple(c * bm for c in base[:3]) + (1.0,)
     tex = nt.nodes.new("ShaderNodeTexCoord")
     # crushed-pile patches (~1.5 mm, object units are cm)
     crush = nt.nodes.new("ShaderNodeTexNoise")
@@ -317,7 +323,83 @@ def chenille_material(name, hexcol, fp):
     nt.links.new(fr.outputs["Result"], mix.inputs[0])
     nt.links.new(ramp.outputs["Color"], mix.inputs[6])
     mix.inputs[7].default_value = pale
-    nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    col = mix.outputs[2]
+    # Crevice shadow (Fable r5): on a real chenille toy the valleys between
+    # stitches go deep, warm brown while the stitch tops stay lit, and that
+    # value range is most of what reads as "deep plush" rather than flat
+    # orange tubing. Cycles' own bounce light fills those valleys because the
+    # plump strands are bright and close together, so an AO term darkens the
+    # colour towards a saturated crevice shade where the strand is hemmed in.
+    cav = fp.get("cavity_amt", 0.0)
+    if cav > 0:
+        ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+        ao.samples = int(fp.get("cavity_samples", 8))
+        ao.only_local = False
+        ao.inputs["Distance"].default_value = fp.get("cavity_dist_mm", 1.5) * S
+        aw = nt.nodes.new("ShaderNodeMath")
+        aw.operation = "POWER"
+        nt.links.new(ao.outputs["AO"], aw.inputs[0])
+        aw.inputs[1].default_value = fp.get("cavity_pow", 1.5)
+        am = nt.nodes.new("ShaderNodeMath")
+        am.operation = "MULTIPLY_ADD"
+        nt.links.new(aw.outputs[0], am.inputs[0])
+        am.inputs[1].default_value = cav
+        am.inputs[2].default_value = 1.0 - cav
+        # crevice shade: the yarn colour at ~1/3 value, pushed a little redder
+        # (the pile's own inter-reflection warms it), never grey.
+        cs = fp.get("cavity_shade", 0.32)
+        crev = (base[0] * cs * 1.1, base[1] * cs * 0.9, base[2] * cs * 0.85, 1.0)
+        cm = nt.nodes.new("ShaderNodeMix")
+        cm.data_type = "RGBA"
+        nt.links.new(am.outputs[0], cm.inputs[0])
+        cm.inputs[6].default_value = crev
+        nt.links.new(col, cm.inputs[7])
+        col = cm.outputs[2]
+    # Fuzzy rim without hairs (Fable r5): pile fibres seen side-on at a
+    # stitch's silhouette are lit from behind and scatter, so the edge of
+    # every bump fades to a paler, softer tint instead of ending in a clean
+    # line. Layer Weight's Facing term raised to `rim_pow` keeps it to the
+    # last few degrees of the curve.
+    rim = fp.get("rim_amt", 0.0)
+    rim_alpha = fp.get("rim_alpha", 0.0)
+    facing = None
+    if rim > 0 or rim_alpha > 0:
+        lw = nt.nodes.new("ShaderNodeLayerWeight")
+        lw.inputs["Blend"].default_value = fp.get("rim_blend", 0.5)
+        pw = nt.nodes.new("ShaderNodeMath")
+        pw.operation = "POWER"
+        nt.links.new(lw.outputs["Facing"], pw.inputs[0])
+        pw.inputs[1].default_value = fp.get("rim_pow", 2.5)
+        facing = pw.outputs[0]
+    if rim > 0:
+        rs = nt.nodes.new("ShaderNodeMath")
+        rs.operation = "MULTIPLY"
+        nt.links.new(facing, rs.inputs[0])
+        rs.inputs[1].default_value = rim
+        rt = fp.get("rim_tint", 0.55)
+        rim_col = tuple(c * (1 - rt) + rt for c in base[:3]) + (1.0,)
+        rm = nt.nodes.new("ShaderNodeMix")
+        rm.data_type = "RGBA"
+        nt.links.new(rs.outputs[0], rm.inputs[0])
+        nt.links.new(col, rm.inputs[6])
+        rm.inputs[7].default_value = rim_col
+        col = rm.outputs[2]
+    nt.links.new(col, bsdf.inputs["Base Color"])
+    if rim_alpha > 0:
+        # the very edge of the strand goes part-transparent so the silhouette
+        # is soft (a fringe of pile, not a cut-out); kept small, since every
+        # transparent hit costs a bounce.
+        out = nt.nodes.get("Material Output")
+        tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        ms = nt.nodes.new("ShaderNodeMixShader")
+        ra = nt.nodes.new("ShaderNodeMath")
+        ra.operation = "MULTIPLY"
+        nt.links.new(facing, ra.inputs[0])
+        ra.inputs[1].default_value = rim_alpha
+        nt.links.new(ra.outputs[0], ms.inputs[0])
+        nt.links.new(bsdf.outputs[0], ms.inputs[1])
+        nt.links.new(tr.outputs[0], ms.inputs[2])
+        nt.links.new(ms.outputs[0], out.inputs["Surface"])
     set_in(bsdf, "Roughness", fp.get("rough", 0.9))
     set_in(bsdf, "Specular IOR Level", fp.get("specular", 0.04))
     set_in(bsdf, "Sheen Weight", fp.get("sheen", 1.0))
