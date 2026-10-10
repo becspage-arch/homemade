@@ -50,7 +50,7 @@ export const FACE_STYLES: Array<{ id: FaceStyle; label: string; blurb: string }>
   {
     id: 'safety-stitched',
     label: 'Safety eyes, stitched nose',
-    blurb: 'Safety eyes, with the nose, mouth and blush embroidered.',
+    blurb: 'Safety eyes with two stitched nostrils on the muzzle, like a highland calf.',
   },
   {
     id: 'sleepy',
@@ -136,7 +136,7 @@ const NOSE_PINK = '#e39d9a'
 const BLUSH_PINK = '#efbdb8'
 const HIGHLIGHT = '#f4f1ea'
 const FLOSS_MM = 0.5
-const BLUSH_YARN_MM = 0.42
+const BLUSH_YARN_MM = 0.4
 
 export interface FaceLayout {
   /** The head (or body) the eyes and blush go on, and its round counts. */
@@ -298,22 +298,24 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
   }
 
   // ── Blush ── a small satin oval in pink yarn, below and outside the eye.
-  {
+  // (Not with safety eyes: the bar's calf has none, and a pink pad next to a
+  // plastic eye reads as a sticker.)
+  if (style !== 'safety-stitched') {
     const br = half(roundAtElevation(H.rounds, L.blushElevDeg))
     const bs = stitchesAtAzimuth(H.rounds, br, L.blushAzDeg)
     for (const side of [-1, 1] as const) {
       const cs = side * half(bs)
-      // A rounder, softer patch than a satin pad: rows a little looser, in a
-      // soft wool so the render shows a fuzzy pale pink, not a shiny pad.
+      // A rounder, softer patch than a satin pad, in a fluffy yarn so the
+      // render shows one soft pale-pink patch, not a ribbed pad of rows.
       const hw = 0.62
       const hh = 0.55
       // Worked from the inner edge outward on each side, so the two cheeks
       // are exact mirror images stitch for stitch.
-      const fill = satinRows(br - hh, br + hh, 0.11, cs, (r) => {
+      const fill = satinRows(br - hh, br + hh, 0.09, cs, (r) => {
         const u = (r - br) / hh
         return hw * Math.sqrt(Math.max(0, 1 - u * u))
       }).map((s) => (side < 0 ? { from: s.to, to: s.from } : s))
-      out.push({ ...headFeature(side < 0 ? 'blush-l' : 'blush-r', BLUSH_PINK, BLUSH_YARN_MM, 'Pink yarn (a soft DK wool)', fill), fibre: 'wool' })
+      out.push({ ...headFeature(side < 0 ? 'blush-l' : 'blush-r', BLUSH_PINK, BLUSH_YARN_MM, 'Pink yarn (a soft fluffy DK)', fill), fibre: 'chenille' })
     }
   }
 
@@ -337,6 +339,17 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
     const spot = (i: number, deg: number): SurfaceSpot => {
       const round = fr(i)
       return { round, st: (countAt(M.rounds, round) * deg) / 360 }
+    }
+    if (style === 'safety-stitched') {
+      // NOSTRILS (the bar's highland calf): with safety eyes the muzzle gets
+      // just two short straight stitches, each from upper-outer to
+      // lower-inner, a little above the muzzle's centre. No mouth, no blush.
+      const nostrils: EmbroideryStitch[] = []
+      for (const side of [-1, 1] as const) {
+        nostrils.push({ from: spot(1.15, side * 62), to: spot(0.55, side * 112), taut: true })
+      }
+      out.push({ ...muzzleFeature('nose', NOSE_DARK, 'Dark brown embroidery thread', nostrils), threadMm: FLOSS_MM * 1.1 })
+      return out
     }
     // The NOSE: a satin triangle, point down, on the top half of the muzzle
     // front. Rows run across (along the rings), each a little shorter and
@@ -445,7 +458,14 @@ export function writeFaceInstructions(features: EmbroideryFeature[], headLabel =
     )
   }
   const nose = features.find((f) => f.name === 'nose')
-  if (nose) {
+  if (nose && style === 'safety-stitched' && nose.stitches.length === 2) {
+    const a = nose.stitches[1]!
+    lines.push(
+      `Nostrils (dark brown embroidery thread): on the muzzle, a little above its centre, work one short straight stitch each side: ` +
+        `bring the needle up ${roundWords(a.from.round)} of the muzzle, above and a little to the outside of the centre, ` +
+        'and take it down and in to just beside the centre, so the two stitches lean toward each other like a small open "v".',
+    )
+  } else if (nose) {
     const first = nose.stitches[0]!
     const last = nose.stitches[nose.stitches.length - 1]!
     const colour = nose.colourHex.toLowerCase() === NOSE_PINK ? 'pink' : 'dark brown'
