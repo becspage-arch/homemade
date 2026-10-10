@@ -21,9 +21,10 @@
  */
 
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
+import type { HeroStage } from '../../render/blenderScene'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
-import { buildTube, tubeRibRounds, type TubeAnchor, type TubeBrimKind, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
+import { buildTube, tubeRibRounds, tubeRidgeLoop, tubeRidgeRounds, tubeFoldRounds, type TubeAnchor, type TubeBrim, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
 
 /** The fabric forms the loom can build from a program.
  *  - 'flat'   — a shaped, single-stitch flat piece (variable-width rows: incs /
@@ -47,8 +48,9 @@ export interface TubeOptions {
   join: TubeJoin
   /** Off a magic ring: a doming crown or a flat base. Default 'dome'. */
   cap?: TubeCap
-  /** A brim over the last N rounds: 1×1 front/back-post rib, or a fold. */
-  brim?: { kind: TubeBrimKind; rounds: number }
+  /** A brim over the last N rounds: 1×1 front/back-post rib, a fold, or a
+   *  ridge brim (sc in one loop only, optionally folded up). See tube.ts. */
+  brim?: TubeBrim
   /** Which way up the finished object stands. 'bottom' (default): the open
    *  end is at the bottom, the start at the top — a hat on a head. 'top': the
    *  start is the base and the open end faces up — a basket, a pot. Render /
@@ -148,6 +150,10 @@ export interface CrochetProgram {
    *  defaults to `'cotton'`, the original material, so every program stored
    *  before this field existed renders unchanged. */
   yarnFibre?: YarnFibre
+  /** The styled listing-photo set a finished-object staging (`standing`: a hat,
+   *  a cowl, a basket) is shot in — see `HeroStage`. Render-only: unset /
+   *  'studio' is the clean sweep, exactly as before. Ignored by `swatch`. */
+  stage?: HeroStage
   /** Base yarn colour (hex). The render's default single colour. */
   colourHex?: string
   /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */
@@ -416,6 +422,8 @@ function writeTubeInstructions(p: CrochetProgram, uk: string): string[] {
   const spec = tubeSpecOf(p)
   const out: string[] = []
   const rib = tubeRibRounds(spec)
+  const ridge = tubeRidgeRounds(spec)
+  const ridgeLoop = tubeRidgeLoop(spec)
   const joined = spec.join === 'joined'
   const counts = spec.rounds
   const up = chainUp(spec.stitch)
@@ -435,15 +443,26 @@ function writeTubeInstructions(p: CrochetProgram, uk: string): string[] {
     if (key && key !== p.roundColours?.[i - 1]) out.push(`Change to the ${key} yarn.`)
     const body = rib.has(i)
       ? `[FPtr around next st, BPtr around next st] ${cur / 2} times`
-      : describeRound(prev, cur, uk)
+      : ridge.has(i)
+        ? `${STITCH_TO_UK.sc} in the ${ridgeLoop} loop only of each st around`
+        : describeRound(prev, cur, uk)
     out.push(`Round ${i + 1}: ${prefix(i)}${body}${suffix}. (${cur} sts)`)
+  }
+  if (ridge.size) {
+    if (spec.stitch !== 'sc') out.push(`The band rounds are worked in ${STITCH_TO_UK.sc} (a shorter stitch than the body).`)
+    out.push(
+      ridgeLoop === 'front'
+        ? 'The unworked back loops form the ridges that show on the outside once the brim is folded up.'
+        : 'The unworked front loops form the ridges of the brim.',
+    )
   }
   if (!joined && counts.length > 1) {
     out.push('Work in a continuous spiral without joining; mark the first stitch of each round.')
   }
   out.push('Fasten off and weave in the end.')
-  if (spec.brim?.kind === 'fold') {
-    out.push(`Fold the last ${spec.brim.rounds} rounds up to the outside to form the brim.`)
+  const folded = tubeFoldRounds(spec)
+  if (folded > 0) {
+    out.push(`Fold the last ${folded} rounds up to the outside to form the brim.`)
   }
   return out
 }
@@ -599,6 +618,8 @@ export function programToChart(p: CrochetProgram): {
       if (joined && (i > 0 || spec.anchor === 'chain')) cells.push({ symbol: 'chain', count: up })
       if (rib.has(i)) {
         for (let c = 0; c < count; c++) cells.push({ symbol: 'treble', label: CHART_STITCH_LABEL[RIB_CHART[c % 2]!] })
+      } else if (tubeRidgeRounds(spec).has(i)) {
+        cells.push({ symbol: sym, count, label: tubeRidgeLoop(spec) === 'front' ? 'FLO' : 'BLO' })
       } else {
         cells.push({ symbol: sym, count })
       }
@@ -612,7 +633,9 @@ export function programToChart(p: CrochetProgram): {
         ? ` The last ${spec.brim.rounds} rounds are 1×1 post rib. ${postNote}`
         : spec.brim?.kind === 'fold'
           ? ` The last ${spec.brim.rounds} rounds fold up as the brim.`
-          : ''
+          : spec.brim?.kind === 'ridge'
+            ? ` The last ${spec.brim.rounds} rounds are worked in the ${tubeRidgeLoop(spec)} loop only (a ridge brim)${spec.brim.fold ? ' and fold up as the brim' : ''}.`
+            : ''
     return { ...base, layout: 'round', rounds, caption: `Worked ${how} ${start}; the end is left open.${brim}` }
   }
 

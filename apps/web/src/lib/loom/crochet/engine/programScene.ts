@@ -17,6 +17,7 @@ import { STITCHES, type StitchId } from './dictionary'
 import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
+import type { HeroStage } from '../../render/blenderScene'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
 
@@ -153,6 +154,8 @@ export interface BlenderScene {
     lightRig?: 'product'
     /** Ground plane size as a multiple of the frame (a low camera sees further). */
     groundScale?: number
+    /** The styled listing-photo set (see `HeroStage`); absent = studio. */
+    stage?: HeroStage
   }
 }
 
@@ -481,6 +484,9 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   if (staging !== 'swatch') {
     view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   }
+  // A styled set round a finished object stood on the table (a hat, a cowl, a
+  // basket). Only written when asked for, so every existing scene is unchanged.
+  if (staging === 'standing' && p.stage && p.stage !== 'studio') view.stage = p.stage
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
