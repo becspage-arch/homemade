@@ -176,9 +176,14 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
   // a disc means radially outward, not world +y).
   const linkFails: string[] = []
   const mer = built.model.meridian
-  const rel = (hi: number, bi: number): { x: number; y: number } => {
+  const rel = (hi: number, bi: number, ax?: StitchLink['axis']): { x: number; y: number } => {
     const h = nodes[hi]!
     const b = nodes[bi]!
+    if (ax) {
+      // A free-form motif link carries the frame it was worked in.
+      const dx = h.x - b.x, dy = h.y - b.y
+      return { x: dx * ax.ax + dy * ax.ay, y: dx * ax.hx + dy * ax.hy }
+    }
     if (cur) {
       const t = cur.t[bi]!, m = cur.m[bi]!
       const dx = h.x - b.x, dy = h.y - b.y, dz = h.z - b.z
@@ -203,7 +208,7 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
   const check = (l: StitchLink): string | null => {
     const h = nodes[l.hook]!
     const b = nodes[l.below]!
-    const d = rel(l.hook, l.below)
+    const d = rel(l.hook, l.below, l.axis)
     if (l.role === 'hook') {
       // Dives under the crown to its far side and stays beside/below it. On a
       // curved surface "side" is the local NORMAL, not global z: n = (-tz, tr)
@@ -242,10 +247,13 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
       return null
     }
     // 'cross' (chain): inside the previous loop's mouth, before its fold, over it.
-    const dx = b.x - h.x // fold apex is beyond the crossing, along +x
+    // A chain worked at an angle (a star point, a leaf's midrib) measures along
+    // its own direction (l.axis), otherwise along world x as before.
+    const dx = l.axis ? -d.x : b.x - h.x // fold apex is beyond the crossing, along the chain
+    const dyc = l.axis ? d.y : h.y - b.y
     if (dx < 0) return `crossing is past its loop's fold (dx=${(dx / yr).toFixed(2)}yr) — expelled forward`
     if (dx > yr * 2.6) return `crossing slid back out of its loop (dx=${(dx / yr).toFixed(2)}yr)`
-    if (Math.abs(h.y - b.y) > yr * 1.6) return `crossing outside the loop's mouth (dy=${((h.y - b.y) / yr).toFixed(2)}yr) — expelled sideways`
+    if (Math.abs(dyc) > yr * 1.6) return `crossing outside the loop's mouth (dy=${(dyc / yr).toFixed(2)}yr) — expelled sideways`
     if (h.z < b.z - yr * 0.15) return 'crossing settled UNDER the fold it should ride over'
     return null
   }

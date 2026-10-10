@@ -77,7 +77,7 @@ export interface RelaxConfig {
    * free to relax. Represents the same physical thing: the fabric blocked to the
    * dimensions it was worked to.
    */
-  layoutMode?: 'y' | 'radial' | 'surface'
+  layoutMode?: 'y' | 'radial' | 'surface' | 'axis'
   /**
    * INTERNAL PRESSURE — the stuffing (§8f-9). A closed crocheted part is not a
    * shell laid on a frame: it is a fabric BAG with filling pushed into it. The
@@ -199,6 +199,17 @@ export interface YarnModel {
    * no loose yarn (every existing build is bit-identical).
    */
   loose?: boolean[]
+  /**
+   * Per-node HEIGHT AXIS for free-form flat motifs (layoutMode 'axis', the
+   * motif kit, motifs/kit.ts): the in-plane unit direction each node's stitch
+   * grows along — radial for a stitch worked in the round, perpendicular to the
+   * chain for a stitch worked along a chain (a star point, a leaf, a petal).
+   * The blocked-flat hold then holds each node at its worked line along ITS
+   * OWN axis only, exactly what 'y' does for rows and 'radial' for rounds, and
+   * leaves the along-row direction and the interlock relief free. null = no
+   * hold for that node. Absent = no axis mode (every existing build unchanged).
+   */
+  layoutAxis?: ({ hx: number; hy: number } | null)[]
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -277,7 +288,10 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   // (initial y) for flat work, its round (initial radius) for work in the round.
   const radial = cfg.layoutMode === 'radial'
   const surface = cfg.layoutMode === 'surface' && !!model.meridian
-  const y0 = cfg.layoutK > 0 && !radial && !surface ? nodes.map((n) => n.y) : null
+  const axisMode = cfg.layoutMode === 'axis' && !!model.layoutAxis
+  const y0 = cfg.layoutK > 0 && !radial && !surface && !axisMode ? nodes.map((n) => n.y) : null
+  // Free-form motifs: each node's worked position, held along its own axis.
+  const p0 = cfg.layoutK > 0 && axisMode ? nodes.map((n) => ({ x: n.x, y: n.y, z: n.z })) : null
   const r0 = cfg.layoutK > 0 && radial ? nodes.map((n) => Math.hypot(n.x, n.y)) : null
   // …and, in the round, each node's worked NORMAL offset (z on a disc). See 5b.
   const z0 = cfg.layoutK > 0 && radial ? nodes.map((n) => n.z) : null
@@ -531,6 +545,23 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     // toward each node's OWN worked offset, never a common plane (§9: a
     // symmetric plane pull crushes the front/back layering), so the interlock
     // relief survives and collision still wins locally.
+    // 5a. Free-form motifs (layoutMode 'axis'): the same blocked hold, along
+    // each node's own height axis, plus the same whisper-soft normal (z) pull
+    // the round work carries (5b) — a motif is no-turn work too.
+    if (p0) {
+      const ax = model.layoutAxis!
+      const kN = cfg.layoutK * 0.4
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        const a = ax[i]
+        if (n.w === 0 || loose?.[i] || !a) continue
+        const q = p0[i]!
+        const d = ((q.x - n.x) * a.hx + (q.y - n.y) * a.hy) * cfg.layoutK
+        n.x += a.hx * d
+        n.y += a.hy * d
+        n.z += (q.z - n.z) * kN
+      }
+    }
     if (r0) {
       const kN = cfg.layoutK * 0.4
       for (let i = 0; i < nodes.length; i++) {
