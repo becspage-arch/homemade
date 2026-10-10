@@ -3403,6 +3403,37 @@ table, which needs regenerating).
 - `AmigurumiPart.sewNote` (composition.ts) → appended to the assembly line, so the horns' "tips pointing up and
   out" and the muzzle's "ring facing out" are in the written pattern, read off the same placement.
 
+**Highland cow round 2** (crochet-bar job `cow`, 2026-10-10, proofs/cow/; `cowPreset.ts`, all engine changes
+additive and every existing composition byte-identical):
+- FOUR VISIBLE LEGS, the bar's seated calf: the front legs tube(18,9) are sewn at the FRONT of the shoulders
+  close together (dir 0.38/0.82/0.5, x ±17) and hang straight down the front of the body (aim 0.1/0.46/−1), the
+  back legs ball(24,4) sole first on the SIDES (dir 0.9/0.6/−0.5) lying forward OUTSIDE the front legs. The r8 cow
+  had the back feet in the middle and the front legs out to the sides behind them, so it read as a lump.
+- HEAD WORKED SIDE TO SIDE: stacked placement gains `axis` (composition.ts) — the piece's pole axis turned across,
+  so sphereRounds(60,2)'s two straight rounds make the head 132 wide x 124 tall (magic ring under one ear). An
+  oblate head needs no new builder: it is a capsule lying on its side, which is how makers work a wide head.
+- CAPSULE MUZZLE sewn on by its SIDE: attach placement gains `centred` (the piece's centre, not a pole, goes
+  `seat` mm under the parent along `dir`; `aim` lays the axis across). sphereRounds(24,5) lying across the face
+  = a 72 x 51 oval. The nostrils are an `EmbroideryFeature` laid directly on it (rounds counted sideways from the
+  middle round, stitches up/down from centre front) with its own `words`, since the generic nostril writer counts
+  rings out from a muzzle's front.
+- FLAT EAR: `COW_EAR_ROUNDS` 6,9,12,15,18,18,18,15,12,9,6 (a +3-a-round leaf), unstuffed, `press` 14 mm. At worsted
+  9 and 11 mm fail the audit (13-28 interlocks: two chenille layers are a yarn's width apart); 14 is the floor and
+  every leaf/tube profile passes from 16. The lop ear's 9.5 was at FINE yarn. Settles 39 x 54 x 14, sewn by the
+  closed end out sideways with `spin` to the lens → reads ~49 wide x 39 tall from the front (the bar's ear).
+- PER-STITCH LOOPS: `buildRounds` loopOpts `stitchAt(k,c)` / `loopByStitch(k,c)`; `HairPatch.plainEvery` (a dc
+  every Nth stitch of a loop round) and `curlEvery`+`curlLoop` (every Nth loop a twisted `loopcurl`, twist 1).
+  `stitchAtOf()` is the one rule the build and the words read. A single twist on one loop in four reads as a
+  tighter curl among open rings (the fully twisted ring was the worm); loops in 2 of 3 stitches stops the tiling.
+- FRINGE SIZE: 7 rounds [6..42] at HAIR_DIR y 1.4 is a mop over the eyes; 6 rounds [6..36] with loops on the even
+  rounds only (the plain last round is the sewing edge) at y 1.0 sits between the horns.
+- BROWN-ONLY PILE: `CompositionProgram.fibreTune` → scene `fibreTune`; render key `pile_dark_only` skips the hair
+  curves on pale yarn (depth_weight ≤ 0.75). The 8 GB probe task is OOM-killed at scene sync above ~4 M hairs:
+  5/mm² x 10 children on the calf's ~120 000 mm² (≈7 M) died, 1.5-2.5/mm² x 6 renders in ~4.5 min a scene.
+- Wired: `cow` in AMIGURUMI_BASE_IDS / AMIGURUMI_BASES (the zod schemas and designer cards derive from them),
+  `buildAmigurumiProgram` dispatches to `buildCowProgram`, `COW_AUDITED_PROFILES` in AUDITED_PROFILES (the save
+  path). ballRounds/tubeRounds/cordRounds moved verbatim to `roundProfiles.ts` (re-exported) to break the cycle.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
