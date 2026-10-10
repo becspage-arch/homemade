@@ -87,6 +87,20 @@ export function cordRounds(rounds: number): number[] {
 export const CONE_ROUNDS: number[] = [4, 5, 6, 7, 8, 4]
 
 /**
+ * THE LOP EAR (toy-pose pass). Worked from the TIP: a 6-st magic ring growing
+ * 3 a round (6-9-12-15 at M — a gentle cone, not a +6 disc, so it folds flat
+ * without the cap creasing), straight, then narrowed toward the top where it
+ * is sewn on, and closed. Not stuffed: pressed flat (`press`), two layers.
+ * The straight rounds carry the contrast LINING as a tapestry panel down the
+ * middle of the front face (`lopLining`).
+ */
+const LOP_EAR_ROUNDS: Record<AmigurumiSize, number[]> = {
+  S: [6, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 9, 9, 9, 6],
+  M: [6, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 12, 12, 12, 12, 9, 6],
+  L: [6, 9, 12, 15, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 15, 15, 15, 15, 12, 9, 6],
+}
+
+/**
  * Every round profile the designer can produce, each one measured to pass the
  * loom's audit at worsted weight. The save path checks a submitted design's
  * pieces against this list; the test keeps the list true.
@@ -113,6 +127,13 @@ export const AUDITED_PROFILES: number[][] = [
   CONE_ROUNDS,
   // The tails. Audited clean at the same three weights.
   cordRounds(5), cordRounds(9),
+  // The toy-pose pass: the big toy head and smaller body, the sole-first
+  // feet, the lop ears and the flat appliqué circles (toe pad, toe bean,
+  // belly patch).
+  sphereRounds(42, 1),
+  ballRounds(18, 3), ballRounds(24, 3),
+  ...Object.values(LOP_EAR_ROUNDS),
+  [6], [6, 12], [6, 12, 18],
 ]
 
 const PROFILE_KEYS = new Set(AUDITED_PROFILES.map((r) => r.join(',')))
@@ -269,20 +290,6 @@ interface SizeProfile {
  * (h/w 0.75 → 1.05) which is the wrong shape for an ear. The limbs and bunny
  * ears are tubes and were never ball profiles.
  */
-/**
- * THE LOP EAR (toy-pose pass). Worked from the TIP: a 6-st magic ring growing
- * 3 a round (6-9-12-15 at M — a gentle cone, not a +6 disc, so it folds flat
- * without the cap creasing), straight, then narrowed toward the top where it
- * is sewn on, and closed. Not stuffed: pressed flat (`press`), two layers.
- * The straight rounds carry the contrast LINING as a tapestry panel down the
- * middle of the front face (`lopLining`).
- */
-const LOP_EAR: Record<AmigurumiSize, number[]> = {
-  S: [6, 9, 12, 12, 12, 12, 12, 12, 12, 12, 12, 9, 9, 9, 6],
-  M: [6, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 12, 12, 12, 12, 9, 6],
-  L: [6, 9, 12, 15, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 15, 15, 15, 15, 12, 9, 6],
-}
-
 /** The lining: on every straight round, the middle third of the stitches
  *  (centred, so a cream rim shows either side once the ear is flattened). */
 export function lopLining(rounds: number[]): Record<number, [number, number]> {
@@ -328,9 +335,9 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(30, 1),
-    toyBody: sphereRounds(18, 3),
+    toyBody: sphereRounds(24, 1),
     bigFoot: ballRounds(12, 3),
-    lopEar: LOP_EAR.S,
+    lopEar: LOP_EAR_ROUNDS.S,
   },
   M: {
     // The signed-off bear proof's own equators, on the sphere profile.
@@ -359,9 +366,9 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(36, 1),
-    toyBody: sphereRounds(24, 3),
+    toyBody: sphereRounds(30, 1),
     bigFoot: ballRounds(18, 3),
-    lopEar: LOP_EAR.M,
+    lopEar: LOP_EAR_ROUNDS.M,
   },
   L: {
     body: sphereRounds(36, 1),
@@ -389,9 +396,9 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(42, 1),
-    toyBody: sphereRounds(30, 3),
+    toyBody: sphereRounds(36, 1),
     bigFoot: ballRounds(24, 3),
-    lopEar: LOP_EAR.L,
+    lopEar: LOP_EAR_ROUNDS.L,
   },
 }
 
@@ -738,7 +745,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
           on: 'head',
           dir: faceDir({ x: side * LOP_EAR_DIR.x, y: LOP_EAR_DIR.y, z: LOP_EAR_DIR.z }),
           aim: faceDir({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
-          spin: faceDir({ x: side * 0.6, y: 1, z: 0 }),
+          spin: faceDir({ x: side * 0.9, y: 1, z: 0 }),
           seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
         },
       })
@@ -826,15 +833,15 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
 }
 
 /** How deep the toy's big head sinks onto the neck (mm): no pinched neck. */
-const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 5, M: 7, L: 8 }
+const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 9, M: 12, L: 14 }
 
 /** The lop ear's press (centre-line gap, mm). Measured: at
  *  worsted a 15-st ear pressed to 12 mm audits clean in its settled frame;
  *  tighter folds stretch the stitches at the fold edges past the gate. */
-const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 11, M: 12, L: 12 }
+const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 11, M: 12, L: 15 }
 /** Sewn on the upper side of the head, hanging down and a little out. */
-const LOP_EAR_DIR = { x: 1, y: 0, z: 0.35 }
-const LOP_EAR_AIM = { x: 0.6, y: 0.05, z: -1 }
+const LOP_EAR_DIR = { x: 0.85, y: 0.05, z: 0.55 }
+const LOP_EAR_AIM = { x: 0.32, y: 0.08, z: -1 }
 
 /**
  * The toy's arms and legs (toy-pose pass).
@@ -849,29 +856,29 @@ const LOP_EAR_AIM = { x: 0.6, y: 0.05, z: -1 }
  * in a lighter yarn, sewn on. The bear's paw tips are its first two rounds
  * worked in the contrast yarn, and the bear gets a contrast belly patch.
  */
-const TOY_ARM_DIR = { x: 0.72, y: 0.5, z: 0.95 }
-const TOY_ARM_AIM = { x: -0.62, y: 0.75, z: -0.5 }
+const TOY_ARM_DIR = { x: 0.85, y: 0.45, z: 0.8 }
+const TOY_ARM_AIM = { x: -0.42, y: 0.8, z: -0.5 }
 const TOY_LEG_DIR = { x: 0.5, y: 0.75, z: -0.62 }
 const TOY_LEG_AIM = { x: 0.32, y: 1, z: 0.05 }
-const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 0, L: 0 }
+const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 1.05, L: 2.7 }
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
   const bear = choices.base === 'bear'
   const main = choices.mainHex
   const contrast = choices.contrastHex
   const paws = choices.paws
-  const armRounds = bear ? s.bearArm : s.limb
+  const armRounds = s.limb
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: armRounds, colourHex: main,
-      scale: bear ? 0.9 : 0.85,
+      scale: 0.95,
       // The bear's paw: rounds 1-2 in the contrast yarn.
       ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
       place: {
         on: 'body',
         dir: { x: side * TOY_ARM_DIR.x, y: TOY_ARM_DIR.y, z: TOY_ARM_DIR.z },
         aim: { x: side * TOY_ARM_AIM.x, y: TOY_ARM_AIM.y, z: TOY_ARM_AIM.z },
-        seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
+        seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
       },
     })
   }
@@ -904,13 +911,13 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     parts.push({
       name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12], colourHex: contrast,
       form: 'disc', yarnWeight: 'fine',
-      place: { on: leg, dir: at(-0.12, 0), aim: a, seat: 0, surfaceFit: 'points' },
+      place: { on: leg, dir: at(-0.35, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
-    for (const [k, v] of [[0, -0.42], [1, 0], [2, 0.42]] as const) {
+    for (const [k, v] of [[0, -0.72], [1, 0], [2, 0.72]] as const) {
       parts.push({
         name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6], colourHex: contrast,
         form: 'disc', yarnWeight: 'fine',
-        place: { on: leg, dir: at(k === 1 ? 0.62 : 0.5, v), aim: a, seat: 0, surfaceFit: 'points' },
+        place: { on: leg, dir: at(k === 1 ? 0.95 : 0.7, v), aim: a, seat: 0, surfaceFit: 'points' },
       })
     }
   }
