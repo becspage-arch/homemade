@@ -2799,6 +2799,32 @@ change, which means an image rebuild); the face has no embroidered features
 (closed eyes, lashes, blush, mouth); and the base render is a white studio
 shot, not a styled scene (that is the Fal finish, out of scope at $0).
 
+
+## 8f-14. EMBROIDERED FACES (2026-10-10, bar criterion 4)
+
+`engine/faceEmbroidery.ts`. A face is sewn onto the settled head, so it is built the way a maker sews it:
+each straight stitch comes up through a gap, lies across the crocheted stitches and goes back down.
+
+- **One description, two consumers.** `buildFaceEmbroidery(style, layout)` names every stitch in PATTERN
+  coordinates: the round of the piece (from its magic ring; `.5` = the gap between rounds; 0 = ring centre,
+  `n + 1` = closing point) and a stitch offset from a zero line (centre front of the head, top of the muzzle),
+  counted along that round. `writeFaceInstructions` writes the UK embroidery lines from those numbers;
+  `placeEmbroidery` finds the same rounds and stitches on the relaxed fabric (`model.round` per node, azimuth
+  round the part's own axis, after the contact pass) and lays the thread on it.
+- **The strand.** Ends at the pattern spots; the run between is a taut chord lifted onto the highest crowns
+  within reach (smoothed, so it bridges dips), diving into the fabric at each hole. Backstitch sharing holes is
+  one continuous strand; a lash rooted in a lid hole has no dive at its root (short dives curled into hooks
+  through the spline). Plied filaments like every yarn stroke: real geometry, no texture.
+- **Styles** (`FACE_STYLES`, `AmigurumiChoices.face`): `safety` (default, original props; scenes and hashes
+  byte-identical), `safety-stitched`, `sleepy` (6-backstitch lid curve + 4 lashes), `stitched` (satin oval +
+  white catch-light). All embroidered styles add a satin triangle nose, a stem-and-two-V "w" mouth and satin
+  blush in pink DK. Placement per base in `FACE_SET` (elevation/azimuth, low and wide).
+- **Outside the hash, with one exception.** The embroidery moves no stitch. But an embroidered preset seats the
+  muzzle magic-ring OUT (`poleIn` false), because the closing hole rendered dark under the mouth; so an
+  embroidered bunny/cat/dog muzzle differs from the safety-eye preset (bunny-M sleepy b087e53d). Default presets
+  are unmoved (the hash guard in `amigurumi-presets.test.ts` holds).
+- Renders and verdicts: project files `crochet-bar/proofs/faces/`, log `crochet-bar/jobs/faces.md`.
+
 ---
 
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
