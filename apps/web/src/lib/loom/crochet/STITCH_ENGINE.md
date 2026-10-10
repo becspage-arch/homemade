@@ -3196,6 +3196,40 @@ envelope is 54–66 around and 9–13 straight rounds because the ascent at 66 i
 
 ---
 
+## 8i. YARN LOOK — chenille plush and fine cotton (2026-10-09/10)
+
+Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
+`scripts/loom_render_crochet.py`; no geometry hash moves.
+
+- **The lever.** A scene stroke is 3 ply tubes laid at equal phase round the
+  yarn centreline (`yarnLoop.pliedFilaments`), so their pointwise mean IS the
+  centreline (`strand_centre`). A fibre with `strand` set rebuilds the strand
+  from it: `"single"` = one plump unplied tube, `"replied"` = re-plied with
+  the fibre's own ply size and twist (`replied`). `"ply"` (default; cotton,
+  wool, velvet) sweeps the scene's plies exactly as before.
+- **`chenille`**: one tube at 1.38x the plied bundle radius (stitches close
+  up and squash together), `chenille_material`: roughness 1.0, specular 0.04,
+  a soft sheen (0.35 at roughness 0.5) tinted to a lighter yarn shade,
+  crushed-pile value drift about one stitch across, pale pile-tip flecks,
+  a fine pile bump, NO subsurface. The old halo shell is gone from chenille.
+- **`fine-cotton`** (new `YarnFibre`): re-plied at 0.2 turns/mm with plies
+  0.5 of a 1.15x bundle; satin-ish (spec 0.22, sheen 0.35, aniso 0.3).
+- **`fibreTune`** in a scene JSON overrides a fibre's knobs for probe sweeps;
+  the engine never writes it.
+- **Did not work:** the halo shell (dark speckle, ply still visible); one
+  smooth strand for cotton (plastic pasta); ply 0.6 / twist 0.09 (doughy);
+  Principled sheen 1.0 on chenille (pale rim on every stitch edge = leather);
+  subsurface on interpenetrating plump strands (dark specks on pale yarn);
+  hair-curve pile (`add_pile_hairs`, kept but off): a toy is ~46 m of yarn,
+  ~530,000 mm2 of strand, and even 2 hairs/mm2 never finished inside 25 min
+  on the 4 vCPU probe.
+- **Still short of the bar:** the stitches are bigger relative to the toy
+  than the bar's (stitch count / yarn weight = geometry); chenille silhouettes
+  are clean rather than fuzzy. Proofs: `crochet-bar/proofs/yarn/`, log
+  `crochet-bar/jobs/yarn.md`.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

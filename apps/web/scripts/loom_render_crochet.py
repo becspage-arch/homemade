@@ -85,18 +85,26 @@ FIBRE_PARAMS = {
     # (`add_pile_hairs`). The earlier halo-shell version kept the cotton ply
     # visible and read dark and speckled (crochet-fibre-proof/verdict.md).
     "chenille": dict(
-        specular=0.04, sheen=1.0, sheen_rough=0.3, aniso=0.0,
-        subsurf=0.2, bump1=0.3, bump2=0.16, rough_lo=0.75, rough_hi=0.92,
-        rough=0.9, sheen_tint_mix=0.45, crush_scale=7.0, crush_amt=0.14,
-        pile_scale=55.0, pile_bump=0.35,
-        pile_density=12.0, pile_children=12, pile_len_mm=0.45, pile_lean=0.7,
-        pile_radius_mm=0.03, pile_tip_lift=0.18,
+        specular=0.04, sheen=0.35, sheen_rough=0.5, aniso=0.0,
+        # subsurface OFF: the plump strands interpenetrate where stitches
+        # squash together, and random-walk SSS trapped inside an overlap
+        # rendered as dark specks on pale chenille (proofs/yarn r1, r4).
+        subsurf=0.0, bump1=0.3, bump2=0.16, rough_lo=0.75, rough_hi=0.92,
+        rough=1.0, sheen_tint_mix=0.45, crush_scale=7.0, crush_amt=0.14,
+        fleck_scale=45.0, fleck_amt=0.45,
+        pile_scale=90.0, pile_bump=0.45,
+        # Hair-curve pile fringe (`add_pile_hairs`) is OFF by default: ~46 m
+        # of yarn on a toy is ~530,000 mm2 of strand, so even 2 hairs/mm2 ran
+        # well past 10 min per hero on the 4 vCPU probe. Opt in per scene
+        # (fibreTune pile_density) once renders have a bigger budget.
+        pile_density=0.0, pile_children=8, pile_len_mm=0.6, pile_lean=0.7,
+        pile_radius_mm=0.045, pile_tip_lift=0.18,
         flyaway=0.0, halo=None,
         # Chenille has NO ply: the strand is one plump velvet tube. The renderer
         # rebuilds it from the plies' shared centreline (see `strand_centre`) at
         # `strand_mult` x the plied bundle's outer radius, so neighbouring
         # stitches close up the way squashy chenille does. Pile = `chenille_material`.
-        strand="single", strand_mult=1.42,
+        strand="single", strand_mult=1.38,
     ),
     # Chenille's dense short pile, plus a directional sheen: real curve
     # geometry in Cycles carries a native along-length tangent, so raising
@@ -109,14 +117,17 @@ FIBRE_PARAMS = {
     ),
     # Fine mercerised cotton (the bar's fairy doll): small, even, DEFINED
     # stitches with a slight sheen. Same plied construction as `cotton` but
-    # re-plied by the renderer from the centreline with a lazy twist and fat,
-    # nearly-merged plies (ply grooves read as fine lines, never a barber-pole
-    # rope), and a plumper strand so stitches sit snug with no gaps.
+    # re-plied by the renderer from the centreline with an even, moderate twist
+    # (0.2 turns/mm, vs the default's 0.18 on much thinner plies) so the ply
+    # reads as fine regular grooves, not a barber-pole rope, and a plumper
+    # strand (1.15x) so stitches sit snug with no daylight between them.
+    # Probe r1-r3: ply 0.6 / twist 0.09 read doughy; one smooth strand read
+    # as plastic pasta; this was the clear winner (proofs/yarn/r3-*).
     "fine-cotton": dict(
         specular=0.22, sheen=0.35, sheen_rough=0.4, aniso=0.3,
         subsurf=0.08, bump1=0.25, bump2=0.12, rough_lo=0.42, rough_hi=0.6,
         flyaway=0.0, halo=None,
-        strand="replied", strand_mult=1.22, ply_frac=0.6, twist_turns_per_mm=0.09,
+        strand="replied", strand_mult=1.15, ply_frac=0.5, twist_turns_per_mm=0.2,
     ),
 }
 
@@ -286,7 +297,27 @@ def chenille_material(name, hexcol, fp):
     ramp.color_ramp.elements[1].position = 0.7
     ramp.color_ramp.elements[1].color = hi
     nt.links.new(crush.outputs["Fac"], ramp.inputs["Fac"])
-    nt.links.new(ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    # pile-tip flecks: the cut ends of the pile catch the light as countless
+    # tiny pale points (the bar cow's surface is made of them), so a fine,
+    # high-contrast noise lifts specks of the yarn towards a paler tint. This
+    # is what reads as "fibre" rather than smooth velvet tubing.
+    fleck = nt.nodes.new("ShaderNodeTexNoise")
+    fleck.inputs["Scale"].default_value = fp.get("fleck_scale", 160.0)
+    fleck.inputs["Detail"].default_value = 2.0
+    nt.links.new(tex.outputs["Object"], fleck.inputs["Vector"])
+    fr = nt.nodes.new("ShaderNodeMapRange")
+    fr.inputs["From Min"].default_value = 0.52
+    fr.inputs["From Max"].default_value = 0.72
+    fr.inputs["To Min"].default_value = 0.0
+    fr.inputs["To Max"].default_value = fp.get("fleck_amt", 0.0)
+    nt.links.new(fleck.outputs["Fac"], fr.inputs["Value"])
+    pale = tuple(min(1.0, c * 1.7 + 0.03) for c in base[:3]) + (1.0,)
+    mix = nt.nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    nt.links.new(fr.outputs["Result"], mix.inputs[0])
+    nt.links.new(ramp.outputs["Color"], mix.inputs[6])
+    mix.inputs[7].default_value = pale
+    nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
     set_in(bsdf, "Roughness", fp.get("rough", 0.9))
     set_in(bsdf, "Specular IOR Level", fp.get("specular", 0.04))
     set_in(bsdf, "Sheen Weight", fp.get("sheen", 1.0))
@@ -486,7 +517,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         cu.use_fill_caps = True
         write_points(cu, 1.0)
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
-        if strand == "single":
+        if strand == "single" and fpb.get("material", "pile") == "pile":
             ymat = chenille_material("y_" + hexcol, hexcol, fpb)
         else:
             ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre)
