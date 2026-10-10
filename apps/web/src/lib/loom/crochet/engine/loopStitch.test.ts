@@ -46,3 +46,44 @@ test('the fringe words match the patch counts and name the loop stitch', () => {
   assert.equal(hairPatchesFor('none', 'head', '#000', { x: 0, y: 0, z: 1 }).length, 0)
   assert.equal(hairPatchesFor(undefined, 'head', '#000', { x: 0, y: 0, z: 1 }).length, 0)
 })
+
+// ── The Highland cow (crochet-bar hair job, Fable rounds 5-8) ───────────────
+import { buildCowProgram, cowFringe, COW_DEFAULTS, COW_HORN_ROUNDS } from './cowPreset'
+
+test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean and stays off the head', () => {
+  const h = cowFringe('#7a4a35', 'M')
+  const built = buildHairPatch(h, YR)
+  assert.deepEqual(hairPatchProblems(h, built, YR), [])
+  const m = built.model
+  let face = -Infinity
+  m.nodes.forEach((p, i) => { if (!m.loose?.[i] && p.z > face) face = p.z })
+  assert.ok(m.nodes.every((p, i) => !m.loose?.[i] || p.z <= face + 1e-6), 'no loop passes into the head')
+  // Loops on rounds 1, 3, 5 only: the words say dc on rounds 2 and 4.
+  const lines = writeHairInstructions(h)
+  assert.match(lines[1]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round two fingers\)/)
+  assert.match(lines[2]!, /^Round 2: 2 dc in each st\./)
+  assert.match(lines[3]!, /^Round 3: \*1 lp st, 2 lp st in next st\* 6 times/)
+  assert.match(lines[4]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)
+  assert.match(lines[5]!, /^Round 5: .*lp st.*one finger only/)
+})
+
+test('the cow program carries every signature piece and the stitched nostrils', () => {
+  const p = buildCowProgram(COW_DEFAULTS)
+  const names = p.parts.map((x) => x.name)
+  for (const n of ['body', 'neck', 'head', 'muzzle', 'horn-l', 'horn-r', 'ear-l', 'ear-r', 'front-leg-l', 'front-leg-r', 'back-leg-l', 'back-leg-r', 'tail']) {
+    assert.ok(names.includes(n), `missing ${n}`)
+  }
+  const horn = p.parts.find((x) => x.name === 'horn-l')!
+  assert.deepEqual(horn.rounds, COW_HORN_ROUNDS)
+  assert.equal(horn.colourHex, COW_DEFAULTS.contrastHex)
+  assert.ok(horn.sewNote && /tips pointing up and out/.test(horn.sewNote))
+  const muzzle = p.parts.find((x) => x.name === 'muzzle')!
+  assert.equal((muzzle.place as { poleIn?: boolean }).poleIn, false, 'the muzzle shows its magic ring for the nostrils')
+  assert.equal(p.props?.filter((x) => /eye/.test(x.name)).length, 2)
+  const nose = p.embroidery?.find((e) => e.name === 'nose')
+  assert.ok(nose && nose.on === 'muzzle' && nose.stitches.length === 2, 'two nostril stitches on the muzzle')
+  assert.ok(nose!.stitches.every((s) => s.taut))
+  assert.equal(p.hair?.length, 1)
+  assert.equal(p.yarnFibre, 'chenille')
+  assert.equal(p.yarnWeight, 'worsted')
+})

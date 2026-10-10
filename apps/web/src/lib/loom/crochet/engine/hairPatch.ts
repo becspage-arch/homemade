@@ -240,7 +240,7 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
     const base = baseLen >= 4.5 ? 2 : 1
     const n = len >= baseLen * 1.25 ? base + 1 : len <= baseLen * 0.95 && h.loopByRound?.(k) ? Math.max(1, base - 1) : base
     const word = ['one finger', 'two fingers', 'three fingers'][n - 1]!
-    if (n === base && k > 0) return ''
+    if (n === base && (k > 0 || base === 1)) return ''
     return n > base ? ` (wrap the yarn round ${word} for these taller loops)` : n < base ? ` (wrap the yarn round ${word} only, for shorter loops)` : ` (wrap the yarn round ${word})`
   }
   h.rounds.forEach((count, k) => {
