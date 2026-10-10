@@ -22,7 +22,7 @@ import { buildRounds } from './shaping'
 import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import type { BuiltContinuous } from './yarnPath'
-import type { LoopShape, StitchId } from './dictionary'
+import { STITCHES, type LoopShape, type StitchId } from './dictionary'
 import type { V3 } from '../yarnLoop'
 
 export const HAIR_STYLE_IDS = ['none', 'fringe', 'curly-fringe'] as const
@@ -61,7 +61,7 @@ export interface PlacedHair {
 }
 
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
-export const HAIR_GRAVITY = 0.008
+export const HAIR_GRAVITY = 0.0015
 
 const unit = (d: { x: number; y: number; z: number }): V3 => {
   const l = Math.hypot(d.x, d.y, d.z) || 1
@@ -183,6 +183,15 @@ export function placeHair(
   return { placed, problems }
 }
 
+/** How far the curly loop is twisted, in a maker's words (from the same
+ *  half-turn count the geometry is built with). */
+function twistWords(h: HairPatch): string {
+  const ht = h.loop?.twist ?? STITCHES[h.stitch].loop?.twist ?? 0
+  if (ht <= 1) return 'give the loop half a twist on your finger'
+  const turns = ht / 2
+  return `twist the loop ${turns === 1 ? 'once' : `${turns} times`} on your finger`
+}
+
 /** UK-terms written instructions for the patch, from the same counts. */
 export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[] {
   const lines: string[] = []
@@ -191,7 +200,7 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
     `${h.name.charAt(0).toUpperCase() + h.name.slice(1)} (a separate circle, sewn on). ` +
       'Loop stitch (lp st): insert hook in next st, wrap the yarn from front to back round your forefinger held behind the work, ' +
       'catch the yarn behind your finger and pull it through the st (2 loops on hook), yrh and pull through both loops, then slip your finger out. ' +
-      (twisted ? 'For a curly loop, twist the loop round 3 times before you finish the stitch. ' : '') +
+      (twisted ? `For a curly loop, ${twistWords(h)} before you finish the stitch. ` : '') +
       'The loop forms on the side facing away from you. Work every round with the same side facing you: ' +
       `that side is sewn against the ${hostLabel}, and the loops stand out on the other.`,
   )
@@ -232,12 +241,16 @@ export function hairPatchesFor(
       name: 'fringe',
       on,
       dir,
-      stitch: curly ? 'loopcurl' : 'loopst',
+      stitch: 'loopst',
       rounds: [6, 12, 18],
       firstLoopRound: 1,
-      // A toy's fringe is worked over one finger close to the work: shorter
-      // loops than a swatch's, pulled outward toward the circle's edge.
-      loop: curly ? { lengthYr: 5.5, droopDeg: -25 } : { lengthYr: 4.5, droopDeg: -25 },
+      // Curly: short loops worked over one finger close to the work, about as
+      // wide as they are long, so each stands up off the head as a round curl
+      // (a springy chenille loop holds itself open — the bar cow's fringe).
+      // Plain: longer loops that fall forward over the forehead.
+      loop: curly
+        ? { lengthYr: 3.2, halfWidthYr: 1.25, droopDeg: 0, vary: 0.25 }
+        : { lengthYr: 5, halfWidthYr: 1.4, droopDeg: -10, vary: 0.2 },
       colourHex,
     },
   ]
