@@ -1,120 +1,85 @@
 /**
  * BUTTERFLY (audit round 8; bar: the dusty-blue and peach butterflies on
- * bar-flower-wall-hanging.png; built-how ref real/8-butterflies.jpg).
+ * bar-flower-wall-hanging.png; built-how ref real/8-butterflies.jpg — "flat
+ * butterflies worked in rounds of contrast colours, with an edging round").
  *
- * Rounds 1-2: 10 then 20 sc (UK dc) — a flat centre. Round 3: four wings, each
- * over five sts — a chain standing up to the first stitch's height, one stitch
- * into each of the next four sts, short at the edges and tall in the middle so
- * each wing is a rounded lobe (tr, dtr, dtr, tr UK for the big upper wings;
- * htr, tr, tr, htr for the small lower ones), a chain back down and a sl st
- * into the fifth st, which makes the notch between wings. A short chain body is sewn down the middle and its tail knotted for an
- * antenna.
+ * Four wings, each a small flat circle worked in the round from a magic ring
+ * (the upper wings three rounds, the lower two) finished with an edging round
+ * in cream, sewn in pairs either side of a chain body whose tail is knotted
+ * for an antenna. The deep waist between the wings is simply where the four
+ * circles meet; the sewing is the pose.
  *
- * (Tried first: all four wings straight into the ring — 26 stitches and chains
- * into a ring 2.4yr across crowded the chains standing beside the tall legs out
- * of their own folds; then 12 and 16-st first rounds with two tall sts fanned
- * into one st — the second post was crowded out of its own yarn-over collars.
- * Two flat rounds and one tall st per st are clean.)
+ * (Rounds 1-3 of this audit worked all four wings into one centre — straight
+ * into the ring (crowded, 12-16 failures), then over a 20-st second round: it
+ * was audit clean but rendered as a scalloped disc, the notches between wings
+ * filled by the chains standing at each wing's edges.)
  */
 
-import type { StitchId } from '../dictionary'
 import { rowPitchYr } from '../dictionary'
-import { MotifStrand, crownRound, intoRingRound, polar, polarV, nearAngle, type Crown, type Ring } from './kit'
-import { runWords } from './leaf'
+import { MotifStrand, crownRound, intoRingRound, sub, unit, type Crown } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const BUTTERFLY_COLOURS = { wing: '#9fb4c9', body: '#7a6250' } // dusty blue, cocoa
+export const BUTTERFLY_COLOURS = { wing: '#9fb4c9', edge: '#eee3cf', body: '#7a6250' } // dusty blue, cream, cocoa
 
-/** Rounds 1-2: half this many sc (UK dc) into the ring, then 2 in each. */
-export const BUTTERFLY_R1 = 20
-/** Tall sts into each of the wing's sts of round 2 (then a sl st in the next).
- *  [1, 2, 1] over 16 sts crowded the increase's second post out of its own
- *  yarn-over collars; one each over 20 sts is clean. */
-export const WING_OPS = [1, 1, 1, 1]
-const PER_WING = WING_OPS.length + 1
-const FANW = 0.35
+interface WingSpec {
+  /** Stitches per round in the wing colour (a flat circle: +6 a round). */
+  rounds: number[]
+  /** The edging round in cream: 2 sc in every `incEvery`-th st. */
+  incEvery: number
+}
+export const UPPER_WING: WingSpec = { rounds: [6, 12, 18], incEvery: 3 }
+export const LOWER_WING: WingSpec = { rounds: [6, 12], incEvery: 2 }
 
-interface Wing {
-  name: string
-  /** The wing's stitches, one into each st, edge to edge: lower at the edges,
-   *  tall in the middle, so each wing is a rounded lobe. */
-  sts: StitchId[]
-  /** The chain standing up to the first stitch's height (and back down). */
-  ch: number
+function wingPiece(yr: number, wing: string, edge: string, w: WingSpec, name: string, at: { x: number; y: number; z: number }): MotifPiece {
+  const m = new MotifStrand(yr, wing)
+  const c = { x: 0, y: 0 }
+  const ring = m.magicRing(c)
+  let below: Crown[] = intoRingRound(m, ring, new Array(w.rounds[0]).fill('sc'))
+  let r = ring.r + yr * rowPitchYr('sc')
+  for (let q = 1; q < w.rounds.length; q++) {
+    const every = below.length / 6
+    const a = crownRound(m, c, below, below.map((_, i) => (i % every === every - 1 ? 'inc' : 'st')), 'sc', r)
+    below = a.crowns
+    r = a.r
+  }
+  m.setColour(edge)
+  m.sectionName = 'edging'
+  const a = crownRound(m, c, below, below.map((_, i) => (i % w.incEvery === w.incEvery - 1 ? 'inc' : 'st')), 'sc', r)
+  r = a.r
+  m.fastenOff(unit(sub(c, m.cursor)))
+  const built = m.finish(r * 2, r * 2)
+  return pieceOf(name, m, built, (p) => ({ x: p.x + at.x, y: p.y + at.y, z: p.z + at.z }))
 }
 
-/** Round 3: four wings, each over five sts of round 2 — chain up, a stitch in
- *  each of the next four sts, chain down, sl st in the fifth. */
-export const WINGS: Wing[] = [
-  { name: 'upper right', sts: ['dc', 'tr', 'tr', 'dc'], ch: 2 },
-  { name: 'upper left', sts: ['dc', 'tr', 'tr', 'dc'], ch: 2 },
-  { name: 'lower left', sts: ['hdc', 'dc', 'dc', 'hdc'], ch: 1 },
-  { name: 'lower right', sts: ['hdc', 'dc', 'dc', 'hdc'], ch: 1 },
-]
+/** Settled radius of a wing (to place the four of them). */
+function wingRadius(yr: number, w: WingSpec): number {
+  return yr * (0.85 + rowPitchYr('sc') * (w.rounds.length + 1))
+}
 
 export function buildButterfly(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(BUTTERFLY_COLOURS, o)
   const yr = y.yr
-  const m = new MotifStrand(yr, col.wing!)
-  const c = { x: 0, y: 0 }
-  const ring: Ring = m.magicRing(c)
-  m.sectionName = 'centre'
-  const r0 = intoRingRound(m, ring, new Array(BUTTERFLY_R1 / 2).fill('sc'))
-  const g = crownRound(m, c, r0, r0.map(() => 'inc'), 'sc', ring.r + yr * rowPitchYr('sc'))
-  const r1 = g.crowns
-  const rPrev = g.r
-  const thOf = (cr: Crown): number => Math.atan2(cr.p.y - c.y, cr.p.x - c.x)
-  const step = (Math.PI * 2) / BUTTERFLY_R1
-  // Unwrapped angles of the round-1 crowns, in work order.
-  const th: number[] = []
-  for (let i = 0; i < r1.length; i++) th.push(i ? nearAngle(thOf(r1[i]!), th[i - 1]! + step) : thOf(r1[0]!))
-  m.sectionName = 'wings'
-  for (let k = 0; k < WINGS.length; k++) {
-    const w = WINGS[k]!
-    const rK0 = rPrev + yr * rowPitchYr(w.sts[0]!)
-    const base = PER_WING * k
-    const aj = th[base + WING_OPS.length]!
-    // the chain standing up to the wing's height, at the wing's leading edge
-    m.chain(w.ch, [m.cursor, polarV(c, rK0, th[base]! - step * 0.55)], { turning: 1 })
-    // the tall sts, fanned across the wing (2 into the middle st)
-    const nT = WING_OPS.reduce((a, b) => a + b, 0)
-    const lo = th[base]! - step * FANW, hi = th[base + WING_OPS.length - 1]! + step * FANW
-    let t = 0
-    for (let q = 0; q < WING_OPS.length; q++) {
-      const b = r1[base + q]!
-      const thB = th[base + q]!
-      for (let s = 0; s < WING_OPS[q]!; s++, t++) {
-        const two = WING_OPS[q]! === 2
-        const a = lo + ((t + 0.5) / nT) * (hi - lo)
-        const id = w.sts[t]!
-        const rK = rPrev + yr * rowPitchYr(id)
-        const f = polar(c, rK)
-        m.stitch({ id, frame: f, xCrown: a * rK, xHook: thB * rK, into: { kind: 'crown', crown: b }, by: rPrev, ty: rK, spread: two ? (s ? -0.6 : 0.6) : 0, hookDepthScale: two && s ? 1.5 : 1 })
-      }
-    }
-    // the chain back down, and a sl st into the next st
-    m.chain(w.ch, [m.cursor, polarV(c, rPrev + yr, aj - step * 0.15)])
-    const jb = r1[base + WING_OPS.length]!
-    m.stitch({ id: 'slst', frame: polar(c, rPrev), xCrown: aj * rPrev, xHook: aj * rPrev, into: { kind: 'crown', crown: jb }, by: rPrev })
+  const Ru = wingRadius(yr, UPPER_WING), Rl = wingRadius(yr, LOWER_WING)
+  const gap = yr * 1.2 // the body lies in this gap
+  // The upper wings are sewn overlapping the tops of the lower ones (a yarn
+  // layer up), the body over both.
+  const pieces: MotifPiece[] = []
+  for (const sx of [1, -1]) {
+    pieces.push(wingPiece(yr, col.wing!, col.edge!, UPPER_WING, sx > 0 ? 'upper right wing' : 'upper left wing', { x: sx * (Ru + gap), y: Ru * 0.55, z: yr * 2.2 }))
+    pieces.push(wingPiece(yr, col.wing!, col.edge!, LOWER_WING, sx > 0 ? 'lower right wing' : 'lower left wing', { x: sx * (Rl + gap * 0.8), y: -Rl * 1.05, z: 0 }))
   }
-  m.fastenOff({ x: -Math.cos(th[WING_OPS.length]!), y: -Math.sin(th[WING_OPS.length]!) })
-  const built = m.finish(yr * 40, yr * 40)
-  // Pose: the notch between the upper wings (the first wing's sl st) at the top.
-  const rot = Math.PI / 2 - th[WING_OPS.length]!
-  const cs = Math.cos(rot), sn = Math.sin(rot)
-  const wings = pieceOf('wings', m, built, (p) => ({ x: p.x * cs - p.y * sn, y: p.x * sn + p.y * cs, z: p.z }))
-  const body = buildBody(yr, col.body!)
-  return assemble('butterfly', 'Butterfly', o, [wings, body], butterflyWords(), materialsLine(o, ['dusty blue', 'cocoa']))
+  pieces.push(buildBody(yr, col.body!, Ru * 0.55 + Ru * 0.6))
+  return assemble('butterfly', 'Butterfly', o, pieces, butterflyWords(), materialsLine(o, ['dusty blue', 'cream', 'cocoa']))
 }
 
 export const BODY_CH = 9
 
 /** The body: a chain laid down the middle and sewn on, its two tails knotted
  *  at the top for antennae. Relaxed on its own, then laid on the wings. */
-function buildBody(yr: number, hex: string): MotifPiece {
+function buildBody(yr: number, hex: string, top: number): MotifPiece {
   const m = new MotifStrand(yr, hex)
   const L = yr * 2.6 * BODY_CH
   // Made from the head end down: the slip knot at the top.
@@ -136,21 +101,31 @@ function buildBody(yr: number, hex: string): MotifPiece {
   m.markLoose(from)
   const built = m.finish(yr * 6, L)
   // Laid down the middle of the wings, a yarn's thickness proud of them.
-  const piece = pieceOf('body', m, built, (p) => ({ x: p.x, y: p.y + L * 0.5, z: p.z + yr * 2.4 }))
+  const piece = pieceOf('body', m, built, (p) => ({ x: p.x, y: p.y + top, z: p.z + yr * 4.4 }))
   return piece
 }
 
 export function butterflyWords(): string[] {
-  const up = WINGS[0]!, low = WINGS[2]!
-  const sts = (w: Wing): string => runWords(w.sts, 'st')
-  const wing = (w: Wing): string => `ch ${w.ch}, ${sts(w)}, ch ${w.ch}, sl st in next st`
+  const wing = (w: WingSpec, label: string): string[] => {
+    const lines = [`${label} (make 2), with dusty blue: make a magic ring.`, `  Round 1: ${w.rounds[0]} ${UK.sc} into the ring. (${w.rounds[0]} sts)`]
+    for (let q = 1; q < w.rounds.length; q++) {
+      const every = w.rounds[q - 1]! / 6
+      lines.push(every === 1
+        ? `  Round ${q + 1}: 2 ${UK.sc} in each st around. (${w.rounds[q]} sts)`
+        : `  Round ${q + 1}: [${every === 2 ? `${UK.sc} in next st` : `${UK.sc} in each of the next ${every - 1} sts`}, 2 ${UK.sc} in next st] 6 times. (${w.rounds[q]} sts)`)
+    }
+    const last = w.rounds[w.rounds.length - 1]!
+    const n = w.rounds.length + 1
+    const run = w.incEvery === 2 ? `${UK.sc} in next st` : `${UK.sc} in each of the next ${w.incEvery - 1} sts`
+    lines.push(`  Change to cream. Round ${n} (edging): [${run}, 2 ${UK.sc} in next st] around. (${last + last / w.incEvery} sts)`)
+    lines.push('  Fasten off, leaving a tail for sewing.')
+    return lines
+  }
   return [
-    'With dusty blue, make a magic ring.',
-    `Round 1: ${BUTTERFLY_R1 / 2} ${UK.sc} into the ring; pull the ring tight. (${BUTTERFLY_R1 / 2} sts)`,
-    `Round 2: 2 ${UK.sc} in each st around. (${BUTTERFLY_R1} sts)`,
-    `Round 3 (wings): [${wing(up)}] twice for the upper wings, then [${wing(low)}] twice for the lower wings. (4 wings)`,
-    'Fasten off and weave in the ends.',
-    `Body: with cocoa, leaving a 6 cm tail, ch ${BODY_CH}; fasten off leaving a 15 cm tail. Sew the chain down the middle of the butterfly, from the notch between the upper wings to the notch between the lower wings; bring both tails out at the top for the antennae and tie a small knot near the end of each.`,
+    ...wing(UPPER_WING, 'Upper wings'),
+    ...wing(LOWER_WING, 'Lower wings'),
+    `Body: with cocoa, leaving a 6 cm tail, ch ${BODY_CH}; fasten off leaving a 15 cm tail.`,
+    'Sew the upper wings side by side with the lower wings below them, edges touching at the middle; sew the body down the middle over the joins. Bring both tails out at the top for the antennae and tie a small knot near the end of each.',
   ]
 }
 

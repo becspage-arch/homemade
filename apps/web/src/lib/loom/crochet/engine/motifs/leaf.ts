@@ -15,7 +15,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const LEAF_COLOURS = { main: '#9aab8a' } // sage
+export const LEAF_COLOURS = { main: '#859470' } // sage olive (r1-2's #9aab8a rendered mint)
 
 /** One side of the leaf, from the stem end to the tip (the other side is
  *  worked tip to stem with the same heights reversed). */

@@ -18,7 +18,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const ROLLED_ROSE_COLOURS = { main: '#c27f8a' } // dusty mauve-pink
+export const ROLLED_ROSE_COLOURS = { main: '#ad6c7a' } // dusty mauve (pinks render lighter and warmer)
 
 /** The petals in work order (the first ones roll into the centre). */
 export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [

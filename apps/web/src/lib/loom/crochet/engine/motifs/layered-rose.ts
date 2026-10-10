@@ -23,7 +23,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const LAYERED_ROSE_COLOURS = { main: '#dba3a6', base: '#c98589' } // rose pink, deeper pink
+export const LAYERED_ROSE_COLOURS = { main: '#cf8f98', base: '#b77682' } // rose pink, deeper pink
 
 interface Layer {
   name: string

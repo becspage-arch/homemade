@@ -16,7 +16,7 @@ import { assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './commo
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const VINE_COLOURS = { vine: '#8d9c7c', leaf: '#9aab8a' } // deeper sage, sage
+export const VINE_COLOURS = { vine: '#74825c', leaf: '#859470' } // olive, sage olive
 export const VINE_CH = 40
 /** Leaves sewn at these chains (counted from the top), alternating sides. */
 export const VINE_LEAF_AT = [5, 11, 17, 23, 29, 35]

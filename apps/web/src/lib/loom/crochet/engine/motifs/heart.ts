@@ -2,8 +2,9 @@
  * HEART (audit round 8; built-how ref real/8-hearts.jpg, the one-minute heart).
  *
  * Every stitch is worked into ONE magic ring and the ring is drawn tight; the
- * outline comes from the stitch HEIGHTS going round: a ch 3 and three tr (UK)
- * for the left lobe, three dc down the side, ch 1, a tr for the point, ch 1,
+ * outline comes from the stitch HEIGHTS going round: a ch 2 and three tr (UK)
+ * for the left lobe (a ch 3 stood up as a horn at the dip in round 2), three
+ * dc down the side, ch 1, a tr for the point, ch 1,
  * three dc up the other side, three tr for the right lobe, then ch 3 and a sl st
  * into the ring make the dip between the lobes. Tall where the lobes are, short
  * at the sides, tall at the point: the heart emerges, nothing draws it.
@@ -16,14 +17,14 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions } from './types'
 
-export const HEART_COLOURS: Record<string, string> = { main: '#d98f98' } // dusty rose
+export const HEART_COLOURS: Record<string, string> = { main: '#d4808f' } // dusty rose (r2's #d98f98 rendered salmon)
 
 type Slot = { kind: 'st'; id: StitchId; deg: number } | { kind: 'ch'; n: number; deg: number; toDeg?: number }
 
 /** Round the ring, anticlockwise from just left of the dip (degrees, 90 = the
  *  dip at the top). Mirror-symmetric about the vertical. */
 export const HEART_SLOTS: Slot[] = [
-  { kind: 'ch', n: 3, deg: 104 },
+  { kind: 'ch', n: 2, deg: 104 },
   { kind: 'st', id: 'dc', deg: 124 },
   { kind: 'st', id: 'dc', deg: 143 },
   { kind: 'st', id: 'dc', deg: 162 },
@@ -57,11 +58,11 @@ export function buildHeart(o?: MotifOptions): BuiltMotif {
   const made: ({ kind: 'st'; crown: Crown; slot: Slot } | { kind: 'ch'; loops: ChainLoop[]; slot: Slot })[] = []
   for (const s of HEART_SLOTS) {
     if (s.kind === 'ch') {
-      const rTop = ring.r + yr * rowPitchYr('dc') * (s.n >= 3 ? 1 : 0.7)
+      const rTop = ring.r + yr * rowPitchYr('dc') * (s.n >= 2 ? 1 : 0.7)
       let loops: ChainLoop[]
       if (s.toDeg === undefined) {
         // a chain standing up from the ring (it counts as a stitch / spaces the point)
-        loops = m.chain(s.n, [m.cursor, polarV(c, rTop, A(s.deg))], { turning: s.n >= 3 ? 1 : 0 })
+        loops = m.chain(s.n, [m.cursor, polarV(c, rTop, A(s.deg))], { turning: s.n >= 2 ? 1 : 0 })
       } else {
         // the closing chain arches from the last lobe stitch over to the dip
         const mid = polarV(c, rTop * 0.82, A((s.deg + s.toDeg) / 2))
@@ -150,8 +151,8 @@ export function heartWords(): string[] {
   const sts = slots.filter((s) => s.kind === 'st' && s.id !== 'slst').length + 1
   return [
     'Make a magic ring.',
-    `Into the ring: ${parts.slice(0, -1).join(', ')}, then sl st into the ring. (${sts} sts, counting the first ch 3 as a st)`,
-    'Pull the tail to close the ring tight: the dip forms between the two chain 3s.',
+    `Into the ring: ${parts.slice(0, -1).join(', ')}, then sl st into the ring. (${sts} sts, counting the first ch 2 as a st)`,
+    'Pull the tail to close the ring tight: the dip forms between the first ch 2 and the last ch 3.',
     ...(HEART_EDGE ? [`Round 2 (edging): 2 ${UK.sc} in each of the next 3 tr, ${UK.sc} in each of the next 3 sts, 2 ${UK.sc} in the point tr, ${UK.sc} in each of the next 3 sts, 2 ${UK.sc} in each of the next 3 tr, sl st into the sl st at the dip. (20 sts)`] : []),
     'Fasten off and weave in the ends.',
   ]
