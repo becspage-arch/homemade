@@ -89,7 +89,9 @@ export function emitLoop(
   const Lv = yr * shape.lengthYr * (1 + vary * loopJitter(j, c, 1))
   const hw = yr * shape.halfWidthYr * (1 + 0.5 * vary * loopJitter(j, c, 2))
   const droop = ((shape.droopDeg + 40 * vary * loopJitter(j, c, 3)) * Math.PI) / 180
-  const yaw = 70 * vary * loopJitter(j, c, 4) * (Math.PI / 180)
+  // Which way the loop's plane faces varies most of all: a loop slipped off the
+  // finger turns whichever way it was let go.
+  const yaw = 180 * vary * loopJitter(j, c, 4) * (Math.PI / 180)
   // Root A: under the head of the stitch below, beside where the hook will be.
   const rootA = push(xH + s * r0, yRoot, hookZ)
   // Through the work to the far side (a yarn beyond the hook if the hook is
@@ -98,10 +100,9 @@ export function emitLoop(
   const P: V = { x: xH, y: yRoot, z: zP }
   push(xH + s * r0, yRoot, zP)
   // The loop's frame: e0 straight out of the far face, tipped DOWN the fabric
-  // by the droop (the finger pulls the loop down behind the work); d0 the
-  // in-plane direction it curls toward; a1 across the loop (along the row).
+  // by the droop (the finger pulls the loop down behind the work); a1 across
+  // the loop (along the row); b0 completes the frame.
   const e0 = rotZ({ x: 0, y: -Math.sin(droop), z: side * Math.cos(droop) }, yaw)
-  const d0 = rotZ({ x: 0, y: -Math.cos(droop), z: -side * Math.sin(droop) }, yaw)
   const a1 = rotZ({ x: s, y: 0, z: 0 }, yaw)
   const curl = shape.curl
   // A second lateral, perpendicular to both (completes the frame).

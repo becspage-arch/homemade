@@ -41,7 +41,7 @@ for (const style of ['fringe', 'curly-fringe'] as const) {
 test('the fringe words match the patch counts and name the loop stitch', () => {
   const [h] = hairPatchesFor('curly-fringe', 'head', '#74472f', { x: 0, y: 0.8, z: 1 })
   const words = writeHairInstructions(h!, 'head').join('\n')
-  assert.match(words, /Round 1: 6 dc into a magic ring\. \(6\)/)
+  assert.match(words, /Round 1: 6 lp st into a magic ring\. \(6\)/)
   assert.match(words, /Round 3: \*1 lp st, 2 lp st in next st\* 6 times\. \(18\)/)
   assert.equal(hairPatchesFor('none', 'head', '#000', { x: 0, y: 0, z: 1 }).length, 0)
   assert.equal(hairPatchesFor(undefined, 'head', '#000', { x: 0, y: 0, z: 1 }).length, 0)

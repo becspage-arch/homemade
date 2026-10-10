@@ -44,8 +44,8 @@ export interface HairPatch {
   stitch: Extract<StitchId, 'loopst' | 'loopcurl'>
   /** Stitches per round, from the magic ring: 6, 12, 18 … (+6 each round). */
   rounds: number[]
-  /** Rounds from this index on are loop-stitch rounds (0-based; round 1 is
-   *  always dc into the ring — loops need a round below to clamp in). */
+  /** Rounds from this index on are loop-stitch rounds (0-based; 0 = loop
+   *  stitches straight into the magic ring, clamped round the ring strand). */
   firstLoopRound: number
   /** Overrides of the dictionary loop shape for this patch. */
   loop?: Partial<LoopShape>
@@ -61,7 +61,7 @@ export interface PlacedHair {
 }
 
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
-export const HAIR_GRAVITY = 0.0015
+export const HAIR_GRAVITY = 0.0025
 
 const unit = (d: { x: number; y: number; z: number }): V3 => {
   const l = Math.hypot(d.x, d.y, d.z) || 1
@@ -207,7 +207,7 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   h.rounds.forEach((count, k) => {
     const lp = k >= h.firstLoopRound
     if (k === 0) {
-      lines.push(`Round 1: ${count} dc into a magic ring. (${count})`)
+      lines.push(`Round 1: ${count} ${lp ? 'lp st' : 'dc'} into a magic ring. (${count})`)
       return
     }
     const per = h.rounds[k - 1]! / 6
@@ -243,7 +243,9 @@ export function hairPatchesFor(
       dir,
       stitch: 'loopst',
       rounds: [6, 12, 18],
-      firstLoopRound: 1,
+      // Curly: loops from the ring out, so the centre of the tuft is as full
+      // as its edge. Plain: a dc round first, then loops.
+      firstLoopRound: curly ? 0 : 1,
       // Curly: short loops worked over one finger close to the work, about as
       // wide as they are long, so each stands up off the head as a round curl
       // (a springy chenille loop holds itself open — the bar cow's fringe).

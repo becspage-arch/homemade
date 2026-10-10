@@ -999,7 +999,7 @@ const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
 
 /** Where the fringe circle's centre sits on the head: on the crown, tipped
  *  forward so its front edge lies just above the eyes. */
-const HAIR_DIR = { x: 0, y: 0.62, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.75, z: 1 }
 
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []
