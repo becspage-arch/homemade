@@ -23,6 +23,7 @@ import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './program'
 import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
+import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -156,6 +157,10 @@ export interface CompositionProgram {
   /** Non-yarn notions (safety eyes, a nose). Optional: a composition without
    *  them renders exactly as before, down to the scene JSON. */
   props?: CompositionProp[]
+  /** Surface EMBROIDERY (faceEmbroidery.ts): eyes, a nose, a mouth, blush,
+   *  sewn onto the finished pieces as real strands. Optional, outside the
+   *  geometry hash like the props; a composition without it is unchanged. */
+  embroidery?: EmbroideryFeature[]
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
@@ -251,6 +256,8 @@ export interface PlacedProp {
 export interface CompiledComposition {
   placed: PlacedPart[]
   props: PlacedProp[]
+  /** The embroidery laid on the settled fabric (empty when there is none). */
+  embroidery: PlacedEmbroidery[]
   yr: number
   /** Empty = every part is genuinely stitched. Non-empty = a part failed the
    *  audit gate (prefixed with the part name); do NOT render. */
@@ -655,8 +662,12 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     }
   })
 
+  // Embroidery: sewn onto the settled fabric after every contact has moved
+  // it. No yarn of the pieces moves, so the hash is unchanged by it.
+  const embroidery = p.embroidery?.length ? placeEmbroidery(p.embroidery, byName, yr) : []
+
   const ghash = geometryHash({ model: { nodes: allNodes as never } } as never)
-  return { placed, props, yr, problems, geometryHash: ghash }
+  return { placed, props, embroidery, yr, problems, geometryHash: ghash }
 }
 
 
@@ -868,7 +879,16 @@ function drapeDisc(pp: PlacedPart, parent: PlacedPart, yr: number): void {
 
 export interface BlenderScene {
   fabric: { widthMm: number; heightMm: number; hex: string }
-  strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[]
+  strokes: {
+    hex: string
+    sheen: number
+    radiusMm: number
+    filaments: number[][][]
+    /** This stroke's own fibre look, when it differs from the scene's
+     *  `fibre` (an embroidery thread in a soft wool on a cotton toy). Absent
+     *  on every yarn stroke, so unembroidered scenes are byte-identical. */
+    fibre?: YarnFibre
+  }[]
   /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
    *  that has none, so those scenes are byte-identical to before. */
   props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
@@ -921,6 +941,14 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     }
     return [{ hex: pp.part.colourHex, sheen: 0.85, radiusMm, filaments }]
   })
+  // Each embroidered straight stitch is its own short plied strand, in its
+  // own thread, on top of the fabric.
+  for (const e of compiled.embroidery ?? []) {
+    for (const line of e.strands) {
+      const { radiusMm, filaments } = pliedFilaments(smooth(line, 2), e.radiusMm, 3, twist * 0.4)
+      strokes.push({ hex: e.hex, sheen: 0.6, radiusMm, filaments, ...(e.fibre ? { fibre: e.fibre } : {}) })
+    }
+  }
   // Full composed extent (for the fabric hint; the script frames from the strokes).
   let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity
   for (const pp of compiled.placed) {

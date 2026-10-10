@@ -2799,6 +2799,32 @@ change, which means an image rebuild); the face has no embroidered features
 (closed eyes, lashes, blush, mouth); and the base render is a white studio
 shot, not a styled scene (that is the Fal finish, out of scope at $0).
 
+
+## 8f-14. EMBROIDERED FACES (2026-10-10, bar criterion 4)
+
+`engine/faceEmbroidery.ts`. A face is sewn onto the settled head, so it is built the way a maker sews it:
+each straight stitch comes up through a gap, lies across the crocheted stitches and goes back down.
+
+- **One description, two consumers.** `buildFaceEmbroidery(style, layout)` names every stitch in PATTERN
+  coordinates: the round of the piece (from its magic ring; `.5` = the gap between rounds; 0 = ring centre,
+  `n + 1` = closing point) and a stitch offset from a zero line (centre front of the head, top of the muzzle),
+  counted along that round. `writeFaceInstructions` writes the UK embroidery lines from those numbers;
+  `placeEmbroidery` finds the same rounds and stitches on the relaxed fabric (`model.round` per node, azimuth
+  round the part's own axis, after the contact pass) and lays the thread on it.
+- **The strand.** Ends at the pattern spots; the run between is a taut chord lifted onto the highest crowns
+  within reach (smoothed, so it bridges dips), diving into the fabric at each hole. Backstitch sharing holes is
+  one continuous strand; a lash rooted in a lid hole has no dive at its root (short dives curled into hooks
+  through the spline). Plied filaments like every yarn stroke: real geometry, no texture.
+- **Styles** (`FACE_STYLES`, `AmigurumiChoices.face`): `safety` (default, original props; scenes and hashes
+  byte-identical), `safety-stitched`, `sleepy` (6-backstitch lid curve + 4 lashes), `stitched` (satin oval +
+  white catch-light). All embroidered styles add a satin triangle nose, a stem-and-two-V "w" mouth and satin
+  blush in pink DK. Placement per base in `FACE_SET` (elevation/azimuth, low and wide).
+- **Outside the hash, with one exception.** The embroidery moves no stitch. But an embroidered preset seats the
+  muzzle magic-ring OUT (`poleIn` false), because the closing hole rendered dark under the mouth; so an
+  embroidered bunny/cat/dog muzzle differs from the safety-eye preset (bunny-M sleepy b087e53d). Default presets
+  are unmoved (the hash guard in `amigurumi-presets.test.ts` holds).
+- Renders and verdicts: project files `crochet-bar/proofs/faces/`, log `crochet-bar/jobs/faces.md`.
+
 ---
 
 ## 8g. BULK AUTOPILOT — the catalogue fills itself on the server (2026-09-06)
@@ -3193,6 +3219,60 @@ envelope is 54–66 around and 9–13 straight rounds because the ascent at 66 i
 - Post-stitch density (inherited).
 - A turned rim and a flared wall for baskets; a crown decrease that closes a
   hat from the brim up (bottom-up hats); fphdc/bphdc rib for hdc bodies.
+
+---
+
+## 8i. YARN LOOK — chenille plush and fine cotton (2026-10-09/10)
+
+Bar criterion 2 ("the yarn looks real and soft"). Render-only, all in
+`scripts/loom_render_crochet.py`; no geometry hash moves.
+
+- **The lever.** A scene stroke is 3 ply tubes laid at equal phase round the
+  yarn centreline (`yarnLoop.pliedFilaments`), so their pointwise mean IS the
+  centreline (`strand_centre`). A fibre with `strand` set rebuilds the strand
+  from it: `"single"` = one plump unplied tube, `"replied"` = re-plied with
+  the fibre's own ply size and twist (`replied`). `"ply"` (default; cotton,
+  wool, velvet) sweeps the scene's plies exactly as before.
+- **`chenille`**: one tube at 1.38x the plied bundle radius (stitches close
+  up and squash together), `chenille_material`: roughness 1.0, specular 0.04,
+  a soft sheen (0.35 at roughness 0.5) tinted to a lighter yarn shade,
+  crushed-pile value drift about one stitch across, pale pile-tip flecks,
+  a fine pile bump, NO subsurface. The old halo shell is gone from chenille.
+- **Chenille depth (Fable, 10 Oct, r5-r7).** The same dye reads darker in
+  chenille than in cotton, and the bar cow's crevices go deep warm brown; the
+  r4 render had no crevice range and drifted orange (hue +8 deg, from the
+  1.2 saturation grade under AgX). Now: `base_mult` 0.76 on the albedo, an
+  AO cavity term (`cavity_nodes`: distance 2 mm, mixed towards a darker,
+  slightly redder crevice shade), a chroma-preserving rim lift at grazing
+  angles (`rim_mode: lift`, fakes lit pile tips without hairs), and a
+  per-fibre `sat_mult` 0.92 on the grade. Pale colours take 40% of the
+  depth (`depth_weight`) so a cream muzzle stays cream.
+- **`fine-cotton`** (new `YarnFibre`): the bar bunny's milk cotton shows NO
+  ply at close range, so the plies overlap heavily (0.62 of a 1.15x bundle,
+  0.22 turns/mm) leaving only a faint spun grain, matte (rough 0.7-0.85,
+  spec 0.08, sheen 0.6, no anisotropy) with a gentle cavity term (0.3).
+- **`fibreTune`** in a scene JSON overrides a fibre's knobs for probe sweeps;
+  the engine never writes it.
+- **Hair-curve pile (`add_pile_hairs`)** works and is cheap (1.6 M hairs at
+  3/mm2 on the bear hero: +80 s) but stays OFF: on cream it reads as grey
+  whiskers, not nap. The "never finished" r2/r4 hair renders were a length
+  bug: with `use_advanced_hair` Blender grows hair from the emission
+  velocity (~4 BU per unit of `normal_factor`), not `hair_length`, so they
+  were millions of 3 cm hairs. Opt in per scene with `pile_density`.
+- **Did not work:** the halo shell (dark speckle, ply still visible); one
+  smooth strand for cotton, satin or matte (plastic pasta / clay, three
+  times); ply 0.6 / twist 0.09 (doughy); ply 0.42 (rope); Principled sheen
+  1.0 on chenille (pale rim on every stitch edge = leather); a white-mix rim
+  tint (dusty); the full depth treatment on cream chenille (dirty grey);
+  subsurface on interpenetrating plump strands (dark specks on pale yarn);
+  a transparent silhouette edge (`rim_alpha`, +50% render time for less
+  than the hairs give).
+- **Still short of the bar:** the stitches are bigger relative to the toy
+  than the bar's, and loose loops read as bobbles where the bar's tight Vs
+  read as ridged rows (stitch count / yarn weight = geometry, wave 2 gauge);
+  the cow is still a shade redder. At matched close-up crops the material is
+  now the same kind of yarn; the rest is gauge. Proofs:
+  `crochet-bar/proofs/yarn/`, log `crochet-bar/jobs/yarn.md`.
 
 ---
 

@@ -21,7 +21,7 @@
 import { z } from 'zod'
 import { subjectKey } from './subject-key'
 import { BAND_STITCHES } from './crochet-design'
-import { AMIGURUMI_BASE_IDS } from '@/lib/loom/crochet/engine/amigurumiPresets'
+import { AMIGURUMI_BASE_IDS, FACE_STYLE_IDS } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import type { CrochetDesign } from './crochet-design'
 import type { CrochetTreatment } from './crochet-forms'
 import type { CrochetBrief } from './crochet-planner'
@@ -52,7 +52,7 @@ const COLOUR_KEY = /^[a-z0-9-]{1,24}$/i
 const SLUG = /^[a-z0-9][a-z0-9-]{2,79}$/
 
 /** Every fibre a design may name. Mirrors `YarnFibre` (engine/program.ts). */
-export const YARN_FIBRES = ['cotton', 'wool', 'chenille', 'velvet'] as const
+export const YARN_FIBRES = ['cotton', 'wool', 'chenille', 'velvet', 'fine-cotton'] as const
 const YarnFibreSchema = z.enum(YARN_FIBRES)
 
 // ── The brief the session writes ────────────────────────────────────────────
@@ -137,6 +137,7 @@ const AmigurumiSchema = z
     eyeMm: z.number().int(),
     nose: z.boolean(),
     paws: z.boolean(),
+    face: z.enum(FACE_STYLE_IDS).optional(),
     yarnFibre: YarnFibreSchema.optional(),
   })
   .strict()
