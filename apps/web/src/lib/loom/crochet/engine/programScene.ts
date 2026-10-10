@@ -18,7 +18,7 @@ import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
 import type { HeroStage } from '../../render/blenderScene'
-import { drapeTube, drapedView } from './drape'
+import { drapeFlat, drapeProps, drapeTube, drapedView } from './drape'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
 
@@ -158,6 +158,10 @@ export interface BlenderScene {
     /** The styled listing-photo set (see `HeroStage`); absent = studio. */
     stage?: HeroStage
   }
+  /** Matte ellipsoid props (a pouffe under a draped blanket, a bust under a
+   *  cowl) — the drape's coloured colliders, built by loom_render_crochet.py's
+   *  build_props. Only written for a draped scene. */
+  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
 }
 
 /** Default `minFieldMm` (STITCH_ENGINE §8e-2 Part C) for a finished-object
@@ -376,8 +380,8 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   if (staging === 'flatband') ctrl = flatbandStrip(ctrl)
   if (p.form === 'tube' && p.tube?.openEnd === 'top') ctrl = turnOver(ctrl)
   // A soft tube put down on the table (engine/drape.ts): staging only, opt-in.
-  const draped = p.form === 'tube' && !!p.drape
-  if (draped) ctrl = drapeTube(built, yr, p.drape).world
+  const draped = (p.form === 'tube' || p.form === 'grid' || p.form === 'flat') && !!p.drape
+  if (draped) ctrl = (p.form === 'tube' ? drapeTube : drapeFlat)(built, yr, p.drape!).world
   const center = smooth(ctrl, PER_SEG)
   // Target OUTER yarn radius. MUST match the single-stitch swatch call sites
   // (scripts/loom-stitch.ts, loom-continuous.ts) which the crisp-plied-yarn pass
@@ -493,11 +497,13 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   // A styled set round a finished object stood on the table (a hat, a cowl, a
   // basket). Only written when asked for, so every existing scene is unchanged.
   if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') view.stage = p.stage
+  const props = draped ? drapeProps(p.drape!) : []
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
     strokes,
     fibre: p.yarnFibre ?? 'cotton',
     view,
+    ...(props.length ? { props } : {}),
   }
 }
 

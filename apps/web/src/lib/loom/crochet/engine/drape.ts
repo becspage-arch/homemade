@@ -50,8 +50,9 @@ import type { BuiltContinuous } from './yarnPath'
 import { collapseTube, type TubeCollapse } from './tubeStaging'
 
 export type DrapeCollider =
-  /** An axis-aligned ellipsoid (a head, a bust): centre and semi-axes (mm). */
-  | { kind: 'ellipsoid'; centre: V3; semi: V3 }
+  /** An axis-aligned ellipsoid (a head, a bust, a pouffe): centre and
+   *  semi-axes (mm). With `hex` it is also rendered as a matte prop. */
+  | { kind: 'ellipsoid'; centre: V3; semi: V3; hex?: string; gloss?: number }
   /** A capsule between two points (a neck, a dowel, an arm). */
   | { kind: 'capsule'; a: V3; b: V3; radius: number }
   /** The table ends at `xEdge`: fabric beyond it hangs over a rounded edge of
@@ -64,8 +65,9 @@ export interface DrapeOptions {
    *    or cowl put down flat); `collapse` tunes it.
    *  - 'side': the standing piece rolled onto its side and dropped.
    *  - 'standing': left standing on its open end and let slump (a cowl ring).
+   *  - 'flat': a flat piece put down as worked (its default).
    *  - 'custom': `initial` maps the coarse rest mesh to its start. */
-  start?: 'collapsed' | 'side' | 'standing' | 'custom'
+  start?: 'collapsed' | 'side' | 'standing' | 'flat' | 'custom'
   collapse?: Partial<Omit<TubeCollapse, 'yarnRadiusMm' | 'roundRadius' | 'axial'>>
   initial?: (rest: V3[], rows: number, cols: number) => V3[]
   /** Gravity (mm per step², default 0.06). */
@@ -108,10 +110,14 @@ export interface DrapeResult {
   thicknessMm: number
 }
 
-/** The shell coordinates of every yarn node of a built tube. */
+/** The shell coordinates of every yarn node of a built piece. */
 interface ShellMap {
   rows: number
   cols: number
+  /** Closed round the hoop (a tube) or an open sheet (a flat piece). */
+  closed: boolean
+  /** +1 when e_row × e_col is the outward normal, −1 when it is inward. */
+  nSign: 1 | -1
   /** Row profile in the model frame: mean radius, height, meridian arclength. */
   R: Float64Array
   Z: Float64Array
@@ -145,7 +151,7 @@ function profileNormals(R: Float64Array, Z: Float64Array): { nr: Float64Array; n
 }
 
 /** Map every node of a built tube onto its shell (v, u, n). */
-function shellMap(built: BuiltContinuous, cols: number): ShellMap {
+function shellOfTube(built: BuiltContinuous, cols: number): ShellMap {
   const nodes = built.model.nodes
   const nodeRow = built.nodeRow
   if (!nodeRow) throw new Error('drape: the piece carries no per-node round index (only tubes drape)')
@@ -220,16 +226,87 @@ function shellMap(built: BuiltContinuous, cols: number): ShellMap {
     if (th < 0) th += TAU
     u[i] = (th / TAU) * cols
   }
-  return { rows: K, cols, R, Z, S, v, u, n }
+  return { rows: K, cols, closed: true, nSign: 1, R, Z, S, v, u, n }
 }
+
+/**
+ * Map every node of a built FLAT piece (rows of turned work, relaxed in the
+ * x–y plane with relief in z) onto an open sheet: v from its row's worked
+ * line (the mean y of each row), u from its x across the piece, n = z.
+ */
+function shellOfFlat(built: BuiltContinuous, cols: number): ShellMap {
+  const nodes = built.model.nodes
+  const nodeRow = built.nodeRow
+  if (!nodeRow) throw new Error('drape: the piece carries no per-node row index')
+  let kMax = -1
+  let hasAnchor = false
+  for (const k of nodeRow) { if (k > kMax) kMax = k; if (k < 0) hasAnchor = true }
+  const off = hasAnchor ? 1 : 0
+  const K = kMax + 1 + off
+  const Y = new Float64Array(K)
+  const cnt = new Float64Array(K)
+  let xmin = Infinity, xmax = -Infinity
+  for (let i = 0; i < nodes.length; i++) {
+    const row = nodeRow[i]! + off
+    Y[row]! += nodes[i]!.y
+    cnt[row]! += 1
+    if (nodes[i]!.x < xmin) xmin = nodes[i]!.x
+    if (nodes[i]!.x > xmax) xmax = nodes[i]!.x
+  }
+  for (let k = 0; k < K; k++) { if (cnt[k]! > 0) Y[k]! /= cnt[k]!; else if (k > 0) Y[k] = Y[k - 1]! }
+  // The sheet's columns span the piece's width with a little margin so the
+  // selvedge loops sit inside the last quad.
+  const pad = (xmax - xmin) * 0.01
+  const X0 = xmin - pad
+  const X1 = xmax + pad
+  const v = new Float64Array(nodes.length)
+  const u = new Float64Array(nodes.length)
+  const n = new Float64Array(nodes.length)
+  for (let i = 0; i < nodes.length; i++) {
+    const p = nodes[i]!
+    const row = nodeRow[i]! + off
+    // Rows are a monotone ladder in y: find v by linear interpolation between
+    // the neighbouring row lines (extrapolated past the ends).
+    let bv = row
+    if (K > 1) {
+      const a = row > 0 && (p.y - Y[row]!) * (Y[row - 1]! - Y[row]!) > 0 ? row - 1 : row
+      const b = Math.min(K - 1, a + 1)
+      const ya = a === b ? Y[K - 2]! : Y[a]!
+      const yb = a === b ? Y[K - 1]! : Y[b]!
+      const base = a === b ? K - 2 : a
+      const dy = yb - ya
+      bv = Math.abs(dy) < 1e-9 ? row : base + (p.y - ya) / dy
+      bv = Math.max(-1, Math.min(K, bv))
+    }
+    v[i] = bv
+    u[i] = ((p.x - X0) / (X1 - X0)) * (cols - 1)
+    n[i] = p.z
+  }
+  // Row-major rest mesh encoded through R/Z/S for the shared helpers: here R is
+  // the row's y line and the column x is laid by restMesh's flat branch.
+  const R = Y
+  const Z = new Float64Array(K)
+  const S = new Float64Array(K)
+  for (let k = 1; k < K; k++) S[k] = S[k - 1]! + Math.abs(Y[k]! - Y[k - 1]!)
+  const m: ShellMap = { rows: K, cols, closed: false, nSign: -1, R, Z, S, v, u, n }
+  flatX.set(m, [X0, X1])
+  return m
+}
+/** The x span of a flat shell's columns (kept off the interface). */
+const flatX = new WeakMap<ShellMap, [number, number]>()
 
 /** The coarse rest mesh in the model frame (row-major, rows × cols). */
 function restMesh(m: ShellMap): V3[] {
   const out: V3[] = []
+  const fx = flatX.get(m)
   for (let k = 0; k < m.rows; k++) {
     for (let j = 0; j < m.cols; j++) {
-      const th = (j / m.cols) * TAU
-      out.push({ x: m.R[k]! * Math.cos(th), y: m.R[k]! * Math.sin(th), z: m.Z[k]! })
+      if (fx) {
+        out.push({ x: fx[0] + ((fx[1] - fx[0]) * j) / (m.cols - 1), y: m.R[k]!, z: 0 })
+      } else {
+        const th = (j / m.cols) * TAU
+        out.push({ x: m.R[k]! * Math.cos(th), y: m.R[k]! * Math.sin(th), z: m.Z[k]! })
+      }
     }
   }
   return out
@@ -237,14 +314,14 @@ function restMesh(m: ShellMap): V3[] {
 
 /** Outward unit normals of a mesh, rows × cols, central differences (one-sided
  *  at the end rows), e_meridian × e_hoop. */
-function meshNormals(pos: V3[], rows: number, cols: number): V3[] {
+function meshNormals(pos: V3[], rows: number, cols: number, closed = true, sign = 1): V3[] {
   const out: V3[] = new Array(rows * cols)
   for (let k = 0; k < rows; k++) {
     const ka = Math.max(0, k - 1)
     const kb = Math.min(rows - 1, k + 1)
     for (let j = 0; j < cols; j++) {
-      const ja = (j + cols - 1) % cols
-      const jb = (j + 1) % cols
+      const ja = closed ? (j + cols - 1) % cols : Math.max(0, j - 1)
+      const jb = closed ? (j + 1) % cols : Math.min(cols - 1, j + 1)
       const a = pos[ka * cols + j]!, b = pos[kb * cols + j]!
       const c = pos[k * cols + ja]!, d = pos[k * cols + jb]!
       const sx = b.x - a.x, sy = b.y - a.y, sz = b.z - a.z
@@ -255,18 +332,16 @@ function meshNormals(pos: V3[], rows: number, cols: number): V3[] {
       const L = Math.hypot(nx, ny, nz)
       if (L < 1e-9) { out[k * cols + j] = { x: 0, y: 0, z: 1 }; continue }
       nx /= L; ny /= L; nz /= L
-      out[k * cols + j] = { x: nx, y: ny, z: nz }
+      out[k * cols + j] = { x: nx * sign, y: ny * sign, z: nz * sign }
     }
   }
-  // The pole rows of a closed crown are a tiny ring whose cross product is
-  // noisy: average each row's normals when the row is nearly a point.
   return out
 }
 
 /** Put every yarn node back on a (settled) mesh at its own (v, u, n). */
 function skin(m: ShellMap, pos: V3[]): V3[] {
   const { rows, cols } = m
-  const N = meshNormals(pos, rows, cols)
+  const N = meshNormals(pos, rows, cols, m.closed, m.nSign)
   const out: V3[] = new Array(m.v.length)
   for (let i = 0; i < m.v.length; i++) {
     const v = Math.max(-1, Math.min(rows, m.v[i]!))
@@ -274,11 +349,21 @@ function skin(m: ShellMap, pos: V3[]): V3[] {
     const k0 = Math.max(0, Math.min(rows - 2, Math.floor(v)))
     const k1 = Math.min(rows - 1, k0 + 1)
     const tv = v - k0
-    let u = m.u[i]! % cols
-    if (u < 0) u += cols
-    const j0 = Math.floor(u) % cols
-    const j1 = (j0 + 1) % cols
-    const tu = u - Math.floor(u)
+    let u = m.u[i]!
+    let j0: number, j1: number, tu: number
+    if (m.closed) {
+      u %= cols
+      if (u < 0) u += cols
+      j0 = Math.floor(u) % cols
+      j1 = (j0 + 1) % cols
+      tu = u - Math.floor(u)
+    } else {
+      // Past either selvedge the sheet is its end column extrapolated.
+      u = Math.max(-1, Math.min(cols, u))
+      j0 = Math.max(0, Math.min(cols - 2, Math.floor(u)))
+      j1 = j0 + 1
+      tu = u - j0
+    }
     const w00 = (1 - tv) * (1 - tu), w01 = (1 - tv) * tu, w10 = tv * (1 - tu), w11 = tv * tu
     const i00 = k0 * cols + j0, i01 = k0 * cols + j1, i10 = k1 * cols + j0, i11 = k1 * cols + j1
     const p00 = pos[i00]!, p01 = pos[i01]!, p10 = pos[i10]!, p11 = pos[i11]!
@@ -380,19 +465,28 @@ function project(p: V3[], w: Float64Array, e: Edge): void {
  * table (world mm, z = 0 is the table top).
  */
 export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = {}): DrapeResult {
-  const nodeRow = built.nodeRow ?? []
-  let maxCount = 0
-  {
-    const per = new Map<number, number>()
-    for (const k of nodeRow) per.set(k, (per.get(k) ?? 0) + 1)
-    let maxNodes = 0
-    for (const [k, c] of per) if (k >= 0 && c > maxNodes) maxNodes = c
-    // ~17 nodes a stitch in the builder: one column a stitch.
-    maxCount = Math.round(maxNodes / 17)
-  }
-  const cols = o.cols ?? Math.max(24, Math.min(144, maxCount || 48))
-  const m = shellMap(built, cols)
-  const { rows } = m
+  return settle(built, yr, shellOfTube(built, o.cols ?? defaultCols(built)), o)
+}
+
+/** Drape a built, relaxed FLAT piece (a square, a small blanket): the sheet is
+ *  put down as worked (`start` 'flat', the default) or by `initial`, and
+ *  settles over whatever props are given (a pouffe, a table edge). */
+export function drapeFlat(built: BuiltContinuous, yr: number, o: DrapeOptions = {}): DrapeResult {
+  return settle(built, yr, shellOfFlat(built, o.cols ?? defaultCols(built)), o)
+}
+
+/** One coarse column a stitch of the widest row (~17 yarn nodes a stitch). */
+function defaultCols(built: BuiltContinuous): number {
+  const per = new Map<number, number>()
+  for (const k of built.nodeRow ?? []) per.set(k, (per.get(k) ?? 0) + 1)
+  let maxNodes = 0
+  for (const [k, c] of per) if (k >= 0 && c > maxNodes) maxNodes = c
+  const maxCount = Math.round(maxNodes / 17)
+  return Math.max(24, Math.min(144, maxCount || 48))
+}
+
+function settle(built: BuiltContinuous, yr: number, m: ShellMap, o: DrapeOptions): DrapeResult {
+  const { rows, cols, closed } = m
   const rest = restMesh(m)
   const N = rest.length
 
@@ -414,10 +508,11 @@ export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = 
   {
     const area = new Float64Array(rows)
     let aMax = 0
+    const fx = flatX.get(m)
     for (let k = 0; k < rows; k++) {
       const ka = Math.max(0, k - 1), kb = Math.min(rows - 1, k + 1)
       const mer = Math.hypot(m.R[kb]! - m.R[ka]!, m.Z[kb]! - m.Z[ka]!) / Math.max(1, kb - ka)
-      const hoop = (TAU * m.R[k]!) / cols
+      const hoop = fx ? (fx[1] - fx[0]) / (cols - 1) : (TAU * m.R[k]!) / cols
       area[k] = mer * hoop
       if (area[k]! > aMax) aMax = area[k]!
     }
@@ -433,14 +528,34 @@ export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = 
   const edges: Edge[] = []
   const dist = (a: number, b: number): number => Math.hypot(rest[a]!.x - rest[b]!.x, rest[a]!.y - rest[b]!.y, rest[a]!.z - rest[b]!.z)
   const id = (k: number, j: number): number => k * cols + ((j % cols) + cols) % cols
+  // An open sheet has no edge across its selvedges.
+  const across = (j: number): boolean => closed || j < cols
   for (let k = 0; k < rows; k++) {
     for (let j = 0; j < cols; j++) {
       const a = id(k, j)
-      edges.push({ a, b: id(k, j + 1), rest: dist(a, id(k, j + 1)), k: kS })
+      if (across(j + 1)) edges.push({ a, b: id(k, j + 1), rest: dist(a, id(k, j + 1)), k: kS })
       if (k + 1 < rows) {
         edges.push({ a, b: id(k + 1, j), rest: dist(a, id(k + 1, j)), k: kS })
-        edges.push({ a, b: id(k + 1, j + 1), rest: dist(a, id(k + 1, j + 1)), k: kH })
-        edges.push({ a: id(k, j + 1), b: id(k + 1, j), rest: dist(id(k, j + 1), id(k + 1, j)), k: kH })
+        if (across(j + 1)) {
+          edges.push({ a, b: id(k + 1, j + 1), rest: dist(a, id(k + 1, j + 1)), k: kH })
+          edges.push({ a: id(k, j + 1), b: id(k + 1, j), rest: dist(id(k, j + 1), id(k + 1, j)), k: kH })
+        }
+      }
+    }
+  }
+  // The pole: the magic ring and the first round or two are smaller across
+  // than the fabric is thick — a real crown's centre is a firm little disc, not
+  // a sheet that can crumple. Every pair in those rows (and the first row
+  // outside them) is tied at its rest distance, so the pole moves rigidly.
+  {
+    let kp = -1
+    if (closed) for (let k = 0; k < rows; k++) if (m.R[k]! < T) kp = k; else break
+    if (kp >= 0 && kp + 1 < rows) {
+      const ids: number[] = []
+      for (let k = 0; k <= kp + 1; k++) for (let j = 0; j < cols; j++) ids.push(id(k, j))
+      for (let a = 0; a < ids.length; a++) for (let b = a + 1; b < ids.length; b++) {
+        const d = dist(ids[a]!, ids[b]!)
+        if (d > 1e-6) edges.push({ a: ids[a]!, b: ids[b]!, rest: d, k: 1 })
       }
     }
   }
@@ -448,7 +563,7 @@ export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = 
   for (let k = 0; k < rows; k++) {
     for (let j = 0; j < cols; j++) {
       const a = id(k, j)
-      if (cols > 4) bends.push({ a, b: id(k, j + 2), rest: dist(a, id(k, j + 2)), k: kB })
+      if (cols > 4 && across(j + 2)) bends.push({ a, b: id(k, j + 2), rest: dist(a, id(k, j + 2)), k: kB })
       if (k + 2 < rows) bends.push({ a, b: id(k + 2, j), rest: dist(a, id(k + 2, j)), k: kB })
     }
   }
@@ -468,9 +583,9 @@ export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = 
 
   // ── the start ────────────────────────────────────────────────────────────
   let pos: V3[]
-  const start = o.start ?? (o.initial ? 'custom' : 'collapsed')
+  const start = o.start ?? (o.initial ? 'custom' : closed ? 'collapsed' : 'flat')
   if (start === 'custom' && o.initial) pos = o.initial(rest.map((p) => ({ ...p })), rows, cols)
-  else if (start === 'collapsed') {
+  else if (start === 'collapsed' && closed) {
     const roundRadius: number[] = []
     const axial: number[] = []
     for (let k = 0; k < rows; k++) for (let j = 0; j < cols; j++) { roundRadius.push(m.R[k]!); axial.push(m.S[k]!) }
@@ -586,7 +701,7 @@ export function drapeTube(built: BuiltContinuous, yr: number, o: DrapeOptions = 
 /** The shell round trip with no drape at all: every node back where the relax
  *  left it (to a fraction of a yarn radius). Exposed for the test. */
 export function shellRoundTrip(built: BuiltContinuous, cols = 72): { maxErr: number; meanErr: number } {
-  const m = shellMap(built, cols)
+  const m = built.frame === 'surface' ? shellOfTube(built, cols) : shellOfFlat(built, cols)
   const back = skin(m, restMesh(m))
   const nodes = built.model.nodes
   let maxErr = 0, sum = 0
@@ -598,19 +713,31 @@ export function shellRoundTrip(built: BuiltContinuous, cols = 72): { maxErr: num
   return { maxErr, meanErr: sum / nodes.length }
 }
 
-/** The camera for a draped piece: a flat-lay product angle, low enough to
- *  read the folds, aimed just above the table, on a wide ground. */
+/** The camera for a draped piece: a flat-lay product angle from above (NB a
+ *  higher `tiltDeg` is a LOWER camera in loom_render_crochet.py), close in,
+ *  aimed just above the table, on a wide ground. */
 export function drapedView(o: DrapeOptions): {
   marginFactor: number; tiltDeg: number; openFabric: true; yawDeg: number; aimHeightFrac: number; lightRig: 'product'; groundScale: number
 } {
   const v = o.view ?? {}
   return {
-    marginFactor: v.marginFactor ?? 0.4,
-    tiltDeg: v.tiltDeg ?? 38,
+    marginFactor: v.marginFactor ?? 0.1,
+    tiltDeg: v.tiltDeg ?? 24,
     openFabric: true,
     yawDeg: v.yawDeg ?? 18,
-    aimHeightFrac: v.aimHeightFrac ?? 0.15,
+    aimHeightFrac: v.aimHeightFrac ?? 0.08,
     lightRig: 'product',
-    groundScale: v.groundScale ?? 14,
+    groundScale: v.groundScale ?? 16,
   }
+}
+
+/** The render props of a drape's colliders (the ones given a colour). */
+export function drapeProps(o: DrapeOptions): { centre: number[]; axes: number[][]; hex: string; gloss: number }[] {
+  const out: { centre: number[]; axes: number[][]; hex: string; gloss: number }[] = []
+  for (const c of o.colliders ?? []) {
+    if (c.kind === 'ellipsoid' && c.hex) {
+      out.push({ centre: [c.centre.x, c.centre.y, c.centre.z], axes: [[c.semi.x, 0, 0], [0, c.semi.y, 0], [0, 0, c.semi.z]], hex: c.hex, gloss: c.gloss ?? 0.1 })
+    }
+  }
+  return out
 }

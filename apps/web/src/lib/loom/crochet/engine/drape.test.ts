@@ -97,7 +97,7 @@ check('with `drape` set, the scene is the draped piece and the geometry hash sti
   const scene = programScene({ ...hat, drape: { steps: 200 }, stage: 'linen' }, built, yr, 0.08, 'standing')
   assert.equal(geometryHash(built), before)
   assert.equal(scene.view.stage, 'linen')
-  assert.equal(scene.view.tiltDeg, 38, 'the draped camera')
+  assert.equal(scene.view.tiltDeg, 24, 'the draped camera')
   let zmax = -Infinity
   for (const s of scene.strokes) for (const ply of s.filaments) for (const q of ply) if (q[2]! > zmax) zmax = q[2]!
   assert.ok(zmax < 40, `draped scene height ${zmax.toFixed(1)}`)
