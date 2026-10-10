@@ -733,7 +733,13 @@ def build_props(props, z_offset):
         return (v[0] * S, -v[1] * S, v[2] * S)
 
     for pr in props:
-        bpy.ops.mesh.primitive_uv_sphere_add(segments=64, ring_count=32, radius=1.0)
+        if pr.get("torusMinor") is not None:
+            # A metal ring (the doll keyring): a unit-radius torus in its local
+            # x/y plane, carried by the same axes matrix as an ellipsoid.
+            bpy.ops.mesh.primitive_torus_add(major_radius=1.0, minor_radius=float(pr["torusMinor"]),
+                                             major_segments=96, minor_segments=24)
+        else:
+            bpy.ops.mesh.primitive_uv_sphere_add(segments=64, ring_count=32, radius=1.0)
         ob = bpy.context.active_object
         bpy.ops.object.shade_smooth()
         a0, a1, a2 = (to_bu(v) for v in pr["axes"])
@@ -746,7 +752,21 @@ def build_props(props, z_offset):
             (0.0, 0.0, 0.0, 1.0),
         ))
         ob.data.materials.clear()
-        ob.data.materials.append(prop_material(pr["hex"], float(pr.get("gloss", 0.85))))
+        if pr.get("metal"):
+            ob.data.materials.append(metal_material(pr["hex"]))
+        else:
+            ob.data.materials.append(prop_material(pr["hex"], float(pr.get("gloss", 0.85))))
+
+
+def metal_material(hexcol):
+    """Polished nickel-plated steel: a keyring's split ring and jump ring."""
+    mat = bpy.data.materials.new("metal_" + hexcol.lstrip("#"))
+    mat.use_nodes = True
+    bsdf = mat.node_tree.nodes.get("Principled BSDF")
+    set_in(bsdf, "Base Color", hex_to_lin(hexcol))
+    set_in(bsdf, "Metallic", 1.0)
+    set_in(bsdf, "Roughness", 0.18)
+    return mat
 
 
 def backing_material(hexcol):

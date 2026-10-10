@@ -38,6 +38,7 @@ import {
   type FaceLayout,
   type FaceStyle,
 } from './faceEmbroidery'
+import { DOLL_AUDITED_PROFILE_KEYS, DOLL_SETTLED_SIZE_MM, dollProgram } from './doll'
 
 export { sphereRounds }
 export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
@@ -174,12 +175,13 @@ const PROFILE_KEYS = new Set(AUDITED_PROFILES.map((r) => r.join(',')))
 
 /** Is this piece one of the profiles the audit has been run against? */
 export function isAuditedProfile(rounds: number[]): boolean {
-  return PROFILE_KEYS.has(rounds.join(','))
+  // The doll's pieces (doll.ts) are audited by doll.test.ts at their own fine gauge.
+  return PROFILE_KEYS.has(rounds.join(',')) || DOLL_AUDITED_PROFILE_KEYS.has(rounds.join(','))
 }
 
 /** Every base the designer builds, as a const tuple so a zod schema can be
  *  derived from it instead of hand-copying the list (it was copied twice). */
-export const AMIGURUMI_BASE_IDS = ['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird', 'chick'] as const
+export const AMIGURUMI_BASE_IDS = ['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird', 'chick', 'doll'] as const
 export type AmigurumiBase = (typeof AMIGURUMI_BASE_IDS)[number]
 export type AmigurumiSize = 'S' | 'M' | 'L'
 
@@ -252,6 +254,8 @@ export const AMIGURUMI_BASES: AmigurumiBaseSpec[] = [
   { id: 'dog', label: 'Dog', blurb: 'A round snout, two floppy ears, four legs and a short tail.', nose: true, paws: true, contrastFor: 'The snout and the paw pads.' },
   { id: 'bird', label: 'Bird', blurb: 'An egg body sitting on its base, a small head, a beak, two wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
   { id: 'chick', label: 'Chick', blurb: 'A round ball body, a big round head, a little beak, two small wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
+  // doll.ts: a standing doll in 4 ply cotton; the small size is a keyring charm.
+  { id: 'doll', label: 'Doll', blurb: 'A slim standing doll in fine cotton: legs joined into the body, a round head, slim arms, an embroidered face. Small is a keyring charm.', nose: false, paws: false, contrastFor: 'Her dress colour, worked into the body.' },
 ]
 
 /** The bear and the bunny: the toy-pose bases (big head, fine gauge, folded
@@ -693,6 +697,8 @@ export function amigurumiPresetName(choices: AmigurumiChoices): string {
 
 /** The maker's choices → a composition the loom can build. */
 export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionProgram {
+  // The doll is its own module, with its own (doll-proportioned) face.
+  if (choices.base === 'doll') return dollProgram(choices, amigurumiPresetName(choices))
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
@@ -1290,6 +1296,7 @@ const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
   cat: { x: 0.62, z: 0.42 }, dog: { x: 0.62, z: 0.42 }, bird: { x: 0.62, z: 0.42 },
   bear: { x: 0.72, z: 0.16 },
   chick: { x: 0.66, z: 0.2 },
+  doll: { x: 0.62, z: 0.42 }, // unused: doll.ts seats its own
 }
 
 /** Where the fringe circle's centre sits on the head: on the crown, tipped
@@ -1346,6 +1353,7 @@ const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushEle
   dog: { eyeElev: 9, eyeAz: 36, blushElev: -8, blushAz: 50, pinkNose: false, eyeHalfSt: 0.8 },
   bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },
   chick: { eyeElev: 12, eyeAz: 36, blushElev: -6, blushAz: 52, pinkNose: false, eyeHalfSt: 0.6 },
+  doll: { eyeElev: -7, eyeAz: 30, blushElev: -22, blushAz: 42, pinkNose: false, eyeHalfSt: 1.6 }, // unused: doll.ts lays its own face
 }
 
 /** The embroidered face for a preset, in pattern coordinates (empty for the
@@ -1390,6 +1398,8 @@ function faceEmbroidery(choices: AmigurumiChoices, program: CompositionProgram):
 export function allPresetChoices(): AmigurumiChoices[] {
   const out: AmigurumiChoices[] = []
   for (const base of AMIGURUMI_BASES) {
+    // The doll is walked by doll.test.ts (fine gauge, open pieces, its own table).
+    if (base.id === 'doll') continue
     for (const size of AMIGURUMI_SIZES) {
       out.push({
         base: base.id,
@@ -1439,7 +1449,10 @@ export function profileSizeMm(rounds: number[], yarnWeight: YarnWeight = 'worste
 }
 
 /** The whole finished piece's settled size, by preset and size. */
-export const PRESET_SETTLED_SIZE_MM = PRESET_SETTLED_SIZE_MM_GENERATED
+export const PRESET_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
+  ...PRESET_SETTLED_SIZE_MM_GENERATED,
+  ...DOLL_SETTLED_SIZE_MM,
+}
 
 export function presetSettledSizeMm(base: AmigurumiBase, size: AmigurumiSize): { width: number; height: number } {
   return PRESET_SETTLED_SIZE_MM[`${base}-${size}`] ?? { width: 60, height: 60 }
