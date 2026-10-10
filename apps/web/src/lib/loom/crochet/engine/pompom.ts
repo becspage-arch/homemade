@@ -64,7 +64,7 @@ export function pompomStrandCount(radiusMm: number, yarnRadiusMm: number): numbe
   // rendered as a sparse knobbly ball).
   const surface = 4 * Math.PI * radiusMm * radiusMm
   const endArea = Math.PI * yarnRadiusMm * yarnRadiusMm
-  return Math.max(200, Math.min(2000, Math.round((surface / (2 * endArea)) * 4.5)))
+  return Math.max(300, Math.min(3000, Math.round((surface / (2 * endArea)) * 9)))
 }
 
 /**
@@ -81,7 +81,7 @@ export function pompomStrokes(spec: PompomSpec, twist = 0.08): YarnStrokeOut[] {
   const out: YarnStrokeOut[] = []
   // The tie bundle: strands pass through a core of this radius, not a point —
   // a tied pompom's middle is a knot of yarn as thick as the tie can gather.
-  const core = Math.min(R * 0.3, yr * 4)
+  const core = Math.min(R * 0.35, yr * 5)
   for (let i = 0; i < n; i++) {
     // A uniformly random direction.
     const z = 2 * rnd() - 1
@@ -118,7 +118,10 @@ export function pompomStrokes(spec: PompomSpec, twist = 0.08): YarnStrokeOut[] {
         z: C.z + d.z * t + u.z * (ou + bu * bow) + v.z * (ov + bv * bow),
       })
     }
-    const { radiusMm, filaments } = pliedFilaments(pts, yr * 0.85, 3, twist)
+    // A cut strand's ends untwist and fluff: the strands render a little
+    // thinner than the worked yarn and there are more of them (r2 at the
+    // yarn's full radius rendered as a ball of beads).
+    const { radiusMm, filaments } = pliedFilaments(pts, yr * 0.85 * 0.62, 3, twist * 0.6)
     out.push({ hex: spec.colourHex, sheen: 0.85, radiusMm, filaments })
   }
   return out

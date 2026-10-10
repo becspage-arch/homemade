@@ -36,7 +36,7 @@ export interface NightcapOptions {
   bandRounds?: number
   /** Folded ridge-brim rounds (default 4). */
   brimRounds?: number
-  /** Extra slow rounds at the tip (each count held twice; default 4) so the
+  /** Extra slow rounds at the tip (each count held twice; default 5) so the
    *  tail is slender and long like a real nightcap's. */
   slowTipRounds?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
@@ -63,7 +63,7 @@ export function nightcapBandCount(headRadiusMm: number, yr: number): number {
 export function nightcapRounds(o: NightcapOptions): number[] {
   const yr = nightcapYarnRadiusMm(o)
   const N = nightcapBandCount(o.headRadiusMm, yr)
-  const slow = o.slowTipRounds ?? 4
+  const slow = o.slowTipRounds ?? 5
   const band = o.bandRounds ?? 3
   const brim = o.brimRounds ?? 4
   const rounds: number[] = []
@@ -109,7 +109,8 @@ export interface WearOptions {
   /** How far up the head (fraction of its radius above centre) the brim band's
    *  middle sits (default 0.6: the band's lower edge clears the eye line). */
   brimHeightFrac?: number
-  /** Tilt the hat back off the face (deg, default 10). */
+  /** Tilt the hat back off the face (deg, default 0: tilting back lowers the
+   *  front of the band onto the eyes). */
   tiltBackDeg?: number
   /** The bend of the tail: where it starts above the brim centre (fraction of
    *  the head radius, default 0.72: just past the crown), the ramp length (mm,
@@ -169,7 +170,7 @@ export function wearTube(
   }
   const brimMid = (zOfRound(rounds.length - brimN) + zOfRound(rounds.length - 1)) / 2
   const brimFrac = w.brimHeightFrac ?? 0.6
-  const d = w.bendDefaults ?? { startFrac: 0.55, lengthFrac: 1.3, angleDeg: 124, dirDeg: 20 }
+  const d = w.bendDefaults ?? { startFrac: 0.55, lengthFrac: 1.2, angleDeg: 134, dirDeg: 20 }
   const startZ = brimMid + R * (w.bend?.startFrac ?? d.startFrac)
   ctrl = bendTube(ctrl, {
     startZ,
@@ -178,7 +179,7 @@ export function wearTube(
     dirDeg: w.bend?.dirDeg ?? d.dirDeg,
     swayDeg: w.bend?.swayDeg ?? 0,
   })
-  const tilt = -(w.tiltBackDeg ?? 10)
+  const tilt = -(w.tiltBackDeg ?? 0)
   const T: V3 = { x: headC.x, y: headC.y, z: headC.z + R * brimFrac }
   const local = ctrl.map((p) => ({ x: p.x, y: p.y, z: p.z - brimMid }))
   const world = rigidPlace(local, { tiltDeg: tilt, T })
