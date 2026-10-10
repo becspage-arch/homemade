@@ -3443,6 +3443,47 @@ a soft wave against gravity, so a doubled cowl settles flat (a rounded fold edge
 waves); a dihedral bending term would be the next step. Proofs and verdicts:
 `/mnt/project-files/homemade/crochet-bar/jobs/drape.md`.
 
+## 8l. MOTIFS — flat shaped motifs and flowers (audit rounds 8 and 9, 2026-10-10)
+
+`engine/motifs/`. The parts later rounds assemble into wall hangings and garlands: star, heart,
+leaf, butterfly (round 8); daisy, rolled rose, layered rose, berry, leaf vine (round 9). Each is
+its own module that registers itself (`registerMotif`); `getMotif(id).build(opts)` returns a
+`BuiltMotif` — `pieces` (each a relaxed, audited one-strand `BuiltContinuous`, a colour per node
+and a `pose` into the motif), the UK `words`, `materials` and `sizeMm`. Default fine cotton
+(`yarnWeight 'fine'`, fibre `fine-cotton`, 2.5 mm hook). `motifScene(m)` writes the Blender scene
+(linen stage flat-lay). `motifs.test.ts` audits all nine.
+
+### The kit (`kit.ts`)
+- `MotifStrand`: one strand. `magicRing`, `slipKnot` (the only pins), `stitch(spec)` — the real
+  cell (`emitPlainStitch`, collars, head loop) with the no-turn round settings — placed in its
+  OWN frame: `polar(c, r)` worked in the round, `along(o, a)` worked along a chain. `chain(n,
+  path)` is the locked `ch` pull-through along any polyline; it returns n chains plus the loop
+  still on the hook. `shapedRound` puts a chosen stitch (and count) into each crown of a round.
+- Relax `layoutMode 'axis'` + `YarnModel.layoutAxis`: each node is held (blocked) along its own
+  stitch's height axis, not world y or radius; links carry `axis` and the audit measures each in
+  the frame it was worked in. Additive: nothing that existed reads them, no hash moved.
+
+### What the numbers taught
+- The last loop of a chain is the loop on the hook: only its first strand exists. A closed last
+  loop was dragged out of its neighbour's fold at every star tip.
+- A chain worked back on (a point, a leaf tip) turns on its last chain; that chain and the hook
+  loop are held by wrapping the fold (audited 'ring'), not lying in its mouth ('cross').
+- Chain control points need a midpoint each, and a fold reach of 0.9-1.4yr: at the fabric's
+  collision window (9 nodes) a chain's own fold could not see the strand threaded through it.
+- A stitch worked into a chain's free leg (an edging up a chain) drags that chain's crossings out
+  of their folds, in every variant tried. Edgings go into stitch crowns.
+- Two tall stitches fanned into one crown of a flat round crowd the second post out of its own
+  yarn-over collars (butterfly, layered rose). Spread a shape over one stitch per crown and take
+  the outline from the heights — the star's points, the petals, the butterfly's wings.
+- Too much into one ring crowds it: 26 stitches and chains into a 2.4yr ring failed; the
+  butterfly works its wings into a 20-st second round instead.
+- Staging that the maker does (rolling a strip, stacking layers, sewing leaves on a vine) is a
+  pose of the relaxed, audited piece; the stitches are audited as worked.
+
+### State
+Round 1-2 renders and side-by-sides: `crochet-bar/proofs/motifs/`; the job log is
+`crochet-bar/jobs/motifs.md`. Not yet at the bar (see the log for what is short of each).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
