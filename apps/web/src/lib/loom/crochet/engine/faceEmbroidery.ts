@@ -346,7 +346,7 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       // lower-inner, a little above the muzzle's centre. No mouth, no blush.
       const nostrils: EmbroideryStitch[] = []
       for (const side of [-1, 1] as const) {
-        nostrils.push({ from: spot(1.15, side * 62), to: spot(0.55, side * 112), taut: true })
+        nostrils.push({ from: spot(1.5, side * 42), to: spot(0.85, side * 78), taut: true })
       }
       out.push({ ...muzzleFeature('nose', NOSE_DARK, 'Dark brown embroidery thread', nostrils), threadMm: FLOSS_MM * 1.1 })
       return out
@@ -758,18 +758,25 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
         // the fabric at the tip. Nothing follows the crowns, so it never kinks.
         let top = -Infinity
         for (const q of surf) top = Math.max(top, q.h)
-        const rootH = (rootShared ? Math.max(surf[0]!.h, top - rt) : top) + bundle + rt * 0.7
-        const tipH = top + bundle + rt * 0.25
+        // Its two ends sit at the fabric where the needle went through (so a
+        // dive is short, not a visible leg), and the thread tents over the
+        // highest crown between them.
+        const rootH = (rootShared ? Math.max(surf[0]!.h, top - rt) : surf[0]!.h) + bundle + rt * (rootShared ? 0.7 : 0.35)
+        const tipH = surf[N]!.h + bundle + rt * 0.35
         const a = add(surf[0]!.p, mul(surf[0]!.n, rootH))
         const b = add(surf[N]!.p, mul(surf[N]!.n, tipH))
+        const midH = Math.max(top + bundle + rt * 0.3, (rootH + tipH) / 2)
+        const mid = surf[Math.floor(N / 2)]!
+        const m = add(mid.p, mul(mid.n, midH))
         const line: V3[] = []
         if (!rootShared) line.push(toWorld(add(a, mul(surf[0]!.n, -dive))))
-        const k = 6
-        for (let i = 0; i <= k; i++) line.push(toWorld(lerpv(a, b, i / k)))
+        const k = 3
+        for (let i = 0; i <= k; i++) line.push(toWorld(lerpv(a, m, i / k)))
+        for (let i = 1; i <= k; i++) line.push(toWorld(lerpv(m, b, i / k)))
         // The dive at the tip: straight on a little, then down.
-        const dir = normv(sub(b, a))
-        line.push(toWorld(add(add(b, mul(dir, rt * 0.6)), mul(surf[N]!.n, -dive * 0.5))))
-        line.push(toWorld(add(add(b, mul(dir, rt * 0.9)), mul(surf[N]!.n, -dive))))
+        const dir = normv(sub(b, m))
+        line.push(toWorld(add(add(b, mul(dir, rt * 0.5)), mul(surf[N]!.n, -dive * 0.5))))
+        line.push(toWorld(add(add(b, mul(dir, rt * 0.8)), mul(surf[N]!.n, -dive))))
         strands.push(line)
         continue
       }
