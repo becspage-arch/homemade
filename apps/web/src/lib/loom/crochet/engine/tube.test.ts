@@ -11,7 +11,7 @@
  */
 
 import assert from 'node:assert/strict'
-import { buildTube, tubeRibRounds, tubeSettledSizeMm, validateTubeSpec, type TubeSpec } from './tube'
+import { buildTube, tubeRibRounds, tubeRidgeLoop, tubeRidgeRounds, tubeRoundStitch, tubeSettledSizeMm, validateTubeSpec, type TubeSpec } from './tube'
 import { compileRelaxAudit } from './programScene'
 import { programFromChart, programToChart, tubeSpecOf, writeInstructions, type CrochetProgram } from './program'
 
@@ -58,6 +58,22 @@ const basket: CrochetProgram = {
   rounds: [6, 12, 18, 24, 30, 30, 30, 30, 30],
   tube: { anchor: 'ring', join: 'spiral', cap: 'flat', openEnd: 'top' },
 }
+/** A NIGHTCAP: a tip-first cone (+2 a round) with a folded RIDGE brim (sc flo). */
+const nightcap: CrochetProgram = {
+  name: 'test-nightcap',
+  form: 'tube',
+  stitch: 'sc',
+  rounds: [6, 6, 8, 10, 12, 14, 16, 18, 20, 20, 20, 20, 20],
+  tube: { anchor: 'ring', join: 'spiral', cap: 'cone', brim: { kind: 'ridge', rounds: 3, fold: true } },
+}
+/** A beanie band: an unfolded ridge brim (sc blo). */
+const ridgeHat: CrochetProgram = {
+  name: 'test-ridge-hat',
+  form: 'tube',
+  stitch: 'sc',
+  rounds: [6, 12, 18, 24, 24, 24, 24, 24, 24],
+  tube: { anchor: 'ring', join: 'spiral', cap: 'dome', brim: { kind: 'ridge', rounds: 3 } },
+}
 /** Rise, hold, FALL: a sock-toe / pouffe shape that narrows again but stays open. */
 const taper: CrochetProgram = {
   name: 'test-taper',
@@ -98,7 +114,7 @@ check('rib rounds are the last N, and must be even and unshaped', () => {
 })
 
 console.log('\naudit at fine, worsted and bulky')
-for (const p of [hat, foldHat, cowl, basket, taper]) {
+for (const p of [hat, foldHat, cowl, basket, taper, nightcap, ridgeHat]) {
   for (const yr of WEIGHTS) {
     check(`${p.name} yr ${yr}`, () => {
       const { built, problems } = compileRelaxAudit(p, yr)
@@ -148,6 +164,45 @@ check('a folded brim settles outside the body wall', () => {
   assert.ok(brim - body > 2.4 * 1.5, `brim ${brim.toFixed(1)} vs body ${body.toFixed(1)}`)
 })
 
+console.log('\na cone is a cone, a ridge brim hooks one loop and folds out')
+check('a cone cap descends every round (no dome): round heights fall monotonically from the tip', () => {
+  const { built } = compileRelaxAudit(nightcap, 2.4)
+  const nodes = built.model.nodes
+  const zOf = (k: number): number => {
+    const v = nodes.filter((_, i) => built.nodeRow![i] === k).map((n) => n.z)
+    return v.reduce((a, b) => a + b, 0) / v.length
+  }
+  for (let k = 1; k < 9; k++) assert.ok(zOf(k) < zOf(k - 1) - 2.4 * 1.2, `round ${k + 1} drops below round ${k} (${zOf(k).toFixed(1)} vs ${zOf(k - 1).toFixed(1)})`)
+  // A straight-sided cone: the drop a round is the same within 15% once past the tip.
+  const drops = [3, 4, 5, 6, 7].map((k) => zOf(k - 1) - zOf(k))
+  const mean = drops.reduce((a, b) => a + b, 0) / drops.length
+  for (const d of drops) assert.ok(Math.abs(d - mean) / mean < 0.15, `cone drop ${d.toFixed(2)} vs mean ${mean.toFixed(2)}`)
+})
+check('ridge rounds are sc in one loop: a hook a stitch, no post rings, the loop chosen by the fold', () => {
+  const spec = tubeSpecOf(nightcap)
+  assert.deepEqual([...tubeRidgeRounds(spec)], [10, 11, 12])
+  assert.equal(tubeRidgeLoop(spec), 'front')
+  assert.equal(tubeRoundStitch(spec, 11), 'scflo')
+  assert.equal(tubeRoundStitch(spec, 5), 'sc')
+  assert.equal(tubeRidgeLoop(tubeSpecOf(ridgeHat)), 'back')
+  assert.equal(tubeRoundStitch(tubeSpecOf(ridgeHat), 8), 'scblo')
+  const built = buildTube(spec, 2.4)
+  const k = 11
+  assert.equal(built.links.filter((l) => l.j === k && l.role === 'hook').length, 20)
+  assert.equal(built.links.filter((l) => l.j === k && l.role === 'ring').length, 0)
+  assert.throws(() => validateTubeSpec({ ...spec, stitch: 'hdc' }), /sc body/)
+  assert.throws(() => validateTubeSpec({ ...spec, rounds: [6, 6, 8, 10, 12, 14, 16, 18, 20, 20, 20, 20, 22] }), /cannot shape/)
+})
+check('a folded ridge brim settles outside the body wall', () => {
+  const { built } = compileRelaxAudit(nightcap, 2.4)
+  const nodes = built.model.nodes
+  const rOf = (k: number): number => {
+    const v = nodes.filter((_, i) => built.nodeRow![i] === k).map((n) => Math.hypot(n.x, n.y))
+    return v.reduce((a, b) => a + b, 0) / v.length
+  }
+  assert.ok(rOf(12) - rOf(9) > 2.4 * 1.5, `brim ${rOf(12).toFixed(1)} vs body ${rOf(9).toFixed(1)}`)
+})
+
 console.log('\nwords and chart from the same program')
 check('a spiral hat writes its ring, its rib and an open end', () => {
   const lines = writeInstructions(hat)
@@ -169,6 +224,19 @@ check('a joined chain-ring cowl writes its foundation ring, chain-ups, joins and
 check('a folded brim ends with the fold', () => {
   const lines = writeInstructions(foldHat)
   assert.equal(lines[lines.length - 1], 'Fold the last 3 rounds up to the outside to form the brim.')
+})
+check('a nightcap writes its cone, its front-loop brim rounds, the ridge note and the fold', () => {
+  const lines = writeInstructions(nightcap)
+  assert.equal(lines[2], 'Round 3: [dc in next 2 sts, 2 dc in next st] 2 times. (8 sts)')
+  assert.equal(lines[10], 'Round 11: dc in the front loop only of each st around. (20 sts)')
+  assert.ok(lines.some((l) => l.startsWith('The unworked back loops form the ridges')))
+  assert.equal(lines[lines.length - 1], 'Fold the last 3 rounds up to the outside to form the brim.')
+  const chart = programToChart(nightcap)
+  assert.equal(chart.rounds![11]!.stitches[0]!.label, 'FLO')
+  assert.match(chart.caption!, /front loop only .* fold up/)
+  const b = writeInstructions(ridgeHat)
+  assert.equal(b[8], 'Round 9: dc in the back loop only of each st around. (24 sts)')
+  assert.ok(!b.some((l) => l.startsWith('Fold')))
 })
 check('a taper writes its decreases with the remainder', () => {
   const lines = writeInstructions(taper)
