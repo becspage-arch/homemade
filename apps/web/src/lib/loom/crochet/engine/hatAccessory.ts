@@ -107,7 +107,7 @@ export function nightcapInstructions(o: NightcapOptions): string[] {
 
 export interface WearOptions {
   /** How far up the head (fraction of its radius above centre) the brim band's
-   *  middle sits (default 0.6: the band's lower edge clears the eye line). */
+   *  middle sits (default 0.66: the band's lower edge clears the eye line; 0.6 just touched it). */
   brimHeightFrac?: number
   /** Tilt the hat back off the face (deg, default 0: tilting back lowers the
    *  front of the band onto the eyes). */
@@ -169,7 +169,7 @@ export function wearTube(
     return n ? s / n : 0
   }
   const brimMid = (zOfRound(rounds.length - brimN) + zOfRound(rounds.length - 1)) / 2
-  const brimFrac = w.brimHeightFrac ?? 0.6
+  const brimFrac = w.brimHeightFrac ?? 0.66
   const d = w.bendDefaults ?? { startFrac: 0.55, lengthFrac: 1.2, angleDeg: 134, dirDeg: 20 }
   const startZ = brimMid + R * (w.bend?.startFrac ?? d.startFrac)
   ctrl = bendTube(ctrl, {
