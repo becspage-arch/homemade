@@ -88,5 +88,10 @@ USER nextjs
 EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
+# Keep idle connections open longer than the ALB's 60s idle timeout. Node's
+# default is 5s, so the ALB would sometimes reuse a connection Node had just
+# closed and return a 502 to the visitor (or Googlebot, which Search Console
+# reports as "Server error (5xx)"). The standalone server.js reads this.
+ENV KEEP_ALIVE_TIMEOUT=65000
 
 CMD ["node", "apps/web/server.js"]
