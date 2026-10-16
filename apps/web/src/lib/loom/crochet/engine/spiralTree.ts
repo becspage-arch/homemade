@@ -1,12 +1,16 @@
 /**
  * SPIRAL SHAPING — the corkscrew Christmas tree (audit round 10; bar:
- * bar-spiral-trees.png). Built the way every corkscrew-tree maker builds it: a
- * long foundation chain, then ONE row worked back along it with heavy
- * increases (3 stitches in every chain), the stitches getting taller toward
- * the base. The outer edge of that row is three times the length of the
- * chain it sits on, so the strip cannot lie flat: it twists into a
- * corkscrew, and because the stitches grow taller toward the base, the
- * corkscrew widens into a cone.
+ * bar-spiral-trees.png). Built the way the bar's maker builds it (Fable pass 2,
+ * jobs/spiral.md): a long foundation chain, ONE row of short stitches worked
+ * back along it with increases — the increase HEAVIEST at the top (2 in every
+ * chain) and easing toward the base (2 in every 4th chain) — then two or three
+ * plain rows turned back and forth along the outer edge, each worked evenly at
+ * its own gauge. The outer edge of the strip is longer than the chain it sits
+ * on, so it cannot lie flat: it twists into a corkscrew; where the increase is
+ * heavy the coil is tight (the tip) and where it eases the coil opens (the
+ * base), so the corkscrew widens into a cone — and the band is a DENSE strip of
+ * short-stitch rows, the bar's firm ribbon, not a fan of tall posts (pass 1
+ * graded the stitch HEIGHT instead and rendered as frilled tiers).
  *
  * ONE STRAND, GENUINELY STITCHED. A slip knot at the base (the only pinned
  * nodes), the kit's genuine pull-through chain (motifs/kit.ts: each loop's two
@@ -63,7 +67,8 @@ export interface SpiralBlock {
   id: StitchId
   /** How many chains this block is worked into. */
   chains: number
-  /** Stitches worked into each chain (the increase). */
+  /** Stitches worked into each chain (the increase). May be fractional: the
+   *  MEAN count, laid as the repeat it implies (1.5 = [1, 2], 1.25 = [1, 1, 1, 2]). */
   perChain: number
   /** Coil pitch (vertical drop per turn), yarn radii. */
   pitchYr: number
@@ -83,30 +88,39 @@ export interface SpiralSpec {
    * as the bar's dense ribbon rather than a comb of posts.
    */
   edgeRow?: StitchId
+  /**
+   * The outer-edge rows in order (Fable pass 2): each is ch 1, turn, then the
+   * stitch worked evenly along the previous row's outer edge (the engine lays
+   * them at gauge on the helicoid, so the count follows the edge's length).
+   * Overrides `edgeRow` when given. Two rows of UK dc is the bar's band.
+   */
+  edgeRows?: StitchId[]
 }
 
 /**
- * The engine's corkscrew tree, top to base: UK dc, htr, tr, dtr, trtr, 2 in
- * every chain. Fable round 2, measured off the bar: ~5 coil turns, a WIDE
- * ribbon (its face ≈ 0.4–0.5 of the tree width at the base) with a small open
- * core, bands nearly touching, body about twice as tall as wide. Three in a
- * chain (round 1) solved to a 2.5–4 mm core and 11 thin turns — a fir-tree
- * comb; two in a chain opens the core to 5–7 mm and, with the taller pitches
- * and the edging row below, gives 6 fat turns at dk (118 x 63 mm).
+ * The engine's corkscrew tree, top to base (Fable pass 2, measured off the bar
+ * by eye): about five coil turns with clear open space between them, a firm
+ * dense band about 0.23 of the tree's width deep, a tight near-solid tip, body
+ * a little over twice as tall as wide. Row 1 is UK htr (a UK dc row solved to
+ * a 1.2 yr core at the tip, where the chain's inner leg crossed the axis and
+ * its crossings slipped in the relax; htr's taller crown opens it to 2.3 yr):
+ * the increase sets the coil (7 in every 4 ch at the tip, easing to 11 in every
+ * 10 ch at the base), the pitch opens down the tree, and two plain rows of UK
+ * dc along the edge give the band its depth (142 x 69 mm at dk, band 0.24 W).
  */
 export const TREE_BLOCKS: SpiralBlock[] = [
-  { id: 'sc', chains: 5, perChain: 2, pitchYr: 4.5 },
-  { id: 'hdc', chains: 6, perChain: 2, pitchYr: 7 },
-  { id: 'dc', chains: 10, perChain: 2, pitchYr: 9 },
-  { id: 'tr', chains: 12, perChain: 2, pitchYr: 10.5 },
-  { id: 'dtr', chains: 14, perChain: 2, pitchYr: 12 },
+  { id: 'hdc', chains: 8, perChain: 1.75, pitchYr: 9 },
+  { id: 'hdc', chains: 8, perChain: 1.5, pitchYr: 12 },
+  { id: 'hdc', chains: 12, perChain: 1.33, pitchYr: 14 },
+  { id: 'hdc', chains: 18, perChain: 1.2, pitchYr: 16 },
+  { id: 'hdc', chains: 24, perChain: 1.1, pitchYr: 18 },
 ]
 /** How far the ribbon's outer edge droops below horizontal: the bar's bands
- *  show their upper face, tilted ~35–40°. */
-export const TREE_DROOP_DEG = 36
-/** The edging row the bar's dense ribbon needs (see SpiralSpec.edgeRow): UK
- *  htr (r3; the r2 dc edge left the coils a gap of ~40% of the pitch, and a
- *  steeper droop failed the top chain's crossing). */
+ *  show their upper face, tilted ~40°. */
+export const TREE_DROOP_DEG = 40
+/** The band's edge rows (see SpiralSpec.edgeRows): two plain rows of UK dc. */
+export const TREE_EDGE_ROWS: StitchId[] = ['sc', 'sc']
+/** @deprecated pass 1's single edging row; kept for the test's control build. */
 export const TREE_EDGE_ROW: StitchId = 'hdc'
 
 /**
@@ -171,6 +185,13 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
   const chainBlock: number[] = []
   blocks.forEach((b, bi) => { for (let k = 0; k < b.chains; k++) chainBlock.push(bi) })
   const W = chainBlock.length
+  // How many stitches each worked chain takes: a block's mean count laid as
+  // the repeat it implies (Bresenham: 1.5 → 1, 2, 1, 2 …; 1.25 → 1, 1, 1, 2).
+  const perChainCounts: number[] = []
+  blocks.forEach((b) => {
+    let acc = 0.5
+    for (let k = 0; k < b.chains; k++) { acc += b.perChain; const n = Math.max(1, Math.floor(acc)); acc -= n; perChainCounts.push(n) }
+  })
   // The stitch's crown sits a chain leg (≈0.9 yr) out from the chain line.
   const LEG_LY = yr * 1.05 * 0.85
   const blockR = blocks.map((b) => {
@@ -264,7 +285,8 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
   // ── ROW 1, worked back down the chain ─────────────────────────────────────
   // Worked chain i = loops[nCh − 2 − i] (the 2nd ch from the hook is i = 0).
   let st = 0
-  const crowns: { i: number; node: number; bi: number; th: number; ty: number }[] = []
+  interface Crown3 { i: number; node: number; bi: number; th: number; ty: number }
+  const crowns: Crown3[] = []
   for (let i = 0; i < W; i++) {
     const bi = chainBlock[i]!
     const b = blocks[bi]!
@@ -281,7 +303,7 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
     const by = dotv(subv(lp, fl.C), fl.H)
     const bz = dotv(subv(lp, fl.C), fl.N)
     const ty = by + yr * rowPitchYr(id)
-    const k = b.perChain
+    const k = perChainCounts[i]!
     for (let m = 0; m < k; m++) {
       const thC = thA + ((m + 0.5) / k) * (thB - thA)
       // Arc per radian at this stitch's crown line: its lx unit.
@@ -312,33 +334,44 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
       st++
     }
   }
-  // ── ROW 2 (optional): ch 1, turn, an edging row back UP the outer edge ───
-  // Worked into the row-1 crowns from the base to the top, the stitches laid
-  // evenly along the outer edge at their own gauge: the edge at the row-2 crown
-  // line is longer than the row-1 crown line (bigger radius) and an sc is
-  // narrower than the tall post it sits on, so most row-1 stitches take 2.
-  const edge = spec.edgeRow
-  let edgeSts = 0
-  const edgePer: number[] = []
-  if (edge) {
+  // ── THE EDGE ROWS: ch 1, turn, a plain row along the outer edge ──────────
+  // Each row is worked into the crowns of the row before, the stitches laid
+  // evenly along the outer edge at their own gauge: that edge is longer than
+  // the crown line it sits on (bigger radius), so the count follows the edge
+  // (2 in most stitches near the tip, 1 in most at the base). Odd rows climb
+  // the tree (θ decreasing), even rows come back down; the worked face flips
+  // with each turn as it does in any turned work.
+  const edgeRows = spec.edgeRows ?? (spec.edgeRow ? [spec.edgeRow] : [])
+  const edgeOut: { id: StitchId; sts: number; per: number[] }[] = []
+  let prev: Crown3[] = crowns // in θ order, top → base
+  let lastFz = 1
+  let lastTh = crowns[crowns.length - 1]!.th
+  edgeRows.forEach((edge, e) => {
     const de = dimsFor(yr, edge)
     const def2 = STITCHES[edge]
     const ePitch = yr * def2.gaugeYr
     const hE = yr * rowPitchYr(edge)
-    const last = crowns[crowns.length - 1]!
-    // The turning chain, off the last crown, up onto the row-2 line.
+    const dir = e % 2 === 0 ? -1 : 1 // θ direction of travel
+    const s = dir, fz = dir
+    const j = e + 2
+    const order = dir < 0 ? [...prev].reverse() : prev
+    const first = order[0]!
+    // The turning chain, off the last crown, up onto the new row's line.
     {
-      const f = frameAtTh(last.th)
-      const rho = Math.hypot(f.r + last.ty * ca, f.c)
-      const p1 = at(frameAtTh(last.th + (de.cw * 0.8) / rho), last.ty + hE * 0.75, -de.zh * 0.9)
-      const p2 = at(frameAtTh(last.th + (de.cw * 0.1) / rho), last.ty + hE * 0.95, -de.zh * 0.4)
+      const f = frameAtTh(first.th)
+      const rho = Math.hypot(f.r + first.ty * ca, f.c)
+      const p1 = at(frameAtTh(first.th - (dir * de.cw * 0.8) / rho), first.ty + hE * 0.75, -fz * de.zh * 0.9)
+      const p2 = at(frameAtTh(first.th - (dir * de.cw * 0.1) / rho), first.ty + hE * 0.95, -fz * de.zh * 0.4)
       S.push(p1[0], p1[1], p1[2]); S.push(p2[0], p2[1], p2[2])
     }
+    const next: Crown3[] = []
+    const per: number[] = []
+    let sts = 0
     let acc = 0.5
-    for (let q = crowns.length - 1; q >= 0; q--) {
-      const cr = crowns[q]!
-      const thNext = q > 0 ? crowns[q - 1]!.th : cr.th - (cr.th - crowns[q + 1]!.th)
-      const thPrev = q < crowns.length - 1 ? crowns[q + 1]!.th : cr.th + (cr.th - thNext)
+    for (let q = 0; q < order.length; q++) {
+      const cr = order[q]!
+      const thNext = q < order.length - 1 ? order[q + 1]!.th : cr.th + (cr.th - order[q - 1]!.th)
+      const thPrev = q > 0 ? order[q - 1]!.th : cr.th - (thNext - cr.th)
       // This crown's span along the row (half way to each neighbour).
       const thA = (cr.th + thPrev) / 2, thB = (cr.th + thNext) / 2
       const by2 = cr.ty
@@ -348,7 +381,7 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
       acc += (Math.abs(thA - thB) * rho2) / ePitch
       const k = Math.max(1, Math.floor(acc))
       acc -= k
-      edgePer.push(k)
+      per.push(k)
       const cn = S.nodes[cr.node]!
       const cp = v3(cn.x, cn.y, cn.z)
       const bz2 = dotv(subv(cp, f.C), f.N)
@@ -361,10 +394,10 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
         const spread = k === 1 ? 0 : 0.6 * (m === 0 ? 1 : m === k - 1 ? -1 : 0)
         const linksFrom = S.links.length
         const from = S.nodes.length
-        emitPlainStitch(S, de, {
-          j: 2, c: edgeSts, id: edge, s: -1, fz: -1, by: by2, ty: ty2,
+        const r = emitPlainStitch(S, de, {
+          j, c: sts, id: edge, s, fz, by: by2, ty: ty2,
           xCrown: thC * rho2,
-          xHook: cr.th * rho2 - yr * HOOK_SPREAD_YR * spread,
+          xHook: cr.th * rho2 + s * yr * HOOK_SPREAD_YR * spread,
           bcBack: cr.node, bcFront: cr.node, cyBelow: by2, bcNormalZ: bz2,
           place3,
           legReliefScale: 0.7, surfaceLay: 1, backCross: 1, linkRole: 'hook',
@@ -375,21 +408,29 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
         })
         for (let q2 = linksFrom; q2 < S.links.length; q2++) frameLink(S, S.links[q2]!, frameAtTh, false, cr.th)
         for (let q2 = from; q2 < S.nodes.length; q2++) colour[q2] = spec.colour
-        edgeSts++
+        next.push({ i: cr.i, node: r.crownBack, bi: cr.bi, th: thC, ty: ty2 })
+        sts++
+        lastTh = thC
       }
     }
-  }
+    edgeOut.push({ id: edge, sts, per })
+    prev = dir < 0 ? next.reverse() : next // back to θ order
+    lastFz = fz
+  })
   // ── FASTEN OFF: the tail run back up inside the last stitches ────────────
   {
     const last = S.nodes[S.nodes.length - 1]!
     const lp = v3(last.x, last.y, last.z)
-    const f = frameAtTh(nearTh(Math.atan2(last.y, last.x), thOfS(edge ? 0 : W * pc)))
-    const fzEnd = edge ? 1 : -1
+    const f = frameAtTh(nearTh(Math.atan2(last.y, last.x), lastTh))
+    const fzEnd = -lastFz
     for (let t = 1; t <= 4; t++) {
       const p = addv(addv(lp, scl(f.H, -yr * 0.7 * t)), scl(f.N, fzEnd * yr * 0.25 * t))
       S.push(p[0], p[1], p[2])
     }
   }
+  // Where the ribbon's outer edge ENDS at the base: the outermost row's crown
+  // nearest the base (the tail, and so the bead, hangs from there).
+  const baseCrown = prev[prev.length - 1]!
   for (let q = 0; q < S.nodes.length; q++) if (colour[q] === undefined) colour[q] = spec.colour
 
   // Built radii of the crowns, per block (for the measures).
@@ -449,13 +490,13 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
     built,
     colourOf: (i) => colour[i] ?? spec.colour,
     problems,
-    words: spiralWords(blocks, edge ? { id: edge, sts: edgeSts, per: edgePer } : undefined),
+    words: spiralWords(blocks, perChainCounts, edgeOut),
     measures,
     heightMm: zmax - zmin,
     topZ: zmax,
     baseZ: zmin,
     maxRadiusMm: rmax,
-    baseEnd: (() => { const n0 = nodes[crowns[crowns.length - 1]!.node]!; return { x: n0.x, y: n0.y, z: n0.z } })(),
+    baseEnd: (() => { const n0 = nodes[baseCrown.node]!; return { x: n0.x, y: n0.y, z: n0.z } })(),
   }
 }
 
@@ -553,27 +594,61 @@ export function chain3(
   return loops
 }
 
-/** The written row, UK terms. */
-export function spiralWords(blocks: SpiralBlock[], edge?: { id: StitchId; sts: number; per: number[] }): string[] {
+/** The written rows, UK terms. */
+export function spiralWords(blocks: SpiralBlock[], perChain: number[], edges: { id: StitchId; sts: number; per: number[] }[] = []): string[] {
   const W = blocks.reduce((s, b) => s + b.chains, 0)
-  const total = blocks.reduce((s, b) => s + b.chains * b.perChain, 0)
+  const total = perChain.reduce((s, k) => s + k, 0)
+  let at = 0
   const parts = blocks.map((b, i) => {
+    const counts = perChain.slice(at, at + b.chains)
+    at += b.chains
+    const name = UK[b.id]
     const first = i === 0
-    const n = first ? b.chains - 1 : b.chains
-    const lead = first ? `${b.perChain} ${UK[b.id]} in 2nd ch from hook, ` : ''
-    return `${lead}${b.perChain} ${UK[b.id]} in each of next ${n} ch`
+    const lead = first ? `${counts[0]} ${name} in 2nd ch from hook, ` : ''
+    return lead + countsWords(first ? counts.slice(1) : counts, name, 'ch')
   })
-  return [
-    `Ch ${W + 1}.`,
-    `Row 1: ${parts.join(', ')}. (${total} sts)`,
-    ...(edge
-      ? [
-          `Row 2: ch 1, turn. Work ${UK[edge.id]} evenly along the outer edge of the row, ${edgeWords(edge.per, UK[edge.id])}. (${edge.sts} sts)`,
-          'The row twists into a corkscrew as you work it. Fasten off at the top, leaving a long tail at the base for the bead.',
-        ]
-      : ['The row twists into a corkscrew as you work it. Fasten off, leaving a long tail at the base for the bead.']),
-  ]
+  const lines = [`Ch ${W + 1}.`, `Row 1: ${parts.join(', ')}. (${total} sts)`]
+  edges.forEach((edge, e) => {
+    lines.push(`Row ${e + 2}: ch 1, turn. Work ${UK[edge.id]} evenly along the outer edge of the row, ${edgeWords(edge.per, UK[edge.id])}. (${edge.sts} sts)`)
+  })
+  lines.push(
+    edges.length % 2 === 0
+      ? 'The strip twists into a corkscrew as you work it. Fasten off at the base, leaving a long tail for the bead.'
+      : 'The strip twists into a corkscrew as you work it. Fasten off at the top, leaving a long tail at the base for the bead.',
+  )
+  return lines
 }
+
+/** A block's per-chain counts as a repeat: "[1 dc in next ch, 2 dc in next ch] 5 times". */
+function countsWords(counts: number[], name: string, into: string): string {
+  if (counts.length === 0) return ''
+  const same = counts.every((k) => k === counts[0])
+  if (same) return `${counts[0]} ${name} in each of next ${counts.length} ${into}`
+  // The shortest unit the counts repeat with (≤ 4), then the remainder.
+  let unit = counts.length
+  for (let p = 2; p <= 4; p++) {
+    if (counts.every((k, i) => k === counts[i % p])) { unit = p; break }
+  }
+  const run = (ks: number[]): string => {
+    const out: string[] = []
+    let i = 0
+    while (i < ks.length) {
+      let j = i
+      while (j < ks.length && ks[j] === ks[i]) j++
+      const n = j - i
+      out.push(n === 1 ? `${ks[i]} ${name} in next ${into}` : `${ks[i]} ${name} in each of next ${n} ${into}`)
+      i = j
+    }
+    return out.join(', ')
+  }
+  if (unit === counts.length) return run(counts)
+  const reps = Math.floor(counts.length / unit)
+  if (reps < 2) return run(counts)
+  const rest = counts.slice(reps * unit)
+  return `[${run(counts.slice(0, unit))}] ${reps} times` + (rest.length ? `, ${run(rest)}` : '')
+}
+
+const nth = (n: number): string => (n === 2 ? 'other' : n === 3 ? '3rd' : `${n}th`)
 
 /** "2 in each st, 1 in every 5th" from the per-stitch edge counts. */
 function edgeWords(per: number[], name: string): string {
@@ -581,6 +656,6 @@ function edgeWords(per: number[], name: string): string {
   const ones = per.length - twos
   if (twos === 0) return `1 ${name} in each st`
   if (ones === 0) return `2 ${name} in each st`
-  if (twos >= ones) return `2 ${name} in each st with 1 ${name} in about every ${Math.round(per.length / ones)}th st`
-  return `1 ${name} in each st with 2 ${name} in about every ${Math.round(per.length / twos)}th st`
+  if (twos >= ones) return `2 ${name} in each st with 1 ${name} in about every ${nth(Math.round(per.length / ones))} st`
+  return `1 ${name} in each st with 2 ${name} in about every ${nth(Math.round(per.length / twos))} st`
 }

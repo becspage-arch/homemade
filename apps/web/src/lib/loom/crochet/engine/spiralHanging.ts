@@ -15,12 +15,11 @@
  * piece is bent.
  */
 
-import { buildSpiralTree, TREE_BLOCKS, TREE_DROOP_DEG, TREE_EDGE_ROW, type BuiltSpiral } from './spiralTree'
+import { buildSpiralTree, TREE_BLOCKS, TREE_DROOP_DEG, TREE_EDGE_ROWS, type BuiltSpiral } from './spiralTree'
 import { YARN_WEIGHT_RADIUS_MM, type YarnWeight } from './program'
 import { MotifStrand } from './motifs/kit'
 import { pieceOf, posedPoints, UK } from './motifs/common'
 import { getMotif } from './motifs/index'
-import { STAR_SIZES } from './motifs/star'
 import type { MotifPiece, V3 } from './motifs/types'
 import { colourStrokes } from './programScene'
 import { pliedFilaments, smooth } from '../yarnLoop'
@@ -28,25 +27,19 @@ import type { HeroStage } from '../../render/blenderScene'
 
 // r3: the bar's green is a deep forest green and its gold an antique metallic
 // gold; #2c5634 / #b38c3c rendered sage and mustard beside it.
-export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#a37d2e' }
+export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#b08a3a' }
+/** The bar's star and cord are a metallic gold thread: strokes[].metallic
+ *  (renderer, additive) blends the yarn material toward a brushed metal. */
+export const GOLD_METALLIC = 0.7
 
-/**
- * The TOPPER star (Fable r3). The motifs 'small' star (a 5-st ring and ch-3
- * points) rendered as a spindly starfish beside the bar's plump, compact star:
- * the bar's body is solid and its points short: about 11 yarn widths across.
- * Two rounds (5, 10) and ch-3 points (sl st, dc) give that: ~40 mm at sport
- * (~31 mm at fine, 0.50 of the tree width posed; bar ≈ 0.53; r3's ch-4 points at fine were 14 yarn
- * widths and still read wiry). Registered into the motifs star's size
- * table from here (additive; the motifs lane owns star.ts) under this key.
- */
-export const STAR_TOPPER_SIZE = 'topper'
-;(STAR_SIZES as Record<string, (typeof STAR_SIZES)['small']>)[STAR_TOPPER_SIZE] ??= { rounds: [5, 10], point: ['slst', 'sc'], skip: 1 }
+/** The star size the trees wear: STAR_SIZES.topper in motifs/star.ts. */
+export const STAR_TOPPER_SIZE = 'topper' as const
 
 export interface HangingOptions {
   /** Tree colours left to right (default green, cream, green: the bar). */
   trees?: string[]
   yarnWeight?: YarnWeight
-  /** The star's yarn (the topper star is ~37 mm at fine; see the job log). */
+  /** The star's yarn (the topper star is ~36 mm at lace; see the job log). */
   starWeight?: YarnWeight
   /** The hanging cord's yarn: the bar's cord is a fine flat chain, thinner than the tree yarn. */
   cordWeight?: YarnWeight
@@ -136,7 +129,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const cols = o.trees ?? [SPIRAL_COLOURS.green, SPIRAL_COLOURS.cream, SPIRAL_COLOURS.green]
   // One tree per colour (built once per distinct colour).
   const byColour = new Map<string, BuiltSpiral>()
-  for (const c of cols) if (!byColour.has(c)) byColour.set(c, buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: TREE_DROOP_DEG, colour: c, edgeRow: TREE_EDGE_ROW }))
+  for (const c of cols) if (!byColour.has(c)) byColour.set(c, buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: TREE_DROOP_DEG, colour: c, edgeRows: TREE_EDGE_ROWS }))
   const trees = cols.map((c) => byColour.get(c)!)
   const t0 = trees[0]!
   const W = t0.maxRadiusMm * 2
@@ -144,8 +137,8 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const X = cols.map((_, i) => (i - (cols.length - 1) / 2) * (W + gap))
 
   // The star.
-  const starW = o.starWeight ?? 'fine' // r5: sport posed at 0.66 W (bar 0.53); fine ≈ 0.50
-  const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE as 'small', colours: { main: gold } })
+  const starW = o.starWeight ?? 'lace' // pass 2: the solid 3-round topper is ~36 mm at lace ≈ 0.52 W (bar 0.53)
+  const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE, colours: { main: gold } })
   const starPiece = star.pieces[0]!
   const syr = YARN_WEIGHT_RADIUS_MM[starW]
   const tip = starTipAngle(starPiece)
@@ -153,9 +146,10 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   // Star centre to the tip of its lower-most points sits ~0.8 R below centre.
   const starDrop = tip.R * 0.78
 
-  // Branch height above each tree's top: the cord. The bar's loop is about
-  // 0.45 of the tree's height, in a finer gold thread than the tree.
-  const cordMm = o.cordMm ?? t0.heightMm * 0.45
+  // Branch height above each tree's top: the cord. A short gold loop above
+  // the star, about the star's own height (Rebecca, pass 2; the pass-1 loop at
+  // 0.45 of the tree's height read long), in a finer gold thread.
+  const cordMm = o.cordMm ?? tip.R * 2
   const branchR = W * 0.14
   const cyr = YARN_WEIGHT_RADIUS_MM[o.cordWeight ?? 'fine']
   const wrapR = branchR + cyr * 1.1
@@ -169,7 +163,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   // The branch: a gently rising, slightly crooked bough.
   const slope = 0.05
   const branchZ = (x: number): number => slope * x + Math.sin(x / (W * 1.7)) * W * 0.04
-  const treeTop = (x: number): number => branchZ(x) - wrapR - cordMm - tip.R - starDrop
+  const treeTop = (x: number): number => branchZ(x) - wrapR - cordMm - tip.R - starDrop * 0.45
   let lowZ = Infinity
   cols.forEach((col, i) => {
     const t = trees[i]!
@@ -184,9 +178,9 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     // The star, standing upright facing the camera (engine +y), its lower
     // points straddling the tree's top.
     const sc = Math.cos(rot), ss = Math.sin(rot)
-    // Fable r2: the star sits ON the tree, its lower points straddling the top
-    // turn (the r2 preview showed a gap of half a point between them).
-    const zStar = zTop + starDrop * 0.55
+    // The star sits ON the tree's tip: its two lower points straddle the top
+    // turn (the centre sits 0.45 of a point's drop above the tip).
+    const zStar = zTop + starDrop * 0.45
     pieces.push({
       ...starPiece, name: `star-${i}`, yr: syr,
       pose: (p) => {
@@ -236,7 +230,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
 /** The hanging → the Blender scene loom_render_crochet.py renders. */
 export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; liftMm?: number; stageZoom?: number; yawDeg?: number; tiltDeg?: number } = {}) {
   const PER_SEG = 4
-  const strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[] = []
+  const strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][]; metallic?: number }[] = []
   let minZ = Infinity
   for (const piece of h.pieces) {
     const ctrl: V3[] = posedPoints(piece)
@@ -251,8 +245,10 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
     // (equal lengths!) averaged them into a centreline between the trees with a
     // 90 mm spread: giant tubes that took hours to render. build_yarn groups
     // strokes by colour and radius itself, so this costs nothing.
-    strokes.push(...colourStrokes(center, filaments, radiusMm, colourAt))
+    const metallic = piece.name.startsWith('star') || piece.name.startsWith('cord') ? GOLD_METALLIC : undefined
+    strokes.push(...colourStrokes(center, filaments, radiusMm, colourAt).map((st) => (metallic ? { ...st, metallic } : st)))
   }
+  const treeH = h.trees[0]!.heightMm
   // The renderer floats the lowest YARN to the table; the beads hang below
   // the trees, so the lift is measured from the yarn's lowest point.
   const beadBelow = minZ - h.lowZ
@@ -280,6 +276,10 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
       // bar keeps the branch and all three trees sharp over a soft room.
       stageFstop: 0.4,
       liftMm: beadBelow + (o.liftMm ?? 25),
+      // The stage sizes its props (berries, pine, lights) from the content's
+      // height, which for a hung set includes the cord and the lift: size them
+      // from one tree instead (renderer key, additive).
+      stageHeightMm: treeH,
     },
   }
 }

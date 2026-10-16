@@ -32,7 +32,7 @@ export interface MotifOptions {
   colours?: Record<string, string>
   /** A smaller version where the motif has one (the star: 'small', a tree
    *  topper). Default 'standard'. */
-  size?: 'standard' | 'small'
+  size?: 'standard' | 'small' | 'topper'
 }
 
 export interface V3 {

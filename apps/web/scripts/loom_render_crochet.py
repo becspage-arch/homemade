@@ -617,7 +617,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
     # textile, not a rigid placemat. The backing follows the same field.
     groups = {}
     for st in strokes:
-        key = (st["hex"], round(st["radiusMm"], 3), round(st.get("sheen", 0.7), 2))
+        key = (st["hex"], round(st["radiusMm"], 3), round(st.get("sheen", 0.7), 2), round(st.get("metallic", 0.0), 2))
         groups.setdefault(key, []).append(st)
 
     def drape_z(bx, by):
@@ -670,7 +670,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
                     sp.points[i].co = (bx, by, p[2] * S + zlift + z_offset + drape_z(bx, by), 1.0)
                     sp.points[i].radius = r
 
-    for (hexcol, radius, sheen), group in groups.items():
+    for (hexcol, radius, sheen, metallic), group in groups.items():
         cu = bpy.data.curves.new("yarn", type="CURVE")
         cu.dimensions = "3D"
         cu.bevel_depth = 1.0
@@ -683,6 +683,14 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             ymat = chenille_material("y_" + hexcol, hexcol, fpb)
         else:
             ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre)
+        if metallic > 0:
+            # A metallic thread (the spiral trees' gold star and cord, strokes[].metallic):
+            # the plied yarn surface blended toward a brushed metal. Absent from
+            # every other scene, so they are unchanged.
+            mb = ymat.node_tree.nodes.get("Principled BSDF")
+            set_in(mb, "Metallic", metallic)
+            set_in(mb, "Roughness", 0.32)
+            set_in(mb, "Sheen Weight", 0.1)
         ob.data.materials.append(ymat)
         bpy.context.collection.objects.link(ob)
         if strand == "single" and fpb.get("pile_density", 0) > 0:
@@ -1166,7 +1174,10 @@ def main():
     # Hero stage (bar criterion 8): styled set dressing round the untouched piece.
     apply_stage(stage_of(view), scene, dict(
         cx=cx, cy=cy, yaw=yaw_r, span=span, R=0.5 * max(contentW, contentH),
-        H=maxz_bu + z_offset, cam=cam, tgt=tgt, view=view, key_energy=key.data.energy,
+        # `view.stageHeightMm` (spiral trees, additive): size the set's props from
+        # the piece itself rather than the whole hung content (cord + lift).
+        H=(view["stageHeightMm"] * S) if view.get("stageHeightMm") else (maxz_bu + z_offset),
+        cam=cam, tgt=tgt, view=view, key_energy=key.data.energy,
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)

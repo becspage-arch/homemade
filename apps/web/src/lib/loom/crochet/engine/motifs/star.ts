@@ -44,9 +44,15 @@ export interface StarSpec { rounds: number[]; point: StitchId[]; skip: number }
 /** The sizes: 'standard' (~55 mm at fine cotton) and 'small' (a tree topper:
  *  one round of 5 and ch-3 points, ~37 mm at fine, ~28 mm at lace — the chains
  *  set the floor; two rounds with ch-4 points settled 40-46 mm). */
-export const STAR_SIZES: Record<'standard' | 'small', StarSpec> = {
+export const STAR_SIZES: Record<'standard' | 'small' | 'topper', StarSpec> = {
   standard: { rounds: STAR_ROUNDS, point: STAR_POINT, skip: SKIP },
   small: { rounds: [5], point: ['slst', 'sc'], skip: 0 },
+  /** The spiral trees' TOPPER (spiralHanging.ts, Fable pass 2): the bar's star
+   *  is a SOLID body with five short crisp points. Three rounds (5, 10, 15) make
+   *  the body, ch-3 points (sl st, UK dc) over two skipped stitches keep the
+   *  points stubby: ~36 mm at lace (two rounds with the same points read as a
+   *  wiry starfish on the tree). */
+  topper: { rounds: [5, 10, 15], point: ['slst', 'sc'], skip: 2 },
 }
 
 export function buildStar(o?: MotifOptions): BuiltMotif {
