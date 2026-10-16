@@ -36,7 +36,7 @@ import type { AmigurumiPart, CompositionProgram, CompositionProp } from './compo
 import type { EmbroideryFeature } from './faceEmbroidery'
 import type { HairPatch } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
-import { sphereRounds } from './sphereProfile'
+import { sphereAscent, sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import type { YarnFibre, YarnWeight } from './program'
 import type { HeroStage } from '../../render/blenderScene'
@@ -61,7 +61,9 @@ export const COW_DEFAULTS: CowChoices = {
   // Round 12: the set's warm light and the chenille grade push a brown ~+7° hue
   // and +0.2 saturation (measured: #74412f rendered h 22° s 0.92 where the bar
   // is h 15° s 0.73), so the yarn is dyed redder and softer than it will read.
-  mainHex: '#6b3f33',
+  // Round 17 (Rebecca's look at r15): a shade lighter and warmer still — the
+  // bar's plush reads lighter than #6b3f33 did on the windowsill.
+  mainHex: '#7a4a3c',
   contrastHex: '#ead9bf',
   eyeMm: 12,
 }
@@ -125,24 +127,41 @@ export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 6]
  */
 export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 15, 18, 18, 18, 15, 12, 9, 6]
 
+/**
+ * THE PEAR BODY (cow round 17, Rebecca's look at r15: "the body a soft upright
+ * pear", the head about as wide as it). Worked from the magic ring at the
+ * SHOULDERS: the sphere ascent of a smaller ball (a rounded shoulder dome),
+ * then TWO increases a round down the belly (a slow widening: a +6 round is
+ * intrinsically a flat disc, see sphereProfile §8f-10, so a +2 round spends
+ * most of its meridian on height — the pear), three straight rounds at the
+ * hips, and a quicker descent under the seat. Taller than the old ball and
+ * widest low, where the legs sit, so the head no longer dwarfs it. Intrinsic
+ * M: 108 wide x 118 tall (the old sphereRounds(54, 1) was 97 x 100).
+ */
+export const COW_BODY_ROUNDS: Record<AmigurumiSize, number[]> = {
+  S: [...sphereAscent(30).up, 33, 36, 39, 42, 45, 48, 48, 48, 46, 43, 39, 35, 31, 27, 24, 18, 12, 6],
+  M: [...sphereAscent(42).up, 44, 46, 48, 50, 52, 54, 56, 58, 60, 60, 60, 58, 54, 49, 44, 39, 34, 30, 24, 18, 12, 6],
+  L: [...sphereAscent(48).up, 50, 52, 54, 56, 58, 60, 62, 64, 66, 66, 66, 64, 60, 55, 50, 45, 40, 35, 30, 24, 18, 12, 6],
+}
+
 const PROFILES: Record<AmigurumiSize, CowProfile> = {
   S: {
-    body: sphereRounds(42, 1), neck: ballRounds(18, 2), head: sphereRounds(48, 2),
+    body: COW_BODY_ROUNDS.S, neck: ballRounds(18, 2), head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 5), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 15, 12, 9, 6],
-    frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -9, frontLegLift: 9, eyeMm: 12,
+    frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 4), tail: cordRounds(4),
+    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -15, frontLegLift: 12, eyeMm: 12,
   },
   M: {
-    body: sphereRounds(54, 1), neck: ballRounds(18, 2), head: sphereRounds(60, 2),
+    body: COW_BODY_ROUNDS.M, neck: ballRounds(18, 2), head: sphereRounds(60, 2),
     muzzle: sphereRounds(24, 5), horn: COW_HORN_ROUNDS, ear: COW_EAR_ROUNDS,
-    frontLeg: tubeRounds(18, 9), backLeg: ballRounds(24, 4), tail: cordRounds(5),
-    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -8.5, frontLegLift: 4.0, eyeMm: 18,
+    frontLeg: tubeRounds(18, 12), backLeg: ballRounds(24, 4), tail: cordRounds(5),
+    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -14.1, frontLegLift: 5.7, eyeMm: 18,
   },
   L: {
-    body: sphereRounds(60, 1), neck: ballRounds(24, 2), head: sphereRounds(66, 2),
+    body: COW_BODY_ROUNDS.L, neck: ballRounds(24, 2), head: sphereRounds(66, 2),
     muzzle: sphereRounds(24, 7), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: [6, 9, 12, 15, 18, 21, 21, 21, 18, 15, 12, 9, 6],
-    frontLeg: tubeRounds(18, 11), backLeg: ballRounds(30, 4), tail: cordRounds(6),
-    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -8.5, frontLegLift: 1.8, eyeMm: 18,
+    frontLeg: tubeRounds(18, 14), backLeg: ballRounds(30, 4), tail: cordRounds(6),
+    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -12.5, frontLegLift: 7.1, eyeMm: 18,
   },
 }
 
@@ -178,7 +197,8 @@ const COW_VIEW = {
 }
 /** The listing sets frame a 10 cm bear at ~85% of the frame; the calf's horns
  *  want the bar's ~75%. */
-const COW_STAGE_ZOOM = 0.95
+// Round 18: the pear body made the calf taller; 0.95 cropped the horn tips.
+const COW_STAGE_ZOOM = 0.82
 const COW_YARN: YarnWeight = 'worsted'
 const COW_HOOK_MM = 4
 const COW_FIBRE: YarnFibre = 'chenille'
@@ -213,12 +233,16 @@ const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
  *  of the body to the table, a touch forward so the hooves land in front. */
-const FRONT_LEG_DIR = { x: 0.38, y: 0.82, z: 0.5 }
+// Round 17: further apart (the bar's two front legs stand a leg's width
+// apart down the front of the pear) and sewn a little higher on the shoulder.
+const FRONT_LEG_DIR = { x: 0.6, y: 0.8, z: 0.55 }
 const FRONT_LEG_AIM = { x: 0.1, y: 0.46, z: -1 }
 /** Back legs: worked sole first, sewn low on the SIDES of the body, lying
  *  forward along the table OUTSIDE the front legs, the rounded foot to the
  *  lens — so all four legs show, the bar's seated calf. */
-const BACK_LEG_DIR = { x: 0.9, y: 0.6, z: -0.5 }
+// Round 18: further out and forward, so the round feet show beside the
+// front legs instead of hiding behind them (the bar's four legs).
+const BACK_LEG_DIR = { x: 1.0, y: 0.7, z: -0.6 }
 const BACK_LEG_AIM = { x: 0.12, y: 1, z: 0.08 }
 const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
@@ -276,17 +300,19 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     curlLoop: { twist: 1, curl: 0.35, halfWidthYr: 2.0 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 6.2, halfWidthYr: 2.9, droopDeg: -50 } // over three fingers: the crown of the tuft
+        ? { lengthYr: 7.0, halfWidthYr: 3.2, droopDeg: -50 } // over three fingers: the crown of the tuft
         : k === last
           ? { lengthYr: 4.0, halfWidthYr: 2.2, droopDeg: -86 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
-    strandYr: 1.0,
+    // Round 17: plumper — the bar's curls are fat round chenille rings, a
+    // third thicker again than the yarn pulled into a stitch.
+    strandYr: 1.35,
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
     // head it stands on. Same yarn in the words; a lighter shade on the loops.
-    colourHex: lighten(colourHex, 0.16),
+    colourHex: lighten(colourHex, 0.24),
   }
 }
 
@@ -374,7 +400,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: s.legLift },
+        offset: { x: side * 10, y: 8, z: s.legLift },
       },
     })
   }
@@ -422,7 +448,14 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
   // 1.5/mm² x 6 children: ~1.3 M hairs on the calf's ~120 000 mm² of brown.
   // 5/mm² x 10 (the yarn lane's bear number scaled up) was ~7 M and the
   // 8 GB render task was OOM-killed at scene sync (cow r9, S3 cow-1a).
-  pile_density: 3, pile_children: 6, pile_len_mm: 1.2, pile_radius_mm: 0.03, pile_dark_only: true,
+  // Round 17: the 1.2 mm pile at 3/mm² was invisible at listing size (r12-r15).
+  // Fewer, LONGER, fatter hairs with lit tips — ~1.7 M on the strand's
+  // ~870 000 mm² — so the brown gets the bar's soft halo and lit pile tips,
+  // and a touch more crushed-pile value drift so the fabric is not one flat tone.
+  pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
+  // Round 18: no pile on the fringe's plump loose loops (radius 2.8 mm; the fabric strand is 1.3).
+  pile_max_radius_mm: 2.0,
+  crush_amt: 0.22, pile_dark_only: true,
 }
 
 /** The NOSTRILS: two bold diagonal straight stitches in dark brown yarn
