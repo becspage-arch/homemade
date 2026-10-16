@@ -257,7 +257,17 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
     set_in(bsdf, "Specular IOR Level", fp["specular"])
     set_in(bsdf, "Sheen Weight", fp["sheen"])
     set_in(bsdf, "Sheen Roughness", fp["sheen_rough"])
-    set_in(bsdf, "Sheen Tint", (1.0, 1.0, 1.0, 1.0))
+    # `sheen_tint_mix` (motifs r9, additive: absent = the white sheen every
+    # fibre had): a white sheen at weight 0.6 / roughness 0.7 lays a near-
+    # constant pale veil over a mid or dark dye, so three dusty roses (#946070,
+    # #8a5868, #7a4a5a) rendered the same clean pink. Tinting the sheen toward
+    # the base colour keeps the dye's depth; a scene asks for it via fibreTune.
+    stm = fp.get("sheen_tint_mix") if fp.get("strand") == "replied" or fp.get("sheen_tint_mix_core") else None
+    if stm:
+        tint = tuple(1.0 - stm + stm * min(1.0, c / max(base[0], base[1], base[2], 1e-6)) for c in base[:3]) + (1.0,)
+        set_in(bsdf, "Sheen Tint", tint)
+    else:
+        set_in(bsdf, "Sheen Tint", (1.0, 1.0, 1.0, 1.0))
     set_in(bsdf, "Anisotropic", fp["aniso"])
     set_in(bsdf, "Subsurface Weight", fp["subsurf"])
     set_in(bsdf, "Subsurface Radius", (0.6, 0.5, 0.42))
@@ -1227,9 +1237,12 @@ STAGE_TILT = 80.0       # camera 10 deg above the table: sees the room behind
 STAGE_ZOOM = 1.25       # pull back so the piece fills ~65% of the frame height
 # Round 5: the bar frames the toy tight (bunny ~85% of the frame height, cow
 # ~75%), so each set has its own zoom; `view.stageZoom` still overrides.
-STAGE_ZOOM_BY = {"linen": 1.08, "windowsill": 1.02, "nursery": 0.9, "christmas": 1.02}
+STAGE_ZOOM_BY = {"linen": 1.08, "windowsill": 1.02, "nursery": 0.9, "christmas": 1.02, "wall": 1.0}
 STAGE_ASPECT = 1.0      # square listing photo (the bunny and tree bars)
-STAGE_IDS = ("linen", "windowsill", "nursery", "christmas")
+# "wall" (motifs r9, additive): an upright WALL HANGING shot straight on — a
+# plaster wall just behind the hung piece, a pale oak sideboard top below it,
+# window light from the left. Only a scene that asks for it gets it.
+STAGE_IDS = ("linen", "windowsill", "nursery", "christmas", "wall")
 
 
 def stage_of(view):
@@ -1854,6 +1867,9 @@ def apply_stage(stage, scene, ctx):
     elif stage == "christmas":
         _stage_christmas(**k)
         _world(scene, (0.95, 0.82, 0.66), 0.25)
+    elif stage == "wall":
+        _stage_wall(gap=view.get("wallGapCm", 3.0), **k)
+        _world(scene, (0.98, 0.95, 0.90), 0.5)
 
     # Camera: a real shallow depth of field, focused on the piece.
     cd = cam.data
@@ -1883,13 +1899,13 @@ def apply_stage(stage, scene, ctx):
 # High-key, airy listing photos: lift the exposure a touch over the studio grade
 # (the set is darker than a blown-out white sweep). Christmas stays moodier so
 # the fairy-light bokeh glows.
-STAGE_EXPOSURE_LIFT = {"linen": 0.15, "windowsill": 0.1, "nursery": 0.2, "christmas": 0.0}
+STAGE_EXPOSURE_LIFT = {"linen": 0.15, "windowsill": 0.1, "nursery": 0.2, "christmas": 0.0, "wall": 0.2}
 # Round 5: ease the flat studio key+fill so the set's own warm window key rakes
 # across the piece (contrast, a lit side and a soft side) instead of an even wash.
-STAGE_KEY_MULT = {"linen": 0.7, "windowsill": 0.6, "nursery": 0.75, "christmas": 0.65}
+STAGE_KEY_MULT = {"linen": 0.7, "windowsill": 0.6, "nursery": 0.75, "christmas": 0.65, "wall": 0.7}
 # r6: how golden the grade is (1 = r5's full gold, which read as a yellow filter
 # on the windowsill and fought the blush/lavender nursery palette).
-STAGE_WARMTH = {"linen": 0.65, "windowsill": 0.6, "nursery": 0.3, "christmas": 0.75}
+STAGE_WARMTH = {"linen": 0.65, "windowsill": 0.6, "nursery": 0.3, "christmas": 0.75, "wall": 0.45}
 
 
 def _ground(root, mat, s, D, z=0.0):
@@ -2115,6 +2131,54 @@ def _stage_linen(root, H, R, s, D, vis, light):
     # Window light from the left, light washing the wall.
     light((-1.2 * s, 0.1 * s, 0.8 * s), (0, 0, 0.4 * H), 1.6, 0.7 * s, GOLD)
     light((0.3 * s, 0.35 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.9, 1.6 * s, WARM_SOFT)
+
+
+def _stage_wall(root, H, R, s, D, vis, light, gap=3.0):
+    """A wall hanging, shot straight on (camera tilt ~84-88): the piece hangs
+    in front of a soft warm-white plaster wall `gap` cm behind its centre, over
+    a pale oak sideboard top (the stage ground, at z = 0; the scene lifts the
+    piece with `liftMm`). A stoneware vase with dried grasses stands on the
+    sideboard back left and a small potted plant back right, both soft; a
+    window to the left lights the wall in a warm wash. The piece is untouched."""
+    oak = wood_material("sideboard", "#d8c3a0", "#b8996f", rough=0.5)
+    _box("stage_ground", root, oak, -3 * s, 3 * s, -3 * s, gap + 1.0, -3.0, 0.0)
+    plaster = plaster_material("wall", "#efe8dc", mottle=0.04)
+    _box("wall", root, plaster, -3 * s, 3 * s, gap, gap + 3.0, -3.0, 3.0 * s)
+    # A hanging string from the piece's top corners up out of frame is the
+    # maker's; here the cord is yarn in the scene when the piece has one.
+    hw = vis.hw(gap * 0.5)
+    glaze = _principled("vase", "#d9cdb8", rough=0.55, spec=0.3)
+    vx, vy = -0.78 * hw, gap * 0.45
+    vh = 0.42 * H
+    _lathe("vase", root, glaze, vx, vy, [(0.0, 0.0), (0.16 * vh, 0.0), (0.2 * vh, 0.3 * vh), (0.17 * vh, 0.7 * vh), (0.1 * vh, 0.92 * vh), (0.11 * vh, vh)], seg=48)
+    stem = _principled("dstem", "#b9a070", rough=0.85)
+    plume = _principled("dplume", "#e3d4b4", rough=0.95, sheen=0.8)
+    pts = []
+    for kk in range(6):
+        a = math.radians(-26 + kk * 10.4)
+        top = (vx + math.sin(a) * 0.55 * vh, vy + 0.12 * vh * math.cos(kk * 1.3), vh + math.cos(a) * 1.25 * vh)
+        _curve("dst%d" % kk, root, stem, [(vx, vy, 0.9 * vh), top], 0.012 * vh)
+        for j in range(10):
+            t = j / 9.0
+            pts.append((top[0] + math.sin(a) * 0.4 * vh * t, top[1], top[2] + math.cos(a) * 0.4 * vh * t,
+                        (0.07 + 0.05 * math.sin(math.pi * t)) * vh))
+    _spheres("dried", root, plume, pts, 0.07 * vh, subdiv=2)
+    # A terracotta pot of trailing green, back right.
+    terra = _principled("pot", "#b9774f", rough=0.7, spec=0.2)
+    px, py = 0.8 * hw, gap * 0.4
+    ph = 0.22 * H
+    _cyl("pot", root, terra, px, py, 0.0, 0.14 * H, 0.17 * H, ph)
+    leaf_mat = _principled("plant", "#6f8f4e", rough=0.6, sheen=0.3)
+    specs = []
+    for kk in range(14):
+        a = kk * 2.4
+        rr = 0.06 * H + 0.11 * H * _hash01(kk, 2.0)
+        specs.append(((px + math.cos(a) * rr, py + math.sin(a) * rr * 0.6, ph + 0.02 * H + 0.05 * H * _hash01(kk, 5.0)),
+                      a + 0.4, 0.09 * H + 0.05 * H * _hash01(kk, 9.0), 0.05 * H, 0.25, 0, -0.1 - 0.3 * _hash01(kk, 3.0)))
+    _leaves("plant_leaves", root, leaf_mat, specs)
+    # Window light from the left washing the wall, a soft fill from the front right.
+    light((-1.3 * s, -0.2 * s, 0.9 * s), (0, gap, 0.5 * H), 1.7, 0.8 * s, GOLD)
+    light((0.6 * s, -0.9 * s, 0.7 * s), (0.0, 0.0, 0.5 * H), 0.7, 1.6 * s, WARM_SOFT)
 
 
 def _stage_nursery(root, H, R, s, D, vis, light):
