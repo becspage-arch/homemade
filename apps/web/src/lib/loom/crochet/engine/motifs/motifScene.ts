@@ -121,12 +121,12 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] 
       openFabric: true,
       yawDeg: o.yawDeg ?? o.yaw ?? (hang ? 0 : 14),
       // A hung piece is aimed at its middle height, a flat-lay just above the table.
-      aimHeightFrac: hang ? 0.5 : 0.08,
+      aimHeightFrac: hang ? 0.62 : 0.08, // r11: at 0.5 the hanging sat high in the square frame over a quarter of empty sideboard
       lightRig: 'product' as const,
       groundScale: hang ? 40 : 16,
       stage: o.stage ?? (hang ? 'wall' : ('linen' as HeroStage)),
       stageTiltDeg: tilt,
-      stageZoom: o.stageZoom ?? (hang ? 1.0 : 1.4),
+      stageZoom: o.stageZoom ?? (hang ? 1.1 : 1.4),
       ...(hang ? { liftMm: o.liftMm ?? 90, stageHeightMm: m.sizeMm.height, stageFstop: 0.4 } : {}),
     },
   }

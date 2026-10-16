@@ -37,20 +37,20 @@ import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 import type { MotifProp } from './motifScene'
 
-export const GARLAND_COLOURS = { cord: '#46503a', cord2: '#d9cbb2', leaf: '#56614a' } // olive, a cream cord (the bar mixes sage and cream cords), grey-sage (r9's #4a553d rendered grass green with the tinted sheen)
+export const GARLAND_COLOURS = { cord: '#4e5844', cord2: '#d9cbb2', leaf: '#5e6a55' } // olive, a cream cord (the bar mixes sage and cream cords), grey-sage (r9's #4a553d rendered grass green with the tinted sheen)
 /** The cords, left to right: x (mm) along the branch, their length in chains,
  *  and what they are: a leaf vine, or a plain cord with a berry at the end. */
 export const GARLAND_CORDS: { x: number; ch: number; kind: 'vine' | 'berry'; cream?: boolean }[] = [
-  { x: -140, ch: 50, kind: 'vine' },
+  { x: -140, ch: 58, kind: 'vine' },
   { x: -112, ch: 34, kind: 'berry', cream: true },
-  { x: -84, ch: 40, kind: 'vine' },
+  { x: -84, ch: 46, kind: 'vine' },
   { x: -56, ch: 26, kind: 'berry' },
-  { x: -28, ch: 60, kind: 'vine' },
+  { x: -28, ch: 70, kind: 'vine' },
   { x: 0, ch: 44, kind: 'berry', cream: true },
   { x: 28, ch: 30, kind: 'berry' },
-  { x: 56, ch: 54, kind: 'vine' },
+  { x: 56, ch: 62, kind: 'vine' },
   { x: 84, ch: 20, kind: 'berry', cream: true },
-  { x: 112, ch: 42, kind: 'vine' },
+  { x: 112, ch: 48, kind: 'vine' },
   { x: 140, ch: 32, kind: 'berry' },
 ]
 /** A vine's leaves: the first at this chain, then every `VINE_EVERY` chains, alternating sides. */
@@ -133,6 +133,12 @@ export const GARLAND_BAND: { what: 'rose' | 'puff' | 'bud' | 'daisy' | 'butterfl
   { what: 'rose', x: -78, y: -36, z: 8, spin: 20 },
   { what: 'rose', x: 44, y: -40, z: 8, spin: -30 },
   { what: 'rose', x: -140, y: -40, z: 7, spin: 60 },
+  // a second row (r11): the bar's band is two flowers deep with no branch or wall showing between
+  { what: 'rose', x: 2, y: -70, z: 7, spin: 45 },
+  { what: 'daisy', x: -30, y: -78, z: 4, spin: 6 },
+  { what: 'daisy', x: 60, y: -76, z: 4, spin: -12 },
+  { what: 'bud', x: -108, y: -74, z: 6, spin: 20 },
+  { what: 'bud', x: 136, y: -70, z: 6, spin: -20 },
   { what: 'butterfly', x: -112, y: -8, z: 6, spin: 20 },
   { what: 'butterfly', x: 100, y: -12, z: 6, spin: -15 },
 ]
@@ -141,6 +147,7 @@ const BAND_LEAVES: [number, number, number, boolean][] = [
   [-132, -10, -150, false], [-100, -30, -40, true], [-64, -40, -160, false], [-36, -14, -30, true],
   [-8, -56, -140, false], [28, -12, -35, true], [58, -56, -150, false], [100, -30, -40, true],
   [134, -56, -140, false], [-86, -72, -120, false], [36, -70, -60, true], [120, -8, -20, true],
+  [-60, -84, -110, false], [-4, -90, -70, true], [90, -84, -120, false], [-130, -62, -60, true], [150, -54, -130, false], [30, -92, -100, false],
 ]
 
 export function buildGarland(o?: MotifOptions): BuiltMotif {

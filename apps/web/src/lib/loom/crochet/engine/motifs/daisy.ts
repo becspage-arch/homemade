@@ -74,7 +74,8 @@ export function buildDaisy(o?: MotifOptions): BuiltMotif {
   const small = o?.size === 'small'
   const centre = daisyCentre(yr, col.centre!, small ? DAISY_CENTRE_SMALL : DAISY_CENTRE)
   // One petal, relaxed and audited once; the eight sewn petals are poses of it.
-  const proto = leafPiece(yr, col.petal!, small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'petal', undefined, 'round')
+  // r11: a blunt (htr, htr) tip — the ch-1 'round' tip rendered as a notch at every petal end.
+  const proto = leafPiece(yr, col.petal!, small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'petal', undefined, 'blunt')
   const ln = proto.built.model.nodes
   let xMin = Infinity, ySum = 0
   for (const n of ln) { xMin = Math.min(xMin, n.x); ySum += n.y }
@@ -109,7 +110,7 @@ export function daisyWords(small = false): string[] {
       ? `  Round ${q + 1}: 2 ${UK.sc} in each st around. (${cnt} sts)`
       : `  Round ${q + 1}: [${UK.sc} in next st, 2 ${UK.sc} in next st] around. (${cnt} sts)`
   })
-  const petal = leafWords(small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'round', 'Petal').slice(0, -1)
+  const petal = leafWords(small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'blunt', 'Petal').slice(0, -1)
   return [
     'Centre, with mustard: make a magic ring.',
     ...rounds,
