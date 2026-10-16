@@ -1,35 +1,42 @@
 /**
- * LAYERED ROSE (audit round 9; bar: the small cupped pink roses of
- * bar-flower-wall-hanging.png; built-how ref real/9-big-rose-stem.jpg, graded
- * petals in layers).
+ * LAYERED (PUFF) ROSE (audit round 9; bar: the small round puffy pink roses of
+ * bar-flower-wall-hanging.png — four or five fat cupped lobes round a pale
+ * centre; built-how ref real/9-big-rose-stem.jpg, graded petals in layers).
  *
- * Two pieces sewn together: a flat petal base worked in the round (a small flat
- * centre, then a round whose outline is five petals — into each group of
- * stitches short, tall, tall, short: the heights make the rounded petal) and,
- * on it, a cupped heart of petals: a strip of graded petals worked along a
- * chain (rolled-rose.ts), rolled tightly with the petals standing nearly
- * upright, so the layers of the rose are the turns of the roll.
+ * Three pieces, each worked flat in the round and sewn stacked: an outer layer
+ * of five petals (a small flat centre, then a round whose outline is the
+ * petals — into each group of four stitches htr, tr, tr, htr, UK, so the
+ * rounded lobe comes from the heights), a smaller inner layer of five petals
+ * turned half a petal, and a tiny pale centre (one round of dc into a ring).
+ * Each layer is cupped — bent up into a bowl so the petals stand and curl in,
+ * the maker's shaping as the layers are sewn — so the stacked rose is a round
+ * puff of lobes, not a disc. The cup is the pose; every layer is relaxed and
+ * audited flat as it was worked.
  *
- * (Round 2 stacked two flat petal layers under a small rolled bud: it rendered
- * as a flat scruffy disc, nothing like the bar's small cupped roses.)
+ * (Round 2 stacked two flat layers under a small rolled bud and rendered as a
+ * flat scruffy disc; rounds 3-4 put a tightly rolled strip on a flat base and
+ * read as a cupped roll, the wrong construction for the bar's puff roses.)
  */
 
 import type { StitchId } from '../dictionary'
 import { rowPitchYr } from '../dictionary'
 import { MotifStrand, crownRound, intoRingRound, shapedRound, sub, unit, type Crown } from './kit'
-import { rolledStrip } from './rolled-rose'
-import { runWords } from './leaf'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
-import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
+import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const LAYERED_ROSE_COLOURS = { main: '#cf8f98', base: '#b77682' } // rose pink, deeper pink
+export const LAYERED_ROSE_COLOURS = { main: '#b07a86', inner: '#bd8893', centre: '#e8d6c8' } // dusty rose, lighter rose, pale blush
 
 interface Layer {
   name: string
   centre: number[]
   /** Into each group of the last centre round: stitch and count, per crown. */
   petal: { id: StitchId; n: number }[]
+  /** Radius (yarn radii) of the sphere the flat layer is cupped onto. */
+  cupYr: number
+  /** Turn in its plane (deg) and lift (yarn radii) when stacked. */
+  spinDeg: number
+  liftYr: number
 }
 
 const one = (ids: StitchId[]): { id: StitchId; n: number }[] => ids.map((id) => ({ id, n: 1 }))
@@ -38,19 +45,11 @@ const one = (ids: StitchId[]): { id: StitchId; n: number }[] => ids.map((id) => 
  *  collars — 5/105-110 interlocks failed — so each petal spreads over as many
  *  crowns as it has stitches and takes its rounded outline from the heights.) */
 export const LAYERS: Layer[] = [
-  { name: 'outer petals', centre: [5, 10, 15, 20, 25, 30], petal: one(['sc', 'dc', 'tr', 'tr', 'dc', 'sc']) },
-  { name: 'inner petals', centre: [5, 10, 15, 20], petal: one(['sc', 'dc', 'dc', 'sc']) },
+  { name: 'outer petals', centre: [5, 10, 15, 20], petal: one(['hdc', 'dc', 'dc', 'hdc']), cupYr: 15, spinDeg: 0, liftYr: 0 },
+  { name: 'inner petals', centre: [5, 10, 15], petal: one(['hdc', 'dc', 'hdc']), cupYr: 10.5, spinDeg: 36, liftYr: 2.2 },
 ]
 const PETALS = 5
-
-export const BUD_PETALS: StitchId[][] = [
-  ['sc', 'hdc', 'hdc', 'sc'],
-  ['sc', 'hdc', 'dc', 'hdc', 'sc'],
-  ['sc', 'hdc', 'dc', 'hdc', 'sc'],
-  ['hdc', 'dc', 'dc', 'dc', 'hdc'],
-  ['hdc', 'dc', 'dc', 'dc', 'hdc'],
-  ['hdc', 'dc', 'tr', 'dc', 'hdc'],
-]
+const CENTRE_ROUND = 6
 
 function layerPiece(yr: number, hex: string, L: Layer): MotifPiece {
   const m = new MotifStrand(yr, hex)
@@ -70,21 +69,45 @@ function layerPiece(yr: number, hex: string, L: Layer): MotifPiece {
   if (per !== L.petal.length) throw new Error(`${L.name}: ${below.length} sts do not divide into ${PETALS} petals of ${L.petal.length}`)
   shapedRound(m, c, below, below.map((_, i) => L.petal[i % per]!), r)
   m.fastenOff(unit(sub(c, m.cursor)))
-  const R = r + yr * rowPitchYr('tr')
-  return pieceOf(L.name, m, m.finish(R * 2, R * 2))
+  const R = r + yr * rowPitchYr('dc')
+  return pieceOf(L.name, m, m.finish(R * 2, R * 2), cupPose(yr, L))
+}
+
+/** Bend the flat layer onto a sphere of radius cupYr (arclength kept: the
+ *  flat radius becomes an arc), turn it and lift it for the stack. */
+function cupPose(yr: number, L: Layer): (p: V3) => V3 {
+  const Rs = yr * L.cupYr
+  const sp = (L.spinDeg * Math.PI) / 180
+  const cs = Math.cos(sp), sn = Math.sin(sp)
+  return (p) => {
+    const r = Math.hypot(p.x, p.y)
+    const phi = Math.min(r / Rs, Math.PI * 0.47)
+    const rr = Rs * Math.sin(phi) + p.z * Math.cos(phi)
+    const z = Rs * (1 - Math.cos(phi)) + p.z * Math.sin(phi) + (r > 1e-9 ? 0 : p.z)
+    const ux = r > 1e-9 ? p.x / r : 1, uy = r > 1e-9 ? p.y / r : 0
+    const x = rr * ux, y = rr * uy
+    return { x: x * cs - y * sn, y: x * sn + y * cs, z: z + yr * L.liftYr + yr }
+  }
+}
+
+function centrePiece(yr: number, hex: string, lift: number): MotifPiece {
+  const m = new MotifStrand(yr, hex)
+  const ring = m.magicRing({ x: 0, y: 0 })
+  m.sectionName = 'centre'
+  intoRingRound(m, ring, new Array(CENTRE_ROUND).fill('sc'))
+  m.fastenOff({ x: 1, y: 0 })
+  const R = ring.r + yr * rowPitchYr('sc') + yr
+  return pieceOf('centre', m, m.finish(R * 2, R * 2), (p) => ({ x: p.x, y: p.y, z: p.z + lift }))
 }
 
 export function buildLayeredRose(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(LAYERED_ROSE_COLOURS, o)
   const yr = y.yr
-  // The petal base (one flat layer of five petals) under a cupped rolled heart
-  // of petals that grow outward — the rose's layers are the turns of the roll,
-  // each petal standing nearly upright so the heart is a cup, not a disc.
-  const base = layerPiece(yr, col.base!, LAYERS[1]!)
-  const budRaw = rolledStrip(yr, col.main!, BUD_PETALS, 'petals', { pitchYr: 3.6, r0Yr: 1.2, lean0: 2, lean1: 24, turnsFull: 2.4 })
-  const bud: MotifPiece = { ...budRaw, pose: (p, i) => { const q = budRaw.pose!(p, i); return { x: q.x, y: q.y, z: q.z + yr * 2.0 } } }
-  return assemble('layered-rose', 'Layered rose', o, [base, bud], layeredRoseWords(), materialsLine(o, ['rose pink', 'deeper pink']))
+  const outer = layerPiece(yr, col.main!, LAYERS[0]!)
+  const inner = layerPiece(yr, col.inner!, LAYERS[1]!)
+  const centre = centrePiece(yr, col.centre!, yr * (LAYERS[1]!.liftYr + 2.6))
+  return assemble('layered-rose', 'Puff rose', o, [outer, inner, centre], layeredRoseWords(), materialsLine(o, ['dusty rose', 'lighter rose', 'pale blush']))
 }
 
 function layerWords(L: Layer): string[] {
@@ -104,16 +127,15 @@ function layerWords(L: Layer): string[] {
 }
 
 export function layeredRoseWords(): string[] {
-  const nCh = BUD_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1
-  const petals = BUD_PETALS.map((p) => `[${runWords(p)}, sl st in next ch]`).join(', ')
   return [
-    'Base, with deeper pink:', ...layerWords(LAYERS[1]!).map((s) => `  ${s}`),
-    'Petals, with rose pink:',
-    `  Ch ${nCh}.`,
-    `  Row 1: starting in the 2nd ch from hook, ${petals}. (${BUD_PETALS.length} petals)`,
-    '  Fasten off, leaving a long tail.',
-    'Roll the petal strip up tightly from the small petals, keeping the chain edge level at the bottom and the petals standing up so the rose is cupped; stitch through all the layers at the base. Sew the rose to the middle of the base.',
+    'Outer petals, with dusty rose:', ...layerWords(LAYERS[0]!).map((s) => `  ${s}`),
+    'Inner petals, with lighter rose:', ...layerWords(LAYERS[1]!).map((s) => `  ${s}`),
+    'Centre, with pale blush:',
+    '  Make a magic ring.',
+    `  Round 1: ${CENTRE_ROUND} ${UK.sc} into the ring. (${CENTRE_ROUND} sts)`,
+    '  Fasten off, pull the ring tight and leave a tail for sewing.',
+    'Cup each petal layer in your hand so the petals stand up and curl in; sew the inner layer into the outer with its petals between the outer ones, then sew the centre in the middle. Sew through the middle of all three layers to hold the cup.',
   ]
 }
 
-registerMotif({ id: 'layered-rose', label: 'Layered rose', round: 9, colours: LAYERED_ROSE_COLOURS, build: buildLayeredRose })
+registerMotif({ id: 'layered-rose', label: 'Puff rose', round: 9, colours: LAYERED_ROSE_COLOURS, build: buildLayeredRose })
