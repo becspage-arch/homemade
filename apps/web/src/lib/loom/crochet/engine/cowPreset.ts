@@ -24,9 +24,12 @@
  *    legs sewn at the shoulder corners and hanging straight down to rest on
  *    the table outside the feet; a short cord tail on the flank.
  *
- * Yarn: a plush chenille at WORSTED weight (yr 2.1 mm) on a 4 mm hook — the
- * same yarn as the bar's — at the toy-pose stitch counts, so the stitches are
- * small against the toy and the finished calf is about 20 cm tall.
+ * Yarn (round 23): a plush chenille at BULKY weight (yr 3.0 mm) on a 6 mm hook,
+ * the blanket-weight chenille Highland cow patterns are written for, at
+ * counts a third lower than the worsted toy-pose ones so the calf stays about
+ * 22 cm tall. The orchestrator's look at r20: "ours is fine and velvety; the
+ * bar's is fat chenille with visible rounded stitches" — the bar's head is
+ * ~13 fat stitches across the front, the worsted calf's was ~30.
  *
  * Kept in its own module so the bear and bunny bases and their size tables
  * (the toy-pose lane) are untouched; `buildCowProgram` is the whole base.
@@ -69,7 +72,8 @@ export const COW_DEFAULTS: CowChoices = {
   // slightly bluer red-brown dye renders as the bar's.
   // Round 21: the orchestrator's eye on r20 — "a touch maroon; the bar's is
   // warm milk-chocolate". Hue up from 4° to 12° and a shade lighter.
-  mainHex: '#86564a',
+  // Round 23: a shade deeper and less orange (#86564a read bright in the window light).
+  mainHex: '#7f5046',
   contrastHex: '#ead9bf',
   eyeMm: 12,
 }
@@ -135,7 +139,7 @@ export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 6]
 // 20, not 14) and seated deeper so it tucks in under the horn (a ball grown
 // in sixes to 24 and pressed failed the hook audit; a sphere(24) pressed
 // failed its interlocks).
-export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 15, 18, 18, 18, 15, 12, 9, 6]
+export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 12, 9, 6]
 
 /**
  * THE PEAR BODY (cow round 17, Rebecca's look at r15: "the body a soft upright
@@ -159,29 +163,29 @@ export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 15, 18, 18, 18, 15, 12, 9, 6]
 // sixes to 66 was tried first and relaxed to a 136 x 54 disc: a +6 round is
 // intrinsically flat, §8f-10.)
 export const COW_BODY_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: sphereRounds(48, 1),
-  M: sphereRounds(60, 1),
-  L: sphereRounds(66, 1),
+  S: sphereRounds(36, 1),
+  M: sphereRounds(42, 1),
+  L: sphereRounds(48, 1),
 }
 
 const PROFILES: Record<AmigurumiSize, CowProfile> = {
   S: {
-    body: COW_BODY_ROUNDS.S, head: sphereRounds(48, 2),
-    muzzle: sphereRounds(18, 3), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 15, 12, 9, 6],
-    frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
-    headSink: 18, muzzleSeat: 4, earPress: 18, legLift: -12, frontLegLift: 16.3, eyeMm: 14,
+    body: COW_BODY_ROUNDS.S, head: sphereRounds(36, 2),
+    muzzle: sphereRounds(12, 3), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: [6, 9, 9, 9, 6],
+    frontLeg: tubeRounds(12, 7), backLeg: ballRounds(18, 3), tail: cordRounds(3),
+    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -12, frontLegLift: 16.3, eyeMm: 14,
   },
   M: {
-    body: COW_BODY_ROUNDS.M, head: sphereRounds(60, 2),
-    muzzle: sphereRounds(24, 3), horn: COW_HORN_ROUNDS, ear: COW_EAR_ROUNDS,
-    frontLeg: tubeRounds(18, 12), backLeg: ballRounds(24, 5), tail: cordRounds(5),
-    headSink: 24, muzzleSeat: 5, earPress: 20, legLift: -14.1, frontLegLift: 9.6, eyeMm: 20,
+    body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
+    muzzle: sphereRounds(18, 2), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: COW_EAR_ROUNDS,
+    frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
+    headSink: 24, muzzleSeat: 5, earPress: 22, legLift: -12.1, frontLegLift: 14.6, eyeMm: 20,
   },
   L: {
-    body: COW_BODY_ROUNDS.L, head: sphereRounds(66, 2),
-    muzzle: sphereRounds(24, 4), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: [6, 9, 12, 15, 18, 21, 21, 21, 18, 15, 12, 9, 6],
-    frontLeg: tubeRounds(18, 14), backLeg: ballRounds(30, 5), tail: cordRounds(6),
-    headSink: 26, muzzleSeat: 5, earPress: 22, legLift: -8.5, frontLegLift: 12.2, eyeMm: 22,
+    body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
+    muzzle: sphereRounds(18, 3), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 12, 9, 6],
+    frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
+    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -8.5, frontLegLift: 12.2, eyeMm: 22,
   },
 }
 
@@ -219,8 +223,8 @@ const COW_VIEW = {
  *  want the bar's ~75%. */
 // Round 18: the pear body made the calf taller; 0.95 cropped the horn tips.
 const COW_STAGE_ZOOM = 0.82
-const COW_YARN: YarnWeight = 'worsted'
-const COW_HOOK_MM = 4
+const COW_YARN: YarnWeight = 'bulky'
+const COW_HOOK_MM = 6
 const COW_FIBRE: YarnFibre = 'chenille'
 const EYE_HEX = '#080706'
 
@@ -300,7 +304,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
   // Round 13: seven rounds again (six was a compact cap) but seated high on
   // the crown with short edge loops, so it spreads horn to horn without
   // spilling over the eyes the way round 10's low patch did.
-  const rounds = size === 'S' ? [6, 12, 18, 24, 30, 36] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42, 48] : [6, 12, 18, 24, 30, 36, 42]
+  // Round 23 (bulky yarn): a round is 1.43x deeper, so five rounds at M span
+  // what seven did at worsted; the loop sizes below are in yarn radii and were
+  // divided by the same, so the curls stay the bar's size against the head.
+  const rounds = size === 'S' ? [6, 12, 18, 24] : size === 'L' ? [6, 12, 18, 24, 30, 36] : [6, 12, 18, 24, 30]
   const last = rounds.length - 1
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
   return {
@@ -327,24 +334,26 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // loops; the bar's is a tall plump mound of tight fat curls"): shorter,
     // narrower loops standing further off the head (droop -50), every other
     // one given a full twist so it springs into a tight curl, the strand fatter.
-    loop: { lengthYr: 4.6, halfWidthYr: 1.9, droopDeg: -50, vary: 0.4 },
+    loop: { lengthYr: 3.6, halfWidthYr: 1.5, droopDeg: -50, vary: 0.4 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
     // fringe is a mix, not a tiling.
     plainEvery: 3,
-    curlEvery: 2,
-    curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.6 },
+    // Round 23: every third (every other read as a dense "brain" of curls;
+    // the bar's mound is open rings with a tight curl among them).
+    curlEvery: 3,
+    curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.2 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 7.6, halfWidthYr: 2.6, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 5.5, halfWidthYr: 1.9, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
         : k === last
-          ? { lengthYr: 4.0, halfWidthYr: 1.8, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
+          ? { lengthYr: 3.0, halfWidthYr: 1.3, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
-    strandYr: 1.6,
+    strandYr: 1.3,
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
@@ -493,7 +502,8 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
   // and a touch more crushed-pile value drift so the fabric is not one flat tone.
   pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
   // Round 18: no pile on the fringe's plump loose loops (radius 2.8 mm; the fabric strand is 1.3).
-  pile_max_radius_mm: 2.0,
+  // Round 23: bulky fabric strand ~2.6 mm, fringe loops ~3.9 mm.
+  pile_max_radius_mm: 3.2,
   crush_amt: 0.22, sat_mult: 0.9, pile_dark_only: true,
 }
 
@@ -508,10 +518,11 @@ function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir): EmbroideryFeature[]
   const n = muzzle.length
   const mid = (n + 1) / 2
   // Rounds along the capsule and stitches round it, in this muzzle's own
-  // gauge: the straight rounds are 24 round, so a stitch is 15° of it.
+  // gauge: the straight rounds are 18 round at M, so a stitch is 20° of it.
   // Round 22: shorter and more slanted — r20's read as two upright bars.
-  const outer = 2.8, inner = 1.3 // rounds either side of the middle
-  const upSt = 0.9, downSt = -0.9 // stitches above (+) / below (-) centre front
+  // Round 23 (bulky): rounds and stitches are 1.43x bigger, so fewer of each.
+  const outer = 2.0, inner = 0.9 // rounds either side of the middle
+  const upSt = 0.65, downSt = -0.65 // stitches above (+) / below (-) centre front
   const stitches = ([-1, 1] as const).map((side) => ({
     // Round index grows AWAY from the magic ring (+x, the toy's right), so the
     // toy's right nostril (side +1) sits on the lower round numbers.
