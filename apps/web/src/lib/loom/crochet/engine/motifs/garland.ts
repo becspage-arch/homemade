@@ -22,6 +22,7 @@
  */
 
 import type { StitchId } from '../dictionary'
+import { YARN_WEIGHT_RADIUS_MM } from '../program'
 import { MotifStrand } from './kit'
 import { leafPiece } from './leaf'
 // The motifs it sews (importing registers them).
@@ -41,17 +42,17 @@ export const GARLAND_COLOURS = { cord: '#4e5844', cord2: '#d9cbb2', leaf: '#5e6a
 /** The cords, left to right: x (mm) along the branch, their length in chains,
  *  and what they are: a leaf vine, or a plain cord with a berry at the end. */
 export const GARLAND_CORDS: { x: number; ch: number; kind: 'vine' | 'berry'; cream?: boolean }[] = [
-  { x: -140, ch: 58, kind: 'vine' },
-  { x: -112, ch: 34, kind: 'berry', cream: true },
-  { x: -84, ch: 46, kind: 'vine' },
-  { x: -56, ch: 26, kind: 'berry' },
-  { x: -28, ch: 70, kind: 'vine' },
-  { x: 0, ch: 44, kind: 'berry', cream: true },
-  { x: 28, ch: 30, kind: 'berry' },
-  { x: 56, ch: 62, kind: 'vine' },
-  { x: 84, ch: 20, kind: 'berry', cream: true },
-  { x: 112, ch: 48, kind: 'vine' },
-  { x: 140, ch: 32, kind: 'berry' },
+  { x: -140, ch: 75, kind: 'vine' },
+  { x: -112, ch: 44, kind: 'berry', cream: true },
+  { x: -84, ch: 60, kind: 'vine' },
+  { x: -56, ch: 34, kind: 'berry' },
+  { x: -28, ch: 91, kind: 'vine' },
+  { x: 0, ch: 57, kind: 'berry', cream: true },
+  { x: 28, ch: 39, kind: 'berry' },
+  { x: 56, ch: 81, kind: 'vine' },
+  { x: 84, ch: 26, kind: 'berry', cream: true },
+  { x: 112, ch: 62, kind: 'vine' },
+  { x: 140, ch: 42, kind: 'berry' },
 ]
 /** A vine's leaves: the first at this chain, then every `VINE_EVERY` chains, alternating sides. */
 export const VINE_FIRST = 6
@@ -153,7 +154,10 @@ const BAND_LEAVES: [number, number, number, boolean][] = [
 export function buildGarland(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(GARLAND_COLOURS, o)
-  const yr = y.yr
+  // r13: the cords and every leaf are in LACE-weight cotton (as the daisies
+  // are) — the bar's vines are delicate, small smooth leaves on thin cords; at
+  // 4 ply they were big saw-edged blades. The flowers stay 4 ply.
+  const yr = YARN_WEIGHT_RADIUS_MM.lace
   const pitch = yr * 2.6
   const pieces: MotifPiece[] = []
   // Two leaves, each audited once and sewn many times: the vine leaf and the small band leaf.
@@ -195,6 +199,11 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
       }
       // a last leaf at the very end of the vine, hanging straight down
       pieces.push(leafAt(vineLeaf, at(cd.ch - 1), -90, false, `vine ${i + 1} tip leaf`))
+      // a berry part way down every other vine (the bar hangs berries among its leaves too)
+      if (i % 4 === 0) {
+        const mid = at(Math.round(cd.ch * 0.55) + 2)
+        pieces.push(...placeMotif(ball, `vine ${i + 1} berry`, { x: mid.x + (i % 8 === 0 ? 7 : -7), y: mid.y, z: 1 }, 8))
+      }
     } else {
       const end = at(cd.ch - 1)
       pieces.push(...placeMotif(ball, `berry ${i + 1}`, { x: end.x, y: end.y - 9, z: 0 }, i % 2 ? 10 : -10))
@@ -215,7 +224,7 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
     pieces.push(...placeMotif(motifs[b.what], `${b.what} ${counts[b.what]}`, { x: b.x, y: b.y, z: b.z }, b.spin ?? 0))
   }
   const words = garlandWords()
-  return assemble('garland', 'Flower wall hanging', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta', 'dusty blue']).concat(['A small ball of lace-weight cotton in cream and mustard for the daisies, with a 1.75 mm hook.', 'A piece of driftwood about 36 cm long and a length of jute string to hang it.']))
+  return assemble('garland', 'Flower wall hanging', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta', 'dusty blue']).concat(['Lace-weight cotton in olive, cream and grey-sage for the cords and leaves and in cream and mustard for the daisies, with a 1.75 mm hook.', 'A piece of driftwood about 36 cm long and a length of jute string to hang it.']))
 }
 
 /** The driftwood branch the garland hangs from, and its hanging string, as scene props. */
@@ -232,7 +241,7 @@ export function garlandProps(): MotifProp[] {
   }
   const string: { p: V3; r: number }[] = [
     { p: { x: -126, y: 8, z: BRANCH_R }, r: 1.3 }, { p: { x: -60, y: 56, z: BRANCH_R }, r: 1.3 },
-    { p: { x: 0, y: 100, z: BRANCH_R }, r: 1.3 },
+    { p: { x: 0, y: 84, z: BRANCH_R }, r: 1.3 },
     { p: { x: 60, y: 56, z: BRANCH_R }, r: 1.3 }, { p: { x: 126, y: 8, z: BRANCH_R }, r: 1.3 },
   ]
   return [{ branch, hex: '#8a7a66' }, { branch: string, hex: '#b9a07a' }]
@@ -244,8 +253,8 @@ export function garlandWords(): string[] {
   const band = GARLAND_BAND.reduce<Record<string, number>>((a, b) => ({ ...a, [b.what]: (a[b.what] ?? 0) + 1 }), {})
   const leaves = vines.reduce((a, c) => a + Math.ceil((c.ch - 2 - VINE_FIRST) / VINE_EVERY) + 1, 0)
   return [
-    `Make the pieces: ${band.rose} rolled roses, ${band.puff} puff roses, ${band.bud} rosebuds, ${band.daisy} small daisies (in the lace-weight cotton, 1.75 mm hook), ${band.butterfly} butterflies, ${berries.length} berries (without stalks), ${leaves} vine leaves (the small leaf below, two tr shorter again) and ${BAND_LEAVES.length} small leaves (the leaf vine's leaf two tr shorter, stem 2).`,
-    `Cords: leaving a long tail to tie to the branch, ch ${GARLAND_CORDS.map((c) => `${c.ch}${c.cream ? ' (cream)' : ''}`).join(', ch ')} (left to right, olive unless marked); fasten off each.`,
+    `Make the pieces: ${band.rose} rolled roses, ${band.puff} puff roses, ${band.bud} rosebuds, ${band.daisy} small daisies (in the lace-weight cotton, 1.75 mm hook), ${band.butterfly} butterflies, ${berries.length} berries (without stalks), ${leaves} vine leaves (the small leaf below, two tr shorter again) and ${BAND_LEAVES.length} small leaves (the leaf vine's leaf two tr shorter, stem 2), all the leaves in the lace-weight cotton.`,
+    `Cords (lace-weight cotton, 1.75 mm hook): leaving a long tail to tie to the branch, ch ${GARLAND_CORDS.map((c) => `${c.ch}${c.cream ? ' (cream)' : ''}`).join(', ch ')} (left to right, olive unless marked); fasten off each.`,
     `Tie the cords to the branch about 3 cm apart. Vines (cords ${vines.map((c) => GARLAND_CORDS.indexOf(c) + 1).join(', ')}): sew a vine leaf at ch ${VINE_FIRST} and every ${VINE_EVERY} chains down, alternating sides, each angled down, and one at the end pointing straight down. Berry cords: sew a berry over the last chain.`,
     'The band: sew the small leaves to the cords just under the branch, then the daisies and buds over them, then the roses, puff roses and butterflies on top, overlapping so no cord shows between the flowers.',
     'Weave in the ends behind the pieces. Tie the jute string to the branch ends to hang it.',
