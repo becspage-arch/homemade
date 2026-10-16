@@ -385,10 +385,12 @@ export function ringletHairStrokes(compiled: CompiledComposition, spec: RingletH
       return c
     })
     // Smoothed like every placed piece's strand (the raw node polyline
-    // rendered as a nubbly caterpillar in round 9). Two points a segment, not
-    // the fabric's four: the ringlets are over half the scene's filament
-    // points and round 10's scene ran the renderer out of memory at three.
-    const { radiusMm, filaments } = pliedFilaments(smooth(pts, 2), yr * 0.62, 3, twist)
+    // rendered as a nubbly caterpillar in round 9), through every OTHER node
+    // at three points a segment (1.5 points a node, ~0.75 mm apart): the
+    // ringlets are over half the scene's filament points and the render task
+    // runs out of memory above a ~100 MB scene (rounds 10 and 12).
+    const every2 = pts.filter((_, i) => i % 2 === 0 || i === pts.length - 1)
+    const { radiusMm, filaments } = pliedFilaments(smooth(every2, 3), yr * 0.62, 3, twist)
     out.push({ hex: spec.colourHex, sheen: 0.85, radiusMm, filaments })
   })
   return out
