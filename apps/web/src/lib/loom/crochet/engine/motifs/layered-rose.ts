@@ -49,8 +49,11 @@ export const LAYERS: Layer[] = [
   // scallops on shallower cups so each lobe reads.
   // r6's sc-dtr scallops on the shallower cups rendered as spiky head loops standing off the rim (an anemone):
   // back to r5's gentler heights, keeping r6's cups.
-  { name: 'outer petals', centre: [5, 10, 15, 20], petal: one(['hdc', 'dc', 'dc', 'hdc']), cupYr: 24, spinDeg: 0, liftYr: 0 },
-  { name: 'inner petals', centre: [5, 10, 15], petal: one(['hdc', 'dc', 'hdc']), cupYr: 15, spinDeg: 36, liftYr: 2.6 },
+  // r7 (gentle heights on the shallower cups) was still a bowl with a bumpy rim. The bar's lobes are PUFFS: each
+  // petal is now a bobble (five partial tr gathered to one top, UK) between two dc, so the lobe is a fat bump of
+  // yarn, not an outline.
+  { name: 'outer petals', centre: [5, 10, 15], petal: one(['sc', 'bobble', 'sc']), cupYr: 20, spinDeg: 0, liftYr: 0 },
+  { name: 'inner petals', centre: [5, 10], petal: one(['bobble', 'sc']), cupYr: 12, spinDeg: 36, liftYr: 2.2 },
 ]
 const PETALS = 5
 const CENTRE_ROUND = 6

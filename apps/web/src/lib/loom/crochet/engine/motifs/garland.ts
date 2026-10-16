@@ -20,6 +20,7 @@ import './rolled-rose'
 import './daisy'
 import './layered-rose'
 import './berry'
+import './butterfly'
 import { getMotif } from './registry'
 import { assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
@@ -30,9 +31,9 @@ export const GARLAND_COLOURS = { cord: '#46503a', leaf: '#4a553d' }
 /** The cords, left to right: x (mm) along the stick and their length in chains. */
 export const GARLAND_CORDS = [
   { x: -124, ch: 0 }, // the leaf vine's own chain is this cord
-  { x: -62, ch: 44 },
-  { x: 0, ch: 50 },
-  { x: 62, ch: 54 },
+  { x: -62, ch: 58 },
+  { x: 0, ch: 64 },
+  { x: 62, ch: 60 },
   { x: 124, ch: 0 }, // a second vine
 ]
 export const GARLAND_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'hdc', 'sc']
@@ -147,7 +148,7 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
   pieces.push(...placeMotif(rose, 'rose', { ...c2(6), z: 0 }, 20))
   pieces.push(leafAt(c2(14), -150, false, 'leaf a'), leafAt(c2(16), -30, true, 'leaf b'))
   pieces.push(...placeMotif(daisy, 'daisy', { ...c2(25), z: 0 }, 10))
-  pieces.push(leafAt(c2(33), -140, false, 'leaf c'), ...berryAt(c2, 39, 1, 'berry a'))
+  pieces.push(leafAt(c2(33), -140, false, 'leaf c'), ...berryAt(c2, 39, 1, 'berry a'), leafAt(c2(46), -35, true, 'leaf k'), leafAt(c2(53), -145, false, 'leaf l'))
   // Cord 3: a daisy, leaves, a puff rose, a leaf, a rose at the bottom.
   const c3 = cordAt[2]!
   pieces.push(...placeMotif(daisy, 'daisy 2', { ...c3(5), z: 0 }, -15))
@@ -155,11 +156,15 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
   pieces.push(...placeMotif(puff, 'puff rose', { ...c3(23), z: 0 }))
   pieces.push(leafAt(c3(31), -40, true, 'leaf f'))
   pieces.push(...placeMotif(rose, 'rose 2', { ...c3(42), z: 0 }, -40))
+  pieces.push(leafAt(c3(52), -40, true, 'leaf m'), ...berryAt(c3, 58, -1, 'berry e'))
+  // A butterfly resting between the first cords, just under the stick.
+  const butterfly = getMotif('butterfly').build(o)
+  pieces.push(...placeMotif(butterfly, 'butterfly', { x: -31, y: -STICK_R - yr * 14, z: 0 }, 25))
   // Cord 4: a puff rose, then berries and small leaves.
   const c4 = cordAt[3]!
   pieces.push(...placeMotif(puff, 'puff rose 2', { ...c4(5), z: 0 }, 36))
   pieces.push(leafAt(c4(12), -35, true, 'leaf g'), ...berryAt(c4, 18, -1, 'berry b'), leafAt(c4(25), -145, false, 'leaf h'),
-    ...berryAt(c4, 32, 1, 'berry c'), leafAt(c4(39), -40, true, 'leaf i'), ...berryAt(c4, 46, -1, 'berry d'), leafAt(c4(52), -150, false, 'leaf j'))
+    ...berryAt(c4, 32, 1, 'berry c'), leafAt(c4(39), -40, true, 'leaf i'), ...berryAt(c4, 46, -1, 'berry d'), leafAt(c4(52), -150, false, 'leaf j'), leafAt(c4(58), -40, true, 'leaf n'))
   const words = garlandWords()
   return assemble('garland', 'Flower garland', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta']).concat(['A small ball of lace-weight cotton in cream and mustard for the daisy, with a 1.75 mm hook.', 'A driftwood stick about 30 cm long.']))
 }
@@ -176,9 +181,9 @@ export function garlandProps(): MotifProp[] {
 
 export function garlandWords(): string[] {
   return [
-    'Make the pieces: two leaf vines, two rolled roses, two daisies (in the lace-weight cotton, 1.75 mm hook), two puff roses, four berries (without stalks) and ten small leaves (the vine leaf, stem 2).',
+    'Make the pieces: two leaf vines, two rolled roses, two daisies (in the lace-weight cotton, 1.75 mm hook), two puff roses, one butterfly, five berries (without stalks) and fourteen small leaves (the vine leaf, stem 2).',
     `Cords: with olive, ch ${GARLAND_CORDS.filter((c) => c.ch).map((c) => c.ch).join(', ch ')} for the three middle cords (the vines' chains are the outer two), each starting with a long tail to tie to the stick.`,
-    'Tie the vines and the three cords to the stick about 6 cm apart. Down the left cord sew a rolled rose, two leaves, a daisy, a leaf and a berry; down the middle cord a daisy, two leaves, a puff rose, a leaf and the second rose; down the right cord the second puff rose, then berries and small leaves alternately.',
+    'Tie the vines and the three cords to the stick about 6 cm apart. Down the left cord sew a rolled rose, two leaves, a daisy, a leaf and a berry; down the middle cord a daisy, two leaves, a puff rose, a leaf and the second rose; down the right cord the second puff rose, then berries and small leaves alternately. Sew the butterfly just under the stick between the first two cords.',
     'Weave in the ends behind the pieces.',
   ]
 }

@@ -22,7 +22,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const ROLLED_ROSE_COLOURS = { main: '#8a5868' } // r6's #946070 rendered a clean pink, a step lighter than the bar // dusty mauve (r4's #ad6c7a rendered salmon pink)
+export const ROLLED_ROSE_COLOURS = { main: '#7a4a5a' } // r6's #946070 and r7's #8a5868 both rendered a clean pink, a step lighter than the bar's deep dusty rose // dusty mauve (r4's #ad6c7a rendered salmon pink)
 
 /** The petals in work order (the first ones roll into the centre). */
 export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [
