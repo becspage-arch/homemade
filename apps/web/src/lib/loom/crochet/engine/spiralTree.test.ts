@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { buildSpiralTree, solveInnerRadius, TREE_BLOCKS } from './spiralTree'
+import { buildSpiralTree, solveInnerRadius, TREE_BLOCKS, TREE_DROOP_DEG, TREE_EDGE_ROW } from './spiralTree'
 import { buildHanging } from './spiralHanging'
 import { YARN_WEIGHT_RADIUS_MM } from './program'
 
@@ -12,7 +12,7 @@ test('no increase, no corkscrew: an edge ratio of 1 has no helicoid', () => {
 
 test('corkscrew tree: genuinely stitched, the counts hold the coil without a hold', () => {
   const yr = YARN_WEIGHT_RADIUS_MM.dk
-  const t = buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: 22, colour: '#2c5634' })
+  const t = buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: TREE_DROOP_DEG, colour: '#2c5634', edgeRow: TREE_EDGE_ROW })
   assert.deepEqual(t.problems, [])
   assert.ok(t.built.links.some((l) => l.role === 'cross'), 'the chain is a genuine chain')
   assert.ok(t.built.links.every((l) => !!l.frame3), 'every link measured in its own frame')
@@ -21,8 +21,10 @@ test('corkscrew tree: genuinely stitched, the counts hold the coil without a hol
   // each stitch settles at its own gauge width (within 15%)
   for (const m of t.measures) assert.ok(Math.abs(m.crownGapYr - 1) < 0.15, `${m.id} crown gap ${m.crownGapYr}`)
   for (const w of t.words) assert.ok(!/\b(sc|hdc)\b/.test(w), `US term in: ${w}`)
+  assert.ok(t.words.some((w) => w.startsWith('Row 2: ch 1, turn.')), 'the edging row is written')
+  assert.ok(t.built.links.some((l) => l.j === 2 && l.role === 'hook'), 'the edging row hooks the row-1 crowns')
   // with NO layout hold the outer edge stays within 5% of the solved radius
-  const free = buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: 22, colour: '#2c5634' }, { relaxK: 0 })
+  const free = buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: TREE_DROOP_DEG, colour: '#2c5634' }, { relaxK: 0 })
   for (const m of free.measures) assert.ok(Math.abs(m.rOut / m.rOutBuilt - 1) < 0.05, `${m.id} rOut drift`)
 })
 

@@ -15,7 +15,7 @@
  * piece is bent.
  */
 
-import { buildSpiralTree, TREE_BLOCKS, type BuiltSpiral } from './spiralTree'
+import { buildSpiralTree, TREE_BLOCKS, TREE_DROOP_DEG, TREE_EDGE_ROW, type BuiltSpiral } from './spiralTree'
 import { YARN_WEIGHT_RADIUS_MM, type YarnWeight } from './program'
 import { MotifStrand } from './motifs/kit'
 import { pieceOf, posedPoints, UK } from './motifs/common'
@@ -119,7 +119,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const cols = o.trees ?? [SPIRAL_COLOURS.green, SPIRAL_COLOURS.cream, SPIRAL_COLOURS.green]
   // One tree per colour (built once per distinct colour).
   const byColour = new Map<string, BuiltSpiral>()
-  for (const c of cols) if (!byColour.has(c)) byColour.set(c, buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: 22, colour: c }))
+  for (const c of cols) if (!byColour.has(c)) byColour.set(c, buildSpiralTree({ yr, blocks: TREE_BLOCKS, droopDeg: TREE_DROOP_DEG, colour: c, edgeRow: TREE_EDGE_ROW }))
   const trees = cols.map((c) => byColour.get(c)!)
   const t0 = trees[0]!
   const W = t0.maxRadiusMm * 2
@@ -165,7 +165,9 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     // The star, standing upright facing the camera (engine +y), its lower
     // points straddling the tree's top.
     const sc = Math.cos(rot), ss = Math.sin(rot)
-    const zStar = zTop + starDrop * 0.9
+    // Fable r2: the star sits ON the tree, its lower points straddling the top
+    // turn (the r2 preview showed a gap of half a point between them).
+    const zStar = zTop + starDrop * 0.55
     pieces.push({
       ...starPiece, name: `star-${i}`, yr: syr,
       pose: (p) => {
