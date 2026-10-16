@@ -331,7 +331,7 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // like a cap; the bar's is a tall tousled mound standing up off the crown"):
 // high on the crown again, the curls standing up, so a band of forehead shows.
 // Round 28: a touch forward again so the mound spills to the brow.
-const HAIR_DIR = { x: 0, y: 0.75, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -351,7 +351,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
   // Round 23 (bulky yarn): a round is 1.43x deeper, so five rounds at M span
   // what seven did at worsted; the loop sizes below are in yarn radii and were
   // divided by the same, so the curls stay the bar's size against the head.
-  const rounds = size === 'S' ? [6, 12, 18, 24] : size === 'L' ? [6, 12, 18, 24, 30, 36] : [6, 12, 18, 24, 30]
+  // Round 31: a round more at every size (M six rounds, loops on 1/3/5, the
+  // sixth plain as the sewing edge) so the standing mound spreads horn to horn.
+  const rounds = size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36]
   const last = rounds.length - 1
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
   return {
