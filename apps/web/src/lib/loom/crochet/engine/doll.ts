@@ -1003,7 +1003,7 @@ export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: numbe
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
   'doll-S': '05e8497a',
-  'doll-M': '7e265d01',
-  'doll-L': '335f3ddd',
+  'doll-M': 'c53ca0f8',
+  'doll-L': '548c1d99',
 }
 
