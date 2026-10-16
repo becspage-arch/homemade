@@ -2776,22 +2776,21 @@ def _stage_windowsill_autumn(root, H, R, s, D, vis, light):
     cols = ("#9c4a26", "#b98a3a", "#6e2a24", "#a8642e")
     for ci, col in enumerate(cols):
         specs = []
-        for k in range(6):
-            kk = ci * 6 + k
+        for k in range(4):
+            kk = ci * 4 + k
             y = (-0.2 + 0.55 * _hash01(kk, 31)) * s
             side = -1 if _hash01(kk, 32) < 0.62 else 1
             x = side * (0.45 + 0.6 * _hash01(kk, 33)) * vis.hw(y)
             if abs(x) < R * 1.3 and y < R:
                 x = side * (R * 1.4 + 0.3 * H)
-            L = (0.22 + 0.1 * _hash01(kk, 34)) * H
-            zc = 0.08 + (0.06 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
-            specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.26, 0.12, 0, 0.0))
+            L = (0.3 + 0.1 * _hash01(kk, 34)) * H        # r4: broader, flatter leaves lying on the cloth
+            zc = 0.1 + (0.07 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
+            specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.38, 0.05, 0, 0.0))
         _leaves("leaves%d" % ci, root, _principled("leaf%d" % ci, col, rough=0.7, sheen=0.2), specs)
         stalk = _principled("leafstalk%d" % ci, "#5a3a22", rough=0.8)
         for j, sp in enumerate(specs):
             (lx, ly, lz), la, L = sp[0], sp[1], sp[2]
-            _curve("lstalk%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.02 * L), (lx - 0.25 * L * math.cos(la), ly - 0.25 * L * math.sin(la), lz)], 0.012 * H)
-            _curve("lrib%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.05 * L), (lx + 0.8 * L * math.cos(la), ly + 0.8 * L * math.sin(la), lz + 0.07 * L)], 0.005 * H)
+            _curve("lstalk%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.02 * L), (lx - 0.18 * L * math.cos(la), ly - 0.18 * L * math.sin(la), lz)], 0.008 * H)
     light((w["wx1"] * 1.4, D * 0.6, 0.45 * s), (0, 0, 0.45 * H), 2.4, 0.5 * s, (1.0, 0.72, 0.45))
     light((-0.7 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.25, 1.2 * s, WARM)
 
@@ -2809,11 +2808,10 @@ def _stage_windowsill_spring(root, H, R, s, D, vis, light):
     _throw("napkin", root, ging, vis, H, R, D, 0.07, back=0.32, seed=0.8, wl_scale=1.4, right=0.8, hem=0.03 * H)
     jy = 0.55 * D
     jx = 0.82 * vis.hw(jy)                      # r3: clear of the head
-    glass = glass_material("jar", "#eef5f0")
-    _lathe("jar", root, glass, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.33 * H, 0.75 * H),
-                                        (0.27 * H, 0.85 * H), (0.27 * H, 0.95 * H), (0.25 * H, 0.95 * H),
-                                        (0.25 * H, 0.86 * H), (0.31 * H, 0.75 * H), (0.31 * H, 0.08 * H), (0, 0.06 * H)])
-    _cyl("water", root, glass_material("water", "#e7f2ee"), jx, jy, 0.07 * H, 0.3 * H, 0.3 * H, 0.45 * H)
+    # r4: a speckled cream stoneware jug (the clear jar refracted into abstract shapes)
+    jug = _principled("jug", "#f1ebdf", rough=0.35, spec=0.45, coat=0.25)
+    _lathe("jar", root, jug, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.35 * H, 0.45 * H),
+                                      (0.27 * H, 0.8 * H), (0.25 * H, 0.95 * H), (0.23 * H, 0.95 * H), (0.22 * H, 0.82 * H)])
     stem = _principled("tstem", "#6f9a55", rough=0.6)
     cols = ("#f2a7b4", "#f7d36b", "#f2a7b4", "#fbf1e6", "#e98ba0", "#f7d36b", "#fbf1e6")
     lv = []
