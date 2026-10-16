@@ -58,38 +58,37 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   let face = -Infinity
   m.nodes.forEach((p, i) => { if (!m.loose?.[i] && p.z > face) face = p.z })
   assert.ok(m.nodes.every((p, i) => !m.loose?.[i] || p.z <= face + 1e-6), 'no loop passes into the head')
-  // Loops on rounds 1, 3, 5 and 7 only (seven rounds at M since cow round
-  // 13): the words say dc on rounds 2, 4 and 6, and only the short edge
-  // loops of round 7 go over one finger. Cow
-  // round 9: a plain dc every third stitch and a twist on every fourth loop,
-  // said once before the rounds, from the same rule the build reads.
+  // Loops on rounds 1, 3 and 5 only (five rounds at M since cow round 23,
+  // bulky chenille): the words say dc on rounds 2 and 4. Cow round 9: a plain
+  // dc every third stitch; round 23: every third loop a full twist, said once
+  // before the rounds, from the same rule the build reads.
   const lines = writeHairInstructions(h)
-  assert.match(lines[1]!, /every third lp st.*every fourth loop half a twist/)
-  // Cow round 17: the crown loops are worked over THREE fingers (7 yr), the
-  // tallest of the mound; the words follow the loop length.
-  assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round three fingers/)
+  assert.match(lines[1]!, /every third lp st.*every third loop one full twist/)
+  // Cow round 17/23: the crown loops are the tallest of the mound, worked
+  // over one more finger than the rest; the words follow the loop length.
+  assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round two fingers/)
   assert.match(lines[3]!, /^Round 2: 2 dc in each st\./)
   assert.match(lines[4]!, /^Round 3: \*1 lp st, 2 lp st in next st\* 6 times/)
   assert.match(lines[5]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)
   assert.match(lines[6]!, /^Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)$/)
-  assert.match(lines[7]!, /^Round 6: \*4 dc, 2 dc in next st\* 6 times/)
-  assert.match(lines[8]!, /^Round 7: .*lp st.*one finger only/)
+  assert.match(lines[7]!, /^Fasten off/)
   // The per-stitch rule: round 3 (index 2) has 18 stitches — loops in 12 of
-  // them, every third plain, and the 4th, 8th and 12th loops twisted.
+  // them, every third plain, and the 3rd, 6th, 9th and 12th loops twisted.
   const sts = Array.from({ length: 18 }, (_, c) => stitchAtOf(h, 2, c))
   assert.equal(sts.filter((x) => x === 'sc').length, 6)
-  assert.equal(sts.filter((x) => x === 'loopcurl').length, 3)
+  assert.equal(sts.filter((x) => x === 'loopcurl').length, 4)
   assert.equal(stitchAtOf(h, 1, 0), 'sc', 'round 2 is a plain round')
 })
 
 test('the cow program carries every signature piece and the stitched nostrils', () => {
   const p = buildCowProgram(COW_DEFAULTS)
   const names = p.parts.map((x) => x.name)
-  for (const n of ['body', 'neck', 'head', 'muzzle', 'horn-l', 'horn-r', 'ear-l', 'ear-r', 'front-leg-l', 'front-leg-r', 'back-leg-l', 'back-leg-r', 'tail']) {
+  for (const n of ['body', 'head', 'muzzle', 'horn-l', 'horn-r', 'ear-l', 'ear-r', 'front-leg-l', 'front-leg-r', 'back-leg-l', 'back-leg-r', 'tail']) {
     assert.ok(names.includes(n), `missing ${n}`)
   }
   const horn = p.parts.find((x) => x.name === 'horn-l')!
-  assert.deepEqual(horn.rounds, COW_HORN_ROUNDS)
+  // Tip first: the four-stitch ring is the point, one more a round, closed flat (M is the first six rounds at bulky).
+  assert.deepEqual(horn.rounds, [...COW_HORN_ROUNDS.slice(0, horn.rounds.length - 1), 6])
   assert.equal(horn.colourHex, COW_DEFAULTS.contrastHex)
   assert.ok(horn.sewNote && /tips pointing up and out/.test(horn.sewNote))
   const muzzle = p.parts.find((x) => x.name === 'muzzle')!
@@ -105,5 +104,5 @@ test('the cow program carries every signature piece and the stitched nostrils', 
   assert.ok(nose!.stitches.every((s) => s.taut))
   assert.equal(p.hair?.length, 1)
   assert.equal(p.yarnFibre, 'chenille')
-  assert.equal(p.yarnWeight, 'worsted')
+  assert.equal(p.yarnWeight, 'bulky') // cow round 23: blanket-weight chenille, the bar's fat stitch read
 })

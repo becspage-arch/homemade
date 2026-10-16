@@ -173,7 +173,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.S, head: sphereRounds(36, 2),
     muzzle: sphereRounds(12, 3), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: [6, 9, 9, 9, 6],
     frontLeg: tubeRounds(12, 7), backLeg: ballRounds(18, 3), tail: cordRounds(3),
-    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -12, frontLegLift: 16.3, eyeMm: 14,
+    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -8.4, frontLegLift: 4.3, eyeMm: 14,
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
@@ -185,7 +185,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 3), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 12, 9, 6],
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
-    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -8.5, frontLegLift: 12.2, eyeMm: 22,
+    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -16.5, frontLegLift: 23.2, eyeMm: 22,
   },
 }
 
