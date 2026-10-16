@@ -52,6 +52,15 @@ export interface StitchLink {
    * Absent = the build's own frame (every existing build unchanged).
    */
   axis?: { ax: number; ay: number; hx: number; hy: number }
+  /**
+   * The link's own 3D fabric frame (spiral shaping, spiralTree.ts): a strip
+   * worked on a helicoid has no single plane, so each link records the unit
+   * along-row (a), row-height (h) and worked-face normal (n) vectors of the
+   * surface at its below loop, and the surface point (o) the face offsets are
+   * measured from. The audit then measures the link exactly as it measures a
+   * flat link, in that frame. Absent = unchanged.
+   */
+  frame3?: { a: [number, number, number]; h: [number, number, number]; n: [number, number, number]; o: [number, number, number] }
 }
 
 export interface BuiltContinuous {
