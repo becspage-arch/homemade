@@ -2769,8 +2769,8 @@ def _stage_windowsill_autumn(root, H, R, s, D, vis, light):
     frame = wood_material("window_frame", "#d9c8aa", "#a88d66", along_x=False, rough=0.75)
     out = sky_material("outside", ((0.0, (0.55, 0.30, 0.10)), (0.3, (0.85, 0.52, 0.22)), (0.6, (1.0, 0.86, 0.62))), 2.6, blob=0.65)
     w = _window_wall(root, H, s, D, vis, plaster, frame, out, -0.9, 0.55)
-    knit = knit_material("throw", "#d8b36a", stitch_cm=1.5)
-    _throw("throw", root, knit, vis, H, R, D, 0.04, back=0.3, seed=3.1, right=0.7, hem=0.04 * H)
+    lin = linen_material("throw", "#cdb595")    # r3: the mustard knit read as a straw mat
+    _throw("throw", root, lin, vis, H, R, D, 0.08, back=0.3, seed=3.1, wl_scale=1.4, right=0.7, hem=0.03 * H)
     _pumpkin(root, H, 0.7 * vis.hw(0.6 * D), 0.6 * D, 0.4 * H, "#c27a40")
     _pumpkin(root, H, 1.0 * vis.hw(0.7 * D), 0.7 * D, 0.3 * H, "#e6dcc6", name="pumpkin2")
     cols = ("#9c4a26", "#b98a3a", "#6e2a24", "#a8642e")
@@ -2787,6 +2787,11 @@ def _stage_windowsill_autumn(root, H, R, s, D, vis, light):
             zc = 0.08 + (0.06 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
             specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.26, 0.12, 0, 0.0))
         _leaves("leaves%d" % ci, root, _principled("leaf%d" % ci, col, rough=0.7, sheen=0.2), specs)
+        stalk = _principled("leafstalk%d" % ci, "#5a3a22", rough=0.8)
+        for j, sp in enumerate(specs):
+            (lx, ly, lz), la, L = sp[0], sp[1], sp[2]
+            _curve("lstalk%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.02 * L), (lx - 0.25 * L * math.cos(la), ly - 0.25 * L * math.sin(la), lz)], 0.012 * H)
+            _curve("lrib%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.05 * L), (lx + 0.8 * L * math.cos(la), ly + 0.8 * L * math.sin(la), lz + 0.07 * L)], 0.005 * H)
     light((w["wx1"] * 1.4, D * 0.6, 0.45 * s), (0, 0, 0.45 * H), 2.4, 0.5 * s, (1.0, 0.72, 0.45))
     light((-0.7 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.25, 1.2 * s, WARM)
 
@@ -2802,8 +2807,8 @@ def _stage_windowsill_spring(root, H, R, s, D, vis, light):
     w = _window_wall(root, H, s, D, vis, plaster, frame, out, -1.05, 0.4)
     ging = gingham_material("gingham", "#f4f4ee", "#9db394", check_cm=0.9)
     _throw("napkin", root, ging, vis, H, R, D, 0.07, back=0.32, seed=0.8, wl_scale=1.4, right=0.8, hem=0.03 * H)
-    jy = 0.5 * D
-    jx = 0.62 * vis.hw(jy)
+    jy = 0.55 * D
+    jx = 0.82 * vis.hw(jy)                      # r3: clear of the head
     glass = glass_material("jar", "#eef5f0")
     _lathe("jar", root, glass, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.33 * H, 0.75 * H),
                                         (0.27 * H, 0.85 * H), (0.27 * H, 0.95 * H), (0.25 * H, 0.95 * H),
@@ -3058,14 +3063,15 @@ def _stage_christmas_snow(root, H, R, s, D, vis, light):
     yf = -0.15 * s
     _pine_sprig("pine_f", root, needle, twig, (-1.3 * vis.hw(yf), yf, 0.2 * H), (-0.7 * vis.hw(yf), yf + 1, 0.12 * H), 0.03 * H, 0.26 * H)
     silver = metal_material("#cfd4da")
-    _bauble(root, H, _beside(R, H, 0.14 * H, -1), 0.05 * s, 0.14 * H, 0.14 * H, silver, silver, "bauble_s")
+    _bauble(root, H, -0.5 * vis.hw(0.2 * s), 0.2 * s, 0.16 * H, 0.16 * H, silver, silver, "bauble_s")
     # a tea light in a small glass holder, back right (r1: a big grey bin)
     cy = 0.5 * D
     cx = 0.55 * vis.hw(cy)
     hs = 0.55
     wax = _principled("wax", "#f4ede0", rough=0.5, spec=0.2)
     wax.node_tree.nodes["Principled BSDF"].inputs["Subsurface Weight"].default_value = 0.4
-    _lathe("holder", root, glass_material("holder", "#fbf6ee"), cx, cy, [(0, 0), (0.38 * H * hs, 0), (0.42 * H * hs, 0.6 * H * hs),
+    frost = glass_material("holder", "#fff8ee", rough=0.35)   # r3: frosted (clear glass went black)
+    _lathe("holder", root, frost, cx, cy, [(0, 0), (0.38 * H * hs, 0), (0.42 * H * hs, 0.6 * H * hs),
                                                                          (0.39 * H * hs, 0.6 * H * hs), (0.35 * H * hs, 0.05 * H), (0, 0.05 * H)])
     _cyl("candle", root, wax, cx, cy, 0.05 * H, 0.3 * H * hs, 0.3 * H * hs, 0.3 * H * hs)
     flame = _emit_mat("flame", (1.0, 0.62, 0.22), 160.0)
