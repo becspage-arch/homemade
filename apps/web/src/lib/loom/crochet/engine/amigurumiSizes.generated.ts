@@ -138,6 +138,14 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 74.6,
     "height": 39.1
   },
+  "6,12,18,24,30,36,42,42,42,42,36,30,24,18,12,6": {
+    "width": 86.9,
+    "height": 42.2
+  },
+  "6,12,18,24,30,36,42,48,48,48,48,42,36,30,24,18,12,6": {
+    "width": 99.1,
+    "height": 45.3
+  },
   "6,12,18,24,24,24,18,12,6": {
     "width": 50.1,
     "height": 27.4
@@ -150,17 +158,17 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 38.4,
     "height": 71.2
   },
-  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,15,15,12,12,9,6": {
-    "width": 38.7,
-    "height": 165.7
+  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,15,15,12,12,9,6": {
+    "width": 38.8,
+    "height": 149.7
   },
-  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
+  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
     "width": 44.6,
-    "height": 202.4
+    "height": 186.6
   },
-  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
+  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
     "width": 44.6,
-    "height": 212.9
+    "height": 191.9
   },
   "6,12": {
     "width": 27.8,
@@ -276,28 +284,28 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 70
   },
   "bear-S": {
-    "width": 70,
-    "height": 120
+    "width": 85,
+    "height": 115
   },
   "bear-M": {
-    "width": 85,
-    "height": 145
+    "width": 100,
+    "height": 140
   },
   "bear-L": {
-    "width": 85,
-    "height": 150
+    "width": 105,
+    "height": 145
   },
   "bunny-S": {
     "width": 105,
-    "height": 115
+    "height": 110
   },
   "bunny-M": {
-    "width": 130,
-    "height": 140
+    "width": 135,
+    "height": 135
   },
   "bunny-L": {
     "width": 140,
-    "height": 145
+    "height": 135
   },
   "cat-S": {
     "width": 95,
@@ -373,12 +381,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "686bff27",
-  "bear-M": "935b6dd6",
-  "bear-L": "e8e0767b",
-  "bunny-S": "dd9ef41e",
-  "bunny-M": "2c852fc4",
-  "bunny-L": "642d7fba",
+  "bear-S": "1a5f2679",
+  "bear-M": "20c3011e",
+  "bear-L": "3dc80bc4",
+  "bunny-S": "2a3514b0",
+  "bunny-M": "a53a1d78",
+  "bunny-L": "b3b3561e",
   "cat-S": "393281f6",
   "cat-M": "bdb741b0",
   "cat-L": "5f10b0c8",

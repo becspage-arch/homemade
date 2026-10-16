@@ -95,9 +95,9 @@ export function lopEarRounds(width: number, length: number): number[] {
  *  24-st ear at M fails one interlock at its spiral step whatever the press
  *  (measured), so 21 it is. */
 const LOP_EAR_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: lopEarRounds(18, 32),
+  S: lopEarRounds(18, 29),
   M: lopEarRounds(21, 37),
-  L: lopEarRounds(21, 40),
+  L: lopEarRounds(21, 38),
 }
 
 /**
@@ -229,14 +229,16 @@ const TOY_HAT_BRIM_FRAC = 0.6
 /** Round 4: the fold starts lower (0.35R) over a longer ramp (1.1R) and the
  *  hat leans back more, so the cap slouches over the crown like the bar's
  *  instead of standing as a straight cone first (r3-3a stood, r3-3b more so). */
-const TOY_HAT_BEND = { startFrac: 0.35, angleDeg: 155, dirDeg: 12 }
+/** Round 5: the tail falls FORWARD of the ear (azimuth 40, toward the lens),
+ *  so the pompom hangs beside the cheek in view, not behind the ear (r3-4). */
+const TOY_HAT_BEND = { startFrac: 0.3, angleDeg: 155, dirDeg: 40 }
 const TOY_HAT_BEND_LENGTH_FRAC = 1.1
 /** The slender tail: +2 every second round for most of its length, so the
  *  cone is ~2.4R long (the bar's tail reaches the cheek); the hat's default
  *  five slow rounds left it 1.8R (proofs/bunny r3-2). */
-const TOY_HAT_SLOW_TIP_ROUNDS = 17
+const TOY_HAT_SLOW_TIP_ROUNDS = 15
 const TOY_HAT_TILT_BACK_DEG = 14
-const TOY_POMPOM_RADIUS_FRAC = 0.42
+const TOY_POMPOM_RADIUS_FRAC = 0.38
 /** Round 5-6: the cone's rate. At +2 a round (the hat's default) the cone was
  *  ~55 rounds on a 70-st band and curled up on the crown as a turban (r4);
  *  at +4 it was so short the whole cap flopped flat like a lid (r5). +3. */
@@ -1087,7 +1089,7 @@ const TOY_LEG_DIR = { x: 0.58, y: 0.8, z: -0.5 }
 /** Sleepy-bunny pass: the bar's feet are splayed a touch wider and the soles
  *  tip further up to the lens. */
 const TOY_LEG_AIM = { x: 0.34, y: 1, z: 0.26 }
-const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 0.5, L: 2 }
+const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.3, M: 0.5, L: 4.2 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
 const TOE_PAD_U = -0.7
