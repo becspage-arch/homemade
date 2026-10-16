@@ -175,19 +175,19 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.S, head: sphereRounds(36, 2),
     muzzle: sphereRounds(12, 3), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: [6, 9, 9, 9, 6],
     frontLeg: tubeRounds(12, 7), backLeg: ballRounds(18, 3), tail: cordRounds(3),
-    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -8.4, frontLegLift: 4.3, eyeMm: 14,
+    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -8.4, frontLegLift: 4.3, eyeMm: 13,
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
     muzzle: sphereRounds(18, 2), horn: COW_HORN_ROUNDS.slice(0, 7).concat([6]), ear: COW_EAR_ROUNDS,
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 24, muzzleSeat: 5, earPress: 22, legLift: -12.1, frontLegLift: 14.6, eyeMm: 20,
+    headSink: 24, muzzleSeat: 5, earPress: 22, legLift: -12.1, frontLegLift: 14.6, eyeMm: 18,
   },
   L: {
     body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 3), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 12, 9, 6],
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
-    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -16.5, frontLegLift: 23.2, eyeMm: 22,
+    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -16.5, frontLegLift: 23.2, eyeMm: 20,
   },
 }
 
@@ -290,7 +290,7 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // Round 14: nearer the top of the crown — at y 0.95 the seven-round circle's
 // front edge still reached the eyes.
 // Round 24: lower again on the brow (the bulky fringe's five rounds are a smaller circle).
-const HAIR_DIR = { x: 0, y: 0.95, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.88, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -339,7 +339,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // one given a full twist so it springs into a tight curl, the strand fatter.
     // Round 24: BIG open rings lying over the head (r23's small tight curls
     // stood as a dense cauliflower hat).
-    loop: { lengthYr: 4.4, halfWidthYr: 2.0, droopDeg: -62, vary: 0.4 },
+    loop: { lengthYr: 4.0, halfWidthYr: 1.8, droopDeg: -62, vary: 0.4 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -351,7 +351,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.2 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 4.8, halfWidthYr: 2.0, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 4.6, halfWidthYr: 1.9, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
         : k === last
           ? { lengthYr: 3.6, halfWidthYr: 1.8, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,
