@@ -153,7 +153,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.S, neck: ballRounds(18, 2), head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 5), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 15, 12, 9, 6],
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -15, frontLegLift: 12, eyeMm: 12,
+    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -14, frontLegLift: 13.3, eyeMm: 12,
   },
   M: {
     body: COW_BODY_ROUNDS.M, neck: ballRounds(18, 2), head: sphereRounds(60, 2),
@@ -165,7 +165,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.L, neck: ballRounds(24, 2), head: sphereRounds(66, 2),
     muzzle: sphereRounds(24, 7), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: [6, 9, 12, 15, 18, 21, 21, 21, 18, 15, 12, 9, 6],
     frontLeg: tubeRounds(18, 14), backLeg: ballRounds(30, 4), tail: cordRounds(6),
-    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -12.5, frontLegLift: 7.1, eyeMm: 18,
+    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -10.5, frontLegLift: 10.2, eyeMm: 18,
   },
 }
 
@@ -242,8 +242,9 @@ const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
 // apart down the front of the pear) and sewn a little higher on the shoulder.
 // Round 19: joined further forward on the shoulder and a shallower seat, so the
 // tubes stand proud of the chest with a shadow line behind them (r18: fused).
-const FRONT_LEG_DIR = { x: 0.6, y: 0.95, z: 0.5 }
-const FRONT_LEG_AIM = { x: 0.18, y: 0.46, z: -1 }
+// Round 20: wider apart still — r19's hooves met as one block at the table.
+const FRONT_LEG_DIR = { x: 0.72, y: 0.95, z: 0.5 }
+const FRONT_LEG_AIM = { x: 0.26, y: 0.46, z: -1 }
 /** Back legs: worked sole first, sewn low on the SIDES of the body, lying
  *  forward along the table OUTSIDE the front legs, the rounded foot to the
  *  lens — so all four legs show, the bar's seated calf. */
@@ -407,7 +408,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { x: side * 14, y: 22, z: s.legLift },
+        offset: { x: side * 22, y: 22, z: s.legLift },
       },
     })
   }
