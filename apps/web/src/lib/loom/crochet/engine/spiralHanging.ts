@@ -44,7 +44,7 @@ export interface HangingOptions {
   /** Tree colours left to right (default green, cream, green: the bar). */
   trees?: string[]
   yarnWeight?: YarnWeight
-  /** The star's yarn (the topper star is ~36 mm at lace; see the job log). */
+  /** The star's yarn (the topper star is ~42 mm at lace; see the job log). */
   starWeight?: YarnWeight
   /** The hanging cord's yarn: the bar's cord is a fine flat chain, thinner than the tree yarn. */
   cordWeight?: YarnWeight
@@ -143,7 +143,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const X = cols.map((_, i) => (i - (cols.length - 1) / 2) * (W + gap))
 
   // The star.
-  const starW = o.starWeight ?? 'fine' // pass 2 r5: the solid 3-round topper at lace (36 mm) read small and thin-tipped on the tree; fine ≈ 46 mm
+  const starW = o.starWeight ?? 'lace' // pass 2 r6: the ch-4 topper is ~42 mm at lace ≈ 0.56 W (bar 0.53)
   const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE, colours: { main: gold } })
   const starPiece = star.pieces[0]!
   const syr = YARN_WEIGHT_RADIUS_MM[starW]
@@ -212,10 +212,12 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     const zb = zTop + (be.z - t.topZ)
     // Pass 2: the bead is bigger and brighter and sits tight under the ribbon's
     // end (r1's hung a bead's height below it on its spacer).
+    // r6: the bead's top tucks up against the ribbon's end yarn (r5 still showed
+    // a sliver of tail), the spacer sits between them.
     const r1 = W * 0.022, r2 = W * 0.07
-    props.push({ centre: [bx, by, zb - yr * 0.3 - r1 * 0.5], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: BEAD_GOLD, metal: true })
-    props.push({ centre: [bx, by, zb - yr * 0.3 - r1 * 0.9 - r2 * 0.9], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: BEAD_GOLD, metal: true })
-    lowZ = Math.min(lowZ, zb - yr * 0.3 - r1 * 0.9 - 1.9 * r2)
+    props.push({ centre: [bx, by, zb - yr * 0.6 - r1 * 0.3], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: BEAD_GOLD, metal: true })
+    props.push({ centre: [bx, by, zb - yr * 0.6 - r1 * 0.5 - r2 * 0.85], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: BEAD_GOLD, metal: true })
+    lowZ = Math.min(lowZ, zb - yr * 0.6 - r1 * 0.5 - 1.85 * r2)
     problems.push(...t.problems.map((s) => `tree-${i}: ${s}`))
   })
   problems.push(...starPiece.problems.map((s) => `star: ${s}`), ...cord.piece.problems.map((s) => `cord: ${s}`))

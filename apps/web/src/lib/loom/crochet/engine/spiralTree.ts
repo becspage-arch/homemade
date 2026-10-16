@@ -108,7 +108,7 @@ export interface SpiralSpec {
  * 20 ch for the wide base coil), the pitch opens a little down the tree (the
  * bar's pitch is about two bands: r1's 9–18 yr read sparse, r2's 8–15 over 95
  * chains stacked seven turns like saucers), and two plain rows of UK dc along
- * the edge give the band its depth (about 140 x 74 mm at dk, band 0.22 W,
+ * the edge give the band its depth (about 145 x 74 mm at dk, band 0.22 W,
  * about 5.5 turns; seen level, as the bar is, the body reads a little taller
  * than it measures, so r3's 157 mm read spindly).
  */
@@ -117,8 +117,10 @@ export const TREE_BLOCKS: SpiralBlock[] = [
   { id: 'hdc', chains: 9, perChain: 1.5, pitchYr: 10.5 },
   { id: 'hdc', chains: 13, perChain: 1.33, pitchYr: 12 },
   { id: 'hdc', chains: 18, perChain: 1.2, pitchYr: 13 },
-  { id: 'hdc', chains: 16, perChain: 1.1, pitchYr: 14 },
-  { id: 'hdc', chains: 12, perChain: 1.05, pitchYr: 14.5 },
+  { id: 'hdc', chains: 10, perChain: 1.1, pitchYr: 14 },
+  // The flared base coil is a FULL turn (r5's 12 chains were 0.4 of a turn: a
+  // flare on one side that made the tree lean).
+  { id: 'hdc', chains: 28, perChain: 1.05, pitchYr: 14.5 },
 ]
 /** How far the ribbon's outer edge droops below horizontal: the bar's bands
  *  show their upper face, tilted ~40–45° (44 keeps the body 2.2 tall; 48 let
