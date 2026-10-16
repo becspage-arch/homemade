@@ -18,6 +18,7 @@
 import type { StitchId } from '../dictionary'
 import { MotifStrand } from './kit'
 import { intoChain, runWords } from './leaf'
+import { along, type Crown } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
@@ -52,6 +53,10 @@ export interface RollOpts {
   turnsFull?: number
   /** Work the plain dc band along the chain's other side (default true). */
   band?: boolean
+  /** A second row of dc over the petal row's crowns (default true, r12): each
+   *  petal is then two rows of fabric, a wide flat band when rolled, not a
+   *  one-stitch arch that reads as a coil of rope. */
+  topRow?: boolean
 }
 
 /** A rolled strip as one piece: the foundation chain, one row of `petals`
@@ -70,19 +75,37 @@ export function rolledStrip(yr: number, hex: string, petals: StitchId[][], name 
   const loops = m.chain(nCh, [{ x: 0, y: 0 }, { x: -pitch * nCh, y: 0 }], { turning: 1 })
   m.sectionName = 'petals'
   let k = nCh - 2 // the 2nd chain from the hook
+  const crowns: Crown[] = []
   for (const p of petals) {
-    for (const id of p) intoChain(m, loops[k--]!, id, 'L')
+    for (const id of p) crowns.push(intoChain(m, loops[k--]!, id, 'L'))
     intoChain(m, loops[k--]!, 'slst', 'L')
+  }
+  const topRow = roll.topRow ?? true
+  if (topRow) {
+    // Row 2: turn and dc into every stitch of the petal row (sl sts too), back
+    // along the strip, each at its own crown's height so the arched outline of
+    // the petals is kept and every petal is two rows deep.
+    m.sectionName = 'top row'
+    const f = along({ x: 0, y: 0 }, { x: 1, y: 0 })
+    const scPitch = yr * 2.6 * 0.85
+    for (let i = crowns.length - 1; i >= 0; i--) {
+      const c = crowns[i]!
+      const loc = f.local(c.p)
+      m.stitch({ id: 'sc', frame: f, xCrown: loc.lx, xHook: loc.lx, into: { kind: 'crown', crown: c }, by: loc.ly, ty: loc.ly + scPitch })
+    }
   }
   const band = roll.band ?? true
   if (band) {
-    // Round the end of the chain: dc into the other side of every worked chain,
-    // from the first chain made back to the start of the petal row.
+    // Round the end of the chain: dc into the other side of every worked chain
+    // (after the top row the yarn is at the strip's start, so the band runs
+    // from the start of the petal row to the first chain made; without it,
+    // the other way).
     m.sectionName = 'band'
-    for (let i = 0; i <= nCh - 2; i++) intoChain(m, loops[i]!, 'sc', 'R')
-    m.fastenOff({ x: -1, y: 0 })
+    if (topRow) for (let i = nCh - 2; i >= 0; i--) intoChain(m, loops[i]!, 'sc', 'R')
+    else for (let i = 0; i <= nCh - 2; i++) intoChain(m, loops[i]!, 'sc', 'R')
+    m.fastenOff({ x: topRow ? 1 : -1, y: 0 })
   } else {
-    m.fastenOff({ x: 1, y: 0 })
+    m.fastenOff({ x: topRow ? -1 : 1, y: 0 })
   }
   const built = m.finish(pitch * nCh, yr * 16)
   // The row's start (the first, smallest petal) is the chain's far end; the
@@ -138,7 +161,8 @@ export function rolledRoseWords(): string[] {
   return [
     `Ch ${nCh}.`,
     `Row 1 (petals): ${groups.join(', then ')}. (${petals.length} petals)`,
-    `Row 2 (base band): working along the other side of the chain, ${UK.sc} in each ch back to the start. (${nCh - 1} sts)`,
+    `Row 2: ch 1, turn, ${UK.sc} in each st of row 1 back along the strip, at the height of the stitch below. (${worked} sts)`,
+    `Row 3 (base band): working along the other side of the foundation chain, ${UK.sc} in each ch to the end. (${nCh - 1} sts)`,
     'Fasten off, leaving a long tail.',
     'Starting from the small petals, roll the strip up with the band at the bottom, letting the petals open out as you go; stitch through all the layers of the band with the tail to hold the roll.',
   ]
