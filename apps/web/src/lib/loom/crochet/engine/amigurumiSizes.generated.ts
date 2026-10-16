@@ -150,17 +150,17 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 38.4,
     "height": 71.2
   },
-  "6,9,12,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,12,12,9,9,6,6": {
-    "width": 32.7,
-    "height": 139.6
-  },
-  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,15,15,12,12,9,6": {
+  "6,9,12,15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,15,15,12,12,9,6": {
     "width": 38.7,
-    "height": 176.3
+    "height": 165.7
   },
-  "6,9,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
+  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
     "width": 44.6,
-    "height": 204.9
+    "height": 202.4
+  },
+  "6,12,15,18,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,18,18,15,15,12,6": {
+    "width": 44.6,
+    "height": 212.9
   },
   "6,12": {
     "width": 27.8,
@@ -204,28 +204,28 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 70
   },
   "bear-S": {
-    "width": 60,
-    "height": 115
+    "width": 70,
+    "height": 120
   },
   "bear-M": {
-    "width": 75,
+    "width": 85,
     "height": 145
   },
   "bear-L": {
     "width": 85,
-    "height": 160
+    "height": 150
   },
   "bunny-S": {
-    "width": 80,
-    "height": 110
+    "width": 105,
+    "height": 115
   },
   "bunny-M": {
-    "width": 95,
+    "width": 130,
     "height": 140
   },
   "bunny-L": {
-    "width": 110,
-    "height": 150
+    "width": 140,
+    "height": 145
   },
   "cat-S": {
     "width": 95,
@@ -289,12 +289,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "egg-S": "b66b1897",
   "egg-M": "257908e7",
   "egg-L": "3f11a2c3",
-  "bear-S": "cb211625",
-  "bear-M": "cb97be2a",
-  "bear-L": "b1c588ef",
-  "bunny-S": "aeceb382",
-  "bunny-M": "82251d38",
-  "bunny-L": "87a671a7",
+  "bear-S": "686bff27",
+  "bear-M": "935b6dd6",
+  "bear-L": "e8e0767b",
+  "bunny-S": "dd9ef41e",
+  "bunny-M": "2c852fc4",
+  "bunny-L": "642d7fba",
   "cat-S": "393281f6",
   "cat-M": "bdb741b0",
   "cat-L": "5f10b0c8",

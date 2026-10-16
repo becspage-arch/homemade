@@ -114,17 +114,29 @@ export const CONE_ROUNDS: number[] = [4, 5, 6, 7, 8, 4]
  * ~21 mm, the bar's ~30% of the head width) and many rounds long.
  */
 export function lopEarRounds(width: number, length: number): number[] {
-  const up: number[] = []
-  for (let n = 6; n < width; n += 3) up.push(n)
-  const top = [width - 3, width - 3, width - 6, width - 6, Math.max(6, width - 9), 6]
+  // The tip: a +6 round first (a ROUNDED tip, the bar's), then +3 a round.
+  // Measured: an 18-st ear with the +6 tip fails one interlock at that
+  // round (j2) at every press, so the narrow S ear keeps the +3 cone tip.
+  const up: number[] = width >= 21 ? [6] : []
+  for (let n = width >= 21 ? 12 : 6; n < width; n += 3) up.push(n)
+  // The top narrows in threes (the first two steps held a round each) down
+  // to twelve or fewer, then closes: a round can never less than halve.
+  const top = [width - 3, width - 3, width - 6, width - 6]
+  for (let n = width - 9; n > 12; n -= 3) top.push(n)
+  top.push(Math.min(12, Math.max(6, width - 9)), 6)
   const straight = Math.max(2, length - up.length - top.length)
   return [...up, ...Array.from({ length: straight }, () => width), ...top]
 }
 
+/** Sleepy-bunny pass: the bar's ears are long (they reach the table) and a
+ *  third of the head's width (measured ~0.34), so the ear is a step wider
+ *  and a quarter longer than the toy-pose round-5 ear (18 x 34 at M). A
+ *  24-st ear at M fails one interlock at its spiral step whatever the press
+ *  (measured), so 21 it is. */
 const LOP_EAR_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: lopEarRounds(15, 27),
-  M: lopEarRounds(18, 34),
-  L: lopEarRounds(21, 40),
+  S: lopEarRounds(18, 32),
+  M: lopEarRounds(21, 40),
+  L: lopEarRounds(21, 42),
 }
 
 /**
@@ -207,7 +219,7 @@ export interface AmigurumiChoices {
   hair?: HairStyle
   /** A HAT (toy-pose round 6): the sleepy bunny's nightcap, worn on the head
    *  of a bear or bunny, in `hatHex` (default a soft lilac). Absent = none. */
-  hat?: 'nightcap'
+  hat?: AmigurumiHat
   hatHex?: string
   /** The DOLL's dressing (doll.ts, rounds 6-8): hair cap + rooted strands in
    *  `hairHex`, a skirt worked into the waist round with a hem colour, a pair
@@ -217,19 +229,38 @@ export interface AmigurumiChoices {
   skirt?: { hex: string; hemHex: string }
   wingsHex?: string
   flowersHex?: string
+  /** The nightcap's pompom yarn (default a fluffy cream, the bar's). */
+  pompomHex?: string
   name?: string
 }
 
+/** The hats the designer offers (a zod enum is derived from this). */
+export const HAT_IDS = ['nightcap'] as const
+export type AmigurumiHat = (typeof HAT_IDS)[number]
+export const HATS: Array<{ id: AmigurumiHat; label: string; blurb: string }> = [
+  { id: 'nightcap', label: 'Nightcap', blurb: 'A tip-first cone with a folded band, flopped to one side, and a fluffy pompom. Bear and bunny only.' },
+]
 /** The nightcap's default lilac (the bar's). */
 export const HAT_HEX_DEFAULT = '#b7a4d8'
 /** The nightcap band's middle, above the head centre (fraction of the head
  *  radius). Round 6 at the hat's own 0.6 put the band's lower edge on the
  *  eye line and the hat swallowed the top half of the head. */
-const TOY_HAT_BRIM_FRAC = 0.8
+const TOY_HAT_BRIM_FRAC = 0.66
 /** The nightcap's flop (round 8): the bar's cone folds over right at the
  *  crown and falls steeply beside the ear; the hat's default stood 0.55R
  *  straight up first and read as a tall stiff cone. */
-const TOY_HAT_BEND = { startFrac: 0.28, angleDeg: 142, dirDeg: 24 }
+/** Round 4: the fold starts a little up the dome (0.14 lay on the crown like
+ *  a slug) but creases SHARPLY (ramp 0.7R, not the hat's 1.3R) so the cone
+ *  never stands as a tall ridge before it falls. */
+const TOY_HAT_BEND = { startFrac: 0.42, angleDeg: 140, dirDeg: 12 }
+const TOY_HAT_BEND_LENGTH_FRAC = 1.0
+/** Round 5-6: the cone's rate. At +2 a round (the hat's default) the cone was
+ *  ~55 rounds on a 70-st band and curled up on the crown as a turban (r4);
+ *  at +4 it was so short the whole cap flopped flat like a lid (r5). +3. */
+const TOY_HAT_CONE_STEP = 3
+/** The bar's pompom: cream, fluffy, on the lilac cap. */
+export const POMPOM_HEX_DEFAULT = '#f4ecdd'
+const TOY_POMPOM_FIBRE: YarnFibre = 'fluff'
 
 /**
  * What one base IS, and which of the maker's toggles it can honour.
@@ -379,7 +410,8 @@ export function lopLining(rounds: number[]): Record<number, [number, number]> {
     // Only rounds worked straight (same count as the round below) and wide
     // enough to frame a lining; the shaping rounds stay in the main yarn.
     if (n !== rounds[k - 1] || n < widest - 3) continue
-    const count = Math.round(n / 3)
+    // Sleepy-bunny pass: the bar's lining fills nearly half the ear's width.
+    const count = Math.round(n * 0.42)
     runs[k] = [Math.floor((n - count) / 2), count]
   }
   return runs
@@ -414,12 +446,12 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(48, 1),
-    toyBody: sphereRounds(42, 1),
+    toyBody: sphereRounds(54, 1),
     toyNeck: ballRounds(18, 2),
     toyMuzzle: ballRounds(18, 2),
     toyArm: tubeRounds(12, 3),
     toyEar: ballRounds(18, 2),
-    bigFoot: ballRounds(18, 3),
+    bigFoot: ballRounds(24, 3),
     lopEar: LOP_EAR_ROUNDS.S,
   },
   M: {
@@ -449,12 +481,12 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(60, 1),
-    toyBody: sphereRounds(54, 1),
+    toyBody: sphereRounds(66, 1),
     toyNeck: ballRounds(18, 2),
     toyMuzzle: ballRounds(24, 2),
     toyArm: tubeRounds(12, 5),
     toyEar: ballRounds(18, 2),
-    bigFoot: ballRounds(24, 3),
+    bigFoot: ballRounds(30, 3),
     lopEar: LOP_EAR_ROUNDS.M,
   },
   L: {
@@ -483,12 +515,12 @@ const SIZES: Record<AmigurumiSize, SizeProfile> = {
     chickWing: tubeRounds(12, 1),
     chickTuft: cordRounds(5),
     toyHead: sphereRounds(66, 1),
-    toyBody: sphereRounds(60, 1),
+    toyBody: sphereRounds(66, 1),
     toyNeck: ballRounds(24, 2),
     toyMuzzle: ballRounds(30, 3),
     toyArm: tubeRounds(18, 6),
     toyEar: ballRounds(24, 2),
-    bigFoot: ballRounds(30, 3),
+    bigFoot: ballRounds(36, 3),
     lopEar: LOP_EAR_ROUNDS.L,
   },
 }
@@ -670,7 +702,8 @@ const TOY_HOOK_MM = 2.5
 const TOY_GAUGE_SCALE = YARN_WEIGHT_RADIUS_MM.worsted / YARN_WEIGHT_RADIUS_MM[TOY_YARN]
 const TOY_YAW = 8
 const TOY_FIBRE: Partial<Record<AmigurumiBase, YarnFibre>> = { bunny: 'fine-cotton', bear: 'chenille' }
-const TOY_VIEW = { ...FIGURE_VIEW, tiltDeg: 78, yawDeg: TOY_YAW, aimHeightFrac: 0.5 }
+/** Sleepy-bunny pass: the bar fills its frame; the toy sat small in r1. */
+const TOY_VIEW = { ...FIGURE_VIEW, tiltDeg: 78, yawDeg: TOY_YAW, aimHeightFrac: 0.5, distScale: 0.92 }
 
 const EYE_HEX = '#080706'
 const NOSE_HEX = '#171310'
@@ -723,7 +756,10 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     program.accessories = [{
       kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight,
       brimHeightFrac: TOY_HAT_BRIM_FRAC,
-      bend: TOY_HAT_BEND,
+      bend: { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
+      coneStep: TOY_HAT_CONE_STEP,
+      pompomHex: choices.pompomHex ?? POMPOM_HEX_DEFAULT,
+      pompomFibre: TOY_POMPOM_FIBRE,
     }]
   }
   return program
@@ -810,7 +846,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       // Round 6: the bunny's muzzle is in the MAIN yarn (the bar's cream
       // muzzle — a contrast disc read as a pig's snout); the pink is only the
       // embroidered nose. The bear keeps its contrast muzzle (the cow's).
-      colourHex: choices.base === 'bunny' ? main : contrast,
+      colourHex: choices.base === 'bunny' ? palerShade(main) : contrast,
       // Round 11: the bear's muzzle grows with its bigger head, and shows its
       // magic ring (drawn to a pinprick, under the nose) instead of the
       // fasten-off end, which rendered as a hole round the nose.
@@ -888,6 +924,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       parts.push({
         name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.lopEar, colourHex: main,
         press: LOP_PRESS_MM[choices.size],
+        bend: LOP_EAR_BEND,
         panel: { hex: contrast, runs: lopLining(s.lopEar) },
         place: {
           on: 'head',
@@ -981,8 +1018,18 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
   }
 }
 
+/** The bunny's muzzle shade: the main yarn a few steps PALER (the bar's
+ *  subtle cream-on-cream muzzle; a pink one read as a pig's snout). */
+export function palerShade(hex: string, mix = 0.38): string {
+  const c = parseInt(hex.slice(1), 16)
+  const ch = (v: number): string => Math.round(v + (255 - v) * mix).toString(16).padStart(2, '0')
+  return `#${ch((c >> 16) & 255)}${ch((c >> 8) & 255)}${ch(c & 255)}`
+}
+
 /** How deep the toy's big head sinks onto the neck (mm): no pinched neck. */
-const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 9, M: 12, L: 14 }
+/** Sleepy-bunny pass: the bar's head is SUNK into a body as wide as itself
+ *  (a soft pear, no neck at all), so the sink is deeper than round 5's. */
+const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 19, M: 24, L: 26 }
 
 /** The lop ear's press (centre-line gap, mm). Measured: at
  *  worsted a 15-st ear pressed to 12 mm audits clean in its settled frame;
@@ -991,12 +1038,16 @@ const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 9, M: 12, L: 14 }
  *  audits clean in its settled frame): S 15-st 8.5 (7.5 fails one interlock),
  *  M 18-st 9.5 (8.5 fails 6, 7.5 fails 45), L 21-st 13 (12 fails one) — a
  *  thin ear like the bar's. */
-const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 8.5, M: 9.5, L: 13 }
+const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 10, M: 13.5, L: 15 }
 /** Sewn on the upper side of the head, hanging down and a little out. */
-const LOP_EAR_DIR = { x: 0.85, y: 0.05, z: 0.55 }
-const LOP_EAR_AIM = { x: 0.1, y: 0.06, z: -1 }
+const LOP_EAR_DIR = { x: 0.9, y: 0.05, z: 0.65 }
+/** Sleepy-bunny pass: the ear leaves the head OUT (the bar's bow out past
+ *  the shoulders) and the worn curve (`LOP_EAR_BEND`) brings its lower half
+ *  back forward and in to rest beside the body. */
+const LOP_EAR_AIM = { x: 0.2, y: 0.06, z: -1 }
+const LOP_EAR_BEND = { startFrac: 0.35, lengthFrac: 0.5, angleDeg: 24, dirDeg: 0 }
 /** The lined face looks out and forward (toward the lens). */
-const LOP_EAR_SPIN = { x: 0.9, y: 1 }
+const LOP_EAR_SPIN = { x: 0.4, y: 1 }
 /** The toy's muzzle trim per size (the fine-gauge `toyMuzzle` profile). */
 const TOY_MUZZLE_SCALE: Record<AmigurumiSize, number> = { S: 0.95, M: 0.95, L: 0.9 }
 /** The bear's round ear (`toyEar`, fine gauge) trimmed to its head. */
@@ -1022,16 +1073,23 @@ const TOY_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.85, M: 0.95, L: 1.0 
  * contrast belly patch above the paws.
  */
 const TOY_ARM_DIR = { x: 0.75, y: 0.85, z: 0.6 }
-const TOY_ARM_AIM = { x: -0.42, y: 1.05, z: -1 }
+/** Sleepy-bunny pass: aimed further in so the two paws MEET at the centre of
+ *  the tummy (the bar's; round 6's -0.42 left a gap between them). */
+const TOY_ARM_AIM = { x: -0.95, y: 1.05, z: -1 }
 const TOY_ARM_PROUD: Record<AmigurumiSize, number> = { S: 4.5, M: 6, L: 7 }
+const TOY_ARM_SCALE = 1.12
 const TOY_LEG_DIR = { x: 0.45, y: 0.8, z: -0.5 }
-const TOY_LEG_AIM = { x: 0.28, y: 1, z: 0.16 }
-const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: -4, M: -5, L: -4.5 }
+/** Sleepy-bunny pass: the bar's feet are splayed a touch wider and the soles
+ *  tip further up to the lens. */
+const TOY_LEG_AIM = { x: 0.34, y: 1, z: 0.26 }
+const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: -4, M: -5, L: -2.4 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
-const TOE_PAD_U = -0.42
-const TOE_BEAN_U = { outer: 0.6, middle: 0.84 }
-const TOE_BEAN_V = 0.64
+const TOE_PAD_U = -0.55
+/** Sleepy-bunny pass: FOUR toe beans in an arc over a big pad (the bar's):
+ *  the outer pair low and wide, the inner pair high and close. */
+const TOE_BEAN_U = { outer: 0.62, inner: 0.98 }
+const TOE_BEAN_V = { outer: 0.82, inner: 0.3 }
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
   const bear = choices.base === 'bear'
@@ -1042,6 +1100,8 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'arm-l' : 'arm-r', stitch: 'sc', rounds: armRounds, colourHex: main,
+      // Round 4 (sleepy bunny): a touch chunkier, the bar's bold folded arms.
+      scale: TOY_ARM_SCALE,
       // The bear's paw: rounds 1-2 in the contrast yarn.
       ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
       place: {
@@ -1080,17 +1140,21 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
       x: n.x + up.x * u + sideV.x * v, y: n.y + up.y * u + sideV.y * v, z: n.z + up.z * u + sideV.z * v,
     })
     parts.push({
-      name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12, 18], colourHex: contrast,
-      form: 'disc', scale: 0.72,
+      name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12, 18, 24], colourHex: contrast,
+      form: 'disc', scale: 0.6,
       place: { on: leg, dir: at(TOE_PAD_U, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
-    for (const [k, v] of [[0, -TOE_BEAN_V], [1, 0], [2, TOE_BEAN_V]] as const) {
+    const beans: Array<[number, number]> = [
+      [TOE_BEAN_U.outer, -TOE_BEAN_V.outer], [TOE_BEAN_U.inner, -TOE_BEAN_V.inner],
+      [TOE_BEAN_U.inner, TOE_BEAN_V.inner], [TOE_BEAN_U.outer, TOE_BEAN_V.outer],
+    ]
+    beans.forEach(([u, v], k) => {
       parts.push({
-        name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6], colourHex: contrast,
-        form: 'disc',
-        place: { on: leg, dir: at(k === 1 ? TOE_BEAN_U.middle : TOE_BEAN_U.outer, v), aim: a, seat: 0, surfaceFit: 'points' },
+        name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6, 12], colourHex: contrast,
+        form: 'disc', scale: 0.42,
+        place: { on: leg, dir: at(u, v), aim: a, seat: 0, surfaceFit: 'points' },
       })
-    }
+    })
   }
   if (bear) {
     parts.push({

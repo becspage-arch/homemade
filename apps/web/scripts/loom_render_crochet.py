@@ -141,6 +141,27 @@ FIBRE_PARAMS = {
     # went (they read as plastic pasta on a smooth strand, r3/r5/r6), the
     # surface is matte, and a gentle cavity term shades the valleys between
     # stitches the way the bunny's do.
+    # FLUFF (sleepy-bunny pass): a cut-strand pompom in a soft fluffy yarn —
+    # the bar's cream pompom on its lilac nightcap. Chenille's plump single
+    # strand and matte pile material with NO depth treatment (a cream pompom
+    # in wool or chenille rendered as a grey knobbly ball: proofs/bunny r1),
+    # plus a real hair fringe so the cut ends read as fuzz, not worms.
+    "fluff": dict(
+        specular=0.04, sheen=0.45, sheen_rough=0.5, aniso=0.0,
+        base_mult=1.0, cavity_amt=0.0, cavity_dist_mm=2.0, cavity_pow=1.5,
+        cavity_shade=0.32, rim_amt=0.25, rim_mode="lift", rim_tint=0.5,
+        rim_pow=2.5, rim_blend=0.5, rim_alpha=0.0, sat_mult=1.0, depth_by_lum=True,
+        subsurf=0.0, bump1=0.25, bump2=0.12, rough_lo=0.8, rough_hi=0.95,
+        rough=1.0, sheen_tint_mix=0.5, crush_scale=7.0, crush_amt=0.08,
+        fleck_scale=45.0, fleck_amt=0.3,
+        pile_scale=90.0, pile_bump=0.3,
+        # A pompom is ~3000 short strands (~0.9 M mm2 of surface): 5/mm2 was
+        # 4.5 M hairs and the 8 GB probe task was OOM-killed (bunny r2).
+        pile_density=1.2, pile_children=6, pile_len_mm=2.2, pile_lean=0.9,
+        pile_radius_mm=0.04, pile_tip_lift=0.3,
+        flyaway=0.0, halo=None,
+        strand="single", strand_mult=1.3,
+    ),
     "fine-cotton": dict(
         specular=0.08, sheen=0.6, sheen_rough=0.7, aniso=0.0,
         subsurf=0.08, bump1=0.5, bump2=0.3, rough_lo=0.7, rough_hi=0.85,

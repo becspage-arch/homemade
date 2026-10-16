@@ -289,7 +289,12 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
     }
     if (a.kind !== 'nightcap') continue
     out.push('Nightcap')
-    out.push(...nightcapInstructions({ headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight }))
+    out.push(...nightcapInstructions({
+      headRadiusMm: a.headRadiusMm, colourHex: a.colourHex, yarnWeight: a.yarnWeight,
+      ...(a.pompomHex ? { pompomHex: a.pompomHex } : {}),
+      ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
+      ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
+    }))
     out.push(`Sit the hat on the ${baseName(a.on)} with the band just above the eyes and let the tip flop to one side; a few stitches through the band hold it.`)
   }
   return out
@@ -340,6 +345,7 @@ export function compositionNotions(p: CompositionProgram): string[] {
   if ((p.props ?? []).some((x) => /nose/i.test(x.name))) notions.push('Safety nose')
   for (const label of new Set((p.embroidery ?? []).map((e) => e.threadLabel))) notions.push(`${label}, for the face`)
   if ((p.accessories ?? []).some((a) => a.kind === 'nightcap')) notions.push('A third yarn for the nightcap, and card or a pompom maker for its pompom')
+  if ((p.accessories ?? []).some((a) => a.kind === 'nightcap' && a.pompomHex && a.pompomHex !== a.colourHex)) notions.push('A soft fluffy yarn in the pompom colour')
   return notions
 }
 

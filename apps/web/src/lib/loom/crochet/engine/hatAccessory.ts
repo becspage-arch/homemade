@@ -17,7 +17,7 @@
  */
 
 import { STITCHES } from './dictionary'
-import { YARN_WEIGHT_RADIUS_MM, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
+import { YARN_WEIGHT_RADIUS_MM, writeInstructions, type CrochetProgram, type YarnFibre, type YarnWeight } from './program'
 import { compileRelaxAudit } from './programScene'
 import type { CompiledComposition } from './composition'
 import type { BuiltContinuous } from './yarnPath'
@@ -39,8 +39,17 @@ export interface NightcapOptions {
   /** Extra slow rounds at the tip (each count held twice; default 5) so the
    *  tail is slender and long like a real nightcap's. */
   slowTipRounds?: number
+  /** Stitches added a round up the cone after the slow tip (default 2: a
+   *  long slender cone). The sleepy bunny's cap is a SHORT steep cone (4): at
+   *  +2 the cone was ~55 rounds on a 54-st band and curled up on the crown as
+   *  a turban (crochet-bar/proofs/bunny r3-r4). */
+  coneStep?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
+  /** The pompom's own yarn when it is not the hat's: colour and fibre look
+   *  (the bar's sleepy bunny wears a cream fluffy pompom on a lilac cap). */
+  pompomHex?: string
+  pompomFibre?: YarnFibre
   name?: string
 }
 
@@ -72,9 +81,10 @@ export function nightcapRounds(o: NightcapOptions): number[] {
     rounds.push(c, c)
     c += 2
   }
+  const step = Math.max(2, o.coneStep ?? 2)
   while (c < N) {
     rounds.push(c)
-    c += 2
+    c += step
   }
   for (let i = 0; i < band; i++) rounds.push(N)
   for (let i = 0; i < brim; i++) rounds.push(N)
@@ -101,7 +111,7 @@ export function nightcapProgram(o: NightcapOptions): CrochetProgram {
 export function nightcapInstructions(o: NightcapOptions): string[] {
   const lines = writeInstructions(nightcapProgram(o))
   const pr = o.pompomRadiusMm ?? o.headRadiusMm * 0.5
-  if (pr > 0) lines.push(pompomInstruction(pr, 'the tip of the hat'))
+  if (pr > 0) lines.push(pompomInstruction(pr, 'the tip of the hat', o.pompomHex && o.pompomHex !== o.colourHex ? 'the pompom yarn' : undefined))
   return lines
 }
 
@@ -229,9 +239,9 @@ export function wearNightcap(compiled: CompiledComposition, headName: string, o:
           centre: { x: tip.x + (dir.x / dl) * pr * 0.78, y: tip.y + (dir.y / dl) * pr * 0.78, z: tip.z + (dir.z / dl) * pr * 0.78 },
           radiusMm: pr,
           yarnRadiusMm: yr,
-          colourHex: opts.colourHex,
+          colourHex: opts.pompomHex ?? opts.colourHex,
           seed: w.seed,
-        })
+        }).map((st) => (opts.pompomFibre ? { ...st, fibre: opts.pompomFibre } : st))
       : []
   return { program, yr, problems, strokes, pompom, tip, instructions: nightcapInstructions(opts) }
 }

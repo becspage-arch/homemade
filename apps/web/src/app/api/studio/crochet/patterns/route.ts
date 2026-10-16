@@ -28,6 +28,7 @@ import { compileComposition, type CompositionProgram } from '@/lib/loom/crochet/
 import {
   AMIGURUMI_BASE_IDS,
   FACE_STYLE_IDS,
+  HAT_IDS,
   buildAmigurumiProgram,
   isAuditedProfile,
   presetSettledSizeMm,
@@ -56,6 +57,9 @@ const Choices = z.object({
   nose: z.boolean(),
   paws: z.boolean(),
   face: z.enum(FACE_STYLE_IDS).optional(),
+  hat: z.enum(HAT_IDS).optional(),
+  hatHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  pompomHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
   name: z.string().max(120).optional(),
 })
 
