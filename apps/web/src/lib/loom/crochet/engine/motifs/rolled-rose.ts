@@ -2,13 +2,17 @@
  * ROLLED ROSE (audit round 9; bar: the dusty-pink spiral roses of
  * bar-flower-wall-hanging.png; built-how ref real/9-bridal-bouquet.jpg).
  *
- * A strip, rolled and sewn: a long foundation chain, then ONE row worked back
- * along it of graded scallop petals — each petal a run of stitches rising and
- * falling in height across the chains (no shared base, so nothing crowds),
- * separated by a sl st — small petals at the start of the row, tall ones at the
- * end. The strip is then rolled from its start (the small petals become the
- * tight centre) and the base stitched through; the rolled strip is the pose,
- * applied after the flat strip is relaxed and audited exactly as worked.
+ * A strip, rolled and sewn: a long foundation chain worked on BOTH sides — one
+ * side a row of graded scallop petals (each a run of stitches rising and
+ * falling in height across the chains, separated by a sl st; small petals at
+ * the start of the row, tall ones at the end), then round the end of the chain
+ * and back along its other side in dc (UK), a plain band that is the rolled
+ * base of the rose. Two rows deep with the chain down the middle, the strip
+ * reads as fabric when rolled, not as a row of posts (rounds 1-4 of the audit
+ * rolled a one-row strip: a good spiral silhouette whose petals read as rope
+ * strands). The strip is rolled from its start (the small petals become the
+ * tight centre) and the base stitched through; the roll is the pose, applied
+ * after the flat strip is relaxed and audited exactly as worked.
  */
 
 import type { StitchId } from '../dictionary'
@@ -18,21 +22,21 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const ROLLED_ROSE_COLOURS = { main: '#ad6c7a' } // dusty mauve (pinks render lighter and warmer)
+export const ROLLED_ROSE_COLOURS = { main: '#946070' } // dusty mauve (r4's #ad6c7a rendered salmon pink)
 
 /** The petals in work order (the first ones roll into the centre). */
 export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [
-  { n: 3, sts: ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] },
-  { n: 3, sts: ['sc', 'dc', 'tr', 'tr', 'dc', 'sc'] },
-  { n: 3, sts: ['hdc', 'dc', 'tr', 'tr', 'tr', 'dc', 'hdc'] },
+  { n: 4, sts: ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] },
+  { n: 4, sts: ['hdc', 'dc', 'dc', 'dc', 'dc', 'hdc'] },
+  { n: 4, sts: ['dc', 'dc', 'tr', 'tr', 'dc', 'dc'] },
 ]
 
 /** Spiral pitch (radial growth per turn) as a multiple of the yarn radius, and
  *  the outward lean of the rolled petals from centre to rim (deg). */
-const ROLL_PITCH_YR = 3.8
-const ROLL_R0_YR = 1.6
-const LEAN0 = 6
-const LEAN1 = 32
+const ROLL_PITCH_YR = 3.4 // r5's 4.6 left the stage showing between turns
+const ROLL_R0_YR = 1.4
+const LEAN0 = 4
+const LEAN1 = 24 // petals stay nearer upright: a dome, not a flat spiral
 
 export function rosePetalList(): StitchId[][] {
   const out: StitchId[][] = []
@@ -40,19 +44,27 @@ export function rosePetalList(): StitchId[][] {
   return out
 }
 
+export interface RollOpts {
+  pitchYr?: number
+  r0Yr?: number
+  lean0?: number
+  lean1?: number
+  turnsFull?: number
+  /** Work the plain dc band along the chain's other side (default true). */
+  band?: boolean
+}
+
 /** A rolled strip as one piece: the foundation chain, one row of `petals`
- *  (each a run of stitches, then a sl st) worked back along it, relaxed and
- *  audited flat, then posed rolled. */
-export function rolledStrip(
-  yr: number, hex: string, petals: StitchId[][], name = 'rose',
-  roll: { pitchYr?: number; r0Yr?: number; lean0?: number; lean1?: number; turnsFull?: number } = {},
-): MotifPiece {
+ *  (each a run of stitches, then a sl st) worked back along it, then (band) a
+ *  row of dc along the chain's other side, relaxed and audited flat, then posed
+ *  rolled. */
+export function rolledStrip(yr: number, hex: string, petals: StitchId[][], name = 'rose', roll: RollOpts = {}): MotifPiece {
   const worked = petals.reduce((a, p) => a + p.length + 1, 0) // each petal + its sl st
   const nCh = worked + 1 // + the turning chain
   const pitch = yr * 2.6
   const m = new MotifStrand(yr, hex)
-  // The foundation chain, made along −x; the row is worked back along +x with
-  // the petals standing toward −y.
+  // The foundation chain, made along −x; the petal row is worked back along +x
+  // with the petals standing toward −y, then the band along −x toward +y.
   m.slipKnot({ x: 0, y: 0 }, { x: -1, y: 0 })
   m.sectionName = 'chain'
   const loops = m.chain(nCh, [{ x: 0, y: 0 }, { x: -pitch * nCh, y: 0 }], { turning: 1 })
@@ -62,15 +74,27 @@ export function rolledStrip(
     for (const id of p) intoChain(m, loops[k--]!, id, 'L')
     intoChain(m, loops[k--]!, 'slst', 'L')
   }
-  m.fastenOff({ x: 1, y: 0 })
-  const built = m.finish(pitch * nCh, yr * 14)
-  // Where the row starts (the first petal): the far end of the chain.
-  const x0 = Math.max(...built.model.nodes.slice(4).map((n) => n.x))
+  const band = roll.band ?? true
+  if (band) {
+    // Round the end of the chain: dc into the other side of every worked chain,
+    // from the first chain made back to the start of the petal row.
+    m.sectionName = 'band'
+    for (let i = 0; i <= nCh - 2; i++) intoChain(m, loops[i]!, 'sc', 'R')
+    m.fastenOff({ x: -1, y: 0 })
+  } else {
+    m.fastenOff({ x: 1, y: 0 })
+  }
+  const built = m.finish(pitch * nCh, yr * 16)
+  // The row's start (the first, smallest petal) is the chain's far end; the
+  // band's outer edge is the strip's bottom when rolled.
+  const body = built.model.nodes.slice(4)
+  const xMin = Math.min(...body.map((n) => n.x))
+  const yTop = band ? Math.max(...body.map((n) => n.y)) : 0
   const o = {
     pitch: yr * (roll.pitchYr ?? ROLL_PITCH_YR), r0: yr * (roll.r0Yr ?? ROLL_R0_YR),
     lean0: roll.lean0 ?? LEAN0, lean1: roll.lean1 ?? LEAN1, turnsFull: roll.turnsFull ?? 3.2,
   }
-  return pieceOf(name, m, built, (p) => rollPose(p, x0, yr, o))
+  return pieceOf(name, m, built, (p) => rollPose(p, xMin, yTop, yr, o))
 }
 
 export function buildRolledRose(o?: MotifOptions): BuiltMotif {
@@ -82,14 +106,15 @@ export function buildRolledRose(o?: MotifOptions): BuiltMotif {
 
 /**
  * Roll the flat strip: arclength from the row's start along the chain becomes
- * an Archimedean spiral round the rose's centre (z up), the stitch height (−y)
+ * an Archimedean spiral round the rose's centre (z up), the strip's height
+ * (from the band's outer edge, +y, up through the chain to the petal tops, −y)
  * stands up out of the table leaning outward more on each turn, the strip's
  * own thickness (z) lies radially. A rigid bend of the relaxed strip — the
  * maker's rolling — so the audited stitches are not moved relative to one
  * another along the strip.
  */
-function rollPose(p: V3, x0: number, yr: number, o: { pitch: number; r0: number; lean0: number; lean1: number; turnsFull: number }): V3 {
-  const s = Math.max(0, x0 - p.x)
+function rollPose(p: V3, xMin: number, yTop: number, yr: number, o: { pitch: number; r0: number; lean0: number; lean1: number; turnsFull: number }): V3 {
+  const s = Math.max(0, p.x - xMin)
   const b = o.pitch / (Math.PI * 2)
   const r0 = o.r0
   // arclength of r = r0 + bθ ≈ r0θ + bθ²/2 → θ(s)
@@ -97,7 +122,7 @@ function rollPose(p: V3, x0: number, yr: number, o: { pitch: number; r0: number;
   const r = r0 + b * th
   const turns = th / (Math.PI * 2)
   const lean = ((o.lean0 + (o.lean1 - o.lean0) * Math.min(1, turns / o.turnsFull)) * Math.PI) / 180
-  const h = Math.max(0, -p.y) // height up the strip
+  const h = Math.max(0, yTop - p.y) // height up the strip from the band's edge
   const rr = r + p.z + h * Math.sin(lean)
   return { x: rr * Math.cos(th), y: rr * Math.sin(th), z: h * Math.cos(lean) + yr }
 }
@@ -110,12 +135,12 @@ export function rolledRoseWords(): string[] {
     const first = i === 0 ? ' (starting in the 2nd ch from hook)' : ''
     return `[${runWords(g.sts)}, sl st in next ch] ${g.n} times${first}`
   })
-  void UK
   return [
     `Ch ${nCh}.`,
     `Row 1 (petals): ${groups.join(', then ')}. (${petals.length} petals)`,
+    `Row 2 (base band): working along the other side of the chain, ${UK.sc} in each ch back to the start. (${nCh - 1} sts)`,
     'Fasten off, leaving a long tail.',
-    'Starting from the small petals, roll the strip up with the chain edge at the bottom, letting the petals open out as you go; stitch through all the layers at the base with the tail to hold the roll.',
+    'Starting from the small petals, roll the strip up with the band at the bottom, letting the petals open out as you go; stitch through all the layers of the band with the tail to hold the roll.',
   ]
 }
 

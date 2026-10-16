@@ -16,14 +16,15 @@ import { assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './commo
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const VINE_COLOURS = { vine: '#74825c', leaf: '#859470' } // olive, sage olive
-export const VINE_CH = 40
+export const VINE_COLOURS = { vine: '#46503a', leaf: '#4a553d' } // deep olive, deep grey-sage (r4's #74825c / #859470 rendered pale celery)
+export const VINE_CH = 44
 /** Leaves sewn at these chains (counted from the top), alternating sides. */
-export const VINE_LEAF_AT = [5, 11, 17, 23, 29, 35]
-export const VINE_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc']
+export const VINE_LEAF_AT = [4, 11, 18, 25, 32, 39]
+/** A smaller pointed oval than the standalone leaf (two tr fewer a side). */
+export const VINE_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'dc', 'dc', 'dc', 'hdc', 'sc']
 export const VINE_LEAF_STEM = 3
 /** Leaf angle from the vine, below the horizontal (deg). */
-export const VINE_LEAF_DROOP = 40
+export const VINE_LEAF_DROOP = 35
 
 export function buildLeafVine(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)

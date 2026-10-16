@@ -24,20 +24,24 @@ import {
 } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
 import { registerMotif } from './registry'
-import type { BuiltMotif, MotifOptions } from './types'
+import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
 export const STAR_COLOURS = { main: '#a8843a' } // antique gold (#c9a24a rendered yellow)
 
-/** The point, from the tip down: the stitch worked into each chain. */
-export const STAR_POINT: StitchId[] = ['slst', 'sc', 'hdc', 'dc', 'tr']
-export const STAR_ROUNDS = [5, 10, 15]
+/** The point, from the tip down: the stitch worked into each chain. Round 5
+ *  of the audit: a centre one round bigger (20 sts, four a point) and a
+ *  point one chain shorter ending in tr (UK) at the base — a point about as
+ *  wide at its base as it is long, like the bar's fat short points; r1-4's
+ *  ch 6 points ending in dtr were long and thin. */
+export const STAR_POINT: StitchId[] = ['slst', 'sc', 'hdc', 'dc']
+export const STAR_ROUNDS = [5, 10, 15, 20]
 const POINTS = 5
 const TIP_REACH = 0.8
 const TIP_LIFT = 0.4
 const SKIP = 2 // round-3 stitches skipped between a point's base and its sl st
 
-interface StarSpec { rounds: number[]; point: StitchId[]; skip: number }
-/** The sizes: 'standard' (~63 mm at fine cotton) and 'small' (a tree topper:
+export interface StarSpec { rounds: number[]; point: StitchId[]; skip: number }
+/** The sizes: 'standard' (~55 mm at fine cotton) and 'small' (a tree topper:
  *  one round of 5 and ch-3 points, ~37 mm at fine, ~28 mm at lace — the chains
  *  set the floor; two rounds with ch-4 points settled 40-46 mm). */
 export const STAR_SIZES: Record<'standard' | 'small', StarSpec> = {
@@ -47,11 +51,17 @@ export const STAR_SIZES: Record<'standard' | 'small', StarSpec> = {
 
 export function buildStar(o?: MotifOptions): BuiltMotif {
   const spec = STAR_SIZES[o?.size ?? 'standard']
-  const STAR_ROUNDS = spec.rounds, STAR_POINT = spec.point, SKIP = spec.skip
   const y = motifYarn(o)
   const col = colourOpts(STAR_COLOURS, o)
-  const yr = y.yr
-  const m = new MotifStrand(yr, col.main!)
+  const piece = starPiece(y.yr, col.main!, spec)
+  return assemble('star', 'Five-point star', o, [piece], starWords(spec), materialsLine(o, ['gold']))
+}
+
+/** One star as a piece: the centre rounds, then the chained points, relaxed
+ *  and audited (also a berry's calyx: one round of 5 and ch-2 points). */
+export function starPiece(yr: number, hex: string, spec: StarSpec, name = 'star', pose?: MotifPiece['pose']): MotifPiece {
+  const STAR_ROUNDS = spec.rounds, STAR_POINT = spec.point, SKIP = spec.skip
+  const m = new MotifStrand(yr, hex)
   const c = { x: 0, y: 0 }
   const ring = m.magicRing(c)
   m.sectionName = 'centre'
@@ -102,10 +112,8 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
   m.fastenOff(unit(sub({ x: 0, y: 0 }, end)))
   const R = r + yr * 2.6 * (STAR_POINT.length + 1)
   const built = m.finish(R * 2, R * 2)
-  const piece = pieceOf('star', m, built)
   void add; void len
-  const words = starWords(spec)
-  return assemble('star', 'Five-point star', o, [piece], words, materialsLine(o, ['gold']))
+  return pieceOf(name, m, built, pose)
 }
 
 export function starWords(spec: StarSpec = STAR_SIZES.standard): string[] {

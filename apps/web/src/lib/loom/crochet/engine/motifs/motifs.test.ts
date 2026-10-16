@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { getMotif, listMotifs } from './index'
 import type { MotifId } from './types'
 
-const ALL: MotifId[] = ['star', 'heart', 'leaf', 'butterfly', 'daisy', 'rolled-rose', 'layered-rose', 'berry', 'leaf-vine']
+const ALL: MotifId[] = ['star', 'heart', 'leaf', 'butterfly', 'daisy', 'rolled-rose', 'layered-rose', 'berry', 'leaf-vine', 'garland']
 
 test('every round 8 and 9 motif is registered', () => {
   assert.deepEqual(listMotifs().map((d) => d.id).sort(), [...ALL].sort())
