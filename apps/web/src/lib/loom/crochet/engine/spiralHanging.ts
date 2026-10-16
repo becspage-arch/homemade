@@ -220,11 +220,13 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
     const { radiusMm, filaments } = pliedFilaments(center, piece.yr * 0.85, 3, 0.06)
     const path = piece.built.strandPath
     const colourAt = (k: number): string => piece.colourOf(path[Math.min(Math.floor(k / PER_SEG), path.length - 1)]!)
-    for (const s of colourStrokes(center, filaments, radiusMm, colourAt)) {
-      const same = strokes.find((t) => t.hex === s.hex && t.radiusMm === s.radiusMm)
-      if (same) same.filaments.push(...s.filaments)
-      else strokes.push(s)
-    }
+    // ONE STROKE PER PIECE (Fable round 1): the renderer's fine-cotton look
+    // re-plies each stroke from the mean of its filaments, so a stroke must hold
+    // exactly one plied set. Merging the three trees' plies into one stroke
+    // (equal lengths!) averaged them into a centreline between the trees with a
+    // 90 mm spread: giant tubes that took hours to render. build_yarn groups
+    // strokes by colour and radius itself, so this costs nothing.
+    strokes.push(...colourStrokes(center, filaments, radiusMm, colourAt))
   }
   // The renderer floats the lowest YARN to the table; the beads hang below
   // the trees, so the lift is measured from the yarn's lowest point.
