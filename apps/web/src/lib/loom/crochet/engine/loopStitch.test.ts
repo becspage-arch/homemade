@@ -58,7 +58,9 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   let face = -Infinity
   m.nodes.forEach((p, i) => { if (!m.loose?.[i] && p.z > face) face = p.z })
   assert.ok(m.nodes.every((p, i) => !m.loose?.[i] || p.z <= face + 1e-6), 'no loop passes into the head')
-  // Loops on rounds 1, 3, 5 only: the words say dc on rounds 2 and 4. Cow
+  // Loops on rounds 1, 3, 5 and 7 only (seven rounds at M since cow round
+  // 13): the words say dc on rounds 2, 4 and 6, and only the short edge
+  // loops of round 7 go over one finger. Cow
   // round 9: a plain dc every third stitch and a twist on every fourth loop,
   // said once before the rounds, from the same rule the build reads.
   const lines = writeHairInstructions(h)
@@ -67,7 +69,9 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   assert.match(lines[3]!, /^Round 2: 2 dc in each st\./)
   assert.match(lines[4]!, /^Round 3: \*1 lp st, 2 lp st in next st\* 6 times/)
   assert.match(lines[5]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)
-  assert.match(lines[6]!, /^Round 5: .*lp st.*one finger only/)
+  assert.match(lines[6]!, /^Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)$/)
+  assert.match(lines[7]!, /^Round 6: \*4 dc, 2 dc in next st\* 6 times/)
+  assert.match(lines[8]!, /^Round 7: .*lp st.*one finger only/)
   // The per-stitch rule: round 3 (index 2) has 18 stitches — loops in 12 of
   // them, every third plain, and the 4th, 8th and 12th loops twisted.
   const sts = Array.from({ length: 18 }, (_, c) => stitchAtOf(h, 2, c))
