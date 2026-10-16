@@ -7,7 +7,7 @@
  * audited like every other composition part; nothing drawn):
  *
  *  - a BIG round head on a smaller soft body (the toy-pose proportion: head
- *    equator 60 on a body of 54), sunk onto a short neck;
+ *    equator 60 on a body of 66), sunk deep into the shoulders with no neck;
  *  - a WIDE cream MUZZLE, a flat oval across the lower half of the face, its
  *    magic ring facing out so the two nostril stitches are sewn across it;
  *  - two cream HORNS: pointed cones worked tip first (a four-stitch ring IS
@@ -36,7 +36,7 @@ import type { AmigurumiPart, CompositionProgram, CompositionProp } from './compo
 import type { EmbroideryFeature } from './faceEmbroidery'
 import type { HairPatch } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
-import { sphereAscent, sphereRounds } from './sphereProfile'
+import { sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import type { YarnFibre, YarnWeight } from './program'
 import type { HeroStage } from '../../render/blenderScene'
@@ -67,7 +67,9 @@ export const COW_DEFAULTS: CowChoices = {
   // body spot — ours h 21° s 0.99 against the bar's h 13° s 0.85 (v equal), so
   // the chenille grade still pushes the dye orange and saturated. A duller,
   // slightly bluer red-brown dye renders as the bar's.
-  mainHex: '#825350',
+  // Round 21: the orchestrator's eye on r20 — "a touch maroon; the bar's is
+  // warm milk-chocolate". Hue up from 4° to 12° and a shade lighter.
+  mainHex: '#86564a',
   contrastHex: '#ead9bf',
   eyeMm: 12,
 }
@@ -89,7 +91,6 @@ interface Dir {
 
 interface CowProfile {
   body: number[]
-  neck: number[]
   head: number[]
   muzzle: number[]
   horn: number[]
@@ -97,7 +98,7 @@ interface CowProfile {
   frontLeg: number[]
   backLeg: number[]
   tail: number[]
-  /** Head sink onto the neck (mm). */
+  /** Head sink into the body's shoulders (mm): deep, there is no neck. */
   headSink: number
   /** How far the capsule muzzle's centre sits under the face (mm). */
   muzzleSeat: number
@@ -142,30 +143,40 @@ export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 15, 18, 18, 18, 15, 12, 9, 6]
  * widest low, where the legs sit, so the head no longer dwarfs it. Intrinsic
  * M: 108 wide x 118 tall (the old sphereRounds(54, 1) was 97 x 100).
  */
+// Round 21 (the orchestrator's look at r20: "the head is a big ball balanced on
+// a narrow neck; the bar's head sits DOWN into broad shoulders, with no neck at
+// all, and the body is about as wide as the head at the shoulders"). The pear
+// was widest at the hips and narrow at the top, so the head perched on it. Now
+// the body is a BALL about the head's width (equator 60 against the head's 60,
+// one straight round at the middle), and there is NO neck piece: the head is
+// sewn straight onto the ball, sunk `headSink` mm, so the shoulders run into
+// the cheeks and the front legs' tops sit beside them. (A can climbing in
+// sixes to 66 was tried first and relaxed to a 136 x 54 disc: a +6 round is
+// intrinsically flat, §8f-10.)
 export const COW_BODY_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: [...sphereAscent(30).up, 33, 36, 39, 42, 45, 48, 48, 48, 46, 43, 39, 35, 31, 27, 24, 18, 12, 6],
-  M: [...sphereAscent(42).up, 44, 46, 48, 50, 52, 54, 56, 58, 60, 60, 60, 58, 54, 49, 44, 39, 34, 30, 24, 18, 12, 6],
-  L: [...sphereAscent(48).up, 50, 52, 54, 56, 58, 60, 62, 64, 66, 66, 66, 64, 60, 55, 50, 45, 40, 35, 30, 24, 18, 12, 6],
+  S: sphereRounds(48, 1),
+  M: sphereRounds(60, 1),
+  L: sphereRounds(66, 1),
 }
 
 const PROFILES: Record<AmigurumiSize, CowProfile> = {
   S: {
-    body: COW_BODY_ROUNDS.S, neck: ballRounds(18, 2), head: sphereRounds(48, 2),
+    body: COW_BODY_ROUNDS.S, head: sphereRounds(48, 2),
     muzzle: sphereRounds(18, 5), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 15, 12, 9, 6],
-    frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 9, muzzleSeat: 4, earPress: 14, legLift: -14, frontLegLift: 13.3, eyeMm: 12,
+    frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
+    headSink: 18, muzzleSeat: 4, earPress: 14, legLift: -12, frontLegLift: 16.3, eyeMm: 14,
   },
   M: {
-    body: COW_BODY_ROUNDS.M, neck: ballRounds(18, 2), head: sphereRounds(60, 2),
+    body: COW_BODY_ROUNDS.M, head: sphereRounds(60, 2),
     muzzle: sphereRounds(24, 5), horn: COW_HORN_ROUNDS, ear: COW_EAR_ROUNDS,
-    frontLeg: tubeRounds(18, 12), backLeg: ballRounds(24, 4), tail: cordRounds(5),
-    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -14.1, frontLegLift: 8.1, eyeMm: 18,
+    frontLeg: tubeRounds(18, 12), backLeg: ballRounds(24, 5), tail: cordRounds(5),
+    headSink: 24, muzzleSeat: 5, earPress: 14, legLift: -14.1, frontLegLift: 8.1, eyeMm: 20,
   },
   L: {
-    body: COW_BODY_ROUNDS.L, neck: ballRounds(24, 2), head: sphereRounds(66, 2),
+    body: COW_BODY_ROUNDS.L, head: sphereRounds(66, 2),
     muzzle: sphereRounds(24, 7), horn: [...COW_HORN_ROUNDS.slice(0, 9), 12, 6], ear: [6, 9, 12, 15, 18, 21, 21, 21, 18, 15, 12, 9, 6],
-    frontLeg: tubeRounds(18, 14), backLeg: ballRounds(30, 4), tail: cordRounds(6),
-    headSink: 14, muzzleSeat: 5, earPress: 16, legLift: -10.5, frontLegLift: 10.2, eyeMm: 18,
+    frontLeg: tubeRounds(18, 14), backLeg: ballRounds(30, 5), tail: cordRounds(6),
+    headSink: 26, muzzleSeat: 5, earPress: 16, legLift: -8.5, frontLegLift: 12.2, eyeMm: 22,
   },
 }
 
@@ -175,7 +186,7 @@ export const COW_AUDITED_PROFILES: number[][] = (() => {
   const seen = new Set<string>()
   const out: number[][] = []
   for (const s of Object.values(PROFILES)) {
-    for (const r of [s.body, s.neck, s.head, s.muzzle, s.horn, s.ear, s.frontLeg, s.backLeg, s.tail]) {
+    for (const r of [s.body, s.head, s.muzzle, s.horn, s.ear, s.frontLeg, s.backLeg, s.tail]) {
       const key = r.join(',')
       if (seen.has(key)) continue
       seen.add(key)
@@ -243,15 +254,20 @@ const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
 // Round 19: joined further forward on the shoulder and a shallower seat, so the
 // tubes stand proud of the chest with a shadow line behind them (r18: fused).
 // Round 20: wider apart still — r19's hooves met as one block at the table.
-const FRONT_LEG_DIR = { x: 0.72, y: 0.95, z: 0.5 }
-const FRONT_LEG_AIM = { x: 0.26, y: 0.46, z: -1 }
+// Round 21: sewn at the shoulder CORNERS of the can (high and out to the
+// sides, so their tops are the broad shoulders under the cheeks) and hanging
+// nearly straight down — two chunky parallel tubes from shoulder to table.
+const FRONT_LEG_DIR = { x: 0.8, y: 0.7, z: 0.62 }
+const FRONT_LEG_AIM = { x: 0.1, y: 0.3, z: -1 }
 /** Back legs: worked sole first, sewn low on the SIDES of the body, lying
  *  forward along the table OUTSIDE the front legs, the rounded foot to the
  *  lens — so all four legs show, the bar's seated calf. */
 // Round 18: further out and forward, so the round feet show beside the
 // front legs instead of hiding behind them (the bar's four legs).
-const BACK_LEG_DIR = { x: 1.0, y: 0.7, z: -0.6 }
-const BACK_LEG_AIM = { x: 0.12, y: 1, z: 0.08 }
+// Round 21: splayed out WIDE and forward at each side — the bar's two big
+// round back feet sit outside the front legs with their toes level with the hooves.
+const BACK_LEG_DIR = { x: 1.0, y: 0.45, z: -0.5 }
+const BACK_LEG_AIM = { x: 0.14, y: 1, z: 0.05 }
 const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 /** The fringe circle's centre on the crown, tipped well forward so its lower
@@ -320,7 +336,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
     // head it stands on. Same yarn in the words; a lighter shade on the loops.
-    colourHex: lighten(colourHex, 0.24),
+    // Round 21: the same red-brown as the body, just catching the light (0.24
+    // read as a pale pinkish-mauve pancake beside the bar).
+    colourHex: lighten(colourHex, 0.08),
   }
 }
 
@@ -345,11 +363,10 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
 
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
-    { name: 'neck', stitch: 'sc', rounds: s.neck, colourHex: main, scale: 0.85, place: { on: 'body', overlap: 6, offset: { y: 1.5 } } },
     {
       name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
-      sewNote: 'with the magic ring under one ear and the closed end under the other, so the head sits wider than it is tall',
-      place: { on: 'neck', overlap: s.headSink, offset: { y: 1 }, axis: fd(HEAD_AXIS) },
+      sewNote: 'straight onto the top of the body with no neck, sunk well down so the shoulders run into the cheeks; the magic ring under one ear and the closed end under the other, so the head sits wider than it is tall',
+      place: { on: 'body', overlap: s.headSink, offset: { y: 2 }, axis: fd(HEAD_AXIS) },
     },
     {
       // The wide cream muzzle: a capsule worked end to end, stuffed, and sewn
@@ -408,7 +425,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { x: side * 22, y: 22, z: s.legLift },
+        offset: { x: side * 28, y: 30, z: s.legLift },
       },
     })
   }
@@ -442,13 +459,14 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     hair: [cowFringe(main, choices.size)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
-      'A sitting Highland calf in chenille: a stuffed body, a short neck and a big head worked side to side, a wide cream capsule muzzle, two cream horns, two flat pressed ears, ' +
+      'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a wide cream capsule muzzle, two cream horns, two flat pressed ears, ' +
       'two long front legs, two back legs and a tail, each worked as a spiral from a magic ring and sewn on, with a loop-stitch fringe sewn between the horns.',
   }
 }
 
 /** Eyes: on the head just above the muzzle's top corners. */
-const EYE_DIR = { x: 0.6, y: 1, z: 0.18 }
+// Round 21: lower (at the muzzle's top edge) and closer together — the bar's.
+const EYE_DIR = { x: 0.48, y: 1, z: 0.0 }
 
 /** Brown-only pile: a short dense fringe of real hair curves on the dark
  *  chenille (the bar's lit pile tips), none on the cream (grey whiskers). */
@@ -463,7 +481,7 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
   pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
   // Round 18: no pile on the fringe's plump loose loops (radius 2.8 mm; the fabric strand is 1.3).
   pile_max_radius_mm: 2.0,
-  crush_amt: 0.22, sat_mult: 0.85, pile_dark_only: true,
+  crush_amt: 0.22, sat_mult: 0.9, pile_dark_only: true,
 }
 
 /** The NOSTRILS: two bold diagonal straight stitches in dark brown yarn
