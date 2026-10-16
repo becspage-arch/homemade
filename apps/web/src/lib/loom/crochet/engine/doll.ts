@@ -290,6 +290,7 @@ function customRoundsOf(s: DollSize): number[][] {
     [5, 10],
     [HAIR_LEAF_SIDE.length + 1 + HAIR_LEAF_STEM + 1],
     [BOUQUET_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1],
+    [HAIR_ROSE_PETALS.slice(0, 3).reduce((a, p) => a + p.length + 1, 0) + 1],
   ]
 }
 
@@ -900,11 +901,15 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
       for (const side of [-1, 1] as const) {
         const sfx = side < 0 ? 'l' : 'r'
         parts.push(customPart(`rose-${sfx}`, customRoundsOf(s)[3]!, roseHex, (yr) => hairRose(yr, roseHex),
-          onCap(side * 70, 22, 2.5), hairRoseWords(FLOWER_LABEL, 2), 'Sew a rose to the hair cap high on each side, by its base.'))
+          onCap(side * 70, 22, 2.5), hairRoseWords(FLOWER_LABEL, 2), 'Sew a rose to the hair cap at each temple, by its base.'))
+        // A second, smaller rose behind each big one makes the bar's cluster.
+        parts.push(customPart(`small-rose-${sfx}`, customRoundsOf(s)[7]!, roseHex, (yr) => hairRose(yr, roseHex, HAIR_ROSE_PETALS.slice(0, 3), 'small rose'),
+          onCap(side * 94, 28, 2.2), hairRoseWords(FLOWER_LABEL, 2, HAIR_ROSE_PETALS.slice(0, 3)).map((l) => l.replace(/^Roses \(make 2\)/, 'Small roses (make 2)')),
+          'Sew a small rose just behind and above each rose.'))
         parts.push(customPart(`flower-${sfx}1`, customRoundsOf(s)[4]!, paleHex, (yr) => smallFlower(yr, paleHex),
           onCap(side * 48, 32, 1.2), smallFlowerWords(PALE_FLOWER_LABEL, 4), 'Sew the small flowers flat to the hair cap round each rose.'))
         parts.push(customPart(`flower-${sfx}2`, customRoundsOf(s)[4]!, paleHex, (yr) => smallFlower(yr, paleHex),
-          onCap(side * 96, 14, 1.2), [], ''))
+          onCap(side * 58, 10, 1.2), [], ''))
         parts.push(customPart(`leaf-${sfx}`, customRoundsOf(s)[5]!, DOLL_LEAF_HEX, (yr) => hairLeaf(yr, DOLL_LEAF_HEX),
           // The leaf lies along the side of the head, its tip toward the back and down.
           onCap(side * 84, 6, 1.2, turnToCamera({ x: -side * 0.4, y: -1, z: -0.5 })), hairLeafWords(LEAF_LABEL, 2), 'Tuck a leaf under each rose and sew it flat to the cap.'))
@@ -998,7 +1003,7 @@ export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: numbe
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
   'doll-S': '05e8497a',
-  'doll-M': 'f41579a0',
-  'doll-L': 'b9475bc2',
+  'doll-M': '7e265d01',
+  'doll-L': '335f3ddd',
 }
 
