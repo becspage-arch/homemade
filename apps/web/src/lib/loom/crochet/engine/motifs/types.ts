@@ -33,6 +33,9 @@ export interface MotifOptions {
   /** A smaller version where the motif has one (the star: 'small', a tree
    *  topper). Default 'standard'. */
   size?: 'standard' | 'small' | 'topper'
+  /** A PUFFED motif where one exists (the star): two identical pieces sewn
+   *  wrong sides together with a little stuffing, so the flat face plumps. */
+  puffed?: boolean
 }
 
 export interface V3 {

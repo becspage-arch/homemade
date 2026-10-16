@@ -9,6 +9,22 @@ test('every round 8 and 9 motif is registered', () => {
   assert.deepEqual(listMotifs().map((d) => d.id).sort(), [...ALL].sort())
 })
 
+test('star: the spiral trees\' topper size is audit clean and about 42 mm at lace', () => {
+  const b = getMotif('star').build({ size: 'topper', yarnWeight: 'lace' })
+  assert.deepEqual(b.problems, [])
+  assert.equal(b.pieces.length, 1)
+  assert.ok(b.sizeMm.width > 34 && b.sizeMm.width < 50, `topper width ${b.sizeMm.width.toFixed(1)} mm`)
+  assert.ok(b.words.some((w) => /ch 4, sl st in 2nd ch from hook, dc in next ch, htr in next ch/.test(w)))
+})
+
+test('star: puffed = two identical stars, front and back, with sewing words', () => {
+  const b = getMotif('star').build({ size: 'topper', puffed: true })
+  assert.deepEqual(b.problems, [])
+  assert.deepEqual(b.pieces.map((p) => p.name), ['front', 'back'])
+  assert.equal(b.pieces[0]!.built.model.nodes.length, b.pieces[1]!.built.model.nodes.length)
+  assert.ok(b.words.some((w) => /second star/.test(w)) && b.words.some((w) => /wrong sides together/.test(w)))
+})
+
 for (const id of ALL) {
   test(`${id}: genuinely stitched (audit clean), with words and a size`, () => {
     const b = getMotif(id).build()
