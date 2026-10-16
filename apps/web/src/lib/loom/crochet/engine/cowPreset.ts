@@ -339,19 +339,21 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // one given a full twist so it springs into a tight curl, the strand fatter.
     // Round 24: BIG open rings lying over the head (r23's small tight curls
     // stood as a dense cauliflower hat).
-    loop: { lengthYr: 4.0, halfWidthYr: 1.8, droopDeg: -62, vary: 0.4 },
+    loop: { lengthYr: 4.4, halfWidthYr: 2.0, droopDeg: -62, vary: 0.4 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
     // fringe is a mix, not a tiling.
-    plainEvery: 3,
+    // Round 26: loops in every OTHER stitch — the bar's curls are distinct rings
+    // with the head showing between them, not a wall-to-wall cap.
+    plainEvery: 2,
     // Round 23: every third (every other read as a dense "brain" of curls;
     // the bar's mound is open rings with a tight curl among them).
-    curlEvery: 4,
+    curlEvery: 3,
     curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.2 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 4.6, halfWidthYr: 1.9, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 5.6, halfWidthYr: 2.0, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
         : k === last
           ? { lengthYr: 3.6, halfWidthYr: 1.8, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,

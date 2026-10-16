@@ -277,7 +277,11 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   const ordinal = (n: number): string => ({ 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth' }[n] ?? `${n}th`)
   if (h.plainEvery || h.curlEvery) {
     let rule = 'In the loop-stitch rounds below'
-    if (h.plainEvery) rule += `, work a plain dc in place of every ${ordinal(h.plainEvery)} lp st (so two of every three stitches carry a loop)`
+    if (h.plainEvery) {
+      const n = h.plainEvery
+      const share = n === 2 ? 'every other stitch carries a loop' : `${['', '', '', 'two', 'three', 'four', 'five', 'six', 'seven'][n] ?? n - 1} of every ${['', '', '', 'three', 'four', 'five', 'six', 'seven', 'eight'][n] ?? n} stitches carry a loop`
+      rule += `, work a plain dc in place of every ${ordinal(n)} lp st (so ${share})`
+    }
     if (h.curlEvery) {
       const ht = h.curlLoop?.twist ?? STITCHES.loopcurl.loop?.twist ?? 0
       const tw = ht <= 1 ? 'half a twist' : ht === 2 ? 'one full twist' : `${ht / 2} twists`

@@ -59,11 +59,11 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   m.nodes.forEach((p, i) => { if (!m.loose?.[i] && p.z > face) face = p.z })
   assert.ok(m.nodes.every((p, i) => !m.loose?.[i] || p.z <= face + 1e-6), 'no loop passes into the head')
   // Loops on rounds 1, 3 and 5 only (five rounds at M since cow round 23,
-  // bulky chenille): the words say dc on rounds 2 and 4. Cow round 9: a plain
-  // dc every third stitch; round 23: every third loop a full twist, said once
+  // bulky chenille): the words say dc on rounds 2 and 4. Cow round 26: a plain
+  // dc every other stitch; round 23: every third loop a full twist, said once
   // before the rounds, from the same rule the build reads.
   const lines = writeHairInstructions(h)
-  assert.match(lines[1]!, /every third lp st.*every third loop one full twist/)
+  assert.match(lines[1]!, /every second lp st \(so every other stitch carries a loop\).*every third loop one full twist/)
   // Cow round 17/23: the crown loops are the tallest of the mound, worked
   // over one more finger than the rest; the words follow the loop length.
   assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round two fingers/)
@@ -72,11 +72,11 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   assert.match(lines[5]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)
   assert.match(lines[6]!, /^Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)$/)
   assert.match(lines[7]!, /^Fasten off/)
-  // The per-stitch rule: round 3 (index 2) has 18 stitches — loops in 12 of
-  // them, every third plain, and the 3rd, 6th, 9th and 12th loops twisted.
+  // The per-stitch rule (cow round 26): round 3 (index 2) has 18 stitches —
+  // loops in 9 of them, every other plain, and the 3rd, 6th and 9th loops twisted.
   const sts = Array.from({ length: 18 }, (_, c) => stitchAtOf(h, 2, c))
-  assert.equal(sts.filter((x) => x === 'sc').length, 6)
-  assert.equal(sts.filter((x) => x === 'loopcurl').length, 4)
+  assert.equal(sts.filter((x) => x === 'sc').length, 9)
+  assert.equal(sts.filter((x) => x === 'loopcurl').length, 3)
   assert.equal(stitchAtOf(h, 1, 0), 'sc', 'round 2 is a plain round')
 })
 
