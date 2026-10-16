@@ -166,6 +166,8 @@ export interface FaceLayout {
   gaugeScale?: number
   /** A light muzzle wants a pink nose (a bunny), a dark one a dark nose. */
   pinkNose?: boolean
+  /** Blush patch size multiplier (default 1; the sleepy bunny's is larger). */
+  blushScale?: number
   /** No muzzle: the nose and mouth go on the head under the eyes (this
    *  elevation), or nowhere (a beak). */
   noseOnHeadElevDeg?: number
@@ -317,8 +319,9 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const cs = side * half(bs)
       // A rounder, softer patch than a satin pad, in a fluffy yarn so the
       // render shows one soft pale-pink patch, not a ribbed pad of rows.
-      const hw = 0.62 * g
-      const hh = 0.55 * g
+      const bsc = L.blushScale ?? 1
+      const hw = 0.62 * g * bsc
+      const hh = 0.55 * g * bsc
       // Worked from the inner edge outward on each side, so the two cheeks
       // are exact mirror images stitch for stitch.
       const fill = satinRows(br - hh, br + hh, 0.09 * g, cs, (r) => {
