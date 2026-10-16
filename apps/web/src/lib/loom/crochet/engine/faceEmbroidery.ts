@@ -284,11 +284,11 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       // one out of each backstitch hole: each a straight stitch down and a
       // little outward, the outermost from the corner fanning out most (the
       // bar's lashes are short, straight and even, about a third of the lid).
-      for (const [i, len, out_] of [[3, 0.4, 0.05], [4, 0.44, 0.13], [5, 0.44, 0.22], [6, 0.38, 0.32]] as const) {
+      for (const [i, len, out_] of [[3, 0.48, 0.05], [4, 0.52, 0.13], [5, 0.52, 0.22], [6, 0.46, 0.32]] as const) {
         const p = arc.pts[i]!
         stitches.push({ from: p, to: { round: p.round + len * g, st: p.st + side * out_ * g }, taut: true })
       }
-      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 0.9, 'Dark brown embroidery thread', stitches))
+      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 1.2, 'Dark brown embroidery thread', stitches))
     }
   } else if (style === 'stitched') {
     for (const side of [-1, 1] as const) {

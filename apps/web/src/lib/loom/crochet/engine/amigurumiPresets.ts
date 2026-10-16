@@ -218,13 +218,16 @@ export const HAT_HEX_DEFAULT = '#b7a4d8'
 /** The nightcap band's middle, above the head centre (fraction of the head
  *  radius). Round 6 at the hat's own 0.6 put the band's lower edge on the
  *  eye line and the hat swallowed the top half of the head. */
-/** Sleepy bunny 4: the band sits LOWER and hugs the head (`TOY_HAT_FIT`),
- *  a tall turned-up ribbed cuff; at 0.6R sized to the equator it hung loose
- *  round the narrower upper head as a bucket-hat brim. */
-const TOY_HAT_BRIM_FRAC = 0.48
-const TOY_HAT_FIT = 0.9
-const TOY_HAT_BAND_ROUNDS = 5
-const TOY_HAT_BRIM_ROUNDS = 6
+/** Sleepy bunny 4: the band HUGS the head where it sits (`TOY_HAT_FIT` is
+ *  the head-radius fraction the band is cut to; sized to the equator, 0.97,
+ *  it hung loose round the narrower upper head as a bucket-hat brim, r3-6),
+ *  high on the brow so the forehead shows under it (r4-1/r4-2 at 0.48-0.56R
+ *  hid the brow); a 4 + 4 turned-up cuff (6 brim over 5 band rounds flared
+ *  out past the head as a lampshade, r4-1). */
+const TOY_HAT_BRIM_FRAC = 0.68
+const TOY_HAT_FIT = 0.78
+const TOY_HAT_BAND_ROUNDS = 4
+const TOY_HAT_BRIM_ROUNDS = 4
 /** The nightcap's flop (round 8): the bar's cone folds over right at the
  *  crown and falls steeply beside the ear; the hat's default stood 0.55R
  *  straight up first and read as a tall stiff cone. */
@@ -243,22 +246,28 @@ const TOY_HAT_BRIM_ROUNDS = 6
  *  instead of standing as a straight cone first (r3-3a stood, r3-3b more so). */
 /** Round 5: the tail falls FORWARD of the ear (azimuth 40, toward the lens),
  *  so the pompom hangs beside the cheek in view, not behind the ear (r3-4). */
-/** Sleepy bunny 4: with the ears hanging close to the body the tail can
- *  fall to the SIDE (azimuth 15) and reach past the ear to shoulder height;
- *  140 deg carries the pompom out beside the shoulder rather than down the
- *  cheek. */
-const TOY_HAT_BEND = { startFrac: 0.42, angleDeg: 140, dirDeg: 15 }
-const TOY_HAT_BEND_LENGTH_FRAC = 1.0
+/** Sleepy bunny 4: the SLOUCH. The bend starts just above the band (0.1R)
+ *  and runs over a LONG ramp (1.5R) so the whole shoulder leans over the
+ *  crown and the tail falls forward of the ear (dir 32) to the cheek: a fold
+ *  starting higher only bent the slender tail and left the shoulder standing
+ *  as a gnome's peak (0.35R, r4-3) or a tall dome (0.42R, r4-1), and a short
+ *  0.8R ramp from 0.22R coiled the cone over the crown as a turban (r4-2). */
+const TOY_HAT_BEND = { startFrac: 0.1, angleDeg: 152, dirDeg: 32 }
+const TOY_HAT_BEND_LENGTH_FRAC = 1.5
 /** The slender tail: +2 every second round for most of its length, so the
  *  cone is ~2.4R long (the bar's tail reaches the cheek); the hat's default
  *  five slow rounds left it 1.8R (proofs/bunny r3-2). */
-const TOY_HAT_SLOW_TIP_ROUNDS = 15
-const TOY_HAT_TILT_BACK_DEG = 12
-const TOY_POMPOM_RADIUS_FRAC = 0.4
+/** Sleepy bunny 4: 13 slow rounds — at 15 the pompom hung at the arm (r4-2),
+ *  at 10 above the head centre (bar: ~0.55R below it). */
+const TOY_HAT_SLOW_TIP_ROUNDS = 13
+const TOY_HAT_TILT_BACK_DEG = 22
+const TOY_POMPOM_RADIUS_FRAC = 0.36
 /** Round 5-6: the cone's rate. At +2 a round (the hat's default) the cone was
  *  ~55 rounds on a 70-st band and curled up on the crown as a turban (r4);
  *  at +4 it was so short the whole cap flopped flat like a lid (r5). +3. */
-const TOY_HAT_CONE_STEP = 4
+/** Sleepy bunny 4: +5 — with the long slouch ramp the +4 shoulder still
+ *  stood as a tall round bell (r4-4); +5 is the bar's low slumped crown. */
+const TOY_HAT_CONE_STEP = 5
 /** The bar's pompom: cream, fluffy, on the lilac cap. */
 export const POMPOM_HEX_DEFAULT = '#f4ecdd'
 const TOY_POMPOM_FIBRE: YarnFibre = 'fluff'
@@ -960,6 +969,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
           aim: fd({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
           spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
           seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
+          offset: { z: LOP_EAR_LIFT[choices.size] },
         },
       })
     }
@@ -1092,6 +1102,10 @@ const LOP_EAR_BEND = { startFrac: 0.2, lengthFrac: 0.45, angleDeg: 10, dirDeg: 1
 /** Sleepy bunny 3: the lined face turns IN toward the face and the lens, so
  *  the camera sees the cream outer edge and the pink as an inner strip. */
 const LOP_EAR_SPIN = { x: -0.5, y: 1 }
+/** Sleepy bunny 4: the ears hang to the table (aim z -1), so the join is
+ *  lifted by what the pressed tip would otherwise sink below it (measured
+ *  per size off the settled geometry; the table gate is 0.5 mm). */
+const LOP_EAR_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 1.8, L: 1.4 }
 /** The toy's muzzle trim per size (the fine-gauge `toyMuzzle` profile). */
 const TOY_MUZZLE_SCALE: Record<AmigurumiSize, number> = { S: 0.95, M: 0.95, L: 0.9 }
 /** Sleepy bunny 4: the bar's muzzle is only a SMALL, subtle pale patch
@@ -1126,19 +1140,31 @@ const TOY_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.85, M: 0.95, L: 1.0 
  *  show ABOVE the bigger feet (the bar's). */
 /** Sleepy bunny 4: two clear arm TUBES hanging down the tummy from the
  *  shoulders, converging so the paws meet in the middle (the bar's). */
-const TOY_ARM_DIR = { x: 0.7, y: 0.8, z: 1.1 }
+const TOY_ARM_DIR = { x: 0.75, y: 0.85, z: 1.0 }
+/** Sleepy bunny 4: the bunny's arms hang from the shoulder as two tubes
+ *  down the tummy, converging (the bar); the bear keeps its folded arms. */
+const BUNNY_ARM_DIR = { x: 0.7, y: 0.8, z: 1.1 }
 /** Sleepy-bunny pass: aimed further in so the two paws MEET at the centre of
  *  the tummy (the bar's; round 6's -0.42 left a gap between them). */
-const TOY_ARM_AIM = { x: -0.45, y: 0.55, z: -1 }
+const TOY_ARM_AIM = { x: -0.95, y: 1.05, z: -0.45 }
+const BUNNY_ARM_AIM = { x: -0.45, y: 0.55, z: -1 }
 const TOY_ARM_PROUD: Record<AmigurumiSize, number> = { S: 4.5, M: 6, L: 7 }
 const TOY_ARM_SCALE = 1.12
 /** Sleepy bunny 4: joined lower, so the feet sit on the table in front. */
-const TOY_LEG_DIR = { x: 0.58, y: 0.8, z: -0.75 }
+const TOY_LEG_DIR = { x: 0.58, y: 0.8, z: -0.5 }
+/** Sleepy bunny 4: the bunny's feet join lower on the pear body and tip up
+ *  less (they sat high in the frame); the bear's sit as before. */
+const BUNNY_LEG_DIR = { x: 0.58, y: 0.8, z: -0.75 }
 /** Sleepy-bunny pass: the bar's feet are splayed a touch wider and the soles
  *  tip further up to the lens. */
 /** Sleepy bunny 4: the soles tip up less, so the feet sit lower in the frame. */
-const TOY_LEG_AIM = { x: 0.34, y: 1, z: 0.15 }
+const TOY_LEG_AIM = { x: 0.34, y: 1, z: 0.26 }
+const BUNNY_LEG_AIM = { x: 0.34, y: 1, z: 0.15 }
 const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.3, M: 0.5, L: 4.2 }
+/** Sleepy bunny 4: the bunny's own feet (`bunnyFoot`, joined lower on the
+ *  pear body) settle below the table by a different amount from the bear's,
+ *  so each size is lifted by its own measured sink. */
+const BUNNY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.6, M: 3.3, L: 4.2 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
 const TOE_PAD_U = -0.65
@@ -1153,6 +1179,8 @@ const TOE_BEAN_V = { outer: 0.92, inner: 0.36 }
 
 function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
   const bear = choices.base === 'bear'
+  const armDir = bear ? TOY_ARM_DIR : BUNNY_ARM_DIR
+  const armAim = bear ? TOY_ARM_AIM : BUNNY_ARM_AIM
   const main = choices.mainHex
   const contrast = choices.contrastHex
   const paws = choices.paws
@@ -1166,22 +1194,24 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
       ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
       place: {
         on: 'body',
-        dir: { x: side * TOY_ARM_DIR.x, y: TOY_ARM_DIR.y, z: TOY_ARM_DIR.z },
-        aim: { x: side * TOY_ARM_AIM.x, y: TOY_ARM_AIM.y, z: TOY_ARM_AIM.z },
+        dir: { x: side * armDir.x, y: armDir.y, z: armDir.z },
+        aim: { x: side * armAim.x, y: armAim.y, z: armAim.z },
         seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
         offset: { y: TOY_ARM_PROUD[choices.size] },
       },
     })
   }
-  const legAim = (side: -1 | 1): Dir => ({ x: side * TOY_LEG_AIM.x, y: TOY_LEG_AIM.y, z: TOY_LEG_AIM.z })
+  const legDir = bear ? TOY_LEG_DIR : BUNNY_LEG_DIR
+  const legAimSet = bear ? TOY_LEG_AIM : BUNNY_LEG_AIM
+  const legAim = (side: -1 | 1): Dir => ({ x: side * legAimSet.x, y: legAimSet.y, z: legAimSet.z })
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'leg-l' : 'leg-r', stitch: 'sc', rounds: bear ? s.bigFoot : s.bunnyFoot, colourHex: main,
       place: {
         on: 'body',
-        dir: { x: side * TOY_LEG_DIR.x, y: TOY_LEG_DIR.y, z: TOY_LEG_DIR.z },
+        dir: { x: side * legDir.x, y: legDir.y, z: legDir.z },
         aim: legAim(side), seat: 5, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: TOY_LEG_LIFT[choices.size] },
+        offset: { z: (bear ? TOY_LEG_LIFT : BUNNY_LEG_LIFT)[choices.size] },
       },
     })
   }
