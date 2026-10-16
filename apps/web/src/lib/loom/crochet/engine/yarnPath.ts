@@ -43,6 +43,15 @@ export interface StitchLink {
   below: number
   /** 'through' only: which z-side of `below` the hook must settle on (±1). */
   zSign?: number
+  /**
+   * The link's own fabric frame (free-form motifs, motifs/kit.ts): the
+   * along-row unit direction (ax, ay) and the row-height unit direction
+   * (hx, hy) in world xy at the link. A star point or a leaf is worked along
+   * a chain at an angle no single piece-wide frame describes, so each link
+   * carries the frame it was worked in and the audit measures it there.
+   * Absent = the build's own frame (every existing build unchanged).
+   */
+  axis?: { ax: number; ay: number; hx: number; hy: number }
 }
 
 export interface BuiltContinuous {
