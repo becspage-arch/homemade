@@ -769,13 +769,16 @@ def bark_material(hexcol):
     mat = _principled("bark", hexcol, rough=0.92, spec=0.15)
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
-    vec = _obj_coords(nt, (0.35, 3.0, 3.0))
+    # Spiral r5: furrows a few mm wide, stretched ~2 cm along the twig (at
+    # (0.35, 3, 3) x 3.5 the cracks were ~1 mm: sub-pixel on an 800 px hero,
+    # so the branch rendered as a smooth brown pole).
+    vec = _obj_coords(nt, (0.2, 1.4, 1.4))  # r6: r5 cells read a touch large and regular
     vo = nt.nodes.new("ShaderNodeTexVoronoi")
     vo.feature = "DISTANCE_TO_EDGE"
     vo.inputs["Scale"].default_value = 3.5
     nt.links.new(vec, vo.inputs["Vector"])
     nz = nt.nodes.new("ShaderNodeTexNoise")
-    nz.inputs["Scale"].default_value = 6.0
+    nz.inputs["Scale"].default_value = 2.5
     nz.inputs["Detail"].default_value = 8.0
     nt.links.new(vec, nz.inputs["Vector"])
     crack = _math(nt, "POWER", _math(nt, "MULTIPLY", vo.outputs["Distance"], 4.0, clamp=True), 0.6)

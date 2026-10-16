@@ -35,7 +35,7 @@ export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#a37d
  * points) rendered as a spindly starfish beside the bar's plump, compact star:
  * the bar's body is solid and its points short: about 11 yarn widths across.
  * Two rounds (5, 10) and ch-3 points (sl st, dc) give that: ~40 mm at sport
- * (0.58 of the tree width; bar ≈ 0.53; r3's ch-4 points at fine were 14 yarn
+ * (~31 mm at fine, 0.50 of the tree width posed; bar ≈ 0.53; r3's ch-4 points at fine were 14 yarn
  * widths and still read wiry). Registered into the motifs star's size
  * table from here (additive; the motifs lane owns star.ts) under this key.
  */
@@ -144,7 +144,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const X = cols.map((_, i) => (i - (cols.length - 1) / 2) * (W + gap))
 
   // The star.
-  const starW = o.starWeight ?? 'sport'
+  const starW = o.starWeight ?? 'fine' // r5: sport posed at 0.66 W (bar 0.53); fine ≈ 0.50
   const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE as 'small', colours: { main: gold } })
   const starPiece = star.pieces[0]!
   const syr = YARN_WEIGHT_RADIUS_MM[starW]
@@ -192,7 +192,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
       pose: (p) => {
         const qx = p.x * sc - p.y * ss
         const qy = p.x * ss + p.y * sc
-        return { x: x0 + qx, y: p.z + t.maxRadiusMm * 0.15, z: zStar + qy }
+        return { x: x0 + qx, y: p.z + t.maxRadiusMm * 0.07, z: zStar + qy } // r5: the star stood 0.15 R in front of the top; now its lower points straddle it
       },
     })
     // The cord, from the star's top tip up over the branch.
