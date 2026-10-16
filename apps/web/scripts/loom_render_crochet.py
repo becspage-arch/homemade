@@ -2239,7 +2239,7 @@ VARIANT_TUNE = {
     "worktable": dict(warmth=0.35, exposure=0.1, key=0.7),
     "dried": dict(warmth=0.5, exposure=0.2, key=0.7),
     "rain": dict(warmth=0.0, exposure=0.25, key=0.8),
-    "autumn": dict(warmth=0.95, exposure=0.0, key=0.55),
+    "autumn": dict(warmth=0.75, exposure=0.05, key=0.6),
     "spring": dict(warmth=0.2, exposure=0.25, key=0.75),
     "cot": dict(warmth=0.15, exposure=0.25, key=0.8),
     "shelf": dict(warmth=0.45, exposure=0.15, key=0.75),
@@ -2271,20 +2271,30 @@ def _tune(view, stage, key, view_key, base):
 
 # ---- shared prop helpers --------------------------------------------------
 
+def _beside(R, H, half, side):
+    """x for a NEAR prop of half-width `half` so it clears the piece's
+    footprint (R) with a small gap: near props sit beside the piece, never
+    in front of it (r1: a bauble and a gift covered the paws)."""
+    return side * (R * 1.2 + half + 0.12 * H)
+
+
 def _rbox(name, root, mat, x0, x1, y0, y1, z0, z1, bevel, rot_z=0.0):
     """A box with rounded (bevelled) edges, optionally turned about its centre."""
     bm = bmesh.new()
     bmesh.ops.create_cube(bm, size=1.0)
-    bmesh.ops.bevel(bm, geom=list(bm.edges), offset=bevel / max(1e-6, min(x1 - x0, y1 - y0, z1 - z0)),
+    for vt in bm.verts:                       # r2: real size first, then an absolute bevel
+        vt.co.x *= (x1 - x0)
+        vt.co.y *= (y1 - y0)
+        vt.co.z *= (z1 - z0)
+    bmesh.ops.bevel(bm, geom=list(bm.edges), offset=min(bevel, 0.45 * min(x1 - x0, y1 - y0, z1 - z0)),
                     segments=3, profile=0.5, affect="EDGES")
     cxm, cym = 0.5 * (x0 + x1), 0.5 * (y0 + y1)
     c, sn = math.cos(rot_z), math.sin(rot_z)
     for vt in bm.verts:
-        lx = vt.co.x * (x1 - x0)
-        ly = vt.co.y * (y1 - y0)
+        lx, ly = vt.co.x, vt.co.y
         vt.co.x = cxm + lx * c - ly * sn
         vt.co.y = cym + lx * sn + ly * c
-        vt.co.z = z0 + (vt.co.z + 0.5) * (z1 - z0)
+        vt.co.z = z0 + vt.co.z + 0.5 * (z1 - z0)
     return _bm_object(name, bm, root, mat, smooth=True)
 
 
@@ -2491,22 +2501,31 @@ def _yarn_ball(name, root, hexcol, x, y, r, seed=0.0, tail=None):
     """A wound ball of yarn: a core under ~18 wraps of plump strand laid on great
     circles at scattered angles (the criss-cross of a hand-wound ball)."""
     mat = _principled(name, hexcol, rough=0.85, sheen=0.6, spec=0.15)
-    core = _principled(name + "_core", tuple(c * 0.7 for c in _lin(hexcol)[:3]) + (1.0,), rough=0.9)
+    core = _principled(name + "_core", tuple(c * 0.82 for c in _lin(hexcol)[:3]) + (1.0,), rough=0.9, sheen=0.5)
     _spheres(name + "_core", root, core, [(x, y, r * 0.96)], r * 0.9, subdiv=3)
-    th = r * 0.075
-    for k in range(18):
-        a = _hash01(k, seed + 1) * math.pi
-        b = (_hash01(k, seed + 2) - 0.5) * math.pi
+    th = r * 0.045                             # r2: ~70 fine wraps (18 thick ones read as a plastic cage)
+    cu = bpy.data.curves.new(name + "_wraps", type="CURVE")
+    cu.dimensions = "3D"
+    cu.bevel_depth = th
+    cu.bevel_resolution = 2
+    for k in range(70):
+        a = _hash01(k, seed + 1) * math.pi * 2
+        b = math.asin(2 * _hash01(k, seed + 2) - 1)
         nx_, ny_, nz_ = math.cos(a) * math.cos(b), math.sin(a) * math.cos(b), math.sin(b)
         n = Vector((nx_, ny_, nz_)).normalized()
         u = n.cross(Vector((0, 0, 1)) if abs(nz_) < 0.9 else Vector((1, 0, 0))).normalized()
         v = n.cross(u)
-        pts = []
+        rr = r * (0.92 + 0.05 * _hash01(k, seed + 3))
+        sp = cu.splines.new("POLY")
+        sp.points.add(40)
         for i in range(41):
             t = 2 * math.pi * i / 40
-            p = (u * math.cos(t) + v * math.sin(t)) * (r * 0.93)
-            pts.append((x + p.x, y + p.y, r * 0.96 + p.z))
-        _curve("%s_w%d" % (name, k), root, mat, pts, th)
+            p = (u * math.cos(t) + v * math.sin(t)) * rr
+            sp.points[i].co = (x + p.x, y + p.y, r * 0.96 + p.z, 1.0)
+    ob = bpy.data.objects.new(name + "_wraps", cu)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.parent = root
+    cu.materials.append(mat)
     if tail:
         _curve(name + "_tail", root, mat, [(x, y - r * 0.6, r * 0.25)] + tail, th)
 
@@ -2520,7 +2539,7 @@ def _stage_linen_basket(root, H, R, s, D, vis, light):
     lin = linen_material("throw", "#dccfb8")
     _throw("throw", root, lin, vis, H, R, D, 0.05, back=0.5, seed=2.7, wl_scale=1.8)
     _box("wall", root, plaster_material("wall", "#efe5d6"), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
-    wicker = linen_material("wicker", "#b48a58", weave=0.9)
+    wicker = linen_material("wicker", "#a8875e", weave=0.9)
     by = 0.42 * D
     bx = -0.62 * vis.hw(by)
     br, bh = 0.85 * H, 0.75 * H
@@ -2533,12 +2552,13 @@ def _stage_linen_basket(root, H, R, s, D, vis, light):
         _yarn_ball("ball%d" % i, root, cols[i], bx + ox * br, by + oy * br, r, seed=i * 3.1)
         for ob in [o for o in bpy.data.objects if o.name.startswith("ball%d" % i)]:
             ob.location.z += bh * 0.62
-    y2 = -0.05 * s
-    _yarn_ball("ballf1", root, "#c98f87", 0.7 * vis.hw(y2), y2, 0.3 * H, seed=11.0,
-               tail=[(0.55 * vis.hw(y2), y2 - 0.3 * H, 0.06), (0.45 * vis.hw(y2), y2 - 0.1 * H, 0.06),
-                     (0.4 * vis.hw(y2), y2 - 0.5 * H, 0.06)])
-    y3 = 0.2 * s
-    _yarn_ball("ballf2", root, "#e8dcc6", 0.82 * vis.hw(y3), y3, 0.34 * H, seed=17.0)
+    y2 = -0.02 * s
+    x2 = _beside(R, H, 0.22 * H, 1)
+    _yarn_ball("ballf1", root, "#c98f87", x2, y2, 0.22 * H, seed=11.0,
+               tail=[(x2 - 0.25 * H, y2 - 0.3 * H, 0.06), (x2 - 0.1 * H, y2 - 0.5 * H, 0.06),
+                     (x2 - 0.4 * H, y2 - 0.7 * H, 0.06)])
+    y3 = 0.25 * s
+    _yarn_ball("ballf2", root, "#e8dcc6", 0.85 * vis.hw(y3), y3, 0.28 * H, seed=17.0)
     light((1.3 * s, 0.05 * s, 0.7 * s), (0, 0, 0.4 * H), 1.6, 0.7 * s, GOLD)
     light((-0.4 * s, 0.35 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.8, 1.6 * s, WARM_SOFT)
 
@@ -2594,7 +2614,7 @@ def _stage_linen_worktable(root, H, R, s, D, vis, light):
     y1 = 0.12 * s
     _scissors(root, H, -0.75 * vis.hw(y1), y1, math.radians(-30), brass, brass)
     yb = 0.38 * s
-    _yarn_ball("ball", root, "#9fae94", 0.7 * vis.hw(yb), yb, 0.38 * H, seed=4.0,
+    _yarn_ball("ball", root, "#9fae94", 0.75 * vis.hw(yb), yb, 0.3 * H, seed=4.0,
                tail=[(0.62 * vis.hw(yb), yb - 0.6 * H, 0.06), (0.55 * vis.hw(y0), y0 + 0.2 * H, 0.06),
                      (0.5 * vis.hw(y0), y0, 0.06)])
     # folded swatches (little knit squares) stacked back right
@@ -2690,19 +2710,20 @@ def _stage_windowsill_rain(root, H, R, s, D, vis, light):
     for k in range(160):
         x = w["wx0"] + (w["wx1"] - w["wx0"]) * _hash01(k, 21)
         z = w["wz0"] + (w["wz1"] - w["wz0"]) * _hash01(k, 22)
-        pts.append((x, w["fy0"] - 0.2, z, (0.08 + 0.12 * _hash01(k, 23) ** 2) * H * 0.4))
+        pts.append((x, w["fy0"] - 0.2, z, (0.08 + 0.12 * _hash01(k, 23) ** 2) * H * 0.8))
     _spheres("drops", root, drop, pts, 0.03 * H, subdiv=2)
     # a soft grey-blue knit throw under the piece
     knit = knit_material("throw", "#c9ced2", stitch_cm=1.5)
     _throw("throw", root, knit, vis, H, R, D, 0.04, back=0.32, seed=1.7, right=0.85, hem=0.04 * H)
     mug = _principled("mug", "#8e9e94", rough=0.35, spec=0.45, coat=0.3)
-    my = 0.32 * D
-    mx = -0.62 * vis.hw(my)
-    _lathe("mug", root, mug, mx, my, [(0, 0), (0.34 * H, 0), (0.37 * H, 0.05 * H), (0.38 * H, 0.75 * H),
-                                      (0.35 * H, 0.77 * H), (0.34 * H, 0.12 * H), (0, 0.12 * H)])
-    _cyl("tea", root, _principled("tea", "#6a4630", rough=0.1, spec=0.6), mx, my, 0.55 * H, 0.345 * H, 0.345 * H, 0.06 * H)
-    _curve("mug_handle", root, mug, [(mx - 0.36 * H, my, 0.62 * H), (mx - 0.56 * H, my, 0.55 * H),
-                                     (mx - 0.56 * H, my, 0.3 * H), (mx - 0.36 * H, my, 0.22 * H)], 0.05 * H)
+    my = 0.45 * D
+    mx = -0.6 * vis.hw(my)
+    m_ = 0.7                                   # r2: a mug at mug size (was a bucket)
+    _lathe("mug", root, mug, mx, my, [(0, 0), (0.34 * H * m_, 0), (0.37 * H * m_, 0.05 * H * m_), (0.38 * H * m_, 0.75 * H * m_),
+                                      (0.35 * H * m_, 0.77 * H * m_), (0.34 * H * m_, 0.12 * H * m_), (0, 0.12 * H * m_)])
+    _cyl("tea", root, _principled("tea", "#6a4630", rough=0.1, spec=0.6), mx, my, 0.55 * H * m_, 0.345 * H * m_, 0.345 * H * m_, 0.06 * H)
+    _curve("mug_handle", root, mug, [(mx - 0.36 * H * m_, my, 0.62 * H * m_), (mx - 0.56 * H * m_, my, 0.55 * H * m_),
+                                     (mx - 0.56 * H * m_, my, 0.3 * H * m_), (mx - 0.36 * H * m_, my, 0.22 * H * m_)], 0.05 * H * m_)
     by = 0.6 * D
     bx = -0.85 * vis.hw(by)
     z0 = 0.0
@@ -2750,22 +2771,21 @@ def _stage_windowsill_autumn(root, H, R, s, D, vis, light):
     w = _window_wall(root, H, s, D, vis, plaster, frame, out, -0.9, 0.55)
     knit = knit_material("throw", "#d8b36a", stitch_cm=1.5)
     _throw("throw", root, knit, vis, H, R, D, 0.04, back=0.3, seed=3.1, right=0.7, hem=0.04 * H)
-    _pumpkin(root, H, 0.68 * vis.hw(0.45 * D), 0.45 * D, 0.55 * H, "#d9772e")
-    _pumpkin(root, H, 0.95 * vis.hw(0.62 * D), 0.62 * D, 0.38 * H, "#e9dcc0", name="pumpkin2")
-    cols = ("#a8461f", "#c98a2e", "#7a2a22", "#b8662a")
+    _pumpkin(root, H, 0.7 * vis.hw(0.6 * D), 0.6 * D, 0.4 * H, "#c27a40")
+    _pumpkin(root, H, 1.0 * vis.hw(0.7 * D), 0.7 * D, 0.3 * H, "#e6dcc6", name="pumpkin2")
+    cols = ("#9c4a26", "#b98a3a", "#6e2a24", "#a8642e")
     for ci, col in enumerate(cols):
         specs = []
-        for k in range(9):
-            kk = ci * 9 + k
+        for k in range(6):
+            kk = ci * 6 + k
             y = (-0.2 + 0.55 * _hash01(kk, 31)) * s
             side = -1 if _hash01(kk, 32) < 0.62 else 1
             x = side * (0.45 + 0.6 * _hash01(kk, 33)) * vis.hw(y)
             if abs(x) < R * 1.3 and y < R:
                 x = side * (R * 1.4 + 0.3 * H)
-            L = (0.32 + 0.14 * _hash01(kk, 34)) * H
-            zc = 0.05 + (0.06 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
-            specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.42, 0.35, 3 if kk % 2 else 0,
-                          0.05 * (_hash01(kk, 36) - 0.3)))
+            L = (0.22 + 0.1 * _hash01(kk, 34)) * H
+            zc = 0.08 + (0.06 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
+            specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.26, 0.12, 0, 0.0))
         _leaves("leaves%d" % ci, root, _principled("leaf%d" % ci, col, rough=0.7, sheen=0.2), specs)
     light((w["wx1"] * 1.4, D * 0.6, 0.45 * s), (0, 0, 0.45 * H), 2.4, 0.5 * s, (1.0, 0.72, 0.45))
     light((-0.7 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.25, 1.2 * s, WARM)
@@ -2795,7 +2815,9 @@ def _stage_windowsill_spring(root, H, R, s, D, vis, light):
     for k, col in enumerate(cols):
         a = math.radians(-30 + 60 * k / 6.0)
         Lk = (1.35 + 0.35 * _hash01(k, 41)) * H
-        top = (jx + math.sin(a) * Lk * 0.45, jy + 0.12 * H * (_hash01(k, 42) - 0.5), 0.9 * H + math.cos(a) * Lk * 0.7)
+        zmax = min(1.9 * H, vis.ztop(jy) - 0.55 * H)     # r2: the heads sit IN frame
+        top = (jx + math.sin(a) * Lk * 0.45, jy + 0.12 * H * (_hash01(k, 42) - 0.5),
+               min(0.9 * H + math.cos(a) * Lk * 0.7, zmax - 0.25 * H * _hash01(k, 43)))
         _curve("tst%d" % k, root, stem, [(jx + 0.05 * H * (k - 3), jy, 0.08 * H), (jx + math.sin(a) * 0.2 * H, jy, 0.9 * H), top], 0.025 * H)
         cup = _principled("tulip%d" % k, col, rough=0.5, sheen=0.3)
         _lathe("tulip%d" % k, root, cup, top[0], top[1], [(0, top[2] - 0.02 * H), (0.12 * H, top[2] + 0.05 * H),
@@ -2842,7 +2864,7 @@ def _stage_nursery_cot(root, H, R, s, D, vis, light):
     _throw("sheet", root, sheet, vis, H, R, D, 0.05, back=0.5, seed=5.2, wl_scale=1.6)
     _box("wall", root, plaster_material("wall", "#e4e6e8", mottle=0.04), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
     paint = _principled("cotpaint", "#f5f3ef", rough=0.4, spec=0.4)
-    ry = 0.42 * D
+    ry = 0.62 * D
     hw = vis.hw(ry)
     top = vis.zmid(ry) + 0.55 * (vis.ztop(ry) - vis.zmid(ry))
     _rbox("cot_rail_top", root, paint, -1.3 * hw, 1.3 * hw, ry - 0.12 * H, ry + 0.12 * H, top, top + 0.22 * H, 0.06 * H)
@@ -2850,15 +2872,16 @@ def _stage_nursery_cot(root, H, R, s, D, vis, light):
     nb = 11
     for i in range(nb):
         x = -1.2 * hw + 2.4 * hw * i / (nb - 1)
-        _cyl("cot_bar%d" % i, root, paint, x, ry, 0.2 * H, 0.07 * H, 0.07 * H, top - 0.15 * H, seg=24)
-    by = 0.75 * D
-    bz = vis.ztop(by) - 0.25 * H
-    _bunting(root, H, (-1.2 * vis.hw(by), by, bz), (1.2 * vis.hw(by), by, bz + 0.1 * H), 0.9 * H, 13,
+        _cyl("cot_bar%d" % i, root, paint, x, ry, 0.2 * H, 0.05 * H, 0.05 * H, top - 0.15 * H, seg=24)
+    by = 0.45 * D                              # r2: strung IN FRONT of the rails
+    bz = vis.ztop(by) - 0.15 * H
+    _bunting(root, H, (-1.2 * vis.hw(by), by, bz), (1.2 * vis.hw(by), by, bz + 0.1 * H), 0.6 * H, 13,
              ("#efc6c4", "#cfe3d6", "#f6e3a8", "#c9d9ec"), 0.55 * H, 0.65 * H)
     # a little muslin square folded beside the piece, front right
     y = -0.05 * s
-    _rbox("muslin", root, linen_material("muslin", "#d9e6dc", weave=6.0), 0.55 * vis.hw(y), 0.95 * vis.hw(y),
-          y - 0.35 * H, y + 0.35 * H, 0.05, 0.14 * H, 0.04 * H, rot_z=0.25)
+    xm = _beside(R, H, 0.3 * H, 1)
+    _rbox("muslin", root, linen_material("muslin", "#d9e6dc", weave=6.0), xm - 0.3 * H, xm + 0.4 * H,
+          y - 0.35 * H, y + 0.35 * H, 0.05, 0.07 * H, 0.025 * H, rot_z=0.25)
     light((1.2 * s, 0.1 * s, 0.9 * s), (0, 0, 0.4 * H), 1.5, 0.9 * s, (1.0, 0.97, 0.94))
     light((-0.3 * s, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 1.0, 1.6 * s, (0.98, 0.98, 1.0))
 
@@ -2916,7 +2939,7 @@ def _stage_nursery_rug(root, H, R, s, D, vis, light):
     bcols = ("#efc0bb", "#f5dfa0", "#bcd3e6", "#e0c49e", "#cbbfe0")
     by = 0.35 * D
     bx = 0.62 * vis.hw(by)
-    b = 0.5 * H
+    b = 0.32 * H
     z = 0.05
     for i, (ox, oy, rz) in enumerate(((0.0, 0.0, 0.1), (0.55, 0.1, -0.15), (0.25, 0.0, 0.3))):
         zz = 0.05 if i < 2 else 0.05 + b
@@ -2925,8 +2948,8 @@ def _stage_nursery_rug(root, H, R, s, D, vis, light):
         _rbox("block%d" % i, root, wood_material("block%d" % i, bcols[i], bcols[i], rough=0.5),
               bx + ox * H * 1.0 - b / 2, bx + ox * H * 1.0 + b / 2, by + oy * H - b / 2, by + oy * H + b / 2,
               zz, zz + b, 0.06 * H, rot_z=rz)
-    y = -0.12 * s
-    x = -0.7 * vis.hw(y)
+    y = -0.02 * s
+    x = _beside(R, H, 0.2 * H, -1)
     ob = _rbox("block_f", root, wood_material("block_f", bcols[4], bcols[4], rough=0.5), x - b / 2, x + b / 2, y - b / 2, y + b / 2,
                0.0, b, 0.06 * H, rot_z=0.5)
     ob.location = (0, 0, 0.12)
@@ -2986,17 +3009,17 @@ def _stage_christmas_baubles(root, H, R, s, D, vis, light):
     gold = metal_material("#d8b25a")
     champ = _principled("bchamp", "#e8d9bd", rough=0.2, spec=0.6, coat=0.6)
     ribbon = _principled("ribbon", "#8e1a1f", rough=0.5, sheen=0.5)
-    for i, (fx, drop, rr, m) in enumerate(((-0.55, 0.55, 0.26, red), (0.6, 0.45, 0.22, gold), (0.15, 0.25, 0.16, champ), (0.95, 0.75, 0.2, red))):
+    for i, (fx, drop, rr, m) in enumerate(((-0.7, 0.5, 0.17, red), (0.62, 0.42, 0.15, gold), (-0.2, 0.22, 0.11, champ), (1.0, 0.7, 0.14, red))):
         x = fx * vis.hw(y1)
         ztop_ = zt - 0.25 * H + (0.35 * H) * (fx + 0.9) / 2.3
         z = ztop_ - drop * H
         _curve("bthread%d" % i, root, ribbon, [(x, y1 - 0.5, ztop_), (x, y1 - 0.5, z + rr * H * 1.3)], 0.012 * H)
         _bauble(root, H, x, y1 - 0.5, z, rr * H, m, gold, "bauble%d" % i)
     # two baubles resting on the fur, front left and back right
-    yf = -0.12 * s
-    _bauble(root, H, -0.7 * vis.hw(yf), yf, 0.22 * H, 0.22 * H, gold, gold, "bauble_f")
+    yf = -0.05 * s
+    _bauble(root, H, _beside(R, H, 0.15 * H, -1), yf, 0.15 * H, 0.15 * H, gold, gold, "bauble_f")
     yb = 0.3 * s
-    _bauble(root, H, 0.75 * vis.hw(yb), yb, 0.28 * H, 0.28 * H, red, gold, "bauble_b")
+    _bauble(root, H, 0.75 * vis.hw(yb), yb, 0.2 * H, 0.2 * H, red, gold, "bauble_b")
     _bokeh(root, D, H, vis, 120, (1.0, 0.76, 0.42), 40.0, salt=13.0)
     light((1.2 * s, -0.05 * s, 0.8 * s), (0, 0, 0.4 * H), 1.3, 0.7 * s, GOLD)
     light((0.0, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.3, 1.6 * s, (1.0, 0.82, 0.6))
@@ -3035,21 +3058,22 @@ def _stage_christmas_snow(root, H, R, s, D, vis, light):
     yf = -0.15 * s
     _pine_sprig("pine_f", root, needle, twig, (-1.3 * vis.hw(yf), yf, 0.2 * H), (-0.7 * vis.hw(yf), yf + 1, 0.12 * H), 0.03 * H, 0.26 * H)
     silver = metal_material("#cfd4da")
-    _bauble(root, H, -0.62 * vis.hw(y1) + 0.3 * H, y1 - 0.5 * H, 0.2 * H, 0.2 * H, silver, silver, "bauble_s")
-    # candle in a glass holder, back right
-    cy = 0.32 * D
-    cx = 0.62 * vis.hw(cy)
+    _bauble(root, H, _beside(R, H, 0.14 * H, -1), 0.05 * s, 0.14 * H, 0.14 * H, silver, silver, "bauble_s")
+    # a tea light in a small glass holder, back right (r1: a big grey bin)
+    cy = 0.5 * D
+    cx = 0.55 * vis.hw(cy)
+    hs = 0.55
     wax = _principled("wax", "#f4ede0", rough=0.5, spec=0.2)
     wax.node_tree.nodes["Principled BSDF"].inputs["Subsurface Weight"].default_value = 0.4
-    _lathe("holder", root, glass_material("holder", "#f2f4f6"), cx, cy, [(0, 0), (0.38 * H, 0), (0.42 * H, 0.6 * H),
-                                                                         (0.39 * H, 0.6 * H), (0.35 * H, 0.05 * H), (0, 0.05 * H)])
-    _cyl("candle", root, wax, cx, cy, 0.05 * H, 0.3 * H, 0.3 * H, 0.42 * H)
-    flame = _emit_mat("flame", (1.0, 0.62, 0.22), 120.0)
+    _lathe("holder", root, glass_material("holder", "#fbf6ee"), cx, cy, [(0, 0), (0.38 * H * hs, 0), (0.42 * H * hs, 0.6 * H * hs),
+                                                                         (0.39 * H * hs, 0.6 * H * hs), (0.35 * H * hs, 0.05 * H), (0, 0.05 * H)])
+    _cyl("candle", root, wax, cx, cy, 0.05 * H, 0.3 * H * hs, 0.3 * H * hs, 0.3 * H * hs)
+    flame = _emit_mat("flame", (1.0, 0.62, 0.22), 160.0)
     bm = bmesh.new()
-    m = Matrix.Translation(Vector((cx, cy, 0.56 * H))) @ Matrix.Diagonal((1.0, 1.0, 2.2, 1.0))
+    m = Matrix.Translation(Vector((cx, cy, 0.3 * H * hs + 0.12 * H))) @ Matrix.Diagonal((1.0, 1.0, 2.2, 1.0))
     bmesh.ops.create_icosphere(bm, subdivisions=3, radius=0.05 * H, matrix=m)
     _bm_object("flame", bm, root, flame, smooth=True)
-    light((cx, cy, 0.62 * H), (cx - 2, cy - 5, 0.1 * H), 0.2, 0.3 * H, (1.0, 0.66, 0.3))
+    light((cx, cy, 0.4 * H), (cx - 2, cy - 5, 0.1 * H), 0.3, 0.3 * H, (1.0, 0.66, 0.3))
     light((0.2 * w["wx0"], D - 3, w["wz0"] + 0.5 * (w["wz1"] - w["wz0"])), (0, 0, 0.45 * H), 1.4, 1.0 * s, (0.80, 0.88, 1.0))
     light((-0.8 * s, -0.2 * s, 0.8 * s), (0, 0, 0.4 * H), 0.4, 1.0 * s, WARM_SOFT)
 
@@ -3073,30 +3097,30 @@ def _stage_christmas_gifts(root, H, R, s, D, vis, light):
     with red ribbon and twine, a plaid wool blanket under the piece, warm bokeh
     on a cream wall; morning-gold key from the left."""
     _ground(root, wood_material("floor", "#a77f58", "#6e4d33"), s, D)
-    plaid = gingham_material("plaid", "#e9dfcf", "#a5262b", check_cm=2.4)
+    plaid = gingham_material("plaid", "#ece3d3", "#b25a55", check_cm=3.2)
     _throw("plaid", root, plaid, vis, H, R, D, 0.05, back=0.42, seed=9.1, wl_scale=1.6)
     _box("wall", root, plaster_material("wall", "#e8dcc8", mottle=0.06), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
-    kraft = _principled("kraft", "#b98f62", rough=0.75)
+    kraft = _principled("kraft", "#a88c6c", rough=0.75)
     stripe = gingham_material("stripe", "#f3ece0", "#c0333a", check_cm=0.5)
     red = _principled("gribbon", "#a8161f", rough=0.35, sheen=0.4, spec=0.4)
     twine = _principled("gtwine", "#e9dcc4", rough=0.9)
-    gy = 0.42 * D
-    gx = 0.62 * vis.hw(gy)
-    _gift(root, H, gx, gy, 1.1 * H, 0.95 * H, 0.75 * H, kraft, red, "gift1", rot=0.15)
-    g2 = _gift(root, H, gx + 0.05 * H, gy + 0.05 * H, 0.7 * H, 0.6 * H, 0.5 * H, stripe, twine, "gift2", rot=-0.3)
+    gy = 0.5 * D
+    gx = 0.7 * vis.hw(gy)
+    _gift(root, H, gx, gy, 0.8 * H, 0.7 * H, 0.55 * H, kraft, red, "gift1", rot=0.15)
+    _gift(root, H, gx + 0.05 * H, gy + 0.05 * H, 0.5 * H, 0.45 * H, 0.38 * H, stripe, twine, "gift2", rot=-0.3)
     for ob in [o for o in bpy.data.objects if o.name.startswith("gift2")]:
-        ob.location.z += 0.75 * H
-    gy2 = 0.58 * D
-    _gift(root, H, -0.7 * vis.hw(gy2), gy2, 1.2 * H, 1.0 * H, 1.0 * H, stripe, red, "gift3", rot=-0.1)
-    yf = -0.08 * s
-    _gift(root, H, -0.72 * vis.hw(yf), yf, 0.5 * H, 0.5 * H, 0.4 * H, kraft, twine, "gift4", rot=0.5)
+        ob.location.z += 0.55 * H
+    gy2 = 0.65 * D
+    _gift(root, H, -0.75 * vis.hw(gy2), gy2, 0.9 * H, 0.75 * H, 0.75 * H, stripe, red, "gift3", rot=-0.1)
+    yf = 0.02 * s
+    _gift(root, H, _beside(R, H, 0.22 * H, -1), yf, 0.38 * H, 0.38 * H, 0.3 * H, kraft, twine, "gift4", rot=0.5)
     # a sprig with berries on the little gift
     needle = _principled("needle", "#294a2f", rough=0.6, spec=0.3)
     twig = _principled("twig", "#5a4030", rough=0.9)
-    x4 = -0.72 * vis.hw(yf)
-    _pine_sprig("gsprig", root, needle, twig, (x4 - 0.2 * H, yf, 0.45 * H), (x4 + 0.2 * H, yf - 0.1 * H, 0.47 * H), 0.0, 0.12 * H, density=18)
+    x4 = _beside(R, H, 0.22 * H, -1)
+    _pine_sprig("gsprig", root, needle, twig, (x4 - 0.15 * H, yf, 0.34 * H), (x4 + 0.15 * H, yf - 0.08 * H, 0.36 * H), 0.0, 0.09 * H, density=18)
     _spheres("gberries", root, _principled("berry", "#ad1c22", rough=0.18, spec=0.5, coat=0.5),
-             [(x4 + 0.03 * H * k, yf - 0.05 * H, 0.5 * H + 0.02 * H * (k % 2), 0.04 * H) for k in range(3)], 0.04 * H)
+             [(x4 + 0.03 * H * k, yf - 0.05 * H, 0.38 * H + 0.02 * H * (k % 2), 0.03 * H) for k in range(3)], 0.03 * H)
     _bokeh(root, D, H, vis, 90, (1.0, 0.74, 0.42), 40.0, near=0.7, salt=17.0)
     light((-1.2 * s, 0.0, 0.9 * s), (0, 0, 0.4 * H), 1.4, 0.7 * s, GOLD)
     light((0.0, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.5, 1.6 * s, (1.0, 0.85, 0.65))
