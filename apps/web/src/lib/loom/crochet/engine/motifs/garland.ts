@@ -38,7 +38,7 @@ import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 import type { MotifProp } from './motifScene'
 
-export const GARLAND_COLOURS = { cord: '#4e5844', cord2: '#d9cbb2', leaf: '#5e6a55' } // olive, a cream cord (the bar mixes sage and cream cords), grey-sage (r9's #4a553d rendered grass green with the tinted sheen)
+export const GARLAND_COLOURS = { cord: '#4e5844', cord2: '#d9cbb2', leaf: '#5e6a55', leaf2: '#6e7a68' } // r14: a second, greyer sage for every other vine (the bar's leaves vary) // olive, a cream cord (the bar mixes sage and cream cords), grey-sage (r9's #4a553d rendered grass green with the tinted sheen)
 /** The cords, left to right: x (mm) along the branch, their length in chains,
  *  and what they are: a leaf vine, or a plain cord with a berry at the end. */
 export const GARLAND_CORDS: { x: number; ch: number; kind: 'vine' | 'berry'; cream?: boolean }[] = [
@@ -140,6 +140,9 @@ export const GARLAND_BAND: { what: 'rose' | 'puff' | 'bud' | 'daisy' | 'butterfl
   { what: 'daisy', x: 60, y: -76, z: 4, spin: -12 },
   { what: 'bud', x: -108, y: -74, z: 6, spin: 20 },
   { what: 'bud', x: 136, y: -70, z: 6, spin: -20 },
+  // r14: two buds trailing below the band so it does not end in a straight shelf
+  { what: 'bud', x: -112, y: -104, z: 5, spin: 10 },
+  { what: 'bud', x: 84, y: -100, z: 5, spin: -25 },
   { what: 'butterfly', x: -112, y: -8, z: 6, spin: 20 },
   { what: 'butterfly', x: 100, y: -12, z: 6, spin: -15 },
 ]
@@ -168,6 +171,7 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
     return { x: se.x, y: se.y, z: se.z }
   }
   const vineLeaf = leafPiece(yr, col.leaf!, GARLAND_VINE_LEAF_SIDE, 2, 'vine leaf')
+  const vineLeaf2 = leafPiece(yr, col.leaf2!, GARLAND_VINE_LEAF_SIDE, 2, 'vine leaf')
   const bandLeaf = leafPiece(yr, col.leaf!, GARLAND_LEAF_SIDE, 2, 'leaf')
   const leafAt = (proto: MotifPiece, at: V3, angDeg: number, flip: boolean, name: string): MotifPiece => {
     const se = stemEnd(proto)
@@ -192,13 +196,18 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
       return { x: best.x, y: best.y, z: best.z + yr * 1.2 }
     }
     if (cd.kind === 'vine') {
+      // r14: every other vine in the greyer sage with a slightly different leaf rhythm and droop, so the vines do not read as one repeated unit
+      const grey = (i >> 1) % 2 === 1
+      const leaf = grey ? vineLeaf2 : vineLeaf
+      const every = grey ? VINE_EVERY + 1 : VINE_EVERY
+      const droop = grey ? 42 : 32
       let side = i % 2 === 0
-      for (let k = VINE_FIRST; k < cd.ch - 2; k += VINE_EVERY) {
-        pieces.push(leafAt(vineLeaf, at(k), side ? -35 : -145, side, `vine ${i + 1} leaf ${k}`))
+      for (let k = VINE_FIRST + (grey ? 2 : 0); k < cd.ch - 2; k += every) {
+        pieces.push(leafAt(leaf, at(k), side ? -droop : -180 + droop, side, `vine ${i + 1} leaf ${k}`))
         side = !side
       }
       // a last leaf at the very end of the vine, hanging straight down
-      pieces.push(leafAt(vineLeaf, at(cd.ch - 1), -90, false, `vine ${i + 1} tip leaf`))
+      pieces.push(leafAt(leaf, at(cd.ch - 1), -90, false, `vine ${i + 1} tip leaf`))
       // a berry part way down every other vine (the bar hangs berries among its leaves too)
       if (i % 4 === 0) {
         const mid = at(Math.round(cd.ch * 0.55) + 2)
@@ -224,7 +233,7 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
     pieces.push(...placeMotif(motifs[b.what], `${b.what} ${counts[b.what]}`, { x: b.x, y: b.y, z: b.z }, b.spin ?? 0))
   }
   const words = garlandWords()
-  return assemble('garland', 'Flower wall hanging', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta', 'dusty blue']).concat(['Lace-weight cotton in olive, cream and grey-sage for the cords and leaves and in cream and mustard for the daisies, with a 1.75 mm hook.', 'A piece of driftwood about 36 cm long and a length of jute string to hang it.']))
+  return assemble('garland', 'Flower wall hanging', o, pieces, words, materialsLine(o, ['olive', 'sage', 'grey-sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta', 'dusty blue']).concat(['Lace-weight cotton in olive, cream and grey-sage for the cords and leaves and in cream and mustard for the daisies, with a 1.75 mm hook.', 'A piece of driftwood about 36 cm long and a length of jute string to hang it.']))
 }
 
 /** The driftwood branch the garland hangs from, and its hanging string, as scene props. */
