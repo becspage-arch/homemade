@@ -105,18 +105,19 @@ export interface SpiralSpec {
  * a 1.2 yr core at the tip, where the chain's inner leg crossed the axis and
  * its crossings slipped in the relax; htr's taller crown opens it to 2.3 yr):
  * the increase sets the coil (7 in every 4 ch at the tip, easing to 21 in every
- * 20 ch for the wide base coil), the pitch opens a little down the tree (r1's
- * 9–18 yr left gaps of twice the band; the bar's gap is about one band), and
- * two plain rows of UK dc along the edge give the band its depth
- * (161 x 74 mm at dk, band 0.22 W, about 7 turns).
+ * 20 ch for the wide base coil), the pitch opens a little down the tree (the
+ * bar's pitch is about two bands: r1's 9–18 yr read sparse, r2's 8–15 over 95
+ * chains stacked seven turns like saucers), and two plain rows of UK dc along
+ * the edge give the band its depth (about 150 x 74 mm at dk, band 0.22 W,
+ * about 5.5 turns).
  */
 export const TREE_BLOCKS: SpiralBlock[] = [
-  { id: 'hdc', chains: 10, perChain: 1.75, pitchYr: 8 },
-  { id: 'hdc', chains: 11, perChain: 1.5, pitchYr: 10 },
-  { id: 'hdc', chains: 16, perChain: 1.33, pitchYr: 12 },
-  { id: 'hdc', chains: 22, perChain: 1.2, pitchYr: 13 },
-  { id: 'hdc', chains: 20, perChain: 1.1, pitchYr: 14 },
-  { id: 'hdc', chains: 16, perChain: 1.05, pitchYr: 15 },
+  { id: 'hdc', chains: 8, perChain: 1.75, pitchYr: 10 },
+  { id: 'hdc', chains: 9, perChain: 1.5, pitchYr: 12 },
+  { id: 'hdc', chains: 13, perChain: 1.33, pitchYr: 14 },
+  { id: 'hdc', chains: 18, perChain: 1.2, pitchYr: 15 },
+  { id: 'hdc', chains: 16, perChain: 1.1, pitchYr: 16 },
+  { id: 'hdc', chains: 12, perChain: 1.05, pitchYr: 17 },
 ]
 /** How far the ribbon's outer edge droops below horizontal: the bar's bands
  *  show their upper face, tilted ~40–45° (44 keeps the body 2.2 tall; 48 let

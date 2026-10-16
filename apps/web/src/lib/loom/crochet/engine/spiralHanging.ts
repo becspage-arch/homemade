@@ -30,10 +30,10 @@ import type { HeroStage } from '../../render/blenderScene'
 // Pass 2: the gold is a bright metallic thread (#a37d2e at metallic 0.7
 // rendered a dull mustard-brown: metal reflects the dark room, so the base is
 // lighter and the metal blend lower).
-export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#d2a74a' }
+export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#dcb355' }
 /** The bar's star and cord are a metallic gold thread: strokes[].metallic
  *  (renderer, additive) blends the yarn material toward a brushed metal. */
-export const GOLD_METALLIC = 0.45
+export const GOLD_METALLIC = 0.3
 /** The beads' polished gold. */
 export const BEAD_GOLD = '#e2b853'
 
@@ -156,7 +156,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   // the star, about the star's own height (Rebecca, pass 2; the pass-1 loop at
   // 0.45 of the tree's height read long), in a finer gold thread.
   const cordMm = o.cordMm ?? tip.R * 2
-  const branchR = W * 0.14
+  const branchR = W * 0.1 // pass 2 r3: the bar's twig is about a tenth of a tree's width
   const cyr = YARN_WEIGHT_RADIUS_MM[o.cordWeight ?? 'fine']
   const wrapR = branchR + cyr * 1.1
   const cord = buildCord(cyr, gold, cordMm, wrapR)
@@ -204,8 +204,10 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     // Beads on the tail where the ribbon ENDS at the base (the fasten-off tail
     // comes out of the last stitch, not the axis): a small spacer, then a
     // round gold bead (the bar's: ≈ 0.12 of the tree width, touching the tree).
+    // Pass 2 r3: the bar's bead hangs at the very bottom tip, under the centre
+    // of the base coil (the tail is threaded across from the ribbon's end).
     const be = t.baseEnd
-    const bx = x0 + be.x * cs - be.y * sn, by = be.x * sn + be.y * cs
+    const bx = x0, by = 0
     const zb = zTop + (be.z - t.topZ)
     // Pass 2: the bead is bigger and brighter and sits tight under the ribbon's
     // end (r1's hung a bead's height below it on its spacer).
@@ -229,7 +231,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     ...t0.words.map((w) => (w.startsWith('Ch ') ? `Tree (make 3, 2 in green and 1 in cream): ${w}` : w)),
     `Star (make 3, in gold): ${star.words.join(' ')}`,
     `Hanging cord (make 3, in gold): ch ${cord.chains + 1}, fasten off. Sew both ends to the top point of a star to make a loop.`,
-    `Making up: sew the bottom points of each star over the top of its tree. Thread the tail at the base through a small gold spacer bead and a 7 mm gold bead, knot and trim. Hang from a branch by the loop.`,
+    `Making up: sew the bottom points of each star over the top of its tree. Run the tail at the base across to the centre of the bottom coil, thread it through a small gold spacer bead and a 10 mm gold bead, knot and trim. Hang from a branch by the loop.`,
   )
   void UK
   return { pieces, props, trees, words, problems, lowZ }
@@ -270,7 +272,7 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
     view: {
       bgHex: '#efece6',
       marginFactor: 0.12,
-      tiltDeg: o.tiltDeg ?? 80,
+      tiltDeg: o.tiltDeg ?? 86, // pass 2 r3: nearly level, so the band reads edge-on like the bar's rope (80 showed the coils' upper faces as saucers)
       resY: o.resY ?? 1200,
       openFabric: true,
       yawDeg: o.yawDeg ?? 0,
@@ -278,7 +280,7 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
       lightRig: 'product' as const,
       groundScale: 40,
       stage: o.stage ?? ('christmas' as HeroStage),
-      stageTiltDeg: o.tiltDeg ?? 80,
+      stageTiltDeg: o.tiltDeg ?? 86,
       stageZoom: o.stageZoom ?? 1.0,
       // r4: the stage's f/0.14 blurred the branch and the outer trees; the
       // bar keeps the branch and all three trees sharp over a soft room.
