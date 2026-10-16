@@ -59,6 +59,16 @@ export interface HairPatch {
    *  stand tallest, the edge loops over one, so the tuft mounds up in the
    *  middle instead of lying as one flat layer. */
   loopByRound?: (k: number) => Partial<LoopShape> | undefined
+  /** A plain dc every Nth stitch of a loop round (3 = loops in two of every
+   *  three stitches): the bar cow's rings are not wall to wall, and the gap
+   *  lets each ring fall its own way. Absent / 0 = a loop in every stitch. */
+  plainEvery?: number
+  /** Every Nth loop (counted along the round) is a twisted loop — worked as
+   *  `loopcurl` with `curlLoop` — so a few tighter curls sit among the open
+   *  rings. Absent / 0 = every loop the patch's `stitch`. */
+  curlEvery?: number
+  /** The twisted loop's shape overrides (merged over `loop`/`loopByRound`). */
+  curlLoop?: Partial<LoopShape>
   /** Gravity on the loose loops per relax iteration, in yarn radii (default
    *  HAIR_GRAVITY). A big chenille ring is springy and holds itself open, so
    *  a long-looped tuft wants less than the small-looped default. */
@@ -86,6 +96,20 @@ export function isLoopRound(h: HairPatch, k: number): boolean {
   return h.loopRounds ? h.loopRounds.includes(k) : k >= h.firstLoopRound
 }
 
+/** The stitch worked at stitch c (0-based) of round k: the plain dc every
+ *  `plainEvery`th stitch, the twisted loop every `curlEvery`th loop, else the
+ *  patch's loop stitch — the one rule the build and the words both read. */
+export function stitchAtOf(h: HairPatch, k: number, c: number): StitchId {
+  if (!isLoopRound(h, k)) return 'sc'
+  if (h.plainEvery && (c + 1) % h.plainEvery === 0) return 'sc'
+  if (h.curlEvery) {
+    // Count the loops (not the plain stitches) along the round.
+    const loopsBefore = h.plainEvery ? c - Math.floor(c / h.plainEvery) : c
+    if ((loopsBefore + 1) % h.curlEvery === 0) return 'loopcurl'
+  }
+  return h.stitch
+}
+
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
 export const HAIR_GRAVITY = 0.0025
 
@@ -110,10 +134,15 @@ function patchFrame(dir: { x: number; y: number; z: number }): { u: V3; e1: V3; 
 
 /** Build + relax one patch in its own frame (worked face +z, loops −z). */
 export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
+  const perStitch = !!(h.plainEvery || h.curlEvery)
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
     loopByRound: h.loopByRound,
+    ...(perStitch ? { stitchAt: (k: number, c: number) => stitchAtOf(h, k, c) } : {}),
+    ...(h.curlEvery && h.curlLoop
+      ? { loopByStitch: (k: number, c: number) => (stitchAtOf(h, k, c) === 'loopcurl' ? h.curlLoop : undefined) }
+      : {}),
   })
   const { e1, e2, w } = patchFrame(h.dir)
   const g = yr * (h.gravity ?? HAIR_GRAVITY)
@@ -242,6 +271,19 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
     const word = ['one finger', 'two fingers', 'three fingers'][n - 1]!
     if (n === base && (k > 0 || base === 1)) return ''
     return n > base ? ` (wrap the yarn round ${word} for these taller loops)` : n < base ? ` (wrap the yarn round ${word} only, for shorter loops)` : ` (wrap the yarn round ${word})`
+  }
+  // Loops in two of every three stitches, a twist on every Nth loop: said
+  // once, from the same rule the geometry is built with.
+  const ordinal = (n: number): string => ({ 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth' }[n] ?? `${n}th`)
+  if (h.plainEvery || h.curlEvery) {
+    let rule = 'In the loop-stitch rounds below'
+    if (h.plainEvery) rule += `, work a plain dc in place of every ${ordinal(h.plainEvery)} lp st (so two of every three stitches carry a loop)`
+    if (h.curlEvery) {
+      const ht = h.curlLoop?.twist ?? STITCHES.loopcurl.loop?.twist ?? 0
+      const tw = ht <= 1 ? 'half a twist' : ht === 2 ? 'one full twist' : `${ht / 2} twists`
+      rule += `${h.plainEvery ? ', and' : ','} give every ${ordinal(h.curlEvery)} loop ${tw} on your finger before you close the stitch, for a tighter curl among the open ones`
+    }
+    lines.push(rule + '.')
   }
   h.rounds.forEach((count, k) => {
     const lp = isLoopRound(h, k)

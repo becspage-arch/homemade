@@ -460,13 +460,26 @@ export function buildRounds(
    * per round (a tuft whose centre loops are longer than its edge loops —
    * the stacked Highland-cow fringe). Absent = the disc exactly as before.
    */
-  loopOpts?: { roundStitch?: (k: number) => StitchId; loop?: Partial<LoopShape>; loopByRound?: (k: number) => Partial<LoopShape> | undefined },
+  loopOpts?: {
+    roundStitch?: (k: number) => StitchId
+    loop?: Partial<LoopShape>
+    loopByRound?: (k: number) => Partial<LoopShape> | undefined
+    /** Per STITCH (round k, stitch c counted from the round's first): the
+     *  stitch worked there, over `roundStitch` — a fringe with a plain dc
+     *  every third stitch, a twisted loop here and there (the Highland cow,
+     *  2026-10-10). Absent = `roundStitch` as before. */
+    stitchAt?: (k: number, c: number) => StitchId | undefined
+    /** Per-stitch loop shape, merged over `loop` and `loopByRound`. */
+    loopByStitch?: (k: number, c: number) => Partial<LoopShape> | undefined
+  },
 ): BuiltContinuous {
   const yr = yarnRadiusMm
-  const idAt = (k: number): StitchId => loopOpts?.roundStitch?.(k) ?? st
-  const loopAt = (k: number): Partial<LoopShape> | undefined => {
+  const idAt = (k: number, c = 0): StitchId => loopOpts?.stitchAt?.(k, c) ?? loopOpts?.roundStitch?.(k) ?? st
+  const loopAt = (k: number, c = 0): Partial<LoopShape> | undefined => {
     const per = loopOpts?.loopByRound?.(k)
-    return per ? { ...loopOpts?.loop, ...per } : loopOpts?.loop
+    const perSt = loopOpts?.loopByStitch?.(k, c)
+    const merged = per ? { ...loopOpts?.loop, ...per } : loopOpts?.loop
+    return perSt ? { ...merged, ...perSt } : merged
   }
   // The real cell (§8f-3) — the same one the flat grid builder takes, including
   // the head as a two-strand LOOP. The canopy below is re-derived from it in the
@@ -568,8 +581,8 @@ export function buildRounds(
         const r = emitPlainStitch(S, dims, {
           j: k,
           c: i,
-          id: idAt(k),
-          loop: loopAt(k),
+          id: idAt(k, i),
+          loop: loopAt(k, i),
           s: 1,
           fz: 1, // no turn in the round — every round works the same face
           by: rPrev,
@@ -614,8 +627,8 @@ export function buildRounds(
           const r = emitPlainStitch(S, dims, {
             j: k,
             c: oi,
-            id: idAt(k),
-            loop: loopAt(k),
+            id: idAt(k, li),
+            loop: loopAt(k, li),
             s: 1,
             fz: 1,
             by: rPrev,

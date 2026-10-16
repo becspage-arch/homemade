@@ -273,7 +273,7 @@ const AMIGURUMI_BASE_CONSTRAINED_SHELVES = new Set(['amigurumi', 'animal-toy', '
 // accessories), so only a bare "doll" / "keyring doll" motif matches it; every
 // character doll on the doll shelf ("baker doll", "bride doll") still needs
 // pieces the engine does not have and stays unbuildable.
-if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,chick,dog,doll,egg') {
+if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,cat,chick,cow,dog,doll,egg') {
   throw new Error(
     'AMIGURUMI_BASES changed shape — revisit isHonestAmigurumiSubject in crochet-idea-backlog.ts',
   )
@@ -288,7 +288,7 @@ if (AMIGURUMI_BASES.map((b) => b.id).sort().join(',') !== 'ball,bear,bird,bunny,
  * cannot lay out and stay off this list).
  */
 const HONEST_AMIGURUMI_BASE_RE =
-  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b|^\s*(?:(?:little|small|plain|simple|basic|standing|tiny|mini|keyring)\s+)*dolls?(?:\s+(?:keyring|charm|keychain))?\s*$/i
+  /\bbears?\b|\bpandas?\b|\bbunn(?:y|ies)\b|\brabbits?\b|\bhares?\b|\bballs?\b|\beggs?\b|\bcats?\b|\bkittens?\b|\btabby\b|\bdogs?\b|\bpupp(?:y|ies)\b|\bpups?\b|\bcollies?\b|\bbeagles?\b|\bspaniels?\b|\bretrievers?\b|\bterriers?\b|\bpoodles?\b|\bbirds?\b|\bchicks?\b|\bducklings?\b|\bducks?\b|\bgoslings?\b|\brobins?\b|\bpenguins?\b|\bcows?\b|\bcalf\b|\bcalves\b|\bhighland\b|^\s*(?:(?:little|small|plain|simple|basic|standing|tiny|mini|keyring)\s+)*dolls?(?:\s+(?:keyring|charm|keychain))?\s*$/i
 
 /**
  * Bases the engine cannot lay out even though the word above might match:
@@ -296,7 +296,7 @@ const HONEST_AMIGURUMI_BASE_RE =
  */
 const DISHONEST_AMIGURUMI_RE = /\bdachshunds?\b|\bsausage dogs?\b|\bowls?\b/i
 
-/** True when `motif` is honestly one of the nine bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick, doll). */
+/** True when `motif` is honestly one of the ten bodies the engine builds (ball, egg, bear, bunny, cat, dog, bird, chick, doll, cow). */
 export function isHonestAmigurumiSubject(motif: string): boolean {
   return HONEST_AMIGURUMI_BASE_RE.test(motif) && !DISHONEST_AMIGURUMI_RE.test(motif)
 }

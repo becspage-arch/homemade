@@ -29,6 +29,8 @@ import {
   PRESET_SETTLED_SIZE_MM_GENERATED,
 } from './amigurumiSizes.generated'
 import { sphereRounds } from './sphereProfile'
+import { ballRounds, tubeRounds, cordRounds } from './roundProfiles'
+import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
 import {
   buildFaceEmbroidery,
@@ -42,48 +44,7 @@ import { DOLL_AUDITED_PROFILE_KEYS, DOLL_SETTLED_SIZE_MM, dollProgram } from './
 
 export { sphereRounds }
 export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
-
-/**
- * A ball: climbs in sixes to the equator, holds, comes back down in sixes.
- *
- * §8f-10: this is the OLD profile and it is not a sphere — a +6 round spends its
- * whole meridian allowance on radius, so the cap is a flat disc and the first
- * plateau round after it is a hard corner (36–38° of crease measured, a rounded
- * tin can). Closed round parts now use `sphereRounds`. `ballRounds` stays for the
- * pieces measured NOT to gain from a sphere profile — the 4–5-round neck, muzzle
- * and bear ear, whose one increase round cannot dome whatever the counts say —
- * and for the audited profiles already in the wild.
- */
-export function ballRounds(equator: number, plateau: number): number[] {
-  const up: number[] = []
-  for (let n = 6; n <= equator; n += 6) up.push(n)
-  return [...up, ...Array.from({ length: plateau }, () => equator), ...up.slice(0, -1).reverse()]
-}
-
-/** A tapered tube: climbs in sixes, holds, then narrows in twos to a rounded tip. */
-export function tubeRounds(equator: number, straight: number): number[] {
-  const up: number[] = []
-  for (let n = 6; n <= equator; n += 6) up.push(n)
-  const down: number[] = []
-  for (let n = equator - 2; n >= 6; n -= 2) down.push(n)
-  return [...up, ...Array.from({ length: straight }, () => equator), ...down]
-}
-
-/**
- * A thin CORD: the magic ring's six stitches worked straight up for `rounds`
- * rounds. A cat's tail, and a dog's stub.
- *
- * It has no shaping at all, which is why it is its own helper rather than a
- * degenerate `tubeRounds`: six stitches is already as narrow as a spiral gets,
- * so there is nothing to increase toward and nothing to decrease back to — a
- * real tail is worked exactly like this and the end is closed by drawing the
- * last six stitches together. Measured 16.0 x 31.3 mm at five rounds and
- * 16.1 x 55.5 at nine (worsted), i.e. a tail that is genuinely long and thin
- * rather than a limb shrunk by `scale`, which shortens as it slims.
- */
-export function cordRounds(rounds: number): number[] {
-  return Array.from({ length: rounds }, () => 6)
-}
+export { ballRounds, tubeRounds, cordRounds }
 
 /**
  * A POINTED CONE worked tip first (round 11): a FOUR-stitch magic ring IS the
@@ -181,6 +142,9 @@ export const AUDITED_PROFILES: number[][] = [
   tubeRounds(12, 3), tubeRounds(12, 5), tubeRounds(18, 6),
   ...Object.values(LOP_EAR_ROUNDS),
   [6], [6, 12], [6, 12, 18], [6, 12, 18, 24],
+  // The Highland cow's pieces (cowPreset.ts): side-to-side heads, capsule
+  // muzzles, tip-first horns, flat leaf ears, long front legs.
+  ...COW_AUDITED_PROFILES,
 ]
 
 const PROFILE_KEYS = new Set(AUDITED_PROFILES.map((r) => r.join(',')))
@@ -193,7 +157,7 @@ export function isAuditedProfile(rounds: number[]): boolean {
 
 /** Every base the designer builds, as a const tuple so a zod schema can be
  *  derived from it instead of hand-copying the list (it was copied twice). */
-export const AMIGURUMI_BASE_IDS = ['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird', 'chick', 'doll'] as const
+export const AMIGURUMI_BASE_IDS = ['ball', 'egg', 'bear', 'bunny', 'cat', 'dog', 'bird', 'chick', 'doll', 'cow'] as const
 export type AmigurumiBase = (typeof AMIGURUMI_BASE_IDS)[number]
 export type AmigurumiSize = 'S' | 'M' | 'L'
 
@@ -295,6 +259,9 @@ export const AMIGURUMI_BASES: AmigurumiBaseSpec[] = [
   { id: 'chick', label: 'Chick', blurb: 'A round ball body, a big round head, a little beak, two small wings and two feet.', nose: false, paws: false, contrastFor: 'The beak and the feet.' },
   // doll.ts: a standing doll in 4 ply cotton; the small size is a keyring charm.
   { id: 'doll', label: 'Doll', blurb: 'A slim standing doll in fine cotton: legs joined into the body, a round head, slim arms, an embroidered face. Small is a keyring charm.', nose: false, paws: false, contrastFor: 'Her dress colour, worked into the body.' },
+  // The Highland cow (crochet-bar hair + cow jobs, 2026-10-10): its own
+  // module, cowPreset.ts; the registry only lists it and dispatches to it.
+  { ...COW_BASE },
 ]
 
 /** The bear and the bunny: the toy-pose bases (big head, fine gauge, folded
@@ -740,6 +707,11 @@ export function amigurumiPresetName(choices: AmigurumiChoices): string {
 export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionProgram {
   // The doll is its own module, with its own (doll-proportioned) face.
   if (choices.base === 'doll') return dollProgram(choices, amigurumiPresetName(choices))
+  if (choices.base === 'cow') {
+    // The Highland cow is its own base (cowPreset.ts): its face, fringe and
+    // horns are part of the base, so the face/hair/hat toggles do not apply.
+    return buildCowProgram({ size: choices.size, mainHex: choices.mainHex, contrastHex: choices.contrastHex, eyeMm: choices.eyeMm, name: choices.name })
+  }
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
@@ -1369,6 +1341,8 @@ const EYE_SET: Record<AmigurumiBase, { x: number; z: number }> = {
   bear: { x: 0.72, z: 0.16 },
   chick: { x: 0.66, z: 0.2 },
   doll: { x: 0.62, z: 0.42 }, // unused: doll.ts seats its own
+  // The cow places its own eyes (cowPreset.ts); listed so the record is complete.
+  cow: { x: 0.62, z: 0.24 },
 }
 
 /** Where the fringe circle's centre sits on the head: on the crown, tipped
@@ -1426,6 +1400,8 @@ const FACE_SET: Record<AmigurumiBase, { eyeElev: number; eyeAz: number; blushEle
   bird: { eyeElev: 12, eyeAz: 34, blushElev: -6, blushAz: 50, pinkNose: false, eyeHalfSt: 0.6 },
   chick: { eyeElev: 12, eyeAz: 36, blushElev: -6, blushAz: 52, pinkNose: false, eyeHalfSt: 0.6 },
   doll: { eyeElev: -7, eyeAz: 30, blushElev: -22, blushAz: 42, pinkNose: false, eyeHalfSt: 1.6 }, // unused: doll.ts lays its own face
+  // The cow's face is part of its base (cowPreset.ts); listed so the record is complete.
+  cow: { eyeElev: 0, eyeAz: 33, blushElev: -16, blushAz: 42, pinkNose: false, eyeHalfSt: 1.2 },
 }
 
 /** The embroidered face for a preset, in pattern coordinates (empty for the
