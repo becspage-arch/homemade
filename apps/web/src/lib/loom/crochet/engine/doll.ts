@@ -857,8 +857,9 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
         },
         {
           on: 'body',
-          dir: turnToCamera({ x: side * 0.3, y: seat.dir.y, z: seat.dir.z + 0.7 }),
-          aim: turnToCamera({ x: side * 0.6, y: -0.25, z: 1.4 }),
+          dir: turnToCamera({ x: side * 0.3, y: seat.dir.y, z: seat.dir.z + 0.5 }),
+          // Spread WIDE, a little above level: the lobes must show beyond the hair.
+          aim: turnToCamera({ x: side * 1.0, y: -0.2, z: 0.55 }),
           spin, seat: 3, surfaceFit: 'ellipsoid',
         },
         wingWordsLace(WING_UPPER, WING_LOWER, WING_STEM, 'the wing colour'),
@@ -873,7 +874,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
         {
           on: 'body',
           dir: turnToCamera({ x: side * 0.35, y: seat.dir.y, z: seat.dir.z + 0.3 }),
-          aim: turnToCamera({ x: side * 0.95, y: -0.25, z: -0.3 }),
+          aim: turnToCamera({ x: side * 1.0, y: -0.2, z: -0.5 }),
           spin, seat: 4, surfaceFit: 'ellipsoid',
         },
         [],
@@ -992,12 +993,12 @@ export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: b
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
   'doll-S': { width: 43.4, height: 100.9 },
-  'doll-M': { width: 116.9, height: 218.3 },
-  'doll-L': { width: 121.5, height: 239.1 },
+  'doll-M': { width: 142, height: 218.3 },
+  'doll-L': { width: 143, height: 239.1 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
   'doll-S': '05e8497a',
-  'doll-M': 'feef4a71',
-  'doll-L': '3113e5d8',
+  'doll-M': 'f41579a0',
+  'doll-L': 'b9475bc2',
 }
 

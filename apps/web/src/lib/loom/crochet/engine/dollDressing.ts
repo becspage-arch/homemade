@@ -221,8 +221,8 @@ export function ringletWords(chains: number, per = RINGLET_PER_CH, count: number
 
 /** One side of the upper and lower lobes, stem end to tip (UK: dc, tr, dtr,
  *  trtr ...). A ch-1 space is worked between every stitch. */
-export const WING_UPPER: StitchId[] = ['hdc', 'tr', 'dtr', 'dtr', 'dtr', 'tr', 'hdc']
-export const WING_LOWER: StitchId[] = ['hdc', 'tr', 'dtr', 'tr', 'hdc']
+export const WING_UPPER: StitchId[] = ['hdc', 'tr', 'dtr', 'dtr', 'dtr', 'dtr', 'tr', 'hdc']
+export const WING_LOWER: StitchId[] = ['hdc', 'tr', 'dtr', 'dtr', 'tr', 'hdc']
 export const WING_STEM = 2
 
 /**
