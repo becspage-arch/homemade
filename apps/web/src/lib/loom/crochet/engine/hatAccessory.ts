@@ -44,6 +44,10 @@ export interface NightcapOptions {
    *  +2 the cone was ~55 rounds on a 54-st band and curled up on the crown as
    *  a turban (crochet-bar/proofs/bunny r3-r4). */
   coneStep?: number
+  /** How snugly the band fits: the head radius fraction the band's circumference
+   *  is cut to (default 0.97, the head's equator). A hat worn higher up the
+   *  head wants less, or the band hangs loose as a brim (sleepy bunny 4). */
+  bandFitFrac?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
   /** The pompom's own yarn when it is not the hat's: colour and fibre look
@@ -71,7 +75,7 @@ export function nightcapBandCount(headRadiusMm: number, yr: number): number {
 /** The rounds of the nightcap, tip first. */
 export function nightcapRounds(o: NightcapOptions): number[] {
   const yr = nightcapYarnRadiusMm(o)
-  const N = nightcapBandCount(o.headRadiusMm, yr)
+  const N = nightcapBandCount((o.headRadiusMm * (o.bandFitFrac ?? 0.97)) / 0.97, yr)
   const slow = o.slowTipRounds ?? 5
   const band = o.bandRounds ?? 3
   const brim = o.brimRounds ?? 4

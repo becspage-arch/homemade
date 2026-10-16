@@ -254,6 +254,9 @@ export interface NightcapAccessory {
    *  it starts (fraction of the head radius), its ramp length (mm) and final
    *  angle (deg). The bar's nightcap folds right off the crown. */
   bend?: { startFrac?: number; lengthMm?: number; angleDeg?: number; dirDeg?: number }
+  bandFitFrac?: number
+  bandRounds?: number
+  brimRounds?: number
   /** The pompom's yarn, when it is not the hat's (the bar's cream pompom on
    *  a lilac cap): its colour, its fibre look (a fluffy wool or chenille
    *  pompom on a cotton hat) and its trimmed radius as a fraction of the
@@ -1217,6 +1220,9 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
         ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
         ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
         ...(a.slowTipRounds != null ? { slowTipRounds: a.slowTipRounds } : {}),
+        ...(a.bandFitFrac != null ? { bandFitFrac: a.bandFitFrac } : {}),
+        ...(a.bandRounds != null ? { bandRounds: a.bandRounds } : {}),
+        ...(a.brimRounds != null ? { brimRounds: a.brimRounds } : {}),
       },
       {
         ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}),
