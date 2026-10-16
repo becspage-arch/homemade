@@ -27,10 +27,15 @@ import type { HeroStage } from '../../render/blenderScene'
 
 // r3: the bar's green is a deep forest green and its gold an antique metallic
 // gold; #2c5634 / #b38c3c rendered sage and mustard beside it.
-export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#b08a3a' }
+// Pass 2: the gold is a bright metallic thread (#a37d2e at metallic 0.7
+// rendered a dull mustard-brown: metal reflects the dark room, so the base is
+// lighter and the metal blend lower).
+export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#d2a74a' }
 /** The bar's star and cord are a metallic gold thread: strokes[].metallic
  *  (renderer, additive) blends the yarn material toward a brushed metal. */
-export const GOLD_METALLIC = 0.7
+export const GOLD_METALLIC = 0.45
+/** The beads' polished gold. */
+export const BEAD_GOLD = '#e2b853'
 
 /** The star size the trees wear: STAR_SIZES.topper in motifs/star.ts. */
 export const STAR_TOPPER_SIZE = 'topper' as const
@@ -101,13 +106,14 @@ function buildCord(yr: number, colour: string, lenMm: number, wrapR: number): { 
   const legX = wrapR * 0.95
   const topY = lenMm
   const path: { x: number; y: number }[] = []
-  path.push({ x: -0.6 * yr, y: 0 })
+  // The legs hang nearly parallel (the bar's loop), meeting at the star's tip.
+  path.push({ x: -0.45 * legX, y: 0 })
   path.push({ x: -legX, y: topY })
   for (let k = 1; k <= 12; k++) {
     const a = Math.PI - (k / 12) * Math.PI
     path.push({ x: Math.cos(a) * legX, y: topY + Math.sin(a) * wrapR })
   }
-  path.push({ x: 0.6 * yr, y: 0 })
+  path.push({ x: 0.45 * legX, y: 0 })
   let L = 0
   for (let i = 1; i < path.length; i++) L += Math.hypot(path[i]!.x - path[i - 1]!.x, path[i]!.y - path[i - 1]!.y)
   const pitch = 2.6 * yr
@@ -201,10 +207,12 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     const be = t.baseEnd
     const bx = x0 + be.x * cs - be.y * sn, by = be.x * sn + be.y * cs
     const zb = zTop + (be.z - t.topZ)
-    const r1 = W * 0.03, r2 = W * 0.062
-    props.push({ centre: [bx, by, zb - yr - r1 * 0.6], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: '#c9a250', metal: true })
-    props.push({ centre: [bx, by, zb - yr - r1 * 1.5 - r2], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: '#c9a250', metal: true })
-    lowZ = Math.min(lowZ, zb - yr - r1 * 1.5 - 2 * r2)
+    // Pass 2: the bead is bigger and brighter and sits tight under the ribbon's
+    // end (r1's hung a bead's height below it on its spacer).
+    const r1 = W * 0.022, r2 = W * 0.07
+    props.push({ centre: [bx, by, zb - yr * 0.5 - r1 * 0.7], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: BEAD_GOLD, metal: true })
+    props.push({ centre: [bx, by, zb - yr * 0.5 - r1 * 1.4 - r2 * 0.95], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: BEAD_GOLD, metal: true })
+    lowZ = Math.min(lowZ, zb - yr * 0.5 - r1 * 1.4 - 1.95 * r2)
     problems.push(...t.problems.map((s) => `tree-${i}: ${s}`))
   })
   problems.push(...starPiece.problems.map((s) => `star: ${s}`), ...cord.piece.problems.map((s) => `cord: ${s}`))

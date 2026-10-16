@@ -104,20 +104,24 @@ export interface SpiralSpec {
  * a little over twice as tall as wide. Row 1 is UK htr (a UK dc row solved to
  * a 1.2 yr core at the tip, where the chain's inner leg crossed the axis and
  * its crossings slipped in the relax; htr's taller crown opens it to 2.3 yr):
- * the increase sets the coil (7 in every 4 ch at the tip, easing to 11 in every
- * 10 ch at the base), the pitch opens down the tree, and two plain rows of UK
- * dc along the edge give the band its depth (142 x 69 mm at dk, band 0.24 W).
+ * the increase sets the coil (7 in every 4 ch at the tip, easing to 21 in every
+ * 20 ch for the wide base coil), the pitch opens a little down the tree (r1's
+ * 9–18 yr left gaps of twice the band; the bar's gap is about one band), and
+ * two plain rows of UK dc along the edge give the band its depth
+ * (161 x 74 mm at dk, band 0.22 W, about 7 turns).
  */
 export const TREE_BLOCKS: SpiralBlock[] = [
-  { id: 'hdc', chains: 8, perChain: 1.75, pitchYr: 9 },
-  { id: 'hdc', chains: 8, perChain: 1.5, pitchYr: 12 },
-  { id: 'hdc', chains: 12, perChain: 1.33, pitchYr: 14 },
-  { id: 'hdc', chains: 18, perChain: 1.2, pitchYr: 16 },
-  { id: 'hdc', chains: 24, perChain: 1.1, pitchYr: 18 },
+  { id: 'hdc', chains: 10, perChain: 1.75, pitchYr: 8 },
+  { id: 'hdc', chains: 11, perChain: 1.5, pitchYr: 10 },
+  { id: 'hdc', chains: 16, perChain: 1.33, pitchYr: 12 },
+  { id: 'hdc', chains: 22, perChain: 1.2, pitchYr: 13 },
+  { id: 'hdc', chains: 20, perChain: 1.1, pitchYr: 14 },
+  { id: 'hdc', chains: 16, perChain: 1.05, pitchYr: 15 },
 ]
 /** How far the ribbon's outer edge droops below horizontal: the bar's bands
- *  show their upper face, tilted ~40°. */
-export const TREE_DROOP_DEG = 40
+ *  show their upper face, tilted ~40–45° (44 keeps the body 2.2 tall; 48 let
+ *  three base-coil chain crossings slip). */
+export const TREE_DROOP_DEG = 44
 /** The band's edge rows (see SpiralSpec.edgeRows): two plain rows of UK dc. */
 export const TREE_EDGE_ROWS: StitchId[] = ['sc', 'sc']
 /** @deprecated pass 1's single edging row; kept for the test's control build. */
