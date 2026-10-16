@@ -901,7 +901,13 @@ function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; p
     // An OPEN piece (a doll's leg from its sole, her body from the joining
     // round): tube.ts, relaxed as every closed piece is.
     const built: BuiltContinuous = buildTube({ stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap, gaugeYr: part.gaugeYr }, yr)
-    relaxProgram(built, yr)
+    // Highland cow round 27: an OPEN half-ball pressed into a CUP (a cupped
+    // ear: worked from the ring, left open at the rim, never stuffed, pressed
+    // gently into an oval between finger and thumb). The same plates as a
+    // pressed closed piece; a tube has no stuffing to lose. Without `press`
+    // every existing tube part is relaxed exactly as before.
+    if (part.press) relaxPressed(built, part.press, yr)
+    else relaxProgram(built, yr)
     return { built }
   }
   const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr)
@@ -926,26 +932,27 @@ function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; p
       n.x = x
     }
   }
-  if (part.press) {
-    // Unstuffed, pressed flat between two plates (relax.ts `press`). The same
-    // relaxer settings as every closed piece, minus the stuffing.
-    relax(built.model, {
-      collMinDist: yr * 1.25,
-      collK: 0.28,
-      collAdjacency: 9,
-      planeZ: 0,
-      planeK: 0,
-      layoutK: 0.06,
-      layoutMode: 'surface',
-      floorZ: 0,
-      stuffPrior: STUFF_PRIOR,
-      press: part.press,
-      iterations: 560,
-    })
-  } else {
-    relaxProgram(built, yr)
-  }
+  if (part.press) relaxPressed(built, part.press, yr)
+  else relaxProgram(built, yr)
   return { built, panelMask }
+}
+
+/** Unstuffed, pressed flat between two plates (relax.ts `press`). The same
+ *  relaxer settings as every closed piece, minus the stuffing. */
+function relaxPressed(built: BuiltContinuous, press: number, yr: number): void {
+  relax(built.model, {
+    collMinDist: yr * 1.25,
+    collK: 0.28,
+    collAdjacency: 9,
+    planeZ: 0,
+    planeK: 0,
+    layoutK: 0.06,
+    layoutMode: 'surface',
+    floorZ: 0,
+    stuffPrior: STUFF_PRIOR,
+    press,
+    iterations: 560,
+  })
 }
 
 /** The audit gate for one piece, in the frame its settled shape needs. */
