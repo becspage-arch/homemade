@@ -139,11 +139,11 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const trees = cols.map((c) => byColour.get(c)!)
   const t0 = trees[0]!
   const W = t0.maxRadiusMm * 2
-  const gap = W * 0.38
+  const gap = W * 0.28 // pass 2 r5: the bar hangs its trees about a quarter of a tree apart
   const X = cols.map((_, i) => (i - (cols.length - 1) / 2) * (W + gap))
 
   // The star.
-  const starW = o.starWeight ?? 'lace' // pass 2: the solid 3-round topper is ~36 mm at lace ≈ 0.52 W (bar 0.53)
+  const starW = o.starWeight ?? 'fine' // pass 2 r5: the solid 3-round topper at lace (36 mm) read small and thin-tipped on the tree; fine ≈ 46 mm
   const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE, colours: { main: gold } })
   const starPiece = star.pieces[0]!
   const syr = YARN_WEIGHT_RADIUS_MM[starW]
@@ -213,9 +213,9 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
     // Pass 2: the bead is bigger and brighter and sits tight under the ribbon's
     // end (r1's hung a bead's height below it on its spacer).
     const r1 = W * 0.022, r2 = W * 0.07
-    props.push({ centre: [bx, by, zb - yr * 0.5 - r1 * 0.7], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: BEAD_GOLD, metal: true })
-    props.push({ centre: [bx, by, zb - yr * 0.5 - r1 * 1.4 - r2 * 0.95], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: BEAD_GOLD, metal: true })
-    lowZ = Math.min(lowZ, zb - yr * 0.5 - r1 * 1.4 - 1.95 * r2)
+    props.push({ centre: [bx, by, zb - yr * 0.3 - r1 * 0.5], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: BEAD_GOLD, metal: true })
+    props.push({ centre: [bx, by, zb - yr * 0.3 - r1 * 0.9 - r2 * 0.9], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: BEAD_GOLD, metal: true })
+    lowZ = Math.min(lowZ, zb - yr * 0.3 - r1 * 0.9 - 1.9 * r2)
     problems.push(...t.problems.map((s) => `tree-${i}: ${s}`))
   })
   problems.push(...starPiece.problems.map((s) => `star: ${s}`), ...cord.piece.problems.map((s) => `cord: ${s}`))
@@ -272,8 +272,8 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
     fibre: 'cotton',
     view: {
       bgHex: '#efece6',
-      marginFactor: 0.12,
-      tiltDeg: o.tiltDeg ?? 86, // pass 2 r3: nearly level, so the band reads edge-on like the bar's rope (80 showed the coils' upper faces as saucers)
+      marginFactor: 0.16,
+      tiltDeg: o.tiltDeg ?? 83, // pass 2: near level, so the band reads edge-on like the bar's rope (80 showed the coils' upper faces as saucers; 86 made the throw a horizon)
       resY: o.resY ?? 1200,
       openFabric: true,
       yawDeg: o.yawDeg ?? 0,
@@ -281,7 +281,7 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
       lightRig: 'product' as const,
       groundScale: 40,
       stage: o.stage ?? ('christmas' as HeroStage),
-      stageTiltDeg: o.tiltDeg ?? 86,
+      stageTiltDeg: o.tiltDeg ?? 83,
       stageZoom: o.stageZoom ?? 1.0,
       // r4: the stage's f/0.14 blurred the branch and the outer trees; the
       // bar keeps the branch and all three trees sharp over a soft room.
