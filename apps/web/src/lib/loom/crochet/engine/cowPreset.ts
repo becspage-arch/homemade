@@ -63,7 +63,11 @@ export const COW_DEFAULTS: CowChoices = {
   // is h 15° s 0.73), so the yarn is dyed redder and softer than it will read.
   // Round 17 (Rebecca's look at r15): a shade lighter and warmer still — the
   // bar's plush reads lighter than #6b3f33 did on the windowsill.
-  mainHex: '#7a4a3c',
+  // Round 19: measured on the r18 windowsill render beside the bar at the same
+  // body spot — ours h 21° s 0.99 against the bar's h 13° s 0.85 (v equal), so
+  // the chenille grade still pushes the dye orange and saturated. A duller,
+  // slightly bluer red-brown dye renders as the bar's.
+  mainHex: '#825350',
   contrastHex: '#ead9bf',
   eyeMm: 12,
 }
@@ -155,7 +159,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.M, neck: ballRounds(18, 2), head: sphereRounds(60, 2),
     muzzle: sphereRounds(24, 5), horn: COW_HORN_ROUNDS, ear: COW_EAR_ROUNDS,
     frontLeg: tubeRounds(18, 12), backLeg: ballRounds(24, 4), tail: cordRounds(5),
-    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -14.1, frontLegLift: 5.7, eyeMm: 18,
+    headSink: 12, muzzleSeat: 5, earPress: 14, legLift: -14.1, frontLegLift: 8.1, eyeMm: 18,
   },
   L: {
     body: COW_BODY_ROUNDS.L, neck: ballRounds(24, 2), head: sphereRounds(66, 2),
@@ -222,8 +226,9 @@ const HEAD_AXIS = { x: 1, y: 0, z: 0 }
  *  sewn on by its side, so the lens sees a wide oval. */
 const MUZZLE_DIR = { x: 0, y: 1, z: -0.34 }
 const MUZZLE_AIM = { x: 1, y: 0, z: 0 }
-const HORN_DIR = { x: 0.68, y: 0.1, z: 0.9 }
-const HORN_AIM = { x: 1, y: 0.12, z: 0.5 }
+// Round 19: out of the SIDES of the crown (the bar), less straight up.
+const HORN_DIR = { x: 0.78, y: 0.1, z: 0.72 }
+const HORN_AIM = { x: 1, y: 0.12, z: 0.42 }
 /** The flat ears: sewn by the closed end on the sides of the head, level
  *  with the brow, standing out sideways and a touch down, the pressed face
  *  turned to the lens. */
@@ -235,8 +240,10 @@ const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
  *  of the body to the table, a touch forward so the hooves land in front. */
 // Round 17: further apart (the bar's two front legs stand a leg's width
 // apart down the front of the pear) and sewn a little higher on the shoulder.
-const FRONT_LEG_DIR = { x: 0.6, y: 0.8, z: 0.55 }
-const FRONT_LEG_AIM = { x: 0.1, y: 0.46, z: -1 }
+// Round 19: joined further forward on the shoulder and a shallower seat, so the
+// tubes stand proud of the chest with a shadow line behind them (r18: fused).
+const FRONT_LEG_DIR = { x: 0.6, y: 0.95, z: 0.5 }
+const FRONT_LEG_AIM = { x: 0.18, y: 0.46, z: -1 }
 /** Back legs: worked sole first, sewn low on the SIDES of the body, lying
  *  forward along the table OUTSIDE the front legs, the rounded foot to the
  *  lens — so all four legs show, the bar's seated calf. */
@@ -386,7 +393,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         on: 'body',
         dir: { x: side * FRONT_LEG_DIR.x, y: FRONT_LEG_DIR.y, z: FRONT_LEG_DIR.z },
         aim: { x: side * FRONT_LEG_AIM.x, y: FRONT_LEG_AIM.y, z: FRONT_LEG_AIM.z },
-        seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
+        seat: 3, poleIn: false, surfaceFit: 'ellipsoid',
         offset: { z: s.frontLegLift },
       },
     })
@@ -400,7 +407,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { x: side * 10, y: 8, z: s.legLift },
+        offset: { x: side * 14, y: 22, z: s.legLift },
       },
     })
   }
@@ -455,7 +462,7 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
   pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
   // Round 18: no pile on the fringe's plump loose loops (radius 2.8 mm; the fabric strand is 1.3).
   pile_max_radius_mm: 2.0,
-  crush_amt: 0.22, pile_dark_only: true,
+  crush_amt: 0.22, sat_mult: 0.85, pile_dark_only: true,
 }
 
 /** The NOSTRILS: two bold diagonal straight stitches in dark brown yarn
