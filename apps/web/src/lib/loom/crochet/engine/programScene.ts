@@ -17,7 +17,7 @@ import { STITCHES, type StitchId } from './dictionary'
 import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
-import type { HeroStage } from '../../render/blenderScene'
+import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
 import { drapeFlat, drapeProps, drapeTube, drapedView } from './drape'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
@@ -162,6 +162,8 @@ export interface BlenderScene {
      *  factor on the set's framing (< 1 = closer). A draped flat-lay sets both. */
     stageTiltDeg?: number
     stageZoom?: number
+    /** Which variant of the set (see `HERO_STAGE_VARIANTS`). */
+    stageVariant?: string
   }
   /** Matte ellipsoid props (a pouffe under a draped blanket, a bust under a
    *  cowl) — the drape's coloured colliders, built by loom_render_crochet.py's
@@ -501,7 +503,10 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   }
   // A styled set round a finished object stood on the table (a hat, a cowl, a
   // basket). Only written when asked for, so every existing scene is unchanged.
-  if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') view.stage = p.stage
+  if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') {
+    view.stage = p.stage
+    view.stageVariant = pickHeroStageVariant(p.stage, p.stageSeed ?? p.name, p.stageVariant)
+  }
   const props = draped ? drapeProps(p.drape!) : []
   return {
     fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },

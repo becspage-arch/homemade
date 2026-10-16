@@ -26,7 +26,7 @@ import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
 import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
-import type { HeroStage } from '../../render/blenderScene'
+import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
 import { rootedHairStrokes, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
@@ -323,6 +323,12 @@ export interface CompositionProgram {
    *  brown chenille carries a short pile of real hair curves on its dark
    *  yarn (`pile_density`, `pile_dark_only`). Absent = the fibre as it is. */
   fibreTune?: Record<string, number | boolean>
+  /** Which variant of the set (see `HERO_STAGE_VARIANTS`), fixed by hand.
+   *  Unset = picked from a hash of `stageSeed` (or the name) so a pattern
+   *  always gets the same set. Render-only. */
+  stageVariant?: string
+  /** What the variant is picked from: the pattern's slug. Defaults to `name`. */
+  stageSeed?: string
   /** ACCESSORIES worn on the finished toy (toy-pose round 6): each is a
    *  separate genuinely-stitched piece (hatAccessory.ts) built, audited and
    *  seated on a named part of the COMPILED composition, its strokes appended
@@ -1139,6 +1145,7 @@ export interface BlenderScene {
     stage?: HeroStage
     /** Multiplies the stage's own zoom (a tall piece — horns — pulls back). */
     stageZoom?: number
+    stageVariant?: string
   }
 }
 
@@ -1250,6 +1257,9 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   // Written only for a styled set, so every studio scene JSON is unchanged.
   if (p.stage && p.stage !== 'studio') scene.view.stage = p.stage
   if (p.stage && p.stage !== 'studio' && p.stageZoom != null) scene.view.stageZoom = p.stageZoom
+  if (p.stage && p.stage !== 'studio') {
+    scene.view.stageVariant = pickHeroStageVariant(p.stage, p.stageSeed ?? p.name, p.stageVariant)
+  }
   scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   if (p.fibreTune && Object.keys(p.fibreTune).length) scene.fibreTune = { ...p.fibreTune }
   if (compiled.props.length) {

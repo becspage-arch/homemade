@@ -155,6 +155,10 @@ export interface CrochetProgram {
    *  a cowl, a basket) is shot in — see `HeroStage`. Render-only: unset /
    *  'studio' is the clean sweep, exactly as before. Ignored by `swatch`. */
   stage?: HeroStage
+  /** Which variant of the set (see `HERO_STAGE_VARIANTS`), fixed by hand.
+   *  Unset = picked from a hash of `stageSeed` (the slug; default `name`). */
+  stageVariant?: string
+  stageSeed?: string
   /** DRAPE staging for a soft tube or flat piece (engine/drape.ts): the built piece is put
    *  down and settles under gravity on the table before it is rendered. Staging
    *  only — the stitches and the written pattern are unchanged. Absent = the

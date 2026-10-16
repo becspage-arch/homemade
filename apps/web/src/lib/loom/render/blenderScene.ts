@@ -56,6 +56,59 @@ export function isHeroStage(v: unknown): v is HeroStage {
   return typeof v === 'string' && (HERO_STAGES as readonly string[]).includes(v)
 }
 
+/**
+ * Each styled set comes in several VARIANTS (different props, surface, palette,
+ * light direction and time of day) so a shelf of listings does not all look
+ * the same. Read by `loom_render_crochet.py` as `view.stageVariant`; the FIRST
+ * id of each list is the original set (and what an absent `stageVariant`
+ * renders). The order here must match `STAGE_VARIANTS` in the Python.
+ *
+ *   linen       throw (oatmeal throw, vase of pampas) / basket (wicker basket of
+ *               yarn balls) / worktable (oak table, scissors, hook, yarn) /
+ *               dried (blush linen, jar of dried grasses, loose rose heads)
+ *   windowsill  garden (morning garden, jug, dried bunch) / rain (grey rainy
+ *               day, drops on the glass, a mug) / autumn (low gold sun, fallen
+ *               leaves, a pumpkin) / spring (gingham, a glass jar of tulips)
+ *   nursery     lantern (cream knit, lilac blanket, star lantern) / cot (white
+ *               cot sheet, rails, bunting) / shelf (wooden shelf, books, a
+ *               potted plant) / rug (pastel rug, wooden blocks, stacking rings)
+ *   christmas   pine (pine sprigs, berries, fairy bokeh, candle lantern) /
+ *               baubles (a branch hung with baubles over white fur) / snow (a
+ *               snowy night window, white knit, a candle) / gifts (wrapped
+ *               presents, kraft and red ribbon, bokeh)
+ */
+export const HERO_STAGE_VARIANTS = {
+  linen: ['throw', 'basket', 'worktable', 'dried'],
+  windowsill: ['garden', 'rain', 'autumn', 'spring'],
+  nursery: ['lantern', 'cot', 'shelf', 'rug'],
+  christmas: ['pine', 'baubles', 'snow', 'gifts'],
+} as const satisfies Record<Exclude<HeroStage, 'studio'>, readonly string[]>
+
+export type HeroStageVariant = (typeof HERO_STAGE_VARIANTS)[keyof typeof HERO_STAGE_VARIANTS][number]
+
+/** FNV-1a 32-bit: a stable hash of the pattern's slug (same in every run and
+ *  every Node version), so a pattern always gets the same set. */
+function fnv1a(s: string): number {
+  let h = 0x811c9dc5
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i)
+    h = Math.imul(h, 0x01000193) >>> 0
+  }
+  return h >>> 0
+}
+
+/**
+ * The variant of `stage` a pattern is shot in: `explicit` when it names one of
+ * that stage's variants (fixed by hand), otherwise picked deterministically
+ * from a hash of `seed` (the pattern's slug). Studio has no variants.
+ */
+export function pickHeroStageVariant(stage: HeroStage, seed: string, explicit?: string): string | undefined {
+  if (stage === 'studio') return undefined
+  const ids: readonly string[] = HERO_STAGE_VARIANTS[stage]
+  if (explicit && ids.includes(explicit)) return explicit
+  return ids[fnv1a(seed) % ids.length]
+}
+
 export interface BlenderStroke {
   hex: string
   sheen: number

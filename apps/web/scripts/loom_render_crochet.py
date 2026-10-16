@@ -1795,7 +1795,7 @@ def apply_stage(stage, scene, ctx):
             bpy.data.objects.remove(ob, do_unlink=True)
     for lt in ctx.get("lights", []):
         lt.data.color = WARM_SOFT
-        lt.data.energy *= view.get("stageKeyMult", STAGE_KEY_MULT.get(stage, 0.9))
+        lt.data.energy *= _tune(view, stage, "key", "stageKeyMult", STAGE_KEY_MULT.get(stage, 0.9))
 
     # Everything is built in a frame that turns with the camera's yaw: local +Y
     # runs away from the camera (into the room), +X to the camera's right.
@@ -1818,7 +1818,12 @@ def apply_stage(stage, scene, ctx):
         return _area("stage_light", None, to_world(loc), to_world(aim), e, size, color)
 
     k = dict(root=root, H=H, R=R, s=s, D=D, vis=vis, light=room_light)
-    if stage == "windowsill":
+    variant = stage_variant(view, stage)
+    if variant in VARIANT_BUILDERS:
+        build, wrgb, wstr = VARIANT_BUILDERS[variant]
+        build(**k)
+        _world(scene, wrgb, wstr)
+    elif stage == "windowsill":
         _stage_windowsill(**k)
         _world(scene, (0.98, 0.93, 0.86), 0.45)
     elif stage == "linen":
@@ -1847,12 +1852,12 @@ def apply_stage(stage, scene, ctx):
     cd.sensor_fit = "VERTICAL"
     cd.sensor_height = 36.0
     scene.view_settings.exposure = view.get(
-        "stageExposure", scene.view_settings.exposure + STAGE_EXPOSURE_LIFT.get(stage, 0.0))
+        "stageExposure", scene.view_settings.exposure + _tune(view, stage, "exposure", "_none", STAGE_EXPOSURE_LIFT.get(stage, 0.0)))
     # Round 5: a touch more contrast and a warm golden grade (lifted warm
     # highlights, slightly cool-neutral shadows) over the AgX base look.
     scene.view_settings.look = view.get("stageLook", "AgX - Medium High Contrast")
-    grade_golden(scene, view.get("stageWarmth", STAGE_WARMTH.get(stage, 0.65)))
-    print("[stage]", stage, "s=%.1f D=%.1f H=%.1f R=%.1f fstop=%.3f hw0=%.1f ynear=%.1f" % (
+    grade_golden(scene, _tune(view, stage, "warmth", "stageWarmth", STAGE_WARMTH.get(stage, 0.65)))
+    print("[stage]", stage, variant, "s=%.1f D=%.1f H=%.1f R=%.1f fstop=%.3f hw0=%.1f ynear=%.1f" % (
         s, D, H, R, cd.dof.aperture_fstop, vis.hw(0), vis.y_near()))
 
 
@@ -2292,6 +2297,935 @@ def _pinecone(root, H, x, y):
               bm.verts.new(tip + side * 0.5 + up * 0.02 * H), bm.verts.new(tip - side * 0.5 + up * 0.02 * H)]
         bm.faces.new(list(reversed(v2)))
     _bm_object("cone_scales", bm, root2, scale, smooth=False)
+
+
+# --- STAGE VARIANTS (job stages) -------------------------------------------
+# Each set comes in four variants so a shelf of listings does not all look the
+# same: different props, surface, palette, light direction and time of day.
+# `view.stageVariant` names one (an id, or an index); absent = the first, which
+# is the original set above, unchanged. The TS side (`HERO_STAGE_VARIANTS` in
+# blenderScene.ts) picks one per pattern from a hash of its slug; the order of
+# the ids below must match it. Everything is still procedural and the piece is
+# still never touched.
+
+STAGE_VARIANTS = {
+    "linen": ("throw", "basket", "worktable", "dried"),
+    "windowsill": ("garden", "rain", "autumn", "spring"),
+    "nursery": ("lantern", "cot", "shelf", "rug"),
+    "christmas": ("pine", "baubles", "snow", "gifts"),
+}
+
+# Per-variant grade/zoom (falls back to the stage's own value when absent).
+VARIANT_TUNE = {
+    "basket": dict(warmth=0.55, exposure=0.15, key=0.7),
+    "worktable": dict(warmth=0.35, exposure=0.1, key=0.7),
+    "dried": dict(warmth=0.5, exposure=0.2, key=0.7),
+    "rain": dict(warmth=0.0, exposure=0.25, key=0.8),
+    "autumn": dict(warmth=0.75, exposure=0.05, key=0.6),
+    "spring": dict(warmth=0.2, exposure=0.25, key=0.75),
+    "cot": dict(warmth=0.15, exposure=0.25, key=0.8),
+    "shelf": dict(warmth=0.45, exposure=0.15, key=0.75),
+    "rug": dict(warmth=0.25, exposure=0.22, key=0.8),
+    "baubles": dict(warmth=0.8, exposure=0.0, key=0.65),
+    "snow": dict(warmth=0.0, exposure=0.05, key=0.7),
+    "gifts": dict(warmth=0.7, exposure=0.05, key=0.65),
+}
+
+
+def stage_variant(view, stage):
+    ids = STAGE_VARIANTS.get(stage)
+    if not ids:
+        return None
+    v = view.get("stageVariant")
+    if isinstance(v, int) and not isinstance(v, bool):
+        return ids[v % len(ids)]
+    if isinstance(v, str) and v in ids:
+        return v
+    return ids[0]
+
+
+def _tune(view, stage, key, view_key, base):
+    vid = stage_variant(view, stage)
+    if view_key in view:
+        return view[view_key]
+    return VARIANT_TUNE.get(vid, {}).get(key, base)
+
+
+# ---- shared prop helpers --------------------------------------------------
+
+def _beside(R, H, half, side):
+    """x for a NEAR prop of half-width `half` so it clears the piece's
+    footprint (R) with a small gap: near props sit beside the piece, never
+    in front of it (r1: a bauble and a gift covered the paws)."""
+    return side * (R * 1.2 + half + 0.12 * H)
+
+
+def _rbox(name, root, mat, x0, x1, y0, y1, z0, z1, bevel, rot_z=0.0):
+    """A box with rounded (bevelled) edges, optionally turned about its centre."""
+    bm = bmesh.new()
+    bmesh.ops.create_cube(bm, size=1.0)
+    for vt in bm.verts:                       # r2: real size first, then an absolute bevel
+        vt.co.x *= (x1 - x0)
+        vt.co.y *= (y1 - y0)
+        vt.co.z *= (z1 - z0)
+    bmesh.ops.bevel(bm, geom=list(bm.edges), offset=min(bevel, 0.45 * min(x1 - x0, y1 - y0, z1 - z0)),
+                    segments=3, profile=0.5, affect="EDGES")
+    cxm, cym = 0.5 * (x0 + x1), 0.5 * (y0 + y1)
+    c, sn = math.cos(rot_z), math.sin(rot_z)
+    for vt in bm.verts:
+        lx, ly = vt.co.x, vt.co.y
+        vt.co.x = cxm + lx * c - ly * sn
+        vt.co.y = cym + lx * sn + ly * c
+        vt.co.z = z0 + vt.co.z + 0.5 * (z1 - z0)
+    return _bm_object(name, bm, root, mat, smooth=True)
+
+
+def _ring(name, root, mat, centre, r, tube, axis="z", n=48):
+    cx_, cy_, cz_ = centre
+    pts = []
+    for k in range(n + 1):
+        a = 2 * math.pi * k / n
+        if axis == "z":
+            pts.append((cx_ + r * math.cos(a), cy_ + r * math.sin(a), cz_))
+        elif axis == "y":
+            pts.append((cx_ + r * math.cos(a), cy_, cz_ + r * math.sin(a)))
+        else:
+            pts.append((cx_, cy_ + r * math.cos(a), cz_ + r * math.sin(a)))
+    return _curve(name, root, mat, pts, tube)
+
+
+def _leaf_bm(bm, centre, ang, L, W, curl=0.2, lobes=0, tilt=0.0):
+    """One flat leaf (an almond outline, a raised midrib, edges curling up) as a
+    fan of triangles. `lobes` > 0 scallops the edge (an oak / maple-ish leaf)."""
+    x0, y0, z0 = centre
+    c, sn = math.cos(ang), math.sin(ang)
+    n = 14
+    mid = [bm.verts.new((x0, y0, z0 + 0.04 * L))]
+    left, right = [], []
+    for i in range(1, n):
+        t = i / n
+        w = W * math.sin(math.pi * t) ** 0.8
+        if lobes:
+            w *= 0.75 + 0.25 * abs(math.cos(math.pi * lobes * t))
+        u = t * L
+        zc = z0 + curl * L * (t - 0.5) ** 2 + tilt * u + 0.05 * L * math.sin(math.pi * t)
+        for side, lst in ((1, left), (-1, right)):
+            lx, ly = u, side * w
+            lst.append(bm.verts.new((x0 + lx * c - ly * sn, y0 + lx * sn + ly * c, zc + curl * 0.6 * w)))
+        mid.append(bm.verts.new((x0 + u * c, y0 + u * sn, zc + 0.05 * L)))
+    tip = bm.verts.new((x0 + L * c, y0 + L * sn, z0 + curl * L * 0.25 + tilt * L))
+    mid.append(tip)
+    for i in range(n - 1):
+        a, b = mid[i], mid[i + 1]
+        for lst in (left, right):
+            p0 = lst[i - 1] if i > 0 else None
+            if p0 is None:
+                bm.faces.new((a, lst[0], b)) if lst is left else bm.faces.new((a, b, lst[0]))
+            else:
+                if lst is left:
+                    bm.faces.new((a, p0, lst[i], b))
+                else:
+                    bm.faces.new((a, b, lst[i], p0))
+    for lst in (left, right):
+        if lst is left:
+            bm.faces.new((mid[-2], lst[-1], tip))
+        else:
+            bm.faces.new((mid[-2], tip, lst[-1]))
+
+
+def _leaves(name, root, mat, specs, smooth=True):
+    bm = bmesh.new()
+    for sp in specs:
+        _leaf_bm(bm, *sp)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    return _bm_object(name, bm, root, mat, smooth=smooth)
+
+
+def glass_material(name, tint="#eef3f0", rough=0.05):
+    mat = _principled(name, tint, rough=rough, spec=0.5)
+    b = mat.node_tree.nodes["Principled BSDF"]
+    set_in(b, "Transmission Weight", 1.0)
+    set_in(b, "IOR", 1.45)
+    return mat
+
+
+def rug_material(name, hexcol, pile=55.0):
+    """A soft short-pile rug / faux fur: a strong sheen and a fine tufted bump."""
+    mat = _principled(name, hexcol, rough=0.95, sheen=1.0, spec=0.05)
+    nt = mat.node_tree
+    bsdf = nt.nodes["Principled BSDF"]
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = pile
+    nz.inputs["Detail"].default_value = 6.0
+    nt.links.new(_obj_coords(nt, (1, 1, 1)), nz.inputs["Vector"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.7
+    bump.inputs["Distance"].default_value = 0.2
+    nt.links.new(nz.outputs["Fac"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    base = _lin(hexcol)
+    a = tuple(c * 0.78 for c in base[:3]) + (1.0,)
+    nt.links.new(_mix_rgb(nt, nz.outputs["Fac"], a, base), bsdf.inputs["Base Color"])
+    return mat
+
+
+def gingham_material(name, light_hex, dark_hex, check_cm=1.2):
+    """Woven gingham: crossed stripes, white / half / full where they overlap,
+    over the linen weave's soft thread bump."""
+    mat = _principled(name, light_hex, rough=0.88, sheen=0.3, spec=0.15)
+    nt = mat.node_tree
+    bsdf = nt.nodes["Principled BSDF"]
+    sc = 1.0 / check_cm
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(_obj_coords(nt, (sc, sc, sc)), sep.inputs["Vector"])
+    sx = _math(nt, "LESS_THAN", _math(nt, "FRACT", sep.outputs["X"]), 0.5)
+    sy = _math(nt, "LESS_THAN", _math(nt, "FRACT", sep.outputs["Y"]), 0.5)
+    f = _math(nt, "MULTIPLY", _math(nt, "ADD", sx, sy), 0.5)
+    lt, dk = _lin(light_hex), _lin(dark_hex)
+    nt.links.new(_mix_rgb(nt, f, lt, dk), bsdf.inputs["Base Color"])
+    wv = nt.nodes.new("ShaderNodeTexWave")
+    wv.inputs["Scale"].default_value = 40.0
+    wv.inputs["Distortion"].default_value = 1.0
+    nt.links.new(_obj_coords(nt, (1, 1, 1)), wv.inputs["Vector"])
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.25
+    nt.links.new(wv.outputs["Fac"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
+
+
+def sky_material(name, stops, strength, blob=0.6, speckle=0.0):
+    """A generalised `outside_material`: a vertical gradient through `stops`
+    ((pos, (r, g, b)), ...) with soft noise blobs (trees, hedges, cloud), and
+    optional bright `speckle` (falling snow). Only ever seen far out of focus."""
+    mat = bpy.data.materials.new(name)
+    mat.use_nodes = True
+    nt = mat.node_tree
+    for n in list(nt.nodes):
+        if n.type != "OUTPUT_MATERIAL":
+            nt.nodes.remove(n)
+    out = nt.nodes.get("Material Output")
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Generated"], sep.inputs["Vector"])
+    ramp = nt.nodes.new("ShaderNodeValToRGB")
+    cr = ramp.color_ramp
+    cr.elements[0].position, cr.elements[0].color = stops[0][0], tuple(stops[0][1]) + (1.0,)
+    cr.elements[1].position, cr.elements[1].color = stops[-1][0], tuple(stops[-1][1]) + (1.0,)
+    for pos, col in stops[1:-1]:
+        e = cr.elements.new(pos)
+        e.color = tuple(col) + (1.0,)
+    nt.links.new(sep.outputs["Z"], ramp.inputs["Fac"])
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 4.0
+    nz.inputs["Detail"].default_value = 2.0
+    nt.links.new(tc.outputs["Generated"], nz.inputs["Vector"])
+    mixc = nt.nodes.new("ShaderNodeMix")
+    mixc.data_type = "RGBA"
+    mixc.blend_type = "MULTIPLY"
+    mixc.inputs["Factor"].default_value = blob
+    nt.links.new(ramp.outputs["Color"], mixc.inputs[6])
+    nt.links.new(nz.outputs["Color"], mixc.inputs[7])
+    col = mixc.outputs[2]
+    if speckle > 0.0:
+        vo = nt.nodes.new("ShaderNodeTexVoronoi")
+        vo.inputs["Scale"].default_value = 90.0
+        nt.links.new(tc.outputs["Generated"], vo.inputs["Vector"])
+        dot = _math(nt, "LESS_THAN", vo.outputs["Distance"], 0.12)
+        col = _mix_rgb(nt, _math(nt, "MULTIPLY", dot, speckle), (0, 0, 0, 1), (1, 1, 1, 1))
+        add = nt.nodes.new("ShaderNodeMix")
+        add.data_type = "RGBA"
+        add.blend_type = "ADD"
+        add.inputs["Factor"].default_value = 1.0
+        nt.links.new(mixc.outputs[2], add.inputs[6])
+        nt.links.new(col, add.inputs[7])
+        col = add.outputs[2]
+    em = nt.nodes.new("ShaderNodeEmission")
+    nt.links.new(col, em.inputs["Color"])
+    em.inputs["Strength"].default_value = strength
+    nt.links.new(em.outputs["Emission"], out.inputs["Surface"])
+    return mat
+
+
+def _window_wall(root, H, s, D, vis, plaster, frame, outside, x0f, x1f, ledge_f=0.22, rows=(0.45, 0.9),
+                 cols=3, out_strength_y=0.9):
+    """The back wall with a multi-pane window from x0f..x1f of the visible half
+    width at the wall, its painted ledge and the bright world beyond it."""
+    hwD = vis.hw(D)
+    W = 2.5 * hwD
+    wx0, wx1 = x0f * hwD, x1f * hwD
+    ledge_h = ledge_f * H
+    wz0, wz1 = ledge_h, vis.ztop(D) + 0.6 * H
+    t = 3.0
+    _box("wall_l", root, plaster, -W, wx0, D, D + t, 0, wz1 + 30)
+    _box("wall_r", root, plaster, wx1, W, D, D + t, 0, wz1 + 30)
+    _box("wall_b", root, plaster, wx0, wx1, D, D + t, 0, wz0)
+    _box("wall_t", root, plaster, wx0, wx1, D, D + t, wz1, wz1 + 30)
+    fb = 0.9
+    fy0, fy1 = D + 0.5 * t, D + 0.5 * t + 1.2
+    _box("wf_bot", root, frame, wx0, wx1, fy0, fy1, wz0, wz0 + fb * 1.6)
+    _box("wf_l", root, frame, wx0, wx0 + fb * 1.4, fy0, fy1, wz0, wz1)
+    _box("wf_r", root, frame, wx1 - fb * 1.4, wx1, fy0, fy1, wz0, wz1)
+    for i in range(1, cols):
+        mx = wx0 + (wx1 - wx0) * i / float(cols)
+        _box("wf_mull%d" % i, root, frame, mx - fb * 0.5, mx + fb * 0.5, fy0, fy1, wz0, wz1)
+    for zf in rows:
+        mz = wz0 + (vis.ztop(D) - wz0) * zf
+        _box("wf_tran%.0f" % (zf * 10), root, frame, wx0, wx1, fy0, fy1, mz - fb * 0.5, mz + fb * 0.5)
+    _box("ledge", root, frame, -W, W, D - 0.12 * s, D + 0.5 * t, 0, ledge_h)
+    oy = D + out_strength_y * s
+    ob = _box("outside", root, outside, -2.0 * vis.hw(oy), 2.0 * vis.hw(oy), oy, oy + 1, -2, vis.ztop(oy) + 5)
+    ob.visible_shadow = False
+    return dict(wx0=wx0, wx1=wx1, wz0=wz0, wz1=wz1, fy0=fy0)
+
+
+def _yarn_ball(name, root, hexcol, x, y, r, seed=0.0, tail=None):
+    """A wound ball of yarn: a core under ~18 wraps of plump strand laid on great
+    circles at scattered angles (the criss-cross of a hand-wound ball)."""
+    mat = _principled(name, hexcol, rough=0.85, sheen=0.6, spec=0.15)
+    core = _principled(name + "_core", tuple(c * 0.82 for c in _lin(hexcol)[:3]) + (1.0,), rough=0.9, sheen=0.5)
+    _spheres(name + "_core", root, core, [(x, y, r * 0.96)], r * 0.9, subdiv=3)
+    th = r * 0.045                             # r2: ~70 fine wraps (18 thick ones read as a plastic cage)
+    cu = bpy.data.curves.new(name + "_wraps", type="CURVE")
+    cu.dimensions = "3D"
+    cu.bevel_depth = th
+    cu.bevel_resolution = 2
+    for k in range(70):
+        a = _hash01(k, seed + 1) * math.pi * 2
+        b = math.asin(2 * _hash01(k, seed + 2) - 1)
+        nx_, ny_, nz_ = math.cos(a) * math.cos(b), math.sin(a) * math.cos(b), math.sin(b)
+        n = Vector((nx_, ny_, nz_)).normalized()
+        u = n.cross(Vector((0, 0, 1)) if abs(nz_) < 0.9 else Vector((1, 0, 0))).normalized()
+        v = n.cross(u)
+        rr = r * (0.92 + 0.05 * _hash01(k, seed + 3))
+        sp = cu.splines.new("POLY")
+        sp.points.add(40)
+        for i in range(41):
+            t = 2 * math.pi * i / 40
+            p = (u * math.cos(t) + v * math.sin(t)) * rr
+            sp.points[i].co = (x + p.x, y + p.y, r * 0.96 + p.z, 1.0)
+    ob = bpy.data.objects.new(name + "_wraps", cu)
+    bpy.context.scene.collection.objects.link(ob)
+    ob.parent = root
+    cu.materials.append(mat)
+    if tail:
+        _curve(name + "_tail", root, mat, [(x, y - r * 0.6, r * 0.25)] + tail, th)
+
+
+# ---- linen variants -------------------------------------------------------
+
+def _stage_linen_basket(root, H, R, s, D, vis, light):
+    """Linen + a wicker basket of yarn balls back left, two balls rolled out
+    front right; afternoon light from the right."""
+    _ground(root, wood_material("table_wood", "#c4a07a", "#8a6646"), s, D)
+    lin = linen_material("throw", "#dccfb8")
+    _throw("throw", root, lin, vis, H, R, D, 0.05, back=0.5, seed=2.7, wl_scale=1.8)
+    _box("wall", root, plaster_material("wall", "#efe5d6"), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    wicker = linen_material("wicker", "#a8875e", weave=0.9)
+    by = 0.42 * D
+    bx = -0.62 * vis.hw(by)
+    br, bh = 0.85 * H, 0.75 * H
+    _lathe("basket", root, wicker, bx, by, [(0.0, 0.02), (br * 0.82, 0.02), (br * 0.9, 0.05 * bh), (br, 0.6 * bh),
+                                             (br * 1.04, bh), (br * 0.98, bh * 1.02), (br * 0.94, 0.6 * bh), (br * 0.84, 0.1 * bh), (0.0, 0.1 * bh)])
+    _ring("basket_rim", root, wicker, (bx, by, bh), br * 1.02, 0.05 * H)
+    cols = ("#c98f87", "#e8dcc6", "#9fae94", "#d9b46f", "#b9a7c8")
+    for i, (ox, oy, rr) in enumerate(((-0.35, -0.2, 0.36), (0.3, -0.25, 0.34), (0.0, 0.25, 0.38), (-0.4, 0.35, 0.33), (0.42, 0.3, 0.32))):
+        r = rr * H
+        _yarn_ball("ball%d" % i, root, cols[i], bx + ox * br, by + oy * br, r, seed=i * 3.1)
+        for ob in [o for o in bpy.data.objects if o.name.startswith("ball%d" % i)]:
+            ob.location.z += bh * 0.62
+    y2 = -0.02 * s
+    x2 = _beside(R, H, 0.22 * H, 1)
+    _yarn_ball("ballf1", root, "#c98f87", x2, y2, 0.22 * H, seed=11.0,
+               tail=[(x2 - 0.25 * H, y2 - 0.3 * H, 0.06), (x2 - 0.1 * H, y2 - 0.5 * H, 0.06),
+                     (x2 - 0.4 * H, y2 - 0.7 * H, 0.06)])
+    y3 = 0.25 * s
+    _yarn_ball("ballf2", root, "#e8dcc6", 0.85 * vis.hw(y3), y3, 0.28 * H, seed=17.0)
+    light((1.3 * s, 0.05 * s, 0.7 * s), (0, 0, 0.4 * H), 1.6, 0.7 * s, GOLD)
+    light((-0.4 * s, 0.35 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.8, 1.6 * s, WARM_SOFT)
+
+
+def _scissors(root, H, x, y, ang, metal, handle):
+    """Small embroidery scissors lying flat: two tapered blades, two ring bows."""
+    bm = bmesh.new()
+    L = 0.75 * H
+    c, sn = math.cos(ang), math.sin(ang)
+
+    def P(u, v, z):
+        return (x + u * c - v * sn, y + u * sn + v * c, z)
+    for side in (1, -1):
+        prof = [(0.0, 0.0), (0.1, 0.05), (0.5, 0.04), (1.0, 0.004)]
+        top, bot = [], []
+        for u, w in prof:
+            vv = side * 0.012 * H + side * 0.02 * H * (1 - u)
+            top.append(bm.verts.new(P(u * L, vv + w * H * 0.5, 0.05 + (0.01 if side > 0 else 0.0))))
+            bot.append(bm.verts.new(P(u * L, vv - w * H * 0.5, 0.05 + (0.01 if side > 0 else 0.0))))
+        for i in range(len(prof) - 1):
+            bm.faces.new((top[i], top[i + 1], bot[i + 1], bot[i]))
+    _bm_object("scissor_blades", bm, root, metal, smooth=False)
+    for side in (1, -1):
+        cx_, cy_, _ = P(-0.17 * H, side * 0.1 * H, 0)
+        _ring("scissor_bow%d" % side, root, handle, (cx_, cy_, 0.06), 0.1 * H, 0.025 * H)
+        _curve("scissor_shank%d" % side, root, handle, [P(-0.08 * H, side * 0.07 * H, 0.06), P(0.04 * H, side * 0.015 * H, 0.06)], 0.022 * H)
+    _spheres("scissor_pivot", root, metal, [P(0.06 * H, 0.0, 0.08)], 0.025 * H)
+
+
+def _hook(root, H, x, y, ang, shaft_mat, grip_mat):
+    c, sn = math.cos(ang), math.sin(ang)
+    L = 1.15 * H
+
+    def P(u, z):
+        return (x + u * c, y + u * sn, z)
+    r = 0.025 * H
+    _curve("hook_shaft", root, shaft_mat, [P(0.0, r), P(L, r)], r)
+    _curve("hook_tip", root, shaft_mat, [P(L, r), P(L + 0.04 * H, r * 1.1), P(L + 0.06 * H, r * 1.6)], r * 0.7)
+    _curve("hook_grip", root, grip_mat, [P(0.0, r * 1.5), P(0.45 * L, r * 1.5)], r * 1.9)
+
+
+def _stage_linen_worktable(root, H, R, s, D, vis, light):
+    """A maker's oak worktable: no cloth, a crochet hook and brass scissors laid
+    beside the piece, a yarn ball with its strand running to the hook, a stack
+    of folded swatches back right; clear morning light from the left."""
+    _ground(root, wood_material("worktable", "#c79a6a", "#7d5435", rough=0.45), s, D)
+    _box("wall", root, plaster_material("wall", "#e9e4dc"), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    brass = metal_material("#c9a35a")
+    steel = metal_material("#bfc4c8")
+    grip = _principled("grip", "#c98f87", rough=0.4, spec=0.4)
+    y0 = -0.08 * s
+    _hook(root, H, 0.42 * vis.hw(y0), y0 - 0.1 * H, math.radians(18), steel, grip)
+    y1 = 0.12 * s
+    _scissors(root, H, -0.75 * vis.hw(y1), y1, math.radians(-30), brass, brass)
+    yb = 0.38 * s
+    _yarn_ball("ball", root, "#9fae94", 0.75 * vis.hw(yb), yb, 0.3 * H, seed=4.0,
+               tail=[(0.62 * vis.hw(yb), yb - 0.6 * H, 0.06), (0.55 * vis.hw(y0), y0 + 0.2 * H, 0.06),
+                     (0.5 * vis.hw(y0), y0, 0.06)])
+    # folded swatches (little knit squares) stacked back right
+    ys = 0.6 * D
+    xs = 0.8 * vis.hw(ys)
+    z = 0.0
+    for i, col in enumerate(("#e8dcc6", "#c98f87", "#d9b46f")):
+        _rbox("swatch%d" % i, root, knit_material("sw%d" % i, col, stitch_cm=0.6), xs - 0.55 * H, xs + 0.55 * H,
+              ys - 0.5 * H, ys + 0.5 * H, z, z + 0.12 * H, 0.04 * H, rot_z=0.08 * (i - 1))
+        z += 0.12 * H
+    # a stoneware mug of hooks back left
+    mug = _principled("mug", "#d8cfc0", rough=0.45, spec=0.4, coat=0.2)
+    my = 0.55 * D
+    mx = -0.6 * vis.hw(my)
+    _lathe("hookmug", root, mug, mx, my, [(0, 0), (0.3 * H, 0), (0.32 * H, 0.05 * H), (0.32 * H, 0.75 * H),
+                                          (0.29 * H, 0.75 * H), (0.29 * H, 0.1 * H), (0, 0.1 * H)])
+    for k in range(4):
+        a = -0.25 + 0.17 * k
+        _curve("mughook%d" % k, root, [steel, grip][k % 2], [(mx + 0.05 * H * k - 0.08 * H, my, 0.1 * H),
+                                                             (mx + math.sin(a) * 1.0 * H, my + 0.05 * H, 1.35 * H)], 0.035 * H)
+    light((-1.2 * s, -0.1 * s, 1.0 * s), (0, 0, 0.4 * H), 1.5, 0.8 * s, WARM_SOFT)
+    light((0.5 * s, 0.35 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.8, 1.6 * s, WARM_SOFT)
+
+
+def _stage_linen_dried(root, H, R, s, D, vis, light):
+    """A pale blush linen with a stoneware jar of bunny-tail grass and dried
+    stems back right, loose dried rose heads scattered front left; soft light
+    from the back left."""
+    _ground(root, wood_material("table_wood", "#d2b897", "#a5825f"), s, D)
+    lin = linen_material("throw", "#e6d3c9")
+    _throw("throw", root, lin, vis, H, R, D, 0.06, back=0.5, seed=4.4, wl_scale=1.9)
+    _box("wall", root, plaster_material("wall", "#f0e4dc"), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    jar = _principled("jar", "#c8b7a6", rough=0.7, spec=0.25)
+    jy = 0.5 * D
+    jx = 0.6 * vis.hw(jy)
+    _lathe("jar", root, jar, jx, jy, [(0, 0), (0.32 * H, 0), (0.42 * H, 0.35 * H), (0.38 * H, 0.75 * H),
+                                      (0.22 * H, 0.95 * H), (0.24 * H, 1.05 * H), (0.2 * H, 1.05 * H), (0.18 * H, 0.95 * H)])
+    stem = _principled("dstem", "#a89770", rough=0.8)
+    tail = _principled("bunnytail", "#efe6d6", rough=1.0, sheen=1.0)
+    rust = _principled("rustpod", "#a8735a", rough=0.85)
+    tails, pods = [], []
+    for k in range(13):
+        a = math.radians(-40 + 80 * k / 12.0) + 0.1 * (_hash01(k, 3) - 0.5)
+        Lk = (1.4 + 0.6 * _hash01(k, 4)) * H
+        top = (jx + math.sin(a) * Lk * 0.7, jy + 0.2 * H * (_hash01(k, 5) - 0.5), 1.0 * H + math.cos(a) * Lk)
+        mid = (jx + math.sin(a) * Lk * 0.3, jy, 1.0 * H + math.cos(a) * Lk * 0.5)
+        _curve("dst%d" % k, root, stem, [(jx, jy, 0.8 * H), mid, top], 0.012 * H)
+        if k % 3 == 2:
+            for j in range(5):
+                pods.append((top[0] - math.sin(a) * 0.06 * H * j, top[1], top[2] - math.cos(a) * 0.06 * H * j, 0.05 * H))
+        else:
+            for j in range(6):
+                t = j / 5.0
+                tails.append((top[0] + math.sin(a) * 0.12 * H * t, top[1], top[2] + math.cos(a) * 0.12 * H * t,
+                              (0.07 + 0.035 * math.sin(math.pi * t)) * H))
+    _spheres("bunnytails", root, tail, tails, 0.08 * H, subdiv=2)
+    _spheres("pods", root, rust, pods, 0.05 * H, subdiv=2)
+    # loose dried rose heads front left: tight petal balls in dusty rose
+    rose = _principled("rose", "#b9837f", rough=0.8, sheen=0.3)
+    rose2 = _principled("rose2", "#d7a9a0", rough=0.8, sheen=0.3)
+    leaf = _principled("rleaf", "#8a8b66", rough=0.8)
+    pts, pts2, lv = [], [], []
+    for i, (fx, fy) in enumerate(((-0.72, -0.12), (-0.55, 0.02), (-0.82, 0.12), (0.5, -0.2))):
+        y = fy * s
+        x = fx * vis.hw(y)
+        rr = (0.09 + 0.03 * _hash01(i, 6)) * H
+        for k in range(14):
+            a = k * 2.399963
+            rad = rr * 0.55 * math.sqrt((k + 0.5) / 14)
+            (pts if i % 2 == 0 else pts2).append((x + rad * math.cos(a), y + rad * math.sin(a), 0.06 + rr * (0.9 - 0.4 * (k / 14)), rr * 0.45))
+        lv.append(((x + 0.1 * H, y - 0.05 * H, 0.05), math.radians(-30 + 70 * i), 0.22 * H, 0.06 * H, 0.25))
+    _spheres("roses", root, rose, pts, 0.04 * H, subdiv=2)
+    _spheres("roses2", root, rose2, pts2, 0.04 * H, subdiv=2)
+    _leaves("rose_leaves", root, leaf, lv)
+    light((-1.0 * s, 0.6 * s, 0.9 * s), (0, 0, 0.4 * H), 1.8, 0.8 * s, WARM)
+    light((0.6 * s, -0.2 * s, 0.9 * s), (0, 0.3 * D, 0.1 * s), 0.45, 1.4 * s, WARM_SOFT)
+
+
+# ---- windowsill variants ------------------------------------------------
+
+def _stage_windowsill_rain(root, H, R, s, D, vis, light):
+    """A grey rainy afternoon: a pale painted sill, the window to the RIGHT with
+    rain drops on the glass and a slate-green garden beyond, a steaming mug and
+    two books back left; soft cool daylight."""
+    _ground(root, wood_material("sill_wood", "#d9d4cc", "#b3aca1", rough=0.6), s, D)
+    plaster = plaster_material("wall", "#dedbd5")
+    frame = wood_material("window_frame", "#ecebe6", "#c9c6bd", along_x=False, rough=0.7)
+    out = sky_material("outside", ((0.0, (0.30, 0.36, 0.33)), (0.35, (0.55, 0.60, 0.60)), (0.62, (0.86, 0.89, 0.92))), 2.0, blob=0.5)
+    w = _window_wall(root, H, s, D, vis, plaster, frame, out, -0.35, 1.1)
+    # drops on the glass: tiny clear beads, seen as glinting specks in the blur
+    drop = glass_material("drop", "#ffffff", rough=0.0)
+    pts = []
+    for k in range(160):
+        x = w["wx0"] + (w["wx1"] - w["wx0"]) * _hash01(k, 21)
+        z = w["wz0"] + (w["wz1"] - w["wz0"]) * _hash01(k, 22)
+        pts.append((x, w["fy0"] - 0.2, z, (0.08 + 0.12 * _hash01(k, 23) ** 2) * H * 0.8))
+    _spheres("drops", root, drop, pts, 0.03 * H, subdiv=2)
+    # a soft grey-blue knit throw under the piece
+    knit = knit_material("throw", "#c9ced2", stitch_cm=1.5)
+    _throw("throw", root, knit, vis, H, R, D, 0.04, back=0.32, seed=1.7, right=0.85, hem=0.04 * H)
+    mug = _principled("mug", "#8e9e94", rough=0.35, spec=0.45, coat=0.3)
+    my = 0.45 * D
+    mx = -0.6 * vis.hw(my)
+    m_ = 0.7                                   # r2: a mug at mug size (was a bucket)
+    _lathe("mug", root, mug, mx, my, [(0, 0), (0.34 * H * m_, 0), (0.37 * H * m_, 0.05 * H * m_), (0.38 * H * m_, 0.75 * H * m_),
+                                      (0.35 * H * m_, 0.77 * H * m_), (0.34 * H * m_, 0.12 * H * m_), (0, 0.12 * H * m_)])
+    _cyl("tea", root, _principled("tea", "#6a4630", rough=0.1, spec=0.6), mx, my, 0.55 * H * m_, 0.345 * H * m_, 0.345 * H * m_, 0.06 * H)
+    _curve("mug_handle", root, mug, [(mx - 0.36 * H * m_, my, 0.62 * H * m_), (mx - 0.56 * H * m_, my, 0.55 * H * m_),
+                                     (mx - 0.56 * H * m_, my, 0.3 * H * m_), (mx - 0.36 * H * m_, my, 0.22 * H * m_)], 0.05 * H * m_)
+    by = 0.6 * D
+    bx = -0.85 * vis.hw(by)
+    z0 = 0.0
+    for kk, (col, th) in enumerate((("#6f7f8c", 0.2), ("#e3ddd0", 0.15))):
+        _box("book%d" % kk, root, _principled("book%d" % kk, col, rough=0.7),
+             bx - 0.7 * H, bx + 0.7 * H, by - 0.45 * H, by + 0.45 * H, z0, z0 + th * H)
+        z0 += th * H
+    light((w["wx1"] * 0.6, D - 3, w["wz0"] + 0.55 * (w["wz1"] - w["wz0"])), (0, 0, 0.45 * H), 1.6, 0.9 * s, (0.86, 0.92, 1.0))
+    light((-0.6 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.4, 1.2 * s, WARM_SOFT)
+
+
+def _pumpkin(root, H, x, y, r, hexcol, name="pumpkin"):
+    mat = _principled(name, hexcol, rough=0.45, spec=0.35)
+    bm = bmesh.new()
+    seg, rings = 48, 20
+    verts = []
+    for j in range(rings + 1):
+        t = j / rings
+        ph = math.pi * t
+        row = []
+        for k in range(seg):
+            a = 2 * math.pi * k / seg
+            rib = 1.0 - 0.09 * abs(math.cos(a * 4)) ** 0.6
+            rr = r * math.sin(ph) * rib
+            row.append(bm.verts.new((x + rr * math.cos(a), y + rr * math.sin(a), r * 0.82 * (1 - math.cos(ph)) * (1 - 0.12 * math.sin(ph)))))
+        verts.append(row)
+    for j in range(rings):
+        for k in range(seg):
+            bm.faces.new((verts[j][k], verts[j][(k + 1) % seg], verts[j + 1][(k + 1) % seg], verts[j + 1][k]))
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-4)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    _bm_object(name, bm, root, mat, smooth=True)
+    _curve(name + "_stalk", root, _principled(name + "_st", "#6b5a3a", rough=0.9),
+           [(x, y, r * 1.5), (x + 0.05 * r, y, r * 1.75), (x + 0.15 * r, y, r * 1.85)], 0.09 * r)
+
+
+def _stage_windowsill_autumn(root, H, R, s, D, vis, light):
+    """Late October: a walnut sill, low golden sun raking in from the RIGHT, an
+    amber garden beyond, fallen leaves (rust, ochre, oxblood) and two small
+    pumpkins; a mustard knit under the piece."""
+    _ground(root, wood_material("sill_wood", "#8f6646", "#5a3c26"), s, D)
+    plaster = plaster_material("wall", "#e4d4bd")
+    frame = wood_material("window_frame", "#d9c8aa", "#a88d66", along_x=False, rough=0.75)
+    out = sky_material("outside", ((0.0, (0.55, 0.30, 0.10)), (0.3, (0.85, 0.52, 0.22)), (0.6, (1.0, 0.86, 0.62))), 2.6, blob=0.65)
+    w = _window_wall(root, H, s, D, vis, plaster, frame, out, -0.9, 0.55)
+    lin = linen_material("throw", "#cdb595")    # r3: the mustard knit read as a straw mat
+    _throw("throw", root, lin, vis, H, R, D, 0.08, back=0.3, seed=3.1, wl_scale=1.4, right=0.7, hem=0.03 * H)
+    _pumpkin(root, H, 0.7 * vis.hw(0.6 * D), 0.6 * D, 0.4 * H, "#c27a40")
+    _pumpkin(root, H, 1.0 * vis.hw(0.7 * D), 0.7 * D, 0.3 * H, "#e6dcc6", name="pumpkin2")
+    cols = ("#9c4a26", "#b98a3a", "#6e2a24", "#a8642e")
+    for ci, col in enumerate(cols):
+        specs = []
+        for k in range(4):
+            kk = ci * 4 + k
+            y = (-0.2 + 0.55 * _hash01(kk, 31)) * s
+            side = -1 if _hash01(kk, 32) < 0.62 else 1
+            x = side * (0.45 + 0.6 * _hash01(kk, 33)) * vis.hw(y)
+            if abs(x) < R * 1.3 and y < R:
+                x = side * (R * 1.4 + 0.3 * H)
+            L = (0.3 + 0.1 * _hash01(kk, 34)) * H        # r4: broader, flatter leaves lying on the cloth
+            zc = 0.1 + (0.07 * H if abs(x) < 0.7 * vis.hw(y) else 0.0)
+            specs.append(((x, y, zc), 2 * math.pi * _hash01(kk, 35), L, L * 0.38, 0.05, 0, 0.0))
+        _leaves("leaves%d" % ci, root, _principled("leaf%d" % ci, col, rough=0.7, sheen=0.2), specs)
+        stalk = _principled("leafstalk%d" % ci, "#5a3a22", rough=0.8)
+        for j, sp in enumerate(specs):
+            (lx, ly, lz), la, L = sp[0], sp[1], sp[2]
+            _curve("lstalk%d_%d" % (ci, j), root, stalk, [(lx, ly, lz + 0.02 * L), (lx - 0.18 * L * math.cos(la), ly - 0.18 * L * math.sin(la), lz)], 0.008 * H)
+    light((w["wx1"] * 1.4, D * 0.6, 0.45 * s), (0, 0, 0.45 * H), 2.4, 0.5 * s, (1.0, 0.72, 0.45))
+    light((-0.7 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.25, 1.2 * s, WARM)
+
+
+def _stage_windowsill_spring(root, H, R, s, D, vis, light):
+    """A fresh spring morning: a white sill, sage gingham under the piece, a
+    glass jar of tulips back right and a pale blue-green garden beyond; bright
+    cool morning light from the left."""
+    _ground(root, wood_material("sill_wood", "#f1eee8", "#d8d3c8", rough=0.5), s, D)
+    plaster = plaster_material("wall", "#f2f0ea")
+    frame = wood_material("window_frame", "#f6f5f1", "#dcd9d0", along_x=False, rough=0.6)
+    out = sky_material("outside", ((0.0, (0.48, 0.62, 0.38)), (0.33, (0.72, 0.84, 0.62)), (0.62, (0.90, 0.95, 1.0))), 2.4, blob=0.5)
+    w = _window_wall(root, H, s, D, vis, plaster, frame, out, -1.05, 0.4)
+    ging = gingham_material("gingham", "#f4f4ee", "#9db394", check_cm=0.9)
+    _throw("napkin", root, ging, vis, H, R, D, 0.07, back=0.32, seed=0.8, wl_scale=1.4, right=0.8, hem=0.03 * H)
+    jy = 0.55 * D
+    jx = 0.82 * vis.hw(jy)                      # r3: clear of the head
+    # r4: a speckled cream stoneware jug (the clear jar refracted into abstract shapes)
+    jug = _principled("jug", "#f1ebdf", rough=0.35, spec=0.45, coat=0.25)
+    _lathe("jar", root, jug, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.35 * H, 0.45 * H),
+                                      (0.27 * H, 0.8 * H), (0.25 * H, 0.95 * H), (0.23 * H, 0.95 * H), (0.22 * H, 0.82 * H)])
+    stem = _principled("tstem", "#6f9a55", rough=0.6)
+    cols = ("#f2a7b4", "#f7d36b", "#f2a7b4", "#fbf1e6", "#e98ba0", "#f7d36b", "#fbf1e6")
+    lv = []
+    for k, col in enumerate(cols):
+        a = math.radians(-30 + 60 * k / 6.0)
+        Lk = (1.35 + 0.35 * _hash01(k, 41)) * H
+        zmax = min(1.9 * H, vis.ztop(jy) - 0.55 * H)     # r2: the heads sit IN frame
+        top = (jx + math.sin(a) * Lk * 0.45, jy + 0.12 * H * (_hash01(k, 42) - 0.5),
+               min(0.9 * H + math.cos(a) * Lk * 0.7, zmax - 0.25 * H * _hash01(k, 43)))
+        _curve("tst%d" % k, root, stem, [(jx + 0.05 * H * (k - 3), jy, 0.08 * H), (jx + math.sin(a) * 0.2 * H, jy, 0.9 * H), top], 0.025 * H)
+        cup = _principled("tulip%d" % k, col, rough=0.5, sheen=0.3)
+        _lathe("tulip%d" % k, root, cup, top[0], top[1], [(0, top[2] - 0.02 * H), (0.12 * H, top[2] + 0.05 * H),
+                                                         (0.15 * H, top[2] + 0.18 * H), (0.11 * H, top[2] + 0.32 * H), (0.0, top[2] + 0.36 * H)], seg=24)
+        lv.append(((jx + math.sin(a) * 0.25 * H, jy - 0.05 * H, 0.9 * H), math.pi / 2 + a * 1.6, 0.6 * H, 0.09 * H, 0.0, 0, 0.6))
+    _leaves("tulip_leaves", root, _principled("tleaf", "#7fa866", rough=0.5), lv)
+    light((w["wx0"] * 0.6, D - 3, w["wz0"] + 0.6 * (w["wz1"] - w["wz0"])), (0, 0, 0.45 * H), 1.8, 0.8 * s, (0.97, 0.98, 1.0))
+    light((0.6 * s, -0.25 * s, 0.8 * s), (0.0, 0.5 * D, 0.2 * s), 0.45, 1.2 * s, WARM_SOFT)
+
+
+# ---- nursery variants ---------------------------------------------------
+
+def _bunting(root, H, a, b, sag, count, cols, flag_w, flag_h):
+    """A string of fabric pennant flags sagging between two points."""
+    twine = _principled("bunting_string", "#f2ece2", rough=0.9)
+    pts = []
+    N = 40
+    for i in range(N + 1):
+        t = i / N
+        pts.append((a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t - sag * math.sin(math.pi * t)))
+    _curve("bunting_string", root, twine, pts, 0.012 * H)
+    for ci, col in enumerate(cols):
+        bm = bmesh.new()
+        for k in range(ci, count, len(cols)):
+            t = (k + 0.5) / count
+            p = (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t - sag * math.sin(math.pi * t))
+            dz = -sag * math.pi * math.cos(math.pi * t) / count
+            sway = 0.04 * flag_w * math.sin(k * 1.7)
+            v = [bm.verts.new((p[0] - flag_w / 2, p[1], p[2] - dz / 2)), bm.verts.new((p[0] + flag_w / 2, p[1], p[2] + dz / 2)),
+                 bm.verts.new((p[0] + sway, p[1] + 0.05 * flag_w, p[2] - flag_h))]
+            bm.faces.new(v)
+        mat = knit_material("flag%d" % ci, col, stitch_cm=0.35) if ci % 2 else linen_material("flag%d" % ci, col, weave=10.0)
+        ob = _bm_object("flags%d" % ci, bm, root, mat, smooth=False)
+        sol = ob.modifiers.new("thick", "SOLIDIFY")
+        sol.thickness = 0.02 * H
+
+
+def _stage_nursery_cot(root, H, R, s, D, vis, light):
+    """In the cot: a crisp white cotton sheet, white painted cot rails behind,
+    a pastel bunting strung across the top and a pale dove-grey wall; soft
+    morning light from the right."""
+    sheet = linen_material("sheet", "#f4f1ec", weave=11.0)
+    _ground(root, _principled("mattress", "#f3efe8", rough=0.8), s, D)
+    _throw("sheet", root, sheet, vis, H, R, D, 0.05, back=0.5, seed=5.2, wl_scale=1.6)
+    _box("wall", root, plaster_material("wall", "#e4e6e8", mottle=0.04), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    paint = _principled("cotpaint", "#f5f3ef", rough=0.4, spec=0.4)
+    ry = 0.62 * D
+    hw = vis.hw(ry)
+    top = vis.zmid(ry) + 0.55 * (vis.ztop(ry) - vis.zmid(ry))
+    _rbox("cot_rail_top", root, paint, -1.3 * hw, 1.3 * hw, ry - 0.12 * H, ry + 0.12 * H, top, top + 0.22 * H, 0.06 * H)
+    _rbox("cot_rail_bot", root, paint, -1.3 * hw, 1.3 * hw, ry - 0.12 * H, ry + 0.12 * H, 0.0, 0.25 * H, 0.06 * H)
+    nb = 11
+    for i in range(nb):
+        x = -1.2 * hw + 2.4 * hw * i / (nb - 1)
+        _cyl("cot_bar%d" % i, root, paint, x, ry, 0.2 * H, 0.05 * H, 0.05 * H, top - 0.15 * H, seg=24)
+    by = 0.45 * D                              # r2: strung IN FRONT of the rails
+    bz = vis.ztop(by) - 0.15 * H
+    _bunting(root, H, (-1.2 * vis.hw(by), by, bz), (1.2 * vis.hw(by), by, bz + 0.1 * H), 0.6 * H, 13,
+             ("#efc6c4", "#cfe3d6", "#f6e3a8", "#c9d9ec"), 0.55 * H, 0.65 * H)
+    # a little muslin square folded beside the piece, front right
+    y = -0.05 * s
+    xm = _beside(R, H, 0.3 * H, 1)
+    _rbox("muslin", root, linen_material("muslin", "#d9e6dc", weave=6.0), xm - 0.3 * H, xm + 0.4 * H,
+          y - 0.35 * H, y + 0.35 * H, 0.05, 0.07 * H, 0.025 * H, rot_z=0.25)
+    light((1.2 * s, 0.1 * s, 0.9 * s), (0, 0, 0.4 * H), 1.5, 0.9 * s, (1.0, 0.97, 0.94))
+    light((-0.3 * s, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 1.0, 1.6 * s, (0.98, 0.98, 1.0))
+
+
+def _stage_nursery_shelf(root, H, R, s, D, vis, light):
+    """A nursery bookshelf: a pale oak shelf, a soft sage wall, a row of upright
+    picture books on the left, a little potted plant and a wooden rainbow on
+    the right; warm light from the left."""
+    oak = wood_material("shelf", "#e2c49a", "#b99266", rough=0.5)
+    _ground(root, oak, s, D)
+    _box("shelf_front", root, oak, -3 * s, 3 * s, vis.y_near() - 6.0, vis.y_near() - 4.0, -6.0, 0.0)
+    _box("wall", root, plaster_material("wall", "#dfe6d8", mottle=0.05), -3 * s, 3 * s, D * 0.55, D * 0.55 + 3, 0, 2.5 * s)
+    by = 0.28 * D
+    x = -0.45 * vis.hw(by)
+    cols = ("#e9b8b0", "#f4e6c4", "#a9c4b4", "#c7b8d8", "#f0d29a", "#e3e0d6", "#b7cfe0")
+    for i, col in enumerate(cols):
+        th = (0.16 + 0.08 * _hash01(i, 51)) * H
+        hgt = (1.15 + 0.4 * _hash01(i, 52)) * H
+        dep = (0.7 + 0.15 * _hash01(i, 53)) * H
+        lean = 0.0 if i < len(cols) - 1 else -0.25
+        ob = _rbox("book%d" % i, root, _principled("book%d" % i, col, rough=0.6), x - th, x, by - dep / 2, by + dep / 2,
+                   0.0, hgt, 0.02 * H)
+        if lean:
+            ob.rotation_euler = (0, lean, 0)
+        x -= th + 0.01 * H
+    # wooden rainbow (nested arches) and a potted plant on the right
+    ry = 0.3 * D
+    rx = 0.55 * vis.hw(ry)
+    for i, col in enumerate(("#d98c7a", "#e8b77a", "#b5c49a", "#9fb7c9")):
+        rad = (0.75 - 0.15 * i) * H
+        arch = [(rx + rad * math.cos(math.pi * k / 30), ry, 0.0 + rad * math.sin(math.pi * k / 30)) for k in range(31)]
+        _curve("arch%d" % i, root, _principled("arch%d" % i, col, rough=0.55), arch, 0.075 * H)
+    py = 0.42 * D
+    px = 0.95 * vis.hw(py)
+    pot = _principled("pot", "#e9dccb", rough=0.6)
+    _lathe("pot", root, pot, px, py, [(0, 0), (0.3 * H, 0), (0.38 * H, 0.55 * H), (0.4 * H, 0.6 * H), (0, 0.6 * H)])
+    leaf = _principled("plantleaf", "#6f9466", rough=0.5, spec=0.3)
+    lv = []
+    for k in range(11):
+        a = k * 2.399963
+        lv.append(((px, py, 0.55 * H), a, (0.45 + 0.2 * _hash01(k, 54)) * H, 0.16 * H, -0.3, 0, 0.45 + 0.3 * _hash01(k, 55)))
+    _leaves("plant", root, leaf, lv)
+    light((-1.2 * s, 0.0, 0.9 * s), (0, 0, 0.4 * H), 1.5, 0.8 * s, WARM_SOFT)
+    light((0.3 * s, 0.25 * D, 1.0 * s), (0.0, 0.55 * D, 0.25 * s), 0.8, 1.4 * s, WARM_SOFT)
+
+
+def _stage_nursery_rug(root, H, R, s, D, vis, light):
+    """Playtime on the floor: a soft mint pile rug, chunky pastel wooden blocks
+    (a little tower back right, one tumbled front left) and a stacking-ring toy
+    back left, against a warm white wall; light from above right."""
+    _ground(root, wood_material("floor", "#e6d2b6", "#c4a882", rough=0.5), s, D)
+    rug = rug_material("rug", "#cfe3d8")
+    _throw("rug", root, rug, vis, H, R, D, 0.012, back=0.55, seed=6.1, wl_scale=2.2)
+    _box("wall", root, plaster_material("wall", "#f3eee7"), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    bcols = ("#efc0bb", "#f5dfa0", "#bcd3e6", "#e0c49e", "#cbbfe0")
+    by = 0.35 * D
+    bx = 0.62 * vis.hw(by)
+    b = 0.32 * H
+    z = 0.05
+    for i, (ox, oy, rz) in enumerate(((0.0, 0.0, 0.1), (0.55, 0.1, -0.15), (0.25, 0.0, 0.3))):
+        zz = 0.05 if i < 2 else 0.05 + b
+        if i == 2:
+            ox = 0.28
+        _rbox("block%d" % i, root, wood_material("block%d" % i, bcols[i], bcols[i], rough=0.5),
+              bx + ox * H * 1.0 - b / 2, bx + ox * H * 1.0 + b / 2, by + oy * H - b / 2, by + oy * H + b / 2,
+              zz, zz + b, 0.06 * H, rot_z=rz)
+    y = -0.02 * s
+    x = _beside(R, H, 0.2 * H, -1)
+    ob = _rbox("block_f", root, wood_material("block_f", bcols[4], bcols[4], rough=0.5), x - b / 2, x + b / 2, y - b / 2, y + b / 2,
+               0.0, b, 0.06 * H, rot_z=0.5)
+    ob.location = (0, 0, 0.12)
+    # stacking rings, back left
+    ry = 0.55 * D
+    rx = -0.6 * vis.hw(ry)
+    wood = wood_material("ringbase", "#e2c69c", "#bf9b6c")
+    _cyl("ring_base", root, wood, rx, ry, 0.0, 0.6 * H, 0.6 * H, 0.12 * H)
+    _cyl("ring_peg", root, wood, rx, ry, 0.12 * H, 0.08 * H, 0.08 * H, 1.3 * H, seg=24)
+    z = 0.12 * H
+    for i, col in enumerate(("#bcd3e6", "#f5dfa0", "#efc0bb", "#cbbfe0")):
+        rr = (0.48 - 0.08 * i) * H
+        tube = 0.12 * H
+        _ring("ring%d" % i, root, _principled("ring%d" % i, col, rough=0.45, spec=0.35), (rx, ry, z + tube), rr - tube, tube)
+        z += 2 * tube
+    _spheres("ring_top", root, wood, [(rx, ry, z + 0.12 * H)], 0.14 * H, subdiv=3)
+    light((1.0 * s, 0.2 * s, 1.2 * s), (0, 0, 0.4 * H), 1.5, 0.9 * s, (1.0, 0.97, 0.93))
+    light((-0.5 * s, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.9, 1.6 * s, (1.0, 0.98, 0.96))
+
+
+# ---- christmas variants -------------------------------------------------
+
+def _bokeh(root, D, H, vis, n, col, strength, near=0.55, salt=7.0, name="fairy_bg"):
+    bulb = _emit_mat(name + "_m", col, strength)
+    pts = []
+    for kk in range(n):
+        y = D - 1.0 - ((1 - near) * D) * _hash01(kk, salt) ** 2 if kk % 3 else near * D + 0.1 * D * _hash01(kk, salt)
+        z = vis.zmid(y) + (vis.ztop(y) - vis.zmid(y) + 0.3 * H) * _hash01(kk, salt + 1)
+        if z < 0.5:
+            continue
+        x = (2 * _hash01(kk, salt + 2) - 1) * 1.15 * vis.hw(y)
+        pts.append((x, y, z, (0.06 + 0.04 * _hash01(kk, salt + 3)) * H))
+    _spheres(name, root, bulb, pts, 0.07 * H, subdiv=3)
+
+
+def _bauble(root, H, x, y, z, r, mat, cap, name):
+    _spheres(name, root, mat, [(x, y, z)], r, subdiv=4)
+    _cyl(name + "_cap", root, cap, x, y, z + r * 0.9, r * 0.22, r * 0.2, r * 0.25, seg=16)
+    _ring(name + "_loop", root, cap, (x, y, z + r * 1.25), r * 0.1, r * 0.03, axis="y", n=16)
+
+
+def _stage_christmas_baubles(root, H, R, s, D, vis, light):
+    """A fir branch reaching in across the top of the frame hung with glass
+    baubles (red, gold, champagne) on ribbon, the piece on a white faux-fur
+    throw, deep green wall with gold bokeh; candle-warm key from the right."""
+    _ground(root, wood_material("table", "#6e4c34", "#45301f"), s, D)
+    fur = rug_material("fur", "#f4efe6", pile=35.0)
+    _throw("fur", root, fur, vis, H, R, D, 0.03, back=0.45, seed=7.3, wl_scale=1.5)
+    _box("wall", root, plaster_material("wall", "#4a5a46", mottle=0.08), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    needle = _principled("needle", "#2b4a30", rough=0.6, spec=0.3)
+    twig = _principled("twig", "#4e3626", rough=0.9)
+    y1 = 0.18 * s
+    zt = vis.ztop(y1)
+    _pine_sprig("branch", root, needle, twig, (1.4 * vis.hw(y1), y1, zt + 0.1 * H), (-0.9 * vis.hw(y1), y1 - 1, zt - 0.25 * H), 0.25 * H, 0.33 * H, density=30)
+    _pine_sprig("branch2", root, needle, twig, (1.4 * vis.hw(y1 + 4), y1 + 4, zt - 0.1 * H), (0.2 * vis.hw(y1), y1 + 3, zt - 0.45 * H), 0.1 * H, 0.3 * H)
+    red = _principled("bred", "#a3161d", rough=0.12, spec=0.6, coat=0.8)
+    gold = metal_material("#d8b25a")
+    champ = _principled("bchamp", "#e8d9bd", rough=0.2, spec=0.6, coat=0.6)
+    ribbon = _principled("ribbon", "#8e1a1f", rough=0.5, sheen=0.5)
+    for i, (fx, drop, rr, m) in enumerate(((-0.7, 0.5, 0.17, red), (0.62, 0.42, 0.15, gold), (-0.2, 0.22, 0.11, champ), (1.0, 0.7, 0.14, red))):
+        x = fx * vis.hw(y1)
+        ztop_ = zt - 0.25 * H + (0.35 * H) * (fx + 0.9) / 2.3
+        z = ztop_ - drop * H
+        _curve("bthread%d" % i, root, ribbon, [(x, y1 - 0.5, ztop_), (x, y1 - 0.5, z + rr * H * 1.3)], 0.012 * H)
+        _bauble(root, H, x, y1 - 0.5, z, rr * H, m, gold, "bauble%d" % i)
+    # two baubles resting on the fur, front left and back right
+    yf = -0.05 * s
+    _bauble(root, H, _beside(R, H, 0.15 * H, -1), yf, 0.15 * H, 0.15 * H, gold, gold, "bauble_f")
+    yb = 0.3 * s
+    _bauble(root, H, 0.75 * vis.hw(yb), yb, 0.2 * H, 0.2 * H, red, gold, "bauble_b")
+    _bokeh(root, D, H, vis, 120, (1.0, 0.76, 0.42), 40.0, salt=13.0)
+    light((1.2 * s, -0.05 * s, 0.8 * s), (0, 0, 0.4 * H), 1.3, 0.7 * s, GOLD)
+    light((0.0, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.3, 1.6 * s, (1.0, 0.82, 0.6))
+
+
+def _stage_christmas_snow(root, H, R, s, D, vis, light):
+    """A snowy night: a white knit throw on a pale sill, a window behind full of
+    blue dusk and falling snow, frosted sprigs, and a candle in a glass holder
+    glowing warm against the cold; cool moonlight from the window."""
+    _ground(root, wood_material("sill_wood", "#e8e6e2", "#c8c4bc"), s, D)
+    plaster = plaster_material("wall", "#d9dde3")
+    frame = wood_material("window_frame", "#f1f1ee", "#cfd0cc", along_x=False, rough=0.6)
+    out = sky_material("outside", ((0.0, (0.82, 0.86, 0.93)), (0.3, (0.40, 0.50, 0.70)), (0.75, (0.16, 0.22, 0.40))), 1.6, blob=0.35, speckle=0.9)
+    w = _window_wall(root, H, s, D, vis, plaster, frame, out, -1.0, 1.0, rows=(0.5,), cols=4)
+    # snow drifted along the outside bottom of the panes
+    snow = _principled("snow", "#f7f9fc", rough=0.6, sheen=0.5)
+    snow.node_tree.nodes["Principled BSDF"].inputs["Subsurface Weight"].default_value = 0.4
+    _rbox("snowdrift", root, snow, w["wx0"], w["wx1"], w["fy0"] + 1.3, w["fy0"] + 5.0, w["wz0"], w["wz0"] + 0.5 * H, 0.2 * H)
+    knit = knit_material("throw", "#f5f3ef", stitch_cm=1.7)
+    _throw("throw", root, knit, vis, H, R, D, 0.045, back=0.32, seed=8.4)
+    # falling snow in front of the glass: soft white specks at two depths
+    flake = _emit_mat("flake", (0.95, 0.97, 1.0), 2.0)
+    pts = []
+    for k in range(90):
+        y = D - 3 - 0.35 * D * _hash01(k, 61)
+        z = vis.zmid(y) + (vis.ztop(y) - vis.zmid(y) + 0.3 * H) * _hash01(k, 62)
+        if z < 0.6 * H:
+            continue
+        pts.append(((2 * _hash01(k, 63) - 1) * vis.hw(y), y, z, (0.025 + 0.025 * _hash01(k, 64)) * H))
+    _spheres("flakes", root, flake, pts, 0.03 * H, subdiv=2)
+    # frosted fir sprigs, left, and a silver bauble
+    needle = _principled("frost_needle", "#7f9a8e", rough=0.6, spec=0.3)
+    twig = _principled("twig", "#5a4030", rough=0.9)
+    y1 = 0.15 * s
+    _pine_sprig("pine_l", root, needle, twig, (-1.3 * vis.hw(y1), y1, 0.3 * H), (-0.62 * vis.hw(y1), y1 - 2, 0.2 * H), 0.05 * H, 0.28 * H)
+    yf = -0.15 * s
+    _pine_sprig("pine_f", root, needle, twig, (-1.3 * vis.hw(yf), yf, 0.2 * H), (-0.7 * vis.hw(yf), yf + 1, 0.12 * H), 0.03 * H, 0.26 * H)
+    silver = metal_material("#cfd4da")
+    _bauble(root, H, -0.5 * vis.hw(0.2 * s), 0.2 * s, 0.16 * H, 0.16 * H, silver, silver, "bauble_s")
+    # a tea light in a small glass holder, back right (r1: a big grey bin)
+    cy = 0.5 * D
+    cx = 0.55 * vis.hw(cy)
+    hs = 0.55
+    wax = _principled("wax", "#f4ede0", rough=0.5, spec=0.2)
+    wax.node_tree.nodes["Principled BSDF"].inputs["Subsurface Weight"].default_value = 0.4
+    frost = glass_material("holder", "#fff8ee", rough=0.35)   # r3: frosted (clear glass went black)
+    _lathe("holder", root, frost, cx, cy, [(0, 0), (0.38 * H * hs, 0), (0.42 * H * hs, 0.6 * H * hs),
+                                                                         (0.39 * H * hs, 0.6 * H * hs), (0.35 * H * hs, 0.05 * H), (0, 0.05 * H)])
+    _cyl("candle", root, wax, cx, cy, 0.05 * H, 0.3 * H * hs, 0.3 * H * hs, 0.3 * H * hs)
+    flame = _emit_mat("flame", (1.0, 0.62, 0.22), 160.0)
+    bm = bmesh.new()
+    m = Matrix.Translation(Vector((cx, cy, 0.3 * H * hs + 0.12 * H))) @ Matrix.Diagonal((1.0, 1.0, 2.2, 1.0))
+    bmesh.ops.create_icosphere(bm, subdivisions=3, radius=0.05 * H, matrix=m)
+    _bm_object("flame", bm, root, flame, smooth=True)
+    light((cx, cy, 0.4 * H), (cx - 2, cy - 5, 0.1 * H), 0.3, 0.3 * H, (1.0, 0.66, 0.3))
+    light((0.2 * w["wx0"], D - 3, w["wz0"] + 0.5 * (w["wz1"] - w["wz0"])), (0, 0, 0.45 * H), 1.4, 1.0 * s, (0.80, 0.88, 1.0))
+    light((-0.8 * s, -0.2 * s, 0.8 * s), (0, 0, 0.4 * H), 0.4, 1.0 * s, WARM_SOFT)
+
+
+def _gift(root, H, x, y, w, d, h, paper, ribbon, name, rot=0.0, bow=True):
+    _rbox(name, root, paper, x - w / 2, x + w / 2, y - d / 2, y + d / 2, 0.0, h, 0.02 * H, rot_z=rot)
+    rw = 0.09 * H
+    _rbox(name + "_rx", root, ribbon, x - w / 2 - 0.01, x + w / 2 + 0.01, y - rw / 2, y + rw / 2, -0.01, h + 0.012 * H, 0.01 * H, rot_z=rot)
+    _rbox(name + "_ry", root, ribbon, x - rw / 2, x + rw / 2, y - d / 2 - 0.01, y + d / 2 + 0.01, -0.01, h + 0.012 * H, 0.01 * H, rot_z=rot)
+    if bow:
+        for side in (1, -1):
+            c, sn = math.cos(rot), math.sin(rot)
+            lx = side * 0.12 * H
+            pts = [(x + lx * 0.2 * c, y + lx * 0.2 * sn, h + 0.03 * H), (x + lx * c, y + lx * sn, h + 0.14 * H),
+                   (x + lx * 1.3 * c, y + lx * 1.3 * sn, h + 0.05 * H), (x + lx * 0.2 * c, y + lx * 0.2 * sn, h + 0.03 * H)]
+            _curve(name + "_bow%d" % side, root, ribbon, pts, 0.04 * H)
+
+
+def _stage_christmas_gifts(root, H, R, s, D, vis, light):
+    """Christmas morning: presents in kraft paper and red-and-cream stripes tied
+    with red ribbon and twine, a plaid wool blanket under the piece, warm bokeh
+    on a cream wall; morning-gold key from the left."""
+    _ground(root, wood_material("floor", "#a77f58", "#6e4d33"), s, D)
+    plaid = gingham_material("plaid", "#ece3d3", "#b25a55", check_cm=3.2)
+    _throw("plaid", root, plaid, vis, H, R, D, 0.05, back=0.42, seed=9.1, wl_scale=1.6)
+    _box("wall", root, plaster_material("wall", "#e8dcc8", mottle=0.06), -3 * s, 3 * s, D, D + 3, 0, 2.5 * s)
+    kraft = _principled("kraft", "#a88c6c", rough=0.75)
+    stripe = gingham_material("stripe", "#f3ece0", "#c0333a", check_cm=0.5)
+    red = _principled("gribbon", "#a8161f", rough=0.35, sheen=0.4, spec=0.4)
+    twine = _principled("gtwine", "#e9dcc4", rough=0.9)
+    gy = 0.5 * D
+    gx = 0.7 * vis.hw(gy)
+    _gift(root, H, gx, gy, 0.8 * H, 0.7 * H, 0.55 * H, kraft, red, "gift1", rot=0.15)
+    _gift(root, H, gx + 0.05 * H, gy + 0.05 * H, 0.5 * H, 0.45 * H, 0.38 * H, stripe, twine, "gift2", rot=-0.3)
+    for ob in [o for o in bpy.data.objects if o.name.startswith("gift2")]:
+        ob.location.z += 0.55 * H
+    gy2 = 0.65 * D
+    _gift(root, H, -0.75 * vis.hw(gy2), gy2, 0.9 * H, 0.75 * H, 0.75 * H, stripe, red, "gift3", rot=-0.1)
+    yf = 0.02 * s
+    _gift(root, H, _beside(R, H, 0.22 * H, -1), yf, 0.38 * H, 0.38 * H, 0.3 * H, kraft, twine, "gift4", rot=0.5)
+    # a sprig with berries on the little gift
+    needle = _principled("needle", "#294a2f", rough=0.6, spec=0.3)
+    twig = _principled("twig", "#5a4030", rough=0.9)
+    x4 = _beside(R, H, 0.22 * H, -1)
+    _pine_sprig("gsprig", root, needle, twig, (x4 - 0.15 * H, yf, 0.34 * H), (x4 + 0.15 * H, yf - 0.08 * H, 0.36 * H), 0.0, 0.09 * H, density=18)
+    _spheres("gberries", root, _principled("berry", "#ad1c22", rough=0.18, spec=0.5, coat=0.5),
+             [(x4 + 0.03 * H * k, yf - 0.05 * H, 0.38 * H + 0.02 * H * (k % 2), 0.03 * H) for k in range(3)], 0.03 * H)
+    _bokeh(root, D, H, vis, 90, (1.0, 0.74, 0.42), 40.0, near=0.7, salt=17.0)
+    light((-1.2 * s, 0.0, 0.9 * s), (0, 0, 0.4 * H), 1.4, 0.7 * s, GOLD)
+    light((0.0, 0.4 * D, 1.2 * s), (0.0, D, 0.25 * s), 0.5, 1.6 * s, (1.0, 0.85, 0.65))
+
+
+VARIANT_BUILDERS = {
+    "basket": (_stage_linen_basket, (0.98, 0.93, 0.86), 0.45),
+    "worktable": (_stage_linen_worktable, (0.97, 0.95, 0.92), 0.5),
+    "dried": (_stage_linen_dried, (0.99, 0.93, 0.90), 0.45),
+    "rain": (_stage_windowsill_rain, (0.86, 0.90, 0.95), 0.6),
+    "autumn": (_stage_windowsill_autumn, (0.98, 0.86, 0.70), 0.35),
+    "spring": (_stage_windowsill_spring, (0.94, 0.97, 1.0), 0.55),
+    "cot": (_stage_nursery_cot, (0.96, 0.97, 0.99), 0.55),
+    "shelf": (_stage_nursery_shelf, (0.97, 0.96, 0.92), 0.45),
+    "rug": (_stage_nursery_rug, (0.99, 0.97, 0.95), 0.5),
+    "baubles": (_stage_christmas_baubles, (0.9, 0.78, 0.62), 0.2),
+    "snow": (_stage_christmas_snow, (0.70, 0.78, 0.92), 0.35),
+    "gifts": (_stage_christmas_gifts, (0.95, 0.84, 0.70), 0.3),
+}
 
 
 def grade_golden(scene, warmth=1.0):
