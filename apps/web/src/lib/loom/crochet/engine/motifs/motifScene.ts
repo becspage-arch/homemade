@@ -54,10 +54,15 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] 
     const { radiusMm, filaments } = pliedFilaments(center, m.yr * 0.85, 3, twist)
     const path = piece.built.strandPath
     const colourAt = (k: number): string => piece.colourOf(path[Math.min(Math.floor(k / PER_SEG), path.length - 1)]!)
+    // One stroke per piece and colour run, each holding exactly its own plies.
+    // (Round 5 merged every same-colour piece into one stroke: the renderer's
+    // fine-cotton path takes a stroke's equal-length filaments as the plies of
+    // ONE strand and averages them into a centreline, so a daisy's eight
+    // identical petals rendered as one white dome, the vine's leaves as a
+    // green one. Strokes with more than one strand's plies are split here.)
     for (const s of colourStrokes(center, filaments, radiusMm, colourAt)) {
-      const same = strokes.find((t) => t.hex === s.hex)
-      if (same) same.filaments.push(...s.filaments)
-      else strokes.push(s)
+      const nPly = filaments.length
+      for (let a = 0; a < s.filaments.length; a += nPly) strokes.push({ ...s, filaments: s.filaments.slice(a, a + nPly) })
     }
   }
   const tilt = o.tiltDeg ?? 28

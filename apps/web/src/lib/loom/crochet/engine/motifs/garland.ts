@@ -29,12 +29,12 @@ import type { MotifProp } from './motifScene'
 export const GARLAND_COLOURS = { cord: '#46503a', leaf: '#4a553d' }
 /** The cords, left to right: x (mm) along the stick and their length in chains. */
 export const GARLAND_CORDS = [
-  { x: -62, ch: 0 }, // the leaf vine's own chain is this cord
+  { x: -74, ch: 0 }, // the leaf vine's own chain is this cord
   { x: 0, ch: 48 },
-  { x: 62, ch: 52 },
+  { x: 74, ch: 52 },
 ]
 export const GARLAND_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'hdc', 'sc']
-const STICK_LEN = 190
+const STICK_LEN = 210
 const STICK_R = 5.5
 
 /** A rigid placement of a finished piece: turn in the plane (deg), move. */
@@ -127,7 +127,8 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
   // Cord 2: a rolled rose, a daisy below it, a puff rose below that, leaves between.
   const c2 = cordAt[1]!
   const rose = getMotif('rolled-rose').build(o)
-  const daisy = getMotif('daisy').build(o)
+  // The daisy in a finer thread: at 4 ply it is half as wide again as the rose, and the bar's daisies are the smaller flower.
+  const daisy = getMotif('daisy').build({ ...o, yarnWeight: 'lace' })
   const puff = getMotif('layered-rose').build(o)
   pieces.push(...placeMotif(rose, 'rose', { ...c2(7), z: 0 }, 20))
   pieces.push(leafAt(c2(15), -150, false, 'leaf a'), leafAt(c2(17), -30, true, 'leaf b'))
@@ -146,7 +147,7 @@ export function buildGarland(o?: MotifOptions): BuiltMotif {
   pieces.push(leafAt(c3(5), -35, true, 'leaf d'), ...berryAt(11, -1), leafAt(c3(18), -145, false, 'leaf e'),
     ...berryAt(25, 1), leafAt(c3(32), -40, true, 'leaf f'), ...berryAt(39, -1), leafAt(c3(46), -150, false, 'leaf g'))
   const words = garlandWords()
-  return assemble('garland', 'Flower garland', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta']).concat(['A driftwood stick about 16 cm long.']))
+  return assemble('garland', 'Flower garland', o, pieces, words, materialsLine(o, ['olive', 'sage', 'dusty mauve', 'dusty rose', 'cream', 'mustard', 'terracotta']).concat(['A small ball of lace-weight cotton in cream and mustard for the daisy, with a 1.75 mm hook.', 'A driftwood stick about 18 cm long.']))
 }
 
 /** The driftwood stick the garland hangs from, as a scene prop. */
@@ -161,7 +162,7 @@ export function garlandProps(): MotifProp[] {
 
 export function garlandWords(): string[] {
   return [
-    'Make the pieces: one leaf vine, one rolled rose, one daisy, one puff rose, three berries (without stalks) and seven small leaves (the vine leaf, stem 2).',
+    'Make the pieces: one leaf vine, one rolled rose, one daisy (in the lace-weight cotton, 1.75 mm hook), one puff rose, three berries (without stalks) and seven small leaves (the vine leaf, stem 2).',
     `Cords: with olive, ch ${GARLAND_CORDS.filter((c) => c.ch).map((c) => c.ch).join(' and ch ')} for the two cords (the vine's chain is the third), each starting with a long tail to tie to the stick.`,
     'Tie the vine and the two cords to the stick about 4.5 cm apart. Sew the rolled rose, two leaves, the daisy, a leaf and the puff rose down the middle cord; sew the berries and small leaves alternately down the right cord.',
     'Weave in the ends behind the pieces.',

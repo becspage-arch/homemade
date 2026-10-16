@@ -60,8 +60,51 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
   const spec = STAR_SIZES[o?.size ?? 'standard']
   const y = motifYarn(o)
   const col = colourOpts(STAR_COLOURS, o)
-  const piece = starPiece(y.yr, col.main!, spec)
-  return assemble('star', 'Five-point star', o, [piece], starWords(spec), materialsLine(o, ['gold']))
+  if (!o?.puffed) {
+    const piece = starPiece(y.yr, col.main!, spec)
+    return assemble('star', 'Five-point star', o, [piece], starWords(spec), materialsLine(o, ['gold']))
+  }
+  // PUFFED (round 6; bar: the plump flat-faced toppers of bar-spiral-trees.png):
+  // two identical stars sewn wrong sides together with a little stuffing. Each
+  // is worked flat and audited flat; the sewing is the pose — the front bows
+  // up, the back bows down, both most at the centre and flat at the tips, and
+  // the two are turned so a point stands at the top. The second star is the
+  // first turned over (a half turn about y), the way the maker flips it.
+  const flat = starPiece(y.yr, col.main!, spec)
+  const yr = y.yr
+  const { th, R } = tipOf(flat)
+  const rot = Math.PI / 2 - th
+  const H = yr * PUFF_YR
+  const puff = (sign: 1 | -1): MotifPiece['pose'] => (p) => {
+    // Turn a point to the top, then turn the back star over (x and z).
+    const x1 = p.x * Math.cos(rot) - p.y * Math.sin(rot)
+    const yy = p.x * Math.sin(rot) + p.y * Math.cos(rot)
+    const x = sign * x1
+    const rho = Math.min(1, Math.hypot(x, yy) / R)
+    const dome = H * Math.cos((rho * Math.PI) / 2)
+    return { x, y: yy, z: H + yr + sign * (dome + p.z) }
+  }
+  const front = { ...flat, name: 'front', pose: puff(1) }
+  const back = starPiece(y.yr, col.main!, spec, 'back', puff(-1))
+  const words = starWords(spec).slice(0, -1).concat([
+    'Fasten off, pull the magic ring tight and weave in the ends. Make a second star the same.',
+    'Place the two stars wrong sides together and sew them together round the edge through the outer stitches, adding a little stuffing before you close so the star plumps up.',
+  ])
+  return assemble('star', 'Five-point star', o, [front, back], words, materialsLine(o, ['gold']).concat(['A little toy stuffing.']))
+}
+
+/** How much a puffed star's face bows up at the centre, in yarn radii. */
+const PUFF_YR = 2.4
+
+/** The angle (rad) of the first point's tip and the tip radius of a flat star. */
+function tipOf(p: MotifPiece): { th: number; R: number } {
+  let best = 0, R = 0
+  for (const i of p.built.strandPath) {
+    const n = p.built.model.nodes[i]!
+    const r = Math.hypot(n.x, n.y)
+    if (r > R) { R = r; best = Math.atan2(n.y, n.x) }
+  }
+  return { th: best, R }
 }
 
 /** One star as a piece: the centre rounds, then the chained points, relaxed
