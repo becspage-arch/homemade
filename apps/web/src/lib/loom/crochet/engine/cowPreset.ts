@@ -207,13 +207,13 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
-    muzzle: sphereRounds(18, 1), horn: COW_HORN_ROUNDS.slice(0, 7).concat([6]), ear: COW_EAR_CUP_ROUNDS.M,
+    muzzle: sphereRounds(18, 1), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: COW_EAR_CUP_ROUNDS.M,
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
     headSink: 24, muzzleSeat: 2, earPress: 40, legLift: -12.1, frontLegLift: 17.2, eyeMm: 18,
   },
   L: {
     body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
-    muzzle: sphereRounds(21, 1), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: COW_EAR_CUP_ROUNDS.L,
+    muzzle: sphereRounds(21, 1), horn: COW_HORN_ROUNDS.slice(0, 9).concat([6]), ear: COW_EAR_CUP_ROUNDS.L,
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
     headSink: 26, muzzleSeat: 2, earPress: 48, legLift: -12.5, frontLegLift: 30.4, eyeMm: 20,
   },
@@ -254,7 +254,7 @@ const COW_VIEW = {
 // Round 18: the pear body made the calf taller; 0.95 cropped the horn tips.
 // Round 27: pulled back a touch so the stage's dried bunch (tied at the frame's
 // left edge, its heads reaching toward the toy) stops short of the left foot.
-const COW_STAGE_ZOOM = 0.95
+const COW_STAGE_ZOOM = 0.9
 const COW_YARN: YarnWeight = 'bulky'
 const COW_HOOK_MM = 6
 const COW_FIBRE: YarnFibre = 'chenille'
@@ -292,7 +292,7 @@ const EAR_DIR = { x: 1, y: 0.05, z: 0.5 }
 // the hollow faces the lens (round 28: mostly toward the camera — at 45° out
 // the lens saw the cup's back and the ear read as a flat tab); `spin` (the
 // pressed face up) lays the oval's long axis across.
-const EAR_AIM = { x: 0.45, y: 0.9, z: -0.05 }
+const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
 const EAR_SPIN = { x: 0, y: 0, z: 1 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
@@ -383,7 +383,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // Round 27: smaller springy curls of MIXED sizes (vary 0.55) standing up off
     // the crown (droop -35) in a tall tousled mound — r26's big rings lay flat.
     // Round 28: r27's stood as a solid helmet of packed curls — a little smaller, leaning out more.
-    loop: { lengthYr: 3.6, halfWidthYr: 1.7, droopDeg: -45, vary: 0.5 },
+    // Round 29: BIGGER open rings (the bar's are ~17 mm across on this head; r28's 10 mm curls packed into a dome).
+    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -394,13 +395,14 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // other one twisted into a tight springy curl.
     // Round 28: back to loops in every OTHER stitch (r27's two of three packed into a helmet), every third a tight curl.
     plainEvery: 2,
-    curlEvery: 3,
-    curlLoop: { twist: 2, curl: 0.6, halfWidthYr: 1.2 },
+    // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
+    curlEvery: 4,
+    curlLoop: { twist: 1, curl: 0.4, halfWidthYr: 1.6 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 4.8, halfWidthYr: 1.8, droopDeg: -25 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
         : k === last
-          ? { lengthYr: 3.2, halfWidthYr: 1.5, droopDeg: -65 } // the spill forward to the brow and over the horn roots (short: round 10's fell over the eyes)
+          ? { lengthYr: 4.2, halfWidthYr: 2.0, droopDeg: -65 } // the spill forward to the brow and over the horn roots (shorter: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
@@ -487,6 +489,8 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         aim: fd({ x: side * EAR_AIM.x, y: EAR_AIM.y, z: EAR_AIM.z }),
         spin: fd({ x: side * EAR_SPIN.x, y: EAR_SPIN.y, z: EAR_SPIN.z }),
         seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        // Round 29: out beside the head, not flat against its side.
+        offset: { x: side * 9 },
       },
     })
   }
