@@ -59,11 +59,11 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   m.nodes.forEach((p, i) => { if (!m.loose?.[i] && p.z > face) face = p.z })
   assert.ok(m.nodes.every((p, i) => !m.loose?.[i] || p.z <= face + 1e-6), 'no loop passes into the head')
   // Loops on rounds 1, 3 and 5 only (five rounds at M since cow round 23,
-  // bulky chenille): the words say dc on rounds 2 and 4. Cow round 27: a plain
-  // dc every third stitch (loops in two of three) and every second loop a
-  // full twist, said once before the rounds, from the same rule the build reads.
+  // bulky chenille; six since round 31): the words say dc on rounds 2, 4 and 6.
+  // Cow round 29: a plain dc every other stitch and every fourth loop a half
+  // twist, said once before the rounds, from the same rule the build reads.
   const lines = writeHairInstructions(h)
-  assert.match(lines[1]!, /every third lp st \(so two of every three stitches carry a loop\).*every second loop one full twist/)
+  assert.match(lines[1]!, /every second lp st \(so every other stitch carries a loop\).*every fourth loop half a twist/)
   // Cow round 17/23: the crown loops are the tallest of the mound, worked
   // over one more finger than the rest; the words follow the loop length.
   assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round two fingers/)
@@ -71,12 +71,13 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   assert.match(lines[4]!, /^Round 3: \*1 lp st, 2 lp st in next st\* 6 times/)
   assert.match(lines[5]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)
   assert.match(lines[6]!, /^Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)$/)
-  assert.match(lines[7]!, /^Fasten off/)
-  // The per-stitch rule (cow round 27): round 3 (index 2) has 18 stitches —
-  // every third plain (6), loops in the other 12, every second loop twisted (6).
+  assert.match(lines[7]!, /^Round 6: \*4 dc, 2 dc in next st\* 6 times\. \(36\)$/)
+  assert.match(lines[8]!, /^Fasten off/)
+  // The per-stitch rule (cow round 29): round 3 (index 2) has 18 stitches —
+  // every other plain (9), loops in the other 9, every fourth loop twisted (2).
   const sts = Array.from({ length: 18 }, (_, c) => stitchAtOf(h, 2, c))
-  assert.equal(sts.filter((x) => x === 'sc').length, 6)
-  assert.equal(sts.filter((x) => x === 'loopcurl').length, 6)
+  assert.equal(sts.filter((x) => x === 'sc').length, 9)
+  assert.equal(sts.filter((x) => x === 'loopcurl').length, 2)
   assert.equal(stitchAtOf(h, 1, 0), 'sc', 'round 2 is a plain round')
 })
 
