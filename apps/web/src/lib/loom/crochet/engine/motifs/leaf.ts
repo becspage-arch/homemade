@@ -28,7 +28,8 @@ export const LEAF_STEM = 3
 
 /** How the tip is turned: a point (dc, ch 2, dc) for a leaf, or a rounded end
  *  (htr, ch 1, htr) for a daisy petal. */
-export type LeafTip = 'point' | 'round'
+/** 'point' (dc, ch 2, dc), 'round' (htr, ch 1, htr), 'blunt' (htr, htr: no chain, a smooth plump end for a daisy petal). */
+export type LeafTip = 'point' | 'round' | 'blunt'
 
 /** Work a stitch into a chain loop from one side ('L' = the chain's left leg
  *  while travelling back toward its start, 'R' = the right leg travelling
@@ -55,10 +56,12 @@ export function workLeafAround(m: MotifStrand, loops: ChainLoop[], side: StitchI
   // htr) for a rounded end.
   const tipL = loops[0]!
   const tipSt: StitchId = tip === 'point' ? 'sc' : 'hdc'
-  const tipCh = tip === 'point' ? 2 : 1
+  const tipCh = tip === 'point' ? 2 : tip === 'round' ? 1 : 0
   intoChain(m, tipL, tipSt, 'L')
-  const out = add(tipL.c, mul(tipL.u, -yr * (tip === 'point' ? 3.2 : 2.2)))
-  m.chain(tipCh, [m.cursor, out], { turning: tipCh })
+  if (tipCh) {
+    const out = add(tipL.c, mul(tipL.u, -yr * (tip === 'point' ? 3.2 : 2.2)))
+    m.chain(tipCh, [m.cursor, out], { turning: tipCh })
+  }
   intoChain(m, tipL, tipSt, 'R')
   // Side B: tip to stem, the same heights reversed.
   for (let i = 0; i < n; i++) intoChain(m, loops[1 + i]!, side[n - 1 - i]!, 'R')
@@ -100,7 +103,7 @@ export function leafWords(side: StitchId[] = LEAF_SIDE, stem = LEAF_STEM, tip: L
   const nCh = n + 1 + stem + 1
   const sideA = runWords(side)
   const sideB = runWords([...side].reverse())
-  const tipWords = tip === 'point' ? `(${UK.sc}, ch 2, ${UK.sc})` : `(${UK.hdc}, ch 1, ${UK.hdc})`
+  const tipWords = tip === 'point' ? `(${UK.sc}, ch 2, ${UK.sc})` : tip === 'round' ? `(${UK.hdc}, ch 1, ${UK.hdc})` : `2 ${UK.hdc}`
   return [
     `Ch ${nCh}.`,
     ...(stem > 0
