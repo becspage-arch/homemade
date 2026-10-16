@@ -21,7 +21,7 @@ export const VINE_CH = 44
 /** Leaves sewn at these chains (counted from the top), alternating sides. */
 export const VINE_LEAF_AT = [4, 11, 18, 25, 32, 39]
 /** A smaller pointed oval than the standalone leaf (two tr fewer a side). */
-export const VINE_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'dc', 'dc', 'dc', 'hdc', 'sc']
+export const VINE_LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'dc', 'hdc', 'sc'] // r6's 10-st leaves were narrow blades; the bar's vine leaves are broad ovals
 export const VINE_LEAF_STEM = 3
 /** Leaf angle from the vine, below the horizontal (deg). */
 export const VINE_LEAF_DROOP = 35

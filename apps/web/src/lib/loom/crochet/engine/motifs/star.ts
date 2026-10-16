@@ -94,7 +94,7 @@ export function buildStar(o?: MotifOptions): BuiltMotif {
 }
 
 /** How much a puffed star's face bows up at the centre, in yarn radii. */
-const PUFF_YR = 2.4
+const PUFF_YR = 1.7 // r6's 2.4 read as a lumpy mound; the bar's star is plump but flat-faced
 
 /** The angle (rad) of the first point's tip and the tip radius of a flat star. */
 function tipOf(p: MotifPiece): { th: number; R: number } {

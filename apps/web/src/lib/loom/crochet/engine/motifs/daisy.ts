@@ -29,7 +29,7 @@ import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 export const DAISY_COLOURS = { centre: '#c39433', petal: '#e2d2b4' } // ochre mustard, warm cream (r2-4's creams rendered white)
 
 /** One side of a petal, base to tip. */
-export const DAISY_PETAL: StitchId[] = ['hdc', 'dc', 'dc', 'dc', 'hdc'] // short and broad: 7 sts a side read as a snowflake
+export const DAISY_PETAL: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] // r6's 5-st htr-tr petals overlapped into a scalloped disc; one st longer and a step lower = a narrower oval with air between the petals (7 sts a side read as a snowflake)
 export const DAISY_CENTRE = [8, 16, 24]
 export const DAISY_PETALS = 8
 /** How far (yarn radii) each petal's base is tucked under the centre, and how
