@@ -32,6 +32,9 @@ export const DAISY_COLOURS = { centre: '#c39433', petal: '#e2d2b4' } // ochre mu
 export const DAISY_PETAL: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] // r6's 5-st htr-tr petals overlapped into a scalloped disc; one st longer and a step lower = a narrower oval with air between the petals (7 sts a side read as a snowflake)
 export const DAISY_CENTRE = [8, 16, 24]
 export const DAISY_PETALS = 8
+/** `size: 'small'` (r10, the garland): a two-round centre and a petal one st shorter, ~70% the width — the bar's daisies are the smaller flower beside its roses. */
+export const DAISY_CENTRE_SMALL = [6, 12]
+export const DAISY_PETAL_SMALL: StitchId[] = ['sc', 'dc', 'dc', 'sc'] // 5 sts a side was still 53 mm at lace beside a 55 mm rose
 /** How far (yarn radii) each petal's base is tucked under the centre, and how
  *  high the centre's dome stands over the petals. */
 const TUCK_YR = 2.5
@@ -68,9 +71,10 @@ export function buildDaisy(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(DAISY_COLOURS, o)
   const yr = y.yr
-  const centre = daisyCentre(yr, col.centre!)
+  const small = o?.size === 'small'
+  const centre = daisyCentre(yr, col.centre!, small ? DAISY_CENTRE_SMALL : DAISY_CENTRE)
   // One petal, relaxed and audited once; the eight sewn petals are poses of it.
-  const proto = leafPiece(yr, col.petal!, DAISY_PETAL, 0, 'petal', undefined, 'round')
+  const proto = leafPiece(yr, col.petal!, small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'petal', undefined, 'round')
   const ln = proto.built.model.nodes
   let xMin = Infinity, ySum = 0
   for (const n of ln) { xMin = Math.min(xMin, n.x); ySum += n.y }
@@ -93,18 +97,19 @@ export function buildDaisy(o?: MotifOptions): BuiltMotif {
     })
   }
   pieces.push(centre.piece)
-  return assemble('daisy', 'Daisy', o, pieces, daisyWords(), materialsLine(o, ['mustard', 'cream']))
+  return assemble('daisy', 'Daisy', o, pieces, daisyWords(small), materialsLine(o, ['mustard', 'cream']))
 }
 
-export function daisyWords(): string[] {
-  const rounds = DAISY_CENTRE.map((cnt, q) => {
+export function daisyWords(small = false): string[] {
+  const CENTRE = small ? DAISY_CENTRE_SMALL : DAISY_CENTRE
+  const rounds = CENTRE.map((cnt, q) => {
     if (q === 0) return `  Round 1: ${cnt} ${UK.sc} into the ring. (${cnt} sts)`
-    const step = cnt / DAISY_CENTRE[q - 1]!
+    const step = cnt / CENTRE[q - 1]!
     return step >= 2
       ? `  Round ${q + 1}: 2 ${UK.sc} in each st around. (${cnt} sts)`
       : `  Round ${q + 1}: [${UK.sc} in next st, 2 ${UK.sc} in next st] around. (${cnt} sts)`
   })
-  const petal = leafWords(DAISY_PETAL, 0, 'round', 'Petal').slice(0, -1)
+  const petal = leafWords(small ? DAISY_PETAL_SMALL : DAISY_PETAL, 0, 'round', 'Petal').slice(0, -1)
   return [
     'Centre, with mustard: make a magic ring.',
     ...rounds,

@@ -26,12 +26,14 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const LAYERED_ROSE_COLOURS = { main: '#b07a86', centre: '#e8d6c8' } // dusty rose, pale blush
+export const LAYERED_ROSE_COLOURS = { main: '#c49aa2', centre: '#ece0d2' } // soft dusty pink, cream (r9's #b07a86 rendered a hot salmon once the sheen was tinted)
 
 /** The petal circle, dc rounds (UK). */
 export const PETAL_ROUNDS = [6, 12, 18]
 export const BACKING_ROUNDS = [6, 12]
-const CENTRE_ROUND = 6
+/** The centre: a small circle cupped into a dome too (r9's one-round centre was a dot; the bar's is a fat cream ball about half a lobe wide). */
+const CENTRE_ROUNDS = [6, 12]
+const CENTRE_DOME = 1.5
 /** Open flower: five lobes leaning in; bud: four lobes closed over the middle. */
 const OPEN = { petals: 5, leanDeg: 24, ringYr: 6.8, domeFrac: 1.6 }
 const BUD = { petals: 4, leanDeg: 45, ringYr: 5.0, domeFrac: 1.45 }
@@ -109,10 +111,11 @@ export function buildLayeredRose(o?: MotifOptions): BuiltMotif {
     pieces.push({ ...proto, name: `petal ${k + 1}`, pose: petalPose(yr, petal.r, th, spec, yr * 1.6) })
   }
   if (!bud) {
-    const cen = disc(yr, col.centre!, [CENTRE_ROUND])
-    // the centre sits in the middle at the height of the lobes' crowns
-    const lift = yr * 1.6 + (petal.r / spec.domeFrac) * (1 - Math.cos(Math.min(spec.domeFrac, Math.PI * 0.47)))
-    pieces.push(pieceOf('centre', cen.m, cen.m.finish(cen.r * 2, cen.r * 2), (p) => ({ x: p.x, y: p.y, z: p.z + lift })))
+    const cen = disc(yr, col.centre!, CENTRE_ROUNDS)
+    // the centre dome sits in the middle with its rim a little under the lobes' crowns
+    const lift = yr * 1.6 + (petal.r / spec.domeFrac) * (1 - Math.cos(Math.min(spec.domeFrac, Math.PI * 0.47))) * 0.75
+    const cd = dome(cen.r, CENTRE_DOME)
+    pieces.push(pieceOf('centre', cen.m, cen.m.finish(cen.r * 2, cen.r * 2), (p) => { const q = cd(p); return { x: q.x, y: q.y, z: q.z + lift } }))
   }
   return assemble('layered-rose', bud ? 'Rosebud' : 'Puff rose', o, pieces, layeredRoseWords(bud), materialsLine(o, bud ? ['dusty rose'] : ['dusty rose', 'pale blush']))
 }
@@ -136,14 +139,11 @@ export function layeredRoseWords(bud = false): string[] {
     'Backing, with dusty rose:', ...discWords(BACKING_ROUNDS).map((s) => `  ${s}`),
     `Petals (make ${n}), with dusty rose:`, ...discWords(PETAL_ROUNDS).map((s) => `  ${s}`),
     ...(bud ? [] : [
-      'Centre, with pale blush:',
-      '  Make a magic ring.',
-      `  Round 1: ${CENTRE_ROUND} ${UK.sc} into the ring. (${CENTRE_ROUND} sts)`,
-      '  Fasten off, pull the ring tight and leave a tail for sewing.',
+      'Centre, with pale blush:', ...discWords(CENTRE_ROUNDS).map((s) => `  ${s}`),
     ]),
     bud
       ? `Cup each petal in your hand into a dome and sew the ${n} domes to the backing in a ring, leaning in hard so they close over the middle like a bud; a stitch through the tops holds them.`
-      : `Cup each petal in your hand into a plump dome and sew the ${n} domes to the backing in a ring, each leaning in a little so the lobes touch; sew the centre in the middle over their inner edges.`,
+      : `Cup each petal in your hand into a plump dome and sew the ${n} domes to the backing in a ring, each leaning in a little so the lobes touch; cup the centre into a dome and sew it in the middle over their inner edges.`,
     'Weave in the ends behind the backing.',
   ]
 }

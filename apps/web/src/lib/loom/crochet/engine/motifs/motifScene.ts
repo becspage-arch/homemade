@@ -13,7 +13,7 @@ import type { HeroStage } from '../../../render/blenderScene'
 import { posedPoints } from './common'
 import type { BuiltMotif } from './types'
 
-const PER_SEG = 4
+const PER_SEG_DEFAULT = 4
 
 export interface MotifView {
   /** A hero stage, or 'wall' (renderer-only, motifs r9): an upright wall hanging shot straight on. */
@@ -38,6 +38,9 @@ export interface MotifView {
   spinDeg?: number
   /** Camera yaw (deg); the default set is 14. */
   yaw?: number
+  /** Smoothing subdivisions per strand segment (default 4). A big assembly
+   *  (the garland: ~170 strokes) takes 2 so the render fits the probe task's 8 GB (r9: 180 strokes at 4 = 105 MB of scene, OOM; r8's 49 MB rendered). */
+  perSeg?: number
 }
 
 /** A smooth non-yarn notion in the scene (the renderer's ellipsoid props): a
@@ -57,10 +60,11 @@ export interface MotifProp {
  *  dye and eased, so #7a4a5a reads as a deep dusty rose and not the same
  *  clean pink as #946070. Passed as the renderer's `fibreTune`; other heroes
  *  do not carry it, so they are unchanged. */
-export const MOTIF_FIBRE_TUNE: Record<string, number> = { sheen: 0.35, sheen_tint_mix: 0.85 }
+export const MOTIF_FIBRE_TUNE: Record<string, number> = { sheen: 0.35, sheen_tint_mix: 0.6 } // r9's 0.85 overshot: burgundy roses, orange berries
 
 export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] = []) {
   const twist = o.twist ?? 0.06
+  const PER_SEG = o.perSeg ?? PER_SEG_DEFAULT
   const spin = ((o.spinDeg ?? 0) * Math.PI) / 180
   const cs = Math.cos(spin), sn = Math.sin(spin)
   const strokes: { hex: string; sheen: number; radiusMm: number; filaments: number[][][] }[] = []

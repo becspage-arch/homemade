@@ -2146,10 +2146,12 @@ def _stage_wall(root, H, R, s, D, vis, light, gap=3.0):
     _box("wall", root, plaster, -3 * s, 3 * s, gap, gap + 3.0, -3.0, 3.0 * s)
     # A hanging string from the piece's top corners up out of frame is the
     # maker's; here the cord is yarn in the scene when the piece has one.
+    # r10: the vase stood in front of the piece's left end and the pot was big and
+    # close; both now sit just inside the frame edges, smaller.
     hw = vis.hw(gap * 0.5)
     glaze = _principled("vase", "#d9cdb8", rough=0.55, spec=0.3)
-    vx, vy = -0.78 * hw, gap * 0.45
-    vh = 0.42 * H
+    vx, vy = -0.92 * hw, gap * 0.6
+    vh = 0.3 * H
     _lathe("vase", root, glaze, vx, vy, [(0.0, 0.0), (0.16 * vh, 0.0), (0.2 * vh, 0.3 * vh), (0.17 * vh, 0.7 * vh), (0.1 * vh, 0.92 * vh), (0.11 * vh, vh)], seg=48)
     stem = _principled("dstem", "#b9a070", rough=0.85)
     plume = _principled("dplume", "#e3d4b4", rough=0.95, sheen=0.8)
@@ -2165,16 +2167,16 @@ def _stage_wall(root, H, R, s, D, vis, light, gap=3.0):
     _spheres("dried", root, plume, pts, 0.07 * vh, subdiv=2)
     # A terracotta pot of trailing green, back right.
     terra = _principled("pot", "#b9774f", rough=0.7, spec=0.2)
-    px, py = 0.8 * hw, gap * 0.4
-    ph = 0.22 * H
-    _cyl("pot", root, terra, px, py, 0.0, 0.14 * H, 0.17 * H, ph)
+    px, py = 0.93 * hw, gap * 0.5
+    ph = 0.15 * H
+    _cyl("pot", root, terra, px, py, 0.0, 0.09 * H, 0.11 * H, ph)
     leaf_mat = _principled("plant", "#6f8f4e", rough=0.6, sheen=0.3)
     specs = []
     for kk in range(14):
         a = kk * 2.4
-        rr = 0.06 * H + 0.11 * H * _hash01(kk, 2.0)
-        specs.append(((px + math.cos(a) * rr, py + math.sin(a) * rr * 0.6, ph + 0.02 * H + 0.05 * H * _hash01(kk, 5.0)),
-                      a + 0.4, 0.09 * H + 0.05 * H * _hash01(kk, 9.0), 0.05 * H, 0.25, 0, -0.1 - 0.3 * _hash01(kk, 3.0)))
+        rr = 0.04 * H + 0.07 * H * _hash01(kk, 2.0)
+        specs.append(((px + math.cos(a) * rr, py + math.sin(a) * rr * 0.6, ph + 0.015 * H + 0.03 * H * _hash01(kk, 5.0)),
+                      a + 0.4, 0.06 * H + 0.03 * H * _hash01(kk, 9.0), 0.032 * H, 0.25, 0, -0.1 - 0.3 * _hash01(kk, 3.0)))
     _leaves("plant_leaves", root, leaf_mat, specs)
     # Window light from the left washing the wall, a soft fill from the front right.
     light((-1.3 * s, -0.2 * s, 0.9 * s), (0, gap, 0.5 * H), 1.7, 0.8 * s, GOLD)
