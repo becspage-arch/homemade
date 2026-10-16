@@ -156,6 +156,9 @@ export interface BuiltSpiral {
   topZ: number
   baseZ: number
   maxRadiusMm: number
+  /** Where the ribbon ENDS at the base (the last row-1 stitch's crown, settled):
+   *  the tail, and so the bead, hangs from here, not from the axis. */
+  baseEnd: { x: number; y: number; z: number }
 }
 
 export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iterations?: number } = {}): BuiltSpiral {
@@ -452,6 +455,7 @@ export function buildSpiralTree(spec: SpiralSpec, o: { relaxK?: number; iteratio
     topZ: zmax,
     baseZ: zmin,
     maxRadiusMm: rmax,
+    baseEnd: (() => { const n0 = nodes[crowns[crowns.length - 1]!.node]!; return { x: n0.x, y: n0.y, z: n0.z } })(),
   }
 }
 

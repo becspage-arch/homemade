@@ -33,13 +33,14 @@ export const SPIRAL_COLOURS = { green: '#1c3a26', cream: '#ece2cc', gold: '#a37d
 /**
  * The TOPPER star (Fable r3). The motifs 'small' star (a 5-st ring and ch-3
  * points) rendered as a spindly starfish beside the bar's plump, compact star:
- * the bar's body is solid and its points short. Two rounds (5, 10) and ch-4
- * points with a short graded post give that: ~37 mm at fine (0.59 of the tree
- * width; bar ≈ 0.55), 28 mm at lace. Registered into the motifs star's size
+ * the bar's body is solid and its points short: about 11 yarn widths across.
+ * Two rounds (5, 10) and ch-3 points (sl st, dc) give that: ~40 mm at sport
+ * (0.58 of the tree width; bar ≈ 0.53; r3's ch-4 points at fine were 14 yarn
+ * widths and still read wiry). Registered into the motifs star's size
  * table from here (additive; the motifs lane owns star.ts) under this key.
  */
 export const STAR_TOPPER_SIZE = 'topper'
-;(STAR_SIZES as Record<string, (typeof STAR_SIZES)['small']>)[STAR_TOPPER_SIZE] ??= { rounds: [5, 10], point: ['slst', 'sc', 'hdc'], skip: 1 }
+;(STAR_SIZES as Record<string, (typeof STAR_SIZES)['small']>)[STAR_TOPPER_SIZE] ??= { rounds: [5, 10], point: ['slst', 'sc'], skip: 1 }
 
 export interface HangingOptions {
   /** Tree colours left to right (default green, cream, green: the bar). */
@@ -143,7 +144,7 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
   const X = cols.map((_, i) => (i - (cols.length - 1) / 2) * (W + gap))
 
   // The star.
-  const starW = o.starWeight ?? 'fine'
+  const starW = o.starWeight ?? 'sport'
   const star = getMotif('star').build({ yarnWeight: starW, size: STAR_TOPPER_SIZE as 'small', colours: { main: gold } })
   const starPiece = star.pieces[0]!
   const syr = YARN_WEIGHT_RADIUS_MM[starW]
@@ -200,14 +201,16 @@ export function buildHanging(o: HangingOptions = {}): Hanging {
       ...cord.piece, name: `cord-${i}`, yr: cyr,
       pose: (p) => ({ x: x0 + p.x, y: p.z + t.maxRadiusMm * 0.15, z: zTip + p.y }),
     })
-    // Beads on the tail at the base: a small spacer, then a round gold bead
-    // (the bar's: ~7 mm, right under the base, ≈ 0.11 of the tree width).
-    const zb = zTop - t.heightMm
-    const r1 = W * 0.03, r2 = W * 0.055
-    // The spacer tucks half under the base turn: the bar's beads touch the tree.
-    props.push({ centre: [x0, 0, zb + r1 * 0.3], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: '#c9a250', metal: true })
-    props.push({ centre: [x0, 0, zb - r1 * 0.4 - r2], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: '#c9a250', metal: true })
-    lowZ = Math.min(lowZ, zb - r1 * 0.4 - 2 * r2)
+    // Beads on the tail where the ribbon ENDS at the base (the fasten-off tail
+    // comes out of the last stitch, not the axis): a small spacer, then a
+    // round gold bead (the bar's: ≈ 0.12 of the tree width, touching the tree).
+    const be = t.baseEnd
+    const bx = x0 + be.x * cs - be.y * sn, by = be.x * sn + be.y * cs
+    const zb = zTop + (be.z - t.topZ)
+    const r1 = W * 0.03, r2 = W * 0.062
+    props.push({ centre: [bx, by, zb - yr - r1 * 0.6], axes: [[r1, 0, 0], [0, r1, 0], [0, 0, r1 * 0.8]], hex: '#c9a250', metal: true })
+    props.push({ centre: [bx, by, zb - yr - r1 * 1.5 - r2], axes: [[r2, 0, 0], [0, r2, 0], [0, 0, r2]], hex: '#c9a250', metal: true })
+    lowZ = Math.min(lowZ, zb - yr - r1 * 1.5 - 2 * r2)
     problems.push(...t.problems.map((s) => `tree-${i}: ${s}`))
   })
   problems.push(...starPiece.problems.map((s) => `star: ${s}`), ...cord.piece.problems.map((s) => `cord: ${s}`))
@@ -273,6 +276,9 @@ export function hangingScene(h: Hanging, o: { stage?: HeroStage; resY?: number; 
       stage: o.stage ?? ('christmas' as HeroStage),
       stageTiltDeg: o.tiltDeg ?? 80,
       stageZoom: o.stageZoom ?? 1.0,
+      // r4: the stage's f/0.14 blurred the branch and the outer trees; the
+      // bar keeps the branch and all three trees sharp over a soft room.
+      stageFstop: 0.4,
       liftMm: beadBelow + (o.liftMm ?? 25),
     },
   }
