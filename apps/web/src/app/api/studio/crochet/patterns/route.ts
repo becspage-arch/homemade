@@ -60,6 +60,12 @@ const Choices = z.object({
   hat: z.enum(HAT_IDS).optional(),
   hatHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
   pompomHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  // The doll's dressing (doll.ts): hair, a dress with a frill, lace wings,
+  // flowers. Doll-only; every other base ignores them.
+  hairHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  skirt: z.object({ hex: z.string().regex(/^#[0-9a-fA-F]{6}$/), hemHex: z.string().regex(/^#[0-9a-fA-F]{6}$/) }).optional(),
+  wingsHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+  flowersHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
   name: z.string().max(120).optional(),
 })
 
