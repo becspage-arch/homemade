@@ -395,7 +395,7 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "chick-S": "668859c3",
   "chick-M": "5f5cfd5d",
   "chick-L": "3c80a36c",
-  "cow-S": "0d88a994",
-  "cow-M": "303a55b2",
-  "cow-L": "cdedec09"
+  "cow-S": "9e1692d0",
+  "cow-M": "6d118ea4",
+  "cow-L": "450fbd1a"
 }
