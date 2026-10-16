@@ -36,7 +36,7 @@ test('the TS variant table matches the Python renderer', () => {
   for (const [stage, ids] of Object.entries(HERO_STAGE_VARIANTS)) {
     const m = py.match(new RegExp(`"${stage}": \\(([^)]*)\\)`))
     assert.ok(m, `STAGE_VARIANTS["${stage}"] missing in the Python`)
-    const pyIds = [...m![1].matchAll(/"([^"]+)"/g)].map((x) => x[1])
+    const pyIds = [...m![1]!.matchAll(/"([^"]+)"/g)].map((x) => x[1])
     assert.deepEqual(pyIds, [...ids], stage)
   }
 })
