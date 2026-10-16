@@ -331,7 +331,7 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // like a cap; the bar's is a tall tousled mound standing up off the crown"):
 // high on the crown again, the curls standing up, so a band of forehead shows.
 // Round 28: a touch forward again so the mound spills to the brow.
-const HAIR_DIR = { x: 0, y: 0.8, z: 1 }
+const HAIR_DIR = { x: 0, y: 0.75, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -402,7 +402,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
       k === 0
         ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
         : k === last
-          ? { lengthYr: 4.2, halfWidthYr: 2.0, droopDeg: -65 } // the spill forward to the brow and over the horn roots (shorter: round 10's fell over the eyes)
+          ? { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 } // the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
           : undefined,
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
@@ -414,7 +414,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // head it stands on. Same yarn in the words; a lighter shade on the loops.
     // Round 21: the same red-brown as the body, just catching the light (0.24
     // read as a pale pinkish-mauve pancake beside the bar).
-    colourHex: lighten(colourHex, 0.08),
+    // Round 30: a step lighter again (0.14) — r29's rings were the head's own dark brown; the bar's catch the light.
+    colourHex: lighten(colourHex, 0.14),
   }
 }
 
