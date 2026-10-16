@@ -65,7 +65,9 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   // said once before the rounds, from the same rule the build reads.
   const lines = writeHairInstructions(h)
   assert.match(lines[1]!, /every third lp st.*every fourth loop half a twist/)
-  assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round two fingers\)/)
+  // Cow round 17: the crown loops are worked over THREE fingers (7 yr), the
+  // tallest of the mound; the words follow the loop length.
+  assert.match(lines[2]!, /^Round 1: 6 lp st into a magic ring \(wrap the yarn round three fingers/)
   assert.match(lines[3]!, /^Round 2: 2 dc in each st\./)
   assert.match(lines[4]!, /^Round 3: \*1 lp st, 2 lp st in next st\* 6 times/)
   assert.match(lines[5]!, /^Round 4: \*2 dc, 2 dc in next st\* 6 times/)

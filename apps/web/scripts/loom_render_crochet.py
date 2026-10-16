@@ -697,7 +697,12 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # `pile_dark_only` (Highland cow, 2026-10-10): the hair-curve pile
             # on the mid/dark yarn only — on cream it reads as grey whiskers
             # (proofs/yarn r6-bunny-chenille), on deep brown as lit pile tips.
-            if not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75:
+            # `pile_max_radius_mm` (cow r18): no pile on strand groups fatter
+            # than this — the fringe's loose loops are drawn plump (strandYr
+            # 1.35) and the bar's rings are smooth chenille, not fuzzy worms.
+            dark_ok = not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75
+            size_ok = radius <= fpb.get("pile_max_radius_mm", 1e9)
+            if dark_ok and size_ok:
                 add_pile_hairs(ob, hexcol, fpb)
 
         if has_halo:

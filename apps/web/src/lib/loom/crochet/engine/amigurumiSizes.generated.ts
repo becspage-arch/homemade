@@ -186,10 +186,6 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 32.1,
     "height": 45
   },
-  "6,12,12,12,12,12,12,12,12,12,12,12,10,8,6": {
-    "width": 26.8,
-    "height": 76
-  },
   "6,12,18,18,18,18,18,12,6": {
     "width": 38.1,
     "height": 34.8
@@ -209,10 +205,6 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,9,12,15,18,18,18,15,12,9,6": {
     "width": 37.9,
     "height": 54.2
-  },
-  "6,12,18,18,18,18,18,18,18,18,18,18,16,14,12,10,8,6": {
-    "width": 39,
-    "height": 87.1
   },
   "6,12,18,24,24,24,24,24,18,12,6": {
     "width": 50.4,
@@ -234,10 +226,6 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 44.2,
     "height": 63.5
   },
-  "6,12,18,18,18,18,18,18,18,18,18,18,18,18,16,14,12,10,8,6": {
-    "width": 39,
-    "height": 97.7
-  },
   "6,12,18,24,30,30,30,30,30,24,18,12,6": {
     "width": 62.7,
     "height": 41.1
@@ -245,6 +233,30 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,6,6,6,6,6": {
     "width": 14,
     "height": 32.6
+  },
+  "6,12,18,22,26,28,30,33,36,39,42,45,48,48,48,46,43,39,35,31,27,24,18,12,6": {
+    "width": 99,
+    "height": 102.5
+  },
+  "6,12,12,12,12,12,12,12,12,12,12,12,12,12,12,10,8,6": {
+    "width": 26.8,
+    "height": 91.9
+  },
+  "6,12,18,24,28,33,36,39,41,42,44,46,48,50,52,54,56,58,60,60,60,58,54,49,44,39,34,30,24,18,12,6": {
+    "width": 123.4,
+    "height": 125.8
+  },
+  "6,12,18,18,18,18,18,18,18,18,18,18,18,18,18,16,14,12,10,8,6": {
+    "width": 39,
+    "height": 103
+  },
+  "6,12,18,24,29,34,37,41,44,46,47,48,50,52,54,56,58,60,62,64,66,66,66,64,60,55,50,45,40,35,30,24,18,12,6": {
+    "width": 135.6,
+    "height": 136.5
+  },
+  "6,12,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,16,14,12,10,8,6": {
+    "width": 39,
+    "height": 113.7
   }
 }
 
@@ -349,15 +361,15 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
   },
   "cow-S": {
     "width": 180,
-    "height": 205
+    "height": 215
   },
   "cow-M": {
     "width": 220,
-    "height": 245
+    "height": 255
   },
   "cow-L": {
     "width": 245,
-    "height": 275
+    "height": 280
   }
 }
 
@@ -391,7 +403,7 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "chick-S": "668859c3",
   "chick-M": "5f5cfd5d",
   "chick-L": "3c80a36c",
-  "cow-S": "b7613645",
-  "cow-M": "7c24a02b",
-  "cow-L": "97db4761"
+  "cow-S": "85569f61",
+  "cow-M": "865c9390",
+  "cow-L": "30a4be60"
 }
