@@ -155,14 +155,15 @@ export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 9, 6]
  * open there (tube.ts, `anchor: 'ring'`, a domed cap; a straight rim round
  * floated a hook under the press and failed the audit). Never stuffed, pressed
  * gently between finger and thumb into an oval cup (`press`, the plates
- * closing to about nine tenths of its width — harder, the cup is a slab),
+ * closing to about nine tenths of its width — harder, the cup is a slab; a
+ * round bigger, round 32, it read as a dark flap half the face wide),
  * and sewn by its back (the ring) to the side of the head with the hollow
  * turned forward and out, so the lens looks into the cup.
  */
 export const COW_EAR_CUP_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: [6, 12, 18, 24],
-  M: [6, 12, 18, 24, 30],
-  L: [6, 12, 18, 24, 30, 36],
+  S: [6, 12, 18],
+  M: [6, 12, 18, 24],
+  L: [6, 12, 18, 24, 30],
 }
 
 /**
@@ -203,19 +204,19 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
     body: COW_BODY_ROUNDS.S, head: sphereRounds(36, 2),
     muzzle: sphereRounds(12, 1), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: COW_EAR_CUP_ROUNDS.S,
     frontLeg: tubeRounds(12, 7), backLeg: ballRounds(18, 3), tail: cordRounds(3),
-    headSink: 18, muzzleSeat: 2, earPress: 38, legLift: -4.4, frontLegLift: 11.6, eyeMm: 13,
+    headSink: 18, muzzleSeat: 2, earPress: 30, legLift: -4.4, frontLegLift: 11.6, eyeMm: 13,
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
     muzzle: sphereRounds(18, 1), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: COW_EAR_CUP_ROUNDS.M,
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 24, muzzleSeat: 2, earPress: 48, legLift: -12.1, frontLegLift: 17.2, eyeMm: 18,
+    headSink: 24, muzzleSeat: 2, earPress: 40, legLift: -12.1, frontLegLift: 17.2, eyeMm: 18,
   },
   L: {
     body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
     muzzle: sphereRounds(21, 1), horn: COW_HORN_ROUNDS.slice(0, 9).concat([6]), ear: COW_EAR_CUP_ROUNDS.L,
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
-    headSink: 26, muzzleSeat: 2, earPress: 56, legLift: -12.5, frontLegLift: 30.4, eyeMm: 20,
+    headSink: 26, muzzleSeat: 2, earPress: 48, legLift: -12.5, frontLegLift: 30.4, eyeMm: 20,
   },
 }
 
