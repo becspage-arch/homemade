@@ -263,8 +263,6 @@ export interface NightcapAccessory {
   pompomRadiusFrac?: number
   /** Stitches added a round up the cone (hatAccessory default 2). */
   coneStep?: number
-  /** Rounds under the band that climb +6 a round (hatAccessory `steepRounds`, default 0). */
-  steepRounds?: number
   /** Slow rounds at the tip, each count held twice (hatAccessory `slowTipRounds`, default 5). */
   slowTipRounds?: number
   /** The whole hat tilted back off the face (deg, hatAccessory `tiltBackDeg`, default 0). */
@@ -1218,7 +1216,6 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
         ...(a.pompomFibre ? { pompomFibre: a.pompomFibre } : {}),
         ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
         ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
-        ...(a.steepRounds != null ? { steepRounds: a.steepRounds } : {}),
         ...(a.slowTipRounds != null ? { slowTipRounds: a.slowTipRounds } : {}),
       },
       {

@@ -212,32 +212,35 @@ export const HAT_HEX_DEFAULT = '#b7a4d8'
 /** The nightcap band's middle, above the head centre (fraction of the head
  *  radius). Round 6 at the hat's own 0.6 put the band's lower edge on the
  *  eye line and the hat swallowed the top half of the head. */
-const TOY_HAT_BRIM_FRAC = 0.66
+const TOY_HAT_BRIM_FRAC = 0.6
 /** The nightcap's flop (round 8): the bar's cone folds over right at the
  *  crown and falls steeply beside the ear; the hat's default stood 0.55R
  *  straight up first and read as a tall stiff cone. */
 /** Round 4: the fold starts a little up the dome (0.14 lay on the crown like
  *  a slug) but creases SHARPLY (ramp 0.7R, not the hat's 1.3R) so the cone
  *  never stands as a tall ridge before it falls. */
-/** Sleepy bunny 3: the cap is a BELL (`TOY_HAT_STEEP_ROUNDS` +6 rounds under
- *  the band, then the long +2 tail), leaning back a touch, folding over
- *  0.5R above the band where the cone is already slim, over a ramp of 0.8R to
- *  150 deg, so the slender tail hangs down beside the ear to the cheek with
- *  the pompom there. r7's upright +3 cone with the fold at 0.42R read as a
- *  gnome's hat with a hook at the top (proofs/bunny r3-0). */
-const TOY_HAT_BEND = { startFrac: 0.5, angleDeg: 150, dirDeg: 12 }
-const TOY_HAT_BEND_LENGTH_FRAC = 0.8
-const TOY_HAT_STEEP_ROUNDS = 4
+/** Sleepy bunny 3: the cap is a steep short SHOULDER (+4 a round from the
+ *  band) handing to a long slender tail (`TOY_HAT_SLOW_TIP_ROUNDS`), leaning
+ *  back a touch, folding over 0.45R above the band where the cone is already
+ *  slim, over a ramp of 0.9R to 150 deg, so the tail hangs down beside the ear
+ *  to the cheek with the pompom there. r7's upright +3 cone with the fold at
+ *  0.42R read as a gnome's hat with a hook at the top (proofs/bunny r3-0);
+ *  +6 shoulder rounds relax into a flat BRIM (r3-2), so the shoulder is +4. */
+/** Round 4: the fold starts lower (0.35R) over a longer ramp (1.1R) and the
+ *  hat leans back more, so the cap slouches over the crown like the bar's
+ *  instead of standing as a straight cone first (r3-3a stood, r3-3b more so). */
+const TOY_HAT_BEND = { startFrac: 0.35, angleDeg: 155, dirDeg: 12 }
+const TOY_HAT_BEND_LENGTH_FRAC = 1.1
 /** The slender tail: +2 every second round for most of its length, so the
  *  cone is ~2.4R long (the bar's tail reaches the cheek); the hat's default
  *  five slow rounds left it 1.8R (proofs/bunny r3-2). */
-const TOY_HAT_SLOW_TIP_ROUNDS = 16
-const TOY_HAT_TILT_BACK_DEG = 8
+const TOY_HAT_SLOW_TIP_ROUNDS = 17
+const TOY_HAT_TILT_BACK_DEG = 14
 const TOY_POMPOM_RADIUS_FRAC = 0.42
 /** Round 5-6: the cone's rate. At +2 a round (the hat's default) the cone was
  *  ~55 rounds on a 70-st band and curled up on the crown as a turban (r4);
  *  at +4 it was so short the whole cap flopped flat like a lid (r5). +3. */
-const TOY_HAT_CONE_STEP = 2
+const TOY_HAT_CONE_STEP = 4
 /** The bar's pompom: cream, fluffy, on the lilac cap. */
 export const POMPOM_HEX_DEFAULT = '#f4ecdd'
 const TOY_POMPOM_FIBRE: YarnFibre = 'fluff'
@@ -748,7 +751,6 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       brimHeightFrac: TOY_HAT_BRIM_FRAC,
       bend: { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
       coneStep: TOY_HAT_CONE_STEP,
-      steepRounds: TOY_HAT_STEEP_ROUNDS,
       slowTipRounds: TOY_HAT_SLOW_TIP_ROUNDS,
       tiltBackDeg: TOY_HAT_TILT_BACK_DEG,
       pompomRadiusFrac: TOY_POMPOM_RADIUS_FRAC,

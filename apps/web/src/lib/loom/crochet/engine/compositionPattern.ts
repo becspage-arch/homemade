@@ -294,7 +294,6 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
       ...(a.pompomHex ? { pompomHex: a.pompomHex } : {}),
       ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
       ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
-      ...(a.steepRounds != null ? { steepRounds: a.steepRounds } : {}),
       ...(a.slowTipRounds != null ? { slowTipRounds: a.slowTipRounds } : {}),
     }))
     out.push(`Sit the hat on the ${baseName(a.on)} with the band just above the eyes and let the tip flop to one side; a few stitches through the band hold it.`)

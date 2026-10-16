@@ -44,12 +44,6 @@ export interface NightcapOptions {
    *  +2 the cone was ~55 rounds on a 54-st band and curled up on the crown as
    *  a turban (crochet-bar/proofs/bunny r3-r4). */
   coneStep?: number
-  /** Rounds just under the band that climb SIX stitches a round (default 0:
-   *  a plain cone). The sleepy bunny's cap is a BELL — wide at the band,
-   *  narrowing fast to a long slender tail — so the part that folds over
-   *  above the crown is slim and falls like a nightcap instead of bunching
-   *  into a turban (crochet-bar/proofs/bunny r4, r6). */
-  steepRounds?: number
   /** Pompom radius (mm; default 0.5 × head radius). 0 = none. */
   pompomRadiusMm?: number
   /** The pompom's own yarn when it is not the hat's: colour and fibre look
@@ -88,15 +82,10 @@ export function nightcapRounds(o: NightcapOptions): number[] {
     c += 2
   }
   const step = Math.max(2, o.coneStep ?? 2)
-  const steep = Math.max(0, Math.min(Math.floor((N - c) / 6) - 1, o.steepRounds ?? 0))
-  // The steady cone hands over to the steep rounds at N - 6 x steep; the
-  // steep rounds then climb +6 a round to the band.
-  const hand = N - 6 * steep
-  while (c < hand || (steep > 0 && c === hand)) {
+  while (c < N) {
     rounds.push(c)
     c += step
   }
-  for (let k = steep - 1; k >= 1; k--) rounds.push(N - 6 * k)
   for (let i = 0; i < band; i++) rounds.push(N)
   for (let i = 0; i < brim; i++) rounds.push(N)
   return rounds
