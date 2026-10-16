@@ -25,6 +25,17 @@ test('star: puffed = two identical stars, front and back, with sewing words', ()
   assert.ok(b.words.some((w) => /second star/.test(w)) && b.words.some((w) => /wrong sides together/.test(w)))
 })
 
+test('puff rose: five domed petals round a centre; bud = four closed lobes, no centre', () => {
+  const b = getMotif('layered-rose').build()
+  assert.deepEqual(b.problems, [])
+  assert.deepEqual(b.pieces.map((p) => p.name), ['backing', 'petal 1', 'petal 2', 'petal 3', 'petal 4', 'petal 5', 'centre'])
+  assert.ok(b.words.some((w) => /Petals \(make 5\)/.test(w)))
+  const bud = getMotif('layered-rose').build({ bud: true })
+  assert.deepEqual(bud.problems, [])
+  assert.deepEqual(bud.pieces.map((p) => p.name), ['backing', 'petal 1', 'petal 2', 'petal 3', 'petal 4'])
+  assert.ok(bud.sizeMm.width < b.sizeMm.width)
+})
+
 for (const id of ALL) {
   test(`${id}: genuinely stitched (audit clean), with words and a size`, () => {
     const b = getMotif(id).build()

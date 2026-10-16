@@ -36,6 +36,9 @@ export interface MotifOptions {
   /** A PUFFED motif where one exists (the star): two identical pieces sewn
    *  wrong sides together with a little stuffing, so the flat face plumps. */
   puffed?: boolean
+  /** The puff rose CLOSED (four lobes leaning in over the middle, no centre):
+   *  the bar's rosebuds between its open flowers. */
+  bud?: boolean
 }
 
 export interface V3 {

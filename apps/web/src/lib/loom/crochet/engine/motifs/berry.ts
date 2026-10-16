@@ -17,7 +17,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece, V3 } from './types'
 
-export const BERRY_COLOURS = { berry: '#b5675b', stalk: '#46503a', calyx: '#4a553d' } // dusty terracotta, deep olive, deep grey-sage
+export const BERRY_COLOURS = { berry: '#b98588', stalk: '#46503a', calyx: '#4a553d' } // r10: #b5675b rendered bright orange with the tinted sheen; the bar's berries are dusty terracotta-pink // dusty terracotta, deep olive, deep grey-sage
 export const BERRY_ROUNDS = [6, 12, 12, 12, 12, 6]
 export const STALK_CH = 8
 const CALYX_SEPALS = 5
