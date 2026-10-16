@@ -34,10 +34,11 @@ export const DAISY_CENTRE = [8, 16, 24]
 export const DAISY_PETALS = 8
 /** `size: 'small'` (r10, the garland): a two-round centre and a petal one st shorter, ~70% the width — the bar's daisies are the smaller flower beside its roses. */
 export const DAISY_CENTRE_SMALL = [6, 12]
-export const DAISY_PETAL_SMALL: StitchId[] = ['sc', 'dc', 'dc', 'sc'] // 5 sts a side was still 53 mm at lace beside a 55 mm rose
+export const DAISY_PETAL_SMALL: StitchId[] = ['sc', 'hdc', 'dc', 'hdc', 'sc'] // r15: r11's 4-st petals fused into a scalloped disc on the 12-st centre; 5 sts, sewn a little further out, separate (the roses stay 4 ply, so the lace daisy is still the smaller flower)
 /** How far (yarn radii) each petal's base is tucked under the centre, and how
  *  high the centre's dome stands over the petals. */
 const TUCK_YR = 2.5
+const TUCK_SMALL_YR = 1.2 // r15: the small daisy's petals sewn further out so they separate
 const DOME_YR = 2.6
 const LIFT_YR = 1.6
 
@@ -82,7 +83,7 @@ export function buildDaisy(o?: MotifOptions): BuiltMotif {
   const yMid = ySum / ln.length
   // The petal lies along x with its tip at the +x end (the chain was made from
   // the tip toward −x); its base (the −x end) is tucked under the centre.
-  const rBase = centre.r - yr * TUCK_YR
+  const rBase = centre.r - yr * (small ? TUCK_SMALL_YR : TUCK_YR)
   const pieces: MotifPiece[] = []
   for (let k = 0; k < DAISY_PETALS; k++) {
     const th = (k / DAISY_PETALS) * Math.PI * 2 + Math.PI / 2

@@ -126,6 +126,12 @@ export interface ChainLoop {
   /** Loop centre on the chain line, and the chain's direction there. */
   c: V2
   u: V2
+  /** The loop's strand nodes in order from its left leg, round the fold and
+   *  down its right leg to its crossing (r15, the chain-space hook): a stitch
+   *  worked into a chain SPACE goes under the chain, so it may hook the leg on
+   *  its own side at more than one point. The loop on the hook has only its
+   *  first strand (to the fold). */
+  nodes: number[]
 }
 
 /** The magic ring. */
@@ -141,8 +147,11 @@ export interface StitchSpec {
   /** Where the crown lands and where the hook enters, in the frame (lx). */
   xCrown: number
   xHook?: number
-  /** The loop it is worked into: a crown, a chain leg (node), or the ring. */
-  into: { kind: 'crown'; crown: Crown } | { kind: 'node'; node: number } | { kind: 'ring'; ring: Ring; th: number }
+  /** The loop it is worked into: a crown, a chain leg (node), the ring, or a
+   *  chain SPACE (r15): the hook goes under the whole chain between two
+   *  stitches, so the stitch ENCIRCLES the chain's strand at `node` (a 'ring'
+   *  link, measured as one: still beside the strand, not slid along it). */
+  into: { kind: 'crown'; crown: Crown } | { kind: 'node'; node: number } | { kind: 'ring'; ring: Ring; th: number } | { kind: 'space'; node: number }
   /** Row bottom (ly, default the hooked loop's ly) and height scale (1). */
   by?: number
   heightScale?: number
@@ -264,6 +273,10 @@ export class MotifStrand {
     } else if (spec.into.kind === 'node') {
       bcBack = spec.into.node
       bcFront = spec.into.node
+    } else if (spec.into.kind === 'space') {
+      bcBack = spec.into.node
+      bcFront = spec.into.node
+      role = 'ring'
     } else {
       const R = spec.into.ring
       const t = (((spec.into.th / (Math.PI * 2)) % 1) + 1) % 1
@@ -402,6 +415,7 @@ export class MotifStrand {
       // chain of every star point dragged clean out of its neighbour's fold
       // (audit: 'crossing past its loop's fold' on every tip, both builds).
       const last = k === n
+      const loopFrom = this.S.nodes.length
       const apex = P(t + p + r, 0, last ? zf * 0.4 : zfold)
       let legR = apex // the hook loop's far side is the working yarn itself
       let crossDn = -1
@@ -432,7 +446,10 @@ export class MotifStrand {
       this.tag(from, opts.hold === false ? null : { hx: l.x, hy: l.y })
       for (let i = from; i < this.S.nodes.length; i++) this.free.add(i)
       const c = at(t + p * 0.6)
-      loops.push({ apex, legL, legR, c: c.p, u })
+      // the loop's strand from its left leg up to the fold and down the right leg to its crossing
+      const loopNodes: number[] = [legL]
+      for (let i = loopFrom; i < this.S.nodes.length; i++) loopNodes.push(i)
+      loops.push({ apex, legL, legR, c: c.p, u, nodes: loopNodes })
     }
     this.j++
     void from0
