@@ -104,8 +104,10 @@ export const TREE_BLOCKS: SpiralBlock[] = [
 /** How far the ribbon's outer edge droops below horizontal: the bar's bands
  *  show their upper face, tilted ~35–40°. */
 export const TREE_DROOP_DEG = 36
-/** The edging row the bar's dense ribbon needs (see SpiralSpec.edgeRow). */
-export const TREE_EDGE_ROW: StitchId = 'sc'
+/** The edging row the bar's dense ribbon needs (see SpiralSpec.edgeRow): UK
+ *  htr (r3; the r2 dc edge left the coils a gap of ~40% of the pitch, and a
+ *  steeper droop failed the top chain's crossing). */
+export const TREE_EDGE_ROW: StitchId = 'hdc'
 
 /**
  * The inner (chain-line) radius at which a strip of crown height `a` (measured
