@@ -50,7 +50,7 @@ export interface CowChoices {
   mainHex: string
   /** Horns and muzzle: cream. */
   contrastHex: string
-  /** Safety eye diameter (mm). */
+  /** Safety eye diameter (mm); 0 = the size's own. */
   eyeMm: number
   /** The listing stage (render-only). */
   stage?: HeroStage
@@ -75,7 +75,9 @@ export const COW_DEFAULTS: CowChoices = {
   // Round 23: a shade deeper and less orange (#86564a read bright in the window light).
   mainHex: '#7f5046',
   contrastHex: '#ead9bf',
-  eyeMm: 12,
+  // 0 = the size's own eye (PROFILES.eyeMm). Round 24: the renders had been
+  // taking this 12 over the profile's 18-20, which is why the eyes read small.
+  eyeMm: 0,
 }
 
 export const COW_BASE = {
@@ -139,7 +141,7 @@ export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 6]
 // 20, not 14) and seated deeper so it tucks in under the horn (a ball grown
 // in sixes to 24 and pressed failed the hook audit; a sphere(24) pressed
 // failed its interlocks).
-export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 12, 9, 6]
+export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 9, 6]
 
 /**
  * THE PEAR BODY (cow round 17, Rebecca's look at r15: "the body a soft upright
@@ -177,7 +179,7 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
-    muzzle: sphereRounds(18, 2), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: COW_EAR_ROUNDS,
+    muzzle: sphereRounds(18, 2), horn: COW_HORN_ROUNDS.slice(0, 7).concat([6]), ear: COW_EAR_ROUNDS,
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
     headSink: 24, muzzleSeat: 5, earPress: 22, legLift: -12.1, frontLegLift: 14.6, eyeMm: 20,
   },
@@ -287,7 +289,8 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
  *  loops fall to about a row above the eyes (the bar). */
 // Round 14: nearer the top of the crown — at y 0.95 the seven-round circle's
 // front edge still reached the eyes.
-const HAIR_DIR = { x: 0, y: 0.82, z: 1 }
+// Round 24: lower again on the brow (the bulky fringe's five rounds are a smaller circle).
+const HAIR_DIR = { x: 0, y: 0.95, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -334,7 +337,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // loops; the bar's is a tall plump mound of tight fat curls"): shorter,
     // narrower loops standing further off the head (droop -50), every other
     // one given a full twist so it springs into a tight curl, the strand fatter.
-    loop: { lengthYr: 3.6, halfWidthYr: 1.5, droopDeg: -50, vary: 0.4 },
+    // Round 24: BIG open rings lying over the head (r23's small tight curls
+    // stood as a dense cauliflower hat).
+    loop: { lengthYr: 4.4, halfWidthYr: 2.0, droopDeg: -62, vary: 0.4 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -342,13 +347,13 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     plainEvery: 3,
     // Round 23: every third (every other read as a dense "brain" of curls;
     // the bar's mound is open rings with a tight curl among them).
-    curlEvery: 3,
+    curlEvery: 4,
     curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.2 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 5.5, halfWidthYr: 1.9, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 4.8, halfWidthYr: 2.0, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
         : k === last
-          ? { lengthYr: 3.0, halfWidthYr: 1.3, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
+          ? { lengthYr: 3.6, halfWidthYr: 1.8, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
           : undefined,
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
@@ -464,7 +469,8 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     props.push({
       name: side < 0 ? 'eye-l' : 'eye-r', on: 'head',
       dir: fd({ x: side * EYE_DIR.x, y: EYE_DIR.y, z: EYE_DIR.z }),
-      radiusMm: r, seat: -(r + 0.2), colourHex: EYE_HEX, gloss: 0.85,
+      // Round 24: seated proud so the whole glossy dome shows out of the pile.
+      radiusMm: r, seat: -(r + 1.5), colourHex: EYE_HEX, gloss: 0.85,
     })
   }
 
