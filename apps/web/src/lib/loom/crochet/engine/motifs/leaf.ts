@@ -15,7 +15,7 @@ import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './c
 import { registerMotif } from './registry'
 import type { BuiltMotif, MotifOptions, MotifPiece } from './types'
 
-export const LEAF_COLOURS = { main: '#5f6a4e' } // deep grey-sage (r1-2's #9aab8a rendered mint, r4's #859470 pale celery)
+export const LEAF_COLOURS = { main: '#4a553d' } // deep grey-sage (r1-2's #9aab8a rendered mint, r4's #859470 pale celery, r5's #5f6a4e greyed celery)
 
 /** One side of the leaf, from the stem end to the tip (the other side is
  *  worked tip to stem with the same heights reversed). A run of tr (UK) in
@@ -23,7 +23,7 @@ export const LEAF_COLOURS = { main: '#5f6a4e' } // deep grey-sage (r1-2's #9aab8
  *  is a pointed oval about twice as long as it is wide, like the bar's; r1-4's
  *  dc, htr, tr, dtr, dtr, tr, htr, dc rose and fell in a straight ramp and
  *  rendered as a fat diamond. */
-export const LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'dc', 'dc', 'dc', 'dc', 'dc', 'hdc', 'sc']
+export const LEAF_SIDE: StitchId[] = ['sc', 'hdc', 'dc', 'tr', 'tr', 'tr', 'tr', 'dc', 'hdc', 'sc'] // a dtr (UK) plateau: ~2.3:1 (12 dc a side settled 3.3:1, too slender)
 export const LEAF_STEM = 3
 
 /** How the tip is turned: a point (dc, ch 2, dc) for a leaf, or a rounded end

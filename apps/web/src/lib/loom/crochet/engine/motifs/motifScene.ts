@@ -26,9 +26,21 @@ export interface MotifView {
   twist?: number
   /** Turn the motif in its plane (deg) before staging. */
   spinDeg?: number
+  /** Camera yaw (deg); the default set is 14. */
+  yaw?: number
 }
 
-export function motifScene(m: BuiltMotif, o: MotifView = {}) {
+/** A smooth non-yarn notion in the scene (the renderer's ellipsoid props): a
+ *  driftwood stick a garland hangs from. Centre and three semi-axis vectors in
+ *  engine mm (engine +y up, as the pieces are posed). */
+export interface MotifProp {
+  centre: V3
+  axes: [V3, V3, V3]
+  hex: string
+  gloss?: number
+}
+
+export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] = []) {
   const twist = o.twist ?? 0.06
   const spin = ((o.spinDeg ?? 0) * Math.PI) / 180
   const cs = Math.cos(spin), sn = Math.sin(spin)
@@ -49,9 +61,18 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}) {
     }
   }
   const tilt = o.tiltDeg ?? 28
+  // Props are written with the same spin and y flip as the strokes.
+  const sp = (p: V3): [number, number, number] => [p.x * cs - p.y * sn, -(p.x * sn + p.y * cs), p.z]
+  const propsOut = props.map((pr) => ({
+    centre: sp(pr.centre),
+    axes: pr.axes.map((a) => [a.x * cs - a.y * sn, -(a.x * sn + a.y * cs), a.z]),
+    hex: pr.hex,
+    gloss: pr.gloss ?? 0.35,
+  }))
   return {
     fabric: { widthMm: m.sizeMm.width + 20, heightMm: m.sizeMm.height + 20, hex: strokes[0]?.hex ?? '#ffffff' },
     strokes,
+    ...(propsOut.length ? { props: propsOut } : {}),
     fibre: m.yarnFibre,
     view: {
       bgHex: '#efece6',
@@ -59,7 +80,7 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}) {
       tiltDeg: tilt,
       resY: o.resY ?? 1200,
       openFabric: true,
-      yawDeg: o.yawDeg ?? 14,
+      yawDeg: o.yawDeg ?? o.yaw ?? 14,
       aimHeightFrac: 0.08,
       lightRig: 'product' as const,
       groundScale: 16,

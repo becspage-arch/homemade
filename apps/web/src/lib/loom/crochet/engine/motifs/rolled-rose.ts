@@ -26,17 +26,17 @@ export const ROLLED_ROSE_COLOURS = { main: '#946070' } // dusty mauve (r4's #ad6
 
 /** The petals in work order (the first ones roll into the centre). */
 export const ROSE_PETALS: { n: number; sts: StitchId[] }[] = [
-  { n: 3, sts: ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] },
-  { n: 3, sts: ['sc', 'dc', 'tr', 'tr', 'dc', 'sc'] },
-  { n: 3, sts: ['hdc', 'dc', 'tr', 'tr', 'tr', 'dc', 'hdc'] },
+  { n: 4, sts: ['sc', 'hdc', 'dc', 'dc', 'hdc', 'sc'] },
+  { n: 4, sts: ['hdc', 'dc', 'dc', 'dc', 'dc', 'hdc'] },
+  { n: 4, sts: ['dc', 'dc', 'tr', 'tr', 'dc', 'dc'] },
 ]
 
 /** Spiral pitch (radial growth per turn) as a multiple of the yarn radius, and
  *  the outward lean of the rolled petals from centre to rim (deg). */
-const ROLL_PITCH_YR = 4.6
-const ROLL_R0_YR = 1.6
-const LEAN0 = 6
-const LEAN1 = 34
+const ROLL_PITCH_YR = 3.4 // r5's 4.6 left the stage showing between turns
+const ROLL_R0_YR = 1.4
+const LEAN0 = 4
+const LEAN1 = 24 // petals stay nearer upright: a dome, not a flat spiral
 
 export function rosePetalList(): StitchId[][] {
   const out: StitchId[][] = []

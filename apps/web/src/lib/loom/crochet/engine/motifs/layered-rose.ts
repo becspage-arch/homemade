@@ -5,7 +5,7 @@
  *
  * Three pieces, each worked flat in the round and sewn stacked: an outer layer
  * of five petals (a small flat centre, then a round whose outline is the
- * petals — into each group of four stitches htr, tr, tr, htr, UK, so the
+ * petals — into each group of four stitches dc, dtr, dtr, dc, UK, so the
  * rounded lobe comes from the heights), a smaller inner layer of five petals
  * turned half a petal, and a tiny pale centre (one round of dc into a ring).
  * Each layer is cupped — bent up into a bowl so the petals stand and curl in,
@@ -45,8 +45,10 @@ const one = (ids: StitchId[]): { id: StitchId; n: number }[] => ids.map((id) => 
  *  collars — 5/105-110 interlocks failed — so each petal spreads over as many
  *  crowns as it has stitches and takes its rounded outline from the heights.) */
 export const LAYERS: Layer[] = [
-  { name: 'outer petals', centre: [5, 10, 15, 20], petal: one(['hdc', 'dc', 'dc', 'hdc']), cupYr: 15, spinDeg: 0, liftYr: 0 },
-  { name: 'inner petals', centre: [5, 10, 15], petal: one(['hdc', 'dc', 'hdc']), cupYr: 10.5, spinDeg: 36, liftYr: 2.2 },
+  // r5's htr-tr cups on 15 / 10.5 yr spheres rendered as one smooth bowl; deeper
+  // scallops on shallower cups so each lobe reads.
+  { name: 'outer petals', centre: [5, 10, 15, 20], petal: one(['sc', 'tr', 'tr', 'sc']), cupYr: 24, spinDeg: 0, liftYr: 0 },
+  { name: 'inner petals', centre: [5, 10, 15], petal: one(['sc', 'tr', 'sc']), cupYr: 15, spinDeg: 36, liftYr: 2.6 },
 ]
 const PETALS = 5
 const CENTRE_ROUND = 6
@@ -69,7 +71,7 @@ function layerPiece(yr: number, hex: string, L: Layer): MotifPiece {
   if (per !== L.petal.length) throw new Error(`${L.name}: ${below.length} sts do not divide into ${PETALS} petals of ${L.petal.length}`)
   shapedRound(m, c, below, below.map((_, i) => L.petal[i % per]!), r)
   m.fastenOff(unit(sub(c, m.cursor)))
-  const R = r + yr * rowPitchYr('dc')
+  const R = r + yr * rowPitchYr('tr')
   return pieceOf(L.name, m, m.finish(R * 2, R * 2), cupPose(yr, L))
 }
 

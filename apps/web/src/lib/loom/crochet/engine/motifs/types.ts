@@ -21,6 +21,7 @@ export type MotifId =
   | 'layered-rose'
   | 'berry'
   | 'leaf-vine'
+  | 'garland'
 
 export interface MotifOptions {
   /** Default 'fine' (fine cotton, 2.5 mm hook). */
