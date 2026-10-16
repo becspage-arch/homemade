@@ -47,7 +47,7 @@ import { STITCHES, rowPitchYr } from './dictionary'
 import type { EmbroideryFeature, EmbroideryStitch, FaceStyle, SurfaceSpot } from './faceEmbroidery'
 import { hairCapPart, hairCapRounds, type RingletHairSpec } from './dollHair'
 import {
-  FRILL_SCALLOP, HAIR_LEAF_SIDE, HAIR_LEAF_STEM, HAIR_ROSE_PETALS, WING_LOWER, WING_STEM, WING_UPPER,
+  BOUQUET_PETALS, FRILL_SCALLOP, HAIR_LEAF_SIDE, HAIR_LEAF_STEM, HAIR_ROSE_PETALS, WING_LOWER, WING_STEM, WING_UPPER,
   frillStrip, frillWords, hairLeaf, hairLeafWords, hairRose, hairRoseWords, laceLobe, lobeUprightPose,
   smallFlower, smallFlowerWords, wingWordsLace, type DressingPiece,
 } from './dollDressing'
@@ -216,7 +216,7 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     frill: { scallops: 9, radiusMm: 22 },
     ringlets: [30, 24, 20],
     cross: false,
-    bouquetOut: 8,
+    bouquetOut: 10,
   },
   M: {
     label: 'doll',
@@ -239,9 +239,9 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     bodice: [46, 44, 42, 40, 38, 36],
     bodiceOverlap: 41,
     frill: { scallops: 16, radiusMm: 40.3 },
-    ringlets: [64, 52, 44],
+    ringlets: [80, 66, 52],
     cross: true,
-    bouquetOut: 14,
+    bouquetOut: 19,
   },
   L: {
     label: 'large doll',
@@ -264,9 +264,9 @@ export const DOLL_SIZES: Record<Size, DollSize> = {
     bodiceOverlap: 41,
     frill: { scallops: 18, radiusMm: 45.2 },
     // (58 chains is the one count from 40 to 72 whose strip fails the audit by one hook.)
-    ringlets: [70, 60, 48],
+    ringlets: [80, 70, 52],
     cross: true,
-    bouquetOut: 15,
+    bouquetOut: 20,
   },
 }
 
@@ -289,6 +289,7 @@ function customRoundsOf(s: DollSize): number[][] {
     [HAIR_ROSE_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1],
     [5, 10],
     [HAIR_LEAF_SIDE.length + 1 + HAIR_LEAF_STEM + 1],
+    [BOUQUET_PETALS.reduce((a, p) => a + p.length + 1, 0) + 1],
   ]
 }
 
@@ -713,9 +714,16 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   // in front of her left. Each leg still rests flat on the table (one edge of
   // the sole; the lean is a few degrees).
   const legH = s.leg.length * rowPitchYr('sc') * 1.3 * 0.92 // rounds x row pitch at 4 ply (yr 1.3 mm), settled a little shorter
+  // The tops stay the hips' width apart; each foot stands just PAST the
+  // centre line (her right in front), so the ankles cross. A leaning piece is
+  // placed by its centre, so the offset is the midpoint of foot and top.
+  const CROSS_MM = 4
+  const topX = (side: -1 | 1): number => side * s.legApart
+  const footX = (side: -1 | 1): number => (s.cross ? -side * CROSS_MM : side * s.legApart)
   const legLean = (side: -1 | 1): { x: number; y: number; z: number } | undefined =>
-    s.cross ? { x: -side * (side < 0 ? 0.09 : 0.11), y: 0, z: 1 } : undefined
-  const legY = (side: -1 | 1): number => (s.cross ? (side < 0 ? -5 : 7) : 0)
+    s.cross ? { x: (topX(side) - footX(side)) / legH, y: 0, z: 1 } : undefined
+  const legCentreX = (side: -1 | 1): number => (footX(side) + topX(side)) / 2
+  const legY = (side: -1 | 1): number => (s.cross ? (side < 0 ? -7 : 9) : 0)
   const legs: AmigurumiPart[] = ([-1, 1] as const).map((side) => ({
     name: side < 0 ? 'leg-l' : 'leg-r',
     gaugeYr: DOLL_GAUGE_YR,
@@ -724,19 +732,14 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     colourHex: skin,
     tube: { anchor: 'ring', join: 'spiral', cap: 'flat' },
     flip: true,
-    place: { on: 'ground', offset: { x: side * s.legApart, y: legY(side) }, ...(legLean(side) ? { lean: legLean(side) } : {}) },
+    place: { on: 'ground', offset: { x: legCentreX(side), y: legY(side) }, ...(legLean(side) ? { lean: legLean(side) } : {}) },
     words: legWords(s),
     joinWords: '',
   }))
   const legTop = s.leg.length
-  // The body is centred between the two leg TOPS. Leaning, a leg's bbox centre
-  // sits half the lean's run from its foot; its top the full run.
-  const lean = legLean(-1)
-  const topShift = lean ? (lean.x / lean.z) * legH : 0
-  const leanR = legLean(1)
-  const topShiftR = leanR ? (leanR.x / leanR.z) * legH : 0
-  const midTopX = (-s.legApart + topShift + s.legApart + topShiftR) / 2
-  const bodyDx = midTopX - (-s.legApart + topShift / 2)
+  // The body is centred between the two leg TOPS (x = 0), measured from the
+  // left leg's centre it stacks on.
+  const bodyDx = -legCentreX(-1)
   const bodyDy = (legY(-1) + legY(1)) / 2 - legY(-1)
   const parts: AmigurumiPart[] = [
     ...legs,
@@ -796,7 +799,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   const hooks = dollHooks(choices.size)
   if (choices.skirt) {
     const waist = hooks.body.waist
-    const deeper = shade(choices.skirt.hex, -0.22)
+    const deeper = shade(choices.skirt.hex, -0.34)
     parts.push({
       name: 'skirt',
       gaugeYr: DOLL_GAUGE_YR,
@@ -854,9 +857,9 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
         },
         {
           on: 'body',
-          dir: turnToCamera({ x: side * 0.35, y: seat.dir.y, z: seat.dir.z + 0.3 }),
-          aim: turnToCamera({ x: side * 0.7, y: -0.3, z: 0.95 }),
-          spin, seat: 4, surfaceFit: 'ellipsoid',
+          dir: turnToCamera({ x: side * 0.3, y: seat.dir.y, z: seat.dir.z + 0.7 }),
+          aim: turnToCamera({ x: side * 0.6, y: -0.25, z: 1.4 }),
+          spin, seat: 3, surfaceFit: 'ellipsoid',
         },
         wingWordsLace(WING_UPPER, WING_LOWER, WING_STEM, 'the wing colour'),
         `Sew each wing to the back of the body at round ${seat.round}, between the shoulder blades, by the lobes' stems: the upper lobe pointing up and out, the lower lobe down and out, both lying flat against the back.`,
@@ -869,8 +872,8 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
         },
         {
           on: 'body',
-          dir: turnToCamera({ x: side * 0.35, y: seat.dir.y, z: seat.dir.z + 0.15 }),
-          aim: turnToCamera({ x: side * 0.9, y: -0.3, z: -0.35 }),
+          dir: turnToCamera({ x: side * 0.35, y: seat.dir.y, z: seat.dir.z + 0.3 }),
+          aim: turnToCamera({ x: side * 0.95, y: -0.25, z: -0.3 }),
           spin, seat: 4, surfaceFit: 'ellipsoid',
         },
         [],
@@ -879,12 +882,12 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
     }
   }
   if (choices.hairHex) {
-    parts.push(hairCapPart(s.head, choices.hairHex, DOLL_HEAD_GAUGE_YR, forward, 18, 1, 14))
+    parts.push(hairCapPart(s.head, choices.hairHex, DOLL_HEAD_GAUGE_YR, forward, 26, 1, 14))
     if (choices.flowersHex) {
-      // Flowers in her hair, high on either side of the crown: a rolled rose
+      // Flowers in her hair, at the temples on either side: a rolled rose
       // with two small pale flowers and a leaf round it.
       const roseHex = choices.flowersHex
-      const paleHex = shade(choices.flowersHex, 0.45)
+      const paleHex = shade(choices.flowersHex, 0.6)
       const onCap = (az: number, el: number, seat: number, spin?: { x: number; y: number; z: number }): AmigurumiPart['place'] => {
         // Azimuth from the face (deg, + = her right) and elevation (deg) on the
         // cap; `spin` turns a flat piece's long axis (local +x) toward it.
@@ -896,19 +899,19 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
       for (const side of [-1, 1] as const) {
         const sfx = side < 0 ? 'l' : 'r'
         parts.push(customPart(`rose-${sfx}`, customRoundsOf(s)[3]!, roseHex, (yr) => hairRose(yr, roseHex),
-          onCap(side * 64, 24, 2.5), hairRoseWords(FLOWER_LABEL, 2), 'Sew a rose to the hair cap high on each side, by its base.'))
+          onCap(side * 70, 22, 2.5), hairRoseWords(FLOWER_LABEL, 2), 'Sew a rose to the hair cap high on each side, by its base.'))
         parts.push(customPart(`flower-${sfx}1`, customRoundsOf(s)[4]!, paleHex, (yr) => smallFlower(yr, paleHex),
-          onCap(side * 88, 10, 1.2), smallFlowerWords(PALE_FLOWER_LABEL, 4), 'Sew the small flowers flat to the hair cap round each rose.'))
+          onCap(side * 48, 32, 1.2), smallFlowerWords(PALE_FLOWER_LABEL, 4), 'Sew the small flowers flat to the hair cap round each rose.'))
         parts.push(customPart(`flower-${sfx}2`, customRoundsOf(s)[4]!, paleHex, (yr) => smallFlower(yr, paleHex),
-          onCap(side * 46, 12, 1.2), [], ''))
+          onCap(side * 96, 14, 1.2), [], ''))
         parts.push(customPart(`leaf-${sfx}`, customRoundsOf(s)[5]!, DOLL_LEAF_HEX, (yr) => hairLeaf(yr, DOLL_LEAF_HEX),
           // The leaf lies along the side of the head, its tip toward the back and down.
-          onCap(side * 112, 8, 1.2, turnToCamera({ x: -side * 0.4, y: -1, z: -0.5 })), hairLeafWords(LEAF_LABEL, 2), 'Tuck a leaf under each rose and sew it flat to the cap.'))
+          onCap(side * 84, 6, 1.2, turnToCamera({ x: -side * 0.4, y: -1, z: -0.5 })), hairLeafWords(LEAF_LABEL, 2), 'Tuck a leaf under each rose and sew it flat to the cap.'))
       }
       // A small bouquet: one rose held in her folded hands.
-      parts.push(customPart('bouquet', customRoundsOf(s)[3]!, DOLL_BOUQUET_HEX, (yr) => hairRose(yr, DOLL_BOUQUET_HEX, HAIR_ROSE_PETALS, 'bouquet'),
-        { on: 'body', dir: turnToCamera({ x: 0, y: 1, z: -0.45 }), aim: turnToCamera({ x: 0, y: 1, z: 0.2 }), seat: -s.bouquetOut, surfaceFit: 'ellipsoid' },
-        hairRoseWords(BOUQUET_LABEL, 1).map((l) => l.replace(/^Roses \(make 1\)/, 'Bouquet rose')),
+      parts.push(customPart('bouquet', customRoundsOf(s)[6]!, DOLL_BOUQUET_HEX, (yr) => hairRose(yr, DOLL_BOUQUET_HEX, BOUQUET_PETALS, 'bouquet'),
+        { on: 'body', dir: turnToCamera({ x: -0.2, y: 1, z: -0.45 }), aim: turnToCamera({ x: 0, y: 1, z: 0.35 }), seat: -s.bouquetOut, surfaceFit: 'ellipsoid' },
+        hairRoseWords(BOUQUET_LABEL, 1, BOUQUET_PETALS).map((l) => l.replace(/^Roses \(make 1\)/, 'Bouquet rose')),
         'Sew the bouquet rose between her hands so she holds it against the dress.'))
     }
   }
@@ -960,7 +963,7 @@ export function dollProgram(choices: DollChoices, name: string): CompositionProg
   }
   if (choices.hairHex) {
     const hair: RingletHairSpec = {
-      kind: 'ringlet-hair', on: 'hair-cap', clear: ['head', 'body'], colourHex: choices.hairHex, chains: s.ringlets, forward, clearDeg: 30, every: 2,
+      kind: 'ringlet-hair', on: 'hair-cap', clear: ['head', 'body'], colourHex: choices.hairHex, chains: s.ringlets, forward, clearDeg: 30, every: 3,
     }
     program.accessories = [...(program.accessories ?? []), hair]
   }
@@ -973,7 +976,7 @@ export const DOLL_FAIRY_DRESSING = {
   hairHex: '#e8c9c4',
   skirt: { hex: '#b9cb9b', hemHex: '#efb8c0' },
   wingsHex: '#bcc9d6',
-  flowersHex: '#d9a2a8',
+  flowersHex: '#cf8891',
 } as const
 
 /** Every combination the doll test walks (and the generated size table holds). */
@@ -989,12 +992,12 @@ export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: b
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
   'doll-S': { width: 43.4, height: 100.9 },
-  'doll-M': { width: 108.4, height: 215.7 },
-  'doll-L': { width: 114.6, height: 236.9 },
+  'doll-M': { width: 116.9, height: 218.3 },
+  'doll-L': { width: 121.5, height: 239.1 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
   'doll-S': '05e8497a',
-  'doll-M': 'c5943a08',
-  'doll-L': '1d85c09f',
+  'doll-M': 'feef4a71',
+  'doll-L': '3113e5d8',
 }
 

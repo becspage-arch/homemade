@@ -61,7 +61,7 @@ export const RINGLET_PER_CH = 2.5
  *  ~3.1 mm tall, the core ~2.1 mm, the curl ~10 mm across — a hollow spring,
  *  the bar's pencil curl. `RINGLET_PITCH_MM` is the drop per turn. */
 export const RINGLET_CORE_MM = +((2.4 * 1.3) / (RINGLET_PER_CH - 1)).toFixed(2)
-export const RINGLET_PITCH_MM = 4.2
+export const RINGLET_PITCH_MM = 4.4
 const RINGLET_LEAN = (8 * Math.PI) / 180
 
 /** The flat strip: `chains` chains, then `per` dc (UK) in the 2nd ch from the
@@ -221,8 +221,8 @@ export function ringletWords(chains: number, per = RINGLET_PER_CH, count: number
 
 /** One side of the upper and lower lobes, stem end to tip (UK: dc, tr, dtr,
  *  trtr ...). A ch-1 space is worked between every stitch. */
-export const WING_UPPER: StitchId[] = ['hdc', 'tr', 'dtr', 'dtr', 'tr', 'hdc']
-export const WING_LOWER: StitchId[] = ['hdc', 'tr', 'tr', 'hdc']
+export const WING_UPPER: StitchId[] = ['hdc', 'tr', 'dtr', 'dtr', 'dtr', 'tr', 'hdc']
+export const WING_LOWER: StitchId[] = ['hdc', 'tr', 'dtr', 'tr', 'hdc']
 export const WING_STEM = 2
 
 /**
@@ -375,8 +375,15 @@ export function frillWords(scallops: number, hemRound: number, frillLabel: strin
 
 export const HAIR_ROSE_PETALS: StitchId[][] = [
   ['sc', 'hdc', 'sc'],
+  ['hdc', 'dc', 'hdc'],
+  ['hdc', 'dc', 'dc', 'hdc'],
+  ['hdc', 'dc', 'tr', 'dc', 'hdc'],
+]
+/** The bouquet rose: three petals, a rose she can hold in front of the dress. */
+export const BOUQUET_PETALS: StitchId[][] = [
+  ['sc', 'hdc', 'sc'],
   ['sc', 'hdc', 'hdc', 'sc'],
-  ['sc', 'hdc', 'dc', 'hdc', 'sc'],
+  ['hdc', 'dc', 'dc', 'hdc'],
 ]
 const ROSE_PITCH_YR = 3.0
 const ROSE_R0_YR = 1.4

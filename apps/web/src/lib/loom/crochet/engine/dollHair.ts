@@ -26,7 +26,7 @@
 
 import type { AmigurumiPart, CompiledComposition, PlacedPart } from './composition'
 import { strandRounds } from './composition'
-import { pliedFilaments, type V3 } from '../yarnLoop'
+import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { YarnStrokeOut } from './pompom'
 import { writeInstructions, type CrochetProgram } from './program'
 import { RINGLET_CORE_MM, RINGLET_PITCH_MM, RINGLET_PER_CH, corkscrewStrip, polylineFrame, ringletPose, ringletWords, type DressingPiece } from './dollDressing'
@@ -327,7 +327,7 @@ export function ringletPieces(spec: RingletHairSpec, yr: number): Map<number, Dr
 /** The roots a ringlet spec sews to (count and placement), for the words and
  *  the strokes alike. */
 export function ringletRoots(compiled: CompiledComposition, spec: RingletHairSpec): V3[] {
-  const r = RINGLET_CORE_MM + compiled.yr * 2.4
+  const r = RINGLET_CORE_MM + compiled.yr * 0.8
   return hairRoots(compiled, spec.on, spec.clear, spec.forward, spec.clearDeg ?? 30, spec.every ?? 2, spec.standOffMm ?? r).roots
 }
 
@@ -339,7 +339,7 @@ export function ringletRoots(compiled: CompiledComposition, spec: RingletHairSpe
 export function ringletHairStrokes(compiled: CompiledComposition, spec: RingletHairSpec, twist = 0.08): YarnStrokeOut[] {
   const yr = compiled.yr
   const rnd = prng(spec.seed ?? 11)
-  const standOff = spec.standOffMm ?? RINGLET_CORE_MM + yr * 2.4
+  const standOff = spec.standOffMm ?? RINGLET_CORE_MM + yr * 0.8
   const { roots, obstacles, capE } = hairRoots(compiled, spec.on, spec.clear, spec.forward, spec.clearDeg ?? 30, spec.every ?? 2, standOff)
   const pieces = ringletPieces(spec, yr)
   for (const [n, pc] of pieces) if (pc.problems.length) throw new Error(`ringlet of ${n} ch failed the audit: ${pc.problems[0]}`)
@@ -357,7 +357,11 @@ export function ringletHairStrokes(compiled: CompiledComposition, spec: RingletH
     .sort((a, b) => a.ang - b.ang)
   const out: YarnStrokeOut[] = []
   byFront.forEach(({ r: root }, i) => {
-    const chains = spec.chains[Math.min(spec.chains.length - 1, i < 4 ? 0 : (i + Math.floor(rnd() * 2)) % spec.chains.length)]!
+    // The four framing the face take the longest chain, the back third the
+    // shortest (so the mass of curls narrows behind her and the wings show),
+    // the sides a random pick of the rest.
+    const last = spec.chains.length - 1
+    const chains = spec.chains[i < 4 ? 0 : i >= Math.floor((byFront.length * 2) / 3) ? last : Math.min(last, 1 + Math.floor(rnd() * last))]!
     const piece = pieces.get(chains)!
     const side: -1 | 1 = rnd() < 0.5 ? -1 : 1
     const path = hangPath(root, side, 400, capE, obstacles, yr, rnd)
@@ -380,7 +384,11 @@ export function ringletHairStrokes(compiled: CompiledComposition, spec: RingletH
       if (c.z < yr * 0.8) c = { x: c.x, y: c.y, z: yr * 0.8 }
       return c
     })
-    const { radiusMm, filaments } = pliedFilaments(pts, yr * 0.62, 3, twist)
+    // Smoothed like every placed piece's strand (the raw node polyline
+    // rendered as a nubbly caterpillar in round 9). Two points a segment, not
+    // the fabric's four: the ringlets are over half the scene's filament
+    // points and round 10's scene ran the renderer out of memory at three.
+    const { radiusMm, filaments } = pliedFilaments(smooth(pts, 2), yr * 0.62, 3, twist)
     out.push({ hex: spec.colourHex, sheen: 0.85, radiusMm, filaments })
   })
   return out
@@ -399,7 +407,7 @@ export function ringletHairWords(spec: RingletHairSpec, capLastRound: number, ha
     lines.push(...ringletWords(n, spec.per ?? RINGLET_PER_CH, count, hairLabel))
   })
   lines.push(
-    `Sew the ringlets by their starting ends to ${every === 1 ? 'every stitch' : every === 2 ? 'every other stitch' : `every ${every}th stitch`} of the hair cap's last round, from one side of the face round the back to the other, the longest ones nearest the face so they fall in front of the shoulders. Leave the front clear above the eyes.`,
+    `Sew the ringlets by their starting ends to ${every === 1 ? 'every stitch' : every === 2 ? 'every other stitch' : every === 3 ? 'every third stitch' : `every ${every}th stitch`} of the hair cap's last round, from one side of the face round the back to the other, the longest ones nearest the face so they fall in front of the shoulders. Leave the front clear above the eyes.`,
   )
   return lines
 }
