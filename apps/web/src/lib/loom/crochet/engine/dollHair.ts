@@ -26,9 +26,10 @@
 
 import type { AmigurumiPart, CompiledComposition, PlacedPart } from './composition'
 import { strandRounds } from './composition'
-import { pliedFilaments, type V3 } from '../yarnLoop'
+import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { YarnStrokeOut } from './pompom'
 import { writeInstructions, type CrochetProgram } from './program'
+import { RINGLET_CORE_MM, RINGLET_PITCH_MM, RINGLET_PER_CH, corkscrewStrip, polylineFrame, ringletPose, ringletWords, type DressingPiece } from './dollDressing'
 
 export interface RootedHairSpec {
   kind: 'rooted-hair'
@@ -51,6 +52,34 @@ export interface RootedHairSpec {
   /** Root every n-th stitch of the round (default 1 = every stitch). */
   every?: number
   seed?: number
+}
+
+/**
+ * CROCHETED CORKSCREW RINGLETS (fairy doll round 9): each ringlet is a real
+ * stitched strip (dollDressing.corkscrewStrip: ch N, 3 dc in each ch), built
+ * and audited flat, then wound round its own hanging line — out from its root
+ * on the hair cap's last round, over the cap, down under gravity, kept outside
+ * the head and body — the way a maker's sewn-on corkscrew falls. One ringlet
+ * per rooted stitch, sewn on by its starting end.
+ */
+export interface RingletHairSpec {
+  kind: 'ringlet-hair'
+  on: string
+  clear: string[]
+  colourHex: string
+  /** Chain counts of the ringlets, cycled round the roots (longest first:
+   *  the first roots either side of the face take the longest). */
+  chains: number[]
+  forward: { x: number; y: number; z: number }
+  clearDeg?: number
+  /** Root every n-th stitch of the round (default 2). */
+  every?: number
+  /** Stitches fanned into each chain (default 3). */
+  per?: number
+  seed?: number
+  /** How far the hanging lines stand off the head and body (mm, default the
+   *  ringlet's own radius so the curls lie on the surface, not in it). */
+  standOffMm?: number
 }
 
 /** mulberry32 — the same tiny PRNG the pompom uses, so the hair is reproducible. */
@@ -107,12 +136,17 @@ export function hairCapRounds(headRounds: number[], extra = 1): number[] {
 
 /** The hair cap as a composition part, sewn on the head tilted back a little so
  *  its edge sits at the brow in front and the nape behind. */
-export function hairCapPart(headRounds: number[], hex: string, gaugeYr: number | undefined, forward: V3, tiltDeg = 18, extra = 1): AmigurumiPart {
+export function hairCapPart(headRounds: number[], hex: string, gaugeYr: number | undefined, forward: V3, tiltDeg = 18, extra = 1, sideTiltDeg = 0): AmigurumiPart {
   const rounds = hairCapRounds(headRounds, extra)
   const t = (tiltDeg * Math.PI) / 180
   const f = norm(forward)
-  // Up, tilted back (away from the face) by `tiltDeg`.
-  const dir = norm({ x: -f.x * Math.sin(t), y: -f.y * Math.sin(t), z: Math.cos(t) })
+  // Up, tilted back (away from the face) by `tiltDeg`; and, for a SIDE
+  // PARTING, tilted toward her right by `sideTiltDeg` so the crown (where the
+  // rounds start) sits off-centre and the cap comes lower over her left brow.
+  const up = norm({ x: -f.x * Math.sin(t), y: -f.y * Math.sin(t), z: Math.cos(t) })
+  const rt = norm({ x: f.y, y: -f.x, z: 0 })
+  const sd = (sideTiltDeg * Math.PI) / 180
+  const dir = norm({ x: up.x * Math.cos(sd) + rt.x * Math.sin(sd), y: up.y * Math.cos(sd) + rt.y * Math.sin(sd), z: up.z * Math.cos(sd) })
   return {
     name: 'hair-cap',
     stitch: 'sc',
@@ -123,7 +157,9 @@ export function hairCapPart(headRounds: number[], hex: string, gaugeYr: number |
     place: { on: 'head', dir, aim: { x: -dir.x, y: -dir.y, z: -dir.z }, poleIn: true, seat: -1.2, surfaceFit: 'ellipsoid' },
     words: hairCapWords(rounds),
     joinWords:
-      'Pin the hair cap on the head with its magic ring at the crown, tilted a little back so its edge sits just above the brows at the front and lower at the nape, and sew it on round its last round.',
+      (sideTiltDeg
+        ? 'Pin the hair cap on the head with its magic ring a little to the right of the crown (the side parting), tilted a little back so its edge sits just above the brows at the front and lower at the nape, and sew it on round its last round.'
+        : 'Pin the hair cap on the head with its magic ring at the crown, tilted a little back so its edge sits just above the brows at the front and lower at the nape, and sew it on round its last round.'),
   }
 }
 
@@ -157,101 +193,223 @@ export function rootedHairWords(spec: RootedHairSpec, capLastRound: number): str
  * always renders the same hair.
  */
 export function rootedHairStrokes(compiled: CompiledComposition, spec: RootedHairSpec, twist = 0.08): YarnStrokeOut[] {
-  const cap = compiled.placed.find((pp) => pp.part.name === spec.on)
-  if (!cap || !cap.built) throw new Error(`rooted-hair: no built part named '${spec.on}'`)
   const yr = compiled.yr
   const rnd = prng(spec.seed ?? 11)
-  const obstacles: Ellipsoid[] = []
-  const capE = ellipsoidOf(cap, yr * 1.4)
-  obstacles.push(capE)
-  for (const name of spec.clear) {
-    const pp = compiled.placed.find((q) => q.part.name === name)
-    if (pp) obstacles.push(ellipsoidOf(pp, yr * 1.3))
-  }
-  // The roots: the cap's last worked round, in strand order, one root per
-  // stitch (the strand carries ~4 control points a stitch at the fine gauge;
-  // take points one stitch-width apart along the round).
-  const rounds = strandRounds(cap)
-  const last = Math.max(...rounds)
-  const ring = cap.ctrl.filter((_, i) => rounds[i] === last)
-  const sw = yr * (cap.part.gaugeYr ?? 2.7)
-  const roots: V3[] = []
-  let acc = Infinity
-  const every = spec.every ?? 1
-  const f = norm(spec.forward)
-  const clear = ((spec.clearDeg ?? 42) * Math.PI) / 180
-  let k = 0
-  for (let i = 1; i < ring.length; i++) {
-    const a = ring[i - 1]!, b = ring[i]!
-    acc += Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z)
-    if (acc < sw) continue
-    acc = 0
-    k++
-    if (k % every !== 0) continue
-    // Leave the front arc clear: angle between this root's outward direction
-    // (about the cap's axis) and the face.
-    const d = norm({ x: b.x - capE.c.x, y: b.y - capE.c.y, z: 0 })
-    const ang = Math.acos(Math.max(-1, Math.min(1, d.x * f.x + d.y * f.y)))
-    if (ang < clear) continue
-    roots.push(b)
-  }
+  const { roots, obstacles, capE } = hairRoots(compiled, spec.on, spec.clear, spec.forward, spec.clearDeg ?? 42, spec.every ?? 1, 0)
   const out: YarnStrokeOut[] = []
   const curlR = spec.curl?.radiusMm ?? 2.6
   const turns = spec.curl?.turns ?? 2.5
-  const step = 2.0
   for (const root of roots) {
     for (let end = 0; end < 2; end++) {
       const len = spec.lengthMm * (0.88 + 0.24 * rnd())
-      // The knot: out through the cap's thickness, then over its surface.
-      const n = norm({ x: root.x - capE.c.x, y: root.y - capE.c.y, z: (root.z - capE.c.z) * 0.6 })
       const side = end === 0 ? -1 : 1
-      // Each end leaves the knot a little to one side along the round.
-      const tang = norm({ x: -n.y, y: n.x, z: 0 })
-      const pts: V3[] = [root]
-      let p: V3 = { x: root.x + n.x * yr * 1.2 + tang.x * side * yr * 0.8, y: root.y + n.y * yr * 1.2 + tang.y * side * yr * 0.8, z: root.z + n.z * yr * 1.2 }
-      pts.push(p)
-      let dir: V3 = norm({ x: n.x * 0.25 + tang.x * side * 0.15, y: n.y * 0.25 + tang.y * side * 0.15, z: -0.8 })
-      const g: V3 = { x: 0, y: 0, z: -1 }
-      // A gentle sideways drift per strand so the hair is not combed.
-      const drift = norm({ x: rnd() - 0.5, y: rnd() - 0.5, z: 0 })
-      const driftK = 0.02 + 0.05 * rnd()
-      let travelled = 0
       const phase0 = 2 * Math.PI * rnd()
       const curlFrom = len * (0.35 + 0.25 * rnd())
       // Every ringlet its own: radius and turns vary strand to strand.
       const myR = curlR * (0.7 + 0.6 * rnd())
       const myTurns = turns * (0.7 + 0.6 * rnd())
-      const steps = Math.ceil(len / step)
-      // Each ringlet winds about its own hanging axis.
-      let axisU: V3 = { x: 1, y: 0, z: 0 }
-      let axisV: V3 = { x: 0, y: 1, z: 0 }
-      for (let s = 0; s < steps; s++) {
-        dir = norm({ x: dir.x * 0.55 + g.x * 0.45 + drift.x * driftK, y: dir.y * 0.55 + g.y * 0.45 + drift.y * driftK, z: dir.z * 0.55 + g.z * 0.45 })
-        let q: V3 = { x: p.x + dir.x * step, y: p.y + dir.y * step, z: p.z + dir.z * step }
-        for (const e of obstacles) q = keepOutside(q, e)
-        // The settled direction after the obstacles had their say.
-        dir = norm({ x: q.x - p.x, y: q.y - p.y, z: q.z - p.z })
-        travelled += step
-        p = q
-        if (curlR > 0 && travelled > curlFrom) {
-          // Wind round the hanging line: a helix of `turns` over the curled part.
-          const u = (travelled - curlFrom) / Math.max(1, len - curlFrom)
-          const ph = phase0 + side * u * myTurns * 2 * Math.PI
-          const r = myR * Math.min(1, u * 3) * (1 - 0.15 * u)
-          const ref: V3 = Math.abs(dir.z) < 0.9 ? { x: 0, y: 0, z: 1 } : { x: 1, y: 0, z: 0 }
-          axisU = norm({ x: dir.y * ref.z - dir.z * ref.y, y: dir.z * ref.x - dir.x * ref.z, z: dir.x * ref.y - dir.y * ref.x })
-          axisV = { x: dir.y * axisU.z - dir.z * axisU.y, y: dir.z * axisU.x - dir.x * axisU.z, z: dir.x * axisU.y - dir.y * axisU.x }
-          let c: V3 = { x: p.x + (axisU.x * Math.cos(ph) + axisV.x * Math.sin(ph)) * r, y: p.y + (axisU.y * Math.cos(ph) + axisV.y * Math.sin(ph)) * r, z: p.z + (axisU.z * Math.cos(ph) + axisV.z * Math.sin(ph)) * r }
-          for (const e of obstacles) c = keepOutside(c, e)
-          pts.push(c)
-        } else {
-          pts.push(p)
-        }
-        if (p.z < yr * 1.5) break // the table
-      }
+      const pts = hangPath(root, side, len, capE, obstacles, yr, rnd, (p, dir, travelled) => {
+        if (!(curlR > 0 && travelled > curlFrom)) return p
+        // Wind round the hanging line: a helix of `turns` over the curled part.
+        const u = (travelled - curlFrom) / Math.max(1, len - curlFrom)
+        const ph = phase0 + side * u * myTurns * 2 * Math.PI
+        const r = myR * Math.min(1, u * 3) * (1 - 0.15 * u)
+        const ref: V3 = Math.abs(dir.z) < 0.9 ? { x: 0, y: 0, z: 1 } : { x: 1, y: 0, z: 0 }
+        const axisU = norm({ x: dir.y * ref.z - dir.z * ref.y, y: dir.z * ref.x - dir.x * ref.z, z: dir.x * ref.y - dir.y * ref.x })
+        const axisV = { x: dir.y * axisU.z - dir.z * axisU.y, y: dir.z * axisU.x - dir.x * axisU.z, z: dir.x * axisU.y - dir.y * axisU.x }
+        let c: V3 = { x: p.x + (axisU.x * Math.cos(ph) + axisV.x * Math.sin(ph)) * r, y: p.y + (axisU.y * Math.cos(ph) + axisV.y * Math.sin(ph)) * r, z: p.z + (axisU.z * Math.cos(ph) + axisV.z * Math.sin(ph)) * r }
+        for (const e of obstacles) c = keepOutside(c, e)
+        return c
+      })
       const { radiusMm, filaments } = pliedFilaments(pts, yr * 0.62, 3, twist)
       out.push({ hex: spec.colourHex, sheen: 0.85, radiusMm, filaments })
     }
   }
   return out
+}
+
+/** The roots along the cap's last round (one per `every`-th stitch outside the
+ *  front arc) and the obstacles a strand must stay outside of. `standOff`
+ *  pads the head/body obstacles (mm) so a thick curl hangs off the surface. */
+function hairRoots(
+  compiled: CompiledComposition, on: string, clear: string[], forward: V3, clearDeg: number, every: number, standOff: number,
+): { roots: V3[]; obstacles: Ellipsoid[]; capE: Ellipsoid } {
+  const cap = compiled.placed.find((pp) => pp.part.name === on)
+  if (!cap || !cap.built) throw new Error(`hair: no built part named '${on}'`)
+  const yr = compiled.yr
+  const obstacles: Ellipsoid[] = []
+  const capE = ellipsoidOf(cap, yr * 1.4 + standOff)
+  obstacles.push(capE)
+  for (const name of clear) {
+    const pp = compiled.placed.find((q) => q.part.name === name)
+    if (pp) obstacles.push(ellipsoidOf(pp, yr * 1.3 + standOff))
+  }
+  // The roots: the cap's last worked round, one root per stitch of that
+  // round's COUNT, spaced evenly round the cap's axis (the strand's control
+  // points zigzag with the stitch relief, so a walk along them over-counts
+  // the stitches about threefold).
+  const rounds = strandRounds(cap)
+  const last = Math.max(...rounds)
+  const ring = cap.ctrl.filter((_, i) => rounds[i] === last)
+  const count = cap.part.rounds[cap.part.rounds.length - 1] ?? ring.length
+  const f = norm(forward)
+  const clearR = (clearDeg * Math.PI) / 180
+  const angOf = (q: V3): number => Math.atan2(q.y - capE.c.y, q.x - capE.c.x)
+  const faceAng = Math.atan2(f.y, f.x)
+  const roots: V3[] = []
+  for (let k = 0; k < count; k += every) {
+    // Stitch k's angle, counted from the back of the head round to the front.
+    const th = faceAng + Math.PI + ((k + 0.5) / count) * 2 * Math.PI
+    let best: V3 | null = null
+    let bd = Infinity
+    for (const q of ring) {
+      let d = angOf(q) - th
+      while (d > Math.PI) d -= 2 * Math.PI
+      while (d < -Math.PI) d += 2 * Math.PI
+      if (Math.abs(d) < bd) { bd = Math.abs(d); best = q }
+    }
+    if (!best) continue
+    // Leave the front arc clear: angle between this root's outward direction
+    // (about the cap's axis) and the face.
+    const d = norm({ x: best.x - capE.c.x, y: best.y - capE.c.y, z: 0 })
+    const ang = Math.acos(Math.max(-1, Math.min(1, d.x * f.x + d.y * f.y)))
+    if (ang < clearR) continue
+    roots.push(best)
+  }
+  return { roots, obstacles, capE }
+}
+
+/** One hanging line from a root: out through the cap's thickness, then
+ *  stepped 2 mm at a time, part its own direction and part gravity with a
+ *  small sideways drift, kept outside the obstacles, stopping at the table.
+ *  `decorate` may move each point (the yarn strand's pencil curl). */
+function hangPath(
+  root: V3, side: -1 | 1, len: number, capE: Ellipsoid, obstacles: Ellipsoid[], yr: number, rnd: () => number,
+  decorate?: (p: V3, dir: V3, travelled: number) => V3,
+): V3[] {
+  const step = 2.0
+  // The knot: out through the cap's thickness, then over its surface.
+  const n = norm({ x: root.x - capE.c.x, y: root.y - capE.c.y, z: (root.z - capE.c.z) * 0.6 })
+  // Each end leaves the knot a little to one side along the round.
+  const tang = norm({ x: -n.y, y: n.x, z: 0 })
+  const pts: V3[] = [root]
+  let p: V3 = { x: root.x + n.x * yr * 1.2 + tang.x * side * yr * 0.8, y: root.y + n.y * yr * 1.2 + tang.y * side * yr * 0.8, z: root.z + n.z * yr * 1.2 }
+  pts.push(p)
+  let dir: V3 = norm({ x: n.x * 0.25 + tang.x * side * 0.15, y: n.y * 0.25 + tang.y * side * 0.15, z: -0.8 })
+  const g: V3 = { x: 0, y: 0, z: -1 }
+  // A gentle sideways drift per strand so the hair is not combed.
+  const drift = norm({ x: rnd() - 0.5, y: rnd() - 0.5, z: 0 })
+  const driftK = 0.02 + 0.05 * rnd()
+  let travelled = 0
+  const steps = Math.ceil(len / step)
+  for (let s = 0; s < steps; s++) {
+    dir = norm({ x: dir.x * 0.55 + g.x * 0.45 + drift.x * driftK, y: dir.y * 0.55 + g.y * 0.45 + drift.y * driftK, z: dir.z * 0.55 + g.z * 0.45 })
+    let q: V3 = { x: p.x + dir.x * step, y: p.y + dir.y * step, z: p.z + dir.z * step }
+    for (const e of obstacles) q = keepOutside(q, e)
+    // The settled direction after the obstacles had their say.
+    dir = norm({ x: q.x - p.x, y: q.y - p.y, z: q.z - p.z })
+    travelled += step
+    p = q
+    pts.push(decorate ? decorate(p, dir, travelled) : p)
+    if (p.z < yr * 1.5) break // the table
+  }
+  return pts
+}
+
+/** The ringlet pieces of a spec, one build per distinct chain count (built,
+ *  relaxed and audited flat; `problems` non-empty = not genuinely stitched). */
+export function ringletPieces(spec: RingletHairSpec, yr: number): Map<number, DressingPiece> {
+  const out = new Map<number, DressingPiece>()
+  for (const n of spec.chains) if (!out.has(n)) out.set(n, corkscrewStrip(yr, spec.colourHex, n, spec.per ?? RINGLET_PER_CH))
+  return out
+}
+
+/** The roots a ringlet spec sews to (count and placement), for the words and
+ *  the strokes alike. */
+export function ringletRoots(compiled: CompiledComposition, spec: RingletHairSpec): V3[] {
+  const r = RINGLET_CORE_MM + compiled.yr * 0.8
+  return hairRoots(compiled, spec.on, spec.clear, spec.forward, spec.clearDeg ?? 30, spec.every ?? 2, spec.standOffMm ?? r).roots
+}
+
+/**
+ * Lay the ringlets on the compiled composition: every root gets one wound
+ * corkscrew strip, its axis the root's hanging line. Throws if a strip fails
+ * the audit (the doll test checks them too). Deterministic (seeded).
+ */
+export function ringletHairStrokes(compiled: CompiledComposition, spec: RingletHairSpec, twist = 0.08): YarnStrokeOut[] {
+  const yr = compiled.yr
+  const rnd = prng(spec.seed ?? 11)
+  const standOff = spec.standOffMm ?? RINGLET_CORE_MM + yr * 0.8
+  const { roots, obstacles, capE } = hairRoots(compiled, spec.on, spec.clear, spec.forward, spec.clearDeg ?? 30, spec.every ?? 2, standOff)
+  const pieces = ringletPieces(spec, yr)
+  for (const [n, pc] of pieces) if (pc.problems.length) throw new Error(`ringlet of ${n} ch failed the audit: ${pc.problems[0]}`)
+  // The thin obstacles the finished curl itself must stay outside of.
+  const tight = [ellipsoidOf(compiled.placed.find((pp) => pp.part.name === spec.on)!, yr * 1.2)]
+  for (const name of spec.clear) {
+    const pp = compiled.placed.find((q) => q.part.name === name)
+    if (pp) tight.push(ellipsoidOf(pp, yr * 1.2))
+  }
+  const f = norm(spec.forward)
+  // Order the roots by how far round from the face they sit, so the chain
+  // lengths (longest first) go to the roots framing the face.
+  const byFront = roots
+    .map((r) => ({ r, ang: Math.acos(Math.max(-1, Math.min(1, norm({ x: r.x - capE.c.x, y: r.y - capE.c.y, z: 0 }).x * f.x + norm({ x: r.x - capE.c.x, y: r.y - capE.c.y, z: 0 }).y * f.y))) }))
+    .sort((a, b) => a.ang - b.ang)
+  const out: YarnStrokeOut[] = []
+  byFront.forEach(({ r: root }, i) => {
+    // The four framing the face take the longest chain, the back third the
+    // shortest (so the mass of curls narrows behind her and the wings show),
+    // the sides a random pick of the rest.
+    const last = spec.chains.length - 1
+    const chains = spec.chains[i < 4 ? 0 : i >= Math.floor((byFront.length * 2) / 3) ? last : Math.min(last, 1 + Math.floor(rnd() * last))]!
+    const piece = pieces.get(chains)!
+    const side: -1 | 1 = rnd() < 0.5 ? -1 : 1
+    const path = hangPath(root, side, 400, capE, obstacles, yr, rnd)
+    const frameAt = polylineFrame(path)
+    const nodes = piece.built.model.nodes
+    const phase = 2 * Math.PI * rnd()
+    const cs = Math.cos(phase), sn = Math.sin(phase)
+    const pts: V3[] = piece.built.strandPath.map((ni) => {
+      const q = nodes[ni]!
+      // Each ringlet starts its turn at its own angle round the line.
+      const wound = ringletPose({ x: q.x, y: q.y, z: q.z }, {
+        coreMm: RINGLET_CORE_MM, pitchMm: RINGLET_PITCH_MM,
+        frameAt: (a) => {
+          const F = frameAt(a)
+          return { p: F.p, t: F.t, n: { x: F.n.x * cs + F.b.x * sn, y: F.n.y * cs + F.b.y * sn, z: F.n.z * cs + F.b.z * sn }, b: { x: F.b.x * cs - F.n.x * sn, y: F.b.y * cs - F.n.y * sn, z: F.b.z * cs - F.n.z * sn } }
+        },
+      })
+      let c = wound
+      for (const e of tight) c = keepOutside(c, e)
+      if (c.z < yr * 0.8) c = { x: c.x, y: c.y, z: yr * 0.8 }
+      return c
+    })
+    // Smoothed like every placed piece's strand (the raw node polyline
+    // rendered as a nubbly caterpillar in round 9), through every OTHER node
+    // at three points a segment (1.5 points a node, ~0.75 mm apart): the
+    // ringlets are over half the scene's filament points and the render task
+    // runs out of memory above a ~100 MB scene (rounds 10 and 12).
+    const every2 = pts.filter((_, i) => i % 2 === 0 || i === pts.length - 1)
+    const { radiusMm, filaments } = pliedFilaments(smooth(every2, 3), yr * 0.62, 3, twist)
+    out.push({ hex: spec.colourHex, sheen: 0.85, radiusMm, filaments })
+  })
+  return out
+}
+
+/** The ringlets' pattern lines, from the same spec the render uses. */
+export function ringletHairWords(spec: RingletHairSpec, capLastRound: number, hairLabel: string): string[] {
+  const every = spec.every ?? 2
+  const clear = spec.clearDeg ?? 30
+  const roots = Math.round((capLastRound * (360 - 2 * clear)) / 360 / every)
+  const counts = [...new Set(spec.chains)]
+  const lines: string[] = []
+  const perLen = Math.round(roots / counts.length)
+  counts.forEach((n, i) => {
+    const count = i === 0 ? roots - perLen * (counts.length - 1) : perLen
+    lines.push(...ringletWords(n, spec.per ?? RINGLET_PER_CH, count, hairLabel))
+  })
+  lines.push(
+    `Sew the ringlets by their starting ends to ${every === 1 ? 'every stitch' : every === 2 ? 'every other stitch' : every === 3 ? 'every third stitch' : `every ${every}th stitch`} of the hair cap's last round, from one side of the face round the back to the other, the longest ones nearest the face so they fall in front of the shoulders. Leave the front clear above the eyes.`,
+  )
+  return lines
 }

@@ -33,6 +33,7 @@ import {
   type AmigurumiSize,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import { compositionPieces, writePieceInstructions, writeAssembly } from '@/lib/loom/crochet/engine/compositionPattern'
+import { DOLL_FAIRY_DRESSING } from '@/lib/loom/crochet/engine/doll'
 import { YARN_SHADES } from '@/lib/studio/crochet/yarn-shades'
 
 interface Props {
@@ -97,7 +98,8 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
         <div className="crochet-designer-words">
           <h2>{displayName}</h2>
           <p className="crochet-designer-size">
-            {(settled.width / 10).toFixed(1)} x {(settled.height / 10).toFixed(1)} cm in worsted yarn on a 4 mm hook
+            {(settled.width / 10).toFixed(1)} x {(settled.height / 10).toFixed(1)} cm in{' '}
+            {program.yarnWeight === 'fine' ? '4 ply cotton on a 2.5 mm hook' : 'worsted yarn on a 4 mm hook'}
           </p>
           {pieces.map((piece) => (
             <div key={piece.section} className="crochet-designer-piece">
@@ -157,7 +159,9 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
                 type="button"
                 aria-pressed={choices.base === b.id}
                 className={`crochet-designer-card${choices.base === b.id ? ' is-active' : ''}`}
-                onClick={() => set({ base: b.id as AmigurumiBase })}
+                // A doll arrives dressed as the fairy (hair, dress, wings,
+                // flowers); the maker takes off what she does not want below.
+                onClick={() => set(b.id === 'doll' && choices.base !== 'doll' ? { base: 'doll', ...DOLL_FAIRY_DRESSING, face: 'stitched', eyeMm: 0 } : { base: b.id as AmigurumiBase })}
               >
                 <span className="crochet-designer-card-title">{b.label}</span>
                 <span className="crochet-designer-card-sub">{b.blurb}</span>
@@ -284,6 +288,50 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
           </fieldset>
         )}
 
+        {choices.base === 'doll' && (
+          <fieldset className="crochet-designer-group">
+            <legend>Dressing</legend>
+            <p className="crochet-designer-note">
+              The small size is a bare keyring charm; the dressing is for the medium and large doll.
+            </p>
+            <DressingToggle
+              label="Hair"
+              hint="A crocheted hair cap with corkscrew ringlets, worked as strips of 3 and 2 dc in each chain."
+              value={choices.hairHex}
+              defaultHex={DOLL_FAIRY_DRESSING.hairHex}
+              onChange={(hex) => set({ hairHex: hex })}
+            />
+            <DressingToggle
+              label="Dress"
+              hint="A fitted bodice and a skirt worked from the waist round, with a scalloped frill at the hem."
+              value={choices.skirt?.hex}
+              defaultHex={DOLL_FAIRY_DRESSING.skirt.hex}
+              onChange={(hex) => set({ skirt: hex ? { hex, hemHex: choices.skirt?.hemHex ?? DOLL_FAIRY_DRESSING.skirt.hemHex } : undefined })}
+            />
+            {choices.skirt && (
+              <ShadePicker
+                label="Frill yarn"
+                value={choices.skirt.hemHex}
+                onChange={(hex) => set({ skirt: { hex: choices.skirt!.hex, hemHex: hex } })}
+              />
+            )}
+            <DressingToggle
+              label="Wings"
+              hint="Two flat lace lobes each, worked both sides of a chain with a chain space between every stitch."
+              value={choices.wingsHex}
+              defaultHex={DOLL_FAIRY_DRESSING.wingsHex}
+              onChange={(hex) => set({ wingsHex: hex })}
+            />
+            <DressingToggle
+              label="Flowers"
+              hint="A rolled rose, two small flowers and a leaf each side of the hair, and a bouquet in her hands."
+              value={choices.flowersHex}
+              defaultHex={DOLL_FAIRY_DRESSING.flowersHex}
+              onChange={(hex) => set({ flowersHex: hex })}
+            />
+          </fieldset>
+        )}
+
         {spec.nose && (
           <label className="studio-p2c-checkbox">
             <input type="checkbox" checked={choices.nose} onChange={(e) => set({ nose: e.target.checked })} />
@@ -316,6 +364,31 @@ export function CrochetAmigurumiDesignerPanel({ signedIn, onSaved, onCancel, hea
         )}
       </div>
     </section>
+  )
+}
+
+/** One piece of the doll's dressing: on or off, and its yarn when on. */
+function DressingToggle({
+  label,
+  hint,
+  value,
+  defaultHex,
+  onChange,
+}: {
+  label: string
+  hint: string
+  value: string | undefined
+  defaultHex: string
+  onChange: (hex: string | undefined) => void
+}) {
+  return (
+    <>
+      <label className="studio-p2c-checkbox">
+        <input type="checkbox" checked={Boolean(value)} onChange={(e) => onChange(e.target.checked ? defaultHex : undefined)} />
+        <span>{label}</span>
+      </label>
+      {value && <ShadePicker label={`${label} yarn`} hint={hint} value={value} onChange={(hex) => onChange(hex)} />}
+    </>
   )
 }
 
@@ -376,6 +449,9 @@ function AmigurumiSchematic({ choices }: { choices: AmigurumiChoices }) {
     const byName = new Map<string, Ellipse>()
     const out: Ellipse[] = []
     for (const part of program.parts) {
+      // A free-form piece (a frill, a lace wing, a rose) has no round profile
+      // to size an ellipse from; the sketch shows the round-work pieces.
+      if (part.custom) continue
       const base = profileSizeMm(part.rounds, program.yarnWeight)
       const scale = part.scale ?? 1
       const rx = (base.width / 2) * scale

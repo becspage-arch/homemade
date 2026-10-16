@@ -19,7 +19,7 @@ import type { AmigurumiPart, CompositionProgram } from './composition'
 import { writeFaceInstructions } from './faceEmbroidery'
 import { writeHairInstructions } from './hairPatch'
 import { nightcapInstructions } from './hatAccessory'
-import { rootedHairWords } from './dollHair'
+import { ringletHairWords, rootedHairWords } from './dollHair'
 
 export interface CompositionPiece {
   /** Display label: "Body", "Ears". */
@@ -69,7 +69,7 @@ function baseName(name: string): string {
 
 /** The part names that do not pluralise with an s. A pattern that says "make 2
  *  Foots" is not a pattern anyone would trust with the rest of the maths. */
-const IRREGULAR_PLURAL: Record<string, string> = { foot: 'feet' }
+const IRREGULAR_PLURAL: Record<string, string> = { foot: 'feet', leaf: 'leaves' }
 
 function prettify(base: string, quantity: number): string {
   const words = base.replace(/[-_]+/g, ' ').trim()
@@ -285,6 +285,11 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
     if (a.kind === 'rooted-hair') {
       const cap = p.parts.find((x) => x.name === a.on)
       out.push(...rootedHairWords(a, cap ? cap.rounds[cap.rounds.length - 1]! : 0))
+      continue
+    }
+    if (a.kind === 'ringlet-hair') {
+      const cap = p.parts.find((x) => x.name === a.on)
+      out.push(...ringletHairWords(a, cap ? cap.rounds[cap.rounds.length - 1]! : 0, 'the hair colour'))
       continue
     }
     if (a.kind !== 'nightcap') continue

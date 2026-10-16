@@ -28,7 +28,7 @@ import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from '
 import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
 import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
-import { rootedHairStrokes, type RootedHairSpec } from './dollHair'
+import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
@@ -44,7 +44,14 @@ import { bendTube } from './tubeStaging'
  *    the piece stands off the body. This is how a real amigurumi limb is sewn on —
  *    at an angle, standing out — not a ball half-buried on the crown. */
 export type PartPlacement =
-  | { on: 'ground'; offset?: { x?: number; y?: number } }
+  | {
+      on: 'ground'
+      offset?: { x?: number; y?: number }
+      /** Fairy doll pass: stand the piece LEANING, its pole-to-pole axis
+       *  along this direction instead of straight up (a leg crossed at the
+       *  ankle). The lowest point still rests on the table. Absent = upright. */
+      lean?: { x: number; y: number; z: number }
+    }
   | {
       on: string
       overlap?: number
@@ -188,7 +195,30 @@ export interface AmigurumiPart {
    * pattern is unchanged: a maker sews the ear on and it falls like this.
    */
   bend?: PartBend
+  /**
+   * A FREE-FORM piece (fairy doll pass, 2026-10-16): built by the motif kit
+   * (engine/motifs) the way the maker crochets it — a corkscrew strip, a
+   * lace lobe, a frill, a rolled rose — relaxed and AUDITED flat exactly as
+   * worked by `build`, then `pose`d (the maker's rolling, winding or
+   * gathering, a staging bend like `bend`) into the shape it has on the toy.
+   * `rounds` is informational for such a piece (the words come from `words`);
+   * the contact pass leaves it alone (it is not a surface of revolution), and
+   * its audit result is the one `build` recorded on the flat piece.
+   */
+  custom?: { build: (yr: number) => CustomPiece }
 }
+
+export interface CustomPiece {
+  built: BuiltContinuous
+  /** The audit of the flat piece (empty = genuinely stitched). */
+  problems: string[]
+  /** Flat relaxed node → posed local position (applied to every node after
+   *  the audit; the composition then places the posed piece like any other). */
+  pose?: (p: V3, node: number) => V3
+}
+
+/** The audit each custom piece's builder recorded, looked up by the built. */
+const CUSTOM_PROBLEMS = new WeakMap<BuiltContinuous, string[]>()
 
 export interface PartBend {
   startFrac: number
@@ -238,7 +268,7 @@ export interface CompositionProp {
 
 /** A nightcap worn on the head: the sleepy bunny's. `headRadiusMm` sizes the
  *  band (the head's settled radius; 0 = measured off the compiled head). */
-export type CompositionAccessory = NightcapAccessory | RootedHairSpec
+export type CompositionAccessory = NightcapAccessory | RootedHairSpec | RingletHairSpec
 
 export interface NightcapAccessory {
   kind: 'nightcap'
@@ -612,6 +642,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     // real discriminant. Type-level only — no runtime behaviour changes.
     const place = part.place as {
       on: string
+      lean?: { x: number; y: number; z: number }
       overlap?: number
       offset?: { x?: number; y?: number; z?: number }
       dir?: { x: number; y: number; z: number }
@@ -625,6 +656,14 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     }
     if (place.on === 'ground') {
       T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
+      if (place.lean) {
+        // Leaning: the axis along `lean` (after any flip), the lowest point
+        // of the turned piece on the table.
+        const Rl = rotZTo(unit(place.lean))
+        R = mulR(Rl, R)
+        const rb = bbox(local.map((v) => applyRot(R, { x: scale * (v.x - cx), y: scale * (v.y - cy), z: scale * (v.z - cz) })))
+        T = { x: T.x, y: T.y, z: -rb.minz }
+      }
     } else if (place.dir) {
       // Protruding limb: aim the part's long axis along the attach direction (or
       // along `aim`, when where it JOINS and where it POINTS differ), seat one
@@ -715,8 +754,8 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     if (on === 'ground') continue
     // A flat appliqué is draped, and a pressed piece is not a surface of
     // revolution, so the shell the mutual contact pass reads would be wrong
-    // for either.
-    if (pp.part.form === 'disc' || pp.part.press) continue
+    // for either; a free-form custom piece likewise.
+    if (pp.part.form === 'disc' || pp.part.press || pp.part.custom) continue
     const parent = byName.get(on)
     if (parent && parent !== pp) pairs.push([pp, parent])
   }
@@ -896,6 +935,23 @@ function bendLocal(local: V3[], b: PartBend, lb: ReturnType<typeof bbox>, poleIn
 
 /** Build + relax one piece the way its `form` says it is made. */
 function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; panelMask?: boolean[] } {
+  if (part.custom) {
+    // A free-form motif-kit piece: built, relaxed and audited FLAT by its own
+    // builder; the pose (the maker's staging) is applied to the nodes after.
+    const piece = part.custom.build(yr)
+    CUSTOM_PROBLEMS.set(piece.built, piece.problems)
+    if (piece.pose) {
+      const nodes = piece.built.model.nodes
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        const q = piece.pose({ x: n.x, y: n.y, z: n.z }, i)
+        n.x = q.x
+        n.y = q.y
+        n.z = q.z
+      }
+    }
+    return { built: piece.built }
+  }
   if (part.form === 'disc') {
     // A flat circle: the locked round builder, relaxed as round work (never
     // stuffed). Its right side is local +z.
@@ -956,6 +1012,7 @@ function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; p
 
 /** The audit gate for one piece, in the frame its settled shape needs. */
 function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
+  if (part.custom) return CUSTOM_PROBLEMS.get(built) ?? []
   return auditProblems(
     { built, recipe: undefined as never }, part.name, 0, yr,
     part.press ? { frame: 'current' } : undefined,
@@ -997,6 +1054,17 @@ function panelMaskOf(built: BuiltContinuous, part: AmigurumiPart): boolean[] {
     mask[i] = c >= run[0] && c < run[0] + run[1]
   }
   return mask
+}
+
+/** A · B (row-major 3×3). */
+function mulR(A: number[][], B: number[][]): number[][] {
+  const out: number[][] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+  for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
+    let v = 0
+    for (let k = 0; k < 3; k++) v += A[i]![k]! * B[k]![j]!
+    out[i]![j] = v
+  }
+  return out
 }
 
 /** Turn R about the world axis `w` so the piece's local +x looks toward `spin`. */
@@ -1208,6 +1276,11 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
     if (a.kind === 'rooted-hair') {
       // A doll's rooted hair: loose yarn ends from the hair cap's last round.
       for (const st of rootedHairStrokes(compiled, a, twist)) strokes.push(st as BlenderScene['strokes'][number])
+      continue
+    }
+    if (a.kind === 'ringlet-hair') {
+      // A doll's crocheted corkscrew ringlets, sewn round the hair cap's edge.
+      for (const st of ringletHairStrokes(compiled, a, twist)) strokes.push(st as BlenderScene['strokes'][number])
       continue
     }
     if (a.kind !== 'nightcap') continue
