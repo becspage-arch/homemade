@@ -30,6 +30,10 @@ import {
 } from './amigurumiSizes.generated'
 import { sphereRounds } from './sphereProfile'
 import { ballRounds, tubeRounds, cordRounds } from './roundProfiles'
+import {
+  LOP_EAR_GAUGE_MAX_WIDTH, clampGauge, gBall, gCone, gCord, gDisc, gEar, gRounds, gSphereRounds, gStep, gTube,
+  gaugeHairPatch, gaugeYarn, gaugeYarnRadiusMm,
+} from './gauge'
 import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
 import { earPart, type EarPieceOptions } from './earPiece'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
@@ -99,11 +103,25 @@ export function lopEarRounds(width: number, length: number): number[] {
  *  WIDTH; a 21-st ear on a 60-st head flattens to 0.55 of it (10.5 vs 19.1
  *  stitch widths) and read as a plank. 15 st at M is 0.39, 12 at S 0.39,
  *  15 at L 0.36. */
-const LOP_EAR_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: lopEarRounds(12, 28),
-  M: lopEarRounds(15, 35),
-  L: lopEarRounds(15, 39),
+/** At gauge g the ear is g x wide (in threes) and g x long, capped at
+ *  `LOP_EAR_GAUGE_MAX_WIDTH` (gauge.ts; sleepy bunny 4's 12/15/15 ears stay
+ *  under it). Re-measured 17 Oct after the narrower ears: the derived S 18 @
+ *  1.4 (round 10) and M / L 24 @ 1.6 (round 14, the spiral step) each fail
+ *  one or two hooks "floated above its crown" whatever the length (+-1 round
+ *  fails the same), and the next width down audits clean, so those take it
+ *  (`LOP_EAR_GAUGE_WIDTH`: an ear ~12% narrower in mm). The rest audit clean:
+ *  S 15 @ 1.3, 18 @ 1.6; M and L 21 @ 1.3 and 1.4. */
+const LOP_EAR_GAUGE_WIDTH: Record<string, number> = { 'S@1.4': 15, 'M@1.6': 21, 'L@1.6': 21 }
+
+function lopEarsAt(g: number): Record<AmigurumiSize, number[]> {
+  const ear = (size: AmigurumiSize, width: number, length: number): number[] =>
+    lopEarRounds(
+      g === 1 ? width : LOP_EAR_GAUGE_WIDTH[`${size}@${g}`] ?? Math.min(LOP_EAR_GAUGE_MAX_WIDTH, gStep(width, g, 3)),
+      gRounds(length, g),
+    )
+  return { S: ear('S', 12, 28), M: ear('M', 15, 35), L: ear('L', 15, 39) }
 }
+const LOP_EAR_ROUNDS: Record<AmigurumiSize, number[]> = lopEarsAt(1)
 
 /**
  * Every round profile the designer can produce, each one measured to pass the
@@ -205,6 +223,14 @@ export interface AmigurumiChoices {
   flowersHex?: string
   /** The nightcap's pompom yarn (default a fluffy cream, the bar's). */
   pompomHex?: string
+  /**
+   * FINE GAUGE (gauge.ts): every piece worked in `gauge` x the rounds and
+   * `gauge` x the stitches a round, in a yarn `gauge` x finer on the hook it
+   * implies, so the toy keeps its size in mm with proportionally more,
+   * smaller stitches (the bar's). Absent / 1 = today's counts exactly.
+   * Clamped to 1..2. Applies to every base except the doll.
+   */
+  gauge?: number
   /** CUPPED LOP EARS (cupped-ear pass, 2026-10-17; `earPiece.ts`): the
    *  bunny's lop ears as OPEN ears worked tip first, a rounded tip, tapering
    *  to the base, pressed and folded in at the base so the lined front face
@@ -446,118 +472,140 @@ export function lopLining(rounds: number[]): Record<number, [number, number]> {
   return runs
 }
 
-const SIZES: Record<AmigurumiSize, SizeProfile> = {
-  S: {
-    body: sphereRounds(24, 1),
-    head: sphereRounds(18, 1),
-    neck: ballRounds(12, 1),
-    muzzle: ballRounds(12, 1),
-    bearEar: ballRounds(12, 2),
-    bunnyEar: tubeRounds(12, 4),
-    limb: tubeRounds(12, 3),
-    bearArm: tubeRounds(12, 1),
-    // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
-    // growing to match the crease target: at 6 rounds nothing domes.
-    ball: sphereRounds(12, 1),
-    egg: sphereRounds(12, 4),
-    catEar: tubeRounds(12, 0),
-    dogEar: tubeRounds(12, 4),
-    snout: ballRounds(12, 2),
-    catTail: cordRounds(5),
-    dogTail: cordRounds(5),
-    birdBody: sphereRounds(12, 4),
-    birdHead: sphereRounds(12, 1),
-    beak: tubeRounds(12, 0),
-    wing: ballRounds(12, 2),
-    foot: ballRounds(12, 1),
-    chickBody: sphereRounds(18, 1),
-    chickHead: sphereRounds(12, 1),
-    chickWing: tubeRounds(12, 1),
-    chickTuft: cordRounds(5),
-    toyHead: sphereRounds(48, 1),
-    toyBody: sphereRounds(54, 1),
-    bunnyBody: sphereRounds(48, 3),
-    bunnyFoot: ballRounds(30, 3),
-    toyNeck: ballRounds(18, 2),
-    toyMuzzle: ballRounds(18, 2),
-    toyArm: tubeRounds(12, 3),
-    toyEar: ballRounds(18, 2),
-    bigFoot: ballRounds(36, 3),
-    lopEar: LOP_EAR_ROUNDS.S,
-  },
-  M: {
-    // The signed-off bear proof's own equators, on the sphere profile.
-    body: sphereRounds(30, 1),
-    head: sphereRounds(24, 1),
-    neck: ballRounds(12, 1),
-    muzzle: ballRounds(12, 1),
-    bearEar: ballRounds(12, 2),
-    bunnyEar: tubeRounds(12, 6),
-    limb: tubeRounds(12, 4),
-    bearArm: tubeRounds(12, 2),
-    ball: sphereRounds(24, 1),
-    egg: sphereRounds(18, 5),
-    catEar: tubeRounds(12, 0),
-    dogEar: tubeRounds(12, 6),
-    snout: ballRounds(12, 2),
-    catTail: cordRounds(9),
-    dogTail: cordRounds(5),
-    birdBody: sphereRounds(18, 5),
-    birdHead: sphereRounds(18, 1),
-    beak: tubeRounds(12, 0),
-    wing: ballRounds(12, 2),
-    foot: ballRounds(12, 1),
-    chickBody: sphereRounds(30, 1),
-    chickHead: sphereRounds(18, 1),
-    chickWing: tubeRounds(12, 1),
-    chickTuft: cordRounds(5),
-    toyHead: sphereRounds(60, 1),
-    toyBody: sphereRounds(66, 1),
-    bunnyBody: sphereRounds(54, 3),
-    bunnyFoot: ballRounds(36, 3),
-    toyNeck: ballRounds(18, 2),
-    toyMuzzle: ballRounds(24, 2),
-    toyArm: tubeRounds(12, 5),
-    toyEar: ballRounds(18, 2),
-    bigFoot: ballRounds(42, 3),
-    lopEar: LOP_EAR_ROUNDS.M,
-  },
-  L: {
-    body: sphereRounds(36, 1),
-    head: sphereRounds(30, 1),
-    neck: ballRounds(18, 2),
-    muzzle: ballRounds(18, 2),
-    bearEar: ballRounds(12, 3),
-    bunnyEar: tubeRounds(12, 6),
-    limb: tubeRounds(12, 6),
-    bearArm: tubeRounds(12, 4),
-    ball: sphereRounds(36, 1),
-    egg: sphereRounds(24, 5),
-    catEar: tubeRounds(12, 0),
-    dogEar: tubeRounds(12, 6),
-    snout: ballRounds(18, 2),
-    catTail: cordRounds(9),
-    dogTail: cordRounds(5),
-    birdBody: sphereRounds(24, 5),
-    birdHead: sphereRounds(24, 1),
-    beak: tubeRounds(12, 0),
-    wing: ballRounds(12, 2),
-    foot: ballRounds(12, 1),
-    chickBody: sphereRounds(36, 1),
-    chickHead: sphereRounds(24, 1),
-    chickWing: tubeRounds(12, 1),
-    chickTuft: cordRounds(5),
-    toyHead: sphereRounds(66, 1),
-    toyBody: sphereRounds(66, 1),
-    bunnyBody: sphereRounds(60, 3),
-    bunnyFoot: ballRounds(42, 3),
-    toyNeck: ballRounds(24, 2),
-    toyMuzzle: ballRounds(30, 3),
-    toyArm: tubeRounds(18, 6),
-    toyEar: ballRounds(24, 2),
-    bigFoot: ballRounds(48, 3),
-    lopEar: LOP_EAR_ROUNDS.L,
-  },
+/** The size table at gauge g (gauge.ts): every helper is the identity at
+ *  g = 1, so `sizeProfile(size, 1)` is the table exactly as audited. */
+function sizesAt(g: number): Record<AmigurumiSize, SizeProfile> {
+  const sph = (eq: number, extra = 0): number[] => gSphereRounds(eq, extra, g)
+  const ball = (eq: number, plateau: number): number[] => gBall(eq, plateau, g)
+  const tube = (eq: number, straight: number): number[] => gTube(eq, straight, g)
+  const cord = (n: number): number[] => (g === 1 ? cordRounds(n) : gCord(n, g))
+  const lop = g === 1 ? LOP_EAR_ROUNDS : lopEarsAt(g)
+  return {
+    S: {
+      body: sph(24, 1),
+      head: sph(18, 1),
+      neck: ball(12, 1),
+      muzzle: ball(12, 1),
+      bearEar: ball(12, 2),
+      bunnyEar: tube(12, 4),
+      limb: tube(12, 3),
+      bearArm: tube(12, 1),
+      // The small ball keeps its 12-stitch equator (a 30 mm ball) rather than
+      // growing to match the crease target: at 6 rounds nothing domes.
+      ball: sph(12, 1),
+      egg: sph(12, 4),
+      catEar: tube(12, 0),
+      dogEar: tube(12, 4),
+      snout: ball(12, 2),
+      catTail: cord(5),
+      dogTail: cord(5),
+      birdBody: sph(12, 4),
+      birdHead: sph(12, 1),
+      beak: tube(12, 0),
+      wing: ball(12, 2),
+      foot: ball(12, 1),
+      chickBody: sph(18, 1),
+      chickHead: sph(12, 1),
+      chickWing: tube(12, 1),
+      chickTuft: cord(5),
+      toyHead: sph(48, 1),
+      toyBody: sph(54, 1),
+      bunnyBody: sph(48, 3),
+      bunnyFoot: ball(30, 3),
+      toyNeck: ball(18, 2),
+      toyMuzzle: ball(18, 2),
+      toyArm: tube(12, 3),
+      toyEar: ball(18, 2),
+      bigFoot: ball(36, 3),
+      lopEar: lop.S,
+    },
+    M: {
+      // The signed-off bear proof's own equators, on the sphere profile.
+      body: sph(30, 1),
+      head: sph(24, 1),
+      neck: ball(12, 1),
+      muzzle: ball(12, 1),
+      bearEar: ball(12, 2),
+      bunnyEar: tube(12, 6),
+      limb: tube(12, 4),
+      bearArm: tube(12, 2),
+      ball: sph(24, 1),
+      egg: sph(18, 5),
+      catEar: tube(12, 0),
+      dogEar: tube(12, 6),
+      snout: ball(12, 2),
+      catTail: cord(9),
+      dogTail: cord(5),
+      birdBody: sph(18, 5),
+      birdHead: sph(18, 1),
+      beak: tube(12, 0),
+      wing: ball(12, 2),
+      foot: ball(12, 1),
+      chickBody: sph(30, 1),
+      chickHead: sph(18, 1),
+      chickWing: tube(12, 1),
+      chickTuft: cord(5),
+      toyHead: sph(60, 1),
+      toyBody: sph(66, 1),
+      bunnyBody: sph(54, 3),
+      bunnyFoot: ball(36, 3),
+      toyNeck: ball(18, 2),
+      toyMuzzle: ball(24, 2),
+      toyArm: tube(12, 5),
+      toyEar: ball(18, 2),
+      bigFoot: ball(42, 3),
+      lopEar: lop.M,
+    },
+    L: {
+      body: sph(36, 1),
+      head: sph(30, 1),
+      neck: ball(18, 2),
+      muzzle: ball(18, 2),
+      bearEar: ball(12, 3),
+      bunnyEar: tube(12, 6),
+      limb: tube(12, 6),
+      bearArm: tube(12, 4),
+      ball: sph(36, 1),
+      egg: sph(24, 5),
+      catEar: tube(12, 0),
+      dogEar: tube(12, 6),
+      snout: ball(18, 2),
+      catTail: cord(9),
+      dogTail: cord(5),
+      birdBody: sph(24, 5),
+      birdHead: sph(24, 1),
+      beak: tube(12, 0),
+      wing: ball(12, 2),
+      foot: ball(12, 1),
+      chickBody: sph(36, 1),
+      chickHead: sph(24, 1),
+      chickWing: tube(12, 1),
+      chickTuft: cord(5),
+      toyHead: sph(66, 1),
+      toyBody: sph(66, 1),
+      bunnyBody: sph(60, 3),
+      bunnyFoot: ball(42, 3),
+      toyNeck: ball(24, 2),
+      toyMuzzle: ball(30, 3),
+      toyArm: tube(18, 6),
+      toyEar: ball(24, 2),
+      bigFoot: ball(48, 3),
+      lopEar: lop.L,
+    },
+  }
+}
+
+const SIZES: Record<AmigurumiSize, SizeProfile> = sizesAt(1)
+const SIZES_AT = new Map<number, Record<AmigurumiSize, SizeProfile>>([[1, SIZES]])
+
+/** One size's piece profiles at gauge g. */
+function sizeProfile(size: AmigurumiSize, g: number): SizeProfile {
+  let t = SIZES_AT.get(g)
+  if (!t) {
+    t = sizesAt(g)
+    SIZES_AT.set(g, t)
+  }
+  return t[size]
 }
 
 /**
@@ -778,18 +826,21 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   if (choices.base === 'cow') {
     // The Highland cow is its own base (cowPreset.ts): its face, fringe and
     // horns are part of the base, so the face/hair/hat toggles do not apply.
-    return buildCowProgram({ size: choices.size, mainHex: choices.mainHex, contrastHex: choices.contrastHex, eyeMm: choices.eyeMm, name: choices.name })
+    return buildCowProgram({
+      size: choices.size, mainHex: choices.mainHex, contrastHex: choices.contrastHex, eyeMm: choices.eyeMm, name: choices.name,
+      ...(clampGauge(choices.gauge) !== 1 ? { gauge: clampGauge(choices.gauge) } : {}),
+    })
   }
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
-  const hair = hairPatchesFor(choices.hair, 'head', choices.mainHex, faceDir(HAIR_DIR))
+  const hair = hairPatchesFor(choices.hair, 'head', choices.mainHex, faceDir(HAIR_DIR)).map((h) => gaugeHairPatch(h, clampGauge(choices.gauge)))
   if (hair.length) program.hair = hair
   if (choices.hat === 'nightcap' && isToy(choices.base)) {
     const head = program.parts.find((x) => x.name === 'head')!
     // The band is sized to the head's MEASURED settled radius (the same number
     // the words and the render use), in the toy's own yarn.
-    const headRadiusMm = profileSizeMm(head.rounds, program.yarnWeight).width / 2
+    const headRadiusMm = profileSizeMm(head.rounds, program.yarnWeight, program.yarnRadiusMm).width / 2
     // Round 7: the toy's eyes are low (FACE_SET elev 5 deg), so the band
     // sits higher than the hat's default — the brow and the lop-ear joins
     // (+0.5R) show under it, as on the bar bunny.
@@ -809,8 +860,21 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
   return program
 }
 
+/**
+ * The program's yarn fields at gauge g: empty at g = 1 (so a gauge-1 program
+ * is the object it always was), else the finer yarn's exact radius, the named
+ * weight and hook a maker buys, and the gauge line. Spread AFTER the literal
+ * `yarnWeight` / `hookMm`, which it then overrides.
+ */
+function gaugeFields(weight: YarnWeight, hookMm: number, g: number): Partial<CompositionProgram> {
+  if (g === 1) return {}
+  const y = gaugeYarn({ yarnWeight: weight, hookMm }, g)
+  return { yarnWeight: y.yarnWeight, yarnRadiusMm: y.yarnRadiusMm, hookMm: y.hookMm, ...(y.gaugeText ? { gaugeText: y.gaugeText } : {}) }
+}
+
 function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
-  const s = SIZES[choices.size]
+  const g = clampGauge(choices.gauge)
+  const s = sizeProfile(choices.size, g)
   const name = amigurumiPresetName(choices)
 
   if (choices.base === 'ball' || choices.base === 'egg') {
@@ -822,6 +886,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       hookMm: 4,
       parts: [{ name: 'body', stitch: 'sc', rounds, colourHex: choices.mainHex, place: { on: 'ground' } }],
       props: faceProps(choices, 'body'),
+      ...gaugeFields('worsted', 4, g),
       notes:
         choices.base === 'ball'
           ? 'A stuffed crochet ball, worked as one continuous spiral from a magic ring.'
@@ -829,8 +894,8 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     }
   }
 
-  if (choices.base === 'bird') return birdProgram(choices, s, name)
-  if (choices.base === 'chick') return chickProgram(choices, s, name)
+  if (choices.base === 'bird') return birdProgram(choices, s, name, g)
+  if (choices.base === 'chick') return chickProgram(choices, s, name, g)
 
   const main = choices.mainHex
   const contrast = choices.contrastHex
@@ -977,9 +1042,9 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         // as the closed lop; its base is the open end, its tip the ring.
         parts.push({
           ...earPart(
-            { ...BUNNY_LOP_EAR[choices.size], liningHex: contrast },
+            { ...gEar(BUNNY_LOP_EAR[choices.size], g), liningHex: contrast },
             { name: side < 0 ? 'ear-l' : 'ear-r', colourHex: main, place },
-            YARN_WEIGHT_RADIUS_MM[TOY_YARN],
+            gaugeYarnRadiusMm(TOY_YARN, g),
           ),
           bend: LOP_EAR_BEND,
         })
@@ -996,7 +1061,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
           aim: fd({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
           spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
           seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
-          offset: { z: LOP_EAR_LIFT[choices.size] },
+          offset: { z: LOP_EAR_LIFT[choices.size] + (LOP_EAR_GAUGE_LIFT[`${choices.size}@${g}`] ?? 0) },
         },
       })
     }
@@ -1004,7 +1069,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
 
   const lift = GROUND_LIFT[choices.size]
   if (toy) {
-    pushToyLimbs(parts, choices, s)
+    pushToyLimbs(parts, choices, s, g)
   } else {
     for (const side of [-1, 1] as const) {
       parts.push({
@@ -1080,6 +1145,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     parts,
     props: faceProps(choices, 'head'),
     notes: FIGURE_NOTES[choices.base] ?? FIGURE_NOTES.bear!,
+    ...gaugeFields(toy ? TOY_YARN : 'worsted', toy ? TOY_HOOK_MM : 4, g),
   }
 }
 
@@ -1147,6 +1213,10 @@ const LOP_EAR_SPIN = { x: -0.5, y: 1 }
  *  lifted by what the pressed tip would otherwise sink below it (measured
  *  per size off the settled geometry; the table gate is 0.5 mm). */
 const LOP_EAR_LIFT: Record<AmigurumiSize, number> = { S: 0, M: 1.8, L: 1.4 }
+/** The fine-gauge knob: at gauge 1.3 the M ear's 35 rounds round UP to 46
+ *  and its tip reaches 1.2 mm through the table, so it is lifted that much
+ *  more (measured, gauge.test.ts). */
+const LOP_EAR_GAUGE_LIFT: Record<string, number> = { 'M@1.3': 1.3 }
 /** The toy's muzzle trim per size (the fine-gauge `toyMuzzle` profile). */
 const TOY_MUZZLE_SCALE: Record<AmigurumiSize, number> = { S: 0.95, M: 0.95, L: 0.9 }
 /** Sleepy bunny 4: the bar's muzzle is only a SMALL, subtle pale patch
@@ -1206,6 +1276,10 @@ const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.3, M: 0.5, L: 4.2 }
  *  pear body) settle below the table by a different amount from the bear's,
  *  so each size is lifted by its own measured sink. */
 const BUNNY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.6, M: 3.3, L: 4.2 }
+/** The fine-gauge knob (gauge.ts): at gauge 1.4 the finer bunny's feet
+ *  settle 0.8 mm through the table, so that gauge carries its own MEASURED
+ *  extra lift on top (gauge.test.ts, M; as the cow's `GAUGE_LEG_LIFT`). */
+const BUNNY_GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.4': 0.8 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
 const TOE_PAD_U = -0.65
@@ -1218,7 +1292,7 @@ const TOE_PAD_SCALE = 0.68
 const TOE_BEAN_SCALE = 0.42
 const TOE_BEAN_V = { outer: 0.92, inner: 0.36 }
 
-function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile): void {
+function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: SizeProfile, g = 1): void {
   const bear = choices.base === 'bear'
   const armDir = bear ? TOY_ARM_DIR : BUNNY_ARM_DIR
   const armAim = bear ? TOY_ARM_AIM : BUNNY_ARM_AIM
@@ -1232,7 +1306,8 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
       // Round 4 (sleepy bunny): a touch chunkier, the bar's bold folded arms.
       scale: TOY_ARM_SCALE,
       // The bear's paw: rounds 1-2 in the contrast yarn.
-      ...(bear && paws ? { panel: { hex: contrast, runs: { 0: [0, armRounds[0]!], 1: [0, armRounds[1]!] } } } : {}),
+      // At gauge g the paw tip is the first g x 2 rounds (the same depth in mm).
+      ...(bear && paws ? { panel: { hex: contrast, runs: pawTipRuns(armRounds, gRounds(2, g)) } } : {}),
       place: {
         on: 'body',
         dir: { x: side * armDir.x, y: armDir.y, z: armDir.z },
@@ -1252,7 +1327,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
         on: 'body',
         dir: { x: side * legDir.x, y: legDir.y, z: legDir.z },
         aim: legAim(side), seat: 5, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: (bear ? TOY_LEG_LIFT : BUNNY_LEG_LIFT)[choices.size] },
+        offset: { z: bear ? TOY_LEG_LIFT[choices.size] : BUNNY_LEG_LIFT[choices.size] + (BUNNY_GAUGE_LEG_LIFT[`${choices.size}@${g}`] ?? 0) },
       },
     })
   }
@@ -1271,8 +1346,8 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
       x: n.x + up.x * u + sideV.x * v, y: n.y + up.y * u + sideV.y * v, z: n.z + up.z * u + sideV.z * v,
     })
     parts.push({
-      name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: [6, 12, 18, 24], colourHex: contrast,
-      form: 'disc', scale: TOE_PAD_SCALE,
+      name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: gDisc([6, 12, 18, 24], g), colourHex: contrast,
+      form: 'disc', scale: TOE_PAD_SCALE * discTrim([6, 12, 18, 24], g),
       place: { on: leg, dir: at(TOE_PAD_U, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
     const beans: Array<[number, number]> = [
@@ -1281,18 +1356,36 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     ]
     beans.forEach(([u, v], k) => {
       parts.push({
-        name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: [6, 12], colourHex: contrast,
-        form: 'disc', scale: TOE_BEAN_SCALE,
+        name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: gDisc([6, 12], g), colourHex: contrast,
+        form: 'disc', scale: TOE_BEAN_SCALE * discTrim([6, 12], g),
         place: { on: leg, dir: at(u, v), aim: a, seat: 0, surfaceFit: 'points' },
       })
     })
   }
   if (bear) {
     parts.push({
-      name: 'belly-patch', stitch: 'sc', rounds: [6, 12, 18, 24], colourHex: contrast, form: 'disc',
+      name: 'belly-patch', stitch: 'sc', rounds: gDisc([6, 12, 18, 24], g), colourHex: contrast, form: 'disc',
+      ...(g === 1 ? {} : { scale: discTrim([6, 12, 18, 24], g) }),
       place: { on: 'body', dir: { x: 0, y: 1, z: 0.1 }, aim: { x: 0, y: 1, z: 0.1 }, seat: 0, surfaceFit: 'points' },
     })
   }
+}
+
+/** A flat appliqué climbs in sixes, so at gauge g its widest round lands on
+ *  the nearest six (a 12-st bean at 1.4 is 18, not 16.8): this trim brings it
+ *  back to its gauge-1 size in mm. 1 at gauge 1. */
+function discTrim(rounds: number[], g: number): number {
+  if (g === 1) return 1
+  const want = rounds[rounds.length - 1]! * g
+  const got = gDisc(rounds, g)
+  return want / got[got.length - 1]!
+}
+
+/** The bear's contrast paw tip: its first `n` rounds, every stitch. */
+function pawTipRuns(rounds: number[], n: number): Record<number, [number, number]> {
+  const runs: Record<number, [number, number]> = {}
+  for (let k = 0; k < Math.min(n, rounds.length); k++) runs[k] = [0, rounds[k]!]
+  return runs
 }
 
 /** The one-line description of each four-legged base, for the pattern's notes. */
@@ -1317,7 +1410,7 @@ const FIGURE_NOTES: Partial<Record<AmigurumiBase, string>> = {
  * the designer hides the toggle), and no paw pads (nothing to put them on).
  * The second yarn goes on the beak and the feet instead.
  */
-function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): CompositionProgram {
+function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string, g = 1): CompositionProgram {
   const main = choices.mainHex
   const contrast = choices.contrastHex
   const parts: AmigurumiPart[] = [
@@ -1333,7 +1426,7 @@ function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): C
     {
       // Round 11: the tip-first cone, magic ring outward, so the point has no
       // closing hole (it rendered as a blunt nub with a hole on bird and chick).
-      name: 'beak', stitch: 'sc', rounds: CONE_ROUNDS, colourHex: contrast, scale: BIRD_BEAK_SCALE[choices.size],
+      name: 'beak', stitch: 'sc', rounds: g === 1 ? CONE_ROUNDS : gCone(4, 8, 0, 4, g), colourHex: contrast, scale: BIRD_BEAK_SCALE[choices.size],
       place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: -0.05 }), seat: 2.5, poleIn: false, surfaceFit: 'ellipsoid' },
     },
   ]
@@ -1377,6 +1470,7 @@ function birdProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): C
       'A little sitting bird: a stuffed egg body on its own base, a small round head, ' +
       'a pointed beak, two folded wings and two flat feet, each worked as a spiral ' +
       'from a magic ring and sewn on.',
+    ...gaugeFields('worsted', 4, g),
   }
 }
 
@@ -1409,7 +1503,7 @@ const CHICK_FOOT_OFFSET: Record<AmigurumiSize, { y: number; z: number }> = {
  * base on the table. Like the bird it has no moulded nose and no paw pads; the
  * second yarn makes the beak and the feet.
  */
-function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): CompositionProgram {
+function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string, g = 1): CompositionProgram {
   const main = choices.mainHex
   const contrast = choices.contrastHex
   const parts: AmigurumiPart[] = [
@@ -1423,7 +1517,7 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
     },
     // The tip-first cone, magic ring outward: a small point with no hole.
     {
-      name: 'beak', stitch: 'sc', rounds: CONE_ROUNDS, colourHex: contrast, scale: CHICK_BEAK_SCALE[choices.size],
+      name: 'beak', stitch: 'sc', rounds: g === 1 ? CONE_ROUNDS : gCone(4, 8, 0, 4, g), colourHex: contrast, scale: CHICK_BEAK_SCALE[choices.size],
       place: { on: 'head', dir: faceDir({ x: 0, y: 1, z: 0 }), seat: 2.5, poleIn: false, surfaceFit: 'ellipsoid' },
     },
     // A little tuft standing up out of the crown and leaning forward: a short
@@ -1476,6 +1570,7 @@ function chickProgram(choices: AmigurumiChoices, s: SizeProfile, name: string): 
     notes:
       'A little chick: a stuffed round body, a smaller round head with a tuft, a pointed beak, ' +
       'two teardrop wings and two flat feet, each worked as a spiral from a magic ring and sewn on.',
+    ...gaugeFields('worsted', 4, g),
   }
 }
 
@@ -1576,8 +1671,9 @@ function faceEmbroidery(choices: AmigurumiChoices, program: CompositionProgram):
   const set = FACE_SET[choices.base]
   const toy = isToy(choices.base)
   const fd = (d: Dir): Dir => faceDir(d, toy ? TOY_YAW : FIGURE_YAW)
-  // The toy's finer stitches: the same feature spans more of them.
-  const g = toy ? TOY_GAUGE_SCALE : 1
+  // The toy's finer stitches: the same feature spans more of them, and the
+  // fine-gauge knob's g x more again.
+  const g = (toy ? TOY_GAUGE_SCALE : 1) * clampGauge(choices.gauge)
   const layout: FaceLayout = {
     head: { name: head.name, rounds: head.rounds },
     muzzle:
@@ -1641,14 +1737,19 @@ export const PROFILE_SIZE_MM = PROFILE_SIZE_MM_GENERATED
 /** A piece's settled size, falling back to the stitch-count estimate for a
  *  profile that is not in the measured table (e.g. a shape the generator has
  *  not been run against yet). */
-export function profileSizeMm(rounds: number[], yarnWeight: YarnWeight = 'worsted'): { width: number; height: number } {
+export function profileSizeMm(
+  rounds: number[],
+  yarnWeight: YarnWeight = 'worsted',
+  /** The exact yarn radius, when it is not the weight's (the gauge knob). */
+  yarnRadiusMm?: number,
+): { width: number; height: number } {
+  const yr = yarnRadiusMm ?? YARN_WEIGHT_RADIUS_MM[yarnWeight]
   // The table is measured at worsted; the settled geometry scales with the
   // yarn radius, so a piece worked in a finer yarn is that much smaller.
-  const k = YARN_WEIGHT_RADIUS_MM[yarnWeight] / YARN_WEIGHT_RADIUS_MM.worsted
+  const k = yr / YARN_WEIGHT_RADIUS_MM.worsted
   const measured = PROFILE_SIZE_MM[rounds.join(',')]
   if (measured) return { width: measured.width * k, height: measured.height * k }
   const widest = Math.max(...rounds)
-  const yr = YARN_WEIGHT_RADIUS_MM[yarnWeight]
   // Off the measured table (round 5): a closed round piece settles ~0.98 yarn
   // radii of width per stitch round its widest and ~1.84 yarn radii of height
   // per round (sphereRounds(36,1) at worsted 74 x 77 mm over 20 rounds;

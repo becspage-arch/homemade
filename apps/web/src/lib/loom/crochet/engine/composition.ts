@@ -343,6 +343,12 @@ export interface CompositionProgram {
   /** Render yarn weight → yr. Compositions render at their program weight (the
    *  layout is computed from each part's built size, so it stays consistent). */
   yarnWeight?: YarnWeight
+  /** The exact render yarn radius (mm), when it is not a named weight's (the
+   *  fine-gauge knob, gauge.ts: a preset at gauge g is worked in a yarn g x
+   *  finer than its weight). Wins over `yarnWeight` for the geometry; the
+   *  named weight stays what the pattern calls the yarn. Unset = the weight's
+   *  radius, exactly as before. */
+  yarnRadiusMm?: number
   /** The yarn's fibre look (STITCH_ENGINE yarn-fibre pass) — one fibre for the
    *  whole composed object (every part is the same yarn in a real pattern).
    *  Render-only, defaults to `'cotton'`. */
@@ -425,13 +431,14 @@ export interface CompositionProgram {
 /** A part's geometric scale: its trim, or the ratio of its own lighter yarn
  *  to the composition's (`AmigurumiPart.yarnWeight`). */
 export function partScale(part: AmigurumiPart, p: CompositionProgram): number {
-  if (part.yarnWeight) return YARN_WEIGHT_RADIUS_MM[part.yarnWeight] / YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted']
+  if (part.yarnWeight) return YARN_WEIGHT_RADIUS_MM[part.yarnWeight] / compositionYarnRadiusMm(p)
   return part.scale ?? 1
 }
 
 /** Resolve the render yarn radius (mm) for a composition. */
 export function compositionYarnRadiusMm(p: CompositionProgram, override?: number): number {
   if (override != null) return override
+  if (p.yarnRadiusMm != null) return p.yarnRadiusMm
   return YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted']
 }
 
