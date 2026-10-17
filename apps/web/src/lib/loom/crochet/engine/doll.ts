@@ -1034,12 +1034,12 @@ export function dollPresetChoices(): Array<DollChoices & { base: 'doll'; nose: b
  *  own compile; the test fails if a fresh compile drifts from them). */
 export const DOLL_SETTLED_SIZE_MM: Record<string, { width: number; height: number }> = {
   'doll-S': { width: 43.4, height: 100.9 },
-  'doll-M': { width: 146.1, height: 227.7 },
-  'doll-L': { width: 148.7, height: 250.2 },
+  'doll-M': { width: 143.3, height: 231.7 },
+  'doll-L': { width: 145.9, height: 255.6 },
 }
 export const DOLL_GEOMETRY_HASH: Record<string, string> = {
   'doll-S': 'a6c40d20',
-  'doll-M': '7e424a93',
-  'doll-L': '857cbb08',
+  'doll-M': 'fa350a29',
+  'doll-L': '2f06c07c',
 }
 
