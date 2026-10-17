@@ -15,7 +15,7 @@ import {
   photoToTapestryGrid,
   TapestrySubjectTooSmallError,
 } from './photo-to-tapestry'
-import { YARN_SHADES } from './yarn-shades'
+import { deltaE2000, hexToLab, YARN_SHADES } from './yarn-shades'
 
 const results: Array<{ name: string; error?: string }> = []
 function check(name: string, fn: () => Promise<void> | void): Promise<void> {
@@ -117,6 +117,43 @@ async function fineDetail(size: number, tile: number): Promise<Buffer> {
     }
   }
   return sharp(buf, { raw: { width: size, height: size, channels: 3 } }).png().toBuffer()
+}
+
+/** Sky, a sun, and `hills` (light at the back, dark in front) as wavy bands:
+ *  the sun-over-hills reopen proof drawn flat, with no Fal. */
+async function sunOverHills(hills: [number, number, number][]): Promise<Buffer> {
+  const S = 600
+  const buf = Buffer.alloc(S * S * 3)
+  for (let y = 0; y < S; y++) {
+    for (let x = 0; x < S; x++) {
+      let c: [number, number, number] = [169, 212, 236]
+      if ((x - 300) ** 2 + (y - 200) ** 2 < 90 ** 2) c = [245, 200, 50]
+      hills.forEach((h, k) => {
+        if (y > 300 + k * 70 + 30 * Math.sin((x / S) * Math.PI * (1 + k) + k)) c = h
+      })
+      const i = (y * S + x) * 3
+      buf[i] = c[0]
+      buf[i + 1] = c[1]
+      buf[i + 2] = c[2]
+    }
+  }
+  return sharp(buf, { raw: { width: S, height: S, channels: 3 } }).png().toBuffer()
+}
+
+/** The wall-hanging lane's own converter settings (generation/bulk/crochet.ts). */
+const LANE = {
+  cellAspect: 2.7 / 2.4,
+  colours: 8,
+  maxColours: 8,
+  backgroundRemoval: false,
+  smoothing: 'high' as const,
+  cropToSubject: true,
+  minSubjectCoverage: 0.2,
+  frameMargin: 0.06,
+  minColourShare: 0.03,
+  minColours: 4,
+  majority: 6,
+  quantiseColours: 16,
 }
 
 async function main(): Promise<void> {
@@ -291,6 +328,99 @@ async function main(): Promise<void> {
     for (const c of grid.palette) {
       assert.ok(yarnHexes.has(c.hex.toLowerCase()), `${c.name} carries ${c.hex}, not a yarn-shade hex`)
     }
+  })
+
+  await check('close green hills come back as distinct greens in their order (similar-colour merge bug)', async () => {
+    const hills: [number, number, number][] = [
+      [140, 192, 104],
+      [95, 158, 69],
+      [62, 122, 58],
+      [42, 85, 48],
+    ]
+    const grid = await photoToTapestryGrid(await sunOverHills(hills), { ...LANE, width: 34, height: 30 })
+    // The colour of each hill band, read down the middle column below the sun.
+    const col = 17
+    const seen: string[] = []
+    for (let y = 0; y < grid.height; y++) {
+      const k = grid.cells[y * grid.width + col]!
+      if (seen[seen.length - 1] !== k) seen.push(k)
+    }
+    const byKey = new Map(grid.palette.map((c) => [c.key, c]))
+    const bands = seen.map((k) => byKey.get(k)!).filter((c) => {
+      const [, a, b] = hexToLab(c.hex)
+      const h = (Math.atan2(b, a) * 180) / Math.PI
+      return h > 95 && h < 170 && Math.hypot(a, b) > 22
+    })
+    assert.equal(bands.length, 4, `hill bands came back as ${seen.map((k) => byKey.get(k)!.name).join(' > ')}`)
+    for (let i = 1; i < bands.length; i++) {
+      const [L0] = hexToLab(bands[i - 1]!.hex)
+      const [L1] = hexToLab(bands[i]!.hex)
+      assert.ok(L0 > L1, `${bands[i - 1]!.name} should be lighter than ${bands[i]!.name}`)
+      assert.ok(
+        deltaE2000(hexToLab(bands[i - 1]!.hex), hexToLab(bands[i]!.hex)) >= 6,
+        `${bands[i - 1]!.name} and ${bands[i]!.name} read as one colour`,
+      )
+    }
+  })
+
+  await check('blue-green hills never snap to a grey or a navy', async () => {
+    const hills: [number, number, number][] = [
+      [120, 170, 120],
+      [80, 140, 100],
+      [50, 110, 90],
+      [40, 80, 70],
+    ]
+    const grid = await photoToTapestryGrid(await sunOverHills(hills), { ...LANE, width: 34, height: 30 })
+    const names = grid.palette.map((c) => c.name)
+    for (const bad of ['Slate', 'Storm', 'Petrol', 'Navy', 'Ink', 'Charcoal', 'Silver']) {
+      assert.ok(!names.includes(bad), `${names.join(', ')} uses ${bad}`)
+    }
+  })
+
+  await check('the colour cap merges near-twins before a small distinct colour', async () => {
+    // Nine flat colours, capped at eight: two creams that are near-twins
+    // (one ground split in two), and a small but distinct white spot.
+    const S = 300
+    const buf = Buffer.alloc(S * S * 3)
+    const cols: [number, number, number][] = [
+      [239, 230, 210], // cream A
+      [233, 224, 203], // cream B, the twin
+      [196, 43, 43],
+      [43, 79, 158],
+      [241, 194, 50],
+      [94, 154, 60],
+      [122, 84, 134],
+      [91, 58, 37],
+    ]
+    for (let y = 0; y < S; y++) {
+      for (let x = 0; x < S; x++) {
+        const band = Math.min(7, Math.floor(x / (S / 8)))
+        let c = cols[band]!
+        if ((x - 150) ** 2 + (y - 150) ** 2 < 28 ** 2) c = [250, 250, 250]
+        const i = (y * S + x) * 3
+        buf[i] = c[0]
+        buf[i + 1] = c[1]
+        buf[i + 2] = c[2]
+      }
+    }
+    const img = await sharp(buf, { raw: { width: S, height: S, channels: 3 } }).png().toBuffer()
+    const grid = await photoToTapestryGrid(img, {
+      width: 40,
+      height: 40,
+      colours: 8,
+      maxColours: 8,
+      backgroundRemoval: false,
+      smoothing: 'low',
+      majority: 4,
+      quantiseColours: 16,
+      minColourShare: 0.02,
+      minColours: 4,
+    })
+    assert.equal(grid.palette.length, 8)
+    assert.ok(
+      grid.palette.some((c) => c.name === 'White'),
+      `the white spot was merged away: ${grid.palette.map((c) => c.name).join(', ')}`,
+    )
   })
 
   const failed = results.filter((r) => r.error)
