@@ -55,6 +55,14 @@ maker-photo system is live. Train 13 shipped the 34 personalised samplers
 ("Make it yours", word art in the Studio). Nothing in flight on a branch. Then
 needlework converted the same way, fill to 1,818, close-out.
 
+## Cross-stitch: the nearly-there pass (2026-10-17)
+
+The last cross-stitch job: the 200 rejected pieces Bec listed as "nearly there" (`cross-stitch-nearly-there.csv`). Each one was fixed in its stored chart, never redrawn, re-rendered through `renderBeautyThumbnail`, and looked at before and after.
+- 51 fixed and published: 18 signatures, 26 strays or loose fragments, 4 frames or bands, 2 stray blocks or lines, and 1 that needed no fix. Public cross-stitch went from 2,914 to 2,965; the sitemap and the search index both carry all 51.
+- 149 left unpublished, each with its reason: 80 design faults, 31 edge crops, 36 tried and still below the bar, and 2 repeats (one matched by the duplicate guard, one withdrawn after it became a repeat).
+- New script `apps/web/scripts/xs-chart-fix.ts` with its ops in `xs-chart-fix/ops.ts`. Its `fix` command has a dry run, before/after sheets and `--apply`; its `publish` command runs the dedupe guard, the name check, `keepCandidates`, tags and a search re-sync. Every applied fix is recorded on `generationMeta.chartFix`, the old chart is backed up, and the old thumbnail Media row is kept.
+- No deploy is needed; nothing server-side changed. Log: `/mnt/project-files/homemade/xs-nearly-there/LOG.md`.
+
 ## Crochet bulk autopilot, driven by a Claude routine (2026-09-06)
 
 The crochet lane no longer runs as an Inngest job on ECS, because it could not:
