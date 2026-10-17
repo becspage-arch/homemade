@@ -104,6 +104,7 @@ export {
   type CrochetTagInput,
   type CrochetTagResult,
 } from './crochet-tagging'
+export { crochetHeroMedia, type CrochetMediaRef, type CrochetMediaSources } from './crochet-media'
 
 // Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
 // and the backfill script both call into `sweepForTechnique`; the pure
