@@ -139,26 +139,26 @@ export function isHeroPhoto(v: unknown): v is HeroPhoto {
 export interface HeroPhotoKnobs {
   /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights. */
   photoLight?: 'window' | 'stage'
-  /** Key strength relative to the studio key at the piece (2.4). */
+  /** Key strength relative to the studio key at the piece (3). */
   photoKey?: number
   /** Key azimuth in degrees: 0 from the camera, 90 camera left, 180 behind;
-   *  negative = camera right (75). */
+   *  negative = camera right (80). */
   photoKeyDeg?: number
-  /** Key elevation in degrees (28). */
+  /** Key elevation in degrees (30). */
   photoKeyElev?: number
   /** Key size over its distance: bigger = softer shadow edges (0.55). */
   photoKeySoft?: number
-  /** Fill strength on the far side (0.3). */
+  /** Fill strength on the far side (0.15). */
   photoFill?: number
   /** Rim strength, from behind on the key's side (0.9). */
   photoRim?: number
-  /** Multiplier on the stage's own room lights (0.4). */
+  /** Multiplier on the stage's own room lights (0.3). */
   photoSetLight?: number
-  /** Multiplier on the studio key + fill kept on the toy (0.3). */
+  /** Multiplier on the studio key + fill kept on the toy (0.15). */
   photoStudio?: number
-  /** Multiplier on the world (ambient) strength (0.75). */
+  /** Multiplier on the world (ambient) strength (0.5). */
   photoAmbient?: number
-  /** Added to the stage exposure (0). */
+  /** Added to the stage exposure (0.15). */
   photoExposure?: number
   /** A real f-number (5.6); smaller = a creamier background. */
   photoFstop?: number
@@ -168,9 +168,11 @@ export interface HeroPhotoKnobs {
   photoCamera?: 'threequarter' | 'stage'
   /** The turn, added to the scene's own yaw (16). */
   photoYawDeg?: number
-  /** Camera tilt, 90 = level (84; the stages use 80). */
+  /** Camera tilt, 90 = level (77: the cow bar looks down ~13 deg; the stages use 80). */
   photoTiltDeg?: number
-  /** The piece's height as a share of the frame height (0.68); 0 = the stage zoom. */
+  /** The piece's height as a share of the frame height; 0 = the stage zoom.
+   *  Unset under v2 = per stage (`PHOTO_FRAME_BY`: nursery 0.82, christmas
+   *  0.74, linen 0.72, windowsill 0.68; 0.68 otherwise). */
   photoFrame?: number
   /** Aim height as a fraction of the piece height (0.5). */
   photoAim?: number
@@ -179,7 +181,7 @@ export interface HeroPhotoKnobs {
   /** The cloth under the toy: 'auto' = the stage's own, softly crumpled;
    *  'knit' / 'linen' swap it; 'none' leaves the stage's cloth as it was. */
   photoBlanket?: 'auto' | 'knit' | 'linen' | 'none'
-  /** Crumple depth as a fraction of the piece height (0.045). */
+  /** Crumple depth as a fraction of the piece height (0.09). */
   photoCrumple?: number
 }
 
@@ -187,26 +189,26 @@ export interface HeroPhotoKnobs {
  *  the parity test; the renderer applies them itself). */
 export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoLight: 'window',
-  photoKey: 2.4,
-  photoKeyDeg: 75,
-  photoKeyElev: 28,
+  photoKey: 3,
+  photoKeyDeg: 80,
+  photoKeyElev: 30,
   photoKeySoft: 0.55,
-  photoFill: 0.3,
+  photoFill: 0.15,
   photoRim: 0.9,
-  photoSetLight: 0.4,
-  photoStudio: 0.3,
-  photoAmbient: 0.75,
-  photoExposure: 0,
+  photoSetLight: 0.3,
+  photoStudio: 0.15,
+  photoAmbient: 0.5,
+  photoExposure: 0.15,
   photoFstop: 5.6,
   photoFocus: 'face',
   photoCamera: 'threequarter',
   photoYawDeg: 16,
-  photoTiltDeg: 84,
+  photoTiltDeg: 77,
   photoFrame: 0.68,
   photoAim: 0.5,
   photoProps: 'v2',
   photoBlanket: 'auto',
-  photoCrumple: 0.045,
+  photoCrumple: 0.09,
 }
 
 /**

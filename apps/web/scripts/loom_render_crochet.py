@@ -1194,6 +1194,7 @@ def main():
         H=(view["stageHeightMm"] * S) if view.get("stageHeightMm") else (maxz_bu + z_offset),
         cam=cam, tgt=tgt, view=view, key_energy=key.data.energy,
         face=face_point(data, z_offset, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
+        footprint=footprint_polar(data, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
@@ -1817,7 +1818,8 @@ def apply_stage(stage, scene, ctx):
     view = ctx["view"]
     po = photo_opts(view)
     _PHOTO.clear()
-    _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"])
+    _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"],
+                  foot=ctx.get("footprint"))
     if po["photoFrame"]:
         # hold the piece at a set share of the frame height: slide the camera
         # along its own line (its aim, turn and tilt are kept)
@@ -2058,7 +2060,7 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
         z0 += th * H
     # A dried lavender, daisy and wheat bunch lying on the cloth, left.
     if _PHOTO.get("props") == "v2":
-        _bunch_v2(root, H, R, vis, _PHOTO.get("ground") or (lambda x, y: 0.04))
+        _bunch_v2(root, H, R, vis, _PHOTO.get("ground") or (lambda x, y: 0.04), _PHOTO.get("foot"))
     else:
         _dried_bunch(root, H, R, vis)
     # Window daylight: broad, warm, from behind-left through the glass (the soft
@@ -3397,7 +3399,8 @@ VARIANT_BUILDERS = {
 #   photoFocus      "face" | "centre"   focus on the eyes / centre ("face")
 #   photoCamera     "threequarter" | "stage"                      ("threequarter")
 #   photoYawDeg     the turn, added to the scene's yaw            (16)
-#   photoTiltDeg    camera tilt (90 = level; stage = 80)          (84)
+#   photoTiltDeg    camera tilt (90 = level; stage = 80); the cow bar
+#                   looks down ~13 deg onto the cloth             (77)
 #   photoFrame      the piece's height as a fraction of the frame height;
 #                   the camera moves along its line to hold it (0 = the
 #                   stage's own zoom). The cow bar ~0.7, the bunny ~0.8 (0.68)
@@ -3407,11 +3410,11 @@ VARIANT_BUILDERS = {
 #                   auto = the stage's own cloth, softly crumpled
 #   photoCrumple    crumple depth, x piece height                 (0.045)
 PHOTO_V2 = dict(
-    photoLight="window", photoKey=2.4, photoKeyDeg=75.0, photoKeyElev=28.0, photoKeySoft=0.55,
-    photoFill=0.3, photoRim=0.9, photoSetLight=0.4, photoStudio=0.3, photoAmbient=0.75,
-    photoExposure=0.0, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
-    photoYawDeg=16.0, photoTiltDeg=84.0, photoFrame=0.68, photoAim=0.5,
-    photoProps="v2", photoBlanket="auto", photoCrumple=0.045,
+    photoLight="window", photoKey=3.0, photoKeyDeg=80.0, photoKeyElev=30.0, photoKeySoft=0.55,
+    photoFill=0.15, photoRim=0.9, photoSetLight=0.3, photoStudio=0.15, photoAmbient=0.5,
+    photoExposure=0.15, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
+    photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.68, photoAim=0.5,
+    photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -3419,17 +3422,29 @@ PHOTO_V1 = dict(
     photoLight="stage", photoKey=2.4, photoKeyDeg=75.0, photoKeyElev=28.0, photoKeySoft=0.55,
     photoFill=0.3, photoRim=0.9, photoSetLight=0.4, photoStudio=0.3, photoAmbient=1.0,
     photoExposure=0.0, photoFstop=None, photoFocus="centre", photoCamera="stage",
-    photoYawDeg=16.0, photoTiltDeg=84.0, photoFrame=0.0, photoAim=0.5,
+    photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.0, photoAim=0.5,
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
 )
+
+# photoFrame per stage when the view does not set it (the bunny bar fills
+# the frame far more than the cow bar does)
+PHOTO_FRAME_BY = {"nursery": 0.82, "christmas": 0.74, "linen": 0.72, "windowsill": 0.68}
+# and its turn: the bunny bar is shot nearly square-on, the cow bar turned a little
+PHOTO_YAW_BY = {"nursery": 6.0}
 
 # What the set builders consult while a stage is built (reset per render).
 _PHOTO = {}
 
 
 def photo_opts(view):
-    base = PHOTO_V2 if view.get("photo") == "v2" else PHOTO_V1
-    return {k: view.get(k, v) for k, v in base.items()}
+    v2 = view.get("photo") == "v2"
+    base = PHOTO_V2 if v2 else PHOTO_V1
+    po = {k: view.get(k, v) for k, v in base.items()}
+    if v2 and "photoFrame" not in view:
+        po["photoFrame"] = PHOTO_FRAME_BY.get(view.get("stage"), po["photoFrame"])
+    if v2 and "photoYawDeg" not in view:
+        po["photoYawDeg"] = PHOTO_YAW_BY.get(view.get("stage"), po["photoYawDeg"])
+    return po
 
 
 def photo_camera_view(view, v):
@@ -3476,6 +3491,29 @@ def face_point(data, z_offset, cx, cy, yaw):
     return (sum(b[1] for b in best) / n, sum(b[2] for b in best) / n, sum(b[3] for b in best) / n)
 
 
+def footprint_polar(data, cx, cy, yaw, bins=48):
+    """The piece's footprint as the farthest yarn in each of `bins` directions
+    round its centre, in the STAGE frame (turned with the camera's yaw), so a
+    prop can lie right up to the piece without touching it."""
+    out = [0.0] * bins
+    c, s_ = math.cos(-yaw), math.sin(-yaw)
+    for st in data["strokes"]:
+        for poly in st["filaments"]:
+            for pt in poly[::3]:
+                x, y = pt[0] * S - cx, -pt[1] * S - cy
+                lx, ly = x * c - y * s_, x * s_ + y * c
+                k = int((math.atan2(ly, lx) / (2 * math.pi) + 0.5) * bins) % bins
+                r = math.hypot(lx, ly)
+                if r > out[k]:
+                    out[k] = r
+    return out
+
+
+# r3: a warm window key between WARM and GOLD (full GOLD pushed the brown
+# chenille orange)
+KEY_V2 = (1.0, 0.88, 0.74)
+
+
 def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, scene):
     """The window rig: one soft warm key from the side, a broad dim fill on the
     far side, a small rim from behind on the key's side. The stage's own
@@ -3493,7 +3531,7 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
         e = math.radians(el_deg)
         return (-dist * math.cos(e) * math.sin(a), -dist * math.cos(e) * math.cos(a), aim[2] + dist * math.sin(e))
     made = []
-    key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, GOLD)
+    key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, KEY_V2)
     made.append(key)
     if po["photoFill"] > 0:
         side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
@@ -3525,15 +3563,24 @@ def _crumple(H, R, amp, seed=0.0):
         if m <= 0.0:
             return ring
         f = 0.0
-        for wl, w in ((0.55, 1.0), (0.26, 0.55), (0.12, 0.22)):
-            q = Vector((x / (wl * H), y / (wl * H), 0.37)) + o
+        # r3: creases, not dunes — each layer is ridged noise stretched ~3:1
+        # along its own direction (and gently warped so the creases curve),
+        # the sharp crest of a fold with soft slopes either side
+        wx = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 1.7)) + o)
+        wy = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 4.1)) + o)
+        xw, yw = x + 0.25 * H * wx, y + 0.25 * H * wy
+        for ang, wl, w in ((0.4, 0.5, 1.0), (1.9, 0.32, 0.7), (2.8, 0.2, 0.4), (1.1, 0.12, 0.2)):
+            ca, sa = math.cos(ang + seed), math.sin(ang + seed)
+            u = xw * ca + yw * sa
+            v = -xw * sa + yw * ca
+            q = Vector((u / (wl * H * 2.6), v / (wl * H * 0.85), 0.37 + ang)) + o
             n = noise.noise(q)
-            f += w * ((1.0 - abs(n)) ** 2 - 0.45)
+            f += w * ((1.0 - abs(n)) ** 3 - 0.3)
         return ring + amp * H * m * f
     return h
 
 
-def _bunch_v2(root, H, R, vis, ground):
+def _bunch_v2(root, H, R, vis, ground, foot=None):
     """The cow bar's dried bunch, built from real thin parts: ~70 wiry stems
     tied with twine behind the piece's left shoulder, the heads fanning forward
     and left over the cloth — lavender spikes of tiny florets, chamomile
@@ -3547,10 +3594,19 @@ def _bunch_v2(root, H, R, vis, ground):
         return _hash01(rng_k[0], salt)
     keep = R * 1.28 + 0.04 * H
 
+    def keep_at(x, y):
+        if not foot:
+            return keep
+        nb = len(foot)
+        k = int((math.atan2(y, x) / (2 * math.pi) + 0.5) * nb) % nb
+        # the widest of this bin and its neighbours, plus a finger's gap
+        return max(foot[(k - 1) % nb], foot[k], foot[(k + 1) % nb]) + 0.05 * H
+
     def clear(p):
         d = math.hypot(p[0], p[1])
-        if d < keep:
-            f = keep / max(d, 1e-6)
+        kr = keep_at(p[0], p[1])
+        if d < kr:
+            f = kr / max(d, 1e-6)
             return (p[0] * f, p[1] * f, p[2])
         return p
 
@@ -3583,23 +3639,24 @@ def _bunch_v2(root, H, R, vis, ground):
     # the tie, behind the piece's left shoulder; heads fan forward-left
     # (the square listing frame leaves ~15% beside the piece, so the bunch runs
     # from BEHIND the left shoulder out to the frame's front-left corner)
-    tx, ty = -0.6 * R, 1.3 * R
-    gx, gy = -0.88 * vis.hw(0.0), -0.6 * R
+    tx, ty = -0.75 * R, 1.35 * R
+    gy = max(-1.3 * R, vis.y_near() + 0.15 * H)
+    gx = -0.72 * vis.hw(gy)
     a0 = math.atan2(gy - ty, gx - tx)
     reach = math.hypot(gx - tx, gy - ty)
     ax, ay = math.cos(a0), math.sin(a0)
     px, py = -ay, ax
-    N = 72
-    kinds = ["lav"] * 22 + ["cham"] * 14 + ["wheat"] * 13 + ["puff"] * 8 + ["wisp"] * 10 + ["gyp"] * 5
+    N = 130
+    kinds = ["lav"] * 36 + ["cham"] * 26 + ["wheat"] * 22 + ["puff"] * 12 + ["wisp"] * 22 + ["gyp"] * 12
     for kk in range(N):
         kind = kinds[(kk * 37) % len(kinds)]
         lane = (rnd(1) * 2 - 1)
-        L = (0.82 + 0.3 * rnd(2)) * reach
-        tail = (0.22 + 0.2 * rnd(3)) * H
-        fan = lane * (0.05 + 0.32 * rnd(4))   # angular spread of the heads
+        L = (0.45 + 0.65 * rnd(2)) * reach
+        tail = (0.3 + 0.3 * rnd(3)) * H
+        fan = lane * (0.05 + 0.42 * rnd(4)) - 0.08   # angular spread of the heads (biased away from the piece)
         ca, sa = math.cos(fan), math.sin(fan)
         dx, dy = ax * ca - ay * sa, ay * ca + ax * sa
-        stack = 0.035 * H * (1.0 - abs(lane)) + 0.012 * H * rnd(5)
+        stack = 0.06 * H * (1.0 - abs(lane)) + 0.02 * H * rnd(5)
         pts = []
         M = 14
         for j in range(M + 1):
@@ -3608,7 +3665,7 @@ def _bunch_v2(root, H, R, vis, ground):
             bow = 0.03 * H * math.sin(math.pi * max(0.0, min(1.0, t))) * (rnd(6) - 0.3)
             x = tx + dx * L * t + px * (lane * 0.025 * H + w + bow)
             y = ty + dy * L * t + py * (lane * 0.025 * H + w + bow)
-            lift = stack * (1.0 - 0.6 * max(0.0, t)) + 0.008 * H + 0.05 * H * max(0.0, t) ** 2 * rnd(7)
+            lift = stack * (1.0 - 0.3 * max(0.0, t)) + 0.008 * H + 0.12 * H * math.sin(math.pi * 0.5 * max(0.0, t)) * (0.4 + 0.6 * rnd(7))
             pts.append(on(x, y, lift))
         add_curve(("stem", kk % 4), pts, 0.0032 * H * (0.8 + 0.4 * rnd(8)))
         tip = Vector(pts[-1])
@@ -3619,17 +3676,17 @@ def _bunch_v2(root, H, R, vis, ground):
         if up.z < 0:
             up = -up
         if kind == "lav":
-            spike = (0.13 + 0.06 * rnd(9)) * H
-            nw = 9
+            spike = (0.17 + 0.08 * rnd(9)) * H
+            nw = 11
             for q in range(nw):
                 c = tip - u * spike * (1.0 - q / (nw - 1))
-                rr = 0.0075 * H * (0.65 + 0.35 * math.sin(math.pi * (q + 1) / (nw + 1)))
+                rr = 0.0095 * H * (0.65 + 0.35 * math.sin(math.pi * (q + 1) / (nw + 1)))
                 for f in range(4):
                     ang = q * 1.3 + f * math.pi / 2
                     off = side * math.cos(ang) + up * math.sin(ang)
                     fl = (c + off * rr * 0.8 + up * 0.002 * H)
                     add_ell("lav" if (q + f + kk) % 3 else "lav2", fl, (u * 0.6 + off * 0.8).normalized(),
-                            0.0062 * H, 0.0032 * H)
+                            0.008 * H, 0.0042 * H)
         elif kind == "cham":
             # 2-3 heads on short pedicels branching off the top
             nh = 2 + int(rnd(10) * 2)
@@ -3641,23 +3698,23 @@ def _bunch_v2(root, H, R, vis, ground):
                 face = (Vector((0.0, -0.45, 1.0)) + br * 0.3).normalized()
                 fs = face.cross(Vector((1, 0, 0))).normalized()
                 ft = face.cross(fs).normalized()
-                hr = (0.016 + 0.006 * rnd(13)) * H
-                add_ell("eye", c + face * 0.0035 * H, face, 0.0045 * H, 0.0075 * H, 0.0075 * H)
+                hr = (0.022 + 0.008 * rnd(13)) * H
+                add_ell("eye", c + face * 0.0045 * H, face, 0.006 * H, 0.0105 * H, 0.0105 * H)
                 npet = 13
                 for pp in range(npet):
                     ang = 2 * math.pi * pp / npet + rnd(14) * 0.2
                     d = (fs * math.cos(ang) + ft * math.sin(ang))
                     pc = c + d * hr * 0.62 - face * 0.002 * H
-                    add_ell("petal", pc, (d - face * 0.25).normalized(), hr * 0.42, 0.0032 * H, 0.0009 * H)
+                    add_ell("petal", pc, (d - face * 0.25).normalized(), hr * 0.42, 0.0042 * H, 0.0011 * H)
         elif kind == "wheat":
-            ear = (0.09 + 0.03 * rnd(15)) * H
-            ng = 14
+            ear = (0.12 + 0.04 * rnd(15)) * H
+            ng = 16
             for g in range(ng):
                 c = tip - u * ear * (1.0 - g / (ng - 1))
                 sgn = 1 if g % 2 else -1
                 gd = (u * 0.8 + side * sgn * 0.45 + up * 0.2).normalized()
                 gc = c + side * sgn * 0.004 * H
-                add_ell("wheat", gc, gd, 0.0085 * H, 0.0038 * H)
+                add_ell("wheat", gc, gd, 0.011 * H, 0.005 * H)
                 if g > 3:
                     aw = [tuple(gc + gd * 0.008 * H), tuple(gc + gd * 0.05 * H + up * 0.006 * H),
                           tuple(gc + gd * 0.09 * H + up * 0.004 * H)]
@@ -3732,7 +3789,8 @@ def _bunch_v2(root, H, R, vis, ground):
     pts.append(on(pts[-1][0] - 0.05 * H, pts[-1][1] - 0.07 * H, 0.004 * H))
     pts.append(on(pts[-1][0] - 0.04 * H, pts[-1][1] - 0.1 * H, 0.003 * H))
     _curve("b2_tie", root, twine, pts, 0.0045 * H)
-    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), keep-out r %.1f" % (N, tx, ty, keep))
+    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s" % (
+        N, tx, ty, gx, gy, "polar" if foot else "r %.1f" % keep))
 
 
 def grade_golden(scene, warmth=1.0):
