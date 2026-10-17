@@ -495,9 +495,7 @@ async function stageRender(args: Args): Promise<void> {
   const { crochetSpendWindow, overCrochetCap, overCrochetMonthlyCap } = await import(
     '../src/lib/studio/generation/bulk/spend-guard'
   )
-  const { fargateRenderUsd, FAL_CREATIVE_UPSCALE_USD, ILLUSTRATION_USD } = await import(
-    '../src/lib/studio/generation/bulk/crochet-cost'
-  )
+  const { crochetRenderUsd } = await import('../src/lib/studio/generation/bulk/crochet-cost')
   const { prisma } = await import('@homemade/db')
 
   if (!fargateRenderWired()) {
@@ -516,10 +514,8 @@ async function stageRender(args: Args): Promise<void> {
   }
 
   for (const entry of todo) {
-    const cost =
-      fargateRenderUsd() +
-      FAL_CREATIVE_UPSCALE_USD +
-      (entry.treatment === 'grid-tapestry' ? ILLUSTRATION_USD : 0)
+    // A charted tapestry pays its illustration but never the Fal finish.
+    const cost = crochetRenderUsd(entry.treatment)
 
     // THE BUDGET CEILING, before the spend rather than after it.
     if (args.maxSpend !== undefined && manifest.spentUsd + cost > args.maxSpend) {
@@ -873,8 +869,8 @@ async function stageEstimate(args: Args): Promise<void> {
   console.log(`  render wall clock          ${cost.RENDER_WALL_CLOCK_MINUTES} min per Fargate task`)
   console.log(`  render attempts/candidate  ${cost.RENDER_ATTEMPTS_PER_CANDIDATE} (one repair render allowed, assumed rate)`)
   console.log(`  pass rate                  ${(cost.ASSUMED_PASS_RATE * 100).toFixed(0)}% of judged candidates kept — NOT YET MEASURED`)
-  console.log(`  tapestry share             ${(cost.TAPESTRY_SHARE * 100).toFixed(0)}% of candidates also buy an illustration`)
-  console.log(`  Fal creative upscale       ${money(cost.FAL_CREATIVE_UPSCALE_USD)} per hero — least certain rate, correct from an invoice`)
+  console.log(`  tapestry share             ${(cost.TAPESTRY_SHARE * 100).toFixed(0)}% of candidates buy an illustration and skip the Fal finish`)
+  console.log(`  Fal creative upscale       ${money(cost.FAL_CREATIVE_UPSCALE_USD)} per hero, tapestries excepted — least certain rate, correct from an invoice`)
   console.log('\nCorrect any of these in apps/web/src/lib/studio/generation/bulk/crochet-cost.ts.')
   console.log(`The daily render cap is the backstop: at the current cap a full day cannot exceed about ${money(
     cost.estimateCrochetCost(1, { passRate: 1 }).totalUsd * 40,

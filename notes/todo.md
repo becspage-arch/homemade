@@ -9,7 +9,7 @@ The live job list is `/mnt/project-files/homemade/crochet-bar/TRACKER.md`; rules
 3. Engine rounds still to do: soft squash (Fable), motif joining, play-food staging, colourwork, lace, then garments.
 4. Bec: merge the train to main (one deploy verification).
 5. Bec: switch on the crochet autopilot (every 8 hours plus its marker, 3 batches of 8 a day, $100 a month cap). Only after the toys pass. Then judge its first report on `claude/crochet-routine-reports`.
-6. Go-live gates (completeness, vision sweep, tagging, reindex, category page and descriptions), then add `crochet` to `LAUNCH_VISIBLE_CATEGORY_SLUGS` on a train, with Bec's sign-off.
+6. Go-live gates (completeness, vision sweep, tagging, reindex, category page and descriptions), then add `crochet` to `LAUNCH_VISIBLE_CATEGORY_SLUGS` on a train, with Bec's sign-off. Tooling ready on claude/crochet-golive-prep (17 Oct): `scripts/crochet-golive-check.ts` says which gates fail; the order is in `crochet-bar/GO-LIVE-READINESS.md`.
 
 ## Cross-stitch: to sign-off, in order (6 September 2026)
 1. Needlework: its own audit first (Rebecca is writing the prompt; do not start before it), then the candidates-mode conversion in the same shape as cross-stitch. Its cron has no autopilot row and skips today, so it spends nothing.
