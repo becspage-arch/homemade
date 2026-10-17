@@ -197,6 +197,12 @@ export interface StitchSpec {
   hookDepthScale?: number
   /** Side-by-side offset (yarn radii) when two stitches share one loop. */
   spread?: number
+  /** Worked-face sign (edging.ts, turned rows): −1 = a stitch of a TURNED row,
+   *  worked from the other face. Use it with a frame whose height is its
+   *  along-row direction turned +90° (the mirror of `along`), so the stitch is
+   *  the ordinary one rotated half a turn about its own height axis. Its nodes'
+   *  crown canopy is mirrored in z to match. Absent = +1 (every motif unchanged). */
+  fz?: number
 }
 
 /** The no-turn settings every motif stitch is worked with (buildRounds'). */
@@ -214,6 +220,8 @@ export class MotifStrand {
   private readonly exempt = new Set<number>()
   private readonly free = new Set<number>()
   private readonly apexZ = new Map<number, number>()
+  /** Nodes of stitches worked from the other face (StitchSpec.fz −1). */
+  private readonly flipped = new Set<number>()
   anchorPins = 0
   /** Per-node piece-section label (for words / colour / later assembly). */
   readonly section: string[] = []
@@ -332,7 +340,7 @@ export class MotifStrand {
       c: this.S.links.length,
       id,
       s: 1,
-      fz: 1,
+      fz: spec.fz ?? 1,
       by,
       ty,
       xCrown: spec.xCrown,
@@ -378,6 +386,7 @@ export class MotifStrand {
     for (const k of r.head) if (k !== r.crownBack) this.exempt.add(k)
     this.apex.add(r.crownBack)
     this.apexZ.set(r.crownBack, headApexRelief(d.zh, SURFACE_LAY))
+    if ((spec.fz ?? 1) < 0) for (let i = from; i < this.S.nodes.length; i++) this.flipped.add(i)
     const cn = this.S.nodes[r.crownBack]!
     return { back: r.crownBack, front: r.crownFront, p: v(cn.x, cn.y), id }
   }
@@ -432,8 +441,14 @@ export class MotifStrand {
    * mesh row's ch-sp) sits on top of the stitch bases that wrap it, its back
    * bump clear of the table they lie on.
    */
-  chain(n: number, path: V2[], opts: { pitchYr?: number; hold?: boolean; turning?: number; lift?: number } = {}): ChainLoop[] {
+  chain(n: number, path: V2[], opts: { pitchYr?: number; hold?: boolean; turning?: number; lift?: number; fz?: number } = {}): ChainLoop[] {
     const yr = this.yr
+    // fz −1 (edging.ts): a chain made in a TURNED row, from the other face —
+    // the same chain turned half over about its own line (lateral and z both
+    // flipped), so its back bump lies on the world +z side. Its crossings ride
+    // over their folds on THAT face, which the audit reads from the links'
+    // zSign. Absent = +1 (every chain unchanged).
+    const fzc = opts.fz ?? 1
     const p = yr * (opts.pitchYr ?? CHAIN_PITCH_YR)
     const hw = yr * 1.05
     const r = yr * CHAIN_REACH_YR
@@ -482,7 +497,7 @@ export class MotifStrand {
       const P = (tt: number, w: number, z: number): number => {
         const q = at(tt)
         const ll = left(q.u)
-        const pt = { x: q.p.x + ll.x * w, y: q.p.y + ll.y * w, z: z + lift }
+        const pt = { x: q.p.x + ll.x * w * fzc, y: q.p.y + ll.y * w * fzc, z: (z + lift) * fzc }
         if (lastQ && CHAIN_SUBDIV) this.S.push((lastQ.x + pt.x) / 2, (lastQ.y + pt.y) / 2, (lastQ.z + pt.z) / 2)
         lastQ = pt
         return this.S.push(pt.x, pt.y, pt.z)
@@ -525,9 +540,10 @@ export class MotifStrand {
         // tip turns on) are bent back over the chain before them by the stitch
         // worked into it, so they too are held by wrapping that fold.
         const wrap = last || k >= n - (opts.turning ?? 0)
-        this.S.links.push({ j: this.j, c: k, role: wrap ? 'ring' : 'cross', hook: crossUp, below: prevApex, axis: ax })
-        if (crossDn >= 0 && wrap) this.S.links.push({ j: this.j, c: k, role: 'ring', hook: crossDn, below: prevApex, axis: ax })
-        else if (crossDn >= 0) this.S.links.push({ j: this.j, c: k, role: 'cross', hook: crossDn, below: prevApex, axis: ax })
+        const zs = fzc < 0 ? { zSign: -1 } : {}
+        this.S.links.push({ j: this.j, c: k, role: wrap ? 'ring' : 'cross', hook: crossUp, below: prevApex, axis: ax, ...zs })
+        if (crossDn >= 0 && wrap) this.S.links.push({ j: this.j, c: k, role: 'ring', hook: crossDn, below: prevApex, axis: ax, ...zs })
+        else if (crossDn >= 0) this.S.links.push({ j: this.j, c: k, role: 'cross', hook: crossDn, below: prevApex, axis: ax, ...zs })
       }
       prevApex = apex
       // A chain is held along its line (laterally) when blocked; free along it.
@@ -562,9 +578,11 @@ export class MotifStrand {
     const loose = looseFlags(this.S)
     const zBand = nodes.map((n, i) => {
       if (n.w === 0 || loose?.[i] || this.free.has(i)) return null
-      if (this.apex.has(i)) return { lo: this.apexZ.get(i)! }
+      const flip = this.flipped.has(i)
+      if (this.apex.has(i)) return flip ? { hi: -this.apexZ.get(i)! } : { lo: this.apexZ.get(i)! }
       if (this.exempt.has(i)) return null
-      return { hi: CANOPY_FRAC * headApexRelief(dimsFor(this.yr, 'sc').zh, SURFACE_LAY) }
+      const hi = CANOPY_FRAC * headApexRelief(dimsFor(this.yr, 'sc').zh, SURFACE_LAY)
+      return flip ? { lo: -hi } : { hi }
     })
     return {
       model: {

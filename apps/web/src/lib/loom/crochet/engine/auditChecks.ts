@@ -255,7 +255,9 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
     if (dx < 0) return `crossing is past its loop's fold (dx=${(dx / yr).toFixed(2)}yr) — expelled forward`
     if (dx > yr * 2.6) return `crossing slid back out of its loop (dx=${(dx / yr).toFixed(2)}yr)`
     if (Math.abs(dyc) > yr * 1.6) return `crossing outside the loop's mouth (dy=${(dyc / yr).toFixed(2)}yr) — expelled sideways`
-    if (h.z < b.z - yr * 0.15) return 'crossing settled UNDER the fold it should ride over'
+    // (a chain made from the other face, a turned row's, rides over its fold
+    // on that face: zSign −1; absent = +1, the front)
+    if ((h.z - b.z) * (l.zSign ?? 1) < -yr * 0.15) return 'crossing settled UNDER the fold it should ride over'
     return null
   }
   // A link worked on a 3D surface with no global frame (spiralTree's helicoid):

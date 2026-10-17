@@ -41,7 +41,9 @@ export interface StitchLink {
   role: 'hook' | 'ring' | 'cross' | 'through'
   hook: number
   below: number
-  /** 'through' only: which z-side of `below` the hook must settle on (±1). */
+  /** 'through': which z-side of `below` the hook must settle on (±1).
+   *  'cross': which face the crossing rides over its fold on (−1 = a chain made
+   *  from the back, a turned row's; absent = the front). */
   zSign?: number
   /**
    * The link's own fabric frame (free-form motifs, motifs/kit.ts): the

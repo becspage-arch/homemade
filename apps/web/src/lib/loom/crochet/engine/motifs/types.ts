@@ -27,6 +27,10 @@ export type MotifId =
   | 'granny-square'
   | 'solid-square'
   | 'solid-hexagon'
+  // Edgings worked in rows (edging.ts, opt-in: not registered either).
+  | 'picot-edging'
+  | 'shell-lace-edging'
+  | 'chain-loop-edging'
 
 export interface MotifOptions {
   /** Default 'fine' (fine cotton, 2.5 mm hook). */
