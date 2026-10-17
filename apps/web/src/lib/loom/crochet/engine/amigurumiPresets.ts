@@ -1112,16 +1112,17 @@ const BUNNY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 20, M: 26, L: 28 }
 const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 8, M: 10, L: 10 }
 /**
  * The OPEN lop ear (cupped-ear pass, 2026-10-17; `earPiece.ts`, opt-in via
- * `AmigurumiChoices.cuppedEars`): the closed lop's own width and length,
+ * `AmigurumiChoices.cuppedEars`): the earlier closed lop's width and length,
  * worked tip first +3 a round (a rounded tip), narrowed a third toward the
  * base and left open, pressed (S 8 yarn radii, M and L 10) with the plates
  * bowed so the lined front stays softly hollow. Every size audits clean
- * (earPiece.test.ts). Starting numbers only; the look is tuned by eye.
+ * (earPiece.test.ts). Kept wider than sleepy bunny 4's closed ear (12/15/15):
+ * at that width the press leaves no hollow (-0.5 mm). Tune by eye.
  */
 export const BUNNY_LOP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
-  S: { kind: 'lop', width: 12, length: 28, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 8 },
-  M: { kind: 'lop', width: 15, length: 35, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
-  L: { kind: 'lop', width: 15, length: 39, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
+  S: { kind: 'lop', width: 18, length: 32, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 8 },
+  M: { kind: 'lop', width: 21, length: 40, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
+  L: { kind: 'lop', width: 21, length: 42, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
 }
 /** Sewn on the upper side of the head, hanging down and a little out. */
 /** Sleepy bunny 4: sewn LOWER on the side (under the hat band, the bar's)
