@@ -40,6 +40,7 @@ import {
   type YarnFibre,
 } from '../src/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, programScene, geometryHash, type Staging } from '../src/lib/loom/crochet/engine/programScene'
+import { photorealFinishAllowed } from '../src/lib/loom/crochet/engine/heroPolicy'
 import {
   compileComposition,
   compositionScene,
@@ -127,7 +128,7 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
   const scene = programScene(withStageSeed(program, name), built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
-  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'sc', program.yarnFibre ?? 'cotton')
+  const art = await blenderHero(scene, name, outDir, options.hero !== false, 'sc', program.yarnFibre ?? 'cotton', program)
   return { ...result, ...art }
 }
 
@@ -144,9 +145,10 @@ async function blenderHero(
   hero: boolean,
   heroPromptKey = 'sc',
   fibre: YarnFibre = 'cotton',
+  program?: CrochetProgram | CompositionProgram,
 ): Promise<{ scenePath: string; basePng: string; heroPng: string | null; fidelityScore: number | null }> {
   const { scenePath, basePng } = await renderSceneBase(scene, name, outDir)
-  const { heroPng, fidelityScore } = await photorealHero(basePng, hero, heroPromptKey, fibre)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, hero, heroPromptKey, fibre, program)
   return { scenePath, basePng, heroPng, fidelityScore }
 }
 
@@ -191,7 +193,12 @@ export async function photorealHero(
   hero: boolean,
   heroPromptKey = 'sc',
   fibre: YarnFibre = 'cotton',
-): Promise<{ heroPng: string | null; fidelityScore: number | null }> {
+  program?: CrochetProgram | CompositionProgram | null,
+): Promise<{ heroPng: string | null; fidelityScore: number | null; skipped?: 'charted-colourwork' }> {
+  // A charted colourwork piece (tapestry) never takes an AI finish: the hero is
+  // the exact stitched chart. See heroPolicy.ts. Checked before the key, so the
+  // rule holds on a box that has FAL_KEY.
+  if (!photorealFinishAllowed(program)) return { heroPng: null, fidelityScore: null, skipped: 'charted-colourwork' }
   if (!hero || !process.env.FAL_KEY) return { heroPng: null, fidelityScore: null }
   const { finishHero } = await aspenHero()
   try {
@@ -459,6 +466,10 @@ export interface ProgramRenderStart {
   /** The yarn fibre look the base was rendered in — carried across the two
    *  halves so `finishProgramRender`'s Fal prompt matches it. */
   fibre: YarnFibre
+  /** True for a charted colourwork piece (tapestry): the finish ships the base
+   *  render and runs no AI step (heroPolicy.ts). Absent on an older handle =
+   *  false, the old behaviour. */
+  exactOnly?: boolean
 }
 
 /** Write the scene and start its render, without waiting. */
@@ -486,7 +497,7 @@ export async function startProgramRender(
   const { built, yr, problems } = compileRelaxAudit(program, options.yr)
   const ghash = geometryHash(built)
   const fibre = program.yarnFibre ?? 'cotton'
-  const base = { name, problems, geometryHash: ghash, yr, fibre }
+  const base = { name, problems, geometryHash: ghash, yr, fibre, exactOnly: !photorealFinishAllowed(program) }
   // The audit gate, BEFORE a task is launched: never pay for a render of
   // geometry that is not genuinely stitched.
   if (problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'sc' }
@@ -531,7 +542,7 @@ export async function finishProgramRender(
   mkdirSync(outDir, { recursive: true })
   const basePng = resolve(outDir, `${start.name}.png`)
   await finishBaseRender(start.handle, basePng)
-  const { heroPng, fidelityScore } = await photorealHero(basePng, options.hero !== false, start.heroPromptKey, start.fibre)
+  const { heroPng, fidelityScore } = await photorealHero(basePng, options.hero !== false && !start.exactOnly, start.heroPromptKey, start.fibre)
   return {
     name: start.name,
     problems: [],

@@ -215,7 +215,7 @@ async function main(): Promise<void> {
       if (!r.basePng) continue
       const promptKey = r.plan.kind === 'composition' ? 'amigurumi' : 'sc'
       const fibre = (r.plan.program as CrochetProgram | CompositionProgram).yarnFibre ?? 'cotton'
-      const { heroPng, fidelityScore } = await photorealHero(r.basePng, true, promptKey, fibre)
+      const { heroPng, fidelityScore } = await photorealHero(r.basePng, true, promptKey, fibre, r.plan.program as CrochetProgram | CompositionProgram)
       r.heroPng = heroPng
       r.fidelityScore = fidelityScore
       console.log(

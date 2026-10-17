@@ -293,7 +293,10 @@ export const CROCHET_FORMS: Record<string, FormEnvelope[]> = {
       // in-step budget still caps an Inngest build at 40 x 40.
       cols: [20, 60],
       rows: [20, 60],
-      staging: 'flatlay',
+      // Hung on the wall stage from a dowel, whipstitched, with a cord and
+      // tassels (engine/tapestryHang.ts), not laid flat: a wall hanging is sold
+      // hanging (tapestry fix, Oct 2026).
+      staging: 'wall',
       yarnWeight: 'worsted',
       note: 'A tapestry-crochet picture panel to hang, the colour changing stitch by stitch.',
       // Rebecca, 7 September 2026: the routine skips this shelf until the

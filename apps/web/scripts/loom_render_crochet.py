@@ -1296,6 +1296,12 @@ def build_branch(pr, z_offset):
     sp.order_u = 3
     ob = bpy.data.objects.new("branch", cu)
     bpy.context.scene.collection.objects.link(ob)
+    if pr.get("wood"):
+        # A smooth wooden DOWEL (tapestry fix, additive): a turned rod with the
+        # grain along its length, not bark. Only a prop that asks for it.
+        light_hex, dark_hex = pr["wood"][0], pr["wood"][1]
+        ob.data.materials.append(wood_material("dowel", light_hex, dark_hex, along_x=True, rough=0.5))
+        return
     ob.data.materials.append(bark_material(pr.get("hex", "#6e5a48")))
 
 

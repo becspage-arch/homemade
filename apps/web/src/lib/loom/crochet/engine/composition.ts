@@ -1207,7 +1207,12 @@ export interface BlenderScene {
   }[]
   /** Non-yarn moulded notions (safety eyes, a nose). Absent for every scene
    *  that has none, so those scenes are byte-identical to before. */
-  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number; torusMinor?: number; metal?: boolean }[]
+  props?: (
+    | { centre: number[]; axes: number[][]; hex: string; gloss: number; torusMinor?: number; metal?: boolean }
+    /** A rod along [x, y, z, radius] points (the renderer's `branch`); `wood`
+     *  = a smooth grained dowel (a hung tapestry, tapestryHang.ts). */
+    | { branch: number[][]; hex: string; wood?: [string, string] }
+  )[]
   /** The yarn fibre look (STITCH_ENGINE yarn-fibre pass) — read by
    *  loom_render_crochet.py's `build_yarn`/`yarn_material`. Always written
    *  (defaulting to 'cotton') so the render script never has to guess. */
@@ -1230,7 +1235,7 @@ export interface BlenderScene {
     groundScale?: number
     lightRig?: 'product'
     minFieldMm?: number
-    stage?: HeroStage
+    stage?: HeroStage | 'wall'
     /** Multiplies the stage's own zoom (a tall piece — horns — pulls back). */
     stageZoom?: number
     stageVariant?: string
