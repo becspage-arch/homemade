@@ -14,6 +14,12 @@
  * `--vision-signed-off` and `--premium-checked` mark those two manual gates
  * done once they are, so the report can come back ready.
  *
+ * `--overlay <file>` answers "what would this change flip?" without making it:
+ * a JSON map of slug to { visibility?: 'PRIVATE', set?: { field: value } } is
+ * laid over the live rows in memory before the gates run (a PRIVATE row drops
+ * out of the public set). `crochet-starter-fix.ts --overlay-out` writes one.
+ * The database is still only read.
+ *
  * Run:
  *   pnpm --filter "@homemade/db" exec tsx scripts/crochet-golive-check.ts
  *   pnpm --filter "@homemade/db" exec tsx scripts/crochet-golive-check.ts --sweep-list /tmp/crochet-sweep.csv
@@ -22,7 +28,7 @@
  */
 
 import { config as loadEnv } from 'dotenv'
-import { existsSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -121,6 +127,26 @@ async function main(): Promise<void> {
       styleTagCount: styleCount.get(r.id) ?? 0,
     }
   })
+
+  const overlayFile = arg('--overlay')
+  if (overlayFile) {
+    const overlay = JSON.parse(readFileSync(overlayFile, 'utf8')) as Record<string, { visibility?: string; set?: Record<string, unknown> }>
+    let dropped = 0
+    let changed = 0
+    for (let i = rows.length - 1; i >= 0; i--) {
+      const row = rows[i]
+      const entry = row?.slug ? overlay[row.slug] : undefined
+      if (!row || !entry) continue
+      if (entry.visibility === 'PRIVATE') {
+        rows.splice(i, 1)
+        dropped++
+      } else if (entry.set) {
+        rows[i] = { ...row, ...entry.set } as typeof row
+        changed++
+      }
+    }
+    console.log(`SIMULATED with overlay ${overlayFile}: ${dropped} row(s) taken out of the public set, ${changed} changed in memory. Nothing is written.`)
+  }
 
   const shelves = await prisma.subCategory.findMany({
     where: { categoryId: category.id },
