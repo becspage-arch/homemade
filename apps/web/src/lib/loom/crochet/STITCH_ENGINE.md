@@ -3763,7 +3763,10 @@ pattern is generated from the same round arrays, so the words carry the new coun
   1.6 fail one or two hooks at the spiral step and take the next width down, `LOP_EAR_GAUGE_WIDTH`). The opt-in ear pieces (§8n, `cuppedEars`) scale too, via `gEar`: a cup's width in sixes and its depth
   and rim roll in whole rounds, an open lop's width in threes (same cap) and length x g, its `pressYr` x g so the
   press keeps its mm. A gauge outside 1.3 / 1.4 / 1.6 must go through gauge.test.ts before it ships, and
-  gauge != 1 profiles are not in `AUDITED_PROFILES` (the save path does not take a gauge yet).
+  gauge != 1 profiles are not in `AUDITED_PROFILES`. The Studio save path takes `gauge` (exactly 1, 1.3, 1.4, 1.6),
+  `cuppedEars` and `seatBackLegs` only in the combinations a test audited (`designerAudit.ts`: gauge on the M bear,
+  bunny and cow, no hat or hair; cupped ears on bunny and cow; seated legs on the M cow at 1 / 1.3 / 1.4), and checks
+  its pieces against the profiles the builder derives for exactly those (`isDesignerAuditedProfile`), never hand-copied.
 - Render memory: stitches and scene points both go up ~g^2 (bunny 1.4: 1.09 M -> 2.06 M points); the fine-cotton bunny at 1.4 OOMs the 8 GB probe at bevel 2 and
   fits at `fibreTune.bevel_res: 1` (7.4 GB). Job log: crochet-bar/jobs/gauge.md.
 

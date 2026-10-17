@@ -237,6 +237,10 @@ export interface AmigurumiChoices {
    *  stays softly hollow. Bunny only. Opt-in: absent / false = the closed
    *  pressed lop, and every geometry hash is unchanged. */
   cuppedEars?: boolean
+  /** SEATED BACK LEGS (`CowChoices.seatBackLegs`): the cow's back legs sewn
+   *  against the body's flanks. Cow only. Opt-in: absent / false = today's
+   *  legs, and every geometry hash is unchanged. */
+  seatBackLegs?: boolean
   name?: string
 }
 
@@ -829,6 +833,10 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
     return buildCowProgram({
       size: choices.size, mainHex: choices.mainHex, contrastHex: choices.contrastHex, eyeMm: choices.eyeMm, name: choices.name,
       ...(clampGauge(choices.gauge) !== 1 ? { gauge: clampGauge(choices.gauge) } : {}),
+      // The opt-in switches pass through only when on, so the default calf's
+      // choices (and its program) are the object they always were.
+      ...(choices.cuppedEars === true ? { cuppedEars: true } : {}),
+      ...(choices.seatBackLegs === true ? { seatBackLegs: true } : {}),
     })
   }
   const program = buildBaseProgram(choices)

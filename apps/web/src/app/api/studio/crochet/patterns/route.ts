@@ -25,15 +25,12 @@ import {
 } from '@/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, settledSizeMm, geometryHash } from '@/lib/loom/crochet/engine/programScene'
 import { compileComposition, type CompositionProgram } from '@/lib/loom/crochet/engine/composition'
+import { type AmigurumiChoices } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import {
-  AMIGURUMI_BASE_IDS,
-  FACE_STYLE_IDS,
-  HAT_IDS,
-  buildAmigurumiProgram,
-  isAuditedProfile,
-  presetSettledSizeMm,
-  type AmigurumiChoices,
-} from '@/lib/loom/crochet/engine/amigurumiPresets'
+  DesignerChoicesSchema,
+  buildDesignerProgram,
+  normaliseDesignerChoices,
+} from '@/lib/studio/crochet/designer-choices'
 import {
   compositionBuildOrder,
   compositionNotions,
@@ -48,26 +45,9 @@ export const runtime = 'nodejs'
 // more than the default budget.
 export const maxDuration = 60
 
-const Choices = z.object({
-  base: z.enum(AMIGURUMI_BASE_IDS),
-  size: z.enum(['S', 'M', 'L']),
-  mainHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
-  contrastHex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
-  eyeMm: z.number().int().min(0).max(20),
-  nose: z.boolean(),
-  paws: z.boolean(),
-  face: z.enum(FACE_STYLE_IDS).optional(),
-  hat: z.enum(HAT_IDS).optional(),
-  hatHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  pompomHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  // The doll's dressing (doll.ts): hair, a dress with a frill, lace wings,
-  // flowers. Doll-only; every other base ignores them.
-  hairHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  skirt: z.object({ hex: z.string().regex(/^#[0-9a-fA-F]{6}$/), hemHex: z.string().regex(/^#[0-9a-fA-F]{6}$/) }).optional(),
-  wingsHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  flowersHex: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  name: z.string().max(120).optional(),
-})
+// The designer's choices (designer-choices.ts): the fine-gauge knob and the
+// opt-in switches only in the combinations an engine test audited.
+const Choices = DesignerChoicesSchema
 
 const Body = z.discriminatedUnion('kind', [
   z.object({
@@ -161,7 +141,7 @@ export async function POST(req: Request) {
 
   const built =
     body.kind === 'designer'
-      ? buildFromDesigner(body.choices, name)
+      ? buildFromDesigner(normaliseDesignerChoices(body.choices), name)
       : body.kind === 'amigurumi'
         ? buildAmigurumi(body.program, name)
         : buildPiece(body.program, name)
@@ -303,19 +283,17 @@ function buildPiece(programRaw: unknown, name: string): BuiltPattern | { problem
  * No compile here, and that is deliberate. Whether a piece passes the loom's
  * interlock audit depends only on its stitch, its round counts and the yarn
  * radius, none of which the maker can change: every preset piece is one of the
- * profiles `amigurumi-presets.test.ts` walks through the real audit. Compiling
+ * profiles `amigurumi-presets.test.ts` walks through the real audit, and the
+ * fine-gauge and opt-in builds are only the combinations gauge.test.ts,
+ * cowBackLegs.test.ts and earPiece.test.ts audit (engine/designerAudit.ts). Compiling
  * a large bear takes the better part of a minute, so paying it again on the save
  * would buy nothing but a slow spinner. The render job compiles for real and
  * writes the geometry hash and the exact settled size back.
  */
 function buildFromDesigner(choices: AmigurumiChoices, name: string): BuiltPattern | { problems: string[] } {
-  const program = { ...buildAmigurumiProgram(choices), name }
-  const offProfile = program.parts.filter((p) => !isAuditedProfile(p.rounds))
-  if (offProfile.length) {
-    return { problems: [`Those pieces are not ones we can build: ${offProfile.map((p) => p.name).join(', ')}.`] }
-  }
-  const settled = presetSettledSizeMm(choices.base, choices.size)
-  return amigurumiPattern({ ...program, finishedSizeMm: settled }, settled, null, null)
+  const built = buildDesignerProgram(choices, name)
+  if ('problems' in built) return built
+  return amigurumiPattern(built.program, built.settled, null, null)
 }
 
 /** An assembled amigurumi off the wire (the idea builder's path): every piece is
