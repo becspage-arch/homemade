@@ -231,7 +231,304 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
     return out
 
 
-def yarn_material(name, hexcol, sheen, fibre="cotton"):
+# ---------------------------------------------------------------------------
+# HANDMADE YARN SWITCHES (crochet-bar job yarn2, 17 Oct 2026). Every knob is
+# OFF unless a scene asks for it through `fibreTune`, so every existing render
+# is unchanged. All of it is RENDER-ONLY: the audited stitch geometry (and its
+# geometryHash) is never touched; the renderer perturbs the strand it sweeps.
+#
+#   fibreTune.handmade: 0..1   the one preset switch. 1 turns every knob below
+#                              on at its HANDMADE_PRESET value; 0.5 = half the
+#                              amplitude. An explicit hm_* in fibreTune wins
+#                              (and is used as given, not scaled).
+#
+# Stitch irregularity (a maker's hand): a smooth, seeded value-noise field whose
+# lattice is one stitch across (`hm_cell_r` strand radii), so neighbouring
+# stitches differ while one stitch moves as a whole:
+#   hm_jitter   0..0.5  centreline shift, x the strand radius: stitch size + tilt
+#   hm_loft     0..0.5  outward puff, x the strand radius: loop height
+#   hm_tension  0..0.3  strand radius +- fraction: tight vs loose stitches
+#                       (a tight stitch is also drawn a little inward)
+#   hm_cell_r   3..8    the stitch scale of all the variation, in strand radii
+#   hm_seed     int     the maker (another seed = another hand)
+# Heathered colour:
+#   hm_heather  0..1    per-stitch drift: value +-10%, hue +-0.012, sat +-8% at 1
+#   hm_drift    0..1    a slower drift over a few stitches (dye/spin variation)
+#   hm_crevice  0..1    extra crevice darkening, added to the fibre's own cavity
+# Chenille velvet (strand "single" fibres only):
+#   hm_velvet   0..1    crest lift (stitch tops catch the light) vs the deep
+#                       crevice, and a per-stitch sheen strength (nap patches)
+#   hm_nap      0..1    nap direction: a smooth per-stitch tilt of the shading
+#                       normal, so some stitches catch the light and some don't
+#   hm_ripple   0..1    lumpy pile along the strand: radius +- 9% at 1
+#   hm_loop_twist 0..1  loops much fatter than the fabric strand (the cow's
+#                       fringe) twist round their own axis: a helix of
+#                       0.22 x radius at 1, one turn per `hm_loop_pitch_r` radii
+#   hm_loop_pitch_r 2..6
+#   hm_loop_pile 0..3   pile-hair density multiplier on those loops (forces pile
+#                       on even when `pile_max_radius_mm` would skip them)
+#   hm_loop_ratio 1.2..2  a group is a "loop" when its radius is this many
+#                       times the toy's main strand radius
+# Cotton halo (ply / replied fibres only):
+#   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
+#                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
+# ---------------------------------------------------------------------------
+HANDMADE_PRESET = dict(
+    hm_jitter=0.2, hm_loft=0.16, hm_tension=0.1,
+    hm_heather=0.5, hm_drift=0.5, hm_crevice=0.3,
+    hm_velvet=0.6, hm_nap=0.5, hm_ripple=0.5,
+    hm_loop_twist=0.6, hm_loop_pile=1.5,
+    hm_halo=0.5,
+)
+# constants that ride along with the switch but are not amplitudes
+HANDMADE_FIXED = dict(hm_cell_r=4.5, hm_seed=1, hm_loop_pitch_r=3.2, hm_loop_ratio=1.4)
+
+
+def handmade_params(fp):
+    """`fp` with the handmade switch expanded (a new dict; `fp` is unchanged).
+    No `handmade` and no hm_* key = the same dict back, so off is a no-op."""
+    h = float(fp.get("handmade", 0) or 0)
+    if h <= 0 and not any(k.startswith("hm_") for k in fp):
+        return fp
+    out = dict(fp)
+    for k, v in HANDMADE_PRESET.items():
+        if k not in fp:
+            out[k] = v * h
+    for k, v in HANDMADE_FIXED.items():
+        out.setdefault(k, v)
+    return out
+
+
+def hm_amt(fp, key):
+    return float(fp.get(key, 0) or 0)
+
+
+def _hm_hash(ix, iy, iz, salt):
+    """Integer lattice -> [-1, 1), vectorised (numpy uint64, wraps by design)."""
+    import numpy as np
+    with np.errstate(over="ignore"):
+        h = (ix.astype(np.uint64) * np.uint64(0x9E3779B185EBCA87)
+             ^ iy.astype(np.uint64) * np.uint64(0xC2B2AE3D27D4EB4F)
+             ^ iz.astype(np.uint64) * np.uint64(0x165667B19E3779F9)
+             ^ np.uint64(salt & 0xFFFFFFFFFFFF) * np.uint64(0x27D4EB2F165667C5))
+        h ^= h >> np.uint64(31)
+        h *= np.uint64(0xBF58476D1CE4E5B9)
+        h ^= h >> np.uint64(29)
+    return (h >> np.uint64(11)).astype(np.float64) / float(1 << 53) * 2.0 - 1.0
+
+
+def hm_noise(P, cell, salt):
+    """Smooth seeded value noise in [-1, 1] at points P (N x 3, mm) with a
+    lattice `cell` mm across: C1-continuous (smoothstep trilinear), so the
+    strand it displaces never tears."""
+    import numpy as np
+    q = np.asarray(P, dtype=np.float64) / max(cell, 1e-6)
+    i = np.floor(q).astype(np.int64)
+    f = q - i
+    u = f * f * (3.0 - 2.0 * f)
+    acc = np.zeros(len(q))
+    for dx in (0, 1):
+        wx = u[:, 0] if dx else 1.0 - u[:, 0]
+        for dy in (0, 1):
+            wy = u[:, 1] if dy else 1.0 - u[:, 1]
+            for dz in (0, 1):
+                wz = u[:, 2] if dz else 1.0 - u[:, 2]
+                acc += wx * wy * wz * _hm_hash(i[:, 0] + dx, i[:, 1] + dy, i[:, 2] + dz, salt)
+    return acc
+
+
+def hm_displace(polys, r_mm, fp, ripple=False):
+    """Stitch irregularity on one stroke's polylines (mm), render-only.
+    Returns (new polys as lists of tuples, per-point radius factors per poly).
+    Every poly of a stroke (its plies) sees the SAME field, so plies move
+    together and a stitch shifts, tilts, puffs or tightens as one."""
+    import numpy as np
+    jit, loft, ten = hm_amt(fp, "hm_jitter"), hm_amt(fp, "hm_loft"), hm_amt(fp, "hm_tension")
+    rip = hm_amt(fp, "hm_ripple") if ripple else 0.0
+    cell = fp.get("hm_cell_r", 4.5) * r_mm
+    seed = int(fp.get("hm_seed", 1)) * 1000003
+    arrs = [np.asarray(p, dtype=np.float64).reshape(-1, 3) for p in polys]
+    allp = np.concatenate(arrs) if arrs else np.zeros((0, 3))
+    centroid = allp.mean(axis=0) if len(allp) else np.zeros(3)
+    out_p, out_r = [], []
+    for P in arrs:
+        if len(P) == 0:
+            out_p.append([])
+            out_r.append([])
+            continue
+        d = np.zeros_like(P)
+        rf = np.ones(len(P))
+        if jit > 0:
+            for k in range(3):
+                d[:, k] += jit * r_mm * hm_noise(P, cell, seed + 11 * (k + 1))
+        if loft > 0 or ten > 0:
+            o = P - centroid
+            o /= np.maximum(np.linalg.norm(o, axis=1, keepdims=True), 1e-9)
+            nl = hm_noise(P, cell, seed + 101) if loft > 0 else np.zeros(len(P))
+            nt = hm_noise(P, cell, seed + 202) if ten > 0 else np.zeros(len(P))
+            # loft puffs a loop out (or sinks it); a tight stitch (nt < 0) is
+            # thinner and drawn in a little, a loose one plumper and proud.
+            d += o * (r_mm * (loft * nl + 0.5 * ten * nt))[:, None]
+            rf *= 1.0 + ten * nt
+        if rip > 0:
+            rf *= 1.0 + 0.09 * rip * hm_noise(P, 0.9 * r_mm, seed + 303)
+        Q = P + d
+        out_p.append([tuple(q) for q in Q.tolist()])
+        out_r.append(rf.tolist())
+    return out_p, out_r
+
+
+def hm_strand_colour(nt, col, base, fp, cell_bu):
+    """Heathered colour (render-only): a per-stitch value/hue/sat drift (smooth
+    Voronoi cells one stitch across) plus a slower drift over a few stitches.
+    Returns the new colour socket (unchanged when both knobs are 0)."""
+    het, dri = hm_amt(fp, "hm_heather"), hm_amt(fp, "hm_drift")
+    if het <= 0 and dri <= 0:
+        return col
+    tex = nt.nodes.new("ShaderNodeTexCoord")
+    seed = float(fp.get("hm_seed", 1))
+
+    def offset_coords():
+        mp = nt.nodes.new("ShaderNodeMapping")
+        mp.inputs["Location"].default_value = (seed * 7.31, seed * 3.17, seed * 5.53)
+        nt.links.new(tex.outputs["Object"], mp.inputs["Vector"])
+        return mp.outputs["Vector"]
+    terms = []   # (separate-colour node, amplitude)
+    if het > 0:
+        vor = nt.nodes.new("ShaderNodeTexVoronoi")
+        vor.voronoi_dimensions = "3D"
+        try:
+            vor.feature = "SMOOTH_F1"
+            vor.inputs["Smoothness"].default_value = 0.5
+        except Exception:
+            pass
+        vor.inputs["Scale"].default_value = 1.0 / max(cell_bu, 1e-4)
+        nt.links.new(offset_coords(), vor.inputs["Vector"])
+        sep = nt.nodes.new("ShaderNodeSeparateColor")
+        nt.links.new(vor.outputs["Color"], sep.inputs["Color"])
+        terms.append((sep, het))
+    if dri > 0:
+        nz = nt.nodes.new("ShaderNodeTexNoise")
+        nz.inputs["Scale"].default_value = 1.0 / max(3.0 * cell_bu, 1e-4)
+        nz.inputs["Detail"].default_value = 1.0
+        nt.links.new(offset_coords(), nz.inputs["Vector"])
+        sep = nt.nodes.new("ShaderNodeSeparateColor")
+        nt.links.new(nz.outputs["Color"], sep.inputs["Color"])
+        terms.append((sep, dri * 0.8))
+
+    def summed(channel, scale, centre):
+        # centre + scale * sum(amp * 2 * (channel - 0.5))
+        sock = None
+        for sep, amp in terms:
+            m = nt.nodes.new("ShaderNodeMath")
+            m.operation = "MULTIPLY_ADD"
+            nt.links.new(sep.outputs[channel], m.inputs[0])
+            m.inputs[1].default_value = 2.0 * amp * scale
+            m.inputs[2].default_value = -amp * scale + (centre if sock is None else 0.0)
+            if sock is not None:
+                a = nt.nodes.new("ShaderNodeMath")
+                a.operation = "ADD"
+                nt.links.new(sock, a.inputs[0])
+                nt.links.new(m.outputs[0], a.inputs[1])
+                sock = a.outputs[0]
+            else:
+                sock = m.outputs[0]
+        return sock
+    hsv = nt.nodes.new("ShaderNodeHueSaturation")
+    nt.links.new(summed(0, 0.012, 0.5), hsv.inputs["Hue"])
+    nt.links.new(summed(2, 0.08, 1.0), hsv.inputs["Saturation"])
+    nt.links.new(summed(1, 0.10, 1.0), hsv.inputs["Value"])
+    nt.links.new(col, hsv.inputs["Color"])
+    return hsv.outputs["Color"]
+
+
+def hm_crevice_fp(fp):
+    """The fibre's cavity knobs with `hm_crevice` added (a copy)."""
+    c = hm_amt(fp, "hm_crevice")
+    if c <= 0:
+        return fp
+    out = dict(fp)
+    out["cavity_amt"] = min(1.0, fp.get("cavity_amt", 0.0) + c)
+    return out
+
+
+def hm_nap_normal(nt, normal, cell_bu, amt):
+    """Tilt the shading normal by a smooth per-stitch vector noise: the nap of
+    each stitch lies its own way, so it catches the light or doesn't."""
+    if amt <= 0:
+        return normal
+    tex = nt.nodes.new("ShaderNodeTexCoord")
+    nz = nt.nodes.new("ShaderNodeTexNoise")
+    nz.inputs["Scale"].default_value = 1.0 / max(cell_bu, 1e-4)
+    nz.inputs["Detail"].default_value = 0.5
+    nt.links.new(tex.outputs["Object"], nz.inputs["Vector"])
+    ctr = nt.nodes.new("ShaderNodeVectorMath")
+    ctr.operation = "MULTIPLY_ADD"
+    nt.links.new(nz.outputs["Color"], ctr.inputs[0])
+    ctr.inputs[1].default_value = (2 * amt, 2 * amt, 2 * amt)
+    ctr.inputs[2].default_value = (-amt, -amt, -amt)
+    add = nt.nodes.new("ShaderNodeVectorMath")
+    add.operation = "ADD"
+    nt.links.new(normal, add.inputs[0])
+    nt.links.new(ctr.outputs[0], add.inputs[1])
+    nrm = nt.nodes.new("ShaderNodeVectorMath")
+    nrm.operation = "NORMALIZE"
+    nt.links.new(add.outputs[0], nrm.inputs[0])
+    return nrm.outputs[0]
+
+
+def hm_velvet_colour(nt, col, fp, r_bu):
+    """Chenille crest vs crevice: where the strand is open to the room (a
+    stitch's top) the pile catches the light and lifts; the crevice keeps the
+    fibre's own deep cavity. HSV value lift keeps the hue and chroma."""
+    v = hm_amt(fp, "hm_velvet")
+    if v <= 0:
+        return col
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.samples = 6
+    ao.inputs["Distance"].default_value = max(r_bu * 2.5, 1e-4)
+    p2 = nt.nodes.new("ShaderNodeMath")
+    p2.operation = "POWER"
+    nt.links.new(ao.outputs["AO"], p2.inputs[0])
+    p2.inputs[1].default_value = 3.0
+    val = nt.nodes.new("ShaderNodeMath")
+    val.operation = "MULTIPLY_ADD"
+    nt.links.new(p2.outputs[0], val.inputs[0])
+    val.inputs[1].default_value = 0.45 * v
+    val.inputs[2].default_value = 1.0 - 0.12 * v
+    hsv = nt.nodes.new("ShaderNodeHueSaturation")
+    nt.links.new(val.outputs[0], hsv.inputs["Value"])
+    nt.links.new(col, hsv.inputs["Color"])
+    return hsv.outputs["Color"]
+
+
+def hm_halo_colour(nt, col, base, fp):
+    """Cotton halo: the loose surface fibres at a strand's silhouette scatter
+    light, so the edge reads a little paler and softer (a faint haze)."""
+    h = hm_amt(fp, "hm_halo")
+    if h <= 0:
+        return col
+    lw = nt.nodes.new("ShaderNodeLayerWeight")
+    lw.inputs["Blend"].default_value = 0.35
+    pw = nt.nodes.new("ShaderNodeMath")
+    pw.operation = "POWER"
+    nt.links.new(lw.outputs["Facing"], pw.inputs[0])
+    pw.inputs[1].default_value = 2.0
+    fac = nt.nodes.new("ShaderNodeMath")
+    fac.operation = "MULTIPLY"
+    nt.links.new(pw.outputs[0], fac.inputs[0])
+    fac.inputs[1].default_value = 0.35 * h
+    lum = 0.2126 * base[0] + 0.7152 * base[1] + 0.0722 * base[2]
+    haze = tuple(min(1.0, 0.55 * c + 0.45 * lum + 0.06) for c in base[:3]) + (1.0,)
+    mx = nt.nodes.new("ShaderNodeMix")
+    mx.data_type = "RGBA"
+    nt.links.new(fac.outputs[0], mx.inputs[0])
+    nt.links.new(col, mx.inputs[6])
+    mx.inputs[7].default_value = haze
+    return mx.outputs[2]
+
+
+def yarn_material(name, hexcol, sheen, fibre="cotton", fp=None, cell_bu=0.0):
     """The CORE strand material for one yarn fibre look (STITCH_ENGINE yarn-
     fibre pass). The ply DEFINITION comes from the real ply geometry (nPly
     distinct tubes spiralling — yarnLoop.pliedFilaments), so this only ever
@@ -240,14 +537,25 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
     or chenille/velvet's matte plump core (their pile halo is a separate
     object — see `fuzz_shell_material`). `fibre` unset/unknown falls back to
     cotton, so every pre-existing call site is unaffected."""
-    fp = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"])
+    if fp is None:
+        fp = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"])
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     base = hex_to_lin(hexcol)
     set_in(bsdf, "Base Color", base)
-    if fp.get("cavity_amt", 0.0) > 0:
+    hm_col = any(hm_amt(fp, k) > 0 for k in ("hm_heather", "hm_drift", "hm_crevice", "hm_halo"))
+    if hm_col:
+        # handmade switches (render-only, off by default): heathered colour,
+        # deeper crevices and the cotton halo, see HANDMADE_PRESET.
+        rgb = nt.nodes.new("ShaderNodeRGB")
+        rgb.outputs[0].default_value = base
+        col = hm_strand_colour(nt, rgb.outputs[0], base, fp, cell_bu)
+        col = cavity_nodes(nt, col, base, hm_crevice_fp(fp))
+        col = hm_halo_colour(nt, col, base, fp)
+        nt.links.new(col, bsdf.inputs["Base Color"])
+    elif fp.get("cavity_amt", 0.0) > 0:
         # fine cotton (and any fibre that asks): shade the valleys between
         # stitches, see `cavity_nodes`. Absent from cotton/wool/velvet, so
         # their renders are unchanged.
@@ -308,6 +616,8 @@ def yarn_material(name, hexcol, sheen, fibre="cotton"):
         nt.links.new(stray.outputs["Distance"], bump3.inputs["Height"])
         nt.links.new(last_normal, bump3.inputs["Normal"])
         last_normal = bump3.outputs["Normal"]
+    # handmade: a gentle per-stitch tilt (each stitch sits its own way)
+    last_normal = hm_nap_normal(nt, last_normal, cell_bu, 0.35 * hm_amt(fp, "hm_nap"))
     nt.links.new(last_normal, bsdf.inputs["Normal"])
     # Roughness varies along the fibre — satiny (plies catch light) for cotton,
     # progressively more matte for wool/chenille, a tighter glossier band for
@@ -365,7 +675,7 @@ def cavity_nodes(nt, col, base, fp):
     return cm.outputs[2]
 
 
-def chenille_material(name, hexcol, fp):
+def chenille_material(name, hexcol, fp, cell_bu=0.0, r_bu=0.0):
     """CHENILLE / velvet pile on a single plump strand (no ply at all).
 
     What makes a real chenille amigurumi read as plush, and what each node is:
@@ -427,13 +737,17 @@ def chenille_material(name, hexcol, fp):
     nt.links.new(ramp.outputs["Color"], mix.inputs[6])
     mix.inputs[7].default_value = pale
     col = mix.outputs[2]
+    # handmade (off by default): heathered per-stitch colour drift
+    col = hm_strand_colour(nt, col, base, fp, cell_bu)
     # Crevice shadow (Fable r5): on a real chenille toy the valleys between
     # stitches go deep, warm brown while the stitch tops stay lit, and that
     # value range is most of what reads as "deep plush" rather than flat
     # orange tubing. Cycles' own bounce light fills those valleys because the
     # plump strands are bright and close together, so an AO term darkens the
     # colour towards a saturated crevice shade where the strand is hemmed in.
-    col = cavity_nodes(nt, col, base, fp)
+    col = cavity_nodes(nt, col, base, hm_crevice_fp(fp))
+    # handmade velvet: the crest of each stitch catches the light
+    col = hm_velvet_colour(nt, col, fp, r_bu)
     # Fuzzy rim without hairs (Fable r5): pile fibres seen side-on at a
     # stitch's silhouette are lit from behind and scatter, so the edge of
     # every bump fades to a paler, softer tint instead of ending in a clean
@@ -488,6 +802,21 @@ def chenille_material(name, hexcol, fp):
     set_in(bsdf, "Roughness", fp.get("rough", 0.9))
     set_in(bsdf, "Specular IOR Level", fp.get("specular", 0.04))
     set_in(bsdf, "Sheen Weight", fp.get("sheen", 1.0))
+    if hm_amt(fp, "hm_velvet") > 0:
+        # handmade velvet: the nap lies a different way stitch to stitch, so
+        # the sheen is strong on some stitches and weak on others.
+        nv = nt.nodes.new("ShaderNodeTexNoise")
+        nv.inputs["Scale"].default_value = 1.0 / max(cell_bu, 1e-4)
+        nv.inputs["Detail"].default_value = 0.5
+        nt.links.new(tex.outputs["Object"], nv.inputs["Vector"])
+        sw = nt.nodes.new("ShaderNodeMapRange")
+        sw.inputs["From Min"].default_value = 0.3
+        sw.inputs["From Max"].default_value = 0.7
+        s0 = fp.get("sheen", 1.0)
+        sw.inputs["To Min"].default_value = s0 * (1.0 - 0.6 * hm_amt(fp, "hm_velvet"))
+        sw.inputs["To Max"].default_value = min(1.0, s0 * (1.0 + 1.2 * hm_amt(fp, "hm_velvet")) + 0.15 * hm_amt(fp, "hm_velvet"))
+        nt.links.new(nv.outputs["Fac"], sw.inputs["Value"])
+        nt.links.new(sw.outputs["Result"], bsdf.inputs["Sheen Weight"])
     st = fp.get("sheen_tint_mix", 0.45)
     tint = tuple(c * (1 - st) + st for c in base[:3]) + (1.0,)
     set_in(bsdf, "Sheen Tint", tint)
@@ -508,7 +837,7 @@ def chenille_material(name, hexcol, fp):
     bump.inputs["Strength"].default_value = fp.get("pile_bump", 0.35)
     bump.inputs["Distance"].default_value = 0.006
     nt.links.new(pile.outputs["Fac"], bump.inputs["Height"])
-    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    nt.links.new(hm_nap_normal(nt, bump.outputs["Normal"], cell_bu, 0.6 * hm_amt(fp, "hm_nap")), bsdf.inputs["Normal"])
     return mat
 
 
@@ -637,30 +966,59 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         return amp * (math.sin((bx - cx) * fx) + math.cos((by - cy) * fy)
                       + 0.5 * math.sin((bx - cx + by - cy) * fx * 0.6))
 
-    fpb = FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"])
+    # `handmade_params` is a no-op unless the scene's fibreTune asks for the
+    # handmade switches (HANDMADE_PRESET), so every existing render is unchanged.
+    fpb = handmade_params(FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"]))
     has_halo = bool(fpb.get("halo"))
     strand = fpb.get("strand", "ply")
+    hm_geo = any(hm_amt(fpb, k) > 0 for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple", "hm_loop_twist"))
+    # the toy's main strand radius (the radius carrying the most points): a
+    # group much fatter than it is a loop (the cow's fringe), see hm_loop_ratio
+    by_r = {}
+    for st in strokes:
+        k = round(st["radiusMm"], 3)
+        by_r[k] = by_r.get(k, 0) + sum(len(f) for f in st["filaments"])
+    main_r = max(by_r, key=by_r.get) if by_r else 1.0
+
+    def is_loop(radius):
+        return radius > main_r * fpb.get("hm_loop_ratio", 1.4)
 
     def stroke_polys(st):
-        """The polylines to sweep for one stroke and the radius (mm) of each:
-        the scene's own plies untouched for 'ply' (cotton/wool/velvet, so their
-        renders are unchanged), or the strand rebuilt from the plies'
-        centreline for 'single' (chenille) / 'replied' (fine cotton)."""
+        """The polylines to sweep for one stroke, the radius (mm) of each and
+        per-point radius factors (None = constant): the scene's own plies
+        untouched for 'ply' (cotton/wool/velvet, so their renders are
+        unchanged), or the strand rebuilt from the plies' centreline for
+        'single' (chenille) / 'replied' (fine cotton). The handmade switches
+        (off by default) perturb the strand here, render-only."""
         if strand == "ply":
-            return st["filaments"], st["radiusMm"]
+            if not hm_geo:
+                return st["filaments"], st["radiusMm"], None
+            _c, spread = strand_centre(st["filaments"])
+            polys, rfs = hm_displace(st["filaments"], spread + st["radiusMm"], fpb)
+            return polys, st["radiusMm"], rfs
         centre, spread = strand_centre(st["filaments"])
         if not spread:
-            return st["filaments"], st["radiusMm"]
+            return st["filaments"], st["radiusMm"], None
         bundle = (spread + st["radiusMm"]) * fpb.get("strand_mult", 1.0)
+        rf = None
+        if hm_geo:
+            cs, rfs = hm_displace(centre, bundle, fpb, ripple=(strand == "single"))
+            centre, rf = cs, rfs[0]
+            tw = hm_amt(fpb, "hm_loop_twist")
+            if strand == "single" and tw > 0 and is_loop(st["radiusMm"]):
+                # a fat chenille loop twists round its own axis (a helix of
+                # the strand itself): reads as twisted chenille, not a noodle
+                centre = replied(centre[0], 0.22 * tw * bundle, 1,
+                                 1.0 / max(fpb.get("hm_loop_pitch_r", 3.2) * bundle, 1e-6))
         if strand == "single":
-            return centre, bundle
+            return centre, bundle, ([rf] if rf else None)
         ply_r = bundle * fpb.get("ply_frac", 0.52)
         return replied(centre[0], bundle - ply_r, len(st["filaments"]),
-                       fpb.get("twist_turns_per_mm", 0.1)), ply_r
+                       fpb.get("twist_turns_per_mm", 0.1)), ply_r, ([rf] * len(st["filaments"]) if rf else None)
 
     def write_points(cu, mult):
         for st in group:
-            polys, rad_mm = stroke_polys(st)
+            polys, rad_mm, rfs = stroke_polys(st)
             # radiusMm is now the PLY tube radius (crisp plied model, §11): bevel
             # it 1:1 so the nPly plies stay distinct (a fatter multiplier merges
             # them back into a smooth roving tube). The ply spread reaches the
@@ -669,16 +1027,17 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # core strand without changing the core's own radius.
             r = rad_mm * S * 1.02 * mult
             zlift = st["radiusMm"] * S * 1.02  # halo lifts with the CORE strand, not its own bigger radius
-            for poly in polys:
+            for pi, poly in enumerate(polys):
                 if len(poly) < 2:
                     continue
                 sp = cu.splines.new("POLY")
                 sp.points.add(len(poly) - 1)
+                rf = rfs[pi] if rfs else None
                 for i, p in enumerate(poly):
                     bx = p[0] * S
                     by = -p[1] * S
                     sp.points[i].co = (bx, by, p[2] * S + zlift + z_offset + drape_z(bx, by), 1.0)
-                    sp.points[i].radius = r
+                    sp.points[i].radius = r * rf[i] if rf else r
 
     for (hexcol, radius, sheen, metallic), group in groups.items():
         cu = bpy.data.curves.new("yarn", type="CURVE")
@@ -689,10 +1048,17 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         cu.use_fill_caps = True
         write_points(cu, 1.0)
         ob = bpy.data.objects.new("yarn_" + hexcol.lstrip("#"), cu)
+        # handmade: the stitch scale of the colour/nap variation (BU), from
+        # the group's strand radius (only read when a handmade knob is on)
+        r_out_mm = radius
+        if fpb is not FIBRE_PARAMS.get(fibre) and group:
+            _c, spr = strand_centre(group[0]["filaments"])
+            r_out_mm = (spr + radius) * (fpb.get("strand_mult", 1.0) if strand != "ply" else 1.0)
+        cell_bu = fpb.get("hm_cell_r", 4.5) * r_out_mm * S
         if strand == "single" and fpb.get("material", "pile") == "pile":
-            ymat = chenille_material("y_" + hexcol, hexcol, fpb)
+            ymat = chenille_material("y_" + hexcol, hexcol, fpb, cell_bu, r_out_mm * S)
         else:
-            ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre)
+            ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre, fpb, cell_bu)
         if metallic > 0:
             # A metallic thread (the spiral trees' gold star and cord, strokes[].metallic):
             # the plied yarn surface blended toward a brushed metal. Absent from
@@ -712,8 +1078,25 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # 1.35) and the bar's rings are smooth chenille, not fuzzy worms.
             dark_ok = not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75
             size_ok = radius <= fpb.get("pile_max_radius_mm", 1e9)
-            if dark_ok and size_ok:
+            lp = hm_amt(fpb, "hm_loop_pile")
+            if dark_ok and lp > 0 and is_loop(radius):
+                # handmade: the fat loops (cow fringe) get their own, denser
+                # pile so they read as fuzzy chenille, not smooth tubes
+                add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * lp))
+            elif dark_ok and size_ok:
                 add_pile_hairs(ob, hexcol, fpb)
+        elif strand != "single" and hm_amt(fpb, "hm_halo") > 0:
+            # handmade cotton halo: sparse, short, fine fibres standing off
+            # the strand (the faint fuzz of a real cotton)
+            h = hm_amt(fpb, "hm_halo")
+            add_pile_hairs(ob, hexcol, dict(
+                fpb, pile_density=1.8 * h, pile_children=4, pile_len_mm=0.55,
+                pile_lean=1.0, pile_radius_mm=0.012, pile_tip_lift=0.3))
+            try:
+                bpy.context.scene.cycles_curves.shape = "RIBBONS"
+                bpy.context.scene.cycles_curves.subdivisions = 1
+            except Exception:
+                pass
 
         if has_halo:
             # The chenille/velvet PILE HALO: one extra low-poly shell per colour
