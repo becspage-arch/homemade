@@ -162,6 +162,26 @@ export interface AmigurumiPart {
    */
   press?: number
   /**
+   * The SHAPED press of an open ear folded at its base (cupped-ear pass,
+   * 2026-10-17; `earPiece.ts`): the plates bow so the flattened piece settles
+   * as a shell with a hollow front face (relax.ts `pressShape`). Only read
+   * with `press`; absent = flat plates, exactly as before.
+   */
+  pressShape?: { hollow: number; roll?: number; pinch?: number }
+  /**
+   * An open cup PINCHED at its base as it is sewn on (cupped-ear pass;
+   * relax.ts `pinch`): two plates in a V, apex at the piece's local -y edge.
+   * Relaxed and audited like a pressed piece; absent = as before.
+   */
+  pinch?: { halfAngleDeg: number; gap: number }
+  /**
+   * A tube's open rim ROLLED outward (cupped-ear pass): the last `rimFold`
+   * rounds, worked straight, turn back over the outside of the cup — the
+   * tube's own fold brim (tube.ts `brim: { kind: 'fold' }`), a real fold of
+   * real rounds. Tube parts only; absent = no brim, as before.
+   */
+  rimFold?: number
+  /**
    * A TAPESTRY panel worked into the piece in a second colour — the lining of
    * a lop ear. Per worked round (0-based), the run of stitches, counted from
    * the round's first stitch, that are worked in `hex`; the main yarn is
@@ -755,7 +775,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     // A flat appliqué is draped, and a pressed piece is not a surface of
     // revolution, so the shell the mutual contact pass reads would be wrong
     // for either; a free-form custom piece likewise.
-    if (pp.part.form === 'disc' || pp.part.press || pp.part.custom) continue
+    if (pp.part.form === 'disc' || pp.part.press || pp.part.pinch || pp.part.custom) continue
     const parent = byName.get(on)
     if (parent && parent !== pp) pairs.push([pp, parent])
   }
@@ -934,7 +954,7 @@ function bendLocal(local: V3[], b: PartBend, lb: ReturnType<typeof bbox>, poleIn
 // ─── Toy-pose pass (2026-10-09): flat appliqués, pressed and hanging pieces ───
 
 /** Build + relax one piece the way its `form` says it is made. */
-function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; panelMask?: boolean[] } {
+export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; panelMask?: boolean[] } {
   if (part.custom) {
     // A free-form motif-kit piece: built, relaxed and audited FLAT by its own
     // builder; the pose (the maker's staging) is applied to the nodes after.
@@ -962,46 +982,58 @@ function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContinuous; p
   if (part.tube) {
     // An OPEN piece (a doll's leg from its sole, her body from the joining
     // round): tube.ts, relaxed as every closed piece is.
-    const built: BuiltContinuous = buildTube({ stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap, gaugeYr: part.gaugeYr }, yr)
+    const built: BuiltContinuous = buildTube({
+      stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap, gaugeYr: part.gaugeYr,
+      ...(part.rimFold ? { brim: { kind: 'fold' as const, rounds: part.rimFold } } : {}),
+    }, yr)
     // Highland cow round 27: an OPEN half-ball pressed into a CUP (a cupped
     // ear: worked from the ring, left open at the rim, never stuffed, pressed
     // gently into an oval between finger and thumb). The same plates as a
     // pressed closed piece; a tube has no stuffing to lose. Without `press`
     // every existing tube part is relaxed exactly as before.
-    if (part.press) relaxPressed(built, part.press, yr)
+    // Cupped-ear pass: an open ear may carry a lining panel, turned to the
+    // pressed face exactly as a closed piece's is (absent = as before).
+    const panelMask = part.panel ? facePanel(built, part) : undefined
+    if (part.press || part.pinch) relaxPressed(built, part.press ?? 0, yr, part.pressShape, 560, part.pinch)
     else relaxProgram(built, yr)
-    return { built }
+    return { built, panelMask }
   }
   const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr)
-  let panelMask: boolean[] | undefined
-  if (part.panel) {
-    panelMask = panelMaskOf(built, part)
-    // Turn the whole piece about its own axis so the panel faces local +x —
-    // the face the press leaves on top and `spin` turns to the camera. A
-    // rigid turn about the axis: the build's meridian frame is unchanged.
-    let sx = 0, sy = 0
-    built.model.nodes.forEach((n, i) => {
-      if (!panelMask![i]) return
-      const r = Math.hypot(n.x, n.y) || 1
-      sx += n.x / r
-      sy += n.y / r
-    })
-    const phi = Math.atan2(sy, sx)
-    const c = Math.cos(-phi), sn = Math.sin(-phi)
-    for (const n of built.model.nodes) {
-      const x = n.x * c - n.y * sn
-      n.y = n.x * sn + n.y * c
-      n.x = x
-    }
-  }
-  if (part.press) relaxPressed(built, part.press, yr)
+  const panelMask = part.panel ? facePanel(built, part) : undefined
+  if (part.press) relaxPressed(built, part.press, yr, part.pressShape)
   else relaxProgram(built, yr)
   return { built, panelMask }
 }
 
+/** The panel's nodes, with the whole piece turned about its own axis so the
+ *  panel faces local +x — the face the press leaves on top and `spin` turns
+ *  to the camera. A rigid turn about the axis: the build's meridian frame is
+ *  unchanged. */
+function facePanel(built: BuiltContinuous, part: AmigurumiPart): boolean[] {
+  const panelMask = panelMaskOf(built, part)
+  let sx = 0, sy = 0
+  built.model.nodes.forEach((n, i) => {
+    if (!panelMask[i]) return
+    const r = Math.hypot(n.x, n.y) || 1
+    sx += n.x / r
+    sy += n.y / r
+  })
+  const phi = Math.atan2(sy, sx)
+  const c = Math.cos(-phi), sn = Math.sin(-phi)
+  for (const n of built.model.nodes) {
+    const x = n.x * c - n.y * sn
+    n.y = n.x * sn + n.y * c
+    n.x = x
+  }
+  return panelMask
+}
+
 /** Unstuffed, pressed flat between two plates (relax.ts `press`). The same
  *  relaxer settings as every closed piece, minus the stuffing. */
-function relaxPressed(built: BuiltContinuous, press: number, yr: number): void {
+export function relaxPressed(
+  built: BuiltContinuous, press: number, yr: number,
+  pressShape?: AmigurumiPart['pressShape'], iterations = 560, pinch?: AmigurumiPart['pinch'],
+): void {
   relax(built.model, {
     collMinDist: yr * 1.25,
     collK: 0.28,
@@ -1013,16 +1045,18 @@ function relaxPressed(built: BuiltContinuous, press: number, yr: number): void {
     floorZ: 0,
     stuffPrior: STUFF_PRIOR,
     press,
-    iterations: 560,
+    ...(pressShape ? { pressShape } : {}),
+    ...(pinch ? { pinch } : {}),
+    iterations,
   })
 }
 
 /** The audit gate for one piece, in the frame its settled shape needs. */
-function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
+export function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
   if (part.custom) return CUSTOM_PROBLEMS.get(built) ?? []
   return auditProblems(
     { built, recipe: undefined as never }, part.name, 0, yr,
-    part.press ? { frame: 'current' } : undefined,
+    part.press || part.pinch ? { frame: 'current' } : undefined,
   )
 }
 
@@ -1034,7 +1068,8 @@ function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): str
  */
 function panelMaskOf(built: BuiltContinuous, part: AmigurumiPart): boolean[] {
   const nodes = built.model.nodes
-  const round = built.model.round ?? []
+  // A tube carries no stuffing index; its worked round is `nodeRow`.
+  const round = built.model.round ?? built.nodeRow ?? []
   const N = nodes.length
   const th = new Float64Array(N)
   for (let i = 0; i < N; i++) {

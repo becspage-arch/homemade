@@ -137,6 +137,36 @@ export interface RelaxConfig {
    * flattened round no longer has one. 0 / absent = off (bit-identical).
    */
   press?: number
+  /**
+   * A SHAPED PRESS (cupped-ear pass, 2026-10-17). The maker presses an open
+   * ear flat and then folds it at the base before sewing, so the flattened
+   * piece curls into a shell: its front face hollow, its edges standing
+   * forward. Modelled as the same two plates as `press`, but curved: both
+   * plates bow toward +x by `s(y, z)` — a parabola across the width (the
+   * cup), plus a steeper edge term (`roll`, the rim turned forward), deepened
+   * toward the piece's BASE (low z, the open end that is sewn on) by `pinch`.
+   * Contact stays one-sided between the two plates and collision still keeps
+   * the two layers a yarn apart; nothing is pinned and no node is joined to
+   * another. Lengths are fractions of the flattened half-width (π/2 · the
+   * piece's starting radius). Only read when `press` is set; absent = the
+   * flat plates (bit-identical).
+   */
+  pressShape?: { hollow: number; roll?: number; pinch?: number }
+  /**
+   * A PINCH at one side (cupped-ear pass, 2026-10-17): an open cup is
+   * pinched together at its base as it is sewn on, so the round rim draws to
+   * a point there and the cup tips forward. Finger and thumb, modelled as two
+   * plates in a V about the y axis: the apex at the piece's -y edge (its
+   * starting half-width out), each plate at `halfAngleDeg` off the y axis,
+   * so at height y above the apex the gap is `gap` + 2 (y − apex) tan θ —
+   * at the piece's low-z end (an open cup's rim, where the fingers are),
+   * opening out toward its high-z end (the bowl's bottom stays round) by the
+   * piece's own half-width at the far end. They close in from wide open on
+   * the same slow schedule as `press`. One-sided
+   * contact, nothing pinned or joined. Works with or without `press`.
+   * Absent = off (bit-identical).
+   */
+  pinch?: { halfAngleDeg: number; gap: number }
   iterations: number
 }
 
@@ -371,6 +401,17 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   if (stuffing > 0) refreshNormals()
   const press = cfg.press ?? 0
   const pressX0 = press > 0 ? Math.max(...nodes.map((n) => Math.abs(n.x))) : 0
+  // The shaped press's frame: the flattened half-width and the piece's own
+  // length, both off the worked (starting) shape.
+  const shape = press > 0 && cfg.pressShape ? cfg.pressShape : null
+  const shapeW = shape ? (Math.PI / 2) * Math.max(...nodes.map((n) => Math.hypot(n.x, n.y))) : 0
+  const shapeZ0 = shape ? Math.min(...nodes.map((n) => n.z)) : 0
+  const shapeZ1 = shape ? Math.max(...nodes.map((n) => n.z)) : 0
+  const pinch = cfg.pinch ?? null
+  const pinchX0 = pinch ? Math.max(...nodes.map((n) => Math.abs(n.x))) : 0
+  const pinchY0 = pinch ? Math.max(...nodes.map((n) => Math.abs(n.y))) : 0
+  const pinchZ0 = pinch ? Math.min(...nodes.map((n) => n.z)) : 0
+  const pinchZ1 = pinch ? Math.max(...nodes.map((n) => n.z)) : 0
 
   const N = nodes.length
   const bonded = new Set<number>()
@@ -469,8 +510,46 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
       // sideways as it flattens instead of being crushed through itself.
       const f = Math.min(1, it / (cfg.iterations * 0.7))
       const X = pressX0 + (press / 2 - pressX0) * f
+      if (shape) {
+        // The curved plates: the bow forms with the press, so the piece is
+        // shaped as it flattens rather than snapped into a shell at the end.
+        const len = shapeZ1 - shapeZ0 || 1
+        // Contact is along the curved plate's own NORMAL (not along x), so
+        // the fabric wraps round the bow instead of being sheared across it.
+        for (const n of nodes) {
+          if (n.w === 0) continue
+          const t = Math.min(1, Math.max(0, (n.z - shapeZ0) / len))
+          const k = f * shapeW * (1 + (shape.pinch ?? 0) * (1 - t) * (1 - t))
+          const u = Math.max(-1, Math.min(1, n.y / shapeW))
+          const roll = shape.roll ?? 0
+          const g = k * (shape.hollow * u * u + roll * u ** 6)
+          const dg = (k / shapeW) * (2 * shape.hollow * u + 6 * roll * u ** 5)
+          const L = Math.sqrt(1 + dg * dg)
+          const d = (n.x - g) / L
+          if (d > X || d < -X) {
+            const m = (d > 0 ? X : -X) - d
+            n.x += m / L
+            n.y += (m * -dg) / L
+          }
+        }
+      } else {
+        for (const n of nodes) {
+          if (n.w === 0) continue
+          if (n.x > X) n.x = X
+          else if (n.x < -X) n.x = -X
+        }
+      }
+    }
+
+    // 4a'. Pinched at the base (an open cup, see RelaxConfig.pinch).
+    if (pinch) {
+      const f = Math.min(1, it / (cfg.iterations * 0.7))
+      const tan = Math.tan((pinch.halfAngleDeg * Math.PI) / 180)
+      const open = (1 - f) * 4 * (pinchX0 + pinchY0)
       for (const n of nodes) {
         if (n.w === 0) continue
+        const t = Math.min(1, Math.max(0, (n.z - pinchZ0) / (pinchZ1 - pinchZ0 || 1)))
+        const X = pinch.gap / 2 + Math.max(0, n.y + pinchY0) * tan + t * t * pinchY0 + open
         if (n.x > X) n.x = X
         else if (n.x < -X) n.x = -X
       }

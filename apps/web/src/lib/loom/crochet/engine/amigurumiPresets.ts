@@ -31,6 +31,7 @@ import {
 import { sphereRounds } from './sphereProfile'
 import { ballRounds, tubeRounds, cordRounds } from './roundProfiles'
 import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
+import { earPart, type EarPieceOptions } from './earPiece'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
 import {
   buildFaceEmbroidery,
@@ -195,6 +196,12 @@ export interface AmigurumiChoices {
   flowersHex?: string
   /** The nightcap's pompom yarn (default a fluffy cream, the bar's). */
   pompomHex?: string
+  /** CUPPED LOP EARS (cupped-ear pass, 2026-10-17; `earPiece.ts`): the
+   *  bunny's lop ears as OPEN ears worked tip first, a rounded tip, tapering
+   *  to the base, pressed and folded in at the base so the lined front face
+   *  stays softly hollow. Bunny only. Opt-in: absent / false = the closed
+   *  pressed lop, and every geometry hash is unchanged. */
+  cuppedEars?: boolean
   name?: string
 }
 
@@ -893,6 +900,26 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     // forward and out, clear of the head (measured: no free ear fabric
     // inside the head's settled shell beyond one yarn radius).
     for (const side of [-1, 1] as const) {
+      const place = {
+        on: 'head',
+        dir: fd({ x: side * LOP_EAR_DIR.x, y: LOP_EAR_DIR.y, z: LOP_EAR_DIR.z }),
+        aim: fd({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
+        spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
+        seat: 4, poleIn: false, surfaceFit: 'ellipsoid' as const,
+      }
+      if (choices.cuppedEars && choices.base === 'bunny') {
+        // The open lop (earPiece.ts): the same seat, aim, turn and worn bend
+        // as the closed lop; its base is the open end, its tip the ring.
+        parts.push({
+          ...earPart(
+            { ...BUNNY_LOP_EAR[choices.size], liningHex: contrast },
+            { name: side < 0 ? 'ear-l' : 'ear-r', colourHex: main, place },
+            YARN_WEIGHT_RADIUS_MM[TOY_YARN],
+          ),
+          bend: LOP_EAR_BEND,
+        })
+        continue
+      }
       parts.push({
         name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.lopEar, colourHex: main,
         press: LOP_PRESS_MM[choices.size],
@@ -1011,6 +1038,19 @@ const TOY_HEAD_SINK: Record<AmigurumiSize, number> = { S: 19, M: 24, L: 26 }
  *  M 18-st 9.5 (8.5 fails 6, 7.5 fails 45), L 21-st 13 (12 fails one) — a
  *  thin ear like the bar's. */
 const LOP_PRESS_MM: Record<AmigurumiSize, number> = { S: 10, M: 13.5, L: 15 }
+/**
+ * The OPEN lop ear (cupped-ear pass, 2026-10-17; `earPiece.ts`, opt-in via
+ * `AmigurumiChoices.cuppedEars`): the closed lop's own width and length,
+ * worked tip first +3 a round (a rounded tip), narrowed a third toward the
+ * base and left open, pressed (S 8 yarn radii, M and L 10) with the plates
+ * bowed so the lined front stays softly hollow. Every size audits clean
+ * (earPiece.test.ts). Starting numbers only; the look is tuned by eye.
+ */
+export const BUNNY_LOP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
+  S: { kind: 'lop', width: 18, length: 32, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 8 },
+  M: { kind: 'lop', width: 21, length: 40, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
+  L: { kind: 'lop', width: 21, length: 42, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
+}
 /** Sewn on the upper side of the head, hanging down and a little out. */
 const LOP_EAR_DIR = { x: 0.9, y: 0.05, z: 0.65 }
 /** Sleepy-bunny pass: the ear leaves the head OUT (the bar's bow out past
