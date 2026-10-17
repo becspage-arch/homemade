@@ -252,7 +252,7 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_cell_r   3..8    the stitch scale of all the variation, in strand radii
 #   hm_seed     int     the maker (another seed = another hand)
 # Heathered colour:
-#   hm_heather  0..1    per-stitch drift: value +-16%, hue +-0.015, sat +-10% at 1
+#   hm_heather  0..1    per-stitch drift: value +-16%, hue +-0.01, sat +-6% at 1
 #   hm_drift    0..1    a slower drift over a few stitches (dye/spin variation)
 #   hm_crevice  0..1    extra crevice darkening, added to the fibre's own cavity
 # Chenille velvet (strand "single" fibres only):
@@ -263,8 +263,9 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_ripple   0..1    lumpy pile along the strand: radius +- 9% at 1
 #   hm_loop_twist 0..1  loops much fatter than the fabric strand (the cow's
 #                       fringe) twist round their own axis: a helix of
-#                       0.3 x radius at 1, one turn per `hm_loop_pitch_r` radii
-#   hm_loop_pitch_r 2..6
+#                       0.35 x radius at 1, one turn per `hm_loop_pitch_r` radii
+#   hm_loop_pitch_r 2..6  (2.6)
+#   hm_loop_ripple 1..3   the loops' ripple as a multiple of hm_ripple (2)
 #   hm_loop_pile 0..3   pile-hair density multiplier on those loops (forces pile
 #                       on even when `pile_max_radius_mm` would skip them)
 #   hm_pale_pile 0..1   pile on pale yarn too (pile_dark_only skips it), at this
@@ -274,16 +275,17 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
+#   hm_halo_max_hairs   the halo's hair budget over the whole toy (400 000)
 # ---------------------------------------------------------------------------
 HANDMADE_PRESET = dict(
     hm_jitter=0.3, hm_loft=0.22, hm_tension=0.14,
     hm_heather=0.7, hm_drift=0.5, hm_crevice=0.35,
     hm_velvet=0.6, hm_nap=0.5, hm_ripple=0.5,
-    hm_loop_twist=0.6, hm_loop_pile=1.5, hm_pale_pile=0.4,
+    hm_loop_twist=0.8, hm_loop_pile=1.5, hm_pale_pile=0.4,
     hm_halo=0.5,
 )
 # constants that ride along with the switch but are not amplitudes
-HANDMADE_FIXED = dict(hm_cell_r=4.5, hm_seed=1, hm_loop_pitch_r=3.2, hm_loop_ratio=1.4)
+HANDMADE_FIXED = dict(hm_cell_r=4.5, hm_seed=1, hm_loop_pitch_r=2.6, hm_loop_ratio=1.4, hm_loop_ripple=2.0)
 
 
 def handmade_params(fp):
@@ -437,8 +439,8 @@ def hm_strand_colour(nt, col, base, fp, cell_bu):
                 sock = m.outputs[0]
         return sock
     hsv = nt.nodes.new("ShaderNodeHueSaturation")
-    nt.links.new(summed(0, 0.015, 0.5), hsv.inputs["Hue"])
-    nt.links.new(summed(2, 0.10, 1.0), hsv.inputs["Saturation"])
+    nt.links.new(summed(0, 0.01, 0.5), hsv.inputs["Hue"])
+    nt.links.new(summed(2, 0.06, 1.0), hsv.inputs["Saturation"])
     nt.links.new(summed(1, 0.16, 1.0), hsv.inputs["Value"])
     nt.links.new(col, hsv.inputs["Color"])
     return hsv.outputs["Color"]
@@ -876,6 +878,10 @@ def add_pile_hairs(ob, hexcol, fp):
         return
     area_mm2 = sum(pl.area for pl in me.polygons) / (S * S)
     total = int(area_mm2 * fp.get("pile_density", 12.0))
+    if fp.get("pile_max_hairs"):
+        # handmade cotton halo: a hard memory budget (the bunny's fine cotton
+        # plus its pompom pile ran the 8 GB probe out of memory, yarn2 r2)
+        total = min(total, int(fp["pile_max_hairs"]))
     kids = int(fp.get("pile_children", 12))
     em = bpy.data.objects.new(ob.name + "_pile", me)
     bpy.context.collection.objects.link(em)
@@ -1011,8 +1017,14 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             if strand == "single" and tw > 0 and is_loop(st["radiusMm"]):
                 # a fat chenille loop twists round its own axis (a helix of
                 # the strand itself): reads as twisted chenille, not a noodle
-                centre = replied(centre[0], 0.3 * tw * bundle, 1,
-                                 1.0 / max(fpb.get("hm_loop_pitch_r", 3.2) * bundle, 1e-6))
+                centre = replied(centre[0], 0.35 * tw * bundle, 1,
+                                 1.0 / max(fpb.get("hm_loop_pitch_r", 2.6) * bundle, 1e-6))
+                if rf:
+                    # and a lumpier pile (chenille loops bobble along their length)
+                    _p, extra = hm_displace(centre, bundle, dict(fpb, hm_jitter=0, hm_loft=0, hm_tension=0,
+                                                                 hm_ripple=hm_amt(fpb, "hm_ripple") * (fpb.get("hm_loop_ripple", 2.0) - 1.0),
+                                                                 hm_seed=int(fpb.get("hm_seed", 1)) + 7), ripple=True)
+                    rf = [a * b for a, b in zip(rf, extra[0])]
         if strand == "single":
             return centre, bundle, ([rf] if rf else None)
         ply_r = bundle * fpb.get("ply_frac", 0.52)
@@ -1098,9 +1110,11 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # handmade cotton halo: sparse, short, fine fibres standing off
             # the strand (the faint fuzz of a real cotton)
             h = hm_amt(fpb, "hm_halo")
+            n_groups = max(1, len(groups))
             add_pile_hairs(ob, hexcol, dict(
                 fpb, pile_density=1.8 * h, pile_children=4, pile_len_mm=0.55,
-                pile_lean=1.0, pile_radius_mm=0.012, pile_tip_lift=0.3))
+                pile_lean=1.0, pile_radius_mm=0.012, pile_tip_lift=0.3,
+                pile_max_hairs=fpb.get("hm_halo_max_hairs", 400000) / n_groups))
             try:
                 bpy.context.scene.cycles_curves.shape = "RIBBONS"
                 bpy.context.scene.cycles_curves.subdivisions = 1
