@@ -252,7 +252,7 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_cell_r   3..8    the stitch scale of all the variation, in strand radii
 #   hm_seed     int     the maker (another seed = another hand)
 # Heathered colour:
-#   hm_heather  0..1    per-stitch drift: value +-10%, hue +-0.012, sat +-8% at 1
+#   hm_heather  0..1    per-stitch drift: value +-16%, hue +-0.015, sat +-10% at 1
 #   hm_drift    0..1    a slower drift over a few stitches (dye/spin variation)
 #   hm_crevice  0..1    extra crevice darkening, added to the fibre's own cavity
 # Chenille velvet (strand "single" fibres only):
@@ -263,10 +263,12 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_ripple   0..1    lumpy pile along the strand: radius +- 9% at 1
 #   hm_loop_twist 0..1  loops much fatter than the fabric strand (the cow's
 #                       fringe) twist round their own axis: a helix of
-#                       0.22 x radius at 1, one turn per `hm_loop_pitch_r` radii
+#                       0.3 x radius at 1, one turn per `hm_loop_pitch_r` radii
 #   hm_loop_pitch_r 2..6
 #   hm_loop_pile 0..3   pile-hair density multiplier on those loops (forces pile
 #                       on even when `pile_max_radius_mm` would skip them)
+#   hm_pale_pile 0..1   pile on pale yarn too (pile_dark_only skips it), at this
+#                       fraction of the density and no tip lift
 #   hm_loop_ratio 1.2..2  a group is a "loop" when its radius is this many
 #                       times the toy's main strand radius
 # Cotton halo (ply / replied fibres only):
@@ -274,10 +276,10 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
 # ---------------------------------------------------------------------------
 HANDMADE_PRESET = dict(
-    hm_jitter=0.2, hm_loft=0.16, hm_tension=0.1,
-    hm_heather=0.5, hm_drift=0.5, hm_crevice=0.3,
+    hm_jitter=0.3, hm_loft=0.22, hm_tension=0.14,
+    hm_heather=0.7, hm_drift=0.5, hm_crevice=0.35,
     hm_velvet=0.6, hm_nap=0.5, hm_ripple=0.5,
-    hm_loop_twist=0.6, hm_loop_pile=1.5,
+    hm_loop_twist=0.6, hm_loop_pile=1.5, hm_pale_pile=0.4,
     hm_halo=0.5,
 )
 # constants that ride along with the switch but are not amplitudes
@@ -435,9 +437,9 @@ def hm_strand_colour(nt, col, base, fp, cell_bu):
                 sock = m.outputs[0]
         return sock
     hsv = nt.nodes.new("ShaderNodeHueSaturation")
-    nt.links.new(summed(0, 0.012, 0.5), hsv.inputs["Hue"])
-    nt.links.new(summed(2, 0.08, 1.0), hsv.inputs["Saturation"])
-    nt.links.new(summed(1, 0.10, 1.0), hsv.inputs["Value"])
+    nt.links.new(summed(0, 0.015, 0.5), hsv.inputs["Hue"])
+    nt.links.new(summed(2, 0.10, 1.0), hsv.inputs["Saturation"])
+    nt.links.new(summed(1, 0.16, 1.0), hsv.inputs["Value"])
     nt.links.new(col, hsv.inputs["Color"])
     return hsv.outputs["Color"]
 
@@ -486,16 +488,17 @@ def hm_velvet_colour(nt, col, fp, r_bu):
         return col
     ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
     ao.samples = 6
-    ao.inputs["Distance"].default_value = max(r_bu * 2.5, 1e-4)
+    ao.inputs["Distance"].default_value = max(r_bu * 1.5, 1e-4)
     p2 = nt.nodes.new("ShaderNodeMath")
     p2.operation = "POWER"
     nt.links.new(ao.outputs["AO"], p2.inputs[0])
-    p2.inputs[1].default_value = 3.0
+    p2.inputs[1].default_value = 2.0
+    # value x (1 - 0.35v) deep in a crevice up to x (1 + 0.4v) on an open crest
     val = nt.nodes.new("ShaderNodeMath")
     val.operation = "MULTIPLY_ADD"
     nt.links.new(p2.outputs[0], val.inputs[0])
-    val.inputs[1].default_value = 0.45 * v
-    val.inputs[2].default_value = 1.0 - 0.12 * v
+    val.inputs[1].default_value = 0.75 * v
+    val.inputs[2].default_value = 1.0 - 0.35 * v
     hsv = nt.nodes.new("ShaderNodeHueSaturation")
     nt.links.new(val.outputs[0], hsv.inputs["Value"])
     nt.links.new(col, hsv.inputs["Color"])
@@ -1008,7 +1011,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             if strand == "single" and tw > 0 and is_loop(st["radiusMm"]):
                 # a fat chenille loop twists round its own axis (a helix of
                 # the strand itself): reads as twisted chenille, not a noodle
-                centre = replied(centre[0], 0.22 * tw * bundle, 1,
+                centre = replied(centre[0], 0.3 * tw * bundle, 1,
                                  1.0 / max(fpb.get("hm_loop_pitch_r", 3.2) * bundle, 1e-6))
         if strand == "single":
             return centre, bundle, ([rf] if rf else None)
@@ -1082,9 +1085,15 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             if dark_ok and lp > 0 and is_loop(radius):
                 # handmade: the fat loops (cow fringe) get their own, denser
                 # pile so they read as fuzzy chenille, not smooth tubes
-                add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * lp))
+                add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * lp,
+                                                pile_tip_lift=min(fpb.get("pile_tip_lift", 0.18), 0.15)))
             elif dark_ok and size_ok:
                 add_pile_hairs(ob, hexcol, fpb)
+            elif not dark_ok and size_ok and hm_amt(fpb, "hm_pale_pile") > 0:
+                # handmade: a sparser pile on pale yarn too (the bar cow's cream
+                # muzzle is fuzzy), with no tip lift so it stays cream
+                add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * hm_amt(fpb, "hm_pale_pile"),
+                                                pile_tip_lift=0.0))
         elif strand != "single" and hm_amt(fpb, "hm_halo") > 0:
             # handmade cotton halo: sparse, short, fine fibres standing off
             # the strand (the faint fuzz of a real cotton)
