@@ -3,7 +3,16 @@
  * `packages/db/scripts/data/stitches.ts` into the Stitch table.
  *
  * Re-runs cleanly: created / updated / unchanged counts are reported at the
- * end. Run once before uploading the crochet anchor batch.
+ * end, and each update names the fields it changes. Run once before uploading
+ * the crochet anchor batch.
+ *
+ * The file is the source for the crochet, knitting and cross-stitch rows. The
+ * table also holds the embroidery rows, which `scripts/seed-embroidery-stitches.ts`
+ * seeds and this never touches. Edit the
+ * notes HERE, not in the table: a voice sweep that rewrote 24 rows in the
+ * database on 17 June 2026 and not the file meant a full run would have put
+ * the long dashes back (fixed 17 October; `data/stitches.test.ts` now refuses
+ * them). A dry run should report updated=0 against the live table.
  *
  * Usage:
  *   pnpm --filter "@homemade/db" exec tsx scripts/seed-stitches.ts
@@ -42,10 +51,10 @@ const DRY_RUN = process.argv.includes('--dry-run')
 
 /**
  * `--craft=<craft>` limits the run to one craft's rows. Without it the seeder
- * writes every row in the seed file, which will also push any drift that has
- * built up between the file and the live table for the other crafts. Seeding
- * a new craft should not carry that with it, so the cross-stitch batch was
- * landed with `--craft=cross-stitch`.
+ * writes every row in the seed file. The cross-stitch batch was landed with
+ * `--craft=cross-stitch` because a full run would then have pushed the 24
+ * long-dash notes back over the swept crochet and knitting rows; that drift is
+ * gone, so a full run is safe again, and the dry run says so (updated=0).
  */
 const CRAFT_FILTER =
   process.argv.find((a) => a.startsWith('--craft='))?.slice('--craft='.length) ?? null
@@ -106,28 +115,30 @@ async function main(): Promise<void> {
       continue
     }
 
-    const hasChanged =
-      existing.craft !== payload.craft ||
-      existing.canonicalName !== payload.canonicalName ||
-      (existing.ukName ?? null) !== payload.ukName ||
-      (existing.usName ?? null) !== payload.usName ||
-      (existing.ukAbbreviation ?? null) !== payload.ukAbbreviation ||
-      (existing.usAbbreviation ?? null) !== payload.usAbbreviation ||
-      existing.category !== payload.category ||
-      (existing.chartSymbol ?? null) !== payload.chartSymbol ||
-      (existing.difficulty ?? null) !== payload.difficulty ||
-      (existing.parentStitchId ?? null) !== payload.parentStitchId ||
-      (existing.notes ?? null) !== payload.notes ||
-      (seed.aliases
-        ? seed.aliases.join('|') !== (existing.aliases ?? []).join('|')
-        : false)
+    // Field by field, so a run says WHAT it would change. A change the file did
+    // not mean to make (the table edited in place since the file was written)
+    // shows up here before it is pushed back over the live rows.
+    const changed: string[] = []
+    if (existing.craft !== payload.craft) changed.push('craft')
+    if (existing.canonicalName !== payload.canonicalName) changed.push('canonicalName')
+    if ((existing.ukName ?? null) !== payload.ukName) changed.push('ukName')
+    if ((existing.usName ?? null) !== payload.usName) changed.push('usName')
+    if ((existing.ukAbbreviation ?? null) !== payload.ukAbbreviation) changed.push('ukAbbreviation')
+    if ((existing.usAbbreviation ?? null) !== payload.usAbbreviation) changed.push('usAbbreviation')
+    if (existing.category !== payload.category) changed.push('category')
+    if ((existing.chartSymbol ?? null) !== payload.chartSymbol) changed.push('chartSymbol')
+    if ((existing.difficulty ?? null) !== payload.difficulty) changed.push('difficulty')
+    if ((existing.parentStitchId ?? null) !== payload.parentStitchId) changed.push('parent')
+    if ((existing.notes ?? null) !== payload.notes) changed.push('notes')
+    if (seed.aliases && seed.aliases.join('|') !== (existing.aliases ?? []).join('|')) changed.push('aliases')
+    const hasChanged = changed.length > 0
 
     if (hasChanged) {
       if (!DRY_RUN) {
         await prisma.stitch.update({ where: { slug: seed.slug }, data: payload })
       }
       updated += 1
-      console.log(`[seed] ~ ${seed.slug}`)
+      console.log(`[seed] ~ ${seed.slug} (${changed.join(', ')})`)
     } else {
       unchanged += 1
     }

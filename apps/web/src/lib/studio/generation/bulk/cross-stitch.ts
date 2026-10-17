@@ -3,6 +3,7 @@ import sharp from 'sharp'
 import {
   prisma,
   computePatternMetrics,
+  computeFlossSummary,
   Visibility,
   ImageGenerationStatus,
   r2Upload,
@@ -13,7 +14,7 @@ import { generatePatternImage, imageToPattern } from '@/lib/studio/generation/pa
 import { sha256Hex } from './similarity'
 import { subjectKey } from './subject-key'
 import { renderBeautyThumbnail, THUMB_TARGET } from './beauty-thumbnail'
-import { bareFabricVerdict, clearBackground, fullCoverageByIntent } from './bare-fabric'
+import { bareFabricVerdict, clearBackground, fullCoverageByIntent, peelHalo } from './bare-fabric'
 import { embellishChart } from './outline'
 import { deriveFractionals, smoothingWantedFor } from './fractionals'
 import {
@@ -69,6 +70,9 @@ export interface CrossStitchCandidate {
   /** What the bare-fabric rule did to this chart, if anything. Recorded on the
    *  published row so the decision is auditable without re-deriving it. */
   backgroundCleared?: { removed: number; droppedSymbols: string[]; reason: string }
+  /** What the halo peel took off after the clear: the pale antialiased ring
+   *  left round the motif (see `peelHalo` in bare-fabric.ts). */
+  halo?: { removed: number; colours: string[]; droppedSymbols: string[]; reason: string }
   /** What the outline pass did — back-stitch segments, knots, and the mode the
    *  lane/style rule chose. Recorded on the published row for the same reason. */
   outline?: {
@@ -272,6 +276,23 @@ export async function generateCrossStitchCandidate(
       cleared = { removed: out.removed, droppedSymbols: out.droppedSymbols, reason: bare.reason }
     }
   }
+  // THE HALO — the clear stops at genuine white, so the antialiased edge Flux
+  // drew between motif and ground is still stitched, as a pale grey (or blush,
+  // or grey-green) ring one cell wide. Peeled HERE, after the clear and before
+  // the outline and the fractionals, so both follow the motif's real edge.
+  let halo: CrossStitchCandidate['halo']
+  if (cleared) {
+    const peeled = peelHalo(shipped)
+    if (peeled.removed > 0) {
+      shipped = peeled.data
+      halo = {
+        removed: peeled.removed,
+        colours: peeled.haloColours.map((h) => h.code),
+        droppedSymbols: peeled.droppedSymbols,
+        reason: peeled.reason,
+      }
+    }
+  }
   // OUTLINES — the chart draws its own edges. The schema has carried a
   // back-stitch layer and a French-knot layer since the first day and the
   // converter never put anything in either, so every chart shipped as flat
@@ -313,7 +334,7 @@ export async function generateCrossStitchCandidate(
     }
   }
 
-  const shippedMetrics = cleared || outline || fractional ? computePatternMetrics(shipped) : metrics
+  const shippedMetrics = cleared || halo || outline || fractional ? computePatternMetrics(shipped) : metrics
 
   const renderPng = await renderBeautyThumbnail(shipped, brief.sat != null ? 1 : POST_SAT)
   return {
@@ -329,6 +350,7 @@ export async function generateCrossStitchCandidate(
     credit: generated.credit,
     requestedColours: colours,
     ...(cleared ? { backgroundCleared: cleared } : {}),
+    ...(halo ? { halo } : {}),
     ...(outline ? { outline } : {}),
     ...(fractional ? { fractional } : {}),
   }
@@ -595,6 +617,10 @@ export async function publishCrossStitchGem(
     colourChangesPer100: m.colourChangesPer100,
     medianRunLength: m.medianRunLength,
     stitchability: m.stitchability,
+    // The floss key the pattern page prints, worked out once here so a view
+    // never walks the grid (Pattern.flossSummary; a trigger clears it if the
+    // chart is ever rewritten without it).
+    flossSummary: computeFlossSummary(data) as unknown as object,
     fabricCountSuggested: data.fabric.count,
     // ── duplicate-guard fingerprints of the artifact that is shipping ──────
     // Written at publish so the NEXT candidate can be compared against this one.
@@ -636,6 +662,7 @@ export async function publishCrossStitchGem(
       attempt: ctx?.attempt ?? 1,
       tweak: ctx?.tweak ?? {},
       ...(candidate.backgroundCleared ? { backgroundCleared: candidate.backgroundCleared } : {}),
+      ...(candidate.halo ? { halo: candidate.halo } : {}),
       ...(candidate.outline ? { outline: candidate.outline } : {}),
       ...(candidate.fractional ? { fractional: candidate.fractional } : {}),
       gate: { verdict: ctx?.gate.verdict ?? 'keep', reasons: ctx?.gate.reasons ?? [] },

@@ -106,6 +106,19 @@ export {
   type SweepResult,
 } from './technique-sweep'
 
+// The floss key the pattern page prints, stored on Pattern.flossSummary at
+// publish (migration 20261018000000) so a view never walks the grid.
+export {
+  FLOSS_SUMMARY_VERSION,
+  FlossSummaryLineSchema,
+  PatternFlossSummarySchema,
+  buildFlossSummary,
+  computeFlossSummary,
+  readStoredFlossSummary,
+  type FlossSummaryLine,
+  type PatternFlossSummary,
+} from './floss-summary'
+
 // Pattern Studio (phase_pattern_studio_001). Canonical pattern JSON
 // schema, validator, metrics, skein estimator, cell-key encoding.
 // Imported by the Studio app + photo-to-chart save path + tutorial

@@ -443,3 +443,228 @@ export function laneForSize(width: number, height: number): string {
   if (side <= 240) return 'large'
   return 'huge'
 }
+
+// ───────────────────────────────────────────────────────────────────────────
+// The halo
+// ───────────────────────────────────────────────────────────────────────────
+
+/**
+ * THE HALO — the pale ring a cleared background leaves behind.
+ *
+ * Flux draws its motif on a "clean white background" with a soft, antialiased
+ * edge, and on the small lanes the Mitchell downscale blends that edge further.
+ * The quantiser gives those in-between pixels a floss of their own: a light
+ * grey (415, 762, 318), a grey-khaki (3024), a grey-green (504), a blush (225).
+ * The bare-fabric fill only walks through genuine near-white, so it stops one
+ * cell short and leaves the motif wearing a faint grey ring, stitched in a
+ * colour that is in the chart for no other reason. It is worst on the quick
+ * wins: at fifty cells a one-cell ring is a tenth of the motif's width, and the
+ * back-stitch outline is then traced round the ring rather than the subject.
+ *
+ * What marks a halo colour, all of it read off the chart:
+ *
+ *   pale         light (L >= HALO_MIN_L) and low in chroma (<= HALO_MAX_CHROMA):
+ *                the in-between of a white ground and a design colour;
+ *   rim          most of its stitches (>= HALO_MIN_RIM_SHARE) touch the open
+ *                cloth round the motif;
+ *   thin         almost none of them (<= HALO_MAX_CORE_SHARE) sit in a solid
+ *                patch of their own colour, so it is a line, not an area — a
+ *                grey mouse or a white fox muzzle is an area, and is kept;
+ *   lighter      it is lighter than the design it rings (by HALO_MIN_STEP_L),
+ *                so it reads as a fade into the cloth, not as an outline.
+ *
+ * Only the rim stitches of a halo colour are taken off, in at most two passes
+ * (a staircase edge leaves a two-cell ring at its corners). The same colour
+ * used inside the design, as a highlight or a spot, is untouched. A chart whose
+ * peel would take more than HALO_MAX_REMOVED_SHARE of its stitches is left
+ * exactly as it was: the "halo" is then the design. Pure and binary like the
+ * clear, and run straight after it, before the outline and the fractionals,
+ * so both are drawn on the motif's real edge.
+ */
+export const HALO_MIN_L = 70
+export const HALO_MAX_CHROMA = 16
+export const HALO_MIN_RIM_SHARE = 0.6
+export const HALO_MAX_CORE_SHARE = 0.1
+export const HALO_MIN_STEP_L = 6
+export const HALO_MAX_PASSES = 2
+export const HALO_MAX_REMOVED_SHARE = 0.25
+
+export interface HaloColour {
+  symbol: string
+  code: string
+  /** Stitches of this colour before the peel. */
+  stitches: number
+  rimShare: number
+  coreShare: number
+}
+
+export interface PeeledHalo {
+  data: PatternData
+  /** Stitches turned back into bare fabric. */
+  removed: number
+  /** The colours that qualified as a halo. */
+  haloColours: HaloColour[]
+  /** Palette entries dropped because nothing references them any more. */
+  droppedSymbols: string[]
+  /** Why it did or did not peel, in one phrase. */
+  reason: string
+}
+
+/** Open cloth reachable from the border through cells with nothing in them. */
+function openCloth(width: number, height: number, occupied: Set<number>): Uint8Array {
+  const open = new Uint8Array(width * height)
+  const stack: number[] = []
+  const push = (x: number, y: number): void => {
+    if (x < 0 || y < 0 || x >= width || y >= height) return
+    const i = idx(x, y, width)
+    if (open[i] || occupied.has(i)) return
+    open[i] = 1
+    stack.push(i)
+  }
+  for (let x = 0; x < width; x++) {
+    push(x, 0)
+    push(x, height - 1)
+  }
+  for (let y = 0; y < height; y++) {
+    push(0, y)
+    push(width - 1, y)
+  }
+  while (stack.length > 0) {
+    const i = stack.pop()!
+    const x = i % width
+    const y = (i - x) / width
+    push(x + 1, y)
+    push(x - 1, y)
+    push(x, y + 1)
+    push(x, y - 1)
+  }
+  return open
+}
+
+function labOf(hex: string): [number, number, number] {
+  const [r, g, b] = hexToRgb(hex)
+  return rgbToLab(r, g, b)
+}
+
+/**
+ * Take the pale antialiasing ring off a chart whose background has been
+ * cleared. See the block comment above. Idempotent: a second run finds no
+ * rim colour left to peel.
+ */
+export function peelHalo(data: PatternData): PeeledHalo {
+  const unchanged = (reason: string, haloColours: HaloColour[] = []): PeeledHalo => ({
+    data,
+    removed: 0,
+    haloColours,
+    droppedSymbols: [],
+    reason,
+  })
+  const { width, height, cells } = data.grid
+  if (cells.length === 0) return unchanged('empty chart')
+
+  const symbolAt = new Map<number, string>()
+  for (const c of cells) symbolAt.set(idx(c.x, c.y, width), c.s)
+  const occupied = new Set<number>(symbolAt.keys())
+  for (const f of data.grid.fractional) occupied.add(idx(f.x, f.y, width))
+  const open = openCloth(width, height, occupied)
+
+  const lab = new Map(data.palette.map((p) => [p.symbol, labOf(p.rgb)] as const))
+  const neighbours = (x: number, y: number): [number, number][] => [
+    [x + 1, y],
+    [x - 1, y],
+    [x, y + 1],
+    [x, y - 1],
+  ]
+  const isOpen = (x: number, y: number): boolean =>
+    x >= 0 && y >= 0 && x < width && y < height && open[idx(x, y, width)] === 1
+
+  // Per colour: how many stitches, how many on the rim, how many in a solid
+  // patch, and the lightness of the design it borders on the inside.
+  const stats = new Map<string, { n: number; rim: number; core: number; innerL: number; inner: number }>()
+  for (const c of cells) {
+    const s = stats.get(c.s) ?? { n: 0, rim: 0, core: 0, innerL: 0, inner: 0 }
+    s.n++
+    const nb = neighbours(c.x, c.y)
+    let same = 0
+    let rim = false
+    for (const [x, y] of nb) {
+      if (isOpen(x, y)) rim = true
+      const other = x >= 0 && y >= 0 && x < width && y < height ? symbolAt.get(idx(x, y, width)) : undefined
+      if (other === c.s) same++
+      else if (other !== undefined) {
+        const L = lab.get(other)?.[0]
+        if (L !== undefined) {
+          s.innerL += L
+          s.inner++
+        }
+      }
+    }
+    if (rim) s.rim++
+    if (same === 4) s.core++
+    stats.set(c.s, s)
+  }
+
+  const halo: HaloColour[] = []
+  for (const p of data.palette) {
+    const s = stats.get(p.symbol)
+    const pl = lab.get(p.symbol)
+    if (!s || !pl || s.n === 0) continue
+    const [L, a, b] = pl
+    if (L < HALO_MIN_L || Math.hypot(a, b) > HALO_MAX_CHROMA) continue
+    const rimShare = s.rim / s.n
+    const coreShare = s.core / s.n
+    if (rimShare < HALO_MIN_RIM_SHARE || coreShare > HALO_MAX_CORE_SHARE) continue
+    if (s.inner === 0 || L - s.innerL / s.inner < HALO_MIN_STEP_L) continue
+    halo.push({ symbol: p.symbol, code: p.code, stitches: s.n, rimShare, coreShare })
+  }
+  if (halo.length === 0) return unchanged('no pale rim colour')
+  const haloSymbols = new Set(halo.map((h) => h.symbol))
+
+  // Peel the rim, pass by pass. Each pass re-reads the open cloth, so a second
+  // pass only reaches a halo stitch the first one has just exposed.
+  const removedAt = new Set<number>()
+  let current = open
+  for (let pass = 0; pass < HALO_MAX_PASSES; pass++) {
+    const peel: number[] = []
+    for (const c of cells) {
+      const i = idx(c.x, c.y, width)
+      if (removedAt.has(i) || !haloSymbols.has(c.s)) continue
+      const touches = neighbours(c.x, c.y).some(
+        ([x, y]) => x >= 0 && y >= 0 && x < width && y < height && current[idx(x, y, width)] === 1,
+      )
+      if (touches) peel.push(i)
+    }
+    if (peel.length === 0) break
+    for (const i of peel) {
+      removedAt.add(i)
+      occupied.delete(i)
+    }
+    current = openCloth(width, height, occupied)
+  }
+
+  if (removedAt.size === 0) return unchanged('halo colour has no rim stitch to take', halo)
+  if (removedAt.size > cells.length * HALO_MAX_REMOVED_SHARE) {
+    return unchanged(
+      `the pale rim is ${((removedAt.size / cells.length) * 100).toFixed(0)}% of the stitching — it is the design, not a halo`,
+      halo,
+    )
+  }
+  const kept = cells.filter((c) => !removedAt.has(idx(c.x, c.y, width)))
+
+  const used = new Set<string>()
+  for (const c of kept) used.add(c.s)
+  for (const f of data.grid.fractional) used.add(f.s)
+  for (const b of data.grid.backstitch) used.add(b.s)
+  for (const k of data.grid.frenchKnots) used.add(k.s)
+  for (const b of data.grid.beads) used.add(b.s)
+  const palette = data.palette.filter((p) => used.has(p.symbol))
+  const droppedSymbols = data.palette.filter((p) => !used.has(p.symbol)).map((p) => p.symbol)
+
+  return {
+    data: { ...data, grid: { ...data.grid, cells: kept }, palette },
+    removed: removedAt.size,
+    haloColours: halo,
+    droppedSymbols,
+    reason: `pale rim in ${halo.map((h) => h.code).join(', ')}: ${removedAt.size} stitches back to bare cloth`,
+  }
+}

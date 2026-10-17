@@ -2,94 +2,73 @@ import 'server-only'
 import {
   prisma,
   parsePatternData,
-  summarisePaletteUsage,
-  skeinCountFromUsage,
+  computeFlossSummary,
+  buildFlossSummary,
+  readStoredFlossSummary,
   PaletteEntrySchema,
   FabricSchema,
   BackstitchSegmentSchema,
   FrenchKnotSchema,
   FractionalStitchSchema,
-  type PaletteEntry,
   type PaletteUsage,
-  type FlossBrandName,
+  type PatternFlossSummary,
 } from '@homemade/db'
 import { z } from 'zod'
 
 /**
  * The floss key, and only the floss key.
  *
- * The pattern page prints one line per colour — swatch, name, brand code,
- * stitch count, skeins — and nothing else on the page reads the grid. The grid
+ * The pattern page prints one line per colour (swatch, name, brand code,
+ * stitch count, skeins) and nothing else on the page reads the grid. The grid
  * is nevertheless what those numbers are made of, and on a showpiece chart it
- * is six megabytes of cells: reading it, validating it and then walking it once
- * per colour is why a 600×408 chart took ten seconds to serve while a 150-cell
- * one took a second.
+ * is six megabytes of cells.
  *
- * So the page asks for this summary instead of the chart. It is derived purely
- * from the stored `data`, so it is stable for as long as the row is, and it is
- * a few kilobytes rather than a few megabytes — small enough to keep in memory
- * between requests, keyed on the row's `updatedAt` so a save in the Studio
- * invalidates it without any explicit purge.
+ * So the summary is stored on the row (`Pattern.flossSummary`, written by the
+ * publish path beside `data`), and the page reads it with the rest of the row.
+ * A database trigger clears it whenever `data` changes without it, so it is
+ * never stale. When it is missing (a row from before the column, or one whose
+ * chart has just been edited) this works it out the old way, Postgres count
+ * first, and stores it, so the next view is a plain read again.
  */
-export interface FlossSummaryLine {
-  symbol: string
-  brand: FlossBrandName
-  code: string
-  name: string
-  rgb: string
-  /** Full crosses worked in this colour — the "N st" on the floss line. */
-  stitches: number
-  /** Skeins to buy, rounded up to the half skein. */
-  skeins: number
-}
-
-export interface PatternFlossSummary {
-  /** One line per palette entry, in palette order. */
-  lines: FlossSummaryLine[]
-  /** Skeins across the whole chart, for the spec table. */
-  totalSkeins: number
-}
+export type { FlossSummaryLine, PatternFlossSummary } from '@homemade/db'
 
 /**
- * Summaries live for the life of the process. Each is a few kilobytes, so a
- * cap in the low hundreds is a handful of megabytes even if every showpiece in
- * the library is hit — and the cap matters more than the size: without one, a
- * crawler walking the whole library would pin every chart's summary in memory
- * for good. Oldest insertion is evicted first; a re-request simply rebuilds.
- */
-const CACHE_LIMIT = 128
-
-// Hung off globalThis so the dev server's module reloading doesn't hand out a
-// fresh empty cache on every edit, matching how the Prisma client is kept.
-type CacheHolder = { __homemade_floss_summary?: Map<string, PatternFlossSummary> }
-const cache: Map<string, PatternFlossSummary> =
-  (globalThis as CacheHolder).__homemade_floss_summary ??
-  ((globalThis as CacheHolder).__homemade_floss_summary = new Map())
-
-/**
- * The floss summary for one pattern, built from the stored chart on first ask.
+ * The floss summary for one pattern.
  *
- * Returns null when the row's `data` is missing or fails validation — the
- * caller treats that the same way it treated a failed parse before, as a page
- * that cannot be rendered.
+ * `stored` is the row's `flossSummary` as read with the page's own query.
+ * Returns null when the row's `data` is missing or fails validation; the caller
+ * treats that the same way it treated a failed parse before, as a page that
+ * cannot be rendered.
  */
 export async function getPatternFlossSummary(
   patternId: string,
   updatedAt: Date,
+  stored: unknown,
 ): Promise<PatternFlossSummary | null> {
-  const key = `${patternId}:${updatedAt.getTime()}`
-  const hit = cache.get(key)
+  const hit = readStoredFlossSummary(stored)
   if (hit) return hit
 
   const summary = (await summariseInPostgres(patternId)) ?? (await summariseInNode(patternId))
   if (!summary) return null
-
-  if (cache.size >= CACHE_LIMIT) {
-    const oldest = cache.keys().next()
-    if (!oldest.done) cache.delete(oldest.value)
-  }
-  cache.set(key, summary)
+  void storeSummary(patternId, updatedAt, summary)
   return summary
+}
+
+/**
+ * Keep a freshly worked-out summary on the row. Raw SQL so `updatedAt` is not
+ * bumped (the summary is derived, not an edit), and only if the row is still
+ * the one the page read: a chart saved in between keeps its NULL and is worked
+ * out again on its next view. Best effort; a failed write costs one recompute.
+ */
+async function storeSummary(patternId: string, updatedAt: Date, summary: PatternFlossSummary): Promise<void> {
+  try {
+    await prisma.$executeRaw`
+      update "Pattern" set "flossSummary" = ${JSON.stringify(summary)}::jsonb
+      where id = ${patternId} and "updatedAt" = ${updatedAt} and "flossSummary" is null
+    `
+  } catch {
+    /* the next view recomputes */
+  }
 }
 
 /** What the palette-side layers look like when read straight out of jsonb. */
@@ -172,7 +151,7 @@ async function summariseInPostgres(patternId: string): Promise<PatternFlossSumma
       usageFor(f.s).fractionalCrosses += f.k === 'threeQuarter' ? 0.75 : 0.25
     }
 
-    return buildSummary(row.palette, row.fabric.count, (p) => usageFor(p.symbol))
+    return buildFlossSummary(row.palette, row.fabric.count, (p) => usageFor(p.symbol))
   } catch {
     // A raw query is the one thing on this page that could fail for reasons the
     // page can recover from. Fall through to the plain path rather than 404.
@@ -195,33 +174,5 @@ async function summariseInNode(patternId: string): Promise<PatternFlossSummary |
     return null
   }
 
-  // One walk of the grid for every colour at once, rather than one walk per
-  // colour. See summarisePaletteUsage.
-  const usageBySymbol = summarisePaletteUsage(data)
-  return buildSummary(data.palette, data.fabric.count, (p) => usageBySymbol.get(p.symbol))
-}
-
-function buildSummary(
-  palette: PaletteEntry[],
-  fabricCount: number,
-  usageOf: (entry: PaletteEntry) => PaletteUsage | undefined,
-): PatternFlossSummary {
-  const lines: FlossSummaryLine[] = palette.map((p) => {
-    const usage = usageOf(p) ?? {
-      fullCrossCount: 0,
-      backstitchCells: 0,
-      frenchKnotCount: 0,
-      fractionalCrosses: 0,
-    }
-    return {
-      symbol: p.symbol,
-      brand: p.brand,
-      code: p.code,
-      name: p.name,
-      rgb: p.rgb,
-      stitches: usage.fullCrossCount,
-      skeins: skeinCountFromUsage(usage, p, fabricCount),
-    }
-  })
-  return { lines, totalSkeins: lines.reduce((sum, l) => sum + l.skeins, 0) }
+  return computeFlossSummary(data)
 }

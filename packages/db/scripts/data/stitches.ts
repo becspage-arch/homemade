@@ -119,7 +119,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'double-crochet-uk',
     difficulty: 'BEGINNER',
     notes:
-      'The smallest worked stitch and the densest. UK "double crochet" equals US "single crochet" — the same move under two names. Trip-trip point for readers crossing patterns from a US source.',
+      'The smallest worked stitch and the densest. UK "double crochet" equals US "single crochet", the same move under two names. Trip-trip point for readers crossing patterns from a US source.',
   },
   {
     slug: 'crochet-half-treble',
@@ -133,7 +133,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'half-treble',
     difficulty: 'BEGINNER',
     notes:
-      'One step taller than a double; one step shorter than a treble. The compromise stitch — denser than treble, taller than double.',
+      'One step taller than a double; one step shorter than a treble. The compromise stitch, denser than treble, taller than double.',
   },
   {
     slug: 'crochet-treble',
@@ -147,7 +147,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'treble',
     difficulty: 'BEGINNER',
     notes:
-      'The workhorse pattern stitch in UK crochet — the granny square is treble clusters. UK "treble" equals US "double crochet"; the second of the canonical UK/US shifts.',
+      'The workhorse pattern stitch in UK crochet, the granny square is treble clusters. UK "treble" equals US "double crochet"; the second of the canonical UK/US shifts.',
   },
   {
     slug: 'crochet-double-treble',
@@ -253,7 +253,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-half-treble',
     notes:
-      'The htr worked into the third (lowest) loop rather than the usual two. Creates a flat, fabric-like texture sometimes called camel stitch — no visible ridges, smoother than back-loop-only.',
+      'The htr worked into the third (lowest) loop rather than the usual two. Creates a flat, fabric-like texture sometimes called camel stitch, no visible ridges, smoother than back-loop-only.',
   },
   {
     slug: 'crochet-flo-dc',
@@ -466,7 +466,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-double-uk',
     notes:
-      'Double crochet worked into the two vertical strands of the V at the top of the stitch below, rather than the standard two horizontal loops. The fabric surface shows distinctive V columns — exactly like a knitted stocking stitch.',
+      'Double crochet worked into the two vertical strands of the V at the top of the stitch below, rather than the standard two horizontal loops. The fabric surface shows distinctive V columns, exactly like a knitted stocking stitch.',
   },
   {
     slug: 'crochet-crocodile-stitch',
@@ -524,7 +524,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'BEGINNER',
     parentStitchSlug: 'crochet-picot',
     notes:
-      'A row of picots separated by two chains — a refined version of the basic picot edge. Used at the finish of shawls, doilies, and collars where a regular row of simple picots reads too dense.',
+      'A row of picots separated by two chains, a refined version of the basic picot edge. Used at the finish of shawls, doilies, and collars where a regular row of simple picots reads too dense.',
   },
 
   // ── Decreases + increases ───────────────────────────────────────────
@@ -541,7 +541,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'BEGINNER',
     parentStitchSlug: 'crochet-double-uk',
     notes:
-      'Insert hook into next st, pull up loop; insert hook into following st, pull up loop — three loops on hook. Yarn over and pull through all three. One stitch decreased.',
+      'Insert hook into next st, pull up loop; insert hook into following st, pull up loop, three loops on hook. Yarn over and pull through all three. One stitch decreased.',
   },
   {
     slug: 'crochet-invisible-decrease',
@@ -556,7 +556,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'BEGINNER',
     parentStitchSlug: 'crochet-double-uk',
     notes:
-      'Insert hook through the front loop only of the next st, then through the front loop only of the following st — two loops on hook. Yarn over, pull through both, yarn over, pull through remaining two. Flatter and neater than the standard dc2tog; the standard close in amigurumi.',
+      'Insert hook through the front loop only of the next st, then through the front loop only of the following st, two loops on hook. Yarn over, pull through both, yarn over, pull through remaining two. Flatter and neater than the standard dc2tog; the standard close in amigurumi.',
   },
   {
     slug: 'crochet-surface-slip-stitch',
@@ -602,7 +602,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-tunisian-simple',
     notes:
-      'Forward pass inserts hook through the interstitial loop between the front and back strands of the vertical bar — mimics the look of a knitted stocking stitch V on the right side.',
+      'Forward pass inserts hook through the interstitial loop between the front and back strands of the vertical bar, mimics the look of a knitted stocking stitch V on the right side.',
   },
   {
     slug: 'crochet-tunisian-purl',
@@ -632,7 +632,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-tunisian-simple',
     notes:
-      'Hook inserts between vertical bars — into the gap, not the bar itself. Creates a woven wicker texture denser and thicker than the simple stitch.',
+      'Hook inserts between vertical bars, into the gap, not the bar itself. Creates a woven wicker texture denser and thicker than the simple stitch.',
   },
   {
     slug: 'crochet-tunisian-extended',
@@ -756,7 +756,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'magic-ring',
     difficulty: 'BEGINNER',
     notes:
-      'Adjustable loop for starting in-the-round work. Pulls closed once the first round is anchored — no centre hole, the cleanest start for granny squares, hexagons, amigurumi, and circular motifs.',
+      'Adjustable loop for starting in-the-round work. Pulls closed once the first round is anchored, no centre hole, the cleanest start for granny squares, hexagons, amigurumi, and circular motifs.',
   },
   {
     slug: 'crochet-chainless-foundation-treble',
@@ -771,7 +771,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-treble',
     notes:
-      'Builds the first row directly without a starting chain — the foundation stays elastic instead of pulled tight. Use for blankets and garments where the bottom edge needs stretch.',
+      'Builds the first row directly without a starting chain, the foundation stays elastic instead of pulled tight. Use for blankets and garments where the bottom edge needs stretch.',
   },
 
   // ── Working-in-loops variants (front loop / back loop / both loops) ─
@@ -877,7 +877,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-treble',
     notes:
-      'Several trebles worked into the same base, then the first removed-from-hook stitch picked back up and pulled through. A defined bobble with a flat back — used in Aran-style afghans.',
+      'Several trebles worked into the same base, then the first removed-from-hook stitch picked back up and pulled through. A defined bobble with a flat back, used in Aran-style afghans.',
   },
   {
     slug: 'crochet-picot',
@@ -891,7 +891,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'picot',
     difficulty: 'BEGINNER',
     notes:
-      'Three chains closed back into the first chain with a slip stitch — a tiny decorative loop. Finishes edges on shawls, lace edgings, and baby clothes.',
+      'Three chains closed back into the first chain with a slip stitch, a tiny decorative loop. Finishes edges on shawls, lace edgings, and baby clothes.',
   },
   {
     slug: 'crochet-v-stitch',
@@ -906,7 +906,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'BEGINNER',
     parentStitchSlug: 'crochet-treble',
     notes:
-      'Two trebles separated by one chain, worked into the same base — a fan-like spacer. Lacy blankets, shawls, hexagon motifs.',
+      'Two trebles separated by one chain, worked into the same base, a fan-like spacer. Lacy blankets, shawls, hexagon motifs.',
   },
   {
     slug: 'crochet-cross-stitch-crochet',
@@ -921,7 +921,7 @@ export const STITCHES: StitchSeed[] = [
     difficulty: 'INTERMEDIATE',
     parentStitchSlug: 'crochet-treble',
     notes:
-      'Two trebles worked in reverse order so the second crosses in front of the first — used in lacy panels and Victorian crochet edgings.',
+      'Two trebles worked in reverse order so the second crosses in front of the first, used in lacy panels and Victorian crochet edgings.',
   },
 
   // ── Joining + assembly ──────────────────────────────────────────────
@@ -936,7 +936,7 @@ export const STITCHES: StitchSeed[] = [
     category: 'joining',
     difficulty: 'INTERMEDIATE',
     notes:
-      'Method rather than a stitch — joining motifs as the final round of each is worked, instead of sewing them together at the end. The cleanest finish for granny-square blankets.',
+      'Method rather than a stitch, joining motifs as the final round of each is worked, instead of sewing them together at the end. The cleanest finish for granny-square blankets.',
   },
   {
     slug: 'crochet-whipstitch-join',
@@ -949,7 +949,7 @@ export const STITCHES: StitchSeed[] = [
     category: 'joining',
     difficulty: 'BEGINNER',
     notes:
-      'A tapestry-needle seam — the traditional simple join, worked through the back loops only for a flat seam.',
+      'A tapestry-needle seam, the traditional simple join, worked through the back loops only for a flat seam.',
   },
   {
     slug: 'crochet-slip-stitch-seam',
@@ -1062,7 +1062,7 @@ export const STITCHES: StitchSeed[] = [
     category: 'textured',
     difficulty: 'BEGINNER',
     notes:
-      'Knit one purl one with the columns staggered each row. UK calls this moss stitch; US calls it seed — the most-cited UK / US confusion.',
+      'Knit one purl one with the columns staggered each row. UK calls this moss stitch; US calls it seed, the most-cited UK / US confusion.',
   },
   {
     slug: 'knitting-double-moss',
@@ -1120,7 +1120,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'yarn-over',
     difficulty: 'BEGINNER',
     notes:
-      'An increase that also creates a small eyelet — the lace basic. UK pattern books may write "yfwd" (yarn forward) between knit stitches.',
+      'An increase that also creates a small eyelet, the lace basic. UK pattern books may write "yfwd" (yarn forward) between knit stitches.',
   },
   {
     slug: 'knitting-make-1',
@@ -1217,7 +1217,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'cable-4-back',
     difficulty: 'INTERMEDIATE',
     notes:
-      'Slip 2 onto cable needle, hold to back; knit next 2; knit 2 from cable needle. Mirror of c4f — leans right.',
+      'Slip 2 onto cable needle, hold to back; knit next 2; knit 2 from cable needle. Mirror of c4f, leans right.',
   },
   {
     slug: 'knitting-cable-6-front',
@@ -1293,7 +1293,7 @@ export const STITCHES: StitchSeed[] = [
     chartSymbol: 'knit-tbl',
     difficulty: 'BEGINNER',
     notes:
-      'Knit into the back leg of the stitch — produces a twisted stitch with a tighter, slanted column.',
+      'Knit into the back leg of the stitch, produces a twisted stitch with a tighter, slanted column.',
   },
   {
     slug: 'knitting-wrap-and-turn',
@@ -1330,7 +1330,7 @@ export const STITCHES: StitchSeed[] = [
     category: 'foundation',
     difficulty: 'BEGINNER',
     notes:
-      'Two-strand cast-on worked with a measured tail and the working yarn — produces the first row and the cast-on edge in one pass. The default starting method in most modern UK knitting patterns.',
+      'Two-strand cast-on worked with a measured tail and the working yarn, produces the first row and the cast-on edge in one pass. The default starting method in most modern UK knitting patterns.',
   },
   {
     slug: 'knitting-knit-cast-on',
@@ -1356,7 +1356,7 @@ export const STITCHES: StitchSeed[] = [
     category: 'bind-off',
     difficulty: 'BEGINNER',
     notes:
-      'The standard finished edge — knit two, pass the first stitch over the second and off the needle, continue. UK "cast off" equals US "bind off".',
+      'The standard finished edge, knit two, pass the first stitch over the second and off the needle, continue. UK "cast off" equals US "bind off".',
   },
 
   // ── Cross-stitch ────────────────────────────────────────────────────

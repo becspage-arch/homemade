@@ -73,7 +73,7 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
   // Field-by-field rather than `include`, which would also pull `data` — the
   // chart itself, six megabytes of cells on a showpiece, for a page that never
   // draws a single one of them. The floss key it does draw comes from
-  // getPatternFlossSummary below.
+  // stored `flossSummary` (see getPatternFlossSummary).
   const row = await prisma.pattern.findUnique({
     where: { slug },
     select: {
@@ -96,6 +96,7 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
       premium: true,
       subCategoryId: true,
       generationMeta: true,
+      flossSummary: true,
       designer: { select: { displayName: true, slug: true, bio: true, isHouseDesigner: true } },
       subCategory: { select: { slug: true, name: true } },
       hero: { select: { cloudflareId: true, r2Key: true } },
@@ -118,10 +119,11 @@ export default async function PatternDetailPage({ params, searchParams }: PagePr
     try { await bumpPatternView(row.id) } catch { /* best-effort counter */ }
   })
 
-  // The floss key, cached off the row's updatedAt. Null means the stored chart
-  // is missing or malformed, which is the same unrenderable page a failed parse
-  // used to produce.
-  const floss = await getPatternFlossSummary(row.id, row.updatedAt)
+  // The floss key, stored on the row at publish (worked out and stored here on
+  // the first view if it is missing). Null means the stored chart is missing or
+  // malformed, which is the same unrenderable page a failed parse used to
+  // produce.
+  const floss = await getPatternFlossSummary(row.id, row.updatedAt, row.flossSummary)
   if (!floss) notFound()
 
   const finishedW = (row.widthCells / row.fabricCountSuggested) * 2.54

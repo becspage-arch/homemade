@@ -4817,6 +4817,15 @@ model Pattern {
   //                   calibration record for the locked bar.
   //   rerollCount     how many times this idea has been re-planned after a bad
   //                   roll. Capped at 3 so one idea cannot spin forever.
+  // ── Floss key (phase_xs_floss_summary_001) ─────────────────────────────
+  // The pattern page's floss list (one line per colour with stitch count and
+  // skeins, plus the skein total), worked out from `data` when the chart is
+  // written so a view never walks the grid. Shape: PatternFlossSummarySchema in
+  // src/floss-summary.ts ({ v, lines, totalSkeins }). A trigger
+  // (migration 20261018000000) sets it NULL whenever `data` changes in an
+  // UPDATE that does not also write it, so it can never go stale; the page
+  // fills a NULL one on its next view.
+  flossSummary    Json?
   candidateStatus String?
   judgedAt        DateTime?
   judgedBy        String?

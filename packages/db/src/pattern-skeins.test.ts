@@ -21,6 +21,7 @@ import {
   type PatternData,
   type PaletteEntry,
 } from './pattern'
+import { computeFlossSummary, readStoredFlossSummary, FLOSS_SUMMARY_VERSION } from './floss-summary'
 
 let passed = 0
 let failed = 0
@@ -184,6 +185,39 @@ test('summarising walks the chart once, not once per colour', () => {
     summaryMs * 4 < perColourMs,
     `summary ${summaryMs.toFixed(1)}ms vs per-colour ${perColourMs.toFixed(1)}ms`,
   )
+})
+
+
+// ── The stored floss key (Pattern.flossSummary) ─────────────────────────────
+
+test('the stored floss summary prints what the per-colour estimate prints', () => {
+  const data = fixture()
+  const summary = computeFlossSummary(data)
+  assert.equal(summary.v, FLOSS_SUMMARY_VERSION)
+  assert.deepEqual(summary.lines.map((l) => l.symbol), data.palette.map((p) => p.symbol), 'palette order')
+  for (const line of summary.lines) {
+    const p = data.palette.find((e) => e.symbol === line.symbol)!
+    assert.equal(line.skeins, estimateSkeinCount(data, p.symbol), `skeins for ${p.symbol}`)
+    assert.equal(line.stitches, data.grid.cells.filter((c) => c.s === p.symbol).length, `stitches for ${p.symbol}`)
+    assert.equal(line.code, p.code)
+    assert.equal(line.rgb, p.rgb)
+  }
+  assert.equal(summary.totalSkeins, summary.lines.reduce((n, l) => n + l.skeins, 0))
+  assert.equal(summary.lines.find((l) => l.symbol === '·')!.stitches, 0, 'an unused colour is a zero line')
+})
+
+test('a stored summary survives the trip through JSON', () => {
+  const summary = computeFlossSummary(fixture())
+  assert.deepEqual(readStoredFlossSummary(JSON.parse(JSON.stringify(summary))), summary)
+})
+
+test('a missing, older or malformed stored summary reads as none', () => {
+  const summary = computeFlossSummary(fixture())
+  assert.equal(readStoredFlossSummary(null), null)
+  assert.equal(readStoredFlossSummary(undefined), null)
+  assert.equal(readStoredFlossSummary({ ...summary, v: 0 }), null)
+  assert.equal(readStoredFlossSummary({ lines: summary.lines, totalSkeins: summary.totalSkeins }), null)
+  assert.equal(readStoredFlossSummary({ ...summary, lines: [{ symbol: 'a' }] }), null)
 })
 
 console.log(`\n${passed}/${passed + failed} passed`)

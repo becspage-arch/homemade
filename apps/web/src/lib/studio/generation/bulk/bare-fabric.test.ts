@@ -16,6 +16,7 @@ import {
   MIN_OPEN_PERIMETER,
   fullCoverageByIntent,
   laneForSize,
+  peelHalo,
 } from './bare-fabric'
 
 type PassFail = { name: string; passed: boolean; detail?: string }
@@ -421,6 +422,103 @@ record('clear: an all-white chart is left alone rather than emptied', () => {
   const out = clearBackground(data)
   assert.equal(out.removed, 0)
   assert.equal(out.data.palette.length, 1)
+})
+
+// ─── The halo ──────────────────────────────────────────────────────────────
+
+const GREY: PaletteEntry = {
+  symbol: 'g', brand: 'DMC', code: '415', name: 'Pearl grey', rgb: '#c7c7c7',
+  strandsFullCross: 2, strandsBackstitch: 1,
+}
+const GREEN: PaletteEntry = {
+  symbol: 'G', brand: 'DMC', code: '699', name: 'Green', rgb: '#05652e',
+  strandsFullCross: 2, strandsBackstitch: 1,
+}
+
+/**
+ * A green square of side n ringed by one cell of pale grey, on bare cloth, with
+ * an optional grey highlight at the centre. Big enough that the ring is the
+ * small share of the stitching a real halo is.
+ */
+function ringed(n: number, highlight = false): string[] {
+  const w = n + 4
+  const rows: string[] = [' '.repeat(w)]
+  rows.push('  ' + 'g'.repeat(n) + '  ')
+  for (let y = 0; y < n; y++) {
+    let mid = 'G'.repeat(n)
+    if (highlight && y === n >> 1) mid = mid.slice(0, n >> 1) + 'g' + mid.slice((n >> 1) + 1)
+    rows.push(' g' + mid + 'g ')
+  }
+  rows.push('  ' + 'g'.repeat(n) + '  ')
+  rows.push(' '.repeat(w))
+  return rows
+}
+
+record('halo: a one-cell pale grey ring round a cleared motif is peeled', () => {
+  const data = chart(ringed(12), [GREY, GREEN])
+  const out = peelHalo(data)
+  assert.equal(out.removed, 48)
+  assert.deepEqual(out.haloColours.map((h) => h.code), ['415'])
+  assert.deepEqual(out.droppedSymbols, ['g'], 'the halo floss leaves the key when nothing else uses it')
+  const pic = picture(out.data)
+  assert.equal(pic[1], ' '.repeat(16))
+  assert.equal(pic[2], '  ' + 'G'.repeat(12) + '  ')
+})
+
+record('halo: the same grey inside the design is kept', () => {
+  const data = chart(ringed(12, true), [GREY, GREEN])
+  const out = peelHalo(data)
+  assert.equal(out.removed, 48)
+  assert.equal(out.data.grid.cells.find((c) => c.x === 8 && c.y === 8)?.s, 'g', 'an interior highlight is design')
+  assert.deepEqual(out.droppedSymbols, [])
+})
+
+record('halo: a ring that is most of the stitching is the design, and is kept', () => {
+  const data = chart(ringed(4), [GREY, GREEN])
+  const out = peelHalo(data)
+  assert.equal(out.removed, 0)
+  assert.equal(out.data, data)
+})
+
+record('halo: a solid grey motif is design, not a halo', () => {
+  // A grey mouse: most of its grey is a solid area, not a thin rim.
+  const data = chart(
+    [
+      '          ',
+      '  gggggg  ',
+      ' gggggggg ',
+      ' ggGggggg ',
+      ' gggggggg ',
+      '  gggggg  ',
+      '          ',
+    ],
+    [GREY, GREEN],
+  )
+  const out = peelHalo(data)
+  assert.equal(out.removed, 0)
+  assert.equal(out.data, data)
+})
+
+record('halo: a dark outline colour is never a halo', () => {
+  const data = chart(
+    [
+      '          ',
+      '  OOOOOO  ',
+      ' OXXXXXXO ',
+      ' OXXXXXXO ',
+      '  OOOOOO  ',
+      '          ',
+    ],
+    [BLUE, RED],
+  )
+  assert.equal(peelHalo(data).removed, 0)
+})
+
+record('halo: idempotent', () => {
+  const data = chart(ringed(12), [GREY, GREEN])
+  const once = peelHalo(data)
+  const twice = peelHalo(once.data)
+  assert.equal(twice.removed, 0)
 })
 
 // ─── Report ────────────────────────────────────────────────────────────────
