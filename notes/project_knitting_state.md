@@ -1,11 +1,18 @@
-# Knitting — where it stands (6 September 2026, loom orchestrator session)
+# Knitting: where it stands (refreshed 17 October 2026)
 
-Plan of record (from the world-best audit, all agreed): (3) ship knitting with the grader as the product, all standard sizes free, custom fit premium; (4) fill the library and render every piece on the loom, duplicate shelves merged first; then yarn/floss database, follow-along offline mode, accessibility. Rule: no knitting pattern exists publicly until the loom has rendered it and the photo has been judged (no unseen garments). Engine order agreed: flat knit from a stored program → colour (stripes, then colourwork) → in-the-round (hats, cowls, socks, mitts) → shaping (garments, which the grader needs). Community: one-way contributions only.
+**Parked until Bec says start** (to save credits). Nothing below runs without her word.
 
-Done, on branches (not on main until a train carries them; both stay hidden on the site):
-- claude/knitting-shelves-library 5f7df48a: merge script for the four duplicate legacy shelves (dry run only; one draft hat tutorial is all it moves; NOT applied), KNITTING_SHELVES with ten shelves summing to 800 (dishcloths-homewares kept as the launch shelf), knitting library grid on the category page.
-- claude/knitting-grader-product c9adb78e: one additive migration (20261014000000) giving KnittingPattern the loom and provenance columns; POST /api/studio/knitting/grade (standard sizes free, custom measurements premium); Studio size table + "Fit it to me" panel; print page premium gate; all hidden until loomRenderStatus SUCCESS and a loom hero.
+## On main, hidden on the site
+- `KNITTING_SHELVES` (ten shelves, 800 target) in `apps/web/src/lib/studio/generation/categories.ts`, and the library grid on the category page.
+- The grader product: migration `20261014000000_knitting_pattern_parity_with_crochet`, `POST /api/studio/knitting/grade` (standard sizes free, custom fit premium), the Studio size table and "Fit it to me" panel, the print page gate. All hidden until a pattern has a loom hero.
+- The merge script for the four duplicate legacy shelves exists but had only been dry-run on 6 September. Check before running it.
 
-Paused for credits: claude/loom-knit-program, head 7c38c38b (flat knit reachable from a stored program). Only a preparatory change shipped (knitFaceSign exported from knitPath.ts, geometry hashes unchanged). Resume point: add 'knit-flat' to ProgramForm in apps/web/src/lib/loom/crochet/engine/program.ts with JSON-storable fields (knitFace, courses, knitWidth, knitGaugeScale, knitCourseScale, knitOps, knitCables, knitPurlCols), dispatch it in compileProgram to buildKnit, re-run loom-geom-hash.ts to confirm crochet is bit-identical, then the knit writeInstructions and programToChart variants, the craft-generalised render/publish path, three proofs (garter dishcloth, rib headband, cabled blanket square) rendered on Fargate beside real knitted photos, handbook entries and tests.
+## Plan of record
+- Ship knitting with the grader as the product. No knitting pattern goes public until the loom has rendered it and the photo has been judged.
+- Engine order: flat knit from a stored program, then colour, then in the round, then shaping.
+- The crochet working rules apply: Opus builds on pass/fail rails, Fable fine-tunes by eye, end-of-week credits only ([Crochet state](project/project_crochet_state.md)).
 
-Not started: colour in knitPath.ts, an in-the-round knit builder, shaping, the knitting idea backlog and cost estimate, the knitting routine (same shape as crochet's), the three unclear shelf merges (dishcloths-homewares keep as shelf, garments fold into sweater-cardigan/vest, baby becomes a tag), sign-off of the wip knit stitches (garter, seed, cable, lace ops; stockinette and rib are locked).
+## Resume point
+- Add a `knit-flat` form to `apps/web/src/lib/loom/crochet/engine/program.ts` (JSON-storable knit fields), compile it through `buildKnit` in `knitPath.ts`, and confirm crochet hashes are unchanged.
+- Then the knit written instructions and chart, the render and publish path, and three proofs (garter dishcloth, rib headband, cabled square) beside real photos.
+- Engine gaps: garter, yo and cable are parked (handbook §8d); no colour, in-the-round or shaping builders yet.

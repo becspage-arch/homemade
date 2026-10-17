@@ -36,5 +36,5 @@ runs only on Rebecca's machine — a cloud session cannot see that drive. It is 
 (35 PUBLIC, 1 not — checked 2026-09-06). The reversible `xs-cull` only flips visibility to
 PRIVATE (keeps the designer link), so a missing-from-DB pattern was never imported / was
 hard-deleted, not culled. See [[reference_house_designer_canonical]];
-[[project_stitching_mama_photos]] and [[project_cross_stitch]] are not in notes/ — the
+`project_stitching_mama_photos` and `project_cross_stitch` are not in notes/ — the
 cross-stitch state is in [[project/project_cross_stitch_state]].

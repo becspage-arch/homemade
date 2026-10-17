@@ -54,5 +54,5 @@ targets in `apps/web/src/lib/studio/generation/categories.ts` (checked 2026-09-0
 [[project/project_cross_stitch_state]].
 
 Related: [[project/project_cross_stitch_state]], [[project/project_pattern_generation_toolkit]]
-(itself largely superseded), ([[project_cross_stitch]] is not in notes/),
+(the generation code map), (`project_cross_stitch` is not in notes/),
 [[feedback_customer_eye_renders]], [[feedback_no_popup_questions]], [[feedback_pattern_complexity_range]].

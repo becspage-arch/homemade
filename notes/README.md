@@ -8,6 +8,6 @@ Rebecca's decision (6 September 2026): the repo stays public until the build is 
 - Update a file in the same session that changes the fact it records; the edit rides the next train to `main`. Finished work is recorded in `BUILD_PROGRESS.md`, not here.
 - Never put a credential, token, key or connection string in here. The repo is public. `.env.credentials` and `.secrets/` stay gitignored.
 - The `homemade-standards` skill and Rebecca's laptop auto-memory are older fallback copies of these files, not the source (`CLAUDE.md` says the same).
-- Double-bracket wiki links in these files date from the old memory system. Several point at files that were never brought into `notes/`; where that happens the line says so rather than inventing a file.
+- Double-bracket wiki links date from the old memory system. Every one now resolves to a file in `notes/` (checked 17 October 2026). A note that never came into `notes/` is named in backticks, not linked.
 
 Audited end to end on 6 September 2026 against the repository and the live database; corrections carry their date.
