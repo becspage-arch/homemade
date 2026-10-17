@@ -17,7 +17,7 @@ import { STITCHES, type StitchId } from './dictionary'
 import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
-import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
+import { heroPhotoView, pickHeroStageVariant, type HeroPhoto, type HeroPhotoKnobs, type HeroStage } from '../../render/blenderScene'
 import { drapeFlat, drapeProps, drapeTube, drapedView } from './drape'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
@@ -164,7 +164,9 @@ export interface BlenderScene {
     stageZoom?: number
     /** Which variant of the set (see `HERO_STAGE_VARIANTS`). */
     stageVariant?: string
-  }
+    /** The listing photo style (see `HeroPhoto`) and its knobs. */
+    photo?: HeroPhoto
+  } & HeroPhotoKnobs
   /** Matte ellipsoid props (a pouffe under a draped blanket, a bust under a
    *  cowl) — the drape's coloured colliders, built by loom_render_crochet.py's
    *  build_props. Only written for a draped scene. */
@@ -506,6 +508,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') {
     view.stage = p.stage
     view.stageVariant = pickHeroStageVariant(p.stage, p.stageSeed ?? p.name, p.stageVariant)
+    Object.assign(view, heroPhotoView(p.photo, p.photoKnobs))
   }
   const props = draped ? drapeProps(p.drape!) : []
   return {

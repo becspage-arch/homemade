@@ -26,7 +26,7 @@ import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
 import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
-import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
+import { heroPhotoView, pickHeroStageVariant, type HeroPhoto, type HeroPhotoKnobs, type HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
 import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
@@ -359,6 +359,12 @@ export interface CompositionProgram {
   stageVariant?: string
   /** What the variant is picked from: the pattern's slug. Defaults to `name`. */
   stageSeed?: string
+  /** The listing photo style on a styled stage (see `HeroPhoto`): 'v2' = the
+   *  window key, wide aperture, three-quarter camera and real props. Unset =
+   *  the stage as before. Render-only. */
+  photo?: HeroPhoto
+  /** Individual photo knobs over the style's defaults (see `HeroPhotoKnobs`). */
+  photoKnobs?: HeroPhotoKnobs
   /** ACCESSORIES worn on the finished toy (toy-pose round 6): each is a
    *  separate genuinely-stitched piece (hatAccessory.ts) built, audited and
    *  seated on a named part of the COMPILED composition, its strokes appended
@@ -1214,7 +1220,8 @@ export interface BlenderScene {
     /** Multiplies the stage's own zoom (a tall piece — horns — pulls back). */
     stageZoom?: number
     stageVariant?: string
-  }
+    photo?: HeroPhoto
+  } & HeroPhotoKnobs
 }
 
 /** Default `minFieldMm` (STITCH_ENGINE §8e-2 Part C) for a composition — the
@@ -1332,6 +1339,7 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
   if (p.stage && p.stage !== 'studio' && p.stageZoom != null) scene.view.stageZoom = p.stageZoom
   if (p.stage && p.stage !== 'studio') {
     scene.view.stageVariant = pickHeroStageVariant(p.stage, p.stageSeed ?? p.name, p.stageVariant)
+    Object.assign(scene.view, heroPhotoView(p.photo, p.photoKnobs))
   }
   scene.view.minFieldMm = p.minFieldMm ?? DEFAULT_MIN_FIELD_MM
   if (p.fibreTune && Object.keys(p.fibreTune).length) scene.fibreTune = { ...p.fibreTune }

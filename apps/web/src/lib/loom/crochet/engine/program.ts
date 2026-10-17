@@ -21,7 +21,7 @@
  */
 
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
-import type { HeroStage } from '../../render/blenderScene'
+import type { HeroPhoto, HeroPhotoKnobs, HeroStage } from '../../render/blenderScene'
 import type { DrapeOptions } from './drape'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
@@ -159,6 +159,10 @@ export interface CrochetProgram {
    *  Unset = picked from a hash of `stageSeed` (the slug; default `name`). */
   stageVariant?: string
   stageSeed?: string
+  /** The listing photo style on a styled stage (see `HeroPhoto`); unset = as before. */
+  photo?: HeroPhoto
+  /** Individual photo knobs over the style's defaults (see `HeroPhotoKnobs`). */
+  photoKnobs?: HeroPhotoKnobs
   /** DRAPE staging for a soft tube or flat piece (engine/drape.ts): the built piece is put
    *  down and settles under gravity on the table before it is rendered. Staging
    *  only — the stitches and the written pattern are unchanged. Absent = the
