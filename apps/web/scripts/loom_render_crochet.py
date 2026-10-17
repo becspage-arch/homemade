@@ -258,6 +258,7 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 # Chenille velvet (strand "single" fibres only):
 #   hm_velvet   0..1    crest lift (stitch tops catch the light) vs the deep
 #                       crevice, and a per-stitch sheen strength (nap patches)
+#   hm_fleck    0..0.5  added to chenille's lit pile-tip flecks (`fleck_amt`)
 #   hm_nap      0..1    nap direction: a smooth per-stitch tilt of the shading
 #                       normal, so some stitches catch the light and some don't
 #   hm_ripple   0..1    lumpy pile along the strand: radius +- 9% at 1
@@ -280,7 +281,7 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 HANDMADE_PRESET = dict(
     hm_jitter=0.3, hm_loft=0.22, hm_tension=0.14,
     hm_heather=0.7, hm_drift=0.5, hm_crevice=0.35,
-    hm_velvet=0.6, hm_nap=0.5, hm_ripple=0.5,
+    hm_velvet=0.75, hm_nap=0.5, hm_ripple=0.5, hm_fleck=0.2,
     hm_loop_twist=0.8, hm_loop_pile=1.5, hm_pale_pile=0.4,
     hm_halo=0.5,
 )
@@ -713,6 +714,8 @@ def chenille_material(name, hexcol, fp, cell_bu=0.0, r_bu=0.0):
     crush.inputs["Scale"].default_value = fp.get("crush_scale", 7.0)
     crush.inputs["Detail"].default_value = 2.0
     nt.links.new(tex.outputs["Object"], crush.inputs["Vector"])
+    if hm_amt(fp, "hm_fleck") > 0:
+        fp = dict(fp, fleck_amt=fp.get("fleck_amt", 0.0) + hm_amt(fp, "hm_fleck"))
     lo = tuple(c * (1.0 - fp.get("crush_amt", 0.14)) for c in base[:3]) + (1.0,)
     hi = tuple(min(1.0, c * (1.0 + fp.get("crush_amt", 0.14))) for c in base[:3]) + (1.0,)
     ramp = nt.nodes.new("ShaderNodeValToRGB")
@@ -1110,7 +1113,8 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # handmade cotton halo: sparse, short, fine fibres standing off
             # the strand (the faint fuzz of a real cotton)
             h = hm_amt(fpb, "hm_halo")
-            n_groups = max(1, len(groups))
+            pts_all = sum(by_r.values()) or 1
+            share = sum(sum(len(f) for f in st["filaments"]) for st in group) / pts_all
             # emit from a cheap proxy (one low-poly tube on the centreline at
             # the strand's outer radius), not the plies: a mesh copy of every
             # ply ran the bunny out of the 8 GB probe's memory (yarn2 r2b)
@@ -1138,7 +1142,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             add_pile_hairs(pob, hexcol, dict(
                 fpb, pile_density=1.8 * h, pile_children=4, pile_len_mm=0.55,
                 pile_lean=1.0, pile_radius_mm=0.012, pile_tip_lift=0.3,
-                pile_max_hairs=fpb.get("hm_halo_max_hairs", 400000) / n_groups))
+                pile_max_hairs=fpb.get("hm_halo_max_hairs", 400000) * share))
             bpy.data.objects.remove(pob)
             bpy.data.curves.remove(pcu)
             try:

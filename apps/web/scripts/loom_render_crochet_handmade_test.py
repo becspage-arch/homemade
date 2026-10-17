@@ -53,7 +53,7 @@ class HandmadeParams(unittest.TestCase):
 
     def test_presets_inside_their_ranges(self):
         rng = dict(hm_jitter=0.5, hm_loft=0.5, hm_tension=0.3, hm_heather=1, hm_drift=1, hm_crevice=1,
-                   hm_velvet=1, hm_nap=1, hm_ripple=1, hm_loop_twist=1, hm_loop_pile=3, hm_pale_pile=1, hm_halo=1)
+                   hm_velvet=1, hm_nap=1, hm_ripple=1, hm_loop_twist=1, hm_loop_pile=3, hm_pale_pile=1, hm_halo=1, hm_fleck=0.5)
         for k, v in R.HANDMADE_PRESET.items():
             self.assertTrue(0 < v <= rng[k], k)
 
