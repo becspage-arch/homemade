@@ -3569,6 +3569,30 @@ Round 1-2 renders and side-by-sides: `crochet-bar/proofs/motifs/`; the job log i
 
 ---
 
+## 8n. FINE GAUGE — one knob for more, smaller stitches at the same size (2026-10-17)
+
+`AmigurumiChoices.gauge` / `CowChoices.gauge` (default 1, clamped 1..2; engine/gauge.ts). At gauge g every piece is
+worked in g x the rounds and g x the stitches a round, in a yarn g x finer: `CompositionProgram.yarnRadiusMm` (new,
+additive) wins over the named weight for the geometry, so the toy keeps its size in mm. The program also carries the
+named weight a maker buys (`nearestYarnWeight`), the hook (~1.92 yarn radii) and a `gaugeText` line; the written
+pattern is generated from the same round arrays, so the words carry the new counts (gauge.test.ts checks every
+"(N sts)" against the piece).
+
+- Every helper is the IDENTITY at g = 1 (the preset, doll and loopStitch hash guards pass untouched).
+- Keep the ROUND COUNT at g x, not only the stitches: scaling just the straight rounds left a sphere 9% squat and the
+  cow's legs 13 mm through the table (`gSphereRounds`, `gTube`, `gBall` fill the straight run to the target length).
+- Tubes and balls take the nearest EVEN equator (sixes, then one +2/+4 step): sixes are too coarse for a small piece.
+  Flat discs keep climbing in sixes and are trimmed back to their mm size by `scale` (`discTrim`).
+- Loop-stitch hair keeps its loops' size in mm (lengthYr / halfWidthYr x g); face embroidery `gaugeScale` x g.
+- mm placements (sinks, seats, lifts, presses) are kept. The finer cow body settles a few mm squatter, so its legs carry
+  a MEASURED lift per gauge (`GAUGE_LEG_LIFT`, M at 1.3 / 1.4).
+- The audit near the gate is NOT smooth in the counts: measured failures at gauge 1.3-1.6 have measured-clean
+  neighbours in `MEASURED_NUDGES` (toy body eq 84/90 with one straight round -> two; the 1.6 foot eq 48 -> 46) and
+  the lop ear is capped at 27 sts. A gauge outside 1.3 / 1.4 / 1.6 must go through gauge.test.ts before it ships, and
+  gauge != 1 profiles are not in `AUDITED_PROFILES` (the save path does not take a gauge yet).
+- Render memory: stitches and scene points both go up ~g^2 (bunny 1.4: 1.09 M -> 2.06 M points); the fine-cotton bunny at 1.4 OOMs the 8 GB probe at bevel 2 and
+  fits at `fibreTune.bevel_res: 1` (7.4 GB). Job log: crochet-bar/jobs/gauge.md.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

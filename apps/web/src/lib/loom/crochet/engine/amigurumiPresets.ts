@@ -1172,7 +1172,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     })
     parts.push({
       name: side < 0 ? 'toe-pad-l' : 'toe-pad-r', stitch: 'sc', rounds: gDisc([6, 12, 18, 24], g), colourHex: contrast,
-      form: 'disc', scale: 0.6,
+      form: 'disc', scale: 0.6 * discTrim([6, 12, 18, 24], g),
       place: { on: leg, dir: at(TOE_PAD_U, 0), aim: a, seat: 0, surfaceFit: 'points' },
     })
     const beans: Array<[number, number]> = [
@@ -1182,7 +1182,7 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
     beans.forEach(([u, v], k) => {
       parts.push({
         name: `toe-bean-${side < 0 ? 'l' : 'r'}${k}`, stitch: 'sc', rounds: gDisc([6, 12], g), colourHex: contrast,
-        form: 'disc', scale: 0.42,
+        form: 'disc', scale: 0.42 * discTrim([6, 12], g),
         place: { on: leg, dir: at(u, v), aim: a, seat: 0, surfaceFit: 'points' },
       })
     })
@@ -1190,9 +1190,20 @@ function pushToyLimbs(parts: AmigurumiPart[], choices: AmigurumiChoices, s: Size
   if (bear) {
     parts.push({
       name: 'belly-patch', stitch: 'sc', rounds: gDisc([6, 12, 18, 24], g), colourHex: contrast, form: 'disc',
+      ...(g === 1 ? {} : { scale: discTrim([6, 12, 18, 24], g) }),
       place: { on: 'body', dir: { x: 0, y: 1, z: 0.1 }, aim: { x: 0, y: 1, z: 0.1 }, seat: 0, surfaceFit: 'points' },
     })
   }
+}
+
+/** A flat appliqué climbs in sixes, so at gauge g its widest round lands on
+ *  the nearest six (a 12-st bean at 1.4 is 18, not 16.8): this trim brings it
+ *  back to its gauge-1 size in mm. 1 at gauge 1. */
+function discTrim(rounds: number[], g: number): number {
+  if (g === 1) return 1
+  const want = rounds[rounds.length - 1]! * g
+  const got = gDisc(rounds, g)
+  return want / got[got.length - 1]!
 }
 
 /** The bear's contrast paw tip: its first `n` rounds, every stitch. */

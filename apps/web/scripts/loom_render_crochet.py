@@ -684,7 +684,10 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         cu = bpy.data.curves.new("yarn", type="CURVE")
         cu.dimensions = "3D"
         cu.bevel_depth = 1.0
-        cu.bevel_resolution = 3 if strand == "single" else 2
+        # `bevel_res` (fibreTune, render-only; gauge job 2026-10-17): fewer
+        # segments round each tube, for a fine-gauge toy whose doubled strand
+        # count would not fit the 8 GB render task. Absent = unchanged.
+        cu.bevel_resolution = int(fpb.get("bevel_res", 3 if strand == "single" else 2))
         cu.resolution_u = 2
         cu.use_fill_caps = True
         write_points(cu, 1.0)

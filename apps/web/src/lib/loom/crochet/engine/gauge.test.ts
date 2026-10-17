@@ -13,7 +13,7 @@
  *
  *   cd apps/web && npx tsx src/lib/loom/crochet/engine/gauge.test.ts
  *
- * GAUGES=1.3 or BASES=cow narrows a run.
+ * GAUGES=1.3 or BASES=cow narrows a run (GAUGES=1.4 also passes: the proof gauge).
  */
 
 import assert from 'node:assert/strict'
@@ -120,6 +120,8 @@ for (const base of BASES) {
         const d = Math.abs(got - want) / want
         assert.ok(d <= SIZE_TOLERANCE, `${what} ${got.toFixed(1)} mm is ${(d * 100).toFixed(1)}% off gauge 1's ${want} mm`)
       }
+      // It still SITS on the table (the cow's legs carry a measured lift per gauge).
+      assert.ok(Math.abs(minz) <= 0.5, `minz ${minz.toFixed(2)} mm: not sitting on the table`)
       // The finer yarn: exactly g x finer for the geometry, and named and
       // hooked for the maker.
       const yr1 = compileYr(one)
