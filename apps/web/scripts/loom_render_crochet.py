@@ -3545,12 +3545,14 @@ assert all(PHOTO_V2[k] == v and PHOTO_V1[k] == v for k, v in PHOTO_STAGE3_OFF.it
 # Emissive materials (the window's outside, lantern and fairy glow) are never in
 # here, so the glow is kept. Materials match by name (Blender's .001 suffix off).
 PHOTO_ROOM_BY = {
-    "garden": dict(tones={"sill_wood": 0.6, "wall": 0.66, "window_frame": 0.74, "jug": 0.86,
-                          "book0": 0.8, "book1": 0.8, "book2": 0.8}, ambient=0.7),
-    "spring": dict(tones={"sill_wood": 0.72, "wall": 0.74, "window_frame": 0.8, "jug": 0.88}, ambient=0.75),
-    "lantern": dict(tones={"wall": 0.76, "dresser": 0.8, "oak": 0.78, "card": 0.9, "lantern": 0.85}, ambient=0.75),
-    "pine": dict(tones={"wall": 0.74, "table": 0.75}, ambient=0.8),
-    "throw": dict(tones={"wall": 0.7, "table_wood": 0.7, "vase": 0.85}, ambient=0.72),
+    # r1 of stage 3: the first tones (sill 0.6, wall 0.66) hardly showed under
+    # the window key, so 1 now means a clearly deeper room
+    "garden": dict(tones={"sill_wood": 0.45, "wall": 0.5, "window_frame": 0.6, "jug": 0.8,
+                          "book0": 0.7, "book1": 0.7, "book2": 0.7}, ambient=0.55),
+    "spring": dict(tones={"sill_wood": 0.6, "wall": 0.62, "window_frame": 0.7, "jug": 0.85}, ambient=0.65),
+    "lantern": dict(tones={"wall": 0.66, "dresser": 0.7, "oak": 0.65, "card": 0.85, "lantern": 0.8}, ambient=0.65),
+    "pine": dict(tones={"wall": 0.62, "table": 0.65}, ambient=0.7),
+    "throw": dict(tones={"wall": 0.55, "table_wood": 0.55, "vase": 0.8}, ambient=0.6),
 }
 PHOTO_ROOM_BY.update(windowsill=PHOTO_ROOM_BY["garden"], nursery=PHOTO_ROOM_BY["lantern"],
                      christmas=PHOTO_ROOM_BY["pine"], linen=PHOTO_ROOM_BY["throw"])
