@@ -8,7 +8,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { HERO_STAGE_VARIANTS, pickHeroStageVariant } from './blenderScene'
+import { HERO_PHOTO_V2_DEFAULTS, HERO_STAGE_VARIANTS, heroPhotoView, pickHeroStageVariant } from './blenderScene'
 
 test('a slug always picks the same variant', () => {
   const a = pickHeroStageVariant('nursery', 'sleepy-bunny-nightcap')
@@ -39,4 +39,31 @@ test('the TS variant table matches the Python renderer', () => {
     const pyIds = [...m![1]!.matchAll(/"([^"]+)"/g)].map((x) => x[1])
     assert.deepEqual(pyIds, [...ids], stage)
   }
+})
+
+test('photo: unset / v1 writes nothing (existing heroes unchanged); v2 and knobs pass through', () => {
+  assert.deepEqual(heroPhotoView(), {})
+  assert.deepEqual(heroPhotoView('v1'), {})
+  assert.deepEqual(heroPhotoView('v2'), { photo: 'v2' })
+  assert.deepEqual(heroPhotoView('v2', { photoFstop: 4, photoKey: undefined }), { photo: 'v2', photoFstop: 4 })
+  assert.deepEqual(heroPhotoView(undefined, { photoProps: 'v2' }), { photoProps: 'v2' })
+  // an unknown key never reaches the scene
+  assert.deepEqual(heroPhotoView('v2', { nope: 1 } as never), { photo: 'v2' })
+})
+
+test('the TS photo v2 knobs and defaults match PHOTO_V2 in the Python renderer', () => {
+  const here = dirname(fileURLToPath(import.meta.url))
+  const py = readFileSync(join(here, '../../../../scripts/loom_render_crochet.py'), 'utf8')
+  const m = py.match(/PHOTO_V2 = dict\(([\s\S]*?)\n\)/)
+  assert.ok(m, 'PHOTO_V2 missing in the Python')
+  const pyKv: Record<string, unknown> = {}
+  for (const x of m![1]!.matchAll(/(photo\w+)=("[^"]*"|[-\d.]+|None)/g)) {
+    const raw = x[2]!
+    pyKv[x[1]!] = raw.startsWith('"') ? raw.slice(1, -1) : raw === 'None' ? null : Number(raw)
+  }
+  assert.deepEqual(pyKv, { ...HERO_PHOTO_V2_DEFAULTS })
+  const v1 = py.match(/PHOTO_V1 = dict\(([\s\S]*?)\n\)/)
+  assert.ok(v1, 'PHOTO_V1 missing in the Python')
+  const v1Keys = [...v1![1]!.matchAll(/(photo\w+)=/g)].map((x) => x[1])
+  assert.deepEqual(v1Keys.sort(), Object.keys(HERO_PHOTO_V2_DEFAULTS).sort())
 })

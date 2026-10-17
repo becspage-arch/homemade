@@ -1193,6 +1193,8 @@ def main():
         # the piece itself rather than the whole hung content (cord + lift).
         H=(view["stageHeightMm"] * S) if view.get("stageHeightMm") else (maxz_bu + z_offset),
         cam=cam, tgt=tgt, view=view, key_energy=key.data.energy,
+        face=face_point(data, z_offset, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
+        footprint=footprint_polar(data, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
@@ -1258,7 +1260,7 @@ def stage_view(view):
     v = dict(view)
     v["tiltDeg"] = view.get("stageTiltDeg", STAGE_TILT)
     v["distScale"] = view.get("distScale", 1.0) * view.get("stageZoom", STAGE_ZOOM_BY.get(stage_of(view), STAGE_ZOOM))
-    return v
+    return photo_camera_view(view, v)   # photo v2: the three-quarter eye line (off = unchanged)
 
 
 def _lin(h):
@@ -1814,6 +1816,17 @@ def apply_stage(stage, scene, ctx):
     R = ctx["R"]
     cam, tgt = ctx["cam"], ctx["tgt"]
     view = ctx["view"]
+    po = photo_opts(view)
+    _PHOTO.clear()
+    _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"],
+                  foot=ctx.get("footprint"))
+    if po["photoFrame"]:
+        # hold the piece at a set share of the frame height: slide the camera
+        # along its own line (its aim, turn and tilt are kept)
+        bpy.context.view_layer.update()
+        dv = cam.location - tgt.location
+        s_new = max(ctx["H"], 1.0) / (po["photoFrame"] * 2.0 * 18.0 / cam.data.lens)
+        cam.location = tgt.location + dv.normalized() * s_new
     s = (cam.location - tgt.location).length          # camera distance
     D = 1.4 * s                                         # back wall distance behind the piece
     asp = view.get("stageAspect", STAGE_ASPECT)
@@ -1847,7 +1860,10 @@ def apply_stage(stage, scene, ctx):
         # energy scales with distance^2 relative to the studio key (~1.3 span away)
         d = (Vector(loc) - Vector(aim)).length
         e = key_e * mult * room_mult * (d / (1.3 * ctx["span"])) ** 2
-        return _area("stage_light", None, to_world(loc), to_world(aim), e, size, color)
+        ob = _area("stage_light", None, to_world(loc), to_world(aim), e, size, color)
+        set_lights.append(ob)
+        return ob
+    set_lights = []
 
     k = dict(root=root, H=H, R=R, s=s, D=D, vis=vis, light=room_light)
     variant = stage_variant(view, stage)
@@ -1870,6 +1886,12 @@ def apply_stage(stage, scene, ctx):
     elif stage == "wall":
         _stage_wall(gap=view.get("wallGapCm", 3.0), **k)
         _world(scene, (0.98, 0.95, 0.90), 0.5)
+    if po["photoLight"] == "window":
+        builder_lights = list(set_lights)
+        _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene)
+    if po["photoAmbient"] != 1.0 and scene.world:
+        bgn = scene.world.node_tree.nodes["Background"]
+        bgn.inputs["Strength"].default_value *= po["photoAmbient"]
 
     # Camera: a real shallow depth of field, focused on the piece.
     cd = cam.data
@@ -1877,6 +1899,16 @@ def apply_stage(stage, scene, ctx):
     cd.dof.focus_object = None
     cd.dof.focus_distance = s
     cd.dof.aperture_fstop = view.get("stageFstop", STAGE_FSTOP)
+    if po["photoFstop"]:
+        # photo v2: a real wide aperture (f/N -> N/100 at this 100x scale)
+        cd.dof.aperture_fstop = po["photoFstop"] / 100.0
+    if po["photoFocus"] == "face" and ctx.get("face"):
+        fe = bpy.data.objects.new("photo_focus", None)
+        fe.location = ctx["face"]
+        scene.collection.objects.link(fe)
+        cd.dof.focus_object = fe
+        print("[photo] focus on the face at (%.1f, %.1f, %.1f), %.1f from the camera" % (
+            ctx["face"][0], ctx["face"][1], ctx["face"][2], (cam.location - Vector(ctx["face"])).length))
     cd.dof.aperture_blades = 0          # round bokeh
     cd.dof.aperture_rotation = 0.3
     cd.clip_end = max(cd.clip_end, D * 6)
@@ -1888,10 +1920,13 @@ def apply_stage(stage, scene, ctx):
     cd.sensor_height = 36.0
     scene.view_settings.exposure = view.get(
         "stageExposure", scene.view_settings.exposure + _tune(view, stage, "exposure", "_none", STAGE_EXPOSURE_LIFT.get(stage, 0.0)))
+    scene.view_settings.exposure += po["photoExposure"]
     # Round 5: a touch more contrast and a warm golden grade (lifted warm
     # highlights, slightly cool-neutral shadows) over the AgX base look.
     scene.view_settings.look = view.get("stageLook", "AgX - Medium High Contrast")
     grade_golden(scene, _tune(view, stage, "warmth", "stageWarmth", STAGE_WARMTH.get(stage, 0.65)))
+    if view.get("photo"):
+        print("[photo]", view.get("photo"), " ".join("%s=%s" % (k[5:], v) for k, v in po.items()))
     print("[stage]", stage, variant, "s=%.1f D=%.1f H=%.1f R=%.1f fstop=%.3f hw0=%.1f ynear=%.1f" % (
         s, D, H, R, cd.dof.aperture_fstop, vis.hw(0), vis.y_near()))
 
@@ -1912,6 +1947,10 @@ def _ground(root, mat, s, D, z=0.0):
     return _box("stage_ground", root, mat, -3 * s, 3 * s, -3 * s, D + 2, z - 2.0, z)
 
 
+# the cloths under the piece that photo v2 crumples (props on top keep their own)
+_PHOTO_CLOTHS = ("napkin", "throw", "blanket", "sheet", "plaid", "fur")
+
+
 def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, heap=None, wl_scale=1.0,
            right=None, hem=0.0):
     """A cloth that fills the whole bottom of the frame and runs back into the
@@ -1921,14 +1960,29 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
     stitched hem along that edge — a napkin, not an infinite sheet."""
     y0 = min(vis.y_near() - 4.0, -R * 2)
     y1 = back * D
+    if _PHOTO.get("blanket", "none") != "none" and name in _PHOTO_CLOTHS:
+        right = None        # photo v2: the cloth runs out of frame on both sides (the bar)
     x1 = vis.hw(y1) * 1.15
     xr = x1 if right is None else right * vis.hw(0)
     f = _folds(H, R, amp, lift=lift, seed=seed, wl_scale=wl_scale)
+    if _PHOTO.get("blanket", "none") != "none" and name in _PHOTO_CLOTHS:
+        # photo v2: the cloth under the toy, softly crumpled (and optionally
+        # swapped for a knit or linen), and remembered so props lie ON it
+        f0 = f
+        cr = _crumple(H, R, _PHOTO.get("crumple", 0.045), seed=seed)
+
+        def f(x, y):
+            return max(0.02, f0(x, y) + cr(x, y))
+        if _PHOTO["blanket"] == "knit":
+            mat = knit_material(name + "_v2", "#efe6d6", stitch_cm=1.6, rough=0.96)
+        elif _PHOTO["blanket"] == "linen":
+            mat = linen_material(name + "_v2", "#d8cab2")
     if heap:
         def h(x, y):
             return f(x, y) + heap(x, y)
     else:
         h = f
+    _PHOTO["ground"] = h
     n = int(min(320, max(120, (x1 + xr) / (0.025 * H))))
 
     def edge(y):
@@ -2005,7 +2059,10 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
              bx - 0.6 * H + kk * 0.06 * H, bx + 0.6 * H, by - 0.42 * H, by + 0.42 * H, z0, z0 + th * H)
         z0 += th * H
     # A dried lavender, daisy and wheat bunch lying on the cloth, left.
-    _dried_bunch(root, H, R, vis)
+    if _PHOTO.get("props") == "v2":
+        _bunch_v2(root, H, R, vis, _PHOTO.get("ground") or (lambda x, y: 0.04), _PHOTO.get("foot"))
+    else:
+        _dried_bunch(root, H, R, vis)
     # Window daylight: broad, warm, from behind-left through the glass (the soft
     # rim on the fur), a gentle room bounce from the front right.
     # r5: the window is THE light — a strong golden key raking from behind-left
@@ -2975,6 +3032,8 @@ def _stage_windowsill_spring(root, H, R, s, D, vis, light):
     _throw("napkin", root, ging, vis, H, R, D, 0.07, back=0.32, seed=0.8, wl_scale=1.4, right=0.8, hem=0.03 * H)
     jy = 0.55 * D
     jx = 0.82 * vis.hw(jy)                      # r3: clear of the head
+    if _PHOTO.get("props") == "v2":
+        jx = 0.55 * vis.hw(jy)                  # photo v2: the whole jug and its tulips in frame
     # r4: a speckled cream stoneware jug (the clear jar refracted into abstract shapes)
     jug = _principled("jug", "#f1ebdf", rough=0.35, spec=0.45, coat=0.25)
     _lathe("jar", root, jug, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.35 * H, 0.45 * H),
@@ -3311,6 +3370,437 @@ VARIANT_BUILDERS = {
     "snow": (_stage_christmas_snow, (0.70, 0.78, 0.92), 0.35),
     "gifts": (_stage_christmas_gifts, (0.95, 0.84, 0.70), 0.3),
 }
+
+
+# ---- PHOTO V2 (job stage2): the "photo is flat" fix ------------------------
+#
+# Every bar photo is shot the way a person shoots a toy by a window: ONE soft
+# window key from the side with warm highlights and soft-edged shadows, a gentle
+# fill on the far side, a little rim on the contour, a wide aperture that melts
+# the room into creamy bokeh while the toy's face stays sharp, a slight turn and
+# an eye line at the toy's face, and real props (an airy dried bunch, a softly
+# crumpled cloth the toy settles into).
+#
+# `view.photo: "v2"` turns all of it on; each part is its own knob (a knob set
+# on the view wins over the v2 default). Absent = the stage exactly as before.
+#   photoLight      "window" | "stage"      the window key rig (v2 "window")
+#   photoKey        key strength, x the studio key at the piece   (1.6)
+#   photoKeyDeg     key azimuth: 0 = from the camera, 90 = camera left,
+#                   180 = from behind; negative = camera right    (80)
+#   photoKeyElev    key elevation (deg)                           (30)
+#   photoKeySoft    key size / its distance (softness)            (0.55)
+#   photoKeySpread  key spread (deg): narrower keeps it off the wall  (70)
+#   photoFill       fill strength (the far side)                  (0.15)
+#   photoRim        rim strength (behind, the key's side)         (0.9)
+#   photoSetLight   x the stage's own lights (window glow, wall)  (0.2)
+#   photoStudio     x the studio key/fill kept on the toy         (0.15)
+#   photoAmbient    x the world strength                          (0.4)
+#   photoExposure   added to the stage exposure                   (0.0)
+#   photoFstop      a REAL f-number (f/5.6 -> 0.056 in Blender)   (5.6)
+#   photoFocus      "face" | "centre"   focus on the eyes / centre ("face")
+#   photoCamera     "threequarter" | "stage"                      ("threequarter")
+#   photoYawDeg     the turn, added to the scene's yaw; nursery 6     (16)
+#   photoTiltDeg    camera tilt (90 = level; stage = 80); the cow bar
+#                   looks down ~13 deg onto the cloth             (77)
+#   photoFrame      the piece's height as a fraction of the frame height;
+#                   the camera moves along its line to hold it (0 = the
+#                   stage's own zoom). The cow bar ~0.7, the bunny ~0.8 (0.68)
+#   photoAim        aim height, a fraction of the piece height    (0.5)
+#   photoProps      "v2" | "v1"   dried bunch v2, spring jug fix  ("v2")
+#   photoBlanket    "auto" | "knit" | "linen" | "none"            ("auto")
+#                   auto = the stage's own cloth, softly crumpled
+#   photoCrumple    crumple depth, x piece height                 (0.09)
+PHOTO_V2 = dict(
+    photoLight="window", photoKey=1.6, photoKeyDeg=80.0, photoKeyElev=30.0, photoKeySoft=0.55, photoKeySpread=70.0,
+    photoFill=0.15, photoRim=0.9, photoSetLight=0.2, photoStudio=0.15, photoAmbient=0.4,
+    photoExposure=0.0, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
+    photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.68, photoAim=0.5,
+    photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
+)
+# The same knobs with v2 OFF: every one is a no-op, so a scene without
+# `photo` renders exactly as before.
+PHOTO_V1 = dict(
+    photoLight="stage", photoKey=2.4, photoKeyDeg=75.0, photoKeyElev=28.0, photoKeySoft=0.55, photoKeySpread=70.0,
+    photoFill=0.3, photoRim=0.9, photoSetLight=0.4, photoStudio=0.3, photoAmbient=1.0,
+    photoExposure=0.0, photoFstop=None, photoFocus="centre", photoCamera="stage",
+    photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.0, photoAim=0.5,
+    photoProps="v1", photoBlanket="none", photoCrumple=0.045,
+)
+
+# photoFrame per stage when the view does not set it (the bunny bar fills
+# the frame far more than the cow bar does)
+PHOTO_FRAME_BY = {"nursery": 0.82, "christmas": 0.74, "linen": 0.72, "windowsill": 0.68}
+# and its turn: the bunny bar is shot nearly square-on, the cow bar turned a little
+PHOTO_YAW_BY = {"nursery": 6.0}
+
+# What the set builders consult while a stage is built (reset per render).
+_PHOTO = {}
+
+
+def photo_opts(view):
+    v2 = view.get("photo") == "v2"
+    base = PHOTO_V2 if v2 else PHOTO_V1
+    po = {k: view.get(k, v) for k, v in base.items()}
+    if v2 and "photoFrame" not in view:
+        po["photoFrame"] = PHOTO_FRAME_BY.get(view.get("stage"), po["photoFrame"])
+    if v2 and "photoYawDeg" not in view:
+        po["photoYawDeg"] = PHOTO_YAW_BY.get(view.get("stage"), po["photoYawDeg"])
+    return po
+
+
+def photo_camera_view(view, v):
+    """Camera part of v2, applied inside stage_view (before main reads it)."""
+    po = photo_opts(view)
+    if po["photoCamera"] != "threequarter":
+        return v
+    v["yawDeg"] = view.get("yawDeg", 0.0) + po["photoYawDeg"]
+    if "stageTiltDeg" not in view:
+        v["tiltDeg"] = po["photoTiltDeg"]
+    v["aimHeightFrac"] = max(view.get("aimHeightFrac", 0.0), po["photoAim"])
+    return v
+
+
+def face_point(data, z_offset, cx, cy, yaw):
+    """Where the toy's face is (world BU), for the focus: the mean of the
+    notions (safety eyes, nose) in the top half of the piece; failing that,
+    the most camera-facing yarn in the face band (60-90% of the height)."""
+    props = [p for p in (data.get("props") or []) if not p.get("branch") and p.get("torusMinor") is None]
+    zs = [pt[2] for st in data["strokes"] for poly in st["filaments"] for pt in poly[::4]]
+    if not zs:
+        return None
+    zmax = max(zs)
+    top = [p for p in props if p["centre"][2] >= 0.55 * zmax]
+    if top:
+        n = len(top)
+        x = sum(p["centre"][0] for p in top) / n
+        y = sum(p["centre"][1] for p in top) / n
+        z = sum(p["centre"][2] for p in top) / n
+        return (x * S, -y * S, z * S + z_offset)
+    sx, sy = math.sin(yaw), -math.cos(yaw)       # toward the camera
+    band = []
+    for st in data["strokes"]:
+        for poly in st["filaments"]:
+            for pt in poly[::4]:
+                if 0.6 * zmax <= pt[2] <= 0.9 * zmax:
+                    bx, by = pt[0] * S, -pt[1] * S
+                    band.append(((bx - cx) * sx + (by - cy) * sy, bx, by, pt[2] * S + z_offset))
+    if not band:
+        return None
+    band.sort(reverse=True)
+    best = band[:max(1, len(band) // 50)]
+    n = len(best)
+    return (sum(b[1] for b in best) / n, sum(b[2] for b in best) / n, sum(b[3] for b in best) / n)
+
+
+def footprint_polar(data, cx, cy, yaw, bins=48):
+    """The piece's footprint as the farthest yarn in each of `bins` directions
+    round its centre, in the STAGE frame (turned with the camera's yaw), so a
+    prop can lie right up to the piece without touching it."""
+    out = [0.0] * bins
+    c, s_ = math.cos(-yaw), math.sin(-yaw)
+    for st in data["strokes"]:
+        for poly in st["filaments"]:
+            for pt in poly[::3]:
+                x, y = pt[0] * S - cx, -pt[1] * S - cy
+                lx, ly = x * c - y * s_, x * s_ + y * c
+                k = int((math.atan2(ly, lx) / (2 * math.pi) + 0.5) * bins) % bins
+                r = math.hypot(lx, ly)
+                if r > out[k]:
+                    out[k] = r
+    return out
+
+
+# r3: a warm window key between WARM and GOLD (full GOLD pushed the brown
+# chenille orange)
+KEY_V2 = (1.0, 0.88, 0.74)
+
+
+def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, scene):
+    """The window rig: one soft warm key from the side, a broad dim fill on the
+    far side, a small rim from behind on the key's side. The stage's own
+    lights stay on (they light the room) but eased, the studio key/fill too."""
+    for lt in set_lights:
+        lt.data.energy *= po["photoSetLight"]
+    for lt in studio_lights:
+        lt.data.energy *= po["photoStudio"]
+    aim = (0.0, 0.0, 0.55 * H)
+    r = 0.75 * s
+
+    def at(az_deg, el_deg, dist):
+        # az measured from the camera direction (-Y local), positive = camera left
+        a = math.radians(az_deg)
+        e = math.radians(el_deg)
+        return (-dist * math.cos(e) * math.sin(a), -dist * math.cos(e) * math.cos(a), aim[2] + dist * math.sin(e))
+    made = []
+    key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, KEY_V2)
+    made.append(key)
+    try:
+        # r5: a window's light falls on the toy and the sill in front of it,
+        # not across the whole room: narrow the key's spread so the wall
+        # behind stays in its own (dimmer) light and the toy stands out
+        key.data.spread = math.radians(po["photoKeySpread"])
+    except Exception:
+        pass
+    if po["photoFill"] > 0:
+        side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
+        made.append(light(at(side * 45.0, 12.0, 1.1 * r), aim, po["photoFill"], 1.4 * r, (1.0, 0.97, 0.94)))
+    if po["photoRim"] > 0:
+        side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
+        made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"], 0.22 * r, GOLD))
+    for ob in made:
+        try:
+            ob.visible_camera = False
+        except Exception:
+            pass
+    return made
+
+
+def _crumple(H, R, amp, seed=0.0):
+    """Soft crumples on top of the stage's folds: ridged Perlin creases at three
+    scales (a cloth balled in a hand and shaken out), flat under the piece, and
+    a low soft bunching ring round it where the toy's weight presses in."""
+    from mathutils import noise
+    if amp <= 0:
+        return lambda x, y: 0.0
+    o = Vector((seed * 7.1, seed * 3.3, seed * 1.7))
+
+    def h(x, y):
+        r = math.hypot(x, y * 1.1)
+        m = _smoothstep(R * 1.08, R * 1.08 + 0.55 * H, r)
+        ring = 0.012 * H * math.exp(-((r - R * 1.18) / (0.12 * H)) ** 2)
+        if m <= 0.0:
+            return ring
+        f = 0.0
+        # r3: creases, not dunes — each layer is ridged noise stretched ~3:1
+        # along its own direction (and gently warped so the creases curve),
+        # the sharp crest of a fold with soft slopes either side
+        wx = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 1.7)) + o)
+        wy = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 4.1)) + o)
+        xw, yw = x + 0.25 * H * wx, y + 0.25 * H * wy
+        for ang, wl, w in ((0.4, 0.5, 1.0), (1.9, 0.32, 0.7), (2.8, 0.2, 0.4), (1.1, 0.12, 0.2)):
+            ca, sa = math.cos(ang + seed), math.sin(ang + seed)
+            u = xw * ca + yw * sa
+            v = -xw * sa + yw * ca
+            q = Vector((u / (wl * H * 2.6), v / (wl * H * 0.85), 0.37 + ang)) + o
+            n = noise.noise(q)
+            f += w * ((1.0 - abs(n)) ** 3 - 0.3)
+        return ring + amp * H * m * f
+    return h
+
+
+def _bunch_v2(root, H, R, vis, ground, foot=None):
+    """The cow bar's dried bunch, built from real thin parts: ~70 wiry stems
+    tied with twine behind the piece's left shoulder, the heads fanning forward
+    and left over the cloth — lavender spikes of tiny florets, chamomile
+    (white petal fans round a domed yellow eye), wheat ears with awns, mauve
+    statice puffs, feathery grass wisps and a haze of gypsophila. Every point
+    is kept clear of the piece's footprint."""
+    rng_k = [0]
+
+    def rnd(salt):
+        rng_k[0] += 1
+        return _hash01(rng_k[0], salt)
+    keep = R * 1.28 + 0.04 * H
+
+    def keep_at(x, y):
+        if not foot:
+            return keep
+        nb = len(foot)
+        k = int((math.atan2(y, x) / (2 * math.pi) + 0.5) * nb) % nb
+        # the widest of this bin and its neighbours, plus a finger's gap
+        return max(foot[(k - 1) % nb], foot[k], foot[(k + 1) % nb]) + 0.05 * H
+
+    def clear(p):
+        d = math.hypot(p[0], p[1])
+        kr = keep_at(p[0], p[1])
+        if d < kr:
+            f = kr / max(d, 1e-6)
+            return (p[0] * f, p[1] * f, p[2])
+        return p
+
+    def on(x, y, lift):
+        return clear((x, y, ground(x, y) + lift))
+    stem_cols = ("#8c8a5c", "#9c9466", "#7f7f55", "#a59a6c")
+    mats = dict(
+        stem=[_principled("b2_stem%d" % i, c, rough=0.75) for i, c in enumerate(stem_cols)],
+        lav=_principled("b2_lav", "#7c6a9c", rough=0.8, sheen=0.4),
+        lav2=_principled("b2_lav2", "#9583b4", rough=0.8, sheen=0.4),
+        petal=_principled("b2_petal", "#f4efe3", rough=0.7, sheen=0.3),
+        eye=_principled("b2_eye", "#dcaa3a", rough=0.8),
+        wheat=_principled("b2_wheat", "#d8bf88", rough=0.7, sheen=0.2),
+        awn=_principled("b2_awn", "#cdb27a", rough=0.7),
+        puff=_principled("b2_puff", "#a585a6", rough=0.9, sheen=0.3),
+        plume=_principled("b2_plume", "#d4c29c", rough=0.9, sheen=0.5),
+        gyp=_principled("b2_gyp", "#f7f3ea", rough=0.9),
+    )
+    for m in (mats["petal"], mats["plume"]):
+        b = m.node_tree.nodes["Principled BSDF"]
+        set_in(b, "Subsurface Weight", 0.2)
+    curves = {}      # mat key -> list of (pts, radius)
+    ells = {}        # mat key -> list of (centre, u, a, b, c)
+
+    def add_curve(key, pts, rad):
+        curves.setdefault(key, []).append((pts, rad))
+
+    def add_ell(key, c, u, a, b, cc=None):
+        ells.setdefault(key, []).append((c, u, a, b, b if cc is None else cc))
+    # the tie, behind the piece's left shoulder; heads fan forward-left
+    # (the square listing frame leaves ~15% beside the piece, so the bunch runs
+    # from BEHIND the left shoulder out to the frame's front-left corner)
+    tx, ty = -0.75 * R, 1.35 * R
+    gy = max(-1.3 * R, vis.y_near() + 0.15 * H)
+    gx = -0.72 * vis.hw(gy)
+    a0 = math.atan2(gy - ty, gx - tx)
+    reach = math.hypot(gx - tx, gy - ty)
+    ax, ay = math.cos(a0), math.sin(a0)
+    px, py = -ay, ax
+    N = 130
+    kinds = ["lav"] * 36 + ["cham"] * 26 + ["wheat"] * 22 + ["puff"] * 12 + ["wisp"] * 22 + ["gyp"] * 12
+    for kk in range(N):
+        kind = kinds[(kk * 37) % len(kinds)]
+        lane = (rnd(1) * 2 - 1)
+        L = (0.45 + 0.65 * rnd(2)) * reach
+        tail = (0.3 + 0.3 * rnd(3)) * H
+        fan = lane * (0.05 + 0.42 * rnd(4)) - 0.08   # angular spread of the heads (biased away from the piece)
+        ca, sa = math.cos(fan), math.sin(fan)
+        dx, dy = ax * ca - ay * sa, ay * ca + ax * sa
+        stack = 0.06 * H * (1.0 - abs(lane)) + 0.02 * H * rnd(5)
+        pts = []
+        M = 14
+        for j in range(M + 1):
+            t = -tail / L + (1 + tail / L) * j / M      # <0 = the cut ends behind the tie
+            w = 0.06 * H * lane * max(0.0, t) ** 1.4     # the fan opens past the tie
+            bow = 0.03 * H * math.sin(math.pi * max(0.0, min(1.0, t))) * (rnd(6) - 0.3)
+            x = tx + dx * L * t + px * (lane * 0.025 * H + w + bow)
+            y = ty + dy * L * t + py * (lane * 0.025 * H + w + bow)
+            lift = stack * (1.0 - 0.3 * max(0.0, t)) + 0.008 * H + 0.12 * H * math.sin(math.pi * 0.5 * max(0.0, t)) * (0.4 + 0.6 * rnd(7))
+            pts.append(on(x, y, lift))
+        add_curve(("stem", kk % 4), pts, 0.0032 * H * (0.8 + 0.4 * rnd(8)))
+        tip = Vector(pts[-1])
+        pre = Vector(pts[-3])
+        u = (tip - pre)
+        u.z *= 0.3          # r4: heads lie along the cloth (a keep-out push could stand a spike on end)
+        u = u.normalized()
+        side = Vector((-u.y, u.x, 0.0)).normalized()
+        up = u.cross(side).normalized()
+        if up.z < 0:
+            up = -up
+        if kind == "lav":
+            spike = (0.17 + 0.08 * rnd(9)) * H
+            nw = 11
+            for q in range(nw):
+                c = tip - u * spike * (1.0 - q / (nw - 1))
+                rr = 0.0095 * H * (0.65 + 0.35 * math.sin(math.pi * (q + 1) / (nw + 1)))
+                for f in range(4):
+                    ang = q * 1.3 + f * math.pi / 2
+                    off = side * math.cos(ang) + up * math.sin(ang)
+                    fl = (c + off * rr * 0.8 + up * 0.002 * H)
+                    add_ell("lav" if (q + f + kk) % 3 else "lav2", fl, (u * 0.6 + off * 0.8).normalized(),
+                            0.008 * H, 0.0042 * H)
+        elif kind == "cham":
+            # 2-3 heads on short pedicels branching off the top
+            nh = 2 + int(rnd(10) * 2)
+            for hh in range(nh):
+                base = tip - u * (0.04 + 0.05 * hh) * H
+                br = (u + side * (0.9 if hh % 2 else -0.9) * (0.4 + 0.4 * rnd(11))).normalized()
+                c = base + br * (0.035 + 0.02 * rnd(12)) * H + Vector((0, 0, 0.012 * H))
+                add_curve(("stem", (kk + hh) % 4), [tuple(base), tuple(c)], 0.0022 * H)
+                face = (Vector((0.0, -0.45, 1.0)) + br * 0.3).normalized()
+                fs = face.cross(Vector((1, 0, 0))).normalized()
+                ft = face.cross(fs).normalized()
+                hr = (0.022 + 0.008 * rnd(13)) * H
+                add_ell("eye", c + face * 0.0045 * H, face, 0.006 * H, 0.0105 * H, 0.0105 * H)
+                npet = 13
+                for pp in range(npet):
+                    ang = 2 * math.pi * pp / npet + rnd(14) * 0.2
+                    d = (fs * math.cos(ang) + ft * math.sin(ang))
+                    pc = c + d * hr * 0.62 - face * 0.002 * H
+                    add_ell("petal", pc, (d - face * 0.25).normalized(), hr * 0.42, 0.0042 * H, 0.0011 * H)
+        elif kind == "wheat":
+            ear = (0.12 + 0.04 * rnd(15)) * H
+            ng = 16
+            for g in range(ng):
+                c = tip - u * ear * (1.0 - g / (ng - 1))
+                sgn = 1 if g % 2 else -1
+                gd = (u * 0.8 + side * sgn * 0.45 + up * 0.2).normalized()
+                gc = c + side * sgn * 0.004 * H
+                add_ell("wheat", gc, gd, 0.011 * H, 0.005 * H)
+                if g > 3:
+                    aw = [tuple(gc + gd * 0.008 * H), tuple(gc + gd * 0.05 * H + up * 0.006 * H),
+                          tuple(gc + gd * 0.09 * H + up * 0.004 * H)]
+                    add_curve("awn", aw, 0.0007 * H)
+        elif kind == "puff":
+            c0 = tip + up * 0.006 * H
+            for b in range(3):
+                cb = c0 - u * 0.03 * H * b + side * 0.015 * H * (rnd(16) - 0.5)
+                for f in range(16):
+                    v = Vector((rnd(17) - 0.5, rnd(18) - 0.5, rnd(19) - 0.5)).normalized()
+                    add_ell("puff", cb + v * 0.011 * H, v, 0.0045 * H, 0.0038 * H)
+        elif kind == "wisp":
+            for f in range(14):
+                st0 = tip - u * 0.06 * H * rnd(20)
+                d = (u + side * (rnd(21) - 0.5) * 1.4 + up * (rnd(22) - 0.2) * 0.8).normalized()
+                ln = (0.03 + 0.05 * rnd(23)) * H
+                add_curve("plume", [tuple(st0), tuple(st0 + d * ln * 0.5 + up * 0.004 * H), tuple(st0 + d * ln)],
+                          0.0011 * H)
+        else:  # gypsophila: a wiry branching spray of tiny white dots
+            for b in range(6):
+                st0 = tip - u * 0.08 * H * rnd(24)
+                d = (u + side * (rnd(25) - 0.5) * 1.6 + up * rnd(26) * 0.6).normalized()
+                e = st0 + d * (0.04 + 0.04 * rnd(27)) * H
+                add_curve(("stem", 1), [tuple(st0), tuple(e)], 0.0012 * H)
+                for f in range(5):
+                    v = Vector((rnd(28) - 0.5, rnd(29) - 0.5, rnd(30))).normalized()
+                    add_ell("gyp", e + v * 0.008 * H, v, 0.0035 * H, 0.0035 * H)
+    # build: one curve object / one mesh per material
+    for key, items in curves.items():
+        mat = mats["stem"][key[1]] if isinstance(key, tuple) else mats[key]
+        cu = bpy.data.curves.new("b2_%s" % (key if isinstance(key, str) else "stem%d" % key[1]), type="CURVE")
+        cu.dimensions = "3D"
+        cu.bevel_depth = 1.0
+        cu.bevel_resolution = 1
+        cu.use_fill_caps = True
+        for pts, rad in items:
+            sp = cu.splines.new("POLY")
+            sp.points.add(len(pts) - 1)
+            for i, p in enumerate(pts):
+                sp.points[i].co = (p[0], p[1], p[2], 1.0)
+                sp.points[i].radius = rad
+        ob = bpy.data.objects.new(cu.name, cu)
+        bpy.context.scene.collection.objects.link(ob)
+        ob.parent = root
+        ob.data.materials.append(mat)
+    for key, items in ells.items():
+        bm = bmesh.new()
+        for c, u, a, b, cc in items:
+            u = Vector(u).normalized()
+            v = u.cross(Vector((0, 0, 1)))
+            if v.length < 1e-4:
+                v = u.cross(Vector((1, 0, 0)))
+            v.normalize()
+            w = u.cross(v).normalized()
+            m = Matrix(((u.x * a, v.x * b, w.x * cc, c[0]),
+                        (u.y * a, v.y * b, w.y * cc, c[1]),
+                        (u.z * a, v.z * b, w.z * cc, c[2]),
+                        (0, 0, 0, 1)))
+            bmesh.ops.create_icosphere(bm, subdivisions=1, radius=1.0, matrix=m)
+        _bm_object("b2_" + key, bm, root, mats[key], smooth=True)
+    # the twine: four turns round the waist, a short loose end
+    twine = _principled("b2_twine", "#b39a6c", rough=0.9)
+    pts = []
+    rb = 0.045 * H
+    g0 = ground(tx, ty)
+    for i in range(49):
+        t = i / 48.0
+        ang = t * 4 * 2 * math.pi
+        along = (t - 0.5) * 0.05 * H
+        pts.append(clear((tx + ax * along + px * rb * math.cos(ang), ty + ay * along + py * rb * math.cos(ang),
+                          g0 + 0.035 * H + rb * 0.7 * math.sin(ang))))
+    pts.append(on(pts[-1][0] - 0.05 * H, pts[-1][1] - 0.07 * H, 0.004 * H))
+    pts.append(on(pts[-1][0] - 0.04 * H, pts[-1][1] - 0.1 * H, 0.003 * H))
+    _curve("b2_tie", root, twine, pts, 0.0045 * H)
+    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s" % (
+        N, tx, ty, gx, gy, "polar" if foot else "r %.1f" % keep))
 
 
 def grade_golden(scene, warmth=1.0):

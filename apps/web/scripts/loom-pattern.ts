@@ -85,6 +85,15 @@ export interface RenderProgramResult {
   fidelityScore: number | null
 }
 
+/**
+ * The hero's stage variant is picked from `stageSeed` (jobs/stages.md): the
+ * render-on-publish callers pass the pattern's SLUG as `name`, so a pattern
+ * keeps its set however its display name changes. A hand-set `stageSeed` wins.
+ */
+export function withStageSeed<T extends { stageSeed?: string }>(program: T, slug?: string): T {
+  return program.stageSeed || !slug ? program : { ...program, stageSeed: slug }
+}
+
 export interface RenderProgramOptions {
   /** Output basename (defaults to the program name). */
   name?: string
@@ -117,7 +126,7 @@ export async function renderProgram(program: CrochetProgram, options: RenderProg
   }
   if (problems.length) return result // audit gate — caller decides; do NOT render
 
-  const scene = programScene(program, built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
+  const scene = programScene(withStageSeed(program, name), built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
   const art = await blenderHero(scene, name, outDir, options.hero !== false, 'sc', program.yarnFibre ?? 'cotton')
   return { ...result, ...art }
 }
@@ -211,7 +220,7 @@ export async function renderComposition(program: CompositionProgram, options: Re
   }
   if (compiled.problems.length) return result // audit gate — do NOT render
 
-  const scene = compositionScene(program, compiled)
+  const scene = compositionScene(withStageSeed(program, name), compiled)
   const art = await blenderHero(scene, name, outDir, options.hero !== false, 'amigurumi', program.yarnFibre ?? 'cotton')
   return { ...result, ...art }
 }
@@ -482,7 +491,7 @@ export async function startProgramRender(
   // geometry that is not genuinely stitched.
   if (problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'sc' }
 
-  const scene = programScene(program, built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
+  const scene = programScene(withStageSeed(program, name), built, yr, 0.08, options.staging ?? program.staging ?? 'swatch')
   return startSceneRender(scene, name, outDir, 'sc', base)
 }
 
@@ -498,7 +507,7 @@ export async function startCompositionRender(
   const base = { name, problems: compiled.problems, geometryHash: compiled.geometryHash, yr: compiled.yr, fibre }
   if (compiled.problems.length) return { ...base, scenePath: '', handle: null, heroPromptKey: 'amigurumi' }
 
-  const scene = compositionScene(program, compiled)
+  const scene = compositionScene(withStageSeed(program, name), compiled)
   return startSceneRender(scene, name, outDir, 'amigurumi', base)
 }
 
