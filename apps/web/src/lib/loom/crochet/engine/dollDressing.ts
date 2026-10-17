@@ -55,14 +55,16 @@ const CH = 2.6
  *  the chain slid a stitch along it in one hook of three hundred; 3 and 2
  *  alternately is clean at every length, and still a tight corkscrew.) */
 export const RINGLET_PER_CH = 2.5
-/** The helix the strip twists into: the stitch edge is `per` times the chain
- *  edge, so the chain winds at a core radius of (stitch height)/(per − 1) and
- *  the stitch tops `per` times further out: at fine cotton a dc (UK) is
- *  ~3.1 mm tall, the core ~2.1 mm, the curl ~10 mm across — a hollow spring,
- *  the bar's pencil curl. `RINGLET_PITCH_MM` is the drop per turn. */
-export const RINGLET_CORE_MM = +((2.4 * 1.3) / (RINGLET_PER_CH - 1)).toFixed(2)
-export const RINGLET_PITCH_MM = 4.4
-const RINGLET_LEAN = (8 * Math.PI) / 180
+/** The helix the strip twists into. The chain is the core of the spring and
+ *  the stitches fan out from it; hanging, a corkscrew's ruffle DROOPS, so each
+ *  stitch leans down the axis (`RINGLET_LEAN`) instead of standing straight out
+ *  like a bottle-brush (rounds 9-15 stood them out radially at an 8° lean and
+ *  a 4.4 mm pitch: stiff spiky tubes). A 1.7 mm core, a 40° droop and a 3.4 mm
+ *  pitch pack the turns against each other: a slim smooth spiral ~8 mm across,
+ *  the bar's soft pencil curl. `RINGLET_PITCH_MM` is the drop per turn. */
+export const RINGLET_CORE_MM = 1.7
+export const RINGLET_PITCH_MM = 3.4
+const RINGLET_LEAN = (40 * Math.PI) / 180
 
 /** The flat strip: `chains` chains, then `per` dc (UK) in the 2nd ch from the
  *  hook and in each ch back along. The flat relaxed strip ruffles (the extra
@@ -289,6 +291,88 @@ export function lobeUprightPose(lengthMm: number): (p: V3) => V3 {
   return (p) => ({ x: p.z, y: -p.y, z: lengthMm + p.x })
 }
 
+// ── Solid lobe (the fairy's wing, rounds 16+) ───────────────────────────────
+
+/** One side of the SOLID upper and lower lobes, stem end to tip (UK: htr, tr,
+ *  dtr, trtr): a stitch in EVERY chain, so the lobe is a full leaf of fabric,
+ *  then an edging round of (dc, picot) into every stitch round its edge — the
+ *  bar's full blue lobes with a lacy picot edge. */
+/** (Four trtr in the middle fails one interlock at 4 ply; three audits clean: 65 x 41 mm settled.) */
+export const WING_UPPER_SOLID: StitchId[] = ['hdc', 'dc', 'dc', 'tr', 'tr', 'dtr', 'dtr', 'dtr', 'tr', 'tr', 'dc', 'dc', 'hdc']
+export const WING_LOWER_SOLID: StitchId[] = ['hdc', 'dc', 'tr', 'tr', 'tr', 'tr', 'dc', 'hdc']
+
+/** Chains a solid lobe is made on (tip chain + one per side stitch + stem + turning). */
+export const solidLobeChains = (side: StitchId[], stem = WING_STEM): number => 1 + side.length + stem + 1
+
+/**
+ * A solid lobe: a leaf worked both sides of a chain with a stitch in every
+ * chain, a (tr, ch 2, tr) point at the tip, sl st to the stem; then an EDGING
+ * round worked into the top of every stitch round the lobe, dc and picot
+ * alternately (a picot is ch 3, sl st back into the dc's head). Tip at the
+ * origin, the chain along −x, the stem end at x ≈ −L (`lobeUprightPose`).
+ */
+export function solidLobe(yr: number, hex: string, side: StitchId[], stem = WING_STEM, name = 'wing lobe', iterations = SOLID_LOBE_ITERATIONS): DressingPiece {
+  const n = side.length
+  const nCh = solidLobeChains(side, stem)
+  const pitch = yr * CH
+  const L0 = pitch * nCh
+  const m = new MotifStrand(yr, hex)
+  m.slipKnot({ x: 0, y: 0 }, { x: -1, y: 0 })
+  m.sectionName = 'chain'
+  const loops = m.chain(nCh, [{ x: 0, y: 0 }, { x: -L0, y: 0 }], { turning: 1 })
+  // loops[0] = the tip chain, loops[1 .. n] = the lobe, loops[n+1 .. n+stem] = the stem.
+  m.sectionName = 'stem'
+  for (let i = 0; i < stem; i++) intoChain(m, loops[nCh - 2 - i]!, 'slst', 'L')
+  m.sectionName = 'lobe'
+  const edge: Crown[] = []
+  // Side A: from the stem end (loops[n]) to the tip, every chain.
+  for (let i = 0; i < n; i++) edge.push(intoChain(m, loops[n - i]!, side[i]!, 'L'))
+  // The point: (tr, ch 2, tr) in the tip chain.
+  const tipL = loops[0]!
+  edge.push(intoChain(m, tipL, 'dc', 'L'))
+  const out = add(tipL.c, mul(tipL.u, -yr * 3.2))
+  m.chain(2, [m.cursor, out], { turning: 2 })
+  edge.push(intoChain(m, tipL, 'dc', 'R'))
+  // Side B: tip to stem, the heights reversed.
+  for (let i = 0; i < n; i++) edge.push(intoChain(m, loops[1 + i]!, side[n - 1 - i]!, 'R'))
+  // The edging round: the hook is at the stem end of side B, next to the first
+  // stitch of side A; dc and picot alternately into every stitch of the edge,
+  // up side A, round the point and down side B, each stood at its own stitch
+  // (`spreadRad` 0: one stitch over one crown, the lobe's outline, not a circle).
+  m.sectionName = 'edging'
+  const c = { x: -L0 * 0.45, y: 0 }
+  const ops = edge.map((_, i) => ({ id: (i % 2 === 1 ? 'picot' : 'sc') as StitchId, n: 1 }))
+  shapedRound(m, c, edge, ops, yr * 2, { spreadRad: 0 })
+  intoChain(m, loops[n + 1]!, 'slst', 'R')
+  m.fastenOff({ x: -1, y: 0.3 })
+  const built = m.finish(L0, yr * 24)
+  return asDressing(pieceOf(name, m, built, undefined, iterations))
+}
+/** A solid lobe with its edging is ~2000 nodes; it needs longer than a motif to settle. */
+const SOLID_LOBE_ITERATIONS = 420
+
+export function wingWordsSolid(upper: StitchId[], lower: StitchId[], stem: number, wingLabel: string): string[] {
+  const lobe = (side: StitchId[], which: string): string[] => {
+    const n = side.length
+    const nCh = solidLobeChains(side, stem)
+    const edge = 2 * n + 2
+    return [
+      `${which} lobe: ch ${nCh}.`,
+      `Stem: sl st in 2nd ch from hook and in the next ch. (${stem} sts)`,
+      `First side: ${runWords(side)}. (${n} sts)`,
+      `Tip: (${UK.dc}, ch 2, ${UK.dc}) in the last ch.`,
+      `Second side: working along the other side of the chain, ${runWords([...side].reverse())}. (${n} sts)`,
+      `Edging: [${UK.sc} in next st, ${UK.picot} in next st] round the whole edge of the lobe, up the first side, over the tip and down the second (a picot is ch 3, sl st back into the top of the stitch just made), sl st in the first stem ch. (${edge} sts)`,
+      'Fasten off, leaving a tail for sewing.',
+    ]
+  }
+  return [
+    `Each wing is two solid lobes in ${wingLabel}, an upper and a lower, sewn together at their stems.`,
+    ...lobe(upper, 'Upper'),
+    ...lobe(lower, 'Lower'),
+  ]
+}
+
 export function wingWordsLace(upper: StitchId[], lower: StitchId[], stem: number, wingLabel: string): string[] {
   const lobe = (side: StitchId[], which: string): string[] => {
     const n = side.length
@@ -378,6 +462,7 @@ export const HAIR_ROSE_PETALS: StitchId[][] = [
   ['hdc', 'dc', 'hdc'],
   ['hdc', 'dc', 'dc', 'hdc'],
   ['hdc', 'dc', 'tr', 'dc', 'hdc'],
+  ['hdc', 'dc', 'tr', 'tr', 'dc', 'hdc'],
 ]
 /** The bouquet rose: three petals, a rose she can hold in front of the dress. */
 export const BOUQUET_PETALS: StitchId[][] = [
