@@ -3433,6 +3433,13 @@ additive and every existing composition byte-identical):
 - Wired: `cow` in AMIGURUMI_BASE_IDS / AMIGURUMI_BASES (the zod schemas and designer cards derive from them),
   `buildAmigurumiProgram` dispatches to `buildCowProgram`, `COW_AUDITED_PROFILES` in AUDITED_PROFILES (the save
   path). ballRounds/tubeRounds/cordRounds moved verbatim to `roundProfiles.ts` (re-exported) to break the cycle.
+- SEATED BACK LEGS (opt-in `CowChoices.seatBackLegs`, 2026-10-17, job log `cow-legs`): the default back legs float
+  ~12 mm off the body and pass 15-24 mm into the front legs (squashMetrics). With the knob the same pieces are moved
+  46 mm back and 2 mm out (`SEATED_BACK_LEG_OFFSET`), sewn by the inner side low on the flanks just behind the front
+  legs: at M sewn 7-9 mm into the body (the front legs' joins are 16-21), contact ~860-1240 mm², 2-4.5 mm clear of
+  the front legs at gauge 1, 1.3, 1.4 and with `cuppedEars`; size unchanged. At M 1.3 the back feet drop 1.55 mm
+  (`SEATED_BACK_LEG_GAUGE_DROP`; the default's back feet float that much there). The sewing line changes with it.
+  `cowBackLegs.test.ts`. Off = the default hash.
 
 ## 8k. DRAPE RELAX — gravity, a table and self-collision for soft fabric (2026-10-10)
 

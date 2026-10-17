@@ -66,6 +66,13 @@ export interface CowChoices {
    *  of the pressed half-ball ears. Opt-in: absent / false = the round 31
    *  ears, and every geometry hash is unchanged. */
   cuppedEars?: boolean
+  /** SEATED BACK LEGS (cow back-legs pass, 2026-10-17): the back legs sewn
+   *  by their inner side against the body's flanks, low down and just behind
+   *  the front legs, the rounded feet facing front (the bar's seated calf).
+   *  The default legs float ~12 mm off the body and pass 15-24 mm into the
+   *  front legs (squashMetrics, cow M). Opt-in: absent / false = today's legs,
+   *  and every geometry hash is unchanged. */
+  seatBackLegs?: boolean
   name?: string
 }
 
@@ -394,6 +401,18 @@ const FRONT_LEG_AIM = { x: 0.1, y: 0.5, z: -1 }
 // round back feet sit outside the front legs with their toes level with the hooves.
 const BACK_LEG_DIR = { x: 1.0, y: 0.45, z: -0.5 }
 const BACK_LEG_AIM = { x: 0.14, y: 1, z: 0.05 }
+/** The seated back legs (`CowChoices.seatBackLegs`): the same piece, dir and
+ *  aim, moved 46 mm back and 2 mm out from the default's offset so each one
+ *  sits against the body's flank behind the front legs. Measured with
+ *  squashMetrics on the settled M calf at gauge 1, 1.3 and 1.4: sewn into
+ *  the body 7-9 mm (the front legs' joins are 18-21 mm) with a contact patch
+ *  of ~1000-1300 mm², and 3-6 mm clear of the front legs. */
+const SEATED_BACK_LEG_OFFSET = { x: 26, y: -16 }
+/** The seated back legs' extra drop at a gauge (mm, measured like
+ *  `GAUGE_LEG_LIFT`): at M 1.3 the shared leg lift leaves the back feet
+ *  1.55 mm above the table (the default legs too), so the seated ones are
+ *  set down onto it. A gauge or size not listed gets none. */
+const SEATED_BACK_LEG_GAUGE_DROP: Record<string, number> = { 'M@1.3': -1.55 }
 const TAIL_DIR = { x: 0.9, y: -0.45, z: -0.15 }
 const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 /** The fringe circle's centre on the crown, tipped well forward so its lower
@@ -623,16 +642,21 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
+  const seated = choices.seatBackLegs === true
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'back-leg-l' : 'back-leg-r', stitch: 'sc', rounds: s.backLeg, colourHex: main,
-      sewNote: 'by the closed end low on each side of the body, lying forward along the table outside the front legs with the rounded magic-ring end facing front',
+      sewNote: seated
+        ? 'by the inner side, low on each side of the body just behind the front legs, resting on the table with the rounded magic-ring end facing front'
+        : 'by the closed end low on each side of the body, lying forward along the table outside the front legs with the rounded magic-ring end facing front',
       place: {
         on: 'body',
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { x: side * 24, y: 30, z: s.legLift },
+        offset: seated
+          ? { x: side * SEATED_BACK_LEG_OFFSET.x, y: SEATED_BACK_LEG_OFFSET.y, z: s.legLift + (SEATED_BACK_LEG_GAUGE_DROP[`${choices.size}@${g}`] ?? 0) }
+          : { x: side * 24, y: 30, z: s.legLift },
       },
     })
   }
