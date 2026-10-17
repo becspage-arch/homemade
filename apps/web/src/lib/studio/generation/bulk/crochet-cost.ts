@@ -47,9 +47,12 @@ export const RENDER_TASK_GB = 8192 / 1024
 export const RENDER_WALL_CLOCK_MINUTES = 8
 
 /**
- * fal.ai clarity-upscaler — the locked creative-upscale finish every hero goes
- * through (`scripts/loom-hybrid-fal.ts`, `ENDPOINTS.upscale`), at 2x on a single
- * render. Fal bills this lane per megapixel; five cents is the order of the
+ * fal.ai clarity-upscaler — the creative-upscale finish a hero goes through
+ * (`scripts/loom-hybrid-fal.ts`, `ENDPOINTS.upscale`), at 2x on a single
+ * render. EVERY hero EXCEPT a charted tapestry: a charted colourwork piece ships
+ * the deterministic base render and never goes to Fal
+ * (`lib/loom/crochet/engine/heroPolicy.ts`, `photorealFinishAllowed`), so the
+ * tapestry lane does not pay this line. Fal bills this lane per megapixel; five cents is the order of the
  * charge for one 2x pass at the sizes the loom renders. CORRECT THIS FROM AN
  * INVOICE — it is the least certain number in the model.
  */
@@ -93,7 +96,7 @@ export const ASSUMED_PASS_RATE = 0.6
 
 /**
  * The share of candidates on the pictorial tapestry lane, which is the only one
- * that also buys an illustration. One shelf of the thirteen buildable ones
+ * that also buys an illustration, and the only one that skips the Fal finish. One shelf of the thirteen buildable ones
  * (`wall-hanging`) is tapestry-only, and it is a small shelf, so a low single
  * figure. ASSUMPTION: derived from the shelf targets, not from a run.
  */
@@ -140,6 +143,21 @@ export function fargateRenderUsd(): number {
   return perHour * (RENDER_WALL_CLOCK_MINUTES / 60)
 }
 
+/** The treatment that is the pictorial, charted tapestry lane. */
+export const TAPESTRY_TREATMENT = 'grid-tapestry'
+
+/**
+ * What ONE render of one candidate costs, by its treatment: the Fargate task,
+ * then the Fal finish unless the piece is a charted tapestry (heroPolicy.ts
+ * keeps those off Fal), plus the illustration a tapestry is charted from. The
+ * render stage of `scripts/crochet-autopilot.ts` checks its budget with this,
+ * and the fill estimate below uses the same split, so the two cannot drift.
+ */
+export function crochetRenderUsd(treatment: string | null | undefined): number {
+  const tapestry = treatment === TAPESTRY_TREATMENT
+  return fargateRenderUsd() + (tapestry ? ILLUSTRATION_USD : FAL_CREATIVE_UPSCALE_USD)
+}
+
 /**
  * Cost the deterministic work of publishing `patterns` crochet patterns.
  *
@@ -165,8 +183,8 @@ export function estimateCrochetCost(
     {
       label: 'Fal creative upscale (hero finish)',
       unitUsd: FAL_CREATIVE_UPSCALE_USD,
-      units: renders,
-      source: 'fal-ai/clarity-upscaler at 2x, one pass per render',
+      units: renders * (1 - tapestryShare),
+      source: 'fal-ai/clarity-upscaler at 2x, one pass per render; charted tapestries skip it (heroPolicy.ts)',
     },
     {
       label: 'Flux illustration (pictorial lane only)',
