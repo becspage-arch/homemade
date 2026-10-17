@@ -47,7 +47,7 @@ Replaces the June and July crochet and loom logs. Their old text is in git histo
 
 ## Held for Bec
 - The crochet autopilot (spends money; only after the toys pass).
-- Go-live gates, then adding `crochet` to `LAUNCH_VISIBLE_CATEGORY_SLUGS`.
+- Go-live gates, then adding `crochet` to `LAUNCH_VISIBLE_CATEGORY_SLUGS`. Readiness report (17 Oct): `crochet-bar/GO-LIVE-READINESS.md` in the shared folder. Re-check any time, read-only: `pnpm --filter "@homemade/db" exec tsx scripts/crochet-golive-check.ts`. Tag backfill: `scripts/crochet-tag-backfill.ts` (dry run unless `--apply`). Biggest gap: no public crochet pattern page, so no pattern can reach the sitemap.
 - The train to main.
 
 ## Decisions from June that still stand
