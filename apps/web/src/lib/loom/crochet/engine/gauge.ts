@@ -286,10 +286,12 @@ export function gSphereRounds(eq: number, extra: number, g: number): number[] {
 const MEASURED_NUDGES = new Map<string, () => number[]>([
   [sphereRounds(84, 1).join(','), () => sphereRounds(84, 2)],
   [sphereRounds(90, 1).join(','), () => sphereRounds(90, 2)],
-  // The toy's big foot at gauge 1.6 (eq 48, four more straight rounds) fails
-  // one hook in round 9 once sewn under the body ("floated above its crown",
-  // dy 1.2 yr, both feet); one straight round fewer passes.
-  [ballRounds(48, 4).join(','), () => ballRounds(48, 3)],
+  // The toy's big foot at gauge 1.6 (eq 48 straight from a +6 climb) fails
+  // one hook in round 9, the first round after the climb, once sewn under the
+  // body ("floated above its crown", dy 1.2 yr; one straight round fewer
+  // fails the same way): the +6 cap's corner (§8f-10). Eq 46, the last climb
+  // step +4, passes, the way the gauge-1.4 foot's 36 -> 40 does.
+  [ballRounds(48, 4).join(','), () => [6, 12, 18, 24, 30, 36, 42, 46, 46, 46, 46, 46, 42, 36, 30, 24, 18, 12, 6]],
 ])
 
 /** A gauge-derived profile, or its measured-clean neighbour (see above). */
