@@ -40,7 +40,7 @@ Replaces the June and July crochet and loom logs. Their old text is in git histo
 - Pattern layer: `program.ts` (one program gives geometry, written rounds and chart), `programScene.ts` (geometry to Blender scene, geometry hash), `composition.ts` and `compositionPattern.ts` (multi-part amigurumi and its words).
 - Shapes: `roundProfiles.ts`, `sphereProfile.ts`, `tube.ts`, `tubeStaging.ts`, `drape.ts` (cloth sim for soft pieces), `spiralTree.ts`, `spiralHanging.ts`.
 - Toys: `amigurumiPresets.ts` with the generated `amigurumiSizes.generated.ts`, `cowPreset.ts`, `doll.ts`, `dollHair.ts`, `dollDressing.ts`, `faceEmbroidery.ts`, `loopStitch.ts`, `hairPatch.ts`, `hatAccessory.ts`, `pompom.ts`.
-- Flat motifs: `motifs/` (`kit.ts` with chain spaces, `registry.ts`, `motifScene.ts`, and the motifs: star, heart, leaf, leaf-vine, butterfly, berry, daisy, rolled rose, layered rose, garland).
+- Flat motifs: `motifs/` (`kit.ts` with chain spaces, `registry.ts`, `motifScene.ts`, and the motifs: star, heart, leaf, leaf-vine, butterfly, berry, daisy, rolled rose, layered rose, garland). Opt-in, not registered: `motifs/cornered.ts` (granny square, solid square, solid hexagon in the round; handbook §8o).
 - Old, kept for history: `swatch.ts`, `scSwatch.ts`.
 - Render side: `apps/web/src/lib/loom/render/blenderScene.ts` (stage variants picked by `stageSeed`), `apps/web/scripts/loom_render_crochet.py`.
 - Bulk side: `apps/web/src/lib/studio/generation/bulk/crochet-*.ts` (planner, design to program, idea backlog, dedupe, cost, session contract) and `spend-guard.ts` (the $100 a month cap).

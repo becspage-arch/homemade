@@ -3589,6 +3589,69 @@ composition does (`buildPart` / `auditPart`), opt-in on the cow and bunny preset
 - Tests: `earPiece.test.ts` (every preset size and the option edges audit clean; a cup's hollow, a pinch's
   narrowing, a lop's hollow and rounded tip are measured; the lining faces front; the switches change only the ears).
 
+## 8o. CORNERED MOTIFS IN THE ROUND — granny square, solid square, solid hexagon (2026-10-17)
+
+`engine/motifs/cornered.ts`, opt-in: NOT imported by `motifs/index.ts`, so `listMotifs()`, every
+registered motif, hash and size table are unchanged. `buildCornered(spec, opts)` /
+`buildCorneredPreset(id)` return a `BuiltMotif` plus `cornered` (counts, clusters, the last
+round's crowns per side, crowding) and the spec. `corneredWords`, `corneredCounts` and
+`corneredChart` come from the same spec; `corneredMetrics` measures flatness, clipping, corner
+angles and size. Tests: `motifs/cornered.test.ts` (audit, clips, flat, corners, size, words =
+build, completeness gate).
+
+### Construction
+- N set corners (4, 6). Round 1: `perSide` tr into the magic ring per side, ch n at each corner.
+  Later rounds: a corner group "(c tr, ch n, c tr)" into each corner chain SPACE (the kit's
+  chain-space hook, each st at its own station along the space), and sides of either clusters
+  into the side ch spaces with a ch between (granny) or 1 tr in each st below (solid).
+- Every round starts with a standing ch 3 that COUNTS as the first tr and is joined with a sl st
+  under the 3rd ch of it (`ch3`, both legs recorded, either the 3rd ch or the loop drawn up from it
+  may hold). Same colour: sl st across the rest of the first group and into the corner sp. A
+  colour change: the new colour joined straight into the corner sp; the hop between is a loose
+  tail in the model.
+- Layout: round k's crowns on an N-gon of apothem ring + k tr, items spaced along each side
+  between the corner chains; each stitch in its own `along` frame (height = its side's outward
+  normal), leaning from the loop it hooks. Chains worked over next round are lifted 1 yr.
+- `crowding` = laid st width / room on the busiest side. It is the real flat-fit test: the
+  blocked relax (`layoutMode 'axis'`) holds a crowded round flat in z, so it fails the audit
+  instead of ruffling.
+
+### Counts (the starter rows)
+- Granny: 12 / 24 / 36 tr in 4 / 8 / 12 clusters, ch-2 corners, ch-1 sides. Matches
+  `granny-square-basic-three-round`. Crowding 0.87, 0.94, 0.97.
+- Solid square: 12 / 28 / 44 ((2 tr, ch 2, 2 tr) corners). The starter's 12 / 36 / 60
+  ((3 tr, ch 2, 3 tr)) crowds 1.26 and 1.38 and fails 12 interlocks: it is a ruffle, not a square.
+- Solid hexagon: 12 / 24 ((tr, ch 1, tr) corners). The starter's 18 / 54 crowds 1.33 and 2.05
+  and fails 13 interlocks.
+- Sizes, fine cotton: squares 59.5 mm across the flats, hexagon 43 mm. DK: 87 mm and 63 mm (the
+  starter's DK square says 10 cm blocked).
+
+### What the numbers taught (r1 probes)
+- The audit on this construction is MARGINAL: one to four links sit near their limits and small
+  geometry changes move which ones fail. The settled values are `CORNER_PITCH_YR` 2.8 (2.6 left
+  each chain short of its corner and the corner sts slid off its end; 3.0+ pulled crossings past
+  their folds), `STAND_OFFSET` 0.1 (the ch 3 started a little up its line: its first back bump laid
+  at the sl st pressed the corner chain's second crossing under its fold), and the sl st into a
+  corner sp standing on the side BEFORE the corner (built on the next side's normal it shoved the
+  same crossing down; that one was a real bug).
+- `ch3Leg` picks which leg of the ch 3's 3rd chain the join (and a solid round's tr into it) is
+  built to dive past: the granny audits clean with 'L', the solid shapes with 'R'. A grid over
+  offset, leg and pitch (120 builds) found solid / hexagon clean across a band (offset 0-0.2,
+  pitch 2.7-2.8) but the granny only at pitch 2.8 and offset 0-0.1. Treat the granny as fragile:
+  re-run the grid (`cornered.test.ts` fails first) before changing anything upstream in the kit.
+- Working INTO a chain top (the solid square's tr into the ch 3) is the weakest link, as the heart
+  edging found (§8m).
+
+### Rendered (Fargate probe, r1, 128 spp, 900 px): `crochet-bar/proofs/granny/`
+A build job, not a look pass. Reads as a granny / a solid square / a hexagon from across the
+room. Short of the bar: the fasten-off tail stands out as a stub at one corner on all three; the
+solid square's round 1 corner chains and standing ch 3s sit proud as loops on the face; the
+granny's round 1 reads as a mustard blob, its clusters do not separate into fans and the tr posts
+read short; the hexagon's start corner is skewed (125 and 114 deg against 120) and its posts are a
+tangle. For Fable.
+
+---
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
