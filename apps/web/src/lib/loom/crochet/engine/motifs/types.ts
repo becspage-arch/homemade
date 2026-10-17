@@ -22,6 +22,11 @@ export type MotifId =
   | 'berry'
   | 'leaf-vine'
   | 'garland'
+  // Cornered motifs in the round (cornered.ts, opt-in: not registered, so
+  // `listMotifs()` is unchanged).
+  | 'granny-square'
+  | 'solid-square'
+  | 'solid-hexagon'
 
 export interface MotifOptions {
   /** Default 'fine' (fine cotton, 2.5 mm hook). */
