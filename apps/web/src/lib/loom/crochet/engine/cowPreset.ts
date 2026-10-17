@@ -13,7 +13,9 @@
  *  - two cream HORNS: pointed cones worked tip first (a four-stitch ring IS
  *    the point, growing a stitch a round), closed flat and sewn high on the
  *    sides of the crown, pointing up and out;
- *  - two round EARS sewn out to the sides of the head below the horns;
+ *  - two round CUPPED EARS (open half-balls pressed into oval cups, round 27)
+ *    sewn by their backs to the sides of the head below the horns, hollows
+ *    turned forward;
  *  - SAFETY EYES on the muzzle's top edge, wide apart, and two safety-stitched
  *    NOSTRILS (faceEmbroidery `safety-stitched`);
  *  - the CURLY FRINGE: a loop-stitch circle (hairPatch.ts) sewn between the
@@ -41,7 +43,7 @@ import type { HairPatch } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
 import { sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
-import type { YarnFibre, YarnWeight } from './program'
+import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
 import type { HeroStage } from '../../render/blenderScene'
 
 export interface CowChoices {
@@ -73,7 +75,9 @@ export const COW_DEFAULTS: CowChoices = {
   // Round 21: the orchestrator's eye on r20 — "a touch maroon; the bar's is
   // warm milk-chocolate". Hue up from 4° to 12° and a shade lighter.
   // Round 23: a shade deeper and less orange (#86564a read bright in the window light).
-  mainHex: '#7f5046',
+  // Round 27 (the orchestrator's look at r26: "a shade darker and redder than
+  // the bar's warm milk chocolate"): a step lighter and ~5° warmer (hue 15°).
+  mainHex: '#885a4a',
   contrastHex: '#ead9bf',
   // 0 = the size's own eye (PROFILES.eyeMm). Round 24: the renders had been
   // taking this 12 over the profile's 18-20, which is why the eyes read small.
@@ -144,6 +148,25 @@ export const COW_HORN_ROUNDS: number[] = [4, 5, 6, 7, 8, 9, 10, 11, 12, 6]
 export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 9, 6]
 
 /**
+ * THE CUPPED EAR (cow round 27; the orchestrator's look at r26: "ours are flat
+ * discs; the bar's are round and cupped, with a visible hollow"). A pressed
+ * closed piece is a lens whichever way it is turned, so the ear is now an OPEN
+ * HALF-BALL: worked from the magic ring in sixes to its widest round and left
+ * open there (tube.ts, `anchor: 'ring'`, a domed cap; a straight rim round
+ * floated a hook under the press and failed the audit). Never stuffed, pressed
+ * gently between finger and thumb into an oval cup (`press`, the plates
+ * closing to about nine tenths of its width — harder, the cup is a slab; a
+ * round bigger, round 32, it read as a dark flap half the face wide),
+ * and sewn by its back (the ring) to the side of the head with the hollow
+ * turned forward and out, so the lens looks into the cup.
+ */
+export const COW_EAR_CUP_ROUNDS: Record<AmigurumiSize, number[]> = {
+  S: [6, 12, 18],
+  M: [6, 12, 18, 24],
+  L: [6, 12, 18, 24, 30],
+}
+
+/**
  * THE PEAR BODY (cow round 17, Rebecca's look at r15: "the body a soft upright
  * pear", the head about as wide as it). Worked from the magic ring at the
  * SHOULDERS: the sphere ascent of a smaller ball (a rounded shoulder dome),
@@ -164,30 +187,36 @@ export const COW_EAR_ROUNDS: number[] = [6, 9, 12, 12, 9, 6]
 // the cheeks and the front legs' tops sit beside them. (A can climbing in
 // sixes to 66 was tried first and relaxed to a 136 x 54 disc: a +6 round is
 // intrinsically flat, §8f-10.)
+// Round 27 (the orchestrator's look at r26: "a touch wide and blocky; the bar is
+// slightly slimmer"): the ball one equator step slimmer than the head (39
+// against the head's 42 at M), still one straight round at the middle.
 export const COW_BODY_ROUNDS: Record<AmigurumiSize, number[]> = {
-  S: sphereRounds(36, 1),
-  M: sphereRounds(42, 1),
-  L: sphereRounds(48, 1),
+  S: sphereRounds(33, 1),
+  M: sphereRounds(39, 1),
+  L: sphereRounds(45, 1),
 }
 
 const PROFILES: Record<AmigurumiSize, CowProfile> = {
+  // Round 27 muzzle: a rounder, more domed egg (one straight round, not two or
+  // three: the flat-topped capsule read as a square block) seated shallower so
+  // it stands proud of the face. Ears: the open cups, pressed to ~3/4 width.
   S: {
     body: COW_BODY_ROUNDS.S, head: sphereRounds(36, 2),
-    muzzle: sphereRounds(12, 3), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: [6, 9, 9, 9, 6],
+    muzzle: sphereRounds(12, 1), horn: COW_HORN_ROUNDS.slice(0, 6).concat([6]), ear: COW_EAR_CUP_ROUNDS.S,
     frontLeg: tubeRounds(12, 7), backLeg: ballRounds(18, 3), tail: cordRounds(3),
-    headSink: 18, muzzleSeat: 4, earPress: 20, legLift: -8.4, frontLegLift: 4.3, eyeMm: 13,
+    headSink: 18, muzzleSeat: 2, earPress: 30, legLift: -4.4, frontLegLift: 11.6, eyeMm: 13,
   },
   M: {
     body: COW_BODY_ROUNDS.M, head: sphereRounds(42, 2),
-    muzzle: sphereRounds(18, 2), horn: COW_HORN_ROUNDS.slice(0, 7).concat([6]), ear: COW_EAR_ROUNDS,
+    muzzle: sphereRounds(18, 1), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: COW_EAR_CUP_ROUNDS.M,
     frontLeg: tubeRounds(12, 10), backLeg: ballRounds(18, 4), tail: cordRounds(4),
-    headSink: 24, muzzleSeat: 5, earPress: 22, legLift: -12.1, frontLegLift: 14.6, eyeMm: 18,
+    headSink: 24, muzzleSeat: 2, earPress: 40, legLift: -12.1, frontLegLift: 17.2, eyeMm: 18,
   },
   L: {
     body: COW_BODY_ROUNDS.L, head: sphereRounds(48, 2),
-    muzzle: sphereRounds(18, 3), horn: COW_HORN_ROUNDS.slice(0, 8).concat([6]), ear: [6, 9, 12, 15, 15, 12, 9, 6],
+    muzzle: sphereRounds(21, 1), horn: COW_HORN_ROUNDS.slice(0, 9).concat([6]), ear: COW_EAR_CUP_ROUNDS.L,
     frontLeg: tubeRounds(12, 13), backLeg: ballRounds(18, 5), tail: cordRounds(4),
-    headSink: 26, muzzleSeat: 5, earPress: 24, legLift: -16.5, frontLegLift: 23.2, eyeMm: 20,
+    headSink: 26, muzzleSeat: 2, earPress: 48, legLift: -12.5, frontLegLift: 30.4, eyeMm: 20,
   },
 }
 
@@ -224,7 +253,9 @@ const COW_VIEW = {
 /** The listing sets frame a 10 cm bear at ~85% of the frame; the calf's horns
  *  want the bar's ~75%. */
 // Round 18: the pear body made the calf taller; 0.95 cropped the horn tips.
-const COW_STAGE_ZOOM = 0.82
+// Round 27: pulled back a touch so the stage's dried bunch (tied at the frame's
+// left edge, its heads reaching toward the toy) stops short of the left foot.
+const COW_STAGE_ZOOM = 0.9
 const COW_YARN: YarnWeight = 'bulky'
 const COW_HOOK_MM = 6
 const COW_FIBRE: YarnFibre = 'chenille'
@@ -246,7 +277,8 @@ function faceDir(d: Dir, yaw = COW_YAW): Dir {
 const HEAD_AXIS = { x: 1, y: 0, z: 0 }
 /** The capsule muzzle lies ACROSS the lower face (its axis side to side),
  *  sewn on by its side, so the lens sees a wide oval. */
-const MUZZLE_DIR = { x: 0, y: 1, z: -0.34 }
+// Round 27: lower on the face (the bar's muzzle sits low, brown showing above it).
+const MUZZLE_DIR = { x: 0, y: 1, z: -0.5 }
 const MUZZLE_AIM = { x: 1, y: 0, z: 0 }
 // Round 19: out of the SIDES of the crown (the bar), less straight up.
 const HORN_DIR = { x: 0.78, y: 0.1, z: 0.72 }
@@ -254,9 +286,15 @@ const HORN_AIM = { x: 1, y: 0.12, z: 0.42 }
 /** The flat ears: sewn by the closed end on the sides of the head, level
  *  with the brow, standing out sideways and a touch down, the pressed face
  *  turned to the lens. */
-const EAR_DIR = { x: 1, y: 0.1, z: 0.3 }
-const EAR_AIM = { x: 1, y: 0.22, z: -0.28 }
-const EAR_SPIN = { x: 0, y: 1, z: 0.25 }
+// Round 28: up at brow level beside the horns (r27's sat at eye level).
+const EAR_DIR = { x: 1, y: 0.05, z: 0.5 }
+// Round 27 (the cup): `aim` is the cup's axis from its back (the ring, seated
+// in the head) out through the open rim — forward and out, a little down, so
+// the hollow faces the lens (round 28: mostly toward the camera — at 45° out
+// the lens saw the cup's back and the ear read as a flat tab); `spin` (the
+// pressed face up) lays the oval's long axis across.
+const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
+const EAR_SPIN = { x: 0, y: 0, z: 1 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
  *  of the body to the table, a touch forward so the hooves land in front. */
@@ -290,7 +328,11 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // Round 14: nearer the top of the crown — at y 0.95 the seven-round circle's
 // front edge still reached the eyes.
 // Round 24: lower again on the brow (the bulky fringe's five rounds are a smaller circle).
-const HAIR_DIR = { x: 0, y: 0.88, z: 1 }
+// Round 27 (the orchestrator's look at r26: "a flat tight mat lying on the head
+// like a cap; the bar's is a tall tousled mound standing up off the crown"):
+// high on the crown again, the curls standing up, so a band of forehead shows.
+// Round 28: a touch forward again so the mound spills to the brow.
+const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -310,7 +352,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
   // Round 23 (bulky yarn): a round is 1.43x deeper, so five rounds at M span
   // what seven did at worsted; the loop sizes below are in yarn radii and were
   // divided by the same, so the curls stay the bar's size against the head.
-  const rounds = size === 'S' ? [6, 12, 18, 24] : size === 'L' ? [6, 12, 18, 24, 30, 36] : [6, 12, 18, 24, 30]
+  // Round 31: a round more at every size (M six rounds, loops on 1/3/5, the
+  // sixth plain as the sewing edge) so the standing mound spreads horn to horn.
+  const rounds = size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36]
   const last = rounds.length - 1
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
   return {
@@ -339,23 +383,29 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // one given a full twist so it springs into a tight curl, the strand fatter.
     // Round 24: BIG open rings lying over the head (r23's small tight curls
     // stood as a dense cauliflower hat).
-    loop: { lengthYr: 4.4, halfWidthYr: 2.0, droopDeg: -62, vary: 0.4 },
+    // Round 27: smaller springy curls of MIXED sizes (vary 0.55) standing up off
+    // the crown (droop -35) in a tall tousled mound — r26's big rings lay flat.
+    // Round 28: r27's stood as a solid helmet of packed curls — a little smaller, leaning out more.
+    // Round 29: BIGGER open rings (the bar's are ~17 mm across on this head; r28's 10 mm curls packed into a dome).
+    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 },
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
     // fringe is a mix, not a tiling.
     // Round 26: loops in every OTHER stitch — the bar's curls are distinct rings
     // with the head showing between them, not a wall-to-wall cap.
+    // Round 27: loops in two of three stitches again ("many small curls"), every
+    // other one twisted into a tight springy curl.
+    // Round 28: back to loops in every OTHER stitch (r27's two of three packed into a helmet), every third a tight curl.
     plainEvery: 2,
-    // Round 23: every third (every other read as a dense "brain" of curls;
-    // the bar's mound is open rings with a tight curl among them).
-    curlEvery: 3,
-    curlLoop: { twist: 2, curl: 0.5, halfWidthYr: 1.2 },
+    // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
+    curlEvery: 4,
+    curlLoop: { twist: 1, curl: 0.4, halfWidthYr: 1.6 },
     loopByRound: (k) =>
       k === 0
-        ? { lengthYr: 5.6, halfWidthYr: 2.0, droopDeg: -40 } // over three fingers, standing up: the crown of the mound
+        ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
         : k === last
-          ? { lengthYr: 3.6, halfWidthYr: 1.8, droopDeg: -80 } // the spill onto the forehead and over the horn roots (short and lying flat: round 10's fell over the eyes)
+          ? { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 } // the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
           : undefined,
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
@@ -367,8 +417,20 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // head it stands on. Same yarn in the words; a lighter shade on the loops.
     // Round 21: the same red-brown as the body, just catching the light (0.24
     // read as a pale pinkish-mauve pancake beside the bar).
-    colourHex: lighten(colourHex, 0.08),
+    // Round 30: a step lighter again (0.14) — r29's rings were the head's own dark brown; the bar's catch the light.
+    colourHex: lighten(colourHex, 0.14),
   }
+}
+
+/** The cupped ear's rounds in the maker's words: an open half-ball from the
+ *  ring, never stuffed, pressed into an oval cup (`COW_EAR_CUP_ROUNDS`). */
+function cowEarWords(rounds: number[]): string[] {
+  const lines = writeInstructions({ name: 'ear', stitch: 'sc', form: 'sphere', rounds }).slice(0, -1)
+  return [
+    ...lines,
+    'Work in a continuous spiral without joining; mark the first stitch of each round.',
+    'Do not stuff and do not close the ear: fasten off leaving a long tail, so it stays an open half-ball. Press it gently between finger and thumb into an oval cup, the hollow facing you.',
+  ]
 }
 
 /** Lift a hex colour's value by `f` (0..1), hue and saturation kept. */
@@ -421,14 +483,18 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.ear, colourHex: main,
+      tube: { anchor: 'ring', join: 'spiral', cap: 'dome' },
       press: s.earPress,
-      sewNote: 'by the closed end on the sides of the head level with the brow, just below the horns, standing out sideways with the flat face turned forward',
+      words: cowEarWords(s.ear),
+      sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the open cup turned forward and out so you look into the hollow',
       place: {
         on: 'head',
         dir: fd({ x: side * EAR_DIR.x, y: EAR_DIR.y, z: EAR_DIR.z }),
         aim: fd({ x: side * EAR_AIM.x, y: EAR_AIM.y, z: EAR_AIM.z }),
         spin: fd({ x: side * EAR_SPIN.x, y: EAR_SPIN.y, z: EAR_SPIN.z }),
-        seat: 12, poleIn: false, surfaceFit: 'ellipsoid',
+        seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+        // Round 29: out beside the head, not flat against its side.
+        offset: { x: side * 9 },
       },
     })
   }
@@ -454,7 +520,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * BACK_LEG_DIR.x, y: BACK_LEG_DIR.y, z: BACK_LEG_DIR.z },
         aim: { x: side * BACK_LEG_AIM.x, y: BACK_LEG_AIM.y, z: BACK_LEG_AIM.z },
         seat: 6, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { x: side * 28, y: 30, z: s.legLift },
+        offset: { x: side * 24, y: 30, z: s.legLift },
       },
     })
   }
@@ -489,14 +555,16 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     hair: [cowFringe(main, choices.size)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
-      'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a wide cream capsule muzzle, two cream horns, two flat pressed ears, ' +
+      'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
       'two long front legs, two back legs and a tail, each worked as a spiral from a magic ring and sewn on, with a loop-stitch fringe sewn between the horns.',
   }
 }
 
 /** Eyes: on the head just above the muzzle's top corners. */
 // Round 21: lower (at the muzzle's top edge) and closer together — the bar's.
-const EYE_DIR = { x: 0.48, y: 1, z: 0.0 }
+// Round 27: a little higher, just outside the muzzle's top corners, so a gap of
+// brown shows between eye and muzzle (the bar).
+const EYE_DIR = { x: 0.5, y: 1, z: 0.16 }
 
 /** Brown-only pile: a short dense fringe of real hair curves on the dark
  *  chenille (the bar's lit pile tips), none on the cream (grey whiskers). */
