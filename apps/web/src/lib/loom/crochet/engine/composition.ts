@@ -284,6 +284,9 @@ export interface NightcapAccessory {
    *  it starts (fraction of the head radius), its ramp length (mm) and final
    *  angle (deg). The bar's nightcap folds right off the crown. */
   bend?: { startFrac?: number; lengthMm?: number; angleDeg?: number; dirDeg?: number }
+  bandFitFrac?: number
+  bandRounds?: number
+  brimRounds?: number
   /** The pompom's yarn, when it is not the hat's (the bar's cream pompom on
    *  a lilac cap): its colour, its fibre look (a fluffy wool or chenille
    *  pompom on a cotton hat) and its trimmed radius as a fraction of the
@@ -293,6 +296,10 @@ export interface NightcapAccessory {
   pompomRadiusFrac?: number
   /** Stitches added a round up the cone (hatAccessory default 2). */
   coneStep?: number
+  /** Slow rounds at the tip, each count held twice (hatAccessory `slowTipRounds`, default 5). */
+  slowTipRounds?: number
+  /** The whole hat tilted back off the face (deg, hatAccessory `tiltBackDeg`, default 0). */
+  tiltBackDeg?: number
 }
 
 export interface CompositionProgram {
@@ -1299,8 +1306,16 @@ export function compositionScene(p: CompositionProgram, compiled: CompiledCompos
         ...(a.pompomFibre ? { pompomFibre: a.pompomFibre } : {}),
         ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
         ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
+        ...(a.slowTipRounds != null ? { slowTipRounds: a.slowTipRounds } : {}),
+        ...(a.bandFitFrac != null ? { bandFitFrac: a.bandFitFrac } : {}),
+        ...(a.bandRounds != null ? { bandRounds: a.bandRounds } : {}),
+        ...(a.brimRounds != null ? { brimRounds: a.brimRounds } : {}),
       },
-      { ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}), ...(a.bend ? { bend: a.bend } : {}) },
+      {
+        ...(a.brimHeightFrac != null ? { brimHeightFrac: a.brimHeightFrac } : {}),
+        ...(a.bend ? { bend: a.bend } : {}),
+        ...(a.tiltBackDeg != null ? { tiltBackDeg: a.tiltBackDeg } : {}),
+      },
     )
     for (const st of [...hat.strokes, ...hat.pompom]) strokes.push(st as BlenderScene['strokes'][number])
   }
