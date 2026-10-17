@@ -171,7 +171,7 @@ const STITCH_COUNT = /\((\d+)\s*sts?\)\s*$/
  * yarn"). Everything else is a worked row and must be counted.
  */
 const UNCOUNTED_LINE =
-  /^(fasten off|weave in|sew |stuff |fit the|join |block |repeat rows|assembly\b|make \d|start with |change to |cut the |carry the |work every stitch )/i
+  /^(fasten off|weave in|sew |stuff |fit the|join |block |repeat rows|assembly\b|make \d|start with |change to |cut the |carry the |work every stitch |work in a continuous spiral|do not stuff )/i
 
 function text(v: unknown): string {
   return typeof v === 'string' ? v : ''

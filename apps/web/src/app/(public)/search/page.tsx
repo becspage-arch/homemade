@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import { prisma, TutorialStatus } from '@homemade/db'
+import { prisma, TutorialStatus, crochetHeroMedia } from '@homemade/db'
 import { searchTutorials, isSearchConfigured } from '@homemade/search'
 import { TutorialCard } from '@/components/public/tutorial-card'
 import { mediaSrcSet } from '@/lib/media'
@@ -12,6 +12,7 @@ import { SearchForm } from './search-form'
 import { SearchResults } from './search-results'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { mediaUrl } from '@/lib/media'
+import { crochetCardHref } from '@/lib/crochet/public-pattern'
 
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
@@ -20,11 +21,12 @@ import './search-page.css'
 export const dynamic = 'force-dynamic'
 
 // Pattern-led categories: the search index only holds tutorials, so for these
-// we query the Pattern library directly by name/description.
-const PATTERN_TYPES: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART' | 'CROCHET_CHART'> = {
+// we query the Pattern library directly by name/description. Crochet is not
+// here: its library is the CrochetPattern table, not Pattern (there are no
+// CROCHET_CHART Pattern rows), so it has its own branch below.
+const PATTERN_TYPES: Record<string, 'CROSS_STITCH' | 'KNITTING_CHART'> = {
   'cross-stitch': 'CROSS_STITCH',
   knitting: 'KNITTING_CHART',
-  crochet: 'CROCHET_CHART',
 }
 const DIFFICULTIES = new Set(['BEGINNER', 'INTERMEDIATE', 'ADVANCED'])
 
@@ -156,6 +158,36 @@ export default async function SearchPage({ searchParams }: PageProps) {
       })
     : []
 
+  // Crochet lives on CrochetPattern. Behind the category flag: the branch runs
+  // only once crochet is a publicly visible category, so a hand-typed
+  // ?category=crochet cannot surface a hidden category's patterns.
+  const isCrochet = categorySlug === 'crochet' && categories.some((c) => c.slug === 'crochet')
+  const crochetHits = isCrochet && q !== '' && !rateLimited
+    ? await prisma.crochetPattern.findMany({
+        where: {
+          ownerUserId: null,
+          visibility: 'PUBLIC',
+          publishedAt: { not: null },
+          subCategoryId: { not: null },
+          OR: [
+            { name: { contains: q, mode: 'insensitive' } },
+            { description: { contains: q, mode: 'insensitive' } },
+          ],
+          ...(difficulty && DIFFICULTIES.has(difficulty) ? { difficulty: difficulty as 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED' } : {}),
+        },
+        orderBy: { publishedAt: 'desc' },
+        take: RESULTS_PER_PAGE,
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          loomHero: { select: { cloudflareId: true, r2Key: true } },
+          hero: { select: { cloudflareId: true, r2Key: true } },
+          thumbnail: { select: { cloudflareId: true, r2Key: true } },
+        },
+      })
+    : []
+
   if (results) {
     const dbUser = await getCurrentDbUser()
     const ip = await getClientIp()
@@ -234,7 +266,32 @@ export default async function SearchPage({ searchParams }: PageProps) {
         </section>
       )}
 
-      {!configured && !patternType && !isNeedlework && (
+      {isCrochet && q !== '' && !rateLimited && (
+        <section aria-live="polite">
+          <p className="search-summary">
+            {crochetHits.length === 0
+              ? `No patterns matched "${q}" yet.`
+              : `${crochetHits.length} pattern${crochetHits.length === 1 ? '' : 's'} for "${q}"`}
+          </p>
+          {crochetHits.length > 0 && (
+            <ul className="search-pattern-grid">
+              {crochetHits.map((p) => (
+                <li key={p.id} className="search-pattern-card">
+                  {/* Same destination as the crochet category grid's cards
+                      (crochet-pattern-grid.tsx): the public pattern page. */}
+                  <Link href={crochetCardHref(p)}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={mediaUrl(crochetHeroMedia(p), 'card') ?? ''} alt={p.name} loading="lazy" />
+                    <span>{p.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
+      {!configured && !patternType && !isNeedlework && !isCrochet && (
         <p className="search-empty">
           Search is not yet wired up in this environment. Try the category
           pages from the menu while we finish setting it up.

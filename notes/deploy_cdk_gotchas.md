@@ -64,7 +64,5 @@ lands. Secret names must not end in `-secret` (breaks the no-suffix ARN form
 Fargate uses) — use `…-v2` or `…-key`.
 
 Related: [[feedback_deploy_verification]] (the GitHub-deploy + /healthz
-verification still applies to code pushes), [[project_business_model]] (Stripe
+verification still applies to code pushes), [Premium vs free spec](project/project_premium_free_spec.md) (Stripe
 go-live state).
-
-(Cross-reference note, 2026-09-06: `[[project_business_model]]` is not in notes/.)

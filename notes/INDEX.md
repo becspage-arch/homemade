@@ -1,6 +1,6 @@
 # Index of `notes/` — one line per file
 
-Rebuilt 6 September 2026 by a notes audit: every file below exists, and every line says what its file now says. Read `README.md` for how the folder works, then the files that bear on your task.
+Rebuilt 6 September 2026 by a notes audit; crochet, loom and knitting lines refreshed 17 October 2026. Every file below exists, every line says what its file now says, and every link in `notes/` resolves. Read `README.md` for how the folder works, then the files that bear on your task.
 
 ## Start here
 
@@ -22,8 +22,8 @@ Rebuilt 6 September 2026 by a notes audit: every file below exists, and every li
 - [Session naming](feedback_session_naming.md) — worker session titles start `Homemade - ` (Aura is her other project)
 - [Session sizing](feedback_session_sizing.md) — size worker prompts large; bundle related work; split only on real conflict
 - [Scope discipline](feedback_scope_discipline.md) — "Scope — out" is a hard line; a worker stops and asks rather than expanding
-- [Model choice](feedback_model_choice.md) — Sonnet for bulk authoring, Opus for orchestrator, tech, pipeline and anchor work; every prompt names a Model
-- [Credits and merging](feedback_credits_and_merging.md) — two lanes plus the daily train; workers never merge; batch renders; cap four workers; no suggested-task cards
+- [Model choice](feedback_model_choice.md) — Sonnet for bulk authoring, Opus for orchestrator, tech, pipeline and anchor work; every prompt names a Model. Loom and crochet (17 Oct): Opus builds on pass/fail rails, Fable fine-tunes by eye
+- [Credits and merging](feedback_credits_and_merging.md) — two lanes plus the daily train; workers never merge; batch renders; cap four workers; no suggested-task cards. Added October: end-of-week credits only; crochet rides `claude/crochet-train-1009`
 - [Deploy verification](feedback_deploy_verification.md) — `gh run watch` then `/healthz` 200 after any push to `main`. Corrected 2026-09-06: the train's merger runs it once, not every worker
 - [Verify by code, not browser](feedback_verify_by_code_not_browser.md) — driving her browser crashes her machine; verify via DB, git and code, or ask her to look
 - [Software-only build](feedback_software_only_build.md) — nothing gates on Rebecca physically making something; code-side assertions pre-launch, user feedback after
@@ -62,7 +62,7 @@ Rebuilt 6 September 2026 by a notes audit: every file below exists, and every li
 ## Patterns, renders and the loom
 
 - [Pattern complexity = a RANGE](feedback_pattern_complexity_range.md) — every bulk run spans simple to huge-detailed; the 100+ colour end is wanted, never forced to one level
-- [Crochet quality bar](feedback_crochet_quality_bar.md) — customer-ready = as beautiful and cute as the best-selling Etsy patterns; Rebecca's five example listings live in /mnt/project-files/homemade/crochet-bar/ (not in the repo)
+- [Crochet quality bar](feedback_crochet_quality_bar.md) — customer-ready = as beautiful and cute as the best-selling Etsy patterns; the bar is only Rebecca's five bar photos, kept in /mnt/project-files/homemade/crochet-bar/ and never in the repo
 - [Cross-stitch world-class bar](feedback_cross_stitch_world_class_bar.md) — best collection in the world; the NORTH_STAR references; the June cull; repair before cull; targets now 1,818 across 27 shelves
 - [Render before volume](feedback_render_before_volume.md) — pattern quality is judged only from a finished render; never build volume before the loom can show it
 - [Customer-eye renders](feedback_customer_eye_renders.md) — HARD RULE: look at every render as a customer before presenting; only bring ones a customer would be happy with
@@ -93,14 +93,15 @@ Rebuilt 6 September 2026 by a notes audit: every file below exists, and every li
 ## Per-project state
 
 - [Cross-stitch state](project/project_cross_stitch_state.md) — where cross-stitch stands: numbers, the duplication root cause, the candidates-mode pipeline and its two routines, and what is left before sign-off
-- [Knitting state](project_knitting_state.md) — where knitting stands: the branches held off main and the paused knit-program work with its resume point (loom orchestrator's file)
-- [Loom: platform decision](project/project_loom_render_engine.md) — the 2026-06-22 ratification of one deterministic stitch-accurate render engine for every pattern craft, plus the canonical process
-- [Loom: engine build state](project/project_loom_engine_build_state.md) — the embroidery-first reset and the 2.5D thread-stroke approach. Its worktree and branch names date from June; check against the tree
-- [Loom: stitch engine](project/project_loom_stitch_engine.md) — the yarn-level continuous-strand crochet and knit engine. The handbook `apps/web/src/lib/loom/crochet/STITCH_ENGINE.md` is canonical; this is the summary
-- [Loom: Fargate render](project/project_loom_fargate_render.md) — the Blender base render containerised and running on Fargate, how `renderHero` selects it, and the infra behind it
-- [Loom: orchestrator log](project/project_loom_orchestrator.md) — the standing loom, crochet and knitting orchestrator's live progress log and resume point
-- [Crochet: sign-off pass](project/project_crochet_signoff.md) — the crochet category sign-off, its locked decisions and the three-layer generation/render boundary. Dated June; several of its numbers have moved
-- [Crochet: pattern engine](project/project_crochet_pattern_engine.md) — build 1 of the program and pattern layer (flat, twelve locked stitches) and what build 2 covers
+- [Crochet state](project/project_crochet_state.md) — START HERE for crochet: the live tracker, the bar, the Opus/Fable split, end-of-week credits, the train, and the engine module map
+- [Knitting state](project_knitting_state.md) — parked until Bec says start; what is on main (hidden), the plan of record and the knit-program resume point
+- [Loom: platform decision](project/project_loom_render_engine.md) — one deterministic, render-only, stitch-accurate engine for every pattern craft; the three layers and the rules that still stand
+- [Loom: render pipeline](project/project_loom_engine_build_state.md) — `renderHero`: exact stitches, Blender base, locked Fal finish, fidelity gate; the hard lessons from the embroidery build
+- [Loom: stitch engine](project/project_loom_stitch_engine.md) — the one-strand stitch engine in short: how a stitch is built and checked, what is locked. The handbook `STITCH_ENGINE.md` is canonical
+- [Loom: Fargate render](project/project_loom_fargate_render.md) — the Blender base render on Fargate, how `renderHero` selects it, and the probe task def rule for jobs
+- [Loom: orchestrator log](project/project_loom_orchestrator.md) — retired 17 October 2026; one-line pointer to Crochet state
+- [Crochet: sign-off pass](project/project_crochet_signoff.md) — retired 17 October 2026; pointer to Crochet state, the shelf targets and the playbook
+- [Crochet: pattern engine](project/project_crochet_pattern_engine.md) — retired 17 October 2026; builds 1 and 2 are on main, handbook §8e
 - [Crochet: anchor batch](project/project_crochet_anchor.md) — the locked PATTERN template and chartData shape a crochet bulk worker matches, and why the teaching library must not be re-authored
 - [Crochet: process diagrams](project/project_crochet_diagrams.md) — the locked hybrid diagram pipeline (public-domain Dillmont engravings plus in-house SVG for the modern gaps), hard exclusions and research dead ends
-- [Cross-stitch generation toolkit](project/project_pattern_generation_toolkit.md) — largely superseded: the worker scripts it maps are deleted and generation moved into `studio/generation/`. Kept for its locked principles
+- [Cross-stitch generation code map](project/project_pattern_generation_toolkit.md) — rewritten from the code 17 October 2026: where generation lives in `studio/generation/`, the rules it locks in, thumbnails and dense colour counts

@@ -180,7 +180,7 @@ const YARN_WORDS: Partial<Record<YarnWeight, string>> = {
 /** Every composition piece is worked in sc, written in UK terms. */
 const UK_SC = 'dc'
 
-function withPanel(lines: string[], piece: CompositionPiece): string[] {
+export function withPanel(lines: string[], piece: Pick<CompositionPiece, 'rounds' | 'panel'>): string[] {
   const runs = piece.panel!
   const out: string[] = []
   let inContrast = false
@@ -299,6 +299,10 @@ export function writeCompositionInstructions(p: CompositionProgram): string[] {
       ...(a.pompomHex ? { pompomHex: a.pompomHex } : {}),
       ...(a.pompomRadiusFrac != null ? { pompomRadiusMm: a.headRadiusMm * a.pompomRadiusFrac } : {}),
       ...(a.coneStep != null ? { coneStep: a.coneStep } : {}),
+      ...(a.slowTipRounds != null ? { slowTipRounds: a.slowTipRounds } : {}),
+      ...(a.bandFitFrac != null ? { bandFitFrac: a.bandFitFrac } : {}),
+      ...(a.bandRounds != null ? { bandRounds: a.bandRounds } : {}),
+      ...(a.brimRounds != null ? { brimRounds: a.brimRounds } : {}),
     }))
     out.push(`Sit the hat on the ${baseName(a.on)} with the band just above the eyes and let the tip flop to one side; a few stitches through the band hold it.`)
   }

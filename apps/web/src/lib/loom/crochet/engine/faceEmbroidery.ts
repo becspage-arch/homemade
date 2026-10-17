@@ -166,6 +166,8 @@ export interface FaceLayout {
   gaugeScale?: number
   /** A light muzzle wants a pink nose (a bunny), a dark one a dark nose. */
   pinkNose?: boolean
+  /** Blush patch size multiplier (default 1; the sleepy bunny's is larger). */
+  blushScale?: number
   /** No muzzle: the nose and mouth go on the head under the eyes (this
    *  elevation), or nowhere (a beak). */
   noseOnHeadElevDeg?: number
@@ -282,11 +284,11 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       // one out of each backstitch hole: each a straight stitch down and a
       // little outward, the outermost from the corner fanning out most (the
       // bar's lashes are short, straight and even, about a third of the lid).
-      for (const [i, len, out_] of [[3, 0.4, 0.05], [4, 0.44, 0.13], [5, 0.44, 0.22], [6, 0.38, 0.32]] as const) {
+      for (const [i, len, out_] of [[3, 0.48, 0.05], [4, 0.52, 0.13], [5, 0.52, 0.22], [6, 0.46, 0.32]] as const) {
         const p = arc.pts[i]!
         stitches.push({ from: p, to: { round: p.round + len * g, st: p.st + side * out_ * g }, taut: true })
       }
-      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 0.9, 'Dark brown embroidery thread', stitches))
+      out.push(headFeature(side < 0 ? 'eye-l' : 'eye-r', EYE_THREAD, FLOSS_MM * 1.2, 'Dark brown embroidery thread', stitches))
     }
   } else if (style === 'stitched') {
     for (const side of [-1, 1] as const) {
@@ -317,8 +319,9 @@ export function buildFaceEmbroidery(style: FaceStyle, L: FaceLayout): Embroidery
       const cs = side * half(bs)
       // A rounder, softer patch than a satin pad, in a fluffy yarn so the
       // render shows one soft pale-pink patch, not a ribbed pad of rows.
-      const hw = 0.62 * g
-      const hh = 0.55 * g
+      const bsc = L.blushScale ?? 1
+      const hw = 0.62 * g * bsc
+      const hh = 0.55 * g * bsc
       // Worked from the inner edge outward on each side, so the two cheeks
       // are exact mirror images stitch for stitch.
       const fill = satinRows(br - hh, br + hh, 0.09 * g, cs, (r) => {

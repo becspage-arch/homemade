@@ -24,6 +24,8 @@ export interface MotifView {
   hang?: boolean
   /** Lift of the hung piece's lowest point above the sideboard (mm). */
   liftMm?: number
+  /** Where up the piece the camera aims (0 bottom .. 1 top); hung default 0.62, flat-lay 0.08. */
+  aimHeightFrac?: number
   /** Fine-cotton render tune (renderer `fibreTune`, additive): r9 tints the
    *  white sheen toward the dye so dusty rose renders dusty rose. */
   fibreTune?: Record<string, number | string>
@@ -41,6 +43,10 @@ export interface MotifView {
   /** Smoothing subdivisions per strand segment (default 4). A big assembly
    *  (the garland: ~170 strokes) takes 2 so the render fits the probe task's 8 GB (r9: 180 strokes at 4 = 105 MB of scene, OOM; r8's 49 MB rendered). */
   perSeg?: number
+  /** Per-piece smoothing (r15): the garland's long lace cords and ~110 leaves
+   *  take 1 (their nodes are already denser than a pixel at the hang view's
+   *  scale) so the flowers can keep 2 inside the probe task's memory. */
+  perSegOf?: (pieceName: string) => number | undefined
 }
 
 /** A smooth non-yarn notion in the scene (the renderer's ellipsoid props): a
@@ -82,10 +88,11 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] 
     // motif posed upright — a heart's dip, a butterfly's head — came out upside
     // down and mirrored in round 1), so the scene is written with y flipped.
     const ctrl: V3[] = posedPoints(piece).map((p) => sp3(p))
-    const center = smooth(ctrl, PER_SEG)
+    const perSeg = o.perSegOf?.(piece.name) ?? PER_SEG
+    const center = smooth(ctrl, perSeg)
     const { radiusMm, filaments } = pliedFilaments(center, m.yr * 0.85, 3, twist)
     const path = piece.built.strandPath
-    const colourAt = (k: number): string => piece.colourOf(path[Math.min(Math.floor(k / PER_SEG), path.length - 1)]!)
+    const colourAt = (k: number): string => piece.colourOf(path[Math.min(Math.floor(k / perSeg), path.length - 1)]!)
     // One stroke per piece and colour run, each holding exactly its own plies.
     // (Round 5 merged every same-colour piece into one stroke: the renderer's
     // fine-cotton path takes a stroke's equal-length filaments as the plies of
@@ -121,7 +128,7 @@ export function motifScene(m: BuiltMotif, o: MotifView = {}, props: MotifProp[] 
       openFabric: true,
       yawDeg: o.yawDeg ?? o.yaw ?? (hang ? 0 : 14),
       // A hung piece is aimed at its middle height, a flat-lay just above the table.
-      aimHeightFrac: hang ? 0.62 : 0.08, // r11: at 0.5 the hanging sat high in the square frame over a quarter of empty sideboard
+      aimHeightFrac: o.aimHeightFrac ?? (hang ? 0.62 : 0.08), // r11: at 0.5 the hanging sat high in the square frame over a quarter of empty sideboard
       lightRig: 'product' as const,
       groundScale: hang ? 40 : 16,
       stage: o.stage ?? (hang ? 'wall' : ('linen' as HeroStage)),

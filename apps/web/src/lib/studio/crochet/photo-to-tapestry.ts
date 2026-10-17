@@ -17,7 +17,7 @@ import 'server-only'
 
 import sharp from 'sharp'
 import { utils as iqUtils, buildPaletteSync, applyPaletteSync } from 'image-q'
-import { matchYarnShades } from './yarn-shades'
+import { deltaE2000, hexToLab, matchYarnShades } from './yarn-shades'
 import {
   TAPESTRY_MAX_COLOURS,
   TAPESTRY_MIN_COLOURS,
@@ -448,7 +448,13 @@ export async function photoToTapestryGrid(
   // keeping the arbitrary averaged RGB the quantiser produced: the pattern
   // NAMES a shade ("Sage", "Terracotta") and the rendered hero has to be that
   // shade, not a nearby colour no yarn on the shelf actually makes.
-  const shades = matchYarnShades(ordered.map(([k]) => hexByKey.get(k)!))
+  // Matched as a whole palette (see `matchYarnShades`): close but distinct
+  // colours keep their contrast, and the main yarns (weighted by the square
+  // root of their stitch count) get the closest shades.
+  const shades = matchYarnShades(
+    ordered.map(([k]) => hexByKey.get(k)!),
+    ordered.map(([, n]) => Math.sqrt(n)),
+  )
   const rename = new Map<string, string>()
   const paletteOut: TapestryColour[] = ordered.map(([tempKey, stitches], i) => {
     const shade = shades[i]!
@@ -495,9 +501,18 @@ function majorityDownsample(cells: string[], qw: number, k: number): string[] {
 }
 
 /**
- * Fold every colour used on fewer than `minShare` of the stitches — and then
- * any colour past `cap` — into its nearest (RGB) surviving colour, smallest
- * first, stopping at `floor` colours.
+ * Fold every colour used on fewer than `minShare` of the stitches into its
+ * nearest surviving colour, smallest first, stopping at `floor` colours. Then,
+ * while there are still more than `cap` colours, merge the CHEAPEST PAIR: the
+ * two colours whose merge recolours the fewest stitches by the least
+ * (smaller count x perceptual distance squared, Ward's rule), the smaller into
+ * the larger.
+ *
+ * The cap used to fold smallest-first too, which is the similar-colour merge
+ * bug from the other side: a sixteen-colour quantise keeps near-twins of a big
+ * flat region (two creams of one ground, two greens of one hill), and folding
+ * by size alone threw away a small but genuinely different colour (a mushroom's
+ * white spots, a second hill) while both twins survived. Twins now go first.
  */
 function mergeMinorColours(
   cells: string[],
@@ -506,9 +521,14 @@ function mergeMinorColours(
   floor: number,
   cap = Infinity,
 ): string[] {
-  const rgb = (k: string): [number, number, number] => {
-    const h = hexByKey.get(k)!.slice(1)
-    return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]
+  const labCache = new Map<string, [number, number, number]>()
+  const lab = (k: string): [number, number, number] => {
+    let v = labCache.get(k)
+    if (!v) {
+      v = hexToLab(hexByKey.get(k)!)
+      labCache.set(k, v)
+    }
+    return v
   }
   let out = cells
   for (;;) {
@@ -516,20 +536,38 @@ function mergeMinorColours(
     for (const k of out) counts.set(k, (counts.get(k) ?? 0) + 1)
     if (counts.size <= floor) return out
     const [minor, n] = [...counts.entries()].sort((a, b) => a[1] - b[1])[0]!
-    if (n / out.length >= minShare && counts.size <= cap) return out
-    const [r, g, b] = rgb(minor)
-    let best = minor
-    let bestD = Infinity
-    for (const k of counts.keys()) {
-      if (k === minor) continue
-      const [r2, g2, b2] = rgb(k)
-      const d = (r - r2) ** 2 + (g - g2) ** 2 + (b - b2) ** 2
-      if (d < bestD) {
-        bestD = d
-        best = k
+    let from = minor
+    let into = minor
+    if (n / out.length < minShare) {
+      let bestD = Infinity
+      for (const k of counts.keys()) {
+        if (k === minor) continue
+        const d = deltaE2000(lab(minor), lab(k))
+        if (d < bestD) {
+          bestD = d
+          into = k
+        }
       }
+    } else if (counts.size > cap) {
+      const keys = [...counts.keys()]
+      let bestCost = Infinity
+      for (let a = 0; a < keys.length; a++) {
+        for (let b = a + 1; b < keys.length; b++) {
+          const ka = keys[a]!
+          const kb = keys[b]!
+          const na = counts.get(ka)!
+          const nb = counts.get(kb)!
+          const cost = Math.min(na, nb) * deltaE2000(lab(ka), lab(kb)) ** 2
+          if (cost < bestCost) {
+            bestCost = cost
+            ;[from, into] = na < nb ? [ka, kb] : [kb, ka]
+          }
+        }
+      }
+    } else {
+      return out
     }
-    out = out.map((k) => (k === minor ? best : k))
+    out = out.map((k) => (k === from ? into : k))
   }
 }
 

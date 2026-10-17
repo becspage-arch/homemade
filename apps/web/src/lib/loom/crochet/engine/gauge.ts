@@ -21,6 +21,7 @@
  */
 
 import { STITCHES, rowPitchYr, type LoopShape } from './dictionary'
+import type { EarPieceOptions } from './earPiece'
 import type { HairPatch } from './hairPatch'
 import { ballRounds, tubeRounds } from './roundProfiles'
 import { sphereRounds } from './sphereProfile'
@@ -286,6 +287,10 @@ export function gSphereRounds(eq: number, extra: number, g: number): number[] {
 const MEASURED_NUDGES = new Map<string, () => number[]>([
   [sphereRounds(84, 1).join(','), () => sphereRounds(84, 2)],
   [sphereRounds(90, 1).join(','), () => sphereRounds(90, 2)],
+  // Sleepy bunny 4's pear body (sphereRounds(54, 3)) at gauge 1.6 derives eq
+  // 84 with five straight rounds and fails the same round-2 hook (dx -2.88
+  // yr); six, seven, eight and nine straight audit clean (measured 17 Oct).
+  [sphereRounds(84, 5).join(','), () => sphereRounds(84, 6)],
   // The toy's big foot at gauge 1.6 (eq 48 straight from a +6 climb) fails
   // one hook in round 9, the first round after the climb, once sewn under the
   // body ("floated above its crown", dy 1.2 yr; one straight round fewer
@@ -297,4 +302,38 @@ const MEASURED_NUDGES = new Map<string, () => number[]>([
 /** A gauge-derived profile, or its measured-clean neighbour (see above). */
 export function nudged(rounds: number[]): number[] {
   return MEASURED_NUDGES.get(rounds.join(','))?.() ?? rounds
+}
+
+/** The widest lop ear the fine-gauge knob builds: measured 17 Oct, a 30- or
+ *  33-st closed lop pressed 12-15 mm fails one hook in its straight run
+ *  (round 17, "floated above its crown") at gauge 1.4 / 1.6, and 27 audits
+ *  clean at 1.3, 1.4 and 1.6. */
+export const LOP_EAR_GAUGE_MAX_WIDTH = 27
+
+/**
+ * An ear piece (earPiece.ts, the opt-in cupped / open-lop ears) at gauge g:
+ * its stitches and rounds g x, in the finer yarn the caller passes to
+ * `earPart`. A cup keeps climbing in sixes, its depth and rim roll stay
+ * whole rounds (0-6, 0-2); a lop climbs in threes, capped like the closed
+ * lop, its length g x, and its press kept in mm (`pressYr` is in the finer
+ * yarn's radii, so x g). Shape fractions (pinch, squash, taper, a lop's
+ * depth and roll) are kept. The identity at g = 1.
+ */
+export function gEar(o: EarPieceOptions, g: number): EarPieceOptions {
+  if (g === 1) return o
+  if (o.kind === 'cup') {
+    return {
+      ...o,
+      width: gSix(o.width, g),
+      depth: Math.min(6, gRounds(o.depth, g)),
+      rimRoll: Math.min(2, gRounds(o.rimRoll ?? 0, g)),
+      ...(o.liningRounds != null ? { liningRounds: gRounds(o.liningRounds, g) } : {}),
+    }
+  }
+  return {
+    ...o,
+    width: Math.min(LOP_EAR_GAUGE_MAX_WIDTH, gStep(o.width, g, 3)),
+    length: gRounds(o.length ?? 30, g),
+    pressYr: (o.pressYr ?? 10) * g,
+  }
 }

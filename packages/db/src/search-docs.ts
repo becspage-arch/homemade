@@ -27,6 +27,7 @@ import type {
   TutorialDoc,
 } from '@homemade/search'
 import { prisma } from './index'
+import { crochetHeroMedia } from './crochet-media'
 import {
   buildContentTagFacets,
   getTagFacetsForContents,
@@ -213,14 +214,38 @@ export async function loadAllPatternDocs(): Promise<PatternDoc[]> {
 
 // ── Crochet patterns ──────────────────────────────────────────────────────────
 
+/**
+ * SELECT, never INCLUDE, for the same reason as the pattern rows above: an
+ * `include` carries every scalar column, and a crochet row's `loomProgram`,
+ * `rowsStructured`, `chartData` and `generationMeta` are large JSON the
+ * document uses none of. At the 1,500-pattern target a full reindex would carry
+ * them all through the container. This list is exactly what `crochetRowToDoc`
+ * reads, plus the three image relations the hero is picked from.
+ */
 function fetchCrochetPatternRows(where: Record<string, unknown>) {
   return prisma.crochetPattern.findMany({
     where,
-    include: {
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      description: true,
+      difficulty: true,
+      estimatedHours: true,
+      shapeCategory: true,
+      construction: true,
+      specialStitchesUsed: true,
+      sizesGraded: true,
+      terminologyConvention: true,
+      premium: true,
+      publishedAt: true,
       designer: { select: { slug: true, displayName: true } },
       subCategory: { select: { slug: true, name: true, category: { select: { slug: true } } } },
       primaryYarnWeight: { select: { canonicalName: true } },
       primaryHook: { select: { mmSize: true } },
+      loomHero: { select: { cloudflareId: true, r2Key: true } },
+      hero: { select: { cloudflareId: true, r2Key: true } },
+      thumbnail: { select: { cloudflareId: true, r2Key: true } },
     },
   })
 }
@@ -231,6 +256,8 @@ function crochetRowToDoc(
   facets: ContentTagFacets | undefined,
 ): CrochetPatternDoc | null {
   if (!p.subCategory) return null
+  // Same picture as the category grid: loom hero, then hero, then thumbnail.
+  const image = crochetHeroMedia(p)
   return {
     id: p.id,
     slug: p.slug,
@@ -251,8 +278,8 @@ function crochetRowToDoc(
     hasMultipleSizes: p.sizesGraded !== null,
     terminology: p.terminologyConvention,
     premium: p.premium,
-    heroCloudflareId: null,
-    heroR2Key: null,
+    heroCloudflareId: image?.cloudflareId ?? null,
+    heroR2Key: image?.r2Key ?? null,
     publishedAt: p.publishedAt ? p.publishedAt.getTime() : null,
     ...docTagFields(facets),
   }

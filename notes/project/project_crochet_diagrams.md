@@ -33,4 +33,4 @@ Crochet Foundations process diagrams (the ~60-tutorial Foundations content batch
 
 **How to apply.** When drafting the diagram-implementation worker prompt, encode the hybrid pipeline as the spec. Coordinate with the Foundations text worker on which method each contested technique teaches (magic ring especially — three valid methods) so the diagram matches the text. Two-pass adversarial SVG verification (path-walk + spec-compare) is the accuracy gate until a community crocheter contributor materialises post-launch. Editorial pass from Rebecca catches the obvious wrongs pre-launch.
 
-Related: [[project-content-pipeline]], [[feedback-image-strategy]], [[project-business-model]].
+Related: [Image strategy](../feedback_image_strategy.md), [Crochet state](project_crochet_state.md).

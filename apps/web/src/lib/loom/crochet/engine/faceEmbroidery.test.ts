@@ -61,7 +61,8 @@ test('eyes are set low and wide: below the crown third, well apart', () => {
   const eye = p.embroidery!.find((x) => x.name === 'eye-l')!
   const r = eye.stitches[0]!.from.round
   assert.ok(r >= head.rounds.length * 0.45, `eye round ${r} is not low on a ${head.rounds.length}-round head`)
-  assert.ok(roundAtElevation(head.rounds, 0) > r - 1.5)
+  // Sleepy bunny 4: the bar's eyes sit a touch BELOW the equator (-0.1R, elev -8), not above it.
+  assert.ok(roundAtElevation(head.rounds, 0) > r - 3.5, `eye round ${r} is far below the equator round ${roundAtElevation(head.rounds, 0)}`)
 })
 
 test('pattern words place every feature by round and stitch, in the notions too', () => {

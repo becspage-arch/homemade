@@ -10,8 +10,8 @@ a locked creative upscale behind a fidelity gate ([[feedback_hero_must_be_exact_
 playbook Step 2a/2b); for photographic-subject heroes (cooking, baking, tutorial-led
 categories) it is generate-first with Flux 1.1 Pro plus a vision gate (playbook Step 2).
 Procedural-cards-are-last-resort, designer-assets-are-sacred and the teaching-diagram
-sourcing chain below all still stand. ([[project_photo_accuracy_solution]] is not in
-notes/; the playbook carries that method, and `[[project_master_todo]]` is not either — the running list is `todo.md`.)
+sourcing chain below all still stand. (`project_photo_accuracy_solution` is not in
+notes/; the playbook carries that method, and `project_master_todo` is not either — the running list is `todo.md`.)
 
 **2026-06-23 UPDATE — for finished recipe/dish HEROES, generation beat stock decisively.** A strict vision pass found ~76% of cooking/baking stock heroes were wrong; the fix is generate-first (Flux Pro v1.1) + Claude vision gate, applied across cooking/baking/cross-stitch. The note below still holds for authoring-time *teaching-content* sourcing, but stock-keyword-search is no longer trusted for dish heroes.
 
@@ -74,4 +74,4 @@ The current image sourcing process during tutorial authoring is good and Rebecca
 - The stitch-exact in-house chart-engine render stays the source of truth AND the in-product chart AND the structural ANCHOR.
 - The HERO = that render laid into a shape-aware object base (folded stole / garment flat-lay / motif), then repainted photoreal by Flux dev **img2img at strength 0.72** (img2img, not text2img — the render constrains composition, colour, motif). Vision-gated: if the photo drifts off the render, FALL BACK to the render. No unanchored AI, no procedural.
 - Why consistent with the lock: the 2026-06-09 rejection was *unanchored* img2img against designer cross-stitch mockups (every X visible). Anchoring on our own faithful render, for crochet/knit at hero scale, is a different proposition. Designer-provided heroes (Stitching Mama) remain sacred and untouched. img2img only adds the photo look on top of the accurate render; it is never the stitch-exact artefact.
-- New hard rule: every PATTERN-type tutorial needs a chart (`chartData`); teaching content (STITCH/READING/TECHNIQUE) does not. Pipeline: `render-pattern-hero.ts` + chart-gap QC folded into `autopilot-preflight.ts`. See BUILD_PROGRESS 2026-06-15 and [[project_master_todo]] §9 for the running gap list.
+- New hard rule: every PATTERN-type tutorial needs a chart (`chartData`); teaching content (STITCH/READING/TECHNIQUE) does not. Pipeline: `render-pattern-hero.ts` + chart-gap QC folded into `autopilot-preflight.ts`. See BUILD_PROGRESS 2026-06-15 and [the to-do](todo.md) for what is still open.

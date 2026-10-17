@@ -17,8 +17,9 @@ import { STITCHES, type StitchId } from './dictionary'
 import { tubeSettledSizeMm } from './tube'
 import { pliedFilaments, smooth, type V3 } from '../yarnLoop'
 import type { BuiltContinuous } from './yarnPath'
-import { pickHeroStageVariant, type HeroStage } from '../../render/blenderScene'
+import { heroPhotoView, pickHeroStageVariant, type HeroPhoto, type HeroPhotoKnobs, type HeroStage } from '../../render/blenderScene'
 import { drapeFlat, drapeProps, drapeTube, drapedView } from './drape'
+import { hangTapestry } from './tapestryHang'
 
 const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes white — STITCH_ENGINE §11)
 
@@ -155,8 +156,15 @@ export interface BlenderScene {
     lightRig?: 'product'
     /** Ground plane size as a multiple of the frame (a low camera sees further). */
     groundScale?: number
-    /** The styled listing-photo set (see `HeroStage`); absent = studio. */
-    stage?: HeroStage
+    /** The styled listing-photo set (see `HeroStage`); absent = studio.
+     *  'wall' = the renderer's upright wall-hanging set (motifs r9), used by a
+     *  tapestry panel hung on its dowel (`staging: 'wall'`, tapestryHang.ts). */
+    stage?: HeroStage | 'wall'
+    /** A hung piece: its lowest point this far above the sideboard (mm), the
+     *  piece's own height for sizing the set, and the set's aperture. */
+    liftMm?: number
+    stageHeightMm?: number
+    stageFstop?: number
     /** On a styled stage the camera is the set's (a toy at eye level) unless
      *  these say otherwise: the tilt to use instead of the stage's, and a zoom
      *  factor on the set's framing (< 1 = closer). A draped flat-lay sets both. */
@@ -164,11 +172,18 @@ export interface BlenderScene {
     stageZoom?: number
     /** Which variant of the set (see `HERO_STAGE_VARIANTS`). */
     stageVariant?: string
-  }
+    /** The listing photo style (see `HeroPhoto`) and its knobs. */
+    photo?: HeroPhoto
+  } & HeroPhotoKnobs
   /** Matte ellipsoid props (a pouffe under a draped blanket, a bust under a
    *  cowl) — the drape's coloured colliders, built by loom_render_crochet.py's
    *  build_props. Only written for a draped scene. */
-  props?: { centre: number[]; axes: number[][]; hex: string; gloss: number }[]
+  props?: (
+    | { centre: number[]; axes: number[][]; hex: string; gloss: number }
+    /** A rod along a polyline of [x, y, z, radius] (the renderer's `branch`);
+     *  `wood` = smooth grained wood (light, dark) instead of bark: a dowel. */
+    | { branch: number[][]; hex: string; wood?: [string, string] }
+  )[]
 }
 
 /** Default `minFieldMm` (STITCH_ENGINE §8e-2 Part C) for a finished-object
@@ -434,6 +449,27 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   // colour on a clean white background). Warm near-white, not clinical pure white,
   // so it reads as a styled product shot and doesn't blow out under AgX.
   const base = { bgHex: '#efece6', resY: 1200 } as const
+  if (staging === 'wall' && p.form === 'grid') {
+    // A tapestry panel HUNG on its dowel with a cord and tassels, on the wall
+    // stage (tapestryHang.ts). The panel's strokes are only turned upright.
+    const rowHex = (j: number): string => {
+      const row = p.grid?.[j]
+      const tally = new Map<string, number>()
+      for (const k of row?.cellColours ?? (row?.colourKey ? [row.colourKey] : [])) tally.set(k, (tally.get(k) ?? 0) + 1)
+      const key = [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0]
+      return (key ? p.palette?.[key] : undefined) ?? hex
+    }
+    // Program row 0 renders at the TOP of the picture (see the lane's note in
+    // generation/bulk/crochet.ts), so it is the row the dowel is sewn to.
+    const hung = hangTapestry(strokes, yr, { top: rowHex(0), bottom: rowHex((p.grid?.length ?? 1) - 1) }, { twist, ...p.hanging })
+    return {
+      fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
+      strokes: hung.strokes,
+      fibre: p.yarnFibre ?? 'cotton',
+      view: hung.view as unknown as BlenderScene['view'],
+      props: hung.props,
+    }
+  }
   let view: BlenderScene['view']
   if (staging === 'flatlay') {
     // The WHOLE piece pulled back on a clean surface, gently tilted + softly
@@ -506,6 +542,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
   if ((staging === 'standing' || draped) && p.stage && p.stage !== 'studio') {
     view.stage = p.stage
     view.stageVariant = pickHeroStageVariant(p.stage, p.stageSeed ?? p.name, p.stageVariant)
+    Object.assign(view, heroPhotoView(p.photo, p.photoKnobs))
   }
   const props = draped ? drapeProps(p.drape!) : []
   return {

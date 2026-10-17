@@ -65,13 +65,15 @@ export function buildButterfly(o?: MotifOptions): BuiltMotif {
   const Ru = wingRadius(yr, UPPER_WING), Rl = wingRadius(yr, LOWER_WING)
   const gap = yr * 1.2 // the body lies in this gap
   // The upper wings are sewn overlapping the tops of the lower ones (a yarn
-  // layer up), the body over both.
+  // layer up), the body over both. r15: the lower wings sit lower and further
+  // out, so each side reads as two distinct lobes with a notch between (the
+  // bar's butterflies), not one blob.
   const pieces: MotifPiece[] = []
   for (const sx of [1, -1]) {
-    pieces.push(wingPiece(yr, col.wing!, col.edge!, UPPER_WING, sx > 0 ? 'upper right wing' : 'upper left wing', { x: sx * (Ru + gap), y: Ru * 0.55, z: yr * 2.2 }))
-    pieces.push(wingPiece(yr, col.wing!, col.edge!, LOWER_WING, sx > 0 ? 'lower right wing' : 'lower left wing', { x: sx * (Rl + gap * 0.8), y: -Rl * 1.05, z: 0 }))
+    pieces.push(wingPiece(yr, col.wing!, col.edge!, UPPER_WING, sx > 0 ? 'upper right wing' : 'upper left wing', { x: sx * (Ru + gap), y: Ru * 0.7, z: yr * 2.2 }))
+    pieces.push(wingPiece(yr, col.wing!, col.edge!, LOWER_WING, sx > 0 ? 'lower right wing' : 'lower left wing', { x: sx * (Rl + gap * 1.6), y: -Rl * 1.35, z: 0 }))
   }
-  pieces.push(buildBody(yr, col.body!, Ru * 0.55 + Ru * 0.6))
+  pieces.push(buildBody(yr, col.body!, Ru * 0.7 + Ru * 0.6))
   return assemble('butterfly', 'Butterfly', o, pieces, butterflyWords(), materialsLine(o, ['dusty blue', 'cream', 'cocoa']))
 }
 

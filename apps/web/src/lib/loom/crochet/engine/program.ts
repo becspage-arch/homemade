@@ -21,8 +21,9 @@
  */
 
 import { SWATCH_RECIPES, SHELL_N, type StitchId, type ShapeOp } from './dictionary'
-import type { HeroStage } from '../../render/blenderScene'
+import type { HeroPhoto, HeroPhotoKnobs, HeroStage } from '../../render/blenderScene'
 import type { DrapeOptions } from './drape'
+import type { HangOptions } from './tapestryHang'
 import { buildShaped, buildRounds, buildSphere, roundOps } from './shaping'
 import { buildContinuous, type BuiltContinuous } from './yarnPath'
 import { buildTube, tubeRibRounds, tubeRidgeLoop, tubeRidgeRounds, tubeFoldRounds, type TubeAnchor, type TubeBrim, type TubeCap, type TubeJoin, type TubeSpec } from './tube'
@@ -159,11 +160,20 @@ export interface CrochetProgram {
    *  Unset = picked from a hash of `stageSeed` (the slug; default `name`). */
   stageVariant?: string
   stageSeed?: string
+  /** The listing photo style on a styled stage (see `HeroPhoto`); unset = as before. */
+  photo?: HeroPhoto
+  /** Individual photo knobs over the style's defaults (see `HeroPhotoKnobs`). */
+  photoKnobs?: HeroPhotoKnobs
   /** DRAPE staging for a soft tube or flat piece (engine/drape.ts): the built piece is put
    *  down and settles under gravity on the table before it is rendered. Staging
    *  only — the stitches and the written pattern are unchanged. Absent = the
    *  piece is shown as worked (every existing program). */
   drape?: DrapeOptions
+  /** How a `staging: 'wall'` tapestry panel is hung (engine/tapestryHang.ts):
+   *  tassel count and length, cord / whipstitch / tassel yarn colours, dowel
+   *  wood. Render-only, outside the geometry; absent = the defaults (tassels
+   *  every ~40 mm, the top and bottom rows' own colours). */
+  hanging?: HangOptions
   /** Base yarn colour (hex). The render's default single colour. */
   colourHex?: string
   /** Colour palette: key → hex, for `GridRow.colourKey` stripes / colourwork. */
@@ -224,7 +234,11 @@ export interface CrochetProgram {
  *     and shot from a product three-quarter angle with the toy light rig. A
  *     tube whose open end faces up (`tube.openEnd: 'top'`) is turned over for
  *     it. Presentation only. */
-export type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband' | 'standing'
+export type Staging = 'swatch' | 'flatlay' | 'loop' | 'flatband' | 'standing' | 'wall'
+// 'wall' (tapestry fix, Oct 2026): a flat panel HUNG upright on the renderer's
+// wall stage from a wooden dowel, whipstitched to it, with a cord and tassels
+// (engine/tapestryHang.ts). The panel's strokes are only rotated; the dowel,
+// cord and tassels are render props outside the geometry hash.
 
 /** Resolve the render yarn radius (mm) for a program: an explicit override wins,
  *  else the program's yarn weight, else worsted. */

@@ -44,7 +44,7 @@ import { mkdirSync } from 'node:fs'
 import { prisma } from '@homemade/db'
 import { loadCredentials } from './loom-hybrid-fal'
 import { STRUCT_MIN_DEFAULT } from './loom-fidelity-gate'
-import { OUT, renderSceneBase, photorealHero } from './loom-pattern'
+import { OUT, renderSceneBase, photorealHero, withStageSeed } from './loom-pattern'
 import { loomRenderMode } from './loom-base-render'
 import { programScene, type Staging } from '../src/lib/loom/crochet/engine/programScene'
 import { compositionScene, type CompositionProgram, type BlenderScene } from '../src/lib/loom/crochet/engine/composition'
@@ -172,9 +172,9 @@ async function main(): Promise<void> {
   for (const r of toRender) {
     r.scene =
       r.plan.kind === 'composition'
-        ? compositionScene(r.plan.program as CompositionProgram, r.plan.compiled!)
+        ? compositionScene(withStageSeed(r.plan.program as CompositionProgram, r.plan.slug ?? undefined), r.plan.compiled!)
         : programScene(
-            r.plan.program as CrochetProgram,
+            withStageSeed(r.plan.program as CrochetProgram, r.plan.slug ?? undefined),
             r.plan.built!,
             r.plan.yr!,
             0.08,
@@ -215,7 +215,7 @@ async function main(): Promise<void> {
       if (!r.basePng) continue
       const promptKey = r.plan.kind === 'composition' ? 'amigurumi' : 'sc'
       const fibre = (r.plan.program as CrochetProgram | CompositionProgram).yarnFibre ?? 'cotton'
-      const { heroPng, fidelityScore } = await photorealHero(r.basePng, true, promptKey, fibre)
+      const { heroPng, fidelityScore } = await photorealHero(r.basePng, true, promptKey, fibre, r.plan.program as CrochetProgram | CompositionProgram)
       r.heroPng = heroPng
       r.fidelityScore = fidelityScore
       console.log(

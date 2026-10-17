@@ -3569,7 +3569,27 @@ Round 1-2 renders and side-by-sides: `crochet-bar/proofs/motifs/`; the job log i
 
 ---
 
-## 8n. FINE GAUGE — one knob for more, smaller stitches at the same size (2026-10-17)
+## 8n. THE EAR PIECE — cupped ears and open lops (2026-10-17)
+
+`engine/earPiece.ts`: one reusable ear, built by `buildTube` and audited in its settled frame exactly as the
+composition does (`buildPart` / `auditPart`), opt-in on the cow and bunny presets (`cuppedEars`, default off).
+
+- **'cup'** (the bar cow's): an OPEN BOWL from the ring, +6 a round to `width`, `depth` rounds even, `rimRoll`
+  rounds folded back over the outside (the tube's own fold brim, so the rolled lip is real rounds), `pinch` (two
+  plates in a V at the base of the rim, relax.ts `pinch`), `squash` (an oval press). The hollow faces local -z,
+  the pinched base local -y; it is sewn by the ring with `poleIn`.
+- **'lop'** (the bar bunny's): tip first, +3 a round (a +6 round off the ring is a flat disc and flattens to a
+  plank end), straight, narrowed in threes to the base and left OPEN; pressed with BOWED plates (relax.ts
+  `pressShape`, contact along the plate normal) so the lined front face (a tapestry panel, local +x) is hollow.
+- Measured: a pressed-FLAT open cup fails its rim rounds' hooks under 10 yr of press (and at 12 it is barely
+  pressed), so the cup is a bowl, not a folded flat piece. Bowed plates that clamp along x (not the normal)
+  shear the fabric and tear hooks; along the normal they audit clean. Pinch 1 (a 50° V) tears the rim round at
+  widths 24-30; a 35° V tears it at every width. A lop's bow only bites where the plate gap nears the two layers'
+  own thickness, so its hollow is small (1.5-1.8 mm at fine); press 6 yr fails, 8-10 is the floor.
+- Tests: `earPiece.test.ts` (every preset size and the option edges audit clean; a cup's hollow, a pinch's
+  narrowing, a lop's hollow and rounded tip are measured; the lining faces front; the switches change only the ears).
+
+## 8o. FINE GAUGE — one knob for more, smaller stitches at the same size (2026-10-17)
 
 `AmigurumiChoices.gauge` / `CowChoices.gauge` (default 1, clamped 1..2; engine/gauge.ts). At gauge g every piece is
 worked in g x the rounds and g x the stitches a round, in a yarn g x finer: `CompositionProgram.yarnRadiusMm` (new,
@@ -3585,10 +3605,15 @@ pattern is generated from the same round arrays, so the words carry the new coun
   Flat discs keep climbing in sixes and are trimmed back to their mm size by `scale` (`discTrim`).
 - Loop-stitch hair keeps its loops' size in mm (lengthYr / halfWidthYr x g); face embroidery `gaugeScale` x g.
 - mm placements (sinks, seats, lifts, presses) are kept. The finer cow body settles a few mm squatter, so its legs carry
-  a MEASURED lift per gauge (`GAUGE_LEG_LIFT`, M at 1.3 / 1.4).
+  a MEASURED lift per gauge (`GAUGE_LEG_LIFT`, M at 1.3 / 1.4); so do sleepy bunny 4's feet at 1.4
+  (`BUNNY_GAUGE_LEG_LIFT`) and its closed lop ears at 1.3 (`LOP_EAR_GAUGE_LIFT`, the tip reached the table).
 - The audit near the gate is NOT smooth in the counts: measured failures at gauge 1.3-1.6 have measured-clean
-  neighbours in `MEASURED_NUDGES` (toy body eq 84/90 with one straight round -> two; the 1.6 foot eq 48 -> 46) and
-  the lop ear is capped at 27 sts. A gauge outside 1.3 / 1.4 / 1.6 must go through gauge.test.ts before it ships, and
+  neighbours in `MEASURED_NUDGES` (toy body eq 84/90 with one straight round -> two; the pear bunny body eq 84 at 1.6, five -> six; the 1.6 foot eq
+  48 -> 46) and
+  the lop ear is capped at 27 sts (sleepy bunny 4's narrower 12/15/15 closed lop stays under it; re-measured, S 18 @ 1.4 and M / L 24 @
+  1.6 fail one or two hooks at the spiral step and take the next width down, `LOP_EAR_GAUGE_WIDTH`). The opt-in ear pieces (§8n, `cuppedEars`) scale too, via `gEar`: a cup's width in sixes and its depth
+  and rim roll in whole rounds, an open lop's width in threes (same cap) and length x g, its `pressYr` x g so the
+  press keeps its mm. A gauge outside 1.3 / 1.4 / 1.6 must go through gauge.test.ts before it ships, and
   gauge != 1 profiles are not in `AUDITED_PROFILES` (the save path does not take a gauge yet).
 - Render memory: stitches and scene points both go up ~g^2 (bunny 1.4: 1.09 M -> 2.06 M points); the fine-cotton bunny at 1.4 OOMs the 8 GB probe at bevel 2 and
   fits at `fibreTune.bevel_res: 1` (7.4 GB). Job log: crochet-bar/jobs/gauge.md.

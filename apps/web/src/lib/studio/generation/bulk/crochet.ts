@@ -9,6 +9,10 @@ import {
   checkCrochetPatternCompleteness,
   abbreviationsIn,
   CROCHET_TOY_SHELVES,
+  crochetTagSlugs,
+  resolveTags,
+  setContentTags,
+  addContentTags,
   type CrochetCompletenessResult,
 } from '@homemade/db'
 import { generatePatternImage } from '@/lib/studio/generation/pattern-engine'
@@ -892,6 +896,23 @@ export async function publishCrochetGem(
   const completeness = checkCrochetPatternCompleteness({ ...row, subCategorySlug: shelf.slug })
   if (completeness.blocked) throw new CrochetIncompleteError(completeness)
 
+  // BORN-TAGGING (playbook, cross-craft tagging block): the brief's Look and
+  // Territory, the home shelf and the name, against the controlled vocabulary.
+  // Checked BEFORE anything is written: a slug the database does not hold means
+  // the vocabulary was never seeded there, and that is a refusal, not a row
+  // published without its tags.
+  const tags = crochetTagSlugs({
+    name: row.name,
+    shelfSlug: shelf.slug,
+    brief: { look: brief.brief.look, territory: brief.brief.territory, treatment: brief.treatment },
+  })
+  const { unknown: unknownTags } = await resolveTags(tags.all)
+  if (unknownTags.length) {
+    throw new Error(
+      `publishCrochetGem: tag slugs missing from the CollectionTag table (${unknownTags.join(', ')}) — re-seed the vocabulary; refusing to publish`,
+    )
+  }
+
   const generationMeta = {
     bulkRunId: ctx.bulkRunId ?? null,
     brief: {
@@ -977,6 +998,12 @@ export async function publishCrochetGem(
       chartData: row.chartData ?? undefined,
     },
   )
+
+  // Tags before the search document, so the document carries its facets. A
+  // re-publish replaces the row's tags rather than piling on to old ones.
+  const ref = { type: 'CROCHET_PATTERN' as const, id: pattern.id }
+  await setContentTags(ref, [...tags.authored, ...tags.keyword], 'AUTHORED')
+  if (tags.derived.length) await addContentTags(ref, tags.derived, 'DERIVED')
 
   // Search: one document, upserted now, so a bulk row is findable without
   // waiting for the next full reindex.

@@ -17,15 +17,19 @@
  */
 
 import assert from 'node:assert/strict'
-import { compileComposition } from './composition'
+import { auditPart, buildPart, compileComposition } from './composition'
 import { buildAmigurumiProgram, type AmigurumiBase, type AmigurumiChoices } from './amigurumiPresets'
 import { PRESET_SETTLED_SIZE_MM_GENERATED } from './amigurumiSizes.generated'
 import { compositionPieces, writePieceInstructions, writeCompositionInstructions } from './compositionPattern'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
 import { sphereRounds } from './sphereProfile'
 import {
-  gBall, gCone, gCord, gDisc, gEven, gSphereRounds, gTube, gaugeHairPatch, gaugeYarn, hookForYarnRadiusMm, nearestYarnWeight,
+  gBall, gCone, gCord, gDisc, gEar, gEven, gSphereRounds, gTube, gaugeHairPatch, gaugeYarn, gaugeYarnRadiusMm, hookForYarnRadiusMm,
+  nearestYarnWeight,
 } from './gauge'
+import { buildEar } from './earPiece'
+import { COW_CUP_EAR } from './cowPreset'
+import { BUNNY_LOP_EAR } from './amigurumiPresets'
 import { hairPatchesFor } from './hairPatch'
 
 const SIZE_TOLERANCE = 0.05
@@ -65,6 +69,8 @@ check('identity', () => {
   const hair = hairPatchesFor('curly-fringe', 'head', '#000000', { x: 0, y: 0, z: 1 })[0]!
   assert.equal(gaugeHairPatch(hair, 1), hair)
   assert.deepEqual(gaugeYarn({ yarnWeight: 'fine', hookMm: 2.5 }, 1), { yarnRadiusMm: 1.3, yarnWeight: 'fine', hookMm: 2.5 })
+  for (const o of [...Object.values(COW_CUP_EAR), ...Object.values(BUNNY_LOP_EAR)]) assert.equal(gEar(o, 1), o)
+  assert.equal(gaugeYarnRadiusMm('bulky', 1), 3.0)
 })
 
 console.log('\nAt other gauges the counts are writable and scale with g')
@@ -95,6 +101,30 @@ check('scaled counts', () => {
 
 const GAUGES = (process.env.GAUGES ?? '1.3,1.6').split(',').map(Number)
 const BASES = (process.env.BASES ?? 'bear,bunny,cow').split(',') as AmigurumiBase[]
+
+// The opt-in ear pieces (earPiece.ts; cuppedEars on the cow and bunny) at every
+// size, in the finer yarn: built, relaxed and audited as the composition does.
+console.log('\nThe lop ears (closed, and the cupped-ear pieces) at fine gauge audit clean')
+for (const gauge of GAUGES) {
+  for (const size of ['S', 'M', 'L'] as const) {
+    check(`bunny closed lop ${size} @ gauge ${gauge}`, () => {
+      const program = buildAmigurumiProgram({
+        base: 'bunny', size, mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, gauge,
+      })
+      const ear = program.parts.find((x) => x.name === 'ear-l')!
+      const yr = compileYr(program)
+      const problems = auditPart(buildPart(ear, yr).built, ear, yr)
+      assert.deepEqual(problems.slice(0, 3), [], `${Math.max(...ear.rounds)} x ${ear.rounds.length}: ${problems.length} problems`)
+    })
+    for (const [kind, o, weight] of [['cow cup', COW_CUP_EAR[size], 'bulky'], ['bunny open lop', { ...BUNNY_LOP_EAR[size], liningHex: '#e8b4b0' }, 'fine']] as const) {
+      check(`${kind} ${size} @ gauge ${gauge}`, () => {
+        const go = gEar(o, gauge)
+        const { problems } = buildEar(go, gaugeYarnRadiusMm(weight, gauge))
+        assert.deepEqual(problems.slice(0, 3), [], `${go.width} st: ${problems.length} problems`)
+      })
+    }
+  }
+}
 
 console.log('\nThe toys at fine gauge build clean, keep their size, and the words carry the new counts')
 for (const base of BASES) {

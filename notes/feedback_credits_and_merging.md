@@ -6,6 +6,8 @@ originSessionId: b7d7c3b1-d04a-433f-96e0-403d73f05890
 ---
 Credits and merging (Rebecca, 5 September 2026)
 
+**Added 10 and 17 October 2026 (Rebecca):** Homemade runs only at the end of each week on leftover credits; never auto-start at a new week. When a limit hits, commit and push WIP, then stop until she says. Crochet branches ride their own train branch, `claude/crochet-train-1009`, which goes to main only on her word ([Crochet state](project/project_crochet_state.md)).
+
 - Two lanes for merging: only a live-site incident, a broken deploy, a customer-facing Sentry error or a security fix merges to main on its own. Everything else rides the day's train, merged once by the orchestrating session, with one deploy verification. Docs never merge alone. The full rules are in CLAUDE.md.
 - Workers never merge to main. Own git worktree, own branch, verify locally (typecheck, lint, the tests for the files touched; a full sweep at most once, only if shared code changed), push the branch, report branch and commit in a short plain-English summary.
 - Renders are the loom's expensive turns. Never render before the numbers say the geometry is settled. Batch every render. Two construction attempts per problem, then write it up and change approach. Crops and side-by-sides are built once per round and judged once.

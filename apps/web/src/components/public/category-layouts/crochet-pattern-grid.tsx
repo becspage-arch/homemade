@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Filter, Search, X } from 'lucide-react'
+import { crochetCardHref } from '@/lib/crochet/public-pattern'
 import {
   TAG_AXES,
   TAG_AXIS_LABEL,
@@ -65,7 +66,8 @@ const TAG_FILTER_KEYS = ['occasion', 'season', 'style', 'subject', 'audience'] a
  * Crochet pattern library grid. Shares the cross-stitch library shell + styles
  * (sidebar filters + inline search + sort) so the pattern categories read the
  * same, with crochet-specific card content (yarn / hook / finished size) and
- * the cross-craft tag facets. Cards open straight into the Crochet Studio.
+ * the cross-craft tag facets. Cards open the public pattern page
+ * (/crochet/patterns/<slug>); this grid only renders once crochet is visible.
  */
 export function CrochetPatternGrid({
   patterns,
@@ -290,9 +292,7 @@ function FilterButton({
 }
 
 function CrochetCard({ pattern: p }: { pattern: CrochetPatternCardData }) {
-  const href = p.slug
-    ? `/studio/crochet?crochetPatternSlug=${encodeURIComponent(p.slug)}`
-    : `/studio/crochet?crochetPatternId=${encodeURIComponent(p.id)}`
+  const href = crochetCardHref(p)
   const meta = [
     p.subCategoryName,
     p.difficulty ? pretty(p.difficulty) : null,
@@ -324,7 +324,7 @@ function CrochetCard({ pattern: p }: { pattern: CrochetPatternCardData }) {
         )}
         <div className="cross-stitch-library-card-actions">
           <Link href={href} className="cross-stitch-library-card-cta primary">
-            Open in Studio
+            See the pattern
           </Link>
         </div>
         {yarn && <p className="cross-stitch-library-card-designer">{yarn}</p>}

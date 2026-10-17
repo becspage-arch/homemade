@@ -89,6 +89,25 @@ check('yarnFibre never moves a composition\'s geometry hash', () => {
   assert.ok(hashes.every((h) => h === hashes[0]), `hashes differ: ${hashes.join(', ')}`)
 })
 
+// ── Handmade yarn switches (crochet-bar yarn2) ──────────────────────────────
+// `fibreTune.handmade` (and any hm_* knob) is read only by loom_render_crochet.py:
+// it reaches the scene JSON untouched and never moves the audited geometry or
+// the strokes the engine writes (the renderer perturbs the swept strand).
+
+check('fibreTune.handmade reaches the scene and moves neither the hash nor the strokes', () => {
+  const base: CompositionProgram = { ...buildAmigurumiProgram(ballChoices), yarnFibre: 'chenille' }
+  const tuned: CompositionProgram = { ...base, fibreTune: { ...(base.fibreTune ?? {}), handmade: 1, hm_jitter: 0.3 } }
+  const c0 = compileComposition(base)
+  const c1 = compileComposition(tuned)
+  assert.equal(c1.geometryHash, c0.geometryHash)
+  const s0 = compositionScene(base, c0)
+  const s1 = compositionScene(tuned, c1)
+  assert.equal(s1.fibreTune?.handmade, 1)
+  assert.equal(s1.fibreTune?.hm_jitter, 0.3)
+  assert.equal(s0.fibreTune?.handmade, undefined)
+  assert.deepEqual(s1.strokes, s0.strokes)
+})
+
 for (const r of results) console.log(`${r.passed ? 'PASS' : 'FAIL'}: ${r.name}${r.detail ? `\n  ${r.detail}` : ''}`)
 const failed = results.filter((r) => !r.passed).length
 console.log(`\n${results.length - failed}/${results.length} passed`)

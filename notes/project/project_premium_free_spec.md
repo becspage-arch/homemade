@@ -7,7 +7,7 @@ metadata:
   originSessionId: 3269da7d-3461-4b19-8fd5-c9b792997918
 ---
 
-Canonical free-vs-premium spec. Consolidates [[feedback_free_signin_carrots]], [[feedback_premium_gate_cleanup]], [[business-model]], [[feedback_premium_philosophy]], [[feedback_premium_translation_is_free]]. Final gating confirmed in the Part B pricing session per [[feedback_premium_philosophy]]. This file is the working spec the cleanup + paywall sessions enforce.
+Canonical free-vs-premium spec. Consolidates [[feedback_free_signin_carrots]], [[feedback_premium_gate_cleanup]], the old business-model note (not in notes/), [[feedback_premium_philosophy]], [[feedback_premium_translation_is_free]]. Final gating confirmed in the Part B pricing session per [[feedback_premium_philosophy]]. This file is the working spec the cleanup + paywall sessions enforce.
 
 **Checked 2026-09-06 (notes audit).** The framework this spec describes is in the tree:
 `hasPremium` / `isPremiumContent` / `isIndependentDesignerContent` / `canAccessPremiumContent`
@@ -31,7 +31,7 @@ decisions below are Rebecca's locks and stand as written.
 - PLUS the sign-in carrots: cross-device sync, saved preferences, bookmarks, "I'm making this" projects, public profile + showcase, errata loop, notifications
 - Still NO printing / downloading (premium); premium content still preview-only
 
-**3. Premium ($14.99 / £10.99 monthly; $149.99 / £109.99 annual = 2 months free; no free trial — locked 2026-06-20, see [[business-model]])**
+**3. Premium ($14.99 / £10.99 monthly; $149.99 / £109.99 annual = 2 months free; no free trial — locked 2026-06-20, set in the old business-model note, not in notes/)**
 - Full premium content: whole pattern page, pattern pieces, Studio use on premium patterns
 - ALL printing + downloading — any PDF or print, of ANY content free or premium (universal premium action)
 - Custom-fit grading, create-your-own generators, independent-designer patterns, creator content
@@ -73,7 +73,7 @@ Note: the Studio working on-screen for a free pattern is free-signed-in; getting
 - **Cooking + baking planning suite** — recipe quantity scaling + meal planner + shopping list (tin conversion + substitution stay free)
 - **Sending Gifts** — anyone can receive, only premium can send (`PUBLIC_SUBMISSION` designer-side gate also stays)
 - **Your very own AI Assistant** (build item, added 2026-06-21) — a per-user AI helper that plans, adapts and troubleshoots as you make, across every category. Site-wide premium feature, not category-specific. This is the real-time AI work (Sessions M/N). On the /premium page, so it MUST be built before premium is purchasable.
-- **Membership perks** — Make-a-thons + monthly content drops / seasonal collections (retention pillars, [[business-model]]), apply across all categories. On the /premium page ("Members' Make-a-thons and seasonal collections to join"), so also a build item before charging (Session B territory).
+- **Membership perks** — Make-a-thons + monthly content drops / seasonal collections (retention pillars), apply across all categories. On the /premium page ("Members' Make-a-thons and seasonal collections to join"), so also a build item before charging (Session B territory).
 
 ## Premium content preview model
 
@@ -164,5 +164,3 @@ you must print to stitch), plus the tool/designer-library upsell — NOT content
 premium to feel more exclusive, invest in making the INDEPENDENT-DESIGNER + CREATOR libraries
 spectacular; that is where "premium gets the most coveted patterns" lives. Premium stays the
 locked short list above. Don't re-litigate.
-
-(Cross-reference note, 2026-09-06: `[[business-model]]` is not in notes/; the pricing and tier locks it held are restated in this file.)

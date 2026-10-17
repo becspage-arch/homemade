@@ -109,6 +109,198 @@ export function pickHeroStageVariant(stage: HeroStage, seed: string, explicit?: 
   return ids[fnv1a(seed) % ids.length]
 }
 
+/**
+ * The listing PHOTO style a styled stage is shot with (job stage2, "the photo
+ * is flat"). Read by `loom_render_crochet.py` as `view.photo`; only a styled
+ * stage reads it, and an absent `photo` (or 'v1') is the stage exactly as
+ * before, so no existing hero moves.
+ *
+ *   v1  the original stage photo (even light from the front, f/14, the
+ *       stage's own camera and props)
+ *   v2  one soft warm window key from the side with soft-edged shadows, a
+ *       gentle fill and a little rim; a wide real aperture (f/5.6) focused on
+ *       the toy's face so the room melts into bokeh; a slight turn with the
+ *       eye line at the face; the dried bunch rebuilt from thin stems, small
+ *       heads and wisps, the cloth under the toy softly crumpled, the spring
+ *       jug brought into frame
+ */
+export const HERO_PHOTO_STYLES = ['v1', 'v2'] as const
+export type HeroPhoto = (typeof HERO_PHOTO_STYLES)[number]
+
+export function isHeroPhoto(v: unknown): v is HeroPhoto {
+  return typeof v === 'string' && (HERO_PHOTO_STYLES as readonly string[]).includes(v)
+}
+
+/**
+ * The individual knobs behind `photo: 'v2'` (each wins over the v2 default
+ * when set; with v2 off each is a no-op unless set). Names and defaults match
+ * `PHOTO_V2` in loom_render_crochet.py (checked by blenderScene.test.ts).
+ */
+export interface HeroPhotoKnobs {
+  /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights. */
+  photoLight?: 'window' | 'stage'
+  /** Key strength relative to the studio key at the piece (1.6). */
+  photoKey?: number
+  /** Key azimuth in degrees: 0 from the camera, 90 camera left, 180 behind;
+   *  negative = camera right (80). */
+  photoKeyDeg?: number
+  /** Key elevation in degrees (30). */
+  photoKeyElev?: number
+  /** Key size over its distance: bigger = softer shadow edges (0.55). */
+  photoKeySoft?: number
+  /** Key spread in degrees: narrower keeps the window light on the toy and off the wall (70). */
+  photoKeySpread?: number
+  /** Fill strength on the far side (0.15). */
+  photoFill?: number
+  /** Rim strength, from behind on the key's side (0.9). */
+  photoRim?: number
+  /** Multiplier on the stage's own room lights (0.2). */
+  photoSetLight?: number
+  /** Multiplier on the studio key + fill kept on the toy (0.15). */
+  photoStudio?: number
+  /** Multiplier on the world (ambient) strength (0.4). */
+  photoAmbient?: number
+  /** Added to the stage exposure (0). */
+  photoExposure?: number
+  /** A real f-number (5.6); smaller = a creamier background. */
+  photoFstop?: number
+  /** 'face' focuses on the eyes/nose, 'centre' on the aim point. */
+  photoFocus?: 'face' | 'centre'
+  /** 'threequarter' = the turned, face-height camera; 'stage' = the set's own. */
+  photoCamera?: 'threequarter' | 'stage'
+  /** The turn, added to the scene's own yaw (16). */
+  photoYawDeg?: number
+  /** Camera tilt, 90 = level (77: the cow bar looks down ~13 deg; the stages use 80). */
+  photoTiltDeg?: number
+  /** The piece's height as a share of the frame height; 0 = the stage zoom.
+   *  Unset under v2 = per stage (`PHOTO_FRAME_BY`: nursery 0.82, christmas
+   *  0.74, linen 0.72, windowsill 0.68; 0.68 otherwise). */
+  photoFrame?: number
+  /** Aim height as a fraction of the piece height (0.5). */
+  photoAim?: number
+  /** 'v2' = the rebuilt dried bunch and the spring jug in frame. */
+  photoProps?: 'v1' | 'v2'
+  /** The cloth under the toy: 'auto' = the stage's own, softly crumpled;
+   *  'knit' / 'linen' swap it; 'none' leaves the stage's cloth as it was. */
+  photoBlanket?: 'auto' | 'knit' | 'linen' | 'none'
+  /** Crumple depth as a fraction of the piece height (0.09); by eye 0.03
+   *  (barely creased) to 0.2 (balled up). */
+  photoCrumple?: number
+  // ---- stage 3 knobs (job stage3): all OFF at their defaults, so v1 and
+  // today's v2 render unchanged. Starting values: HERO_PHOTO_STAGE3_STARTS.
+  /** Frame width / height; 0 = the stage's own (square). The cow bar is 1.33. */
+  photoAspect?: number
+  /** The toy's place across the frame, a fraction of the frame width from the
+   *  centre, + = right (a lens shift: perspective kept, props follow) (0). */
+  photoPlaceX?: number
+  /** Room contrast: 0 off, 1 = the set's wood / plaster / ambient deepened to
+   *  its `PHOTO_ROOM_BY` tones (per set); the window glow is untouched (0). */
+  photoRoom?: number
+  /** Dried bunch fullness: x the stems; fan and heap widen with its root (1). */
+  photoBunchFull?: number
+  /** 0 = today's spray; 1 = ~40% of the stems run behind the toy and out past
+   *  its right shoulder, kept clear of its footprint (0). */
+  photoBunchBehind?: number
+  /** Cloth texture strength on the crumpled cloth (linen threads and slubs,
+   *  knit stitch shadow and fuzz); 0 = the material as built (0). */
+  photoWeave?: number
+  /** Thread / stitch size multiplier; coarser reads at listing size (1). */
+  photoWeaveScale?: number
+  /** Crease size multiplier; below 1 = finer creases on a denser cloth (1). */
+  photoCrumpleScale?: number
+  /** A knit cloth's soft rounded rumples and its rise round the toy, in units
+   *  of 0.1 x the piece height (0). */
+  photoRumple?: number
+}
+
+/** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
+ *  the parity test; the renderer applies them itself). */
+export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
+  photoLight: 'window',
+  photoKey: 1.6,
+  photoKeyDeg: 80,
+  photoKeyElev: 30,
+  photoKeySoft: 0.55,
+  photoKeySpread: 70,
+  photoFill: 0.15,
+  photoRim: 0.9,
+  photoSetLight: 0.2,
+  photoStudio: 0.15,
+  photoAmbient: 0.4,
+  photoExposure: 0,
+  photoFstop: 5.6,
+  photoFocus: 'face',
+  photoCamera: 'threequarter',
+  photoYawDeg: 16,
+  photoTiltDeg: 77,
+  photoFrame: 0.68,
+  photoAim: 0.5,
+  photoProps: 'v2',
+  photoBlanket: 'auto',
+  photoCrumple: 0.09,
+  photoAspect: 0,
+  photoPlaceX: 0,
+  photoRoom: 0,
+  photoBunchFull: 1,
+  photoBunchBehind: 0,
+  photoWeave: 0,
+  photoWeaveScale: 1,
+  photoCrumpleScale: 1,
+  photoRumple: 0,
+}
+
+/** The stage-3 knobs (all off by default, in v1 and v2 alike). */
+export const HERO_PHOTO_STAGE3_KNOBS = [
+  'photoAspect',
+  'photoPlaceX',
+  'photoRoom',
+  'photoBunchFull',
+  'photoBunchBehind',
+  'photoWeave',
+  'photoWeaveScale',
+  'photoCrumpleScale',
+  'photoRumple',
+] as const satisfies readonly (keyof HeroPhotoKnobs)[]
+
+/**
+ * Sensible STARTING values for the stage-3 knobs per set, from the stage-3
+ * proof renders (proofs/stage3): a place for the by-eye tuning to begin, not
+ * a tuned pass. Nothing reads this automatically; pass one as `photoKnobs`.
+ */
+export const HERO_PHOTO_STAGE3_STARTS: Partial<Record<HeroStage, HeroPhotoKnobs>> = {
+  windowsill: {
+    photoAspect: 1.33,
+    photoPlaceX: 0.04,
+    photoRoom: 1,
+    photoBunchFull: 1.5,
+    photoBunchBehind: 1,
+    photoWeave: 1,
+    photoWeaveScale: 1.6,
+    photoCrumpleScale: 0.8,
+  },
+  nursery: {
+    photoRoom: 1,
+    photoWeave: 1,
+    photoRumple: 1,
+  },
+}
+
+/**
+ * The scene `view` keys for a photo style plus hand-set knobs: nothing for an
+ * unset / 'v1' style with no knobs (so the scene JSON is unchanged), else
+ * `photo` and only the knobs actually given.
+ */
+export function heroPhotoView(photo?: HeroPhoto, knobs?: HeroPhotoKnobs): { photo?: HeroPhoto } & HeroPhotoKnobs {
+  const out: { photo?: HeroPhoto } & HeroPhotoKnobs = {}
+  if (photo === 'v2') out.photo = 'v2'
+  if (knobs) {
+    for (const [k, v] of Object.entries(knobs)) {
+      if (v !== undefined && k in HERO_PHOTO_V2_DEFAULTS) (out as Record<string, unknown>)[k] = v
+    }
+  }
+  return out
+}
+
 export interface BlenderStroke {
   hex: string
   sheen: number

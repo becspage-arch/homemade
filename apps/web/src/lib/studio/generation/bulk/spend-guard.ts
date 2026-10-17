@@ -182,10 +182,18 @@ export const CROCHET_HERO_FINISH_UNIT_COST = 0.05
  */
 export const CROCHET_MONTHLY_USD_CAP = Number(process.env.BULK_CROCHET_MONTHLY_USD_CAP) || 100
 
-/** Approximate crochet spend for a window (renders, their hero finish, illustrations). */
+/**
+ * Approximate crochet spend for a window (renders, their hero finish,
+ * illustrations). A charted tapestry is the one candidate that buys an
+ * illustration (`proGenerations`), and it is also the one whose hero never goes
+ * to Fal (`lib/loom/crochet/engine/heroPolicy.ts`), so the finish is charged on
+ * the other renders only.
+ */
 export function approxCrochetSpend(window: SpendWindow): number {
+  const finished = Math.max(0, window.generations - window.proGenerations)
   return (
-    window.generations * (CROCHET_RENDER_UNIT_COST + CROCHET_HERO_FINISH_UNIT_COST) +
+    window.generations * CROCHET_RENDER_UNIT_COST +
+    finished * CROCHET_HERO_FINISH_UNIT_COST +
     window.proGenerations * PRO_UNIT_COST
   )
 }
