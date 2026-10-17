@@ -1770,10 +1770,14 @@ def _mix_rgb(nt, fac, c1, c2):
     return mx.outputs[2]
 
 
-def linen_material(name, hexcol, weave=7.0):
+def linen_material(name, hexcol, weave=7.0, boost=0.0):
     """Oatmeal linen: a plain weave of slubby threads (two crossed wave bands),
-    soft low-frequency tone mottling, a faint fibre sheen."""
+    soft low-frequency tone mottling, a faint fibre sheen. `boost` (stage 3
+    photoWeave; 0 = exactly as before) deepens the thread shading and bump and
+    adds the odd thick slub thread running each way, so the weave reads at
+    listing size."""
     mat = _principled(name, hexcol, rough=0.9, sheen=0.35, spec=0.15)
+    mat["loom_kind"], mat["loom_hex"], mat["loom_weave"] = "linen", hexcol, weave
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     vec = _obj_coords(nt, (weave, weave, weave))
@@ -1790,9 +1794,22 @@ def linen_material(name, hexcol, weave=7.0):
     nt.links.new(vec, wx.inputs["Vector"])
     nt.links.new(vec, wy.inputs["Vector"])
     weave_h = _math(nt, "MULTIPLY", wx.outputs["Fac"], wy.outputs["Fac"])
+    slubs = None
+    if boost > 0:
+        # thick slub threads: noise stretched hard along each thread direction,
+        # thresholded so only the odd thread stands proud
+        def slub_lines(stretch):
+            sv = _obj_coords(nt, stretch)
+            nz = nt.nodes.new("ShaderNodeTexNoise")
+            nz.inputs["Scale"].default_value = 1.0
+            nz.inputs["Detail"].default_value = 1.0
+            nt.links.new(sv, nz.inputs["Vector"])
+            return _math(nt, "MULTIPLY", _math(nt, "SUBTRACT", nz.outputs["Fac"], 0.56, clamp=True), 6.0, clamp=True)
+        slubs = _math(nt, "MAXIMUM", slub_lines((0.25, weave * 0.9, 1.0)), slub_lines((weave * 0.9, 0.25, 1.0)))
+        weave_h = _math(nt, "ADD", weave_h, _math(nt, "MULTIPLY", slubs, 0.6 * boost))
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.9     # r5: the weave must read at listing size
-    bump.inputs["Distance"].default_value = 0.12
+    bump.inputs["Strength"].default_value = min(1.0, 0.9 + 0.1 * boost)     # r5: the weave must read at listing size
+    bump.inputs["Distance"].default_value = 0.12 * (1.0 + boost)
     nt.links.new(weave_h, bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
     slub_vec = _obj_coords(nt, (0.6, 0.6, 0.6))
@@ -1808,7 +1825,13 @@ def linen_material(name, hexcol, weave=7.0):
     # thread shading: the weave valleys darker (r5: 0.2, was 0.12 — invisible)
     shade = nt.nodes.new("ShaderNodeMix")
     shade.data_type = "RGBA"
-    nt.links.new(_math(nt, "SUBTRACT", 0.2, _math(nt, "MULTIPLY", weave_h, 0.2)), shade.inputs["Factor"])
+    sh = 0.2 * (1.0 + 1.5 * boost)
+    nt.links.new(_math(nt, "SUBTRACT", sh, _math(nt, "MULTIPLY", weave_h, sh), clamp=boost > 0), shade.inputs["Factor"])
+    if slubs is not None:
+        # the slub threads a shade paler (they catch the light)
+        prev = col
+        col = _mix_rgb(nt, _math(nt, "MULTIPLY", slubs, 0.5), (0, 0, 0, 1), tuple(min(1.0, c * 1.12) for c in base[:3]) + (1.0,))
+        nt.links.new(prev, col.node.inputs[6])
     nt.links.new(col, shade.inputs[6])
     shade.inputs[7].default_value = (0.0, 0.0, 0.0, 1.0)
     col2 = shade.outputs[2]
@@ -1816,11 +1839,14 @@ def linen_material(name, hexcol, weave=7.0):
     return mat
 
 
-def knit_material(name, hexcol, stitch_cm=1.3, rough=0.92):
+def knit_material(name, hexcol, stitch_cm=1.3, rough=0.92, boost=0.0):
     """A chunky stocking-stitch blanket: every stitch a V of two plump leaning
     loops (each leg a rounded lozenge whose top leans outward), deep shadow
-    between columns, a fine fibre fuzz and a soft wool sheen."""
+    between columns, a fine fibre fuzz and a soft wool sheen. `boost` (stage 3
+    photoWeave; 0 = exactly as before) deepens the shadow between the loops,
+    the loop relief and the fuzz, so the stitches read at listing size."""
     mat = _principled(name, hexcol, rough=rough, sheen=0.7, spec=0.1)
+    mat["loom_kind"], mat["loom_hex"], mat["loom_stitch"], mat["loom_rough"] = "knit", hexcol, stitch_cm, rough
     nt = mat.node_tree
     bsdf = nt.nodes.get("Principled BSDF")
     sc = 1.0 / stitch_cm
@@ -1846,16 +1872,16 @@ def knit_material(name, hexcol, stitch_cm=1.3, rough=0.92):
     fz.inputs["Scale"].default_value = 60.0
     fz.inputs["Detail"].default_value = 4.0
     nt.links.new(_obj_coords(nt, (1, 1, 1)), fz.inputs["Vector"])
-    h2 = _math(nt, "MULTIPLY_ADD", fz.outputs["Fac"], 0.12)
+    h2 = _math(nt, "MULTIPLY_ADD", fz.outputs["Fac"], 0.12 * (1.0 + boost))
     nt.links.new(h, h2.node.inputs[2])
     bump = nt.nodes.new("ShaderNodeBump")
     bump.inputs["Strength"].default_value = 1.0
-    bump.inputs["Distance"].default_value = 0.45 * stitch_cm
+    bump.inputs["Distance"].default_value = 0.45 * stitch_cm * (1.0 + 0.5 * boost)
     nt.links.new(h2, bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
     base = _lin(hexcol)
-    dark = tuple(c * 0.5 for c in base[:3]) + (1.0,)
-    shade = _math(nt, "POWER", h, 0.6)
+    dark = tuple(c * 0.5 / (1.0 + 0.6 * boost) for c in base[:3]) + (1.0,)
+    shade = _math(nt, "POWER", h, 0.6 * (1.0 + 0.5 * boost))
     nt.links.new(_mix_rgb(nt, shade, dark, base), bsdf.inputs["Base Color"])
     return mat
 
@@ -2220,6 +2246,8 @@ class _Vis:
     `hw(y)` is the visible half-width at depth y; `ztop/zmid(y)` the heights the
     top edge / centre of the frame cross at that depth."""
 
+    px = 0.0    # photoPlaceX: the toy's place across the frame (0 = centred)
+
     def __init__(self, s, elev_deg, lens, asp, tz):
         e = math.radians(elev_deg)
         self.av = math.atan(18.0 / lens)
@@ -2230,6 +2258,10 @@ class _Vis:
 
     def hw(self, y):
         return (self.c + y) * math.tan(self.ah)
+
+    def xc(self, y):
+        """x of the frame's centre at depth y (0 unless photoPlaceX shifts it)."""
+        return -2.0 * self.px * self.hw(y)
 
     def ztop(self, y):
         return self.camz + (self.c + y) * math.tan(self.av - self.e)
@@ -2261,7 +2293,9 @@ def apply_stage(stage, scene, ctx):
     po = photo_opts(view)
     _PHOTO.clear()
     _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"],
-                  foot=ctx.get("footprint"))
+                  foot=ctx.get("footprint"), bunch_full=po["photoBunchFull"], bunch_behind=po["photoBunchBehind"],
+                  weave=po["photoWeave"], weave_scale=po["photoWeaveScale"], crumple_scale=po["photoCrumpleScale"],
+                  rumple=po["photoRumple"])
     if po["photoFrame"]:
         # hold the piece at a set share of the frame height: slide the camera
         # along its own line (its aim, turn and tilt are kept)
@@ -2272,7 +2306,15 @@ def apply_stage(stage, scene, ctx):
     s = (cam.location - tgt.location).length          # camera distance
     D = 1.4 * s                                         # back wall distance behind the piece
     asp = view.get("stageAspect", STAGE_ASPECT)
+    if po["photoAspect"]:
+        asp = po["photoAspect"]         # stage 3: e.g. the cow bar's 1.33 landscape
     vis = _Vis(s, 90.0 - view.get("tiltDeg", STAGE_TILT), cam.data.lens, asp, tgt.location.z)
+    if po["photoPlaceX"]:
+        # stage 3: place the toy off centre with a lens shift (Blender's shift is
+        # in units of the frame's larger side), and tell the set where the
+        # frame now is so props stay in it
+        vis.px = po["photoPlaceX"]
+        cam.data.shift_x = -po["photoPlaceX"] * min(1.0, asp)
 
     # The studio sweep goes; its lights are kept (they model the toy exactly as
     # the signed-off studio hero does) but warmed and eased, and the set gets its
@@ -2328,6 +2370,8 @@ def apply_stage(stage, scene, ctx):
     elif stage == "wall":
         _stage_wall(gap=view.get("wallGapCm", 3.0), **k)
         _world(scene, (0.98, 0.95, 0.90), 0.5)
+    if po["photoRoom"]:
+        _photo_room(root, scene, variant if variant in PHOTO_ROOM_BY else stage, po["photoRoom"])
     if po["photoLight"] == "window":
         builder_lights = list(set_lights)
         _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene)
@@ -2405,20 +2449,43 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
     if _PHOTO.get("blanket", "none") != "none" and name in _PHOTO_CLOTHS:
         right = None        # photo v2: the cloth runs out of frame on both sides (the bar)
     x1 = vis.hw(y1) * 1.15
+    if vis.px:
+        x1 *= 1.0 + 2.0 * abs(vis.px)     # stage 3: the shifted frame still sees cloth to its edge
     xr = x1 if right is None else right * vis.hw(0)
     f = _folds(H, R, amp, lift=lift, seed=seed, wl_scale=wl_scale)
+    dense = 1.0
     if _PHOTO.get("blanket", "none") != "none" and name in _PHOTO_CLOTHS:
         # photo v2: the cloth under the toy, softly crumpled (and optionally
         # swapped for a knit or linen), and remembered so props lie ON it
         f0 = f
-        cr = _crumple(H, R, _PHOTO.get("crumple", 0.045), seed=seed)
-
-        def f(x, y):
-            return max(0.02, f0(x, y) + cr(x, y))
+        csc = _PHOTO.get("crumple_scale", 1.0)
+        cr = _crumple(H, R, _PHOTO.get("crumple", 0.045), seed=seed, scale=csc)
         if _PHOTO["blanket"] == "knit":
             mat = knit_material(name + "_v2", "#efe6d6", stitch_cm=1.6, rough=0.96)
         elif _PHOTO["blanket"] == "linen":
             mat = linen_material(name + "_v2", "#d8cab2")
+        kind = mat.get("loom_kind")
+        # stage 3: a knit blanket rolls in soft rumples rather than creasing
+        ru = _rumple(H, R, _PHOTO.get("rumple", 0.0), seed=seed) if kind == "knit" else None
+        if ru is None:
+            def f(x, y):
+                return max(0.02, f0(x, y) + cr(x, y))
+        else:
+            def f(x, y):
+                return max(0.02, f0(x, y) + cr(x, y) + ru(x, y))
+        if csc != 1.0:
+            dense = max(0.4, min(1.0, csc))
+        if ru is not None:
+            dense = min(dense, 0.7)
+        # stage 3: the weave / knit texture made to read at listing size
+        wv = _PHOTO.get("weave", 0.0)
+        if wv > 0 and kind in ("linen", "knit"):
+            wsc = _PHOTO.get("weave_scale", 1.0)
+            if kind == "linen":
+                mat = linen_material(name + "_v3", mat["loom_hex"], weave=mat["loom_weave"] / wsc, boost=wv)
+            else:
+                mat = knit_material(name + "_v3", mat["loom_hex"], stitch_cm=mat["loom_stitch"] * wsc,
+                                    rough=mat["loom_rough"], boost=wv)
     if heap:
         def h(x, y):
             return f(x, y) + heap(x, y)
@@ -2426,6 +2493,8 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
         h = f
     _PHOTO["ground"] = h
     n = int(min(320, max(120, (x1 + xr) / (0.025 * H))))
+    if dense != 1.0:
+        n = int(min(320 / dense, max(120, (x1 + xr) / (0.025 * H * dense))))
 
     def edge(y):
         # the hem wanders (r6: a slack edge, never a ruled line)
@@ -2485,7 +2554,7 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
     # Out of focus on the sill, back right: a cream jug and a stack of books.
     glaze = _principled("jug", "#eee6d8", rough=0.3, spec=0.5, coat=0.3)
     jy = 0.55 * D
-    jx = 0.62 * vis.hw(jy)
+    jx = 0.62 * vis.hw(jy) + vis.xc(jy)          # (xc: 0 unless photoPlaceX)
     _lathe("jug", root, glaze, jx, jy, [(r * H, z * H) for r, z in (
         (0.0, 0.0), (0.26, 0.0), (0.30, 0.04), (0.34, 0.22), (0.34, 0.42), (0.29, 0.62),
         (0.21, 0.78), (0.21, 0.86), (0.26, 0.96), (0.24, 0.97), (0.19, 0.87), (0.19, 0.79))])
@@ -2494,7 +2563,7 @@ def _stage_windowsill(root, H, R, s, D, vis, light):
                                        (hx + 0.12 * H, jy, 0.55 * H), (hx + 0.06 * H, jy, 0.36 * H),
                                        (jx + 0.3 * H, jy, 0.28 * H)], 0.04 * H)
     by = 0.78 * D
-    bx = 0.95 * vis.hw(by)
+    bx = 0.95 * vis.hw(by) + vis.xc(by)
     z0 = 0.0
     for kk, (col, th) in enumerate((("#8f9c80", 0.18), ("#e1d3b6", 0.13), ("#80604a", 0.16))):
         _box("book%d" % kk, root, _principled("book%d" % kk, col, rough=0.7),
@@ -2691,7 +2760,7 @@ def _stage_nursery(root, H, R, s, D, vis, light):
     oak = wood_material("oak", "#dcbb90", "#b58e62", along_x=False)
     # A picture frame stood against the wall, back left.
     fy = 0.62 * D
-    fx = -0.6 * vis.hw(fy)
+    fx = -0.6 * vis.hw(fy) + vis.xc(fy)
     fw, fb = 0.72 * vis.hw(fy), 0.07 * vis.hw(fy)
     fh = 1.25 * fw
     _box("frame_l", root, oak, fx - fw / 2, fx - fw / 2 + fb, fy, fy + fb, 0.0, fh)
@@ -2719,7 +2788,7 @@ def _stage_nursery(root, H, R, s, D, vis, light):
     _star_prism("star", root, oak, -0.55 * vis.hw(sy), sy, 0.0, 0.6 * H, 0.25 * H, bevel=0.035 * H)
     # A white lantern glowing, back right, with little warm star lights inside.
     ly = 0.55 * D
-    lx = 0.62 * vis.hw(ly)
+    lx = 0.62 * vis.hw(ly) + vis.xc(ly)
     lw, lh = 0.95 * H, 1.6 * H
     white = _principled("lantern", "#ded6cc", rough=0.5, spec=0.35)   # r6: warm grey so it reads against the wall
     p = 0.09 * H
@@ -3475,7 +3544,7 @@ def _stage_windowsill_spring(root, H, R, s, D, vis, light):
     jy = 0.55 * D
     jx = 0.82 * vis.hw(jy)                      # r3: clear of the head
     if _PHOTO.get("props") == "v2":
-        jx = 0.55 * vis.hw(jy)                  # photo v2: the whole jug and its tulips in frame
+        jx = 0.55 * vis.hw(jy) + vis.xc(jy)     # photo v2: the whole jug and its tulips in frame
     # r4: a speckled cream stoneware jug (the clear jar refracted into abstract shapes)
     jug = _principled("jug", "#f1ebdf", rough=0.35, spec=0.45, coat=0.25)
     _lathe("jar", root, jug, jx, jy, [(0, 0), (0.3 * H, 0), (0.33 * H, 0.06 * H), (0.35 * H, 0.45 * H),
@@ -3852,12 +3921,45 @@ VARIANT_BUILDERS = {
 #   photoBlanket    "auto" | "knit" | "linen" | "none"            ("auto")
 #                   auto = the stage's own cloth, softly crumpled
 #   photoCrumple    crumple depth, x piece height                 (0.09)
+#                   by-eye range 0.03 (barely creased) .. 0.2 (balled up)
+#
+# STAGE 3 knobs (job stage3): every one is OFF at its default, in v2 as in v1,
+# so today's v2 renders unchanged; set them on the view to try them.
+#   photoAspect     frame width / height (0 = the stage's stageAspect, square);
+#                   the cow bar is 1.33 landscape                 (0)
+#   photoPlaceX     where the toy sits across the frame, a fraction of the
+#                   frame width from centre, + = right (a lens shift, so the
+#                   perspective is kept); the cow bar ~0.04       (0)
+#   photoRoom       room contrast: 0 = off, 1 = the set's own deepened wood /
+#                   plaster tones and ambient (PHOTO_ROOM_BY, per set); the
+#                   window glow (emission) is never touched       (0)
+#   photoBunchFull  dried bunch fullness: x stems, the fan and the heap height
+#                   widen with its square root                    (1)
+#   photoBunchBehind 0 = today's spray; 1 = ~40% of the stems run from the tie
+#                   behind the toy out past its right shoulder (the cow bar's
+#                   armful), still kept clear of the footprint    (0)
+#   photoWeave      cloth texture strength on the crumpled cloth: linen thread
+#                   shading, slub threads and bump; knit stitch shadow and
+#                   fuzz (0 = the cloth's material as built)      (0)
+#   photoWeaveScale thread / stitch size x (linen threads per cm / it, knit
+#                   stitch x it); coarser reads at listing size   (1)
+#   photoCrumpleScale crease size x (smaller = finer creases; the cloth mesh
+#                   gets denser to hold them)                     (1)
+#   photoRumple     a knit cloth's soft rounded rumples (a chunky blanket rolls,
+#                   it does not crease), x piece height x 0.1; the cloth rises
+#                   round the toy where it sits in it             (0)
+PHOTO_STAGE3_OFF = dict(
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
+)
 PHOTO_V2 = dict(
     photoLight="window", photoKey=1.6, photoKeyDeg=80.0, photoKeyElev=30.0, photoKeySoft=0.55, photoKeySpread=70.0,
     photoFill=0.15, photoRim=0.9, photoSetLight=0.2, photoStudio=0.15, photoAmbient=0.4,
     photoExposure=0.0, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.68, photoAim=0.5,
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -3867,6 +3969,8 @@ PHOTO_V1 = dict(
     photoExposure=0.0, photoFstop=None, photoFocus="centre", photoCamera="stage",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.0, photoAim=0.5,
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
 )
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
@@ -3874,6 +3978,66 @@ PHOTO_V1 = dict(
 PHOTO_FRAME_BY = {"nursery": 0.82, "christmas": 0.74, "linen": 0.72, "windowsill": 0.68}
 # and its turn: the bunny bar is shot nearly square-on, the cow bar turned a little
 PHOTO_YAW_BY = {"nursery": 6.0}
+# the stage-3 knobs are off in both styles (today's v2 renders unchanged)
+assert all(PHOTO_V2[k] == v and PHOTO_V1[k] == v for k, v in PHOTO_STAGE3_OFF.items())
+
+# photoRoom (stage 3): per set (variant id, else stage), how far each room
+# material's colour falls at photoRoom 1 (x its albedo), and the ambient (world)
+# multiplier — the bar's warm wood and shadowed plaster, so the window glows.
+# Emissive materials (the window's outside, lantern and fairy glow) are never in
+# here, so the glow is kept. Materials match by name (Blender's .001 suffix off).
+PHOTO_ROOM_BY = {
+    # r1 of stage 3: the first tones (sill 0.6, wall 0.66) hardly showed under
+    # the window key, so 1 now means a clearly deeper room
+    "garden": dict(tones={"sill_wood": 0.45, "wall": 0.5, "window_frame": 0.6, "jug": 0.8,
+                          "book0": 0.7, "book1": 0.7, "book2": 0.7}, ambient=0.55),
+    "spring": dict(tones={"sill_wood": 0.6, "wall": 0.62, "window_frame": 0.7, "jug": 0.85}, ambient=0.65),
+    "lantern": dict(tones={"wall": 0.66, "dresser": 0.7, "oak": 0.65, "card": 0.85, "lantern": 0.8}, ambient=0.65),
+    "pine": dict(tones={"wall": 0.62, "table": 0.65}, ambient=0.7),
+    "throw": dict(tones={"wall": 0.55, "table_wood": 0.55, "vase": 0.8}, ambient=0.6),
+}
+PHOTO_ROOM_BY.update(windowsill=PHOTO_ROOM_BY["garden"], nursery=PHOTO_ROOM_BY["lantern"],
+                     christmas=PHOTO_ROOM_BY["pine"], linen=PHOTO_ROOM_BY["throw"])
+
+
+def _scale_mat_colour(mat, f):
+    """Darken a material's own colours by f (unlinked Base Colour and the two
+    colours of every RGBA mix), its textures and bump left as they are."""
+    if not mat or not mat.use_nodes:
+        return
+    for n in mat.node_tree.nodes:
+        socks = []
+        if n.type == "BSDF_PRINCIPLED":
+            socks = [n.inputs["Base Color"]]
+        elif n.bl_idname == "ShaderNodeMix" and n.data_type == "RGBA":
+            socks = [n.inputs[6], n.inputs[7]]
+        for sk in socks:
+            if not sk.is_linked:
+                c = sk.default_value
+                sk.default_value = (c[0] * f, c[1] * f, c[2] * f, c[3])
+
+
+def _photo_room(root, scene, key, amt):
+    """photoRoom: deepen the set's wood and plaster (and the ambient) by `amt`
+    (0 = off, 1 = the PHOTO_ROOM_BY tones; above 1 goes further)."""
+    spec = PHOTO_ROOM_BY.get(key)
+    if amt <= 0 or not spec:
+        return
+    done = set()
+    for ob in root.children_recursive:
+        for sl in getattr(ob, "material_slots", []):
+            m = sl.material
+            if not m or m.name in done:
+                continue
+            t = spec["tones"].get(m.name.split(".")[0])
+            if t is None:
+                continue
+            done.add(m.name)
+            _scale_mat_colour(m, max(0.15, 1.0 - amt * (1.0 - t)))
+    if scene.world and scene.world.use_nodes:
+        bgn = scene.world.node_tree.nodes["Background"]
+        bgn.inputs["Strength"].default_value *= max(0.15, 1.0 - amt * (1.0 - spec["ambient"]))
+    print("[photo] room %s x%.2f: %s" % (key, amt, ", ".join(sorted(done))))
 
 # What the set builders consult while a stage is built (reset per render).
 _PHOTO = {}
@@ -3997,7 +4161,7 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
     return made
 
 
-def _crumple(H, R, amp, seed=0.0):
+def _crumple(H, R, amp, seed=0.0, scale=1.0):
     """Soft crumples on top of the stage's folds: ridged Perlin creases at three
     scales (a cloth balled in a hand and shaken out), flat under the piece, and
     a low soft bunching ring round it where the toy's weight presses in."""
@@ -4016,17 +4180,48 @@ def _crumple(H, R, amp, seed=0.0):
         # r3: creases, not dunes — each layer is ridged noise stretched ~3:1
         # along its own direction (and gently warped so the creases curve),
         # the sharp crest of a fold with soft slopes either side
-        wx = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 1.7)) + o)
-        wy = noise.noise(Vector((x / (0.9 * H), y / (0.9 * H), 4.1)) + o)
-        xw, yw = x + 0.25 * H * wx, y + 0.25 * H * wy
+        wx = noise.noise(Vector((x / (0.9 * H * scale), y / (0.9 * H * scale), 1.7)) + o)
+        wy = noise.noise(Vector((x / (0.9 * H * scale), y / (0.9 * H * scale), 4.1)) + o)
+        xw, yw = x + 0.25 * H * scale * wx, y + 0.25 * H * scale * wy
         for ang, wl, w in ((0.4, 0.5, 1.0), (1.9, 0.32, 0.7), (2.8, 0.2, 0.4), (1.1, 0.12, 0.2)):
             ca, sa = math.cos(ang + seed), math.sin(ang + seed)
             u = xw * ca + yw * sa
             v = -xw * sa + yw * ca
-            q = Vector((u / (wl * H * 2.6), v / (wl * H * 0.85), 0.37 + ang)) + o
+            q = Vector((u / (wl * scale * H * 2.6), v / (wl * scale * H * 0.85), 0.37 + ang)) + o
             n = noise.noise(q)
             f += w * ((1.0 - abs(n)) ** 3 - 0.3)
         return ring + amp * H * m * f
+    return h
+
+
+def _rumple(H, R, amt, seed=0.0):
+    """Stage 3 photoRumple: a chunky knit blanket does not crease, it ROLLS —
+    broad rounded billows (smooth noise, ~0.8 H and ~0.4 H across), a couple of
+    long soft rolls where it was pushed together, and the cloth rising round
+    the toy where it sits IN the blanket (the bunny bar). Flat under the toy.
+    Height in units of 0.1 x the piece height per unit `amt` (0 = off)."""
+    from mathutils import noise
+    if amt <= 0:
+        return None
+    o = Vector((seed * 5.3 + 11.0, seed * 2.9, seed * 0.7))
+    A = 0.1 * H * amt
+
+    def h(x, y):
+        r = math.hypot(x, y * 1.1)
+        m = _smoothstep(R * 1.05, R * 1.05 + 0.45 * H, r)
+        # the blanket pushed up round the toy (a soft lip, highest just past the foot)
+        lip = 0.9 * math.exp(-((r - R * 1.3) / (0.22 * H)) ** 2) * m
+        if m <= 0.0:
+            return 0.0
+        b1 = noise.noise(Vector((x / (0.8 * H), y / (0.8 * H), 0.3)) + o)
+        b2 = noise.noise(Vector((x / (0.4 * H), y / (0.4 * H), 2.3)) + o)
+        # two long rolls running roughly across the frame, gently curved
+        roll = 0.0
+        for k, (ang, off) in enumerate(((0.25 + seed, 0.9), (-0.4 + seed * 0.5, -1.4))):
+            ca, sa = math.cos(ang), math.sin(ang)
+            u = -x * sa + y * ca + 0.25 * H * math.sin(x / (1.1 * H) + k)
+            roll += math.exp(-((u - off * H) / (0.16 * H)) ** 2)
+        return A * (m * (0.9 * b1 + 0.45 * b2 + 0.55) + lip + 0.8 * roll * m)
     return h
 
 
@@ -4091,30 +4286,54 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
     # from BEHIND the left shoulder out to the frame's front-left corner)
     tx, ty = -0.75 * R, 1.35 * R
     gy = max(-1.3 * R, vis.y_near() + 0.15 * H)
-    gx = -0.72 * vis.hw(gy)
+    gx = vis.xc(gy) - 0.72 * vis.hw(gy)
     a0 = math.atan2(gy - ty, gx - tx)
     reach = math.hypot(gx - tx, gy - ty)
     ax, ay = math.cos(a0), math.sin(a0)
     px, py = -ay, ax
-    N = 130
+    # stage 3: photoBunchFull (more stems, a wider fan and a taller heap) and
+    # photoBunchBehind (a share of the stems running from the tie BEHIND the
+    # toy and out past its right shoulder: the cow bar's armful)
+    full = max(0.2, _PHOTO.get("bunch_full", 1.0))
+    behind = max(0.0, _PHOTO.get("bunch_behind", 0.0))
+    fw = full ** 0.5
+    nback = int(round(4 * min(1.0, behind)))       # of every 10 stems
+    if behind > 0:
+        bxx = R * (1.15 + 0.35 * behind) + 0.25 * H
+        byy = ty + 0.25 * R + 0.1 * H
+        ab = math.atan2(byy - ty, bxx - tx)
+        reach_b = math.hypot(bxx - tx, byy - ty)
+        bax, bay = math.cos(ab), math.sin(ab)
+    N = int(round(130 * full))
     kinds = ["lav"] * 36 + ["cham"] * 26 + ["wheat"] * 22 + ["puff"] * 12 + ["wisp"] * 22 + ["gyp"] * 12
+    back_kinds = ("wheat", "wisp", "lav", "wheat", "cham", "wisp", "puff")
     for kk in range(N):
         kind = kinds[(kk * 37) % len(kinds)]
+        back = kk % 10 < nback
         lane = (rnd(1) * 2 - 1)
         L = (0.45 + 0.65 * rnd(2)) * reach
         tail = (0.3 + 0.3 * rnd(3)) * H
-        fan = lane * (0.05 + 0.42 * rnd(4)) - 0.08   # angular spread of the heads (biased away from the piece)
+        fan = lane * (0.05 + 0.42 * rnd(4)) * fw - 0.08   # angular spread of the heads (biased away from the piece)
         ca, sa = math.cos(fan), math.sin(fan)
         dx, dy = ax * ca - ay * sa, ay * ca + ax * sa
-        stack = 0.06 * H * (1.0 - abs(lane)) + 0.02 * H * rnd(5)
+        stack = (0.06 * H * (1.0 - abs(lane)) + 0.02 * H * rnd(5)) * fw
+        if back:
+            # behind the toy, heads lifted a little so they show past its shoulder
+            kind = back_kinds[kk % len(back_kinds)]
+            L = (0.6 + 0.5 * (L / reach - 0.45) / 0.65) * reach_b * min(1.0, 0.6 + 0.4 * behind)
+            fb = lane * 0.22 + 0.06
+            cb, sb = math.cos(fb), math.sin(fb)
+            dx, dy = bax * cb - bay * sb, bay * cb + bax * sb
+            stack += 0.05 * H * behind
+        qx, qy = (-bay, bax) if back else (px, py)
         pts = []
         M = 14
         for j in range(M + 1):
             t = -tail / L + (1 + tail / L) * j / M      # <0 = the cut ends behind the tie
             w = 0.06 * H * lane * max(0.0, t) ** 1.4     # the fan opens past the tie
             bow = 0.03 * H * math.sin(math.pi * max(0.0, min(1.0, t))) * (rnd(6) - 0.3)
-            x = tx + dx * L * t + px * (lane * 0.025 * H + w + bow)
-            y = ty + dy * L * t + py * (lane * 0.025 * H + w + bow)
+            x = tx + dx * L * t + qx * (lane * 0.025 * H + w + bow)
+            y = ty + dy * L * t + qy * (lane * 0.025 * H + w + bow)
             lift = stack * (1.0 - 0.3 * max(0.0, t)) + 0.008 * H + 0.12 * H * math.sin(math.pi * 0.5 * max(0.0, t)) * (0.4 + 0.6 * rnd(7))
             pts.append(on(x, y, lift))
         add_curve(("stem", kk % 4), pts, 0.0032 * H * (0.8 + 0.4 * rnd(8)))
@@ -4241,8 +4460,9 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
     pts.append(on(pts[-1][0] - 0.05 * H, pts[-1][1] - 0.07 * H, 0.004 * H))
     pts.append(on(pts[-1][0] - 0.04 * H, pts[-1][1] - 0.1 * H, 0.003 * H))
     _curve("b2_tie", root, twine, pts, 0.0045 * H)
-    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s" % (
-        N, tx, ty, gx, gy, "polar" if foot else "r %.1f" % keep))
+    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s%s" % (
+        N, tx, ty, gx, gy, "polar" if foot else "r %.1f" % keep,
+        "" if full == 1.0 and not behind else ", full %.2f behind %.2f (%d/10 back)" % (full, behind, nback)))
 
 
 def grade_golden(scene, warmth=1.0):

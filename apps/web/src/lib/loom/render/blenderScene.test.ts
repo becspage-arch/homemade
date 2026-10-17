@@ -8,7 +8,16 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { HERO_PHOTO_V2_DEFAULTS, HERO_STAGE_VARIANTS, heroPhotoView, pickHeroStageVariant } from './blenderScene'
+import {
+  HERO_PHOTO_STAGE3_KNOBS,
+  HERO_PHOTO_STAGE3_STARTS,
+  HERO_PHOTO_V2_DEFAULTS,
+  HERO_STAGE_VARIANTS,
+  heroPhotoView,
+  pickHeroStageVariant,
+} from './blenderScene'
+import { buildCowProgram, COW_DEFAULTS } from '../crochet/engine/cowPreset'
+import { compositionScene } from '../crochet/engine/composition'
 
 test('a slug always picks the same variant', () => {
   const a = pickHeroStageVariant('nursery', 'sleepy-bunny-nightcap')
@@ -66,4 +75,53 @@ test('the TS photo v2 knobs and defaults match PHOTO_V2 in the Python renderer',
   assert.ok(v1, 'PHOTO_V1 missing in the Python')
   const v1Keys = [...v1![1]!.matchAll(/(photo\w+)=/g)].map((x) => x[1])
   assert.deepEqual(v1Keys.sort(), Object.keys(HERO_PHOTO_V2_DEFAULTS).sort())
+})
+
+test('stage 3: the new knobs are off in PHOTO_V2 and PHOTO_V1 alike (today\'s v2 and v1 render unchanged)', () => {
+  const here = dirname(fileURLToPath(import.meta.url))
+  const py = readFileSync(join(here, '../../../../scripts/loom_render_crochet.py'), 'utf8')
+  const parse = (name: string) => {
+    const m = py.match(new RegExp(`${name} = dict\\(([\\s\\S]*?)\\n\\)`))
+    assert.ok(m, `${name} missing in the Python`)
+    const kv: Record<string, unknown> = {}
+    for (const x of m![1]!.matchAll(/(photo\w+)=("[^"]*"|[-\d.]+|None)/g)) {
+      const raw = x[2]!
+      kv[x[1]!] = raw.startsWith('"') ? raw.slice(1, -1) : raw === 'None' ? null : Number(raw)
+    }
+    return kv
+  }
+  const off = parse('PHOTO_STAGE3_OFF')
+  assert.deepEqual(Object.keys(off).sort(), [...HERO_PHOTO_STAGE3_KNOBS].sort())
+  const v1 = parse('PHOTO_V1')
+  for (const k of HERO_PHOTO_STAGE3_KNOBS) {
+    assert.equal(off[k], HERO_PHOTO_V2_DEFAULTS[k], k)
+    assert.equal(v1[k], HERO_PHOTO_V2_DEFAULTS[k], k)
+  }
+  // the starting values only name stage-3 knobs
+  for (const knobs of Object.values(HERO_PHOTO_STAGE3_STARTS)) {
+    for (const k of Object.keys(knobs!)) assert.ok((HERO_PHOTO_STAGE3_KNOBS as readonly string[]).includes(k), k)
+  }
+})
+
+test('stage 3: v1 and today\'s v2 write the same scene as before; knobs pass through only when set', () => {
+  // the cow's real program (its stage, zoom, camera); an empty compiled body so
+  // the test stays fast (the photo keys live in the view, not the strokes)
+  const prog = { ...buildCowProgram({ ...COW_DEFAULTS, size: 'M', stage: 'windowsill' }), accessories: [] }
+  const cc = { yr: 0.3, placed: [], hair: [], embroidery: [], props: [], problems: [] } as unknown as Parameters<
+    typeof compositionScene
+  >[1]
+  const plain = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: undefined, photoKnobs: undefined }, cc)))
+  const v1 = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: 'v1' }, cc)))
+  const v2 = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: 'v2' }, cc)))
+  // v1 = no photo at all; v2 = the same scene plus only `photo: 'v2'`
+  assert.deepEqual(v1, plain)
+  assert.deepEqual(v2, { ...plain, view: { ...plain.view, photo: 'v2' } })
+  for (const k of HERO_PHOTO_STAGE3_KNOBS) {
+    assert.equal(k in v2.view, false, k)
+    assert.equal(k in v1.view, false, k)
+  }
+  const s3 = JSON.parse(
+    JSON.stringify(compositionScene({ ...prog, photo: 'v2', photoKnobs: HERO_PHOTO_STAGE3_STARTS.windowsill }, cc)),
+  )
+  assert.deepEqual(s3, { ...plain, view: { ...plain.view, photo: 'v2', ...HERO_PHOTO_STAGE3_STARTS.windowsill } })
 })

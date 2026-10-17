@@ -183,8 +183,34 @@ export interface HeroPhotoKnobs {
   /** The cloth under the toy: 'auto' = the stage's own, softly crumpled;
    *  'knit' / 'linen' swap it; 'none' leaves the stage's cloth as it was. */
   photoBlanket?: 'auto' | 'knit' | 'linen' | 'none'
-  /** Crumple depth as a fraction of the piece height (0.09). */
+  /** Crumple depth as a fraction of the piece height (0.09); by eye 0.03
+   *  (barely creased) to 0.2 (balled up). */
   photoCrumple?: number
+  // ---- stage 3 knobs (job stage3): all OFF at their defaults, so v1 and
+  // today's v2 render unchanged. Starting values: HERO_PHOTO_STAGE3_STARTS.
+  /** Frame width / height; 0 = the stage's own (square). The cow bar is 1.33. */
+  photoAspect?: number
+  /** The toy's place across the frame, a fraction of the frame width from the
+   *  centre, + = right (a lens shift: perspective kept, props follow) (0). */
+  photoPlaceX?: number
+  /** Room contrast: 0 off, 1 = the set's wood / plaster / ambient deepened to
+   *  its `PHOTO_ROOM_BY` tones (per set); the window glow is untouched (0). */
+  photoRoom?: number
+  /** Dried bunch fullness: x the stems; fan and heap widen with its root (1). */
+  photoBunchFull?: number
+  /** 0 = today's spray; 1 = ~40% of the stems run behind the toy and out past
+   *  its right shoulder, kept clear of its footprint (0). */
+  photoBunchBehind?: number
+  /** Cloth texture strength on the crumpled cloth (linen threads and slubs,
+   *  knit stitch shadow and fuzz); 0 = the material as built (0). */
+  photoWeave?: number
+  /** Thread / stitch size multiplier; coarser reads at listing size (1). */
+  photoWeaveScale?: number
+  /** Crease size multiplier; below 1 = finer creases on a denser cloth (1). */
+  photoCrumpleScale?: number
+  /** A knit cloth's soft rounded rumples and its rise round the toy, in units
+   *  of 0.1 x the piece height (0). */
+  photoRumple?: number
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -212,6 +238,51 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoProps: 'v2',
   photoBlanket: 'auto',
   photoCrumple: 0.09,
+  photoAspect: 0,
+  photoPlaceX: 0,
+  photoRoom: 0,
+  photoBunchFull: 1,
+  photoBunchBehind: 0,
+  photoWeave: 0,
+  photoWeaveScale: 1,
+  photoCrumpleScale: 1,
+  photoRumple: 0,
+}
+
+/** The stage-3 knobs (all off by default, in v1 and v2 alike). */
+export const HERO_PHOTO_STAGE3_KNOBS = [
+  'photoAspect',
+  'photoPlaceX',
+  'photoRoom',
+  'photoBunchFull',
+  'photoBunchBehind',
+  'photoWeave',
+  'photoWeaveScale',
+  'photoCrumpleScale',
+  'photoRumple',
+] as const satisfies readonly (keyof HeroPhotoKnobs)[]
+
+/**
+ * Sensible STARTING values for the stage-3 knobs per set, from the stage-3
+ * proof renders (proofs/stage3): a place for the by-eye tuning to begin, not
+ * a tuned pass. Nothing reads this automatically; pass one as `photoKnobs`.
+ */
+export const HERO_PHOTO_STAGE3_STARTS: Partial<Record<HeroStage, HeroPhotoKnobs>> = {
+  windowsill: {
+    photoAspect: 1.33,
+    photoPlaceX: 0.04,
+    photoRoom: 1,
+    photoBunchFull: 1.5,
+    photoBunchBehind: 1,
+    photoWeave: 1,
+    photoWeaveScale: 1.6,
+    photoCrumpleScale: 0.8,
+  },
+  nursery: {
+    photoRoom: 1,
+    photoWeave: 1,
+    photoRumple: 1,
+  },
 }
 
 /**
