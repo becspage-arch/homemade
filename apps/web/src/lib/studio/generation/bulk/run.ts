@@ -41,6 +41,7 @@ import {
 } from './needlework'
 import { crochetShelfPlan } from './crochet-planner'
 import { liveCrochetShelfCounts, publicCrochetSubjectKeys } from './crochet-dedupe'
+import { XS_RETIRED_SUBJECT_KEYS } from './xs-retired-subjects'
 
 /**
  * The batch RUNNER — the craft-agnostic orchestrator the Inngest jobs call. One
@@ -497,7 +498,7 @@ export async function crossStitchPlanContext(count: number): Promise<Parameters<
     // file itself.
     poolExtrasFor('cross-stitch').catch(() => []),
   ])
-  const avoidSubjectKeys = avoidListWithDuplicateKills(rowKeys, duplicateKills)
+  const avoidSubjectKeys = avoidListWithDuplicateKills([...rowKeys, ...XS_RETIRED_SUBJECT_KEYS], duplicateKills)
   const deficits = shelfDeficits(CROSS_STITCH_SHELVES, counts)
   // Cap any one shelf at its share of the batch. A shelf far behind its target
   // otherwise takes three or four slots at once and the batch turns into three
