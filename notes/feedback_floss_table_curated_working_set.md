@@ -23,7 +23,7 @@ RGBs. Extending a table with real values only ever improves quality.
 - `apps/web/src/lib/floss/dmc-full.ts` — the full DMC set (457 entries, counted 2026-09-06) (verified
   public data) + a CIELAB matcher. Use it where fine gradations matter — surface-
   embroidery needle-painting shading needs it for smooth ramps. Shipped 2026-06-25
-  (commit 874ab76e). ([[project_needlework_signoff]] is not in notes/.) The sibling
+  (commit 874ab76e). (`project_needlework_signoff` is not in notes/.) The sibling
   brand tables `anchor-table.ts`, `madeira-table.ts` and `equivalence-table.ts` are in
   the same directory.
 - Unifying everything onto the full table later is fine if it simplifies things;

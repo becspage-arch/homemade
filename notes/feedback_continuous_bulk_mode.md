@@ -37,7 +37,5 @@ needlework's Blender render is still tied to a local Blender.)
    If the session can't create it, it hands back the interval + the prompt and the orchestrator sets it up.
 5. It runs one batch per firing until Rebecca pauses/stops it (she controls it via the schedule skill).
 
-Ongoing build-time compute (within the [[feedback_no_api_spend]] carve-out). See [[project_cross_stitch]],
-[[project_needlework_signoff]], [[feedback_pattern_complexity_range]].
-
-(Cross-reference note, 2026-09-06: `[[project_cross_stitch]]` and `[[project_needlework_signoff]]` are not in notes/; cross-stitch state is `project/project_cross_stitch_state.md` and there is no needlework note.)
+Ongoing build-time compute (within the [[feedback_no_api_spend]] carve-out). See [Cross-stitch state](project/project_cross_stitch_state.md),
+[[feedback_pattern_complexity_range]].

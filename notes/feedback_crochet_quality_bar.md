@@ -1,6 +1,6 @@
 ---
 name: feedback-crochet-quality-bar
-description: "The crochet quality bar Rebecca set 2026-10-09: customer-ready means as beautiful and cute as the best-selling Etsy patterns; five example listings; how to judge. Applies to every crochet render, hero and pattern."
+description: "The crochet quality bar Rebecca set 2026-10-09: customer-ready means as beautiful and cute as the best-selling Etsy patterns; the bar is only her five bar photos; how to judge. Applies to every crochet render, hero and pattern."
 metadata:
   type: feedback
 ---
@@ -9,7 +9,9 @@ metadata:
 
 **The rule:** a crochet piece passes only when it's customer-ready. That means it would sit next to the best-selling crochet patterns on Etsy and look as beautiful and cute as they do. "Acceptable, could be better" is a tweak, never a pass. Rebecca: "If it's not customer-ready, it does not pass yet."
 
-Rebecca's five example listings (kept outside the repo, in the project's shared folder `/mnt/project-files/homemade/crochet-bar/`, because they are other shops' images and this repo is public) are examples of the level of beauty and cuteness, not a complete list. More examples from top-selling patterns are in `research-top-patterns.md`, and `real/` holds 47 checked real photos from top Ravelry patterns sorted by engine round (`real/INDEX.md`), all in that same shared folder. The element-by-element audit of the engine is the Claude Doc "Crochet engine audit against the bar".
+**The bar is only Rebecca's five bar photos** (`bar-*.png`). They are other shops' images, so they live in the project's shared folder `/mnt/project-files/homemade/crochet-bar/` and never go in this public repo. She knows these designers and they are the best of the best (9 Oct). They show the level of beauty and cuteness, not a complete list of subjects.
+
+`real/` (47 Ravelry photos, `real/INDEX.md`) and `research-top-patterns.md` in that folder are from good but average designers. Use them only to learn how a part is built. Matching them is not a pass. The engine audit is the Claude Doc "Crochet engine audit against the bar". The live job list is `crochet-bar/TRACKER.md` ([Crochet state](project/project_crochet_state.md)).
 
 ## What customer-ready means
 

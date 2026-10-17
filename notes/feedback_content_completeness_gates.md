@@ -156,7 +156,5 @@ broken content kept shipping. This worker fixed the foundation.
 Root-cause + rebuild scope: `packages/db/docs/content-rebuild-scope-2026-06-15.md`.
 Schema: `Tutorial.qcBlockReason Json?` (migration
 `20260915000000_phase_qc_block_reason_001`). Realises the
-[[project_master_todo]] §6.5 "QC into the autopilot publish path" item. Related:
+old master to-do item 6.5, "QC into the autopilot publish path". Related:
 [[feedback_no_warning_tiers]], [[feedback_ai_only_moderation]].
-
-(Cross-reference note, 2026-09-06: `[[project_master_todo]]` is not in notes/; the running list is `todo.md`.)

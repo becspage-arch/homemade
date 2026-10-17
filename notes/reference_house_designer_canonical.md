@@ -32,5 +32,5 @@ premium" off it — `isIndependentDesignerContent` / `isPremiumContent` in
 independent-only, so the house row must never flip to false. Stitching Mama
 (`stitching-mama`) is still the one independent cross-stitch designer; its patterns are
 premium and it powers the spotlight. See [[project/project_premium_free_spec]],
-[[reference_script_env_dotenv_path]]. ([[project_business_model]] and
-[[project_cross_stitch]] are not in notes/.)
+[[reference_script_env_dotenv_path]]. (`project_business_model` and
+`project_cross_stitch` are not in notes/.)

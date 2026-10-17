@@ -4,6 +4,8 @@ description: Bulk content authoring (recipe drafts, practice writes, herbal prot
 type: feedback
 originSessionId: 51fcaac5-5db7-4df9-82b1-ee909db7152d
 ---
+**Added 17 October 2026 (Rebecca), loom and crochet work:** Opus builds tools on pass/fail rails (audits, tests, merges, switches that default to off). Fable fine-tunes by eye against the bar and does new engine construction. No Opus fine-tuning. See [Crochet state](project/project_crochet_state.md).
+
 Per the locked working assumptions in `BUILD_PROGRESS.md` §
 "Multi-category fill plan":
 
