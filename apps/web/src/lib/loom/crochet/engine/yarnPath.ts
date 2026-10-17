@@ -61,6 +61,14 @@ export interface StitchLink {
    * flat link, in that frame. Absent = unchanged.
    */
   frame3?: { a: [number, number, number]; h: [number, number, number]; n: [number, number, number]; o: [number, number, number] }
+  /**
+   * A stitch worked INTO A CHAIN SPACE (motif kit, r15) goes under the whole
+   * chain and may settle anywhere along the space, not at one loop: the link
+   * is held if it holds against `below` OR any of these nodes (the same leg
+   * at the space's other cross-sections). Every rule of its role still
+   * applies at that cross-section; only which cross-section is free.
+   */
+  belowAny?: number[]
 }
 
 export interface BuiltContinuous {

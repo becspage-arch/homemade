@@ -39,6 +39,10 @@ export interface MotifOptions {
   /** The puff rose CLOSED (four lobes leaning in over the middle, no centre):
    *  the bar's rosebuds between its open flowers. */
   bud?: boolean
+  /** The rolled rose's petals (r15): 'scallop' (default, the graded scallop
+   *  strip) or 'shell' — shells of five worked into the chain spaces of a mesh
+   *  row (the kit's chain-space hook). */
+  petals?: 'scallop' | 'shell'
 }
 
 export interface V3 {

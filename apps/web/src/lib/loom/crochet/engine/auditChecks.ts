@@ -291,7 +291,9 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
     return null
   }
   for (const l of built.links) {
-    const err = check(l)
+    let err = check(l)
+    // A chain-space stitch: held under the chain at any cross-section of its space.
+    if (err && l.belowAny?.some((b) => b !== l.below && check({ ...l, below: b }) === null)) err = null
     if (err) linkFails.push(`  [${l.role} j${l.j} c${l.c}] ${err}`)
   }
   if (linkFails.length)

@@ -2,6 +2,8 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { getMotif, listMotifs } from './index'
 import type { MotifId } from './types'
+import { shellStrip } from './rolled-rose'
+import { YARN_WEIGHT_RADIUS_MM } from '../program'
 
 const ALL: MotifId[] = ['star', 'heart', 'leaf', 'butterfly', 'daisy', 'rolled-rose', 'layered-rose', 'berry', 'leaf-vine', 'garland']
 
@@ -53,3 +55,37 @@ for (const id of ALL) {
     assert.equal(b.yarnFibre, 'fine-cotton')
   })
 }
+
+// THE CHAIN-SPACE HOOK (r15, kit.ts chainSpace / MotifStrand.intoSpace): a
+// stitch worked "in the ch-sp" goes under the whole chain, not into one
+// chain's loop. n tall sts fanned into ONE chain failed the audit with 1 to 43
+// interlocks (r13); worked into the space they hold.
+const YR = YARN_WEIGHT_RADIUS_MM.fine
+
+test('chain space: a shell (sl st, 5 tr in a ch-3 sp, sl st) audits clean, each st under the whole chain', () => {
+  const p = shellStrip(YR, '#9c6c78', ['dc'], 'shell', { meshCh: 3, skip: 2, flat: true })
+  assert.deepEqual(p.problems, [])
+  assert.equal(p.shellCrowns.length, 1)
+  assert.equal(p.shellCrowns[0]!.length, 5)
+  // every shell stitch records a hook link against BOTH legs of the chain (the
+  // far, hole-side leg and the near one), each free to sit anywhere along the space
+  const spaceLinks = p.built.links.filter((l) => l.role === 'hook' && l.belowAny)
+  assert.equal(spaceLinks.length, 10)
+  assert.equal(new Set(spaceLinks.map((l) => l.hook)).size, 5)
+})
+
+test('chain space: a strip of five shells (tr, UK) on a ch-4 mesh relaxes with no interlock failing', () => {
+  const p = shellStrip(YR, '#9c6c78', ['dc', 'dc', 'dc', 'dc', 'dc'], 'strip', { flat: true })
+  assert.deepEqual(p.problems, [])
+  assert.equal(p.shellCrowns.length, 5)
+  assert.ok(p.shellCrowns.every((s) => s.length === 5))
+})
+
+test('rolled rose: petals "shell" is opt-in (shells in ch-4 spaces); the default stays the scallop strip', () => {
+  const s = getMotif('rolled-rose').build({ petals: 'shell' })
+  assert.deepEqual(s.problems, [])
+  assert.ok(s.words.some((w) => /5 tr in next ch-4 sp/.test(w)), s.words.join('\n'))
+  const d = getMotif('rolled-rose').build()
+  assert.ok(d.words.some((w) => /^Row 1 \(petals\)/.test(w)))
+  assert.ok(!d.words.some((w) => /ch-4 sp/.test(w)))
+})

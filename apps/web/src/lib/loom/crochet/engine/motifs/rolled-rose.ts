@@ -16,7 +16,7 @@
  */
 
 import type { StitchId } from '../dictionary'
-import { MotifStrand, add, mul, type ChainLoop } from './kit'
+import { MotifStrand, chainSpace, type ChainSpace } from './kit'
 import { intoChain, runWords } from './leaf'
 import { along, type Crown } from './kit'
 import { UK, assemble, colourOpts, materialsLine, motifYarn, pieceOf } from './common'
@@ -57,9 +57,6 @@ export interface RollOpts {
    *  petal is then two rows of fabric, a wide flat band when rolled, not a
    *  one-stitch arch that reads as a coil of rope. */
   topRow?: boolean
-  /** Shell strip only: work the row-2 shells (default true), of this many stitches (SHELL_SIZE). */
-  shells?: boolean
-  shellSize?: number
 }
 
 /** A rolled strip as one piece: the foundation chain, one row of `petals`
@@ -124,19 +121,21 @@ export function rolledStrip(yr: number, hex: string, petals: StitchId[][], name 
 }
 
 /**
- * SHELL ROSE (r15): the real rolled-rose construction. Row 1 is a MESH along
- * the foundation chain — a dtr (UK) post, ch 3, skip 2 ch, repeat — and row 2
- * works a SHELL of five stitches into every chain SPACE of the mesh with a sl
- * st into each post top between (the kit's chain-space hook: each shell stitch
- * goes under the ch-4 at its own point along it). The first three shells are
- * htr, the rest tr, so the small petals roll into the centre. Then the band along the chain's other
- * side, and the roll. Fanning five stitches into ONE chain failed the audit in
- * every probe (r13: the extra posts slip out of the chain's mouth); a chain
- * space is the loop a real shell is worked into.
+ * SHELL ROSE (r15, opt-in: `petals: 'shell'`): the real rolled-rose
+ * construction. Row 1 is a MESH along the foundation chain — a tr (UK) post,
+ * ch 4, skip 3 ch, repeat — and row 2 works a SHELL of five stitches into every
+ * chain SPACE of the mesh with a sl st into each post top between (the kit's
+ * chain-space hook, `MotifStrand.intoSpace`: each shell stitch goes under the
+ * whole ch-4 at its own point along it). The first three shells are htr, the
+ * rest tr, so the small petals roll into the centre. Then the band along the
+ * chain's other side, and the roll. Fanning five stitches into ONE chain
+ * failed the audit in every probe (r13: 1 to 43 interlocks, the extra posts'
+ * legs slip out of the chain's mouth); a chain space is the hole a real shell
+ * is worked into.
  */
 export const SHELL_PETALS: { n: number; st: StitchId }[] = [
   { n: 3, st: 'hdc' },
-  { n: 8, st: 'dc' }, // dtr shells (UK) left one collar marginal in the audit; tr shells are clean
+  { n: 8, st: 'dc' },
 ]
 export const SHELL_SIZE = 5
 export const SHELL_CH = 4
@@ -148,102 +147,128 @@ export function shellPetalList(): StitchId[] {
   return out
 }
 
-/** `k`-th of `n` stitches of a shell worked into the chain space `sp` (the
- *  ch-3's loops, in the order they were made, i.e. running toward −x), the
- *  shell standing toward −y like the petal row. Each stitch encircles the
- *  chain at its own point along the space and its crown fans out. */
-function intoSpace(m: MotifStrand, sp: ChainLoop[], id: StitchId, k: number, n: number, heightScale = 1): Crown {
-  // The strand of the space, loop by loop: the hook goes UNDER the chain, so a
-  // stitch wraps one of its legs (the fold is tucked behind; a hook under the
-  // fold itself lifted it over its own crossing and failed the chain's audit).
-  // Row 2 travels back (−x) over a space made toward +x, so the first shell
-  // stitch takes the leg nearest the post just slip-stitched and the last the
-  // far end: the yarn never jumps across the space.
-  // Only the leg on the shell's own side (the right leg: the space runs +x,
-  // the shells stand −y) at two points, near the fold and mid-leg — a hook
-  // over to the far leg crossed the chain and lifted its folds.
-  const run: number[] = []
-  for (const L of sp) {
-    const at = L.nodes.indexOf(L.legR)
-    run.push(L.nodes[Math.min(L.nodes.length - 1, at + 2)]!, L.legR)
-  }
-  run.reverse()
-  const t = (k + 0.5) / n
-  const node = run[Math.min(run.length - 1, Math.round(t * run.length - 0.5))]!
-  const q = m.nodes[node]!
-  // the space runs from its first loop's centre to its last's
-  const a = sp[0]!.c, b = sp[sp.length - 1]!.c
-  const u = { x: b.x - a.x, y: b.y - a.y }
-  const mid = add(a, mul(u, 0.5))
-  const f = along(mid, u) // the space runs toward +x (row 1 travels back along the chain), so heights point −y, the petal side
-  const loc = f.local({ x: q.x, y: q.y })
-  const width = Math.hypot(u.x, u.y) + m.yr * 2.6
-  const xCrown = (0.5 - t) * width * 1.15
-  return m.stitch({ id, frame: f, xCrown, xHook: loc.lx, into: { kind: 'space', node }, by: loc.ly, heightScale, })
+/** The mesh + shells of a shell strip: the chain in each space and how many
+ *  foundation chains each mesh repeat skips, and the stitches per shell. */
+export interface ShellOpts extends RollOpts {
+  meshCh?: number
+  skip?: number
+  /** Work the row-2 shells (default true). */
+  shells?: boolean
+  shellSize?: number
+  /** The mesh chains' pitch (yr): a little looser than a plain chain, so the
+   *  space is fed the yarn its shell spreads along. */
+  meshPitchYr?: number
+  /** How wide each shell's crowns fan, as a multiple of its space (+ a st). */
+  fan?: number
+  /** Leave the strip flat (no roll pose): the kit's chain-space tests. */
+  flat?: boolean
 }
 
-/** The shell strip as one piece: the chain, the row-1 mesh, the row-2 shells,
- *  the band, relaxed and audited flat, then rolled. */
-export function shellStrip(yr: number, hex: string, petals: StitchId[] = shellPetalList(), name = 'rose', roll: RollOpts = {}): MotifPiece {
+/** The shell strip as one piece: the chain, the row-1 mesh, the row-2 shells
+ *  (one shell of `petals[i]` per space), the band, relaxed and audited flat,
+ *  then rolled. Returns the piece and the shell crowns (per shell). */
+export function shellStrip(yr: number, hex: string, petals: StitchId[] = shellPetalList(), name = 'rose', o: ShellOpts = {}): MotifPiece & { shellCrowns: Crown[][] } {
   const P = petals.length
-  const nCh = (P + 1) + P * SHELL_SKIP + 1 // the posts, the skipped chains, the turning chain
+  const meshCh = o.meshCh ?? SHELL_CH
+  const skip = o.skip ?? SHELL_SKIP
+  const nCh = (P + 1) + P * skip + 1 // the posts, the skipped chains, the turning chain
   const pitch = yr * 2.6
   const m = new MotifStrand(yr, hex)
   m.slipKnot({ x: 0, y: 0 }, { x: -1, y: 0 })
   m.sectionName = 'chain'
   const loops = m.chain(nCh, [{ x: 0, y: 0 }, { x: -pitch * nCh, y: 0 }], { turning: 1 })
-  // Row 1 (the mesh), worked back toward +x on the chains' left legs: a post
-  // in the 2nd ch from hook, then [ch 3, skip 2 ch, post in next ch].
+  // Row 1 (the mesh), worked back toward +x on the chains' left legs, posts
+  // standing toward −y: a post in the 2nd ch from hook, then [ch, skip, post].
   m.sectionName = 'mesh'
   const posts: Crown[] = []
-  const spaces: ChainLoop[][] = []
+  const spaces: ChainSpace[] = []
   let k = nCh - 2
   posts.push(intoChain(m, loops[k]!, 'dc', 'L'))
   for (let i = 0; i < P; i++) {
     const from = m.cursor
-    const next = loops[k - SHELL_SKIP - 1]!
-    const to = { x: next.c.x, y: from.y }
-    const ch = m.chain(SHELL_CH, [from, to])
-    spaces.push(ch.slice(0, SHELL_CH))
-    k -= SHELL_SKIP + 1
+    const next = loops[k - skip - 1]!
+    // A mesh chain is longer than the gap it spans, so it ARCHES (toward the
+    // standing side, −y): laid straight it overshot the next post and its
+    // loops were shoved together past their folds.
+    const mp = yr * (o.meshPitchYr ?? MESH_PITCH_YR)
+    const ch = m.chain(meshCh, archPath(from, { x: next.c.x, y: from.y }, (meshCh + MESH_END) * mp, -1), { pitchYr: o.meshPitchYr ?? MESH_PITCH_YR, lift: yr * MESH_LIFT_YR })
+    // the ch runs +x; the shells stand on its −y side (right), the hole
+    // between it and the foundation is +y. The loop on the hook is closed by
+    // the next post, so the space runs right up to that post.
+    spaces.push(chainSpace(ch, 'R'))
+    k -= skip + 1
     posts.push(intoChain(m, loops[k]!, 'dc', 'L'))
   }
-  // Row 2 (the shells), turned, worked back toward −x: sl st in the post,
-  // then the shell in the space, to the end.
+  // Row 2 (the shells), worked back toward −x: sl st in the post, the shell in
+  // the space, to the end, sl st in the last post.
   m.sectionName = 'shells'
-  const f2 = along({ x: 0, y: 0 }, { x: 1, y: 0 }) // heights toward −y like every row-2 stitch (the work travels −x, but a frame's along-direction only sets the audit's sign)
-  const doShells = roll.shells ?? true
-  const doBand = roll.band ?? true
+  const f2 = along({ x: 0, y: 0 }, { x: 1, y: 0 })
   const slIn = (c: Crown): void => {
     const loc = f2.local(c.p)
     m.stitch({ id: 'slst', frame: f2, xCrown: loc.lx, xHook: loc.lx, into: { kind: 'crown', crown: c }, by: loc.ly })
   }
+  const doShells = o.shells ?? true
+  const sz = o.shellSize ?? SHELL_SIZE
+  const shellCrowns: Crown[][] = []
   if (doShells) {
     for (let i = P; i >= 1; i--) {
       slIn(posts[i]!)
-      const sp = spaces[i - 1]!
-      const sz = roll.shellSize ?? SHELL_SIZE
-      for (let j = 0; j < sz; j++) intoSpace(m, sp, petals[i - 1]!, j, sz)
+      shellCrowns.unshift(m.intoSpace(spaces[i - 1]!, new Array<StitchId>(sz).fill(petals[i - 1]!), { fan: o.fan ?? SHELL_FAN }))
     }
     slIn(posts[0]!)
   }
-  // The band: round the end and dc along the other side of the foundation chain.
+  // The band: round the end and dc (UK) along the other side of the foundation chain.
+  const doBand = o.band ?? true
   if (doBand) {
     m.sectionName = 'band'
     if (doShells) for (let i = nCh - 2; i >= 0; i--) intoChain(m, loops[i]!, 'sc', 'R')
     else for (let i = 0; i <= nCh - 2; i++) intoChain(m, loops[i]!, 'sc', 'R')
   }
-  m.fastenOff({ x: doShells ? 1 : -1, y: 0 })
+  m.fastenOff({ x: doShells === doBand ? 1 : -1, y: 0 })
   const built = m.finish(pitch * nCh, yr * 20)
   const body = built.model.nodes.slice(4)
   const xMin = Math.min(...body.map((n) => n.x))
-  const yTop = Math.max(...body.map((n) => n.y))
-  const o = {
-    pitch: yr * (roll.pitchYr ?? SHELL_ROLL_PITCH_YR), r0: yr * (roll.r0Yr ?? ROLL_R0_YR),
-    lean0: roll.lean0 ?? SHELL_LEAN0, lean1: roll.lean1 ?? SHELL_LEAN1, turnsFull: roll.turnsFull ?? 3.0,
+  const yTop = doBand ? Math.max(...body.map((n) => n.y)) : 0
+  const ro = {
+    pitch: yr * (o.pitchYr ?? SHELL_ROLL_PITCH_YR), r0: yr * (o.r0Yr ?? ROLL_R0_YR),
+    lean0: o.lean0 ?? SHELL_LEAN0, lean1: o.lean1 ?? SHELL_LEAN1, turnsFull: o.turnsFull ?? 3.0,
   }
-  return pieceOf(name, m, built, (p) => rollPose(p, xMin, yTop, yr, o))
+  const piece = pieceOf(name, m, built, o.flat ? undefined : (p) => rollPose(p, xMin, yTop, yr, ro))
+  return { ...piece, shellCrowns }
 }
+/** A mesh chain's pitch (yr): looser than a plain motif chain (2.6), the yarn
+ *  its shell spreads along — at 2.6-2.8 the five bases bunched its loops past
+ *  their folds (r15 probes). */
+const MESH_PITCH_YR = 3.0
+/** How far past its last whole chain (in pitches) a mesh chain's arch runs to the next post. */
+const MESH_END = 1.6
+/** How far (yr) a mesh chain sits up off the work: its shells' bases pass
+ *  under it, on the table (at 0 its back bump was on the table and every
+ *  shell shoved the chain over its own folds). */
+const MESH_LIFT_YR = 1.0
+
+/** A sine arch from a to b (bulging toward `side` × the left normal of a→b)
+ *  whose arclength is `L` (straight if the chord is already that long). */
+export function archPath(a: { x: number; y: number }, b: { x: number; y: number }, L: number, side: 1 | -1): { x: number; y: number }[] {
+  const dx = b.x - a.x, dy = b.y - a.y
+  const c = Math.hypot(dx, dy)
+  const nx = (-dy / c) * side, ny = (dx / c) * side
+  const N = 24
+  const pts = (h: number) => Array.from({ length: N + 1 }, (_, i) => {
+    const t = i / N, w = Math.sin(Math.PI * t) * h
+    return { x: a.x + dx * t + nx * w, y: a.y + dy * t + ny * w }
+  })
+  const arc = (q: { x: number; y: number }[]) => q.reduce((acc, p, i) => (i ? acc + Math.hypot(p.x - q[i - 1]!.x, p.y - q[i - 1]!.y) : 0), 0)
+  if (L <= c) return [a, b]
+  let lo = 0, hi = L
+  for (let it = 0; it < 40; it++) {
+    const h = (lo + hi) / 2
+    if (arc(pts(h)) < L) lo = h
+    else hi = h
+  }
+  return pts((lo + hi) / 2)
+}
+const SHELL_FAN = 1.0
 const SHELL_ROLL_PITCH_YR = 4.2
 const SHELL_LEAN0 = 10
 const SHELL_LEAN1 = 50
@@ -251,13 +276,16 @@ const SHELL_LEAN1 = 50
 export function buildRolledRose(o?: MotifOptions): BuiltMotif {
   const y = motifYarn(o)
   const col = colourOpts(ROLLED_ROSE_COLOURS, o)
-  const piece = shellStrip(y.yr, col.main!)
-  return assemble('rolled-rose', 'Rolled rose', o, [piece], shellRoseWords(), materialsLine(o, ['dusty pink']))
+  if (o?.petals === 'shell') {
+    const piece = shellStrip(y.yr, col.main!)
+    return assemble('rolled-rose', 'Rolled rose', o, [piece], shellRoseWords(), materialsLine(o, ['dusty pink']))
+  }
+  const piece = rolledStrip(y.yr, col.main!, rosePetalList())
+  return assemble('rolled-rose', 'Rolled rose', o, [piece], rolledRoseWords(), materialsLine(o, ['dusty pink']))
 }
 
 export function shellRoseWords(): string[] {
-  const petals = shellPetalList()
-  const P = petals.length
+  const P = shellPetalList().length
   const nCh = (P + 1) + P * SHELL_SKIP + 1
   const groups = SHELL_PETALS.map((g) => `[sl st in next ${UK.dc}, ${SHELL_SIZE} ${UK[g.st]} in next ch-${SHELL_CH} sp] ${g.n} times`)
   return [

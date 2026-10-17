@@ -126,12 +126,47 @@ export interface ChainLoop {
   /** Loop centre on the chain line, and the chain's direction there. */
   c: V2
   u: V2
-  /** The loop's strand nodes in order from its left leg, round the fold and
-   *  down its right leg to its crossing (r15, the chain-space hook): a stitch
-   *  worked into a chain SPACE goes under the chain, so it may hook the leg on
-   *  its own side at more than one point. The loop on the hook has only its
-   *  first strand (to the fold). */
-  nodes: number[]
+  /** CROSS-SECTIONS of the completed loop, in chain order (r15, the
+   *  chain-space hook): the left and right leg nodes at one point along the
+   *  loop (0.55 and 0.9 of the pitch). A stitch worked into a chain SPACE goes
+   *  under the WHOLE chain, so at its point it must pass both legs. The loop
+   *  left on the hook has one: its left leg and its fold (its right side is
+   *  the working yarn until the next stitch closes it). */
+  sections: { l: number; r: number }[]
+}
+
+/**
+ * A CHAIN SPACE (r15): the gap under a run of chains between two stitches —
+ * the hole a shell, a V-stitch or a mesh row is worked into. A stitch worked
+ * "in the ch-sp" goes UNDER the chain (through the hole between it and the
+ * row below), not into one chain's loop, so it encircles the chain's whole
+ * cross-section and may sit anywhere along the space. Built by `chainSpace`.
+ */
+export interface ChainSpace {
+  /** Cross-sections along the space in chain order: `near` is the leg on the
+   *  side the stitches stand, `far` the leg on the hole side. */
+  stations: { near: number; far: number }[]
+  /** The space's frame: along the chain (chain order), height toward the
+   *  side the stitches stand. */
+  frame: Frame
+  /** The space's ends (first and last loop centres) in the frame (lx). */
+  lx0: number
+  lx1: number
+}
+
+/** The chain space under `loops` (a run of chain loops, e.g. the ch-3 of a
+ *  mesh row, with the loop left on the hook once the next stitch has closed
+ *  it), with the stitches to stand on the chain's `side` ('R' = the
+ *  chain direction turned −90°, as `along` frames stand). */
+export function chainSpace(loops: ChainLoop[], side: 'L' | 'R'): ChainSpace {
+  const sec = loops.flatMap((L) => L.sections)
+  if (!sec.length) throw new Error('a chain space needs at least one chain loop')
+  const a = loops[0]!.c, b = loops[loops.length - 1]!.c
+  const u = len(sub(b, a)) > 1e-9 ? sub(b, a) : loops[0]!.u
+  const mid = add(a, mul(sub(b, a), 0.5))
+  const frame = along(mid, side === 'R' ? u : mul(u, -1))
+  const stations = sec.map((x) => (side === 'R' ? { near: x.r, far: x.l } : { near: x.l, far: x.r }))
+  return { stations, frame, lx0: frame.local(a).lx, lx1: frame.local(b).lx }
 }
 
 /** The magic ring. */
@@ -148,10 +183,12 @@ export interface StitchSpec {
   xCrown: number
   xHook?: number
   /** The loop it is worked into: a crown, a chain leg (node), the ring, or a
-   *  chain SPACE (r15): the hook goes under the whole chain between two
-   *  stitches, so the stitch ENCIRCLES the chain's strand at `node` (a 'ring'
-   *  link, measured as one: still beside the strand, not slid along it). */
-  into: { kind: 'crown'; crown: Crown } | { kind: 'node'; node: number } | { kind: 'ring'; ring: Ring; th: number } | { kind: 'space'; node: number }
+   *  chain SPACE at one of its cross-sections (r15): the hook dives under the
+   *  whole chain, past its far (hole-side) leg, and the stitch records a
+   *  'hook' link against BOTH legs there, so the audit proves it went under
+   *  the chain (far side in z, not floated over either leg), not into one
+   *  loop's mouth. */
+  into: { kind: 'crown'; crown: Crown } | { kind: 'node'; node: number } | { kind: 'ring'; ring: Ring; th: number } | { kind: 'space'; near: number; far: number; nearAll?: number[]; farAll?: number[] }
   /** Row bottom (ly, default the hooked loop's ly) and height scale (1). */
   by?: number
   heightScale?: number
@@ -274,9 +311,8 @@ export class MotifStrand {
       bcBack = spec.into.node
       bcFront = spec.into.node
     } else if (spec.into.kind === 'space') {
-      bcBack = spec.into.node
-      bcFront = spec.into.node
-      role = 'ring'
+      bcBack = spec.into.far
+      bcFront = spec.into.far
     } else {
       const R = spec.into.ring
       const t = (((spec.into.th / (Math.PI * 2)) % 1) + 1) % 1
@@ -316,6 +352,17 @@ export class MotifStrand {
       yarnOverMm: yr * (def.yarnOverYr ?? 1),
     })
     this.j++
+    if (spec.into.kind === 'space') {
+      // Under the whole chain: the same insertion must also pass the near leg.
+      // Either leg may be met at any cross-section of the space (a stitch in a
+      // ch-sp slides along it; leaving the space is the failure).
+      const { near, nearAll, farAll } = spec.into
+      const base = this.S.links.slice(linksFrom).filter((l) => l.role === 'hook' && l.below === bcBack)
+      for (const l of base) {
+        if (farAll) l.belowAny = farAll
+        this.S.links.push({ ...l, below: near, ...(nearAll ? { belowAny: nearAll } : {}) })
+      }
+    }
     // Each link measured in the frame it was worked in, at the loop it hooks.
     for (let k = linksFrom; k < this.S.links.length; k++) {
       const l = this.S.links[k]!
@@ -336,6 +383,43 @@ export class MotifStrand {
   }
 
   /**
+   * A group of stitches worked INTO A CHAIN SPACE (r15) — a shell ("5 tr in
+   * the ch-sp"), a V-stitch, the half of a mesh: `ids` in work order, from the
+   * end of the space nearest the yarn to the other, each stitch going under
+   * the whole chain at its own cross-section along the space (so the group
+   * never crowds one loop's mouth: n tall stitches fanned into ONE chain fail
+   * the audit, r13) with its crown fanned out over `fan` × the space's length
+   * (+ a stitch). Returns the crowns.
+   */
+  intoSpace(sp: ChainSpace, ids: StitchId[], o: { fan?: number; heightScale?: number } = {}): Crown[] {
+    const f = sp.frame
+    const n = ids.length
+    const cur = f.local(this.cursor).lx
+    const fwd = Math.abs(cur - sp.lx0) <= Math.abs(cur - sp.lx1)
+    const order = fwd ? sp.stations : [...sp.stations].reverse()
+    const lA = fwd ? sp.lx0 : sp.lx1
+    const lB = fwd ? sp.lx1 : sp.lx0
+    const dir = Math.sign(lB - lA) || 1
+    const mid = (lA + lB) / 2
+    const span = Math.abs(lB - lA) + this.yr * 2.6
+    const fan = o.fan ?? 1.15
+    const nearAll = sp.stations.map((x) => x.near)
+    const farAll = sp.stations.map((x) => x.far)
+    const out: Crown[] = []
+    for (let k = 0; k < n; k++) {
+      const t = (k + 0.5) / n
+      const s = order[Math.min(order.length - 1, Math.floor(t * order.length))]!
+      const q = this.S.nodes[s.far]!
+      const loc = f.local(v(q.x, q.y))
+      out.push(this.stitch({
+        id: ids[k]!, frame: f, xCrown: mid + dir * (t - 0.5) * span * fan, xHook: loc.lx,
+        into: { kind: 'space', near: s.near, far: s.far, nearAll, farAll }, by: loc.ly, heightScale: o.heightScale,
+      }))
+    }
+    return out
+  }
+
+  /**
    * A CHAIN of `n` loops along a polyline (from its first point), the genuine
    * pull-through topology of the locked `ch` (yarnPath): each loop's two
    * strands pass through the loop before (two 'cross' links each), the
@@ -343,9 +427,12 @@ export class MotifStrand {
    * The first loop is pulled through the loop already on the hook (the last
    * stitch's head), which is not a chain fold, so it records no link. Returns
    * n + 1 loops: the n chains, then the loop left on the hook.
-   * `pitchYr` is the chain's pitch in yarn radii.
+   * `pitchYr` is the chain's pitch in yarn radii. `lift` (mm, default 0)
+   * raises the whole chain off the work: a chain that will be worked OVER (a
+   * mesh row's ch-sp) sits on top of the stitch bases that wrap it, its back
+   * bump clear of the table they lie on.
    */
-  chain(n: number, path: V2[], opts: { pitchYr?: number; hold?: boolean; turning?: number } = {}): ChainLoop[] {
+  chain(n: number, path: V2[], opts: { pitchYr?: number; hold?: boolean; turning?: number; lift?: number } = {}): ChainLoop[] {
     const yr = this.yr
     const p = yr * (opts.pitchYr ?? CHAIN_PITCH_YR)
     const hw = yr * 1.05
@@ -354,6 +441,7 @@ export class MotifStrand {
     const zfold = -yr * 0.5
     const zb = yr * 1.4
     const yin = yr * 0.3
+    const lift = opts.lift ?? 0
     // Arclength sampler along the path (extended along its last direction).
     const segs: { a: V2; u: V2; L: number; s0: number }[] = []
     let acc = 0
@@ -394,7 +482,7 @@ export class MotifStrand {
       const P = (tt: number, w: number, z: number): number => {
         const q = at(tt)
         const ll = left(q.u)
-        const pt = { x: q.p.x + ll.x * w, y: q.p.y + ll.y * w, z }
+        const pt = { x: q.p.x + ll.x * w, y: q.p.y + ll.y * w, z: z + lift }
         if (lastQ && CHAIN_SUBDIV) this.S.push((lastQ.x + pt.x) / 2, (lastQ.y + pt.y) / 2, (lastQ.z + pt.z) / 2)
         lastQ = pt
         return this.S.push(pt.x, pt.y, pt.z)
@@ -405,7 +493,7 @@ export class MotifStrand {
       P(t, yin, -zb * 0.5)
       const crossUp = P(t, yin, zf * 0.1)
       P(t + p * 0.2, hw * 0.35, zf)
-      P(t + p * 0.55, hw * 0.6, zf)
+      const midL = P(t + p * 0.55, hw * 0.6, zf)
       const legL = P(t + p * 0.9, hw * 0.85, zf * 0.6)
       P(t + p + r * 0.7, hw * 0.9, zfold * 0.8)
       // THE LAST LOOP IS THE LOOP ON THE HOOK: only the strand pulled up through
@@ -415,14 +503,14 @@ export class MotifStrand {
       // chain of every star point dragged clean out of its neighbour's fold
       // (audit: 'crossing past its loop's fold' on every tip, both builds).
       const last = k === n
-      const loopFrom = this.S.nodes.length
       const apex = P(t + p + r, 0, last ? zf * 0.4 : zfold)
       let legR = apex // the hook loop's far side is the working yarn itself
       let crossDn = -1
+      let midR = -1
       if (!last) {
         P(t + p + r * 0.7, -hw * 0.9, zfold * 0.8)
         legR = P(t + p * 0.9, -hw * 0.85, zf * 0.6)
-        P(t + p * 0.55, -hw * 0.6, zf)
+        midR = P(t + p * 0.55, -hw * 0.6, zf)
         P(t + p * 0.2, -hw * 0.35, zf)
         crossDn = P(t, -yin, zf * 0.1)
         P(t, -yin, -zb * 0.5)
@@ -446,10 +534,9 @@ export class MotifStrand {
       this.tag(from, opts.hold === false ? null : { hx: l.x, hy: l.y })
       for (let i = from; i < this.S.nodes.length; i++) this.free.add(i)
       const c = at(t + p * 0.6)
-      // the loop's strand from its left leg up to the fold and down the right leg to its crossing
-      const loopNodes: number[] = [legL]
-      for (let i = loopFrom; i < this.S.nodes.length; i++) loopNodes.push(i)
-      loops.push({ apex, legL, legR, c: c.p, u, nodes: loopNodes })
+      // the loop on the hook: its left leg and its fold (its right side is the working yarn, closed by the next stitch)
+      const sections = last ? [{ l: legL, r: apex }] : [{ l: midL, r: midR }, { l: legL, r: legR }]
+      loops.push({ apex, legL, legR, c: c.p, u, sections })
     }
     this.j++
     void from0
