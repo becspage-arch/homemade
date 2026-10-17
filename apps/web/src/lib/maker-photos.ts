@@ -1,6 +1,7 @@
 import 'server-only'
 import { prisma, UGCPhotoStatus, PatternType } from '@homemade/db'
 import { mediaUrl } from './media'
+import { crochetPatternPath } from './crochet/public-pattern'
 import {
   isPubliclyVisible,
   PATTERN_TYPE_LABEL,
@@ -245,7 +246,10 @@ async function resolvePatternTile(
         select: { name: true, slug: true },
       })
       if (!p?.slug) return null
-      return { title: p.name, href: `/studio/crochet/${p.slug}` }
+      // The public page; /studio/crochet/<slug> has no page of its own (only
+      // /print), so the old link 404'd. Crochet galleries show only once the
+      // category is visible, which is when this page is public too.
+      return { title: p.name, href: crochetPatternPath(p.slug) }
     }
     case PatternType.KNITTING_CHART: {
       const p = await prisma.knittingPattern.findUnique({

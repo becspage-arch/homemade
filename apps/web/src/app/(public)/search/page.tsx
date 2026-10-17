@@ -12,6 +12,7 @@ import { SearchForm } from './search-form'
 import { SearchResults } from './search-results'
 import { patternHeroUrl } from '@/lib/studio/pattern-hero'
 import { mediaUrl } from '@/lib/media'
+import { crochetCardHref } from '@/lib/crochet/public-pattern'
 
 import { buildPublicMetadata } from '@/lib/seo/metadata-helpers'
 
@@ -277,15 +278,8 @@ export default async function SearchPage({ searchParams }: PageProps) {
               {crochetHits.map((p) => (
                 <li key={p.id} className="search-pattern-card">
                   {/* Same destination as the crochet category grid's cards
-                      (crochet-pattern-grid.tsx): there is no public crochet
-                      pattern page yet, so a pattern opens in the Studio. */}
-                  <Link
-                    href={
-                      p.slug
-                        ? `/studio/crochet?crochetPatternSlug=${encodeURIComponent(p.slug)}`
-                        : `/studio/crochet?crochetPatternId=${encodeURIComponent(p.id)}`
-                    }
-                  >
+                      (crochet-pattern-grid.tsx): the public pattern page. */}
+                  <Link href={crochetCardHref(p)}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={mediaUrl(crochetHeroMedia(p), 'card') ?? ''} alt={p.name} loading="lazy" />
                     <span>{p.name}</span>

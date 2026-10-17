@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { prisma, TutorialStatus, Visibility, PatternType } from '@homemade/db'
 import { siteUrl } from '@/lib/seo/site-url'
+import { crochetSitemapRows } from '@/lib/crochet/public-pattern'
 
 /**
  * Dynamic sitemap. Google caps a single sitemap at 50,000 URLs; once the
@@ -70,10 +71,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Pattern detail pages (/<craft>/patterns/<slug>). Only house/library patterns
   // (ownerUserId null) that are PUBLIC, mirroring each detail route's own guard.
-  // Crochet/knitting patterns are intentionally absent — they have no public
-  // /<craft>/patterns/<slug> route (crochet surfaces via its source tutorial,
-  // already covered by the tutorial loop above).
-  const [crossStitchPatterns, needleworkPatterns] = await Promise.all([
+  // Crochet has /crochet/patterns/<slug> (emitted only once the crochet
+  // category is visible, below). Knitting patterns are absent: no public route.
+  const [crossStitchPatterns, needleworkPatterns, crochetPatterns] = await Promise.all([
     prisma.pattern.findMany({
       where: {
         type: PatternType.CROSS_STITCH,
@@ -88,6 +88,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       where: {
         ownerUserId: null,
         visibility: Visibility.PUBLIC,
+        slug: { not: null },
+      },
+      orderBy: { publishedAt: 'desc' },
+      select: { slug: true, updatedAt: true },
+    }),
+    prisma.crochetPattern.findMany({
+      where: {
+        ownerUserId: null,
+        visibility: Visibility.PUBLIC,
+        publishedAt: { not: null },
         slug: { not: null },
       },
       orderBy: { publishedAt: 'desc' },
@@ -186,6 +196,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
       })
     }
+  }
+
+  for (const p of crochetSitemapRows(publicCategorySlugs, crochetPatterns)) {
+    entries.push({
+      url: siteUrl(p.path),
+      lastModified: p.updatedAt,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    })
   }
 
   // Maker profiles
