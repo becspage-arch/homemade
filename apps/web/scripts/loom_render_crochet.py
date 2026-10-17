@@ -1111,10 +1111,36 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             # the strand (the faint fuzz of a real cotton)
             h = hm_amt(fpb, "hm_halo")
             n_groups = max(1, len(groups))
-            add_pile_hairs(ob, hexcol, dict(
+            # emit from a cheap proxy (one low-poly tube on the centreline at
+            # the strand's outer radius), not the plies: a mesh copy of every
+            # ply ran the bunny out of the 8 GB probe's memory (yarn2 r2b)
+            pcu = bpy.data.curves.new("yarn_halo_proxy", type="CURVE")
+            pcu.dimensions = "3D"
+            pcu.bevel_depth = 1.0
+            pcu.bevel_resolution = 1
+            pcu.resolution_u = 1
+            for st in group:
+                polys, rad_mm, _rfs = stroke_polys(st)
+                cl, spread = strand_centre(polys)
+                rr = (spread + rad_mm) * S
+                for poly in cl:
+                    if len(poly) < 2:
+                        continue
+                    poly = poly[::2] + ([poly[-1]] if len(poly) % 2 == 0 else [])
+                    sp = pcu.splines.new("POLY")
+                    sp.points.add(len(poly) - 1)
+                    for i, q in enumerate(poly):
+                        bx, by = q[0] * S, -q[1] * S
+                        sp.points[i].co = (bx, by, q[2] * S + st["radiusMm"] * S * 1.02 + z_offset + drape_z(bx, by), 1.0)
+                        sp.points[i].radius = rr
+            pob = bpy.data.objects.new("yarnhaloproxy_" + hexcol.lstrip("#"), pcu)
+            bpy.context.collection.objects.link(pob)
+            add_pile_hairs(pob, hexcol, dict(
                 fpb, pile_density=1.8 * h, pile_children=4, pile_len_mm=0.55,
                 pile_lean=1.0, pile_radius_mm=0.012, pile_tip_lift=0.3,
                 pile_max_hairs=fpb.get("hm_halo_max_hairs", 400000) / n_groups))
+            bpy.data.objects.remove(pob)
+            bpy.data.curves.remove(pcu)
             try:
                 bpy.context.scene.cycles_curves.shape = "RIBBONS"
                 bpy.context.scene.cycles_curves.subdivisions = 1
