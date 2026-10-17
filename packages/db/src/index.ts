@@ -94,6 +94,17 @@ export {
   type CrochetStructuredRow,
 } from './crochet-completeness'
 
+// Crochet cross-craft tags (brief + shelf + name), shared by the bulk
+// publisher's born-tagging and the back-catalogue backfill. Pure.
+export {
+  crochetTagSlugs,
+  crochetNameTagSlugs,
+  CROCHET_SHELF_TAGS,
+  CROCHET_FIGURATIVE_TREATMENTS,
+  type CrochetTagInput,
+  type CrochetTagResult,
+} from './crochet-tagging'
+
 // Reverse-sweep helpers (phase_technique_linking_002). The Inngest function
 // and the backfill script both call into `sweepForTechnique`; the pure
 // matcher helpers ship alongside for unit-testing without a database.
