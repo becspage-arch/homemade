@@ -44,6 +44,7 @@ import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
 import { sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
+import { clampGauge, gBall, gCone, gCord, gDisc, gLoop, gSphereRounds, gTube, gaugeYarn } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
 export interface CowChoices {
@@ -56,6 +57,9 @@ export interface CowChoices {
   eyeMm: number
   /** The listing stage (render-only). */
   stage?: HeroStage
+  /** The fine-gauge knob (gauge.ts; AmigurumiChoices.gauge): g x the rounds
+   *  and stitches in a yarn g x finer. Absent / 1 = today's calf exactly. */
+  gauge?: number
   name?: string
 }
 
@@ -220,6 +224,54 @@ const PROFILES: Record<AmigurumiSize, CowProfile> = {
   },
 }
 
+/** The equators and lengths each size's pieces are counted from (the table
+ *  above is these at gauge 1; `cowProfileAt` rebuilds it at gauge g). */
+const PROFILE_SPEC: Record<AmigurumiSize, {
+  body: [number, number]; head: [number, number]; muzzle: [number, number]; hornWidest: number
+  frontLeg: [number, number]; backLeg: [number, number]; tail: number
+}> = {
+  S: { body: [33, 1], head: [36, 2], muzzle: [12, 1], hornWidest: 9, frontLeg: [12, 7], backLeg: [18, 3], tail: 3 },
+  M: { body: [39, 1], head: [42, 2], muzzle: [18, 1], hornWidest: 11, frontLeg: [12, 10], backLeg: [18, 4], tail: 4 },
+  L: { body: [45, 1], head: [48, 2], muzzle: [21, 1], hornWidest: 12, frontLeg: [12, 13], backLeg: [18, 5], tail: 4 },
+}
+
+/**
+ * One size's calf at gauge g (gauge.ts): every piece g x the rounds and
+ * stitches. The mm placements (sinks, seats, lifts, the ears' press) are
+ * kept, because the calf is the same size in mm; only the counts move.
+ */
+/**
+ * The legs' drop onto the table at a gauge, MEASURED like the size table's
+ * lifts: at a finer gauge the stuffed body settles a few mm squatter (cow M
+ * 115 mm tall at gauge 1.4 against 120 at gauge 1), so the four legs sewn to
+ * it sit that much lower. Measured off the settled M calf (17 Oct): every
+ * leg's lowest point at gauge 1.3 is 4.0 mm under the table and at 1.4
+ * 2.7 mm; at 1.6 it is on it. Added to both leg lifts. A gauge or size not
+ * listed gets none (re-measure before shipping it).
+ */
+const GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.3': 4.0, 'M@1.4': 2.7 }
+
+function cowProfileAt(size: AmigurumiSize, g: number): CowProfile {
+  const base = PROFILES[size]
+  if (g === 1) return base
+  const p = PROFILE_SPEC[size]
+  const lift = GAUGE_LEG_LIFT[`${size}@${g}`] ?? 0
+  const sph = ([eq, extra]: [number, number]): number[] => gSphereRounds(eq, extra, g)
+  return {
+    ...base,
+    body: sph(p.body),
+    head: sph(p.head),
+    muzzle: sph(p.muzzle),
+    horn: gCone(4, p.hornWidest, 0, 6, g),
+    ear: gDisc(COW_EAR_CUP_ROUNDS[size], g),
+    frontLeg: gTube(p.frontLeg[0], p.frontLeg[1], g),
+    backLeg: gBall(p.backLeg[0], p.backLeg[1], g),
+    tail: gCord(p.tail, g),
+    legLift: base.legLift + lift,
+    frontLegLift: base.frontLegLift + lift,
+  }
+}
+
 /** Every round profile the cow is built from, for the registry's audited
  *  list (`AUDITED_PROFILES`): the save path accepts only pieces on it. */
 export const COW_AUDITED_PROFILES: number[][] = (() => {
@@ -337,7 +389,7 @@ const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
-export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
+export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPatch {
   // Five rounds at M (a circle ~60 mm across on the crown), loop stitch on
   // rounds 1, 3 and 5 and plain dc between: loops on every other round is
   // how a maker keeps a long-looped fringe from matting, and it is what lets
@@ -354,7 +406,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
   // divided by the same, so the curls stay the bar's size against the head.
   // Round 31: a round more at every size (M six rounds, loops on 1/3/5, the
   // sixth plain as the sewing edge) so the standing mound spreads horn to horn.
-  const rounds = size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36]
+  // Fine gauge (gauge.ts): g x the rounds, loops on every other round as
+  // before, each loop the same size in mm (g x its length in the finer yarn).
+  const rounds = gDisc(size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36], g)
   const last = rounds.length - 1
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
   return {
@@ -387,7 +441,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     // the crown (droop -35) in a tall tousled mound — r26's big rings lay flat.
     // Round 28: r27's stood as a solid helmet of packed curls — a little smaller, leaning out more.
     // Round 29: BIGGER open rings (the bar's are ~17 mm across on this head; r28's 10 mm curls packed into a dome).
-    loop: { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 },
+    loop: gLoop({ lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -400,13 +454,16 @@ export function cowFringe(colourHex: string, size: AmigurumiSize): HairPatch {
     plainEvery: 2,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     curlEvery: 4,
-    curlLoop: { twist: 1, curl: 0.4, halfWidthYr: 1.6 },
+    curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
     loopByRound: (k) =>
-      k === 0
-        ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
-        : k === last
-          ? { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 } // the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
-          : undefined,
+      gLoop(
+        k === 0
+          ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
+          : k === last
+            ? { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 } // the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            : undefined,
+        g,
+      ),
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
@@ -447,7 +504,8 @@ export function cowPresetName(choices: CowChoices): string {
 
 /** The maker's choices → the calf as a composition the loom can build. */
 export function buildCowProgram(choices: CowChoices): CompositionProgram {
-  const s = PROFILES[choices.size]
+  const g = clampGauge(choices.gauge)
+  const s = cowProfileAt(choices.size, g)
   const main = choices.mainHex
   const cream = choices.contrastHex
   const fd = (d: Dir): Dir => faceDir(d)
@@ -547,16 +605,19 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     yarnWeight: COW_YARN,
     hookMm: COW_HOOK_MM,
     yarnFibre: COW_FIBRE,
-    fibreTune: COW_FIBRE_TUNE,
+    // The pile cut-off is a strand radius (the fabric strand gets pile, the
+    // fat fringe loops do not); both strands are g x finer at gauge g.
+    fibreTune: g === 1 ? COW_FIBRE_TUNE : { ...COW_FIBRE_TUNE, pile_max_radius_mm: (COW_FIBRE_TUNE.pile_max_radius_mm as number) / g },
     ...COW_VIEW,
     parts,
     props,
-    embroidery: cowNostrils(s.muzzle, fd),
-    hair: [cowFringe(main, choices.size)],
+    embroidery: cowNostrils(s.muzzle, fd, g),
+    hair: [cowFringe(main, choices.size, g)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
       'two long front legs, two back legs and a tail, each worked as a spiral from a magic ring and sewn on, with a loop-stitch fringe sewn between the horns.',
+    ...cowGaugeFields(g),
   }
 }
 
@@ -590,15 +651,23 @@ const COW_FIBRE_TUNE: Record<string, number | boolean> = {
  *  capsule (counted from the magic-ring end, which is under the toy's RIGHT
  *  ear... the ring pole points along +x) and a stitch offset round that
  *  round, counted up from centre front. */
-function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir): EmbroideryFeature[] {
+/** The program's yarn fields at gauge g (empty at 1: the calf as it was). */
+function cowGaugeFields(g: number): Partial<CompositionProgram> {
+  if (g === 1) return {}
+  const y = gaugeYarn({ yarnWeight: COW_YARN, hookMm: COW_HOOK_MM }, g)
+  return { yarnWeight: y.yarnWeight, yarnRadiusMm: y.yarnRadiusMm, hookMm: y.hookMm, ...(y.gaugeText ? { gaugeText: y.gaugeText } : {}) }
+}
+
+function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir, g = 1): EmbroideryFeature[] {
   const n = muzzle.length
   const mid = (n + 1) / 2
   // Rounds along the capsule and stitches round it, in this muzzle's own
   // gauge: the straight rounds are 18 round at M, so a stitch is 20° of it.
   // Round 22: shorter and more slanted — r20's read as two upright bars.
   // Round 23 (bulky): rounds and stitches are 1.43x bigger, so fewer of each.
-  const outer = 2.0, inner = 0.9 // rounds either side of the middle
-  const upSt = 0.65, downSt = -0.65 // stitches above (+) / below (-) centre front
+  // Fine gauge: g x the rounds and stitches, so the same mm on the muzzle.
+  const outer = 2.0 * g, inner = 0.9 * g // rounds either side of the middle
+  const upSt = 0.65 * g, downSt = -0.65 * g // stitches above (+) / below (-) centre front
   const stitches = ([-1, 1] as const).map((side) => ({
     // Round index grows AWAY from the magic ring (+x, the toy's right), so the
     // toy's right nostril (side +1) sits on the lower round numbers.
