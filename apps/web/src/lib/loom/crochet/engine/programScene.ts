@@ -466,7 +466,7 @@ export function programScene(p: CrochetProgram, built: BuiltContinuous, yr: numb
       fabric: { widthMm: built.widthMm + 30, heightMm: built.heightMm + 30, hex },
       strokes: hung.strokes,
       fibre: p.yarnFibre ?? 'cotton',
-      view: hung.view as BlenderScene['view'],
+      view: hung.view as unknown as BlenderScene['view'],
       props: hung.props,
     }
   }
