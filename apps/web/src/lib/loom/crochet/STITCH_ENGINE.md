@@ -3650,6 +3650,86 @@ granny's round 1 reads as a mustard blob, its clusters do not separate into fans
 read short; the hexagon's start corner is skewed (125 and 114 deg against 120) and its posts are a
 tangle. For Fable.
 
+## 8p. EDGINGS IN TURNED ROWS — picot, shell lace, chain loop (2026-10-17)
+
+`engine/motifs/edging.ts`, opt-in like §8o: NOT imported by `motifs/index.ts`, so `listMotifs()`,
+every registered motif, hash and size table are unchanged. `buildEdging(spec, opts)` /
+`buildEdgingPreset(id)` return a `BuiltMotif` plus `edging` (counts, row 2's anchor crowns, one
+feature node per repeat, the base row's crowns, crowding) and the spec. `edgingWords`,
+`edgingCounts` and `edgingChart` come from the same spec; `edgingMetrics` measures flatness,
+clipping, the base row's bow, the strip's size, and per repeat its length and its feature's height
+and place. Tests: `motifs/edging.test.ts` (audit, clips, flat, straight, periodic, words = build,
+completeness gate, size per repeat, DK). `EDGING_TUNE` holds the settled values (mutable only so a
+probe can sweep them).
+
+### Construction
+- A strip of two TURNED rows on a foundation chain. Row 1: 1 dc in the 2nd ch from the hook and in
+  each ch along (right to left, front face). Row 2: ch 1 and turn, 1 dc in the first dc, then the
+  bracket `repeats` times (left to right, back face). The base row is a multiple of the repeat
+  width plus 1 dc (picot 2, shell 6, loop 3), the chain that plus 1.
+- THE TURN, in the kit: a turned stitch is the ordinary one rotated half a turn about its own
+  height axis (along-row reversed, height kept, z flipped). `alongTurned` / `polarTurned` are the
+  frames whose height is the along-row direction turned +90° (the mirror of `along` / `polar`);
+  the kit stitch takes an optional `fz: -1` (passed to `emitPlainStitch`, its crown canopy mirrored
+  in z), and `chain(..., { fz: -1 })` lays a turned row's chain turned half over about its own line
+  (lateral and z flipped, back bump on world +z), its cross links carrying `zSign: -1` so the
+  audit reads "rides over its fold" on that face. All three default off: bit-identical.
+- The FOUNDATION CHAIN is the real kit chain, PINNED as the strip's anchor (`anchorPins` = the
+  slip knot and the whole chain), as every flat row build pins its foundation (§2). §8m found that a
+  stitch into a free chain's leg drags its crossings out; the base row goes into every chain of
+  one. Row 1 hooks under each chain's two top loops (a space link over that loop's two sections)
+  at half depth (`baseHookDepth` 0.5): full depth ran the hook through the pinned back bump
+  (0.55 yr, 15 clips). The chain starts 1.2 yr past the slip knot (pinned on top of each other,
+  they never settle apart: 10 clips).
+- Picot: ch 3 from the dc just made, up over the skipped dc and back down (its last 2 chains
+  turning, wrap links), closed by a sl st into the first of the 3 (the 3rd ch from the hook, as
+  the starter row says): under that chain at its R leg, the sl st's frame AGAINST the chain so it
+  stands toward the inside of the ring, dive 1.5x.
+- Shell: 5 tr into one dc, fanned in a turned polar frame about a point 2.4 yr below the base dc's
+  crown, each tr at its own width round the arc, no side spread, the later four tucked 1.5x deep.
+- Loop: ch 5 arched over the 2 skipped dc to 1 yr short of the next dc's crown, pitch 3.2 yr.
+
+### Counts (the starter rows): every starter count audits clean, so the presets ARE the starters
+- Picot 19 / 10 (9 picots between 10 dc; a picot is not counted). Shell 19 / 19 (3 shells of 5 tr
+  between 4 dc; each tr of a shell counts). Loop 19 / 7 (6 ch-5 loops between 7 dc; the chains are
+  not counted). The row text says which convention it uses.
+- The rail discriminates: a 7-tr shell in the same 6-st repeat (`SHELL_CROWDED`) crowds 1.26 and
+  fails 10 interlocks; 6 tr (1.08) fails 8. The 5-tr shell is 0.90.
+- Sizes, fine cotton (4 ply, 2.5 mm): the strip is 70.5 mm long by 15.4 / 14.9 / 18.5 mm deep; per repeat
+  7.0 mm (picot), 21.1 mm (shell), 10.5 mm (loop). DK: 103 mm. The June rows say "about 12 cm" for
+  19 dc of 4 ply; 19 dc of 4 ply is about 7 cm (a 4 ply dc is about 3.5 mm), so their size line is
+  wrong, not the build.
+
+### What the numbers taught
+- A turned row's chains MUST be the turned chain. Built front-face (no flip) a loop's crossings
+  settled under their folds the moment the loops were moved off the next dc's crown; flipped, the
+  loop audits clean over a band (pitch 3.0-3.2, end 0.5-1.5 yr).
+- A chain loop ended ON the next dc's crown buckles row 2 into a period-2 lean (anchors 8.5 / 12.5
+  mm apart at 1000 relax iterations, growing with iterations): end it 1 yr short and every interior
+  repeat is 10.53 mm to 0.5%.
+- The turning ch 1 decides the first repeat and the clip count: fed a full row height (pitch 1.0 x
+  the row) leaning 0.6-1.2 yr out it is clean on all three; at 0.8 x it presses the first dc's
+  down-leg (0.55-0.58 yr, 1 clip).
+- The picot is the fragile one, as the granny is (§8o): the sl st's frame decides it. Along the
+  row the sl st was dragged sideways by the next dc (dx 3.9 yr); along the chain it floated above
+  its leg; against the chain (toward the ring's inside) it holds. Clean band at pitch 2.5-2.6 for
+  rise 3.0-3.6 and ring width 0.4-1.0; 2.4 and 2.7+ fail 1-8 links. The picot's PERIODICITY is
+  even more fragile than its audit: across that clean band the interior repeats vary 2.6-27%; the
+  settled point (pitch 2.5, rise 3.4, width 0.8) is the most even (interior repeats to 3%, the turning
+  end 8.6% long). Re-run the band (`edging.test.ts` fails first) before changing anything upstream.
+- Ends: a strip's two end repeats have a neighbour on one side only and settle 2-9% long; the
+  test holds the interior to 4% and the ends to 10%.
+
+### Rendered (Fargate probe, r1, 128 spp, 900 px): `crochet-bar/proofs/edging/`
+A build job, not a look pass. The shell lace reads as three scallops and the chain loop as six open
+arches from across the room; the picot does not read as picots. Short of the bar: the picots settle
+into closed knots, no open ring; the shells' five tr are a jumble with no fan of separate posts, and
+the scallops differ a little in size; the loops are chunky twisted cord and touch their neighbours, so
+the holes are small; on all three the pinned foundation chain shows a row of bead bumps along its
+edge and a two-chain tail past the right end (the skipped chain and the hook loop), the two dc rows
+read as one knobbly band, and row 2's anchor dc lean toward the previous repeat (anchors uneven
+where the base is even). The strip sits small in the default flat-lay frame. For Fable.
+
 ---
 
 ## 9. What did NOT work (the failure log — don't repeat these)
