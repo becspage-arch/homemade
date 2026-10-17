@@ -3569,6 +3569,26 @@ Round 1-2 renders and side-by-sides: `crochet-bar/proofs/motifs/`; the job log i
 
 ---
 
+## 8n. THE EAR PIECE — cupped ears and open lops (2026-10-17)
+
+`engine/earPiece.ts`: one reusable ear, built by `buildTube` and audited in its settled frame exactly as the
+composition does (`buildPart` / `auditPart`), opt-in on the cow and bunny presets (`cuppedEars`, default off).
+
+- **'cup'** (the bar cow's): an OPEN BOWL from the ring, +6 a round to `width`, `depth` rounds even, `rimRoll`
+  rounds folded back over the outside (the tube's own fold brim, so the rolled lip is real rounds), `pinch` (two
+  plates in a V at the base of the rim, relax.ts `pinch`), `squash` (an oval press). The hollow faces local -z,
+  the pinched base local -y; it is sewn by the ring with `poleIn`.
+- **'lop'** (the bar bunny's): tip first, +3 a round (a +6 round off the ring is a flat disc and flattens to a
+  plank end), straight, narrowed in threes to the base and left OPEN; pressed with BOWED plates (relax.ts
+  `pressShape`, contact along the plate normal) so the lined front face (a tapestry panel, local +x) is hollow.
+- Measured: a pressed-FLAT open cup fails its rim rounds' hooks under 10 yr of press (and at 12 it is barely
+  pressed), so the cup is a bowl, not a folded flat piece. Bowed plates that clamp along x (not the normal)
+  shear the fabric and tear hooks; along the normal they audit clean. Pinch 1 (a 50° V) tears the rim round at
+  widths 24-30; a 35° V tears it at every width. A lop's bow only bites where the plate gap nears the two layers'
+  own thickness, so its hollow is small (1.5-1.8 mm at fine); press 6 yr fails, 8-10 is the floor.
+- Tests: `earPiece.test.ts` (every preset size and the option edges audit clean; a cup's hollow, a pinch's
+  narrowing, a lop's hollow and rounded tip are measured; the lining faces front; the switches change only the ears).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

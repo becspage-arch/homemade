@@ -180,7 +180,7 @@ const YARN_WORDS: Partial<Record<YarnWeight, string>> = {
 /** Every composition piece is worked in sc, written in UK terms. */
 const UK_SC = 'dc'
 
-function withPanel(lines: string[], piece: CompositionPiece): string[] {
+export function withPanel(lines: string[], piece: Pick<CompositionPiece, 'rounds' | 'panel'>): string[] {
   const runs = piece.panel!
   const out: string[] = []
   let inContrast = false

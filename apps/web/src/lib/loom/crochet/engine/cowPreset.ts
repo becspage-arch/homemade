@@ -43,7 +43,8 @@ import type { HairPatch } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
 import { sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
-import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
+import { YARN_WEIGHT_RADIUS_MM, writeInstructions, type YarnFibre, type YarnWeight } from './program'
+import { earPart, type EarPieceOptions } from './earPiece'
 import type { HeroStage } from '../../render/blenderScene'
 
 export interface CowChoices {
@@ -56,6 +57,11 @@ export interface CowChoices {
   eyeMm: number
   /** The listing stage (render-only). */
   stage?: HeroStage
+  /** CUPPED EARS (cupped-ear pass, 2026-10-17; `earPiece.ts`): open bowls
+   *  with a rolled rim, pinched at the base, the hollow facing out, in place
+   *  of the pressed half-ball ears. Opt-in: absent / false = the round 31
+   *  ears, and every geometry hash is unchanged. */
+  cuppedEars?: boolean
   name?: string
 }
 
@@ -164,6 +170,21 @@ export const COW_EAR_CUP_ROUNDS: Record<AmigurumiSize, number[]> = {
   S: [6, 12, 18],
   M: [6, 12, 18, 24],
   L: [6, 12, 18, 24, 30],
+}
+
+/**
+ * THE CUPPED EAR PIECE (cupped-ear pass, 2026-10-17; `earPiece.ts`, opt-in via
+ * `CowChoices.cuppedEars`). The bar's ears are round cups with a visible
+ * hollow and a thick rolled rim, seated just under the horns and angled
+ * forward: an open bowl worked from the ring (+6 a round), worked even for
+ * the depth, one round folded back over the outside for the rolled rim, and
+ * pinched at the base as it is sewn. Every size audits clean (earPiece.test.ts).
+ * Starting numbers only; the look is tuned by eye.
+ */
+export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
+  S: { kind: 'cup', width: 12, depth: 1, rimRoll: 1, pinch: 0.6 },
+  M: { kind: 'cup', width: 12, depth: 2, rimRoll: 1, pinch: 0.6 },
+  L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
 /**
@@ -433,6 +454,37 @@ function cowEarWords(rounds: number[]): string[] {
   ]
 }
 
+/** One cupped ear (`COW_CUP_EAR`): sewn by its back (the ring) where the
+ *  round 31 ear is, the open bowl turned forward and out along the same aim
+ *  so the lens looks into the hollow, and turned about that axis so the
+ *  pinched base (the piece's local -y) points down and in toward the head. */
+function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir): AmigurumiPart {
+  const aim = fd({ x: side * EAR_AIM.x, y: EAR_AIM.y, z: EAR_AIM.z })
+  // poleIn: the piece's +z points back along the aim. The spin names where
+  // local +x looks: +x = (+y) × (+z), with +y up and out (the base down-in).
+  const w = norm({ x: -aim.x, y: -aim.y, z: -aim.z })
+  const up = norm(fd({ x: side * 0.5, y: 0, z: 1 }))
+  const spin = { x: up.y * w.z - up.z * w.y, y: up.z * w.x - up.x * w.z, z: up.x * w.y - up.y * w.x }
+  return earPart(COW_CUP_EAR[choices.size], {
+    name: side < 0 ? 'ear-l' : 'ear-r',
+    colourHex: choices.mainHex,
+    sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
+    place: {
+      on: 'head',
+      dir: fd({ x: side * EAR_DIR.x, y: EAR_DIR.y, z: EAR_DIR.z }),
+      aim,
+      spin,
+      seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
+      offset: { x: side * 9 },
+    },
+  }, YARN_WEIGHT_RADIUS_MM[COW_YARN])
+}
+
+function norm(v: Dir): Dir {
+  const l = Math.hypot(v.x, v.y, v.z) || 1
+  return { x: v.x / l, y: v.y / l, z: v.z / l }
+}
+
 /** Lift a hex colour's value by `f` (0..1), hue and saturation kept. */
 function lighten(hex: string, f: number): string {
   const n = parseInt(hex.slice(1), 16)
@@ -480,7 +532,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
-  for (const side of [-1, 1] as const) {
+  if (choices.cuppedEars) {
+    for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd))
+  } else for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.ear, colourHex: main,
       tube: { anchor: 'ring', join: 'spiral', cap: 'dome' },
