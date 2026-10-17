@@ -3384,21 +3384,22 @@ VARIANT_BUILDERS = {
 # `view.photo: "v2"` turns all of it on; each part is its own knob (a knob set
 # on the view wins over the v2 default). Absent = the stage exactly as before.
 #   photoLight      "window" | "stage"      the window key rig (v2 "window")
-#   photoKey        key strength, x the studio key at the piece   (2.4)
+#   photoKey        key strength, x the studio key at the piece   (1.6)
 #   photoKeyDeg     key azimuth: 0 = from the camera, 90 = camera left,
-#                   180 = from behind; negative = camera right    (75)
-#   photoKeyElev    key elevation (deg)                           (28)
+#                   180 = from behind; negative = camera right    (80)
+#   photoKeyElev    key elevation (deg)                           (30)
 #   photoKeySoft    key size / its distance (softness)            (0.55)
-#   photoFill       fill strength (the far side)                  (0.3)
+#   photoKeySpread  key spread (deg): narrower keeps it off the wall  (70)
+#   photoFill       fill strength (the far side)                  (0.15)
 #   photoRim        rim strength (behind, the key's side)         (0.9)
-#   photoSetLight   x the stage's own lights (window glow, wall)  (0.4)
-#   photoStudio     x the studio key/fill kept on the toy         (0.3)
-#   photoAmbient    x the world strength                          (0.75)
+#   photoSetLight   x the stage's own lights (window glow, wall)  (0.2)
+#   photoStudio     x the studio key/fill kept on the toy         (0.15)
+#   photoAmbient    x the world strength                          (0.4)
 #   photoExposure   added to the stage exposure                   (0.0)
 #   photoFstop      a REAL f-number (f/5.6 -> 0.056 in Blender)   (5.6)
 #   photoFocus      "face" | "centre"   focus on the eyes / centre ("face")
 #   photoCamera     "threequarter" | "stage"                      ("threequarter")
-#   photoYawDeg     the turn, added to the scene's yaw            (16)
+#   photoYawDeg     the turn, added to the scene's yaw; nursery 6     (16)
 #   photoTiltDeg    camera tilt (90 = level; stage = 80); the cow bar
 #                   looks down ~13 deg onto the cloth             (77)
 #   photoFrame      the piece's height as a fraction of the frame height;
@@ -3408,18 +3409,18 @@ VARIANT_BUILDERS = {
 #   photoProps      "v2" | "v1"   dried bunch v2, spring jug fix  ("v2")
 #   photoBlanket    "auto" | "knit" | "linen" | "none"            ("auto")
 #                   auto = the stage's own cloth, softly crumpled
-#   photoCrumple    crumple depth, x piece height                 (0.045)
+#   photoCrumple    crumple depth, x piece height                 (0.09)
 PHOTO_V2 = dict(
-    photoLight="window", photoKey=3.0, photoKeyDeg=80.0, photoKeyElev=30.0, photoKeySoft=0.55,
-    photoFill=0.15, photoRim=0.9, photoSetLight=0.3, photoStudio=0.15, photoAmbient=0.5,
-    photoExposure=0.15, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
+    photoLight="window", photoKey=1.6, photoKeyDeg=80.0, photoKeyElev=30.0, photoKeySoft=0.55, photoKeySpread=70.0,
+    photoFill=0.15, photoRim=0.9, photoSetLight=0.2, photoStudio=0.15, photoAmbient=0.4,
+    photoExposure=0.0, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.68, photoAim=0.5,
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
 PHOTO_V1 = dict(
-    photoLight="stage", photoKey=2.4, photoKeyDeg=75.0, photoKeyElev=28.0, photoKeySoft=0.55,
+    photoLight="stage", photoKey=2.4, photoKeyDeg=75.0, photoKeyElev=28.0, photoKeySoft=0.55, photoKeySpread=70.0,
     photoFill=0.3, photoRim=0.9, photoSetLight=0.4, photoStudio=0.3, photoAmbient=1.0,
     photoExposure=0.0, photoFstop=None, photoFocus="centre", photoCamera="stage",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.0, photoAim=0.5,
@@ -3533,6 +3534,13 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
     made = []
     key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, KEY_V2)
     made.append(key)
+    try:
+        # r5: a window's light falls on the toy and the sill in front of it,
+        # not across the whole room: narrow the key's spread so the wall
+        # behind stays in its own (dimmer) light and the toy stands out
+        key.data.spread = math.radians(po["photoKeySpread"])
+    except Exception:
+        pass
     if po["photoFill"] > 0:
         side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
         made.append(light(at(side * 45.0, 12.0, 1.1 * r), aim, po["photoFill"], 1.4 * r, (1.0, 0.97, 0.94)))
@@ -3670,7 +3678,9 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
         add_curve(("stem", kk % 4), pts, 0.0032 * H * (0.8 + 0.4 * rnd(8)))
         tip = Vector(pts[-1])
         pre = Vector(pts[-3])
-        u = (tip - pre).normalized()
+        u = (tip - pre)
+        u.z *= 0.3          # r4: heads lie along the cloth (a keep-out push could stand a spike on end)
+        u = u.normalized()
         side = Vector((-u.y, u.x, 0.0)).normalized()
         up = u.cross(side).normalized()
         if up.z < 0:

@@ -139,7 +139,7 @@ export function isHeroPhoto(v: unknown): v is HeroPhoto {
 export interface HeroPhotoKnobs {
   /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights. */
   photoLight?: 'window' | 'stage'
-  /** Key strength relative to the studio key at the piece (3). */
+  /** Key strength relative to the studio key at the piece (1.6). */
   photoKey?: number
   /** Key azimuth in degrees: 0 from the camera, 90 camera left, 180 behind;
    *  negative = camera right (80). */
@@ -148,17 +148,19 @@ export interface HeroPhotoKnobs {
   photoKeyElev?: number
   /** Key size over its distance: bigger = softer shadow edges (0.55). */
   photoKeySoft?: number
+  /** Key spread in degrees: narrower keeps the window light on the toy and off the wall (70). */
+  photoKeySpread?: number
   /** Fill strength on the far side (0.15). */
   photoFill?: number
   /** Rim strength, from behind on the key's side (0.9). */
   photoRim?: number
-  /** Multiplier on the stage's own room lights (0.3). */
+  /** Multiplier on the stage's own room lights (0.2). */
   photoSetLight?: number
   /** Multiplier on the studio key + fill kept on the toy (0.15). */
   photoStudio?: number
-  /** Multiplier on the world (ambient) strength (0.5). */
+  /** Multiplier on the world (ambient) strength (0.4). */
   photoAmbient?: number
-  /** Added to the stage exposure (0.15). */
+  /** Added to the stage exposure (0). */
   photoExposure?: number
   /** A real f-number (5.6); smaller = a creamier background. */
   photoFstop?: number
@@ -189,16 +191,17 @@ export interface HeroPhotoKnobs {
  *  the parity test; the renderer applies them itself). */
 export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoLight: 'window',
-  photoKey: 3,
+  photoKey: 1.6,
   photoKeyDeg: 80,
   photoKeyElev: 30,
   photoKeySoft: 0.55,
+  photoKeySpread: 70,
   photoFill: 0.15,
   photoRim: 0.9,
-  photoSetLight: 0.3,
+  photoSetLight: 0.2,
   photoStudio: 0.15,
-  photoAmbient: 0.5,
-  photoExposure: 0.15,
+  photoAmbient: 0.4,
+  photoExposure: 0,
   photoFstop: 5.6,
   photoFocus: 'face',
   photoCamera: 'threequarter',
