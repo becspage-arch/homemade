@@ -1399,6 +1399,30 @@ def mem_saver_on(data):
     return bool(v.get("memSaver") or ft.get("mem_saver"))
 
 
+def mem_log(tag):
+    """memSaver diagnostics: this process's resident memory at a named point
+    (flushed, so it survives an OOM kill)."""
+    try:
+        with open("/proc/self/status") as f:
+            rss = next((ln.split()[1] for ln in f if ln.startswith("VmRSS")), "?")
+        print("[mem]", tag, "rss_kB", rss, flush=True)
+    except Exception:
+        pass
+
+
+def compact_bvh(scene):
+    """memSaver step 3: Cycles' compact BVH (Embree keeps indices into the
+    shared vertex buffers instead of its own triangle copies): the same rays
+    hit the same triangles, a little slower, with less memory."""
+    for k in ("debug_use_compact_bvh",):
+        if hasattr(scene.cycles, k):
+            setattr(scene.cycles, k, True)
+            print("[mem]", k, "on", flush=True)
+            return True
+    print("[mem] no compact BVH switch in this Blender", flush=True)
+    return False
+
+
 def yarn_curves_to_meshes():
     """memSaver step 1: every yarn curve object becomes a plain mesh object of
     its own evaluated geometry (same name, transform, materials, visibility) and
@@ -1433,7 +1457,7 @@ def yarn_curves_to_meshes():
         for k, v in flags.items():
             setattr(nob, k, v)
         dg = bpy.context.evaluated_depsgraph_get()   # drop the freed curve's evaluated copy now
-    print("[mem] yarn curves -> meshes", len(names))
+    print("[mem] yarn curves -> meshes", len(names), flush=True)
 
 
 def free_scene_data(data):
@@ -1453,7 +1477,7 @@ def free_scene_data(data):
         ctypes.CDLL("libc.so.6").malloc_trim(0)
     except Exception:
         pass
-    print("[mem] scene data freed")
+    mem_log("scene data freed")
 
 
 def main():
@@ -1463,6 +1487,8 @@ def main():
     with open(in_path) as f:
         data = json.load(f)
 
+    if mem_saver_on(data):
+        mem_log("scene json parsed")
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
     strokes = data["strokes"]
@@ -1576,6 +1602,8 @@ def main():
         by_fibre.setdefault(st.get("fibre", fibre), []).append(st)
     for stroke_fibre, fibre_strokes in by_fibre.items():
         build_yarn(fibre_strokes, drape, z_offset, stroke_fibre)
+    if mem_saver_on(data):
+        mem_log("yarn built")
 
     # Non-yarn notions (safety eyes, a nose). Absent from every scene that has
     # none, so those renders are unchanged.
@@ -1709,8 +1737,11 @@ def main():
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
     if mem_saver_on(data):
+        mem_log("before memSaver")
         yarn_curves_to_meshes()
+        mem_log("yarn meshes")
         free_scene_data(data)
+        compact_bvh(scene)
         strokes = by_fibre = fibre_strokes = None
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
