@@ -38,8 +38,8 @@ export const DESIGNER_GAUGES: readonly number[] = [1, ...TESTED_GAUGES]
  *  listed has not passed, and the designer refuses it. */
 export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, Readonly<Partial<Record<AmigurumiSize, readonly number[]>>>>>> = {
   bear: { S: [1.3, 1.4], M: TESTED_GAUGES, L: [1.3, 1.4] },
-  bunny: { S: [1.3, 1.4], M: TESTED_GAUGES, L: [1.4] },
-  cow: { M: TESTED_GAUGES },
+  bunny: { S: [1.3, 1.4], M: TESTED_GAUGES, L: [1.3, 1.4] },
+  cow: { M: TESTED_GAUGES, L: [1.3] },
 }
 
 /** Is gauge g audited for this base and size (g = 1 always is)? */
