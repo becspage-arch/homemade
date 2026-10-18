@@ -32,12 +32,19 @@ import {
 /** The gauges a saved design may carry: 1 (off) and the tested ones. */
 export const DESIGNER_GAUGES: readonly number[] = [1, ...TESTED_GAUGES]
 
-/** gauge.test.ts builds, relaxes and audits the whole toy for these bases at
- *  size M only (the cow's leg lift is measured at M only, `GAUGE_LEG_LIFT`). */
-export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, readonly AmigurumiSize[]>>> = {
-  bear: ['M'],
-  bunny: ['M'],
-  cow: ['M'],
+/** gauge.test.ts builds, relaxes and audits the whole toy for these bases,
+ *  sizes and gauges (`SIZES=S,L GAUGES=1.4 BASES=bunny` runs one; the cow's
+ *  leg lift is measured at M only, `GAUGE_LEG_LIFT`). A size x gauge not
+ *  listed has not passed, and the designer refuses it. */
+export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, Readonly<Partial<Record<AmigurumiSize, readonly number[]>>>>>> = {
+  bear: { S: [1.4], M: TESTED_GAUGES },
+  bunny: { S: [1.4], M: TESTED_GAUGES },
+  cow: { M: TESTED_GAUGES },
+}
+
+/** Is gauge g audited for this base and size (g = 1 always is)? */
+export function gaugeAudited(base: AmigurumiBase, size: AmigurumiSize, g: number): boolean {
+  return g === 1 || (GAUGE_AUDITED[base]?.[size]?.includes(g) ?? false)
 }
 
 /** earPiece.test.ts audits the ear pieces at every size (and gauge.test.ts at
@@ -57,9 +64,11 @@ export function designerChoiceProblems(c: Pick<AmigurumiChoices, 'base' | 'size'
   if (!DESIGNER_GAUGES.includes(g)) {
     problems.push(`A gauge of ${g} has not been tested; choose one of ${DESIGNER_GAUGES.join(', ')}.`)
   } else if (g !== 1) {
-    if (!GAUGE_AUDITED[c.base]?.includes(c.size)) {
-      const ok = Object.entries(GAUGE_AUDITED).map(([b, s]) => `${b} (${s!.join('/')})`).join(', ')
-      problems.push(`A finer gauge has only been tested on the ${ok}.`)
+    if (!gaugeAudited(c.base, c.size, g)) {
+      const ok = Object.entries(GAUGE_AUDITED)
+        .map(([b, bySize]) => `${b} (${Object.entries(bySize!).filter(([, gs]) => gs!.includes(g)).map(([sz]) => sz).join('/') || 'none'})`)
+        .join(', ')
+      problems.push(`Gauge ${g} has only been tested on the ${ok}.`)
     }
     if (c.hat) problems.push('A finer gauge has not been tested with a hat.')
     if (c.hair && c.hair !== 'none') problems.push('A finer gauge has not been tested with hair.')
