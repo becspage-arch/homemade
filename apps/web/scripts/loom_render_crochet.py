@@ -961,6 +961,10 @@ def fuzz_shell_material(name, hexcol, fibre):
     return mat
 
 
+# `view.memStride` (with memSaver; 1 = every point, the default): see write_points.
+MEM_STRIDE = 1
+
+
 def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
     # One curve object per (colour, radius) for speed. Bulky yarn sits proud.
     # `drape`, if given, is (cx, cy, amp, fx, fy) — a low-frequency height field
@@ -1048,9 +1052,19 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             for pi, poly in enumerate(polys):
                 if len(poly) < 2:
                     continue
+                rf = rfs[pi] if rfs else None
+                if MEM_STRIDE > 1 and len(poly) > 2:
+                    # memSaver's `memStride` (render-only, off = 1): every Nth
+                    # point along the strand (ends kept). The scene's points sit
+                    # ~0.24 mm apart, about one pixel at 850 px, so a stride of 2
+                    # halves the tube's triangles with sub-pixel chord error.
+                    keep = list(range(0, len(poly), MEM_STRIDE))
+                    if keep[-1] != len(poly) - 1:
+                        keep.append(len(poly) - 1)
+                    poly = [poly[i] for i in keep]
+                    rf = [rf[i] for i in keep] if rf else None
                 sp = cu.splines.new("POLY")
                 sp.points.add(len(poly) - 1)
-                rf = rfs[pi] if rfs else None
                 for i, p in enumerate(poly):
                     bx = p[0] * S
                     by = -p[1] * S
@@ -1489,6 +1503,9 @@ def main():
 
     if mem_saver_on(data):
         mem_log("scene json parsed")
+        global MEM_STRIDE
+        MEM_STRIDE = max(1, int((data.get("view") or {}).get("memStride", 1) or 1))
+        print("[mem] stride", MEM_STRIDE, flush=True)
     bpy.ops.wm.read_factory_settings(use_empty=True)
     scene = bpy.context.scene
     strokes = data["strokes"]
