@@ -61,7 +61,6 @@ test('a finer gauge only where gauge.test.ts builds the whole toy', () => {
   // Bases the gauge test does not build, sizes it does not build, and a hat.
   for (const extra of [
     { base: 'cat', gauge: 1.4 }, { base: 'ball', gauge: 1.3 }, { base: 'doll', gauge: 1.4 },
-    { base: 'cow', size: 'S', gauge: 1.3 }, { base: 'cow', size: 'L', gauge: 1.4 },
     { gauge: 1.4, hat: 'nightcap' },
   ] as Partial<AmigurumiChoices>[]) {
     assert.ok(!parse(choices(extra)).success, `accepted ${JSON.stringify(extra)}`)
@@ -75,7 +74,10 @@ test('a finer gauge only where gauge.test.ts builds the whole toy', () => {
       }
     }
   }
-  for (const extra of [{ size: 'S', gauge: 1.4 }, { base: 'bear', size: 'S', gauge: 1.4 }] as Partial<AmigurumiChoices>[]) {
+  for (const extra of [
+    { size: 'S', gauge: 1.4 }, { base: 'bear', size: 'S', gauge: 1.4 }, { size: 'L', gauge: 1.3 },
+    { base: 'cow', size: 'S', gauge: 1.3 }, { base: 'cow', size: 'L', gauge: 1.4 },
+  ] as Partial<AmigurumiChoices>[]) {
     assert.ok(parse(choices(extra)).success, `refused ${JSON.stringify(extra)} (audited clean in gauge.test.ts)`)
   }
   // Gauge 1 is fine everywhere (it is today's toy).
@@ -165,7 +167,7 @@ test('every accepted combination builds on audited pieces; an unaudited gauge bu
   }
   // Past the choice gate (were it bypassed), the piece check still refuses
   // a gauge build no test audited.
-  for (const c of [choices({ base: 'cat', gauge: 1.4 }), choices({ base: 'cow', size: 'L', gauge: 1.6 }), choices({ base: 'cow', size: 'S', gauge: 1.3 })]) {
+  for (const c of [choices({ base: 'cat', gauge: 1.4 }), choices({ base: 'cat', size: 'L', gauge: 1.6 }), choices({ base: 'bear', size: 'L', gauge: 2 })]) {
     const built = buildDesignerProgram(c, 'x')
     assert.ok('problems' in built, `${c.base}/${c.size} @ ${c.gauge} built on the trusted path`)
   }
