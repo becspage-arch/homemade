@@ -39,7 +39,7 @@ export const DESIGNER_GAUGES: readonly number[] = [1, ...TESTED_GAUGES]
 export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, Readonly<Partial<Record<AmigurumiSize, readonly number[]>>>>>> = {
   bear: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
   bunny: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
-  cow: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3] },
+  cow: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
 }
 
 /** Is gauge g audited for this base and size (g = 1 always is)? */
