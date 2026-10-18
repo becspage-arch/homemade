@@ -33,9 +33,10 @@ import {
 export const DESIGNER_GAUGES: readonly number[] = [1, ...TESTED_GAUGES]
 
 /** gauge.test.ts builds, relaxes and audits the whole toy for these bases,
- *  sizes and gauges (`SIZES=S,L GAUGES=1.4 BASES=bunny` runs one; the cow's
- *  leg lift is measured at M only, `GAUGE_LEG_LIFT`). A size x gauge not
- *  listed has not passed, and the designer refuses it. */
+ *  sizes and gauges (`SIZES=S,L GAUGES=1.4 BASES=bunny` runs one; M since 17
+ *  Oct, S and L since 18 Oct with measured nudges and leg lifts: gauge.ts
+ *  MEASURED_NUDGES, cowPreset GAUGE_LEG_LIFT, BUNNY_GAUGE_LEG_LIFT). A size x
+ *  gauge not listed has not passed, and the designer refuses it. */
 export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, Readonly<Partial<Record<AmigurumiSize, readonly number[]>>>>>> = {
   bear: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: TESTED_GAUGES },
   bunny: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: TESTED_GAUGES },
