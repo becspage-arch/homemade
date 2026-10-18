@@ -37,7 +37,7 @@ export const DESIGNER_GAUGES: readonly number[] = [1, ...TESTED_GAUGES]
  *  leg lift is measured at M only, `GAUGE_LEG_LIFT`). A size x gauge not
  *  listed has not passed, and the designer refuses it. */
 export const GAUGE_AUDITED: Readonly<Partial<Record<AmigurumiBase, Readonly<Partial<Record<AmigurumiSize, readonly number[]>>>>>> = {
-  bear: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
+  bear: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: TESTED_GAUGES },
   bunny: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
   cow: { S: TESTED_GAUGES, M: TESTED_GAUGES, L: [1.3, 1.4] },
 }

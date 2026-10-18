@@ -14,6 +14,8 @@
  *   cd apps/web && npx tsx src/lib/loom/crochet/engine/gauge.test.ts
  *
  * GAUGES=1.3 or BASES=cow narrows a run (GAUGES=1.4 also passes: the proof gauge).
+ * SIZES=S,L runs the whole toy at other sizes (default M), EAR_SIZES= skips the
+ * ear-piece checks; designerAudit.ts GAUGE_AUDITED lists what has passed.
  */
 
 import assert from 'node:assert/strict'
