@@ -45,7 +45,7 @@ import { sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
 import { earPart, type EarPieceOptions } from './earPiece'
-import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm } from './gauge'
+import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
 export interface CowChoices {
@@ -274,10 +274,14 @@ const PROFILE_SPEC: Record<AmigurumiSize, {
  * 115 mm tall at gauge 1.4 against 120 at gauge 1), so the four legs sewn to
  * it sit that much lower. Measured off the settled M calf (17 Oct): every
  * leg's lowest point at gauge 1.3 is 4.0 mm under the table and at 1.4
- * 2.7 mm; at 1.6 it is on it. Added to both leg lifts. A gauge or size not
- * listed gets none (re-measure before shipping it).
+ * 2.7 mm; at 1.6 it is on it. Added to both leg lifts. Measured the same
+ * way off the whole-toy audit (gauge.test.ts SIZES=S,L, 18 Oct): S at 1.3
+ * sat 3.7 mm under the table, S at 1.4 1.6 mm (its head nudged, gauge.ts),
+ * S at 1.6 1.9 mm, L at 1.4 1.85 mm and L at 1.6 0.87 mm (its ear nudged,
+ * gauge.ts); L at 1.3 sits on it.
+ * A gauge or size not listed gets none (re-measure before shipping it).
  */
-const GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.3': 4.0, 'M@1.4': 2.7 }
+const GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.3': 4.0, 'M@1.4': 2.7, 'S@1.3': 3.7, 'S@1.4': 1.6, 'S@1.6': 1.9, 'L@1.4': 1.85, 'L@1.6': 0.9 }
 
 function cowProfileAt(size: AmigurumiSize, g: number): CowProfile {
   const base = PROFILES[size]
@@ -291,7 +295,7 @@ function cowProfileAt(size: AmigurumiSize, g: number): CowProfile {
     head: sph(p.head),
     muzzle: sph(p.muzzle),
     horn: gCone(4, p.hornWidest, 0, 6, g),
-    ear: gDisc(COW_EAR_CUP_ROUNDS[size], g),
+    ear: nudged(gDisc(COW_EAR_CUP_ROUNDS[size], g)),
     frontLeg: gTube(p.frontLeg[0], p.frontLeg[1], g),
     backLeg: gBall(p.backLeg[0], p.backLeg[1], g),
     tail: gCord(p.tail, g),

@@ -1286,8 +1286,10 @@ const TOY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.3, M: 0.5, L: 4.2 }
 const BUNNY_LEG_LIFT: Record<AmigurumiSize, number> = { S: 0.6, M: 3.3, L: 4.2 }
 /** The fine-gauge knob (gauge.ts): at gauge 1.4 the finer bunny's feet
  *  settle 0.8 mm through the table, so that gauge carries its own MEASURED
- *  extra lift on top (gauge.test.ts, M; as the cow's `GAUGE_LEG_LIFT`). */
-const BUNNY_GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.4': 0.8 }
+ *  extra lift on top (gauge.test.ts, M; as the cow's `GAUGE_LEG_LIFT`).
+ *  At L 1.6 both feet sat 1.12 mm through it (the lowest parts; the ear tips
+ *  -0.25, inside the gate), measured 18 Oct. */
+const BUNNY_GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.4': 0.8, 'L@1.6': 1.1 }
 /** The toe pad and toe beans on the sole: `u` up the sole (fraction of its
  *  radius), `v` across it. */
 const TOE_PAD_U = -0.65

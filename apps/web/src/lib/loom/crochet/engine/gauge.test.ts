@@ -14,11 +14,13 @@
  *   cd apps/web && npx tsx src/lib/loom/crochet/engine/gauge.test.ts
  *
  * GAUGES=1.3 or BASES=cow narrows a run (GAUGES=1.4 also passes: the proof gauge).
+ * SIZES=S,L runs the whole toy at other sizes (default M), EAR_SIZES= skips the
+ * ear-piece checks; designerAudit.ts GAUGE_AUDITED lists what has passed.
  */
 
 import assert from 'node:assert/strict'
 import { auditPart, buildPart, compileComposition } from './composition'
-import { buildAmigurumiProgram, type AmigurumiBase, type AmigurumiChoices } from './amigurumiPresets'
+import { buildAmigurumiProgram, type AmigurumiBase, type AmigurumiChoices, type AmigurumiSize } from './amigurumiPresets'
 import { PRESET_SETTLED_SIZE_MM_GENERATED } from './amigurumiSizes.generated'
 import { compositionPieces, writePieceInstructions, writeCompositionInstructions } from './compositionPattern'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
@@ -101,12 +103,16 @@ check('scaled counts', () => {
 
 const GAUGES = (process.env.GAUGES ?? '1.3,1.6').split(',').map(Number)
 const BASES = (process.env.BASES ?? 'bear,bunny,cow').split(',') as AmigurumiBase[]
+/** SIZES=S,L runs the whole-toy audit at other sizes (default M; the designer's
+ *  GAUGE_AUDITED table lists the size x gauge pairs that have passed). */
+const TOY_SIZES = (process.env.SIZES ?? 'M').split(',') as AmigurumiSize[]
+const EAR_SIZES = (process.env.EAR_SIZES ?? 'S,M,L').split(',').filter(Boolean) as AmigurumiSize[]
 
 // The opt-in ear pieces (earPiece.ts; cuppedEars on the cow and bunny) at every
 // size, in the finer yarn: built, relaxed and audited as the composition does.
 console.log('\nThe lop ears (closed, and the cupped-ear pieces) at fine gauge audit clean')
 for (const gauge of GAUGES) {
-  for (const size of ['S', 'M', 'L'] as const) {
+  for (const size of EAR_SIZES) {
     check(`bunny closed lop ${size} @ gauge ${gauge}`, () => {
       const program = buildAmigurumiProgram({
         base: 'bunny', size, mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, gauge,
@@ -128,11 +134,11 @@ for (const gauge of GAUGES) {
 
 console.log('\nThe toys at fine gauge build clean, keep their size, and the words carry the new counts')
 for (const base of BASES) {
-  for (const gauge of GAUGES) {
-    const label = `${base}/M @ gauge ${gauge}`
+  for (const size of TOY_SIZES) for (const gauge of GAUGES) {
+    const label = `${base}/${size} @ gauge ${gauge}`
     check(label, () => {
       const choices: AmigurumiChoices = {
-        base, size: 'M', mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, gauge,
+        base, size, mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true, gauge,
       }
       const one = buildAmigurumiProgram({ ...choices, gauge: undefined })
       const program = buildAmigurumiProgram(choices)
@@ -144,7 +150,7 @@ for (const base of BASES) {
         minx = Math.min(minx, p.bounds.minx); maxx = Math.max(maxx, p.bounds.maxx)
         minz = Math.min(minz, p.bounds.minz); maxz = Math.max(maxz, p.bounds.maxz)
       }
-      const recorded = PRESET_SETTLED_SIZE_MM_GENERATED[`${base}-M`]!
+      const recorded = PRESET_SETTLED_SIZE_MM_GENERATED[`${base}-${size}`]!
       const w = maxx - minx, h = maxz - minz
       for (const [what, got, want] of [['width', w, recorded.width], ['height', h, recorded.height]] as const) {
         const d = Math.abs(got - want) / want
