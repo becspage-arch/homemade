@@ -2331,10 +2331,15 @@ def apply_stage(stage, scene, ctx):
 
     # Everything is built in a frame that turns with the camera's yaw: local +Y
     # runs away from the camera (into the room), +X to the camera's right.
+    # EXCEPT the wall stage (garland-v2-fix): a hanging hangs ON the wall, so the
+    # wall stays parallel to the piece whatever the camera's turn. Turned with
+    # the camera (photo v2's 16 deg), the plaster 3 cm behind the piece's
+    # centre swung through a wide hanging and hid its whole left half behind
+    # the wall. At yaw 0 (every wall render so far) this is the same frame.
     root = bpy.data.objects.new("stage_root", None)
     scene.collection.objects.link(root)
     root.location = (cx, cy, 0.0)
-    root.rotation_euler = (0.0, 0.0, yaw)
+    root.rotation_euler = (0.0, 0.0, 0.0 if stage == "wall" else yaw)
 
     def to_world(p):
         return root.matrix_world @ Vector(p)
@@ -3978,9 +3983,14 @@ PHOTO_V1 = dict(
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
 # the frame far more than the cow bar does)
-PHOTO_FRAME_BY = {"nursery": 0.82, "christmas": 0.74, "linen": 0.72, "windowsill": 0.68}
-# and its turn: the bunny bar is shot nearly square-on, the cow bar turned a little
-PHOTO_YAW_BY = {"nursery": 6.0}
+# "wall" (garland-v2-fix): 0 = the wall stage's own zoom. The toy frame holds
+# the piece's HEIGHT, so a wide, short hanging (the garland) was shrunk off
+# centre; the wall set already frames a hanging by its own zoom.
+PHOTO_FRAME_BY = {"nursery": 0.82, "christmas": 0.74, "linen": 0.72, "windowsill": 0.68, "wall": 0.0}
+# and its turn: the bunny bar is shot nearly square-on, the cow bar turned a
+# little; a wall hanging is shot straight on (no three-quarter turn: the
+# piece is flat on the wall and must face the lens)
+PHOTO_YAW_BY = {"nursery": 6.0, "wall": 0.0}
 # the stage-3 knobs are off in both styles (today's v2 renders unchanged)
 assert all(PHOTO_V2[k] == v and PHOTO_V1[k] == v for k, v in PHOTO_STAGE3_OFF.items())
 

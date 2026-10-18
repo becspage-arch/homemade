@@ -168,13 +168,15 @@ export interface HeroPhotoKnobs {
   photoFocus?: 'face' | 'centre'
   /** 'threequarter' = the turned, face-height camera; 'stage' = the set's own. */
   photoCamera?: 'threequarter' | 'stage'
-  /** The turn, added to the scene's own yaw (16). */
+  /** The turn, added to the scene's own yaw (16). Unset under v2 = per stage
+   *  (`PHOTO_YAW_BY`: nursery 6, wall 0 = a hanging shot straight on). */
   photoYawDeg?: number
   /** Camera tilt, 90 = level (77: the cow bar looks down ~13 deg; the stages use 80). */
   photoTiltDeg?: number
   /** The piece's height as a share of the frame height; 0 = the stage zoom.
    *  Unset under v2 = per stage (`PHOTO_FRAME_BY`: nursery 0.82, christmas
-   *  0.74, linen 0.72, windowsill 0.68; 0.68 otherwise). */
+   *  0.74, linen 0.72, windowsill 0.68, wall 0 = its own zoom; 0.68
+   *  otherwise). */
   photoFrame?: number
   /** Aim height as a fraction of the piece height (0.5). */
   photoAim?: number
@@ -247,6 +249,22 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoWeaveScale: 1,
   photoCrumpleScale: 1,
   photoRumple: 0,
+}
+
+/** Per-stage v2 framing when the view does not set `photoFrame` /
+ *  `photoYawDeg`, mirrored from `PHOTO_FRAME_BY` / `PHOTO_YAW_BY` in the Python
+ *  (parity test). 'wall' (garland-v2-fix): no toy frame and no turn, so a wall
+ *  hanging under v2 faces the camera at the wall stage's own zoom. */
+export const HERO_PHOTO_FRAME_BY: Readonly<Partial<Record<HeroStage | 'wall', number>>> = {
+  nursery: 0.82,
+  christmas: 0.74,
+  linen: 0.72,
+  windowsill: 0.68,
+  wall: 0,
+}
+export const HERO_PHOTO_YAW_BY: Readonly<Partial<Record<HeroStage | 'wall', number>>> = {
+  nursery: 6,
+  wall: 0,
 }
 
 /** The stage-3 knobs (all off by default, in v1 and v2 alike). */

@@ -9,9 +9,11 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import {
+  HERO_PHOTO_FRAME_BY,
   HERO_PHOTO_STAGE3_KNOBS,
   HERO_PHOTO_STAGE3_STARTS,
   HERO_PHOTO_V2_DEFAULTS,
+  HERO_PHOTO_YAW_BY,
   HERO_STAGE_VARIANTS,
   heroPhotoView,
   pickHeroStageVariant,
@@ -124,4 +126,32 @@ test('stage 3: v1 and today\'s v2 write the same scene as before; knobs pass thr
     JSON.stringify(compositionScene({ ...prog, photo: 'v2', photoKnobs: HERO_PHOTO_STAGE3_STARTS.windowsill }, cc)),
   )
   assert.deepEqual(s3, { ...plain, view: { ...plain.view, photo: 'v2', ...HERO_PHOTO_STAGE3_STARTS.windowsill } })
+})
+
+test('garland-v2-fix: v2 on the wall stage is straight on at the stage zoom; other stages and v1 unchanged', () => {
+  const here = dirname(fileURLToPath(import.meta.url))
+  const py = readFileSync(join(here, '../../../../scripts/loom_render_crochet.py'), 'utf8')
+  const table = (name: string) => {
+    const m = py.match(new RegExp(`^${name} = \\{([^}]*)\\}`, 'm'))
+    assert.ok(m, `${name} missing in the Python`)
+    return Object.fromEntries([...m![1]!.matchAll(/"(\w+)": ([-\d.]+)/g)].map((x) => [x[1], Number(x[2])]))
+  }
+  // the TS mirror matches the Python tables
+  assert.deepEqual(table('PHOTO_FRAME_BY'), { ...HERO_PHOTO_FRAME_BY })
+  assert.deepEqual(table('PHOTO_YAW_BY'), { ...HERO_PHOTO_YAW_BY })
+  // the fix: a wall hanging gets no toy frame and no three-quarter turn
+  assert.equal(HERO_PHOTO_FRAME_BY.wall, 0)
+  assert.equal(HERO_PHOTO_YAW_BY.wall, 0)
+  // every other stage keeps the framing its signed v2 renders were made with
+  assert.deepEqual(
+    { ...HERO_PHOTO_FRAME_BY, wall: undefined },
+    { nursery: 0.82, christmas: 0.74, linen: 0.72, windowsill: 0.68, wall: undefined },
+  )
+  assert.deepEqual({ ...HERO_PHOTO_YAW_BY, wall: undefined }, { nursery: 6, wall: undefined })
+  // the per-stage tables are read only under v2 (v1 / off renders never see them)
+  assert.match(py, /if v2 and "photoFrame" not in view:\n\s+po\["photoFrame"\] = PHOTO_FRAME_BY/)
+  assert.match(py, /if v2 and "photoYawDeg" not in view:\n\s+po\["photoYawDeg"\] = PHOTO_YAW_BY/)
+  // the wall stays parallel to the hung piece; every other set still turns with
+  // the camera (at yaw 0, every wall render so far, the frame is the same)
+  assert.match(py, /root\.rotation_euler = \(0\.0, 0\.0, 0\.0 if stage == "wall" else yaw\)/)
 })
