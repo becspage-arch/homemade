@@ -25,7 +25,7 @@ import {
   type AmigurumiChoices,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
 import { buildCowProgram } from '@/lib/loom/crochet/engine/cowPreset'
-import { DESIGNER_GAUGES, designerAuditedChoices, isDesignerAuditedProfile } from '@/lib/loom/crochet/engine/designerAudit'
+import { DESIGNER_GAUGES, designerAuditedChoices, gaugeAudited, isDesignerAuditedProfile } from '@/lib/loom/crochet/engine/designerAudit'
 import { TESTED_GAUGES } from '@/lib/loom/crochet/engine/gauge'
 
 /** The choices gauge.test.ts builds (its `choices` literal). */
@@ -61,11 +61,22 @@ test('a finer gauge only where gauge.test.ts builds the whole toy', () => {
   // Bases the gauge test does not build, sizes it does not build, and a hat.
   for (const extra of [
     { base: 'cat', gauge: 1.4 }, { base: 'ball', gauge: 1.3 }, { base: 'doll', gauge: 1.4 },
-    { size: 'S', gauge: 1.4 }, { size: 'L', gauge: 1.6 },
     { base: 'cow', size: 'S', gauge: 1.3 }, { base: 'cow', size: 'L', gauge: 1.4 },
     { gauge: 1.4, hat: 'nightcap' },
   ] as Partial<AmigurumiChoices>[]) {
     assert.ok(!parse(choices(extra)).success, `accepted ${JSON.stringify(extra)}`)
+  }
+  // Exactly the size x gauge pairs gauge.test.ts passed (GAUGE_AUDITED).
+  for (const base of ['bear', 'bunny', 'cow'] as const) {
+    for (const size of ['S', 'M', 'L'] as const) {
+      for (const gauge of TESTED_GAUGES) {
+        const r = parse(choices({ base, size, gauge }))
+        assert.equal(r.success, gaugeAudited(base, size, gauge), `${base}/${size} @ ${gauge}`)
+      }
+    }
+  }
+  for (const extra of [{ size: 'S', gauge: 1.4 }, { base: 'bear', size: 'S', gauge: 1.4 }] as Partial<AmigurumiChoices>[]) {
+    assert.ok(parse(choices(extra)).success, `refused ${JSON.stringify(extra)} (audited clean in gauge.test.ts)`)
   }
   // Gauge 1 is fine everywhere (it is today's toy).
   for (const extra of [{ base: 'cat', gauge: 1 }, { size: 'S', gauge: 1, hat: 'nightcap' }] as Partial<AmigurumiChoices>[]) {
@@ -154,7 +165,7 @@ test('every accepted combination builds on audited pieces; an unaudited gauge bu
   }
   // Past the choice gate (were it bypassed), the piece check still refuses
   // a gauge build no test audited.
-  for (const c of [choices({ base: 'cat', gauge: 1.4 }), choices({ size: 'L', gauge: 1.6 }), choices({ base: 'cow', size: 'S', gauge: 1.3 })]) {
+  for (const c of [choices({ base: 'cat', gauge: 1.4 }), choices({ base: 'cow', size: 'L', gauge: 1.6 }), choices({ base: 'cow', size: 'S', gauge: 1.3 })]) {
     const built = buildDesignerProgram(c, 'x')
     assert.ok('problems' in built, `${c.base}/${c.size} @ ${c.gauge} built on the trusted path`)
   }
