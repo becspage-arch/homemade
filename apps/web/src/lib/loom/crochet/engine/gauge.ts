@@ -302,6 +302,14 @@ const MEASURED_NUDGES = new Map<string, () => number[]>([
   // fails too (-2.58), while three, two, six and seven audit clean and eq 54
   // with two does (standalone, measured 18 Oct). Three: one round shorter.
   [sphereRounds(48, 4).join(','), () => sphereRounds(48, 3)],
+  // The cow's L ear disc (30 st) at gauge 1.6 derives a flat disc to 48 that
+  // fails three hooks in its last two rounds (dx -2.66 yr, dn -0.44 yr); one
+  // round more (54) fails too and 40-44-48 fails "floated", while a last
+  // step of +4 (to 46, the big foot's fix), +3 (45) or the disc to 42 audit
+  // clean (standalone, measured 18 Oct). 46 keeps the ear nearest its mm
+  // size. Only the cow's ear asks for it (`nudged` in cowPreset.ts): a disc
+  // elsewhere is not swapped.
+  [discRounds(48).join(','), () => [6, 12, 18, 24, 30, 36, 42, 46]],
 ])
 
 /** A gauge-derived profile, or its measured-clean neighbour (see above). */
