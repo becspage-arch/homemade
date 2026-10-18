@@ -297,6 +297,11 @@ const MEASURED_NUDGES = new Map<string, () => number[]>([
   // fails the same way): the +6 cap's corner (§8f-10). Eq 46, the last climb
   // step +4, passes, the way the gauge-1.4 foot's 36 -> 40 does.
   [ballRounds(48, 4).join(','), () => [6, 12, 18, 24, 30, 36, 42, 46, 46, 46, 46, 46, 42, 36, 30, 24, 18, 12, 6]],
+  // The cow's S head (sphereRounds(36, 2)) at gauge 1.4 derives eq 48 with
+  // four straight rounds and fails the same round-2 hook (dx -2.50 yr); five
+  // fails too (-2.58), while three, two, six and seven audit clean and eq 54
+  // with two does (standalone, measured 18 Oct). Three: one round shorter.
+  [sphereRounds(48, 4).join(','), () => sphereRounds(48, 3)],
 ])
 
 /** A gauge-derived profile, or its measured-clean neighbour (see above). */
