@@ -111,5 +111,22 @@ class Displace(unittest.TestCase):
         self.assertFalse(np.allclose(np.array(o1[0]), np.array(o2[0])))
 
 
+class MemSaver(unittest.TestCase):
+    def test_off_unless_asked(self):
+        self.assertFalse(R.mem_saver_on({"view": {"resY": 850}, "fibreTune": {"handmade": 1}}))
+        self.assertFalse(R.mem_saver_on({}))
+        self.assertTrue(R.mem_saver_on({"view": {"memSaver": 1}}))
+        self.assertTrue(R.mem_saver_on({"view": {}, "fibreTune": {"mem_saver": 1}}))
+
+    def test_free_scene_data_empties_in_place(self):
+        st = {"hex": "#fff", "filaments": [[[0, 0, 0], [1, 1, 1]]]}
+        data = {"strokes": [st], "view": {}}
+        alias = data["strokes"]
+        R.free_scene_data(data)
+        self.assertEqual(data, {})
+        self.assertEqual(st, {})
+        self.assertEqual(alias, [st])
+
+
 if __name__ == "__main__":
     unittest.main()

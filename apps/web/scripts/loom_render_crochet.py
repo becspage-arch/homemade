@@ -1390,6 +1390,72 @@ def surface_material(hexcol, camera_boost=1.0):
     return mat
 
 
+def mem_saver_on(data):
+    """`view.memSaver` (or `fibreTune.mem_saver`): the render-only memory saver
+    (bunny gauge 1.4 + handmade, 18 Oct 2026). Absent from every scene the
+    engine writes, so production renders are unchanged."""
+    v = data.get("view") or {}
+    ft = data.get("fibreTune") if isinstance(data.get("fibreTune"), dict) else {}
+    return bool(v.get("memSaver") or ft.get("mem_saver"))
+
+
+def yarn_curves_to_meshes():
+    """memSaver step 1: every yarn curve object becomes a plain mesh object of
+    its own evaluated geometry (same name, transform, materials, visibility) and
+    the curve is freed. Cycles syncs a CURVE object through a temporary
+    `to_mesh()` copy on top of the depsgraph's evaluated mesh, so a big yarn
+    group was held three times at scene sync (the bunny's OOM point); a mesh
+    object is synced straight from its one mesh. Object texture coordinates and
+    the object's name (Cycles' per-object random) are unchanged, so the pixels
+    are the same."""
+    dg = bpy.context.evaluated_depsgraph_get()
+    names = [ob.name for ob in bpy.data.objects
+             if ob.type == "CURVE" and ob.name.startswith(("yarn_", "yarnhalo_"))]
+    for name in names:
+        ob = bpy.data.objects[name]
+        me = bpy.data.meshes.new_from_object(ob.evaluated_get(dg), preserve_all_data_layers=False, depsgraph=dg)
+        cu = ob.data
+        mw = ob.matrix_world.copy()
+        parent = ob.parent
+        cols = list(ob.users_collection)
+        flags = {k: getattr(ob, k) for k in ("hide_render", "visible_camera", "visible_diffuse", "visible_glossy",
+                                              "visible_transmission", "visible_volume_scatter", "visible_shadow",
+                                              "is_holdout", "is_shadow_catcher") if hasattr(ob, k)}
+        bpy.data.objects.remove(ob)
+        bpy.data.curves.remove(cu)
+        nob = bpy.data.objects.new(name, me)
+        nob.name = name
+        for c in cols:
+            c.objects.link(nob)
+        if parent:
+            nob.parent = parent
+        nob.matrix_world = mw
+        for k, v in flags.items():
+            setattr(nob, k, v)
+        dg = bpy.context.evaluated_depsgraph_get()   # drop the freed curve's evaluated copy now
+    print("[mem] yarn curves -> meshes", len(names))
+
+
+def free_scene_data(data):
+    """memSaver step 2: the parsed scene JSON (a 120 MB file is ~1 GB of Python
+    lists and floats) is no longer read once the yarn is built and the stage is
+    set, but it was held through the whole render. Empty it in place (every
+    alias sees the same empty dicts), collect, and hand the freed heap back to
+    the OS."""
+    for st in data.get("strokes") or []:
+        if isinstance(st, dict):
+            st.clear()
+    data.clear()
+    import gc
+    gc.collect()
+    try:
+        import ctypes
+        ctypes.CDLL("libc.so.6").malloc_trim(0)
+    except Exception:
+        pass
+    print("[mem] scene data freed")
+
+
 def main():
     args = argv_after_dashes()
     in_path, out_path = args[0], args[1]
@@ -1642,6 +1708,10 @@ def main():
         footprint=footprint_polar(data, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
+    if mem_saver_on(data):
+        yarn_curves_to_meshes()
+        free_scene_data(data)
+        strokes = by_fibre = fibre_strokes = None
     bpy.ops.render.render(write_still=True)
     print("RENDERED", out_path)
 
