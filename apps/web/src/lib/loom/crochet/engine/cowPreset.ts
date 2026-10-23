@@ -477,7 +477,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
   return {
     name: 'fringe',
     on: 'head',
-    dir: faceDir(HAIR_DIR),
+    // Fine gauge (Fable 23 Oct, r3): the circle's centre higher on the crown
+    // (y 0.66) — at 1.3 the fat-looped mound of r1/r2 hung over the far eye.
+    dir: faceDir(g > 1.15 ? { ...HAIR_DIR, y: 0.66 } : HAIR_DIR),
     stitch: 'loopst',
     rounds,
     firstLoopRound: 0,
@@ -526,7 +528,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
         k === 0
           ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
           : k === last
-            ? { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 } // the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.2, halfWidthYr: 1.8, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
@@ -570,7 +572,10 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
   const w = norm({ x: -aim.x, y: -aim.y, z: -aim.z })
   const up = norm(fd({ x: side * 0.5, y: 0, z: 1 }))
   const spin = { x: up.y * w.z - up.z * w.y, y: up.z * w.x - up.x * w.z, z: up.x * w.y - up.y * w.x }
-  return earPart(gEar(COW_CUP_EAR[choices.size], g), {
+  // Fable 23 Oct (r3): the bowl's floor in the cream (a lined ear, the
+  // quality bar's signature detail): r2's cups read as two dark discs, the
+  // hollow lost in shadow; the bar's inner ear is lit.
+  return earPart(gEar({ ...COW_CUP_EAR[choices.size], liningHex: choices.contrastHex }, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
     sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
