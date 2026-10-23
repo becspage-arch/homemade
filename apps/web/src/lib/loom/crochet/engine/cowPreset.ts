@@ -575,7 +575,10 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
   // Fable 23 Oct (r3): the bowl's floor in the cream (a lined ear, the
   // quality bar's signature detail): r2's cups read as two dark discs, the
   // hollow lost in shadow; the bar's inner ear is lit.
-  return earPart(gEar({ ...COW_CUP_EAR[choices.size], liningHex: choices.contrastHex }, g), {
+  // r4: the lining up to the widest round (the default stopped a round short
+  // and read as a cream dot at the bottom of the bowl).
+  const cup = COW_CUP_EAR[choices.size]
+  return earPart(gEar({ ...cup, liningHex: choices.contrastHex, liningRounds: Math.ceil(cup.width / 6) }, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
     sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
@@ -607,7 +610,11 @@ function lighten(hex: string, f: number): string {
   if (max === 0) return hex
   const v = max / 255
   const k = (v + (1 - v) * f) / v
-  return '#' + rgb.map((c) => Math.min(255, Math.round(c * k)).toString(16).padStart(2, '0')).join('')
+  // r4: a little of the saturation goes with it (x (1 - f/2)): a lit chenille
+  // loop reads paler, not redder — r2/r3's fringe read coral beside the body.
+  const lit = rgb.map((c) => Math.min(255, c * k))
+  const top = Math.max(...lit)
+  return '#' + lit.map((c) => Math.min(255, Math.round(c + (top - c) * f * 0.5)).toString(16).padStart(2, '0')).join('')
 }
 
 export function cowPresetName(choices: CowChoices): string {
