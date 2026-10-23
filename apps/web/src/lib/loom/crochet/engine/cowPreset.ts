@@ -194,7 +194,8 @@ export const COW_EAR_CUP_ROUNDS: Record<AmigurumiSize, number[]> = {
  */
 export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   S: { kind: 'cup', width: 12, depth: 1, rimRoll: 1, pinch: 0.6 },
-  M: { kind: 'cup', width: 12, depth: 2, rimRoll: 1, pinch: 0.6 },
+  // Fable 23 Oct (r1): 18 round at M (12 read as a quarter of the face width; the bar's cups are about a third).
+  M: { kind: 'cup', width: 18, depth: 2, rimRoll: 1, pinch: 0.6 },
   L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
@@ -378,6 +379,12 @@ const EAR_DIR = { x: 1, y: 0.05, z: 0.5 }
 // the lens saw the cup's back and the ear read as a flat tab); `spin` (the
 // pressed face up) lays the oval's long axis across.
 const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
+/** The CUPPED ear's aim (`cuppedEars` only; the default ears keep EAR_AIM).
+ *  Fable 23 Oct (cow-fable-1023 r1): at EAR_AIM's 37° out the v2 lens saw
+ *  the near cup along its axis as a flat coil and the far one edge-on; the
+ *  bar's cups face the camera with the hollow open to it, so the bowl now
+ *  opens mostly forward, a little out and a touch down. */
+const CUP_EAR_AIM = { x: 0.32, y: 0.94, z: -0.08 }
 const EAR_SPIN = { x: 0, y: 0, z: 1 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
@@ -495,7 +502,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // Round 27: loops in two of three stitches again ("many small curls"), every
     // other one twisted into a tight springy curl.
     // Round 28: back to loops in every OTHER stitch (r27's two of three packed into a helmet), every third a tight curl.
-    plainEvery: 2,
+    // Fine gauge (Fable 23 Oct, r1; gauge.md 'For Fable' 3): at g x the
+    // stitches a round the loops in every other stitch were a nest of thin
+    // noodles (gauge r1 at 1.4), so loops in every THIRD stitch instead.
+    plainEvery: g > 1.15 ? 3 : 2,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     curlEvery: 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
@@ -511,7 +521,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     gravity: 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
-    strandYr: 1.3,
+    // Fine gauge (Fable 23 Oct, r1): the loop strand keeps its gauge-1 mm
+    // (1.3 x g of the finer yarn's radius) — the bar's curls are fat chenille
+    // rings however fine the fabric; render-only (the words name one yarn).
+    strandYr: 1.3 * g,
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
@@ -539,7 +552,7 @@ function cowEarWords(rounds: number[]): string[] {
  *  so the lens looks into the hollow, and turned about that axis so the
  *  pinched base (the piece's local -y) points down and in toward the head. */
 function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1): AmigurumiPart {
-  const aim = fd({ x: side * EAR_AIM.x, y: EAR_AIM.y, z: EAR_AIM.z })
+  const aim = fd({ x: side * CUP_EAR_AIM.x, y: CUP_EAR_AIM.y, z: CUP_EAR_AIM.z })
   // poleIn: the piece's +z points back along the aim. The spin names where
   // local +x looks: +x = (+y) × (+z), with +y up and out (the base down-in).
   const w = norm({ x: -aim.x, y: -aim.y, z: -aim.z })
