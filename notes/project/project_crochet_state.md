@@ -34,6 +34,7 @@ Replaces the June and July crochet and loom logs. Their old text is in git histo
 - Merging the train to main is held for Bec, with one deploy verification (`CLAUDE.md`). Docs and notes ride it.
 - Renders use the Fargate probe task def and their own S3 `jobs/<job>-<n>/` prefix. Never touch the production task def, service or image.
 - Before merging a branch that moves amigurumi presets, regenerate the size table (`apps/web/scripts/loom-preset-sizes.ts`) and run `amigurumi-presets.test.ts`.
+- Waiting to ride the train (23 Oct 2026): `claude/crochet-cow-fable-1023` (Fable, 4 rounds; log `crochet-bar/jobs/cow-fable-1023.md`, proofs `proofs/cow-fable-1023/`). Opt-in paths and colours only (cup ear aim/size/lining, fine-gauge fringe, seated legs 2 mm forward, `lighten()` keeps hue and saturation); the default cow hash e3a65b10 is unchanged, so no size-table regeneration. Not a pass: the fringe's coral cast and the ear lining (cream vs the bar's self-colour) are Bec's calls.
 
 ## Engine modules (`apps/web/src/lib/loom/crochet/engine/`, on the train)
 - Core: `yarnPath.ts` (one continuous strand), `relax.ts`, `dictionary.ts` (stitch definitions, the single source), `auditChecks.ts`, `buildSwatch.ts`, `shaping.ts` (increases, decreases, rounds), `knitPath.ts`.

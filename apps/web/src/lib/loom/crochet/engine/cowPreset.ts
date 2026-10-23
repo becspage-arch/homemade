@@ -426,7 +426,9 @@ const BACK_LEG_AIM = { x: 0.14, y: 1, z: 0.05 }
 // Fable 23 Oct (r2): 4 mm forward and 2 mm out (the bar's back feet sit
 // nearly level with the front hooves, sole showing); still within the
 // cow-legs grid (forward costs front-leg clearance, out costs join depth).
-const SEATED_BACK_LEG_OFFSET = { x: 28, y: -12 }
+// After r4: 2 mm forward only — at y -12 the M 1.4 calf's left back leg
+// passed 2.3 mm into the front leg (cowBackLegs.test's limit 2.14).
+const SEATED_BACK_LEG_OFFSET = { x: 28, y: -14 }
 /** The seated back legs' extra drop at a gauge (mm, measured like
  *  `GAUGE_LEG_LIFT`): at M 1.3 the shared leg lift leaves the back feet
  *  1.55 mm above the table (the default legs too), so the seated ones are
