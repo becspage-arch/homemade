@@ -250,6 +250,9 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_tension  0..0.3  strand radius +- fraction: tight vs loose stitches
 #                       (a tight stitch is also drawn a little inward)
 #   hm_cell_r   3..8    the stitch scale of all the variation, in strand radii
+#   hm_wobble   0..1    a slower wander (cell x 3.5): rows that wobble and
+#                       stitches that lean together in patches, x the strand
+#                       radius at 1 (cow-fable-1023b; not in the preset)
 #   hm_seed     int     the maker (another seed = another hand)
 # Heathered colour:
 #   hm_heather  0..1    per-stitch drift: value +-16%, hue +-0.01, sat +-6% at 1
@@ -350,6 +353,7 @@ def hm_displace(polys, r_mm, fp, ripple=False):
     import numpy as np
     jit, loft, ten = hm_amt(fp, "hm_jitter"), hm_amt(fp, "hm_loft"), hm_amt(fp, "hm_tension")
     rip = hm_amt(fp, "hm_ripple") if ripple else 0.0
+    wob = hm_amt(fp, "hm_wobble")
     cell = fp.get("hm_cell_r", 4.5) * r_mm
     seed = int(fp.get("hm_seed", 1)) * 1000003
     arrs = [np.asarray(p, dtype=np.float64).reshape(-1, 3) for p in polys]
@@ -366,6 +370,11 @@ def hm_displace(polys, r_mm, fp, ripple=False):
         if jit > 0:
             for k in range(3):
                 d[:, k] += jit * r_mm * hm_noise(P, cell, seed + 11 * (k + 1))
+        if wob > 0:
+            # row wobble: a field a few stitches across, so a run of stitches
+            # drifts and leans together and the rows stop being ruled lines
+            for k in range(3):
+                d[:, k] += wob * r_mm * hm_noise(P, 3.5 * cell, seed + 17 * (k + 1) + 400)
         if loft > 0 or ten > 0:
             o = P - centroid
             o /= np.maximum(np.linalg.norm(o, axis=1, keepdims=True), 1e-9)
@@ -987,7 +996,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
     fpb = handmade_params(FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"]))
     has_halo = bool(fpb.get("halo"))
     strand = fpb.get("strand", "ply")
-    hm_geo = any(hm_amt(fpb, k) > 0 for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple", "hm_loop_twist"))
+    hm_geo = any(hm_amt(fpb, k) > 0 for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple", "hm_loop_twist", "hm_wobble"))
     # the toy's main strand radius (the radius carrying the most points): a
     # group much fatter than it is a loop (the cow's fringe), see hm_loop_ratio
     by_r = {}

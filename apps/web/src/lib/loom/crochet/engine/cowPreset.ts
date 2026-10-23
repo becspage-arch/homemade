@@ -386,7 +386,9 @@ const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
  *  bar's cups face the camera with the hollow open to it, so the bowl now
  *  opens mostly forward, a little out and a touch down. */
 // r2: a little more out again (0.45): straight at the lens the hollow was a black disc; the bar's cups are seen ~45°.
-const CUP_EAR_AIM = { x: 0.45, y: 0.88, z: -0.08 }
+// cow-fable-1023b r1 (Rebecca: brown inside like the bar): a touch more
+// toward the window key (x 0.55) so the self-coloured hollow is lit, not black.
+const CUP_EAR_AIM = { x: 0.55, y: 0.84, z: -0.08 }
 /** The cupped ear's place on the head (`cuppedEars` only): a touch lower than
  *  EAR_DIR, at eye-to-brow level under the horns (r2; the bar's). */
 const CUP_EAR_DIR = { x: 1, y: 0.05, z: 0.35 }
@@ -508,7 +510,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // the crown (droop -35) in a tall tousled mound — r26's big rings lay flat.
     // Round 28: r27's stood as a solid helmet of packed curls — a little smaller, leaning out more.
     // Round 29: BIGGER open rings (the bar's are ~17 mm across on this head; r28's 10 mm curls packed into a dome).
-    loop: gLoop({ lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // cow-fable-1023b r1 (Rebecca: the curls "too even"): at a fine gauge
+    // more variety (vary 0.6: lengths +-60%, planes wider) and a touch
+    // smaller, so the rings differ and gaps open between them.
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.6, halfWidthYr: 2.2, droopDeg: -50, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -548,7 +553,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // Round 21: the same red-brown as the body, just catching the light (0.24
     // read as a pale pinkish-mauve pancake beside the bar).
     // Round 30: a step lighter again (0.14) — r29's rings were the head's own dark brown; the bar's catch the light.
-    colourHex: lighten(colourHex, 0.14),
+    // cow-fable-1023b r1 (Rebecca: the curls "too red"): at a fine gauge the
+    // lit loop lets more of its saturation go (desat 1.4: the bar's fringe
+    // tops are s 0.55 against the body's 0.7; r4's rings read coral at 0.65).
+    colourHex: g > 1.15 ? lighten(colourHex, 0.14, 1.4) : lighten(colourHex, 0.14),
   }
 }
 
@@ -574,13 +582,12 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
   const w = norm({ x: -aim.x, y: -aim.y, z: -aim.z })
   const up = norm(fd({ x: side * 0.5, y: 0, z: 1 }))
   const spin = { x: up.y * w.z - up.z * w.y, y: up.z * w.x - up.x * w.z, z: up.x * w.y - up.y * w.x }
-  // Fable 23 Oct (r3): the bowl's floor in the cream (a lined ear, the
-  // quality bar's signature detail): r2's cups read as two dark discs, the
-  // hollow lost in shadow; the bar's inner ear is lit.
-  // r4: the lining up to the widest round (the default stopped a round short
-  // and read as a cream dot at the bottom of the bowl).
+  // Fable 23 Oct (r3/r4): the bowl's floor was lined in the cream (a lined
+  // ear). cow-fable-1023b r1, Rebecca's call: the bar's inner ear is the
+  // SAME brown, lit, so the cup is self-coloured and aimed at the key
+  // (CUP_EAR_AIM) instead.
   const cup = COW_CUP_EAR[choices.size]
-  return earPart(gEar({ ...cup, liningHex: choices.contrastHex, liningRounds: Math.ceil(cup.width / 6) }, g), {
+  return earPart(gEar(cup, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
     sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
@@ -605,18 +612,19 @@ function norm(v: Dir): Dir {
 // deep chocolate dye stripped the fringe to a dusty pink (r1); now the value
 // is lifted with the hue AND saturation kept, as the doc always said.
 // Render-only (a colour, outside the geometry hash).
-function lighten(hex: string, f: number): string {
+function lighten(hex: string, f: number, desat = 0.5): string {
   const n = parseInt(hex.slice(1), 16)
   const rgb = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
   const max = Math.max(...rgb)
   if (max === 0) return hex
   const v = max / 255
   const k = (v + (1 - v) * f) / v
-  // r4: a little of the saturation goes with it (x (1 - f/2)): a lit chenille
-  // loop reads paler, not redder — r2/r3's fringe read coral beside the body.
+  // r4: a little of the saturation goes with it (x (1 - f * desat), desat
+  // 0.5 by default): a lit chenille loop reads paler, not redder — r2/r3's
+  // fringe read coral beside the body. A caller may ask for more.
   const lit = rgb.map((c) => Math.min(255, c * k))
   const top = Math.max(...lit)
-  return '#' + lit.map((c) => Math.min(255, Math.round(c + (top - c) * f * 0.5)).toString(16).padStart(2, '0')).join('')
+  return '#' + lit.map((c) => Math.min(255, Math.round(c + (top - c) * f * desat)).toString(16).padStart(2, '0')).join('')
 }
 
 export function cowPresetName(choices: CowChoices): string {

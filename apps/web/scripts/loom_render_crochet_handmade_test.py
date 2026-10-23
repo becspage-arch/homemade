@@ -95,6 +95,24 @@ class Displace(unittest.TestCase):
         self.assertLessEqual(rf.max(), (1 + fp["hm_tension"]) * (1 + 0.09 * fp["hm_ripple"]) + 1e-9)
         self.assertGreaterEqual(rf.min(), (1 - fp["hm_tension"]) * (1 - 0.09 * fp["hm_ripple"]) - 1e-9)
 
+    def test_wobble_off_by_default_and_slow_when_on(self):
+        # hm_wobble is not in the preset: handmade 1 alone never sets it
+        fp = R.handmade_params({"handmade": 1})
+        self.assertEqual(R.hm_amt(fp, "hm_wobble"), 0)
+        poly = helix()
+        base, _ = R.hm_displace([poly], 1.0, {"hm_jitter": 0.0})
+        self.assertTrue(np.allclose(np.array(base[0]), np.array(poly)))
+        out, rf = R.hm_displace([poly], 1.0, {"hm_wobble": 0.6})
+        d = np.linalg.norm(np.array(out[0]) - np.array(poly), axis=1)
+        self.assertLessEqual(d.max(), 0.6 * math.sqrt(3) + 1e-9)
+        self.assertGreater(d.max(), 0.05)
+        self.assertTrue(np.allclose(rf[0], 1.0))
+        # slower than the stitch jitter: neighbouring points barely differ
+        step = np.linalg.norm(np.diff(np.array(out[0]) - np.array(poly), axis=0), axis=1)
+        jit, _ = R.hm_displace([poly], 1.0, {"hm_jitter": 0.6})
+        jstep = np.linalg.norm(np.diff(np.array(jit[0]) - np.array(poly), axis=0), axis=1)
+        self.assertLess(step.max(), 0.5 * jstep.max())
+
     def test_plies_of_one_stroke_move_together(self):
         fp = R.handmade_params({"handmade": 1, "hm_loft": 0.0, "hm_tension": 0.0})
         a = helix()
