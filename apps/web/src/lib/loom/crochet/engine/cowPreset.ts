@@ -388,7 +388,8 @@ const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
 // r2: a little more out again (0.45): straight at the lens the hollow was a black disc; the bar's cups are seen ~45°.
 // cow-fable-1023b r1 (Rebecca: brown inside like the bar): a touch more
 // toward the window key (x 0.55) so the self-coloured hollow is lit, not black.
-const CUP_EAR_AIM = { x: 0.55, y: 0.84, z: -0.08 }
+// r2: and tilted UP toward the key's 30 deg elevation (z 0.15): r1's forward bowls were both in shadow.
+const CUP_EAR_AIM = { x: 0.55, y: 0.82, z: 0.15 }
 /** The cupped ear's place on the head (`cuppedEars` only): a touch lower than
  *  EAR_DIR, at eye-to-brow level under the horns (r2; the bar's). */
 const CUP_EAR_DIR = { x: 1, y: 0.05, z: 0.35 }
@@ -513,7 +514,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r1 (Rebecca: the curls "too even"): at a fine gauge
     // more variety (vary 0.6: lengths +-60%, planes wider) and a touch
     // smaller, so the rings differ and gaps open between them.
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.6, halfWidthYr: 2.2, droopDeg: -50, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 2.2, droopDeg: -50, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -526,7 +527,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // Fine gauge (Fable 23 Oct, r1; gauge.md 'For Fable' 3): at g x the
     // stitches a round the loops in every other stitch were a nest of thin
     // noodles (gauge r1 at 1.4), so loops in every THIRD stitch instead.
-    plainEvery: g > 1.15 ? 3 : 2,
+    // cow-fable-1023b r2: at a fine gauge loops in every FOURTH stitch (r1's
+    // every third still packed wall to wall; the bar's head shows between its rings).
+    plainEvery: g > 1.15 ? 4 : 2,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     curlEvery: 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
@@ -556,7 +559,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r1 (Rebecca: the curls "too red"): at a fine gauge the
     // lit loop lets more of its saturation go (desat 1.4: the bar's fringe
     // tops are s 0.55 against the body's 0.7; r4's rings read coral at 0.65).
-    colourHex: g > 1.15 ? lighten(colourHex, 0.14, 1.4) : lighten(colourHex, 0.14),
+    colourHex: g > 1.15 ? lighten(colourHex, 0.14, 0.9) : lighten(colourHex, 0.14), // r2: 0.9 (1.4 read dusty pink)
   }
 }
 

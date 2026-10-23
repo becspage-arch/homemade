@@ -113,6 +113,11 @@ class Displace(unittest.TestCase):
         jstep = np.linalg.norm(np.diff(np.array(jit[0]) - np.array(poly), axis=0), axis=1)
         self.assertLess(step.max(), 0.5 * jstep.max())
 
+    def test_loop_mult_and_wobble_are_not_in_the_preset(self):
+        fp = R.handmade_params(dict(R.FIBRE_PARAMS["chenille"], handmade=1))
+        self.assertNotIn("hm_loop_mult", fp)
+        self.assertNotIn("hm_wobble", fp)
+
     def test_plies_of_one_stroke_move_together(self):
         fp = R.handmade_params({"handmade": 1, "hm_loft": 0.0, "hm_tension": 0.0})
         a = helix()

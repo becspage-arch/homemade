@@ -276,6 +276,10 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #                       fraction of the density and no tip lift
 #   hm_loop_ratio 1.2..2  a group is a "loop" when its radius is this many
 #                       times the toy's main strand radius
+#   hm_loop_mult        the loops' own strand multiplier in place of the
+#                       fibre's `strand_mult` (cow-fable-1023b r3: a fabric
+#                       strand fattened to the stitch pitch must not fatten
+#                       the fringe rings with it). Absent = strand_mult.
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
@@ -1024,7 +1028,10 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         centre, spread = strand_centre(st["filaments"])
         if not spread:
             return st["filaments"], st["radiusMm"], None
-        bundle = (spread + st["radiusMm"]) * fpb.get("strand_mult", 1.0)
+        mult = fpb.get("strand_mult", 1.0)
+        if "hm_loop_mult" in fpb and is_loop(st["radiusMm"]):
+            mult = float(fpb["hm_loop_mult"])
+        bundle = (spread + st["radiusMm"]) * mult
         rf = None
         if hm_geo:
             cs, rfs = hm_displace(centre, bundle, fpb, ripple=(strand == "single"))
