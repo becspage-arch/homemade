@@ -195,7 +195,8 @@ export const COW_EAR_CUP_ROUNDS: Record<AmigurumiSize, number[]> = {
 export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   S: { kind: 'cup', width: 12, depth: 1, rimRoll: 1, pinch: 0.6 },
   // Fable 23 Oct (r1): 18 round at M (12 read as a quarter of the face width; the bar's cups are about a third).
-  M: { kind: 'cup', width: 18, depth: 2, rimRoll: 1, pinch: 0.6 },
+  // r2: 15 and depth 1 (18 at depth 2 facing the lens read as two huge dark bagels).
+  M: { kind: 'cup', width: 15, depth: 1, rimRoll: 1, pinch: 0.6 },
   L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
@@ -384,7 +385,11 @@ const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
  *  the near cup along its axis as a flat coil and the far one edge-on; the
  *  bar's cups face the camera with the hollow open to it, so the bowl now
  *  opens mostly forward, a little out and a touch down. */
-const CUP_EAR_AIM = { x: 0.32, y: 0.94, z: -0.08 }
+// r2: a little more out again (0.45): straight at the lens the hollow was a black disc; the bar's cups are seen ~45°.
+const CUP_EAR_AIM = { x: 0.45, y: 0.88, z: -0.08 }
+/** The cupped ear's place on the head (`cuppedEars` only): a touch lower than
+ *  EAR_DIR, at eye-to-brow level under the horns (r2; the bar's). */
+const CUP_EAR_DIR = { x: 1, y: 0.05, z: 0.35 }
 const EAR_SPIN = { x: 0, y: 0, z: 1 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
  *  FRONT of the shoulders, close together, hanging straight down the front
@@ -418,7 +423,10 @@ const BACK_LEG_AIM = { x: 0.14, y: 1, z: 0.05 }
  *  squashMetrics on the settled M calf at gauge 1, 1.3 and 1.4: sewn into
  *  the body 7-9 mm (the front legs' joins are 18-21 mm) with a contact patch
  *  of ~1000-1300 mm², and 3-6 mm clear of the front legs. */
-const SEATED_BACK_LEG_OFFSET = { x: 26, y: -16 }
+// Fable 23 Oct (r2): 4 mm forward and 2 mm out (the bar's back feet sit
+// nearly level with the front hooves, sole showing); still within the
+// cow-legs grid (forward costs front-leg clearance, out costs join depth).
+const SEATED_BACK_LEG_OFFSET = { x: 28, y: -12 }
 /** The seated back legs' extra drop at a gauge (mm, measured like
  *  `GAUGE_LEG_LIFT`): at M 1.3 the shared leg lift leaves the back feet
  *  1.55 mm above the table (the default legs too), so the seated ones are
@@ -461,7 +469,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
   // before, each loop the same size in mm (g x its length in the finer yarn).
   const rounds = gDisc(size === 'S' ? [6, 12, 18, 24, 30] : size === 'L' ? [6, 12, 18, 24, 30, 36, 42] : [6, 12, 18, 24, 30, 36], g)
   const last = rounds.length - 1
-  const loopRounds = rounds.map((_, k) => k).filter((k) => k % 2 === 0 || (k === last && last % 2 === 0))
+  // Fine gauge (Fable 23 Oct, r2): a loop round every round(2g) rounds, so
+  // 1.3's eight rounds carry three loop rounds like gauge 1's six (four fat
+  // loop rounds mounded over the eyes in r1).
+  const step = Math.max(2, Math.round(2 * g))
+  const loopRounds = rounds.map((_, k) => k).filter((k) => k % step === 0 || (k === last && last % step === 0))
   return {
     name: 'fringe',
     on: 'head',
@@ -564,7 +576,7 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
     sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
     place: {
       on: 'head',
-      dir: fd({ x: side * EAR_DIR.x, y: EAR_DIR.y, z: EAR_DIR.z }),
+      dir: fd({ x: side * CUP_EAR_DIR.x, y: CUP_EAR_DIR.y, z: CUP_EAR_DIR.z }),
       aim,
       spin,
       seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
@@ -579,10 +591,18 @@ function norm(v: Dir): Dir {
 }
 
 /** Lift a hex colour's value by `f` (0..1), hue and saturation kept. */
+// Fable 23 Oct (cow-fable-1023 r2): it used to mix toward white, which on a
+// deep chocolate dye stripped the fringe to a dusty pink (r1); now the value
+// is lifted with the hue AND saturation kept, as the doc always said.
+// Render-only (a colour, outside the geometry hash).
 function lighten(hex: string, f: number): string {
   const n = parseInt(hex.slice(1), 16)
-  const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => Math.min(255, Math.round(c + (255 - c) * f)))
-  return '#' + ch.map((c) => c.toString(16).padStart(2, '0')).join('')
+  const rgb = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+  const max = Math.max(...rgb)
+  if (max === 0) return hex
+  const v = max / 255
+  const k = (v + (1 - v) * f) / v
+  return '#' + rgb.map((c) => Math.min(255, Math.round(c * k)).toString(16).padStart(2, '0')).join('')
 }
 
 export function cowPresetName(choices: CowChoices): string {
