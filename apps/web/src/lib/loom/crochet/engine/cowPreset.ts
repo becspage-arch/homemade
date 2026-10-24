@@ -200,7 +200,9 @@ export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   // at the key since 1023b (r2's bagels were depth 2 facing the lens); the
   // bar's ears are bigger leaf-shaped cups.
   // cow-fable-1024b r1: 21 read as dinner plates nearly half the face wide; r2: 16 (the bar's cups are a third of the face).
-  M: { kind: 'cup', width: 16, depth: 1, rimRoll: 1, pinch: 0.6 },
+  // r3: 17; a thin unrolled edge was tried in the r3 render but the cow's cup keeps its
+  // rolled rim (earPiece.test: rimFold 1 and a 7.5 mm hollow at M; rimRoll 0 gave 7.3).
+  M: { kind: 'cup', width: 17, depth: 1, rimRoll: 1, pinch: 0.6 },
   L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
@@ -396,7 +398,8 @@ const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
 // cow-fable-1024b r1 (the orchestrator's audit: ours "hidden behind the head";
 // the bar's cups stand out SIDEWAYS just below the horns, facing forward so
 // the brown hollow shows): the bowl opens more out (x 0.7) and a touch less up.
-const CUP_EAR_AIM = { x: 0.7, y: 0.7, z: 0.1 }
+// r3: and back toward the lens (x 0.5): at 0.7 the straight-on camera saw each cup edge-on as a rolled coil.
+const CUP_EAR_AIM = { x: 0.5, y: 0.82, z: 0.15 }
 // r2: lower still (z 0.1: r1's sat up at the horn tips) and 11 mm out.
 /** The cupped ear's place on the head (`cuppedEars` only): a touch lower than
  *  EAR_DIR, at eye-to-brow level under the horns (r2; the bar's). */
@@ -567,7 +570,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 4.8, halfWidthYr: 2.7, droopDeg: -30 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
+          ? (g > 1.15 ? { lengthYr: 4.8, halfWidthYr: 2.7, droopDeg: -38 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
           : k === last
             ? (g > 1.15 ? { lengthYr: 3.4, halfWidthYr: 2.2, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
