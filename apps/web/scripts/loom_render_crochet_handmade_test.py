@@ -122,6 +122,8 @@ class Displace(unittest.TestCase):
         self.assertNotIn("hm_loop_bare", fp)
         self.assertNotIn("hm_loop_tone", fp)
         self.assertEqual(R.hm_amt(fp, "hm_loop_bare"), 0)
+        self.assertNotIn("hm_loop_calm", fp)
+        self.assertEqual(R.hm_amt(fp, "hm_loop_calm"), 0)
 
     def test_loop_tone_scales_the_hex_and_one_is_identity(self):
         self.assertEqual(R.tone_hex("#694535", 1.0), "#694535")

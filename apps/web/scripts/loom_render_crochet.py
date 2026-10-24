@@ -300,6 +300,11 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_loop_tone        the loops' material colour = the scene hex with its
 #                       sRGB channels x this (0.9 a shade darker, 1.1 lighter);
 #                       absent / 1 = unchanged (cow-fable-1024f).
+#   hm_loop_calm 0..1   the loops keep their built shape: the stitch
+#                       irregularity (hm_jitter / hm_loft / hm_tension /
+#                       hm_ripple) on the loops x (1 - this), so a ring is
+#                       not crumpled by a cell the size of itself (cow-fable-
+#                       1024f r3). Absent / 0 = unchanged.
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
@@ -1057,6 +1062,12 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             fpl = fpb
             if "hm_loop_wobble" in fpb and is_loop(st["radiusMm"]):
                 fpl = dict(fpb, hm_wobble=fpb["hm_loop_wobble"])
+            calm = hm_amt(fpb, "hm_loop_calm")
+            if calm > 0 and is_loop(st["radiusMm"]):
+                # `hm_loop_calm` (cow-fable-1024f): the fringe rings keep the
+                # circles they were built as; the per-stitch displacement
+                # whose cell is a whole ring wide crumpled them into worms
+                fpl = dict(fpl, **{k: hm_amt(fpl, k) * (1.0 - calm) for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple")})
             cs, rfs = hm_displace(centre, bundle, fpl, ripple=(strand == "single"))
             centre, rf = cs, rfs[0]
             tw = hm_amt(fpb, "hm_loop_twist")
