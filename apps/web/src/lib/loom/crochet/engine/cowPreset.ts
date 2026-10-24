@@ -514,7 +514,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r1 (Rebecca: the curls "too even"): at a fine gauge
     // more variety (vary 0.6: lengths +-60%, planes wider) and a touch
     // smaller, so the rings differ and gaps open between them.
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 2.2, droopDeg: -50, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // cow-fable-1024 r1 (Rebecca: yes to looser curls): at a fine gauge the
+    // rings stand up more (droop -35: 1023b r4's -50 tiled them flat into a
+    // beret) and vary more (0.6), with a loop in every OTHER stitch only
+    // (loopEvery 2: plainEvery 4 was loops in three of four, packed edge to
+    // edge) so the head shows between the rings like the bar's.
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 2.2, droopDeg: -35, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -529,7 +534,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // noodles (gauge r1 at 1.4), so loops in every THIRD stitch instead.
     // cow-fable-1023b r2: at a fine gauge loops in every FOURTH stitch (r1's
     // every third still packed wall to wall; the bar's head shows between its rings).
-    plainEvery: g > 1.15 ? 4 : 2,
+    plainEvery: g > 1.15 ? undefined : 2,
+    loopEvery: g > 1.15 ? 2 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     curlEvery: 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),

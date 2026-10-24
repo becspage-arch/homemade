@@ -63,6 +63,11 @@ export interface HairPatch {
    *  three stitches): the bar cow's rings are not wall to wall, and the gap
    *  lets each ring fall its own way. Absent / 0 = a loop in every stitch. */
   plainEvery?: number
+  /** The inverse: a loop in only every Nth stitch of a loop round, plain dc
+   *  in the rest (cow-fable-1024: the bar's rings stand apart with the head
+   *  showing between; `plainEvery` 4 is still loops in three of four).
+   *  Absent / 0 = every stitch a loop (save `plainEvery`). */
+  loopEvery?: number
   /** Every Nth loop (counted along the round) is a twisted loop — worked as
    *  `loopcurl` with `curlLoop` — so a few tighter curls sit among the open
    *  rings. Absent / 0 = every loop the patch's `stitch`. */
@@ -102,9 +107,10 @@ export function isLoopRound(h: HairPatch, k: number): boolean {
 export function stitchAtOf(h: HairPatch, k: number, c: number): StitchId {
   if (!isLoopRound(h, k)) return 'sc'
   if (h.plainEvery && (c + 1) % h.plainEvery === 0) return 'sc'
+  if (h.loopEvery && (c + 1) % h.loopEvery !== 0) return 'sc'
   if (h.curlEvery) {
     // Count the loops (not the plain stitches) along the round.
-    const loopsBefore = h.plainEvery ? c - Math.floor(c / h.plainEvery) : c
+    const loopsBefore = h.loopEvery ? Math.floor((c + 1) / h.loopEvery) - 1 : h.plainEvery ? c - Math.floor(c / h.plainEvery) : c
     if ((loopsBefore + 1) % h.curlEvery === 0) return 'loopcurl'
   }
   return h.stitch
@@ -275,8 +281,11 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   // Loops in two of every three stitches, a twist on every Nth loop: said
   // once, from the same rule the geometry is built with.
   const ordinal = (n: number): string => ({ 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth' }[n] ?? `${n}th`)
-  if (h.plainEvery || h.curlEvery) {
+  if (h.plainEvery || h.loopEvery || h.curlEvery) {
     let rule = 'In the loop-stitch rounds below'
+    if (h.loopEvery) {
+      rule += `, work a lp st in every ${ordinal(h.loopEvery)} stitch only and a plain dc in the rest (so one of every ${['', '', 'two', 'three', 'four', 'five', 'six'][h.loopEvery] ?? h.loopEvery} stitches carries a loop)`
+    }
     if (h.plainEvery) {
       const n = h.plainEvery
       const share = n === 2 ? 'every other stitch carries a loop' : `${['', '', '', 'two', 'three', 'four', 'five', 'six', 'seven'][n] ?? n - 1} of every ${['', '', '', 'three', 'four', 'five', 'six', 'seven', 'eight'][n] ?? n} stitches carry a loop`
@@ -285,7 +294,7 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
     if (h.curlEvery) {
       const ht = h.curlLoop?.twist ?? STITCHES.loopcurl.loop?.twist ?? 0
       const tw = ht <= 1 ? 'half a twist' : ht === 2 ? 'one full twist' : `${ht / 2} twists`
-      rule += `${h.plainEvery ? ', and' : ','} give every ${ordinal(h.curlEvery)} loop ${tw} on your finger before you close the stitch, for a tighter curl among the open ones`
+      rule += `${h.plainEvery || h.loopEvery ? ', and' : ','} give every ${ordinal(h.curlEvery)} loop ${tw} on your finger before you close the stitch, for a tighter curl among the open ones`
     }
     lines.push(rule + '.')
   }
