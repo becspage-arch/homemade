@@ -494,7 +494,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
   // Fine gauge (Fable 23 Oct, r2): a loop round every round(2g) rounds, so
   // 1.3's eight rounds carry three loop rounds like gauge 1's six (four fat
   // loop rounds mounded over the eyes in r1).
-  const step = Math.max(2, Math.round(2 * g))
+  // cow-fable-1024c r2: at a fine gauge loops on every OTHER round again (four
+  // loop rounds at 1.3), a loop in only every fourth stitch, so ~22 fat rings
+  // are spread over the disc instead of packed into three concentric rings.
+  const step = g > 1.15 ? 2 : Math.max(2, Math.round(2 * g))
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % step === 0 || (k === last && last % step === 0))
   return {
     name: 'fringe',
@@ -554,7 +557,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // distinct loose rings standing up off the head, each with a hole): the
     // rings ROUNDER (halfWidth 3.0, so the hole shows face-on) and standing
     // up off the head (droop -25: -40 leaned them over each other into a mat).
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 3.0, droopDeg: -25, vary: 0.55 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r2: bigger, rounder, calmer rings (4.6 x 3.4, vary 0.45): r1's 24 thin loops tangled into a brain with no holes.
+    // r3: the bar's ring size (outer ~17 mm on a ~100 mm head: 3.6 x 2.5 at
+    // 1.3 is a 13 x 16 mm centreline, a 7 mm hole on a 1.15 x strand); r2's
+    // 4.6 x 3.4 were 18 x 21 mm and, with the loopEvery bug, 96 of them.
+    loop: gLoop(g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 2.5, droopDeg: -20, vary: 0.45 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -570,17 +577,18 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r2: at a fine gauge loops in every FOURTH stitch (r1's
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
-    loopEvery: g > 1.15 ? 3 : undefined,
+    loopEvery: g > 1.15 ? 4 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
-    curlEvery: g > 1.15 ? 6 : 4,
+    // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
+    curlEvery: g > 1.15 ? 0 : 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 5.0, halfWidthYr: 3.1, droopDeg: -20 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder)
+          ? (g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.6, droopDeg: -15 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 2.5, droopDeg: -35 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.2, halfWidthYr: 2.2, droopDeg: -30 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),

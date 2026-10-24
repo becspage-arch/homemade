@@ -140,7 +140,10 @@ function patchFrame(dir: { x: number; y: number; z: number }): { u: V3; e1: V3; 
 
 /** Build + relax one patch in its own frame (worked face +z, loops −z). */
 export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
-  const perStitch = !!(h.plainEvery || h.curlEvery)
+  // `loopEvery` alone is a per-stitch rule too (cow-fable-1024c r2: with no
+  // twisted curls the build quietly put a loop in EVERY stitch of the loop
+  // rounds, 96 rings for the 22 the words promised).
+  const perStitch = !!(h.plainEvery || h.loopEvery || h.curlEvery)
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
