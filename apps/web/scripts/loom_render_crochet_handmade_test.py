@@ -125,6 +125,15 @@ class Displace(unittest.TestCase):
         self.assertNotIn("hm_loop_calm", fp)
         self.assertEqual(R.hm_amt(fp, "hm_loop_calm"), 0)
 
+    def test_catch_light_elevation_defaults_to_where_it_sat(self):
+        # cow-fable-1024g: `photoCatchElev` is 22 in both photo tables (the
+        # angle the catch-light was hard-coded at), so a scene without it
+        # renders exactly as before, and a view that sets it wins.
+        self.assertEqual(R.PHOTO_V2["photoCatchElev"], 22.0)
+        self.assertEqual(R.PHOTO_V1["photoCatchElev"], 22.0)
+        self.assertEqual(R.photo_opts({"photo": "v2"})["photoCatchElev"], 22.0)
+        self.assertEqual(R.photo_opts({"photo": "v2", "photoCatchElev": 45})["photoCatchElev"], 45)
+
     def test_loop_tone_scales_the_hex_and_one_is_identity(self):
         self.assertEqual(R.tone_hex("#694535", 1.0), "#694535")
         self.assertEqual(R.tone_hex("#694535", 0.9), "#5e3e30")

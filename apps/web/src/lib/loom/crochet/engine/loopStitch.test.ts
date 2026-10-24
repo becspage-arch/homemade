@@ -111,7 +111,7 @@ test('a fringe with faceDir turns every ring to face it (and without it, the rin
   const g = 1.3
   const base = { ...cowFringe('#5c382c', 'M', g), dir: { x: 0, y: 0, z: 1 } }
   assert.ok(base.faceDir, 'the fine-gauge cow fringe faces a direction')
-  const faced = { ...base, faceDir: { x: 0, y: 1, z: 0.3 }, faceJitterDeg: 15 }
+  const faced = { ...base, faceDir: { x: 0, y: 1, z: 0.3 }, faceJitterDeg: 15, faceRounds: undefined }
   const plain = { ...base, faceDir: undefined }
   const yr = 3 / g
   const toPatch = (d: { x: number; y: number; z: number }) => ({ x: d.x, y: -d.y, z: -d.z })
@@ -119,12 +119,58 @@ test('a fringe with faceDir turns every ring to face it (and without it, the rin
   assert.deepEqual(hairPatchProblems(faced, bf, yr), [])
   const af = loopPlaneAngles(bf, toPatch(faced.faceDir))
   const ap = loopPlaneAngles(buildHairPatch(plain, yr), toPatch(faced.faceDir))
-  assert.equal(af.length, 22)
+  // 2 + 4 + 7 rings on the inner loop rounds (a loop in every fifth stitch)
+  // and 16 on the edge round (every third: cow-fable-1024g, loopEveryByRound).
+  assert.equal(af.length, 29)
   const within = (a: number[]) => a.filter((x) => x < 35).length
-  assert.ok(within(af) >= 18, `${within(af)} of ${af.length} faced rings within 35 deg`)
-  assert.ok(within(ap) <= 10, `${within(ap)} of ${ap.length} leaned rings within 35 deg`)
+  assert.ok(within(af) >= 0.8 * af.length, `${within(af)} of ${af.length} faced rings within 35 deg`)
+  assert.ok(within(ap) <= 0.45 * ap.length, `${within(ap)} of ${ap.length} leaned rings within 35 deg`)
   // The gauge-1 fringe never faces: its hash is the table's.
   assert.equal(cowFringe('#5c382c', 'M').faceDir, undefined)
+})
+
+test('loopEveryByRound (cow-fable-1024g): the edge round carries a loop in every third stitch, the rest keep loopEvery, absent = unchanged', () => {
+  const g = 1.3
+  const h = cowFringe('#5c382c', 'M', g)
+  assert.ok(h.loopEveryByRound, 'the fine-gauge cow fringe has a per-round rule')
+  const last = h.rounds.length - 1
+  const loopsOn = (p: typeof h, k: number) => Array.from({ length: p.rounds[k]! }, (_, c) => stitchAtOf(p, k, c)).filter((x) => x === 'loopst').length
+  assert.equal(loopsOn(h, last), h.rounds[last]! / 3)
+  assert.equal(loopsOn(h, 1), Math.floor(h.rounds[1]! / 5))
+  assert.equal(loopsOn(h, 3), Math.floor(h.rounds[3]! / 5))
+  assert.equal(loopsOn(h, 2), 0, 'the even rounds stay plain')
+  // Without the per-round rule every loop round follows `loopEvery` exactly as before.
+  const plain = { ...h, loopEveryByRound: undefined }
+  assert.equal(loopsOn(plain, last), Math.floor(h.rounds[last]! / 5))
+  // The words say the exception once, by round number.
+  const rule = writeHairInstructions(h)[1]!
+  assert.match(rule, /every fifth stitch only.*except in round 8 a lp st in every third stitch/)
+  assert.doesNotMatch(writeHairInstructions(plain)[1]!, /except/)
+  // The gauge-1 fringe has no per-round rule (its hash is the table's).
+  assert.equal(cowFringe('#5c382c', 'M').loopEveryByRound, undefined)
+})
+
+test('faceRounds (cow-fable-1024g r2): the edge round leans by its droop while the inner rounds face, absent = every round faces', () => {
+  const g = 1.3
+  const base = { ...cowFringe('#5c382c', 'M', g), dir: { x: 0, y: 0, z: 1 } }
+  const last = base.rounds.length - 1
+  assert.deepEqual(base.faceRounds, base.loopRounds!.filter((k) => k !== last))
+  const yr = 3 / g
+  const toPatch = (d: { x: number; y: number; z: number }) => ({ x: d.x, y: -d.y, z: -d.z })
+  // Rings in strand order: the edge round's are the last `rounds[last] / 3`.
+  const edgeN = base.rounds[last]! / 3
+  const faceDir = { x: 0, y: 1, z: 0.3 }
+  const part = { ...base, faceDir, faceJitterDeg: 15 }
+  const all = { ...part, faceRounds: undefined }
+  const ap = loopPlaneAngles(buildHairPatch(part, yr), toPatch(faceDir))
+  const aa = loopPlaneAngles(buildHairPatch(all, yr), toPatch(faceDir))
+  assert.equal(ap.length, aa.length)
+  const inner = (a: number[]) => a.slice(0, a.length - edgeN).filter((x) => x < 35).length
+  const edge = (a: number[]) => a.slice(a.length - edgeN).filter((x) => x < 35).length
+  assert.ok(inner(ap) >= 0.8 * (ap.length - edgeN), `${inner(ap)} inner rings face`)
+  assert.ok(edge(aa) >= 0.8 * edgeN, `${edge(aa)} edge rings face when every round does`)
+  assert.ok(edge(ap) <= 0.5 * edgeN, `${edge(ap)} edge rings face when the edge is left out`)
+  assert.equal(cowFringe('#5c382c', 'M').faceRounds, undefined)
 })
 
 test('the cow program carries every signature piece and the stitched nostrils', () => {

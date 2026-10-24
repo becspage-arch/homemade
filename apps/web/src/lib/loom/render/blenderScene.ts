@@ -218,6 +218,10 @@ export interface HeroPhotoKnobs {
    *  small bright reflection and the fabric's lighting is untouched; x the
    *  key at the piece (0 = off, the render as before). */
   photoCatch?: number
+  /** The catch-light's elevation above the camera axis, degrees
+   *  (cow-fable-1024g: higher puts the spot in the eye's upper half, the
+   *  bar's). 22 = where it has always sat. */
+  photoCatchElev?: number
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -255,6 +259,7 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoCrumpleScale: 1,
   photoRumple: 0,
   photoCatch: 0,
+  photoCatchElev: 22,
 }
 
 /** Per-stage v2 framing when the view does not set `photoFrame` /

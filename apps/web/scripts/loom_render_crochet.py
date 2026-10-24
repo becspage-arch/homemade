@@ -4137,6 +4137,9 @@ VARIANT_BUILDERS = {
 #                   the camera, a little above it, seen by GLOSSY rays only, so
 #                   each safety eye carries one small bright reflection and the
 #                   fabric's lighting is untouched; x the key at the piece (0)
+#   photoCatchElev  the catch-light's elevation above the camera axis, degrees
+#                   (cow-fable-1024g: higher puts the spot in the eye's upper
+#                   half, the bar's); 22 = where it has always sat      (22)
 PHOTO_STAGE3_OFF = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
@@ -4149,7 +4152,7 @@ PHOTO_V2 = dict(
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
-    photoCatch=0.0,
+    photoCatch=0.0, photoCatchElev=22.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4161,7 +4164,7 @@ PHOTO_V1 = dict(
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
-    photoCatch=0.0,
+    photoCatch=0.0, photoCatchElev=22.0,
 )
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
@@ -4354,7 +4357,7 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
         # touch to the key's side, above the eye line), glossy rays only, so
         # the safety eyes catch one bright spot and nothing else changes.
         side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
-        catch = light(at(side * 12.0, 22.0, 0.9 * r), aim, po["photoCatch"], 0.05 * r, (1.0, 0.98, 0.95))
+        catch = light(at(side * 12.0, float(po.get("photoCatchElev", 22.0)), 0.9 * r), aim, po["photoCatch"], 0.05 * r, (1.0, 0.98, 0.95))
         for attr in ("visible_diffuse", "visible_transmission", "visible_volume_scatter"):
             try:
                 setattr(catch, attr, False)

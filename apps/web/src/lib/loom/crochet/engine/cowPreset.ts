@@ -612,6 +612,13 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // r3: more size variety (vary 0.5: the bar's rings differ, big spirals
     // among small) and the facing between r1's (flat cap) and r2's (a mushy
     // heap of overlapping rings): ±22 deg, aimed a touch higher (z 0.4).
+    // cow-fable-1024g r1 (the audit of 1024f r4: the fringe a flat beret of
+    // loops lying on the crown; the bar's a tall tousled HEAP of rings
+    // standing up off the crown between the horns, no two alike): more
+    // variety again (vary 0.6: lengths ±60%, so the rings sit at different
+    // heights), the facing aimed higher (below) and less gravity, so they stand.
+    // r2: vary back to 0.5 (r1's ±60% rings threaded through their
+    // neighbours into a chain-link tangle), the size spread kept per round.
     loop: gLoop(g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.6, droopDeg: -30, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
@@ -635,24 +642,33 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // their circles (hm_loop_calm) r3's 20 left the plain patch showing as a
     // lighter cap between them.
     loopEvery: g > 1.15 ? 5 : undefined,
+    // cow-fable-1024g r1: the EDGE round (the sewn rim, round 8 of eight at
+    // 1.3) a loop in every THIRD stitch (16 rings on 48 stitches), so the rim
+    // is covered with rings and no plain brim shows under the heap (1024f r4:
+    // a smooth lighter brim above the brow between nine edge loops).
+    ...(g > 1.15 ? { loopEveryByRound: (k: number) => (k === last ? 3 : undefined) } : {}),
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
     // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
     curlEvery: g > 1.15 ? 0 : 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
+    // cow-fable-1024g r1: at a fine gauge the loop rounds are the ODD ones, so
+    // the crown override on round 0 never fired; round 1 (the 12-stitch
+    // round, the top of the heap) takes it, a size taller again (5.0 x 3.8).
     loopByRound: (k) =>
       gLoop(
-        k === 0
-          ? (g > 1.15 ? { lengthYr: 4.5, halfWidthYr: 3.8, droopDeg: -22 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
+        (g > 1.15 ? k === 1 : k === 0)
+          ? (g > 1.15 ? { lengthYr: 5.0, halfWidthYr: 3.8, droopDeg: -22 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.7, halfWidthYr: 3.2, droopDeg: -38 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 4.3, halfWidthYr: 3.4, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
     // cow-fable-1024c r1: at a fine gauge half the gravity, so the big
     // chenille rings hold themselves up off the head (the bar's stand).
     // cow-fable-1024e r2: less again (0.0005), so the faced rings stand off the head.
-    gravity: g > 1.15 ? 0.0005 : 0.0015,
+    // cow-fable-1024g r1: less again (0.0003), so the rings stand up off the crown as a heap.
+    gravity: g > 1.15 ? 0.0003 : 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
     // Fine gauge (Fable 23 Oct, r1): the loop strand keeps its gauge-1 mm
@@ -673,7 +689,16 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // (the face direction, a touch up; hairPatch `faceDir`, ±15 deg of
     // tilt): 1024d r4's rings leaned at random and most were seen side-on as
     // arches and worms; the bar's are round open spirals showing their hole.
-    ...(g > 1.15 ? { faceDir: faceDir({ x: 0, y: 1, z: 0.4 }), faceJitterDeg: 22 } : {}),
+    // cow-fable-1024g r1 (1024f r4's faced rings lay over the crown as a tiled
+    // cap facing the lens): aimed much higher (z 0.7) with a wider jitter
+    // (±30 deg), so the top rings stand and are seen on edge against the
+    // window — the bar's lumpy silhouette above the head.
+    // r2: between (z 0.55, ±24 deg: r1's z 0.7 / ±30 leaned the rings back over
+    // each other into a chain-link tangle), and the EDGE round unfaced
+    // (`faceRounds` = the inner loop rounds): its rings lean out over the sewn
+    // rim by their droop (-45, a size bigger: 4.3 x 3.4) and cover it, where
+    // faced they stood up off the rim and left it bare as a brim (r1).
+    ...(g > 1.15 ? { faceDir: faceDir({ x: 0, y: 1, z: 0.55 }), faceJitterDeg: 24, faceRounds: loopRounds.filter((k) => k !== last) } : {}),
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the

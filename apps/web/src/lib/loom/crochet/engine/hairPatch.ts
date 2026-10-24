@@ -68,6 +68,12 @@ export interface HairPatch {
    *  showing between; `plainEvery` 4 is still loops in three of four).
    *  Absent / 0 = every stitch a loop (save `plainEvery`). */
   loopEvery?: number
+  /** `loopEvery` per round (0-based), over `loopEvery` where it answers
+   *  (cow-fable-1024g: the patch's EDGE round carries a loop in every third
+   *  stitch so the sewn edge is covered with rings and no plain brim shows
+   *  under the heap, the inner rounds keep their spacing). Absent, or
+   *  undefined for a round, = `loopEvery` as before. */
+  loopEveryByRound?: (k: number) => number | undefined
   /** Every Nth loop (counted along the round) is a twisted loop — worked as
    *  `loopcurl` with `curlLoop` — so a few tighter curls sit among the open
    *  rings. Absent / 0 = every loop the patch's `stitch`. */
@@ -91,6 +97,11 @@ export interface HairPatch {
    *  leaned loops read as arches and worms seen side-on. Absent = unchanged. */
   faceDir?: { x: number; y: number; z: number }
   faceJitterDeg?: number
+  /** Only these loop rounds (0-based) face `faceDir`; the others lean by
+   *  `droopDeg` as an unfaced patch does (cow-fable-1024g: the EDGE round's
+   *  rings lean out over the sewn rim and cover it, where faced they stood
+   *  up off it and left the rim bare). Absent = every loop round faces. */
+  faceRounds?: number[]
   colourHex: string
 }
 
@@ -109,16 +120,22 @@ export function isLoopRound(h: HairPatch, k: number): boolean {
   return h.loopRounds ? h.loopRounds.includes(k) : k >= h.firstLoopRound
 }
 
+/** The loop-every rule for round k: the per-round one where it answers, else the patch's. */
+export function loopEveryAt(h: HairPatch, k: number): number | undefined {
+  return h.loopEveryByRound?.(k) ?? h.loopEvery
+}
+
 /** The stitch worked at stitch c (0-based) of round k: the plain dc every
  *  `plainEvery`th stitch, the twisted loop every `curlEvery`th loop, else the
  *  patch's loop stitch — the one rule the build and the words both read. */
 export function stitchAtOf(h: HairPatch, k: number, c: number): StitchId {
   if (!isLoopRound(h, k)) return 'sc'
   if (h.plainEvery && (c + 1) % h.plainEvery === 0) return 'sc'
-  if (h.loopEvery && (c + 1) % h.loopEvery !== 0) return 'sc'
+  const every = loopEveryAt(h, k)
+  if (every && (c + 1) % every !== 0) return 'sc'
   if (h.curlEvery) {
     // Count the loops (not the plain stitches) along the round.
-    const loopsBefore = h.loopEvery ? Math.floor((c + 1) / h.loopEvery) - 1 : h.plainEvery ? c - Math.floor(c / h.plainEvery) : c
+    const loopsBefore = every ? Math.floor((c + 1) / every) - 1 : h.plainEvery ? c - Math.floor(c / h.plainEvery) : c
     if ((loopsBefore + 1) % h.curlEvery === 0) return 'loopcurl'
   }
   return h.stitch
@@ -151,7 +168,7 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   // `loopEvery` alone is a per-stitch rule too (cow-fable-1024c r2: with no
   // twisted curls the build quietly put a loop in EVERY stitch of the loop
   // rounds, 96 rings for the 22 the words promised).
-  const perStitch = !!(h.plainEvery || h.loopEvery || h.curlEvery)
+  const perStitch = !!(h.plainEvery || h.loopEvery || h.loopEveryByRound || h.curlEvery)
   const { e1, e2, w } = patchFrame(h.dir)
   // The faced direction in the patch frame, then per stitch in that stitch's
   // own fabric frame: the round builder lays stitch i of a round at
@@ -159,7 +176,7 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   // and y to the radius there.
   const fp = h.faceDir ? { x: dot(h.faceDir, e1), y: dot(h.faceDir, e2), z: dot(h.faceDir, w) } : undefined
   const facePlaneAt = (k: number, c: number): Partial<LoopShape> | undefined => {
-    if (!fp) return undefined
+    if (!fp || (h.faceRounds && !h.faceRounds.includes(k))) return undefined
     const th = roundStitchAngle(h.rounds[k]!, c)
     const facePlane = { x: -fp.x * Math.sin(th) + fp.y * Math.cos(th), y: fp.x * Math.cos(th) + fp.y * Math.sin(th), z: fp.z }
     return { facePlane, ...(h.faceJitterDeg != null ? { faceJitterDeg: h.faceJitterDeg } : {}) }
@@ -307,10 +324,15 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   // Loops in two of every three stitches, a twist on every Nth loop: said
   // once, from the same rule the geometry is built with.
   const ordinal = (n: number): string => ({ 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth' }[n] ?? `${n}th`)
-  if (h.plainEvery || h.loopEvery || h.curlEvery) {
+  if (h.plainEvery || h.loopEvery || h.loopEveryByRound || h.curlEvery) {
     let rule = 'In the loop-stitch rounds below'
     if (h.loopEvery) {
       rule += `, work a lp st in every ${ordinal(h.loopEvery)} stitch only and a plain dc in the rest (so one of every ${['', '', 'two', 'three', 'four', 'five', 'six'][h.loopEvery] ?? h.loopEvery} stitches carries a loop)`
+    }
+    if (h.loopEveryByRound) {
+      // The rounds whose rule differs from the patch's, said by round number.
+      const special = h.rounds.map((_, k) => k).filter((k) => isLoopRound(h, k) && h.loopEveryByRound!(k) != null && h.loopEveryByRound!(k) !== h.loopEvery)
+      for (const k of special) rule += `${h.loopEvery ? ', except' : ','} in round ${k + 1} a lp st in every ${ordinal(h.loopEveryByRound!(k)!)} stitch`
     }
     if (h.plainEvery) {
       const n = h.plainEvery
