@@ -619,10 +619,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // heights), the facing aimed higher (below) and less gravity, so they stand.
     // r2: vary back to 0.5 (r1's ±60% rings threaded through their
     // neighbours into a chain-link tangle), the size spread kept per round.
-    // r3: the inner rings ROUNDER and a touch shorter (3.8 x 3.5, were 4.1 x
-    // 3.6 sausage loops): r2's long loops still reached into their neighbours
-    // and linked, two or three at the centre of the heap; the bar's are coils.
-    loop: gLoop(g > 1.15 ? { lengthYr: 3.8, halfWidthYr: 3.5, droopDeg: -30, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r3 tried the inner rings rounder (3.8 x 3.5) against the chain-link
+    // look: measured (Gauss linking number per ring pair) only 3 of the 29
+    // rings' pairs are truly linked at either size — the chain is the smooth
+    // bare tubes crossing over each other in the render, so r4 keeps r2's
+    // rings and roughens them in the scene (hm_loop_calm 0.4, twist 0.35).
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.6, droopDeg: -30, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
