@@ -561,7 +561,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // r3: the bar's ring size (outer ~17 mm on a ~100 mm head: 3.6 x 2.5 at
     // 1.3 is a 13 x 16 mm centreline, a 7 mm hole on a 1.15 x strand); r2's
     // 4.6 x 3.4 were 18 x 21 mm and, with the loopEvery bug, 96 of them.
-    loop: gLoop(g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 2.5, droopDeg: -20, vary: 0.45 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r4: a touch rounder and tipped out more (droop -28) so the front rings
+    // show their face to the lens; r3's stood as arches with the patch showing between.
+    loop: gLoop(g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 2.7, droopDeg: -28, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -577,7 +579,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r2: at a fine gauge loops in every FOURTH stitch (r1's
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
-    loopEvery: g > 1.15 ? 4 : undefined,
+    // r4: a loop in every THIRD stitch again (32 rings; r3's 22 left the sewn circle showing between them).
+    loopEvery: g > 1.15 ? 3 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
     // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
@@ -586,9 +589,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.6, droopDeg: -15 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder)
+          ? (g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.8, droopDeg: -20 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.2, halfWidthYr: 2.2, droopDeg: -30 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.2, halfWidthYr: 2.4, droopDeg: -36 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
