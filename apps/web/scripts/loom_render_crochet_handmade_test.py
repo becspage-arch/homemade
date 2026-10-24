@@ -118,6 +118,16 @@ class Displace(unittest.TestCase):
         self.assertNotIn("hm_loop_mult", fp)
         self.assertNotIn("hm_loop_wobble", fp)
         self.assertNotIn("hm_wobble", fp)
+        # cow-fable-1024f: the loop-only pile and tone knobs are opt-in too
+        self.assertNotIn("hm_loop_bare", fp)
+        self.assertNotIn("hm_loop_tone", fp)
+        self.assertEqual(R.hm_amt(fp, "hm_loop_bare"), 0)
+
+    def test_loop_tone_scales_the_hex_and_one_is_identity(self):
+        self.assertEqual(R.tone_hex("#694535", 1.0), "#694535")
+        self.assertEqual(R.tone_hex("#694535", 0.9), "#5e3e30")
+        self.assertEqual(R.tone_hex("#ffffff", 1.2), "#ffffff")
+        self.assertEqual(R.tone_hex("#000000", 0.5), "#000000")
 
     def test_plies_of_one_stroke_move_together(self):
         fp = R.handmade_params({"handmade": 1, "hm_loft": 0.0, "hm_tension": 0.0})

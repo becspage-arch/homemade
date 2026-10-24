@@ -517,8 +517,13 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
   // ring's width apart) with a loop in every third stitch (24 rings): the
   // rings crowded along each row instead and read as a cauliflower of bumps
   // with fewer holes than r3's, so the final code keeps r3's rows.
+  // cow-fable-1024f r2: at a fine gauge the loop rounds are the ODD ones (1,
+  // 3, 5, 7 of eight), so the patch's EDGE round carries the spill loops and
+  // the plain sewing edge no longer shows as a bald helmet rim across the
+  // brow (r1, seen from the bar's camera above eye level); the plain crown
+  // round sits under the mound.
   const step = g > 1.15 ? 2 : Math.max(2, Math.round(2 * g))
-  const loopRounds = rounds.map((_, k) => k).filter((k) => k % step === 0 || (k === last && last % step === 0))
+  const loopRounds = rounds.map((_, k) => k).filter((k) => (g > 1.15 ? k % 2 === 1 : k % step === 0 || (k === last && last % step === 0)))
   return {
     name: 'fringe',
     on: 'head',
@@ -527,7 +532,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1024b r1 (the audit: the fringe sat low over the eyes, the calf
     // looked down and grumpy): higher on the crown again (y 0.45) so a band of
     // face shows between the curls and the eyes, like the bar's.
-    dir: faceDir(g > 1.15 ? { ...HAIR_DIR, y: 0.45 } : HAIR_DIR),
+    // cow-fable-1024f r1 (the audit of 1024e r3: the fringe a mat down to the
+    // eyes, overhanging them like a frown; the bar's sits on TOP between the
+    // horns with an eye's height of plain brow below its lowest curls): the
+    // circle's centre higher still (y 0.38), the standing heap kept.
+    dir: faceDir(g > 1.15 ? { ...HAIR_DIR, y: 0.34 } : HAIR_DIR),
     stitch: 'loopst',
     rounds,
     firstLoopRound: 0,
@@ -620,7 +629,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
     // r4: a loop in every THIRD stitch again (32 rings; r3's 22 left the sewn circle showing between them).
-    loopEvery: g > 1.15 ? 4 : undefined,
+    // cow-fable-1024f r2: a loop in every FIFTH stitch (r1's 22 bare rings
+    // packed into a brain of sausages with no holes; the bar's ~18 stand apart).
+    loopEvery: g > 1.15 ? 6 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
     // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
@@ -929,7 +940,11 @@ const EYE_DIR = { x: 0.5, y: 1, z: 0.16 }
 // top edge and the calf looked heavy): higher again (z 0.24) so about half an
 // eye of brown face shows between the eye and the muzzle's top curve, the
 // eyes just above its upper corners — the bar's bright look.
-const FINE_EYE_DIR = { x: 0.4, y: 1, z: 0.24 }
+// cow-fable-1024f r1 (the audit of 1024e r3: the eyes read half-lidded and
+// turned in; the bar's are 0.44 of the face apart, ours measured 0.40): a
+// touch wider apart (x 0.45) and a hair lower (z 0.22: the brown gap above
+// the muzzle measured ~12 mm against the bar's ~9).
+const FINE_EYE_DIR = { x: 0.45, y: 1, z: 0.22 }
 
 /** Brown-only pile: a short dense fringe of real hair curves on the dark
  *  chenille (the bar's lit pile tips), none on the cream (grey whiskers). */

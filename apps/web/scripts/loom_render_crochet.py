@@ -54,6 +54,15 @@ def hex_to_lin(h):
     return (lin(r), lin(g), lin(b), 1.0)
 
 
+def tone_hex(h, tone):
+    """The yarn colour's sRGB channels scaled by `tone` (1 = unchanged), clamped:
+    `hm_loop_tone` darkens or lifts the fringe loops' own material a shade
+    without touching the scene's hex (cow-fable-1024f)."""
+    h = h.lstrip("#")
+    out = [min(255, max(0, int(round(int(h[i:i + 2], 16) * tone)))) for i in (0, 2, 4)]
+    return "#%02x%02x%02x" % tuple(out)
+
+
 # Per-fibre shader knobs (STITCH_ENGINE yarn-fibre pass). `cotton` is the
 # ORIGINAL crisp-plied numbers, unchanged, so a program that doesn't set
 # `fibre` (every program before this pass, and every one that stays on the
@@ -283,6 +292,14 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_loop_wobble      the loops' own hm_wobble (r4: the row wander, scaled
 #                       by the loop's fat radius, flattened the fringe rings
 #                       on to the brow). Absent = hm_wobble.
+#   hm_loop_bare 0/1    1 = NO pile hairs on the loops at all, whatever
+#                       `pile_max_radius_mm` and `hm_loop_pile` say, so each
+#                       chenille ring is a crisp velvet tube with its own
+#                       shadow instead of a fuzz that merges with its
+#                       neighbours (cow-fable-1024f). Absent / 0 = unchanged.
+#   hm_loop_tone        the loops' material colour = the scene hex with its
+#                       sRGB channels x this (0.9 a shade darker, 1.1 lighter);
+#                       absent / 1 = unchanged (cow-fable-1024f).
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
@@ -1112,10 +1129,15 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             _c, spr = strand_centre(group[0]["filaments"])
             r_out_mm = (spr + radius) * (fpb.get("strand_mult", 1.0) if strand != "ply" else 1.0)
         cell_bu = fpb.get("hm_cell_r", 4.5) * r_out_mm * S
+        # `hm_loop_tone` (cow-fable-1024f, render-only): the fat loops' material
+        # a shade darker or lighter than the scene hex. Absent / 1 = unchanged.
+        mat_hex = hexcol
+        if "hm_loop_tone" in fpb and float(fpb["hm_loop_tone"]) != 1.0 and is_loop(radius):
+            mat_hex = tone_hex(hexcol, float(fpb["hm_loop_tone"]))
         if strand == "single" and fpb.get("material", "pile") == "pile":
-            ymat = chenille_material("y_" + hexcol, hexcol, fpb, cell_bu, r_out_mm * S)
+            ymat = chenille_material("y_" + hexcol, mat_hex, fpb, cell_bu, r_out_mm * S)
         else:
-            ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre, fpb, cell_bu)
+            ymat = yarn_material("y_" + hexcol, mat_hex, sheen, fibre, fpb, cell_bu)
         if metallic > 0:
             # A metallic thread (the spiral trees' gold star and cord, strokes[].metallic):
             # the plied yarn surface blended toward a brushed metal. Absent from
@@ -1136,7 +1158,11 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             dark_ok = not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75
             size_ok = radius <= fpb.get("pile_max_radius_mm", 1e9)
             lp = hm_amt(fpb, "hm_loop_pile")
-            if dark_ok and lp > 0 and is_loop(radius):
+            if hm_amt(fpb, "hm_loop_bare") > 0 and is_loop(radius):
+                # `hm_loop_bare` (cow-fable-1024f): the fringe rings carry no
+                # pile at all, so each reads as its own crisp chenille tube
+                pass
+            elif dark_ok and lp > 0 and is_loop(radius):
                 # handmade: the fat loops (cow fringe) get their own, denser
                 # pile so they read as fuzzy chenille, not smooth tubes
                 add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * lp,
