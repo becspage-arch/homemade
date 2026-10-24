@@ -519,7 +519,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // beret) and vary more (0.6), with a loop in every OTHER stitch only
     // (loopEvery 2: plainEvery 4 was loops in three of four, packed edge to
     // edge) so the head shows between the rings like the bar's.
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 2.2, droopDeg: -35, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r2: OPEN rings — wider (halfWidth 3.0: the hole shows, r1's fat 13 mm
+    // loops were sausages pressed together) and a loop in every THIRD stitch.
+    loop: gLoop(g > 1.15 ? { lengthYr: 5.0, halfWidthYr: 3.0, droopDeg: -35, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -535,16 +537,16 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r2: at a fine gauge loops in every FOURTH stitch (r1's
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
-    loopEvery: g > 1.15 ? 2 : undefined,
+    loopEvery: g > 1.15 ? 3 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     curlEvery: 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 } // over three fingers, standing up: the crown of the mound
+          ? (g > 1.15 ? { lengthYr: 6.0, halfWidthYr: 3.2, droopDeg: -30 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.2, halfWidthYr: 1.8, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.6, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
@@ -567,7 +569,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // tops are s 0.55 against the body's 0.7; r4's rings read coral at 0.65).
     // r4: and the hue turned 10 deg toward orange (the bar's fringe is caramel
     // at h 19; the lifted dye at h 8-10 read dusty rose however it was desaturated).
-    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.14, 0.8), 10) : lighten(colourHex, 0.14),
+    // cow-fable-1024 r2: lifted a touch more and paler (0.2, desat 1.0): r1's
+    // rings measured s 0.61 v 0.52 against the bar's caramel at s 0.44 v 0.60.
+    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.2, 1.0), 8) : lighten(colourHex, 0.14),
   }
 }
 
