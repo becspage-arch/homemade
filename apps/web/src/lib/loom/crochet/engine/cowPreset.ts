@@ -202,7 +202,8 @@ export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   // cow-fable-1024b r1: 21 read as dinner plates nearly half the face wide; r2: 16 (the bar's cups are a third of the face).
   // r3: 17; a thin unrolled edge was tried in the r3 render but the cow's cup keeps its
   // rolled rim (earPiece.test: rimFold 1 and a 7.5 mm hollow at M; rimRoll 0 gave 7.3).
-  M: { kind: 'cup', width: 17, depth: 1, rimRoll: 1, pinch: 0.6 },
+  // cow-fable-1024c r1: 16 (r4's 17 read a size big with a thick rim).
+  M: { kind: 'cup', width: 16, depth: 1, rimRoll: 1, pinch: 0.6 },
   L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
@@ -548,7 +549,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // smaller, tighter rings with a visible hole): rings a size smaller (3.6 x
     // 2.2) on a thinner strand (hm_loop_mult 1.0 in the scene) so the hole stays.
     // r2: halfway back (4.0 x 2.6; r1's 3.6 x 2.2 coils packed into brain-textured popcorn with no holes).
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.6, droopDeg: -40, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // cow-fable-1024c r1 (the orchestrator's audit of 1024b r4: "a flat brown
+    // cap of noodles laid over the brow"; the bar's is a tousled heap of
+    // distinct loose rings standing up off the head, each with a hole): the
+    // rings ROUNDER (halfWidth 3.0, so the hole shows face-on) and standing
+    // up off the head (droop -25: -40 leaned them over each other into a mat).
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 3.0, droopDeg: -25, vary: 0.55 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -572,13 +578,15 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 4.8, halfWidthYr: 2.7, droopDeg: -38 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
+          ? (g > 1.15 ? { lengthYr: 5.0, halfWidthYr: 3.1, droopDeg: -20 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.4, halfWidthYr: 2.2, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 2.5, droopDeg: -35 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
-    gravity: 0.0015,
+    // cow-fable-1024c r1: at a fine gauge half the gravity, so the big
+    // chenille rings hold themselves up off the head (the bar's stand).
+    gravity: g > 1.15 ? 0.0008 : 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
     // Fine gauge (Fable 23 Oct, r1): the loop strand keeps its gauge-1 mm
@@ -603,7 +611,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1024b r1 (the audit: "pale beige"; the bar's curls are the body
     // chocolate lifted a little): back toward the body (0.12, desat 0.6, hue +4).
     // r2: a touch lighter again (0.18, desat 0.8, hue +6): r1's #704b3a was too near the body to read as a fringe.
-    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.18, 0.8), 6) : lighten(colourHex, 0.14),
+    // cow-fable-1024c r1 (the audit: the bar's fringe is the body chocolate
+    // or barely lighter; measured on the bar the lit fringe is v 0.37 over a
+    // v 0.28 brow, ours was v 0.58 over 0.28): back to the body (0.08, desat 0.6, hue +4).
+    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.08, 0.6), 4) : lighten(colourHex, 0.14),
   }
 }
 
@@ -795,10 +806,15 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   // gap between eye and muzzle (the bar).
   const props: CompositionProp[] = []
   const r = (choices.eyeMm || s.eyeMm) / 2
+  // cow-fable-1024c r1 (the audit of 1024b r4: ours "small and set far
+  // apart/high, a blank look"; measured, the bar's eyes are 0.44 of the face
+  // apart with their lower edge on the muzzle's top, ours 0.53 apart with a
+  // gap): at a fine gauge closer together and lower. Gauge 1 keeps EYE_DIR.
+  const eyeDir = g > 1.15 ? FINE_EYE_DIR : EYE_DIR
   for (const side of [-1, 1] as const) {
     props.push({
       name: side < 0 ? 'eye-l' : 'eye-r', on: 'head',
-      dir: fd({ x: side * EYE_DIR.x, y: EYE_DIR.y, z: EYE_DIR.z }),
+      dir: fd({ x: side * eyeDir.x, y: eyeDir.y, z: eyeDir.z }),
       // Round 24: seated proud so the whole glossy dome shows out of the pile.
       radiusMm: r, seat: -(r + 1.5), colourHex: EYE_HEX, gloss: 0.85,
     })
@@ -830,6 +846,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
 // Round 27: a little higher, just outside the muzzle's top corners, so a gap of
 // brown shows between eye and muzzle (the bar).
 const EYE_DIR = { x: 0.5, y: 1, z: 0.16 }
+/** The fine-gauge calf's eyes (gauge > 1.15 only): closer together and lower,
+ *  their lower edge about on the muzzle's top (the bar; cow-fable-1024c r1). */
+const FINE_EYE_DIR = { x: 0.4, y: 1, z: 0.08 }
 
 /** Brown-only pile: a short dense fringe of real hair curves on the dark
  *  chenille (the bar's lit pile tips), none on the cream (grey whiskers). */
