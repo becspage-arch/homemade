@@ -4096,6 +4096,10 @@ VARIANT_BUILDERS = {
 #   photoRumple     a knit cloth's soft rounded rumples (a chunky blanket rolls,
 #                   it does not crease), x piece height x 0.1; the cloth rises
 #                   round the toy where it sits in it             (0)
+#   photoCatch      a catch-light (cow-fable-1024b): a small hard light beside
+#                   the camera, a little above it, seen by GLOSSY rays only, so
+#                   each safety eye carries one small bright reflection and the
+#                   fabric's lighting is untouched; x the key at the piece (0)
 PHOTO_STAGE3_OFF = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
@@ -4108,6 +4112,7 @@ PHOTO_V2 = dict(
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
+    photoCatch=0.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4119,6 +4124,7 @@ PHOTO_V1 = dict(
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
+    photoCatch=0.0,
 )
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
@@ -4306,6 +4312,18 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
     if po["photoRim"] > 0:
         side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
         made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"], 0.22 * r, GOLD))
+    if po.get("photoCatch", 0.0) > 0:
+        # cow-fable-1024b: a small hard light just off the camera axis (a
+        # touch to the key's side, above the eye line), glossy rays only, so
+        # the safety eyes catch one bright spot and nothing else changes.
+        side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
+        catch = light(at(side * 12.0, 22.0, 0.9 * r), aim, po["photoCatch"], 0.05 * r, (1.0, 0.98, 0.95))
+        for attr in ("visible_diffuse", "visible_transmission", "visible_volume_scatter"):
+            try:
+                setattr(catch, attr, False)
+            except Exception:
+                pass
+        made.append(catch)
     for ob in made:
         try:
             ob.visible_camera = False
