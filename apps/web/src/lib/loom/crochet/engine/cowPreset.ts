@@ -196,7 +196,10 @@ export const COW_CUP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   S: { kind: 'cup', width: 12, depth: 1, rimRoll: 1, pinch: 0.6 },
   // Fable 23 Oct (r1): 18 round at M (12 read as a quarter of the face width; the bar's cups are about a third).
   // r2: 15 and depth 1 (18 at depth 2 facing the lens read as two huge dark bagels).
-  M: { kind: 'cup', width: 15, depth: 1, rimRoll: 1, pinch: 0.6 },
+  // cow-fable-1024 r3 (optional in the brief): 18 again, at depth 1 and aimed
+  // at the key since 1023b (r2's bagels were depth 2 facing the lens); the
+  // bar's ears are bigger leaf-shaped cups.
+  M: { kind: 'cup', width: 18, depth: 1, rimRoll: 1, pinch: 0.6 },
   L: { kind: 'cup', width: 15, depth: 2, rimRoll: 1, pinch: 0.6 },
 }
 
@@ -521,7 +524,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // edge) so the head shows between the rings like the bar's.
     // r2: OPEN rings — wider (halfWidth 3.0: the hole shows, r1's fat 13 mm
     // loops were sausages pressed together) and a loop in every THIRD stitch.
-    loop: gLoop(g > 1.15 ? { lengthYr: 5.0, halfWidthYr: 3.0, droopDeg: -35, vary: 0.6 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r3: between r1 (a neat beret of fat sausages) and r2 (a wiry tangle of
+    // thin 18 mm noodles): rings a size smaller (4.6 x 2.7), less chaos
+    // (vary 0.5), the strand plumper again in the scene (hm_loop_mult 1.25).
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.6, halfWidthYr: 2.7, droopDeg: -38, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -539,14 +545,15 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     plainEvery: g > 1.15 ? undefined : 2,
     loopEvery: g > 1.15 ? 3 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
-    curlEvery: 4,
+    // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
+    curlEvery: g > 1.15 ? 6 : 4,
     curlLoop: gLoop({ twist: 1, curl: 0.4, halfWidthYr: 1.6 }, g),
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 6.0, halfWidthYr: 3.2, droopDeg: -30 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
+          ? (g > 1.15 ? { lengthYr: 5.4, halfWidthYr: 2.9, droopDeg: -30 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound
           : k === last
-            ? (g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 2.6, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.8, halfWidthYr: 2.4, droopDeg: -45 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
