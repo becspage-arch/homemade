@@ -513,12 +513,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
   // cow-fable-1024c r2: at a fine gauge loops on every OTHER round again (four
   // loop rounds at 1.3), a loop in only every fourth stitch, so ~22 fat rings
   // are spread over the disc instead of packed into three concentric rings.
-  // cow-fable-1024e r4: at a fine gauge loops on every THIRD round (0, 3, 6:
-  // rounds 16 mm apart, a ring's own width, so the rows of faced rings sit
-  // beside each other instead of stacking 8 mm deep), a loop in every third
-  // stitch of those (24 rings): r2/r3's rows two rounds apart overlapped into
-  // a knobbly heap where the bar's rings each read as their own "O".
-  const step = g > 1.15 ? 3 : Math.max(2, Math.round(2 * g))
+  // cow-fable-1024e r4 tried loops on every THIRD round (0, 3, 6, the rows a
+  // ring's width apart) with a loop in every third stitch (24 rings): the
+  // rings crowded along each row instead and read as a cauliflower of bumps
+  // with fewer holes than r3's, so the final code keeps r3's rows.
+  const step = g > 1.15 ? 2 : Math.max(2, Math.round(2 * g))
   const loopRounds = rounds.map((_, k) => k).filter((k) => k % step === 0 || (k === last && last % step === 0))
   return {
     name: 'fringe',
@@ -621,7 +620,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
     // r4: a loop in every THIRD stitch again (32 rings; r3's 22 left the sewn circle showing between them).
-    loopEvery: g > 1.15 ? 3 : undefined,
+    loopEvery: g > 1.15 ? 4 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
     // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
