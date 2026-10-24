@@ -584,8 +584,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // nearly every one showing its hole): bigger and ROUNDER (4.0 x 3.5: the
     // 15 x 18 mm centreline toward 20 x 20), calmer (vary 0.45), tipped a
     // touch more to the lens (droop -30). r2: -34, and a loop in every FOURTH
-    // stitch (r1's 32 big rings packed into a cauliflower of sausages).
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 3.5, droopDeg: -34, vary: 0.45 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // stitch (r1's 32 big rings packed into a cauliflower of sausages). r3:
+    // leaning out more (droop -38) on a strand two thirds as thick, so the
+    // heap spreads low horn to horn and the rings open (r2's 22 fat rings
+    // still piled into a tall cauliflower).
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.0, halfWidthYr: 3.5, droopDeg: -38, vary: 0.45 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -611,9 +614,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 3.7, droopDeg: -24 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
+          ? (g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 3.7, droopDeg: -28 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 3.1, droopDeg: -38 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.6, halfWidthYr: 3.1, droopDeg: -42 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
@@ -627,8 +630,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // rings however fine the fabric; render-only (the words name one yarn).
     // cow-fable-1024d r1: a touch fatter at a fine gauge (1.45 x g; the bar's
     // strand is as thick as the body yarn, 1024c r4's read thinner). r2: 1.35
-    // (1.45 read fatter than the body yarn).
-    strandYr: (g > 1.15 ? 1.35 : 1.3) * g,
+    // (1.45 read fatter than the body yarn). r3: 0.95 x g — measured on the
+    // r2 and bar face crops, our ring strand was 1.9 head stitches wide, the
+    // bar's 1.3; the radius (2.85 mm at 1.3) stays above the pile cut-off
+    // (pile_max_radius_mm / g = 2.46) and the loop gate (hm_loop_ratio 1.4 x
+    // the fabric strand), so the rings stay smooth chenille drawn at hm_loop_mult.
+    strandYr: (g > 1.15 ? 0.95 : 1.3) * g,
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
