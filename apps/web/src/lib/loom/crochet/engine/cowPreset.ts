@@ -629,9 +629,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // every third still packed wall to wall; the bar's head shows between its rings).
     plainEvery: g > 1.15 ? undefined : 2,
     // r4: a loop in every THIRD stitch again (32 rings; r3's 22 left the sewn circle showing between them).
-    // cow-fable-1024f r2: a loop in every FIFTH stitch (r1's 22 bare rings
-    // packed into a brain of sausages with no holes; the bar's ~18 stand apart).
-    loopEvery: g > 1.15 ? 6 : undefined,
+    // cow-fable-1024f r2: a loop in every SIXTH stitch (r1's 22 bare rings
+    // packed into a brain of sausages with no holes; the bar's ~18 stand
+    // apart). r4: every FIFTH (22 rings): once the render let the rings keep
+    // their circles (hm_loop_calm) r3's 20 left the plain patch showing as a
+    // lighter cap between them.
+    loopEvery: g > 1.15 ? 5 : undefined,
     // Round 29: every fourth loop a SINGLE twist (the double twists knotted r28's into a brain).
     // cow-fable-1024 r3: at a fine gauge only every SIXTH loop twisted (r2's every fourth knotted the open rings into a tangle).
     // cow-fable-1024c r2: no twisted curls at a fine gauge (the bar's are open rings; a twist knots them).
