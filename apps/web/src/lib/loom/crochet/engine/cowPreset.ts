@@ -596,7 +596,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // (4.1 x 3.6: ~20 mm, the bar's sixth of the head seen face-on), the
     // facing jittered wider (±30 deg) so they overlap at angles, and less
     // gravity so the heap stands.
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.6, droopDeg: -30, vary: 0.4 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r3: more size variety (vary 0.5: the bar's rings differ, big spirals
+    // among small) and the facing between r1's (flat cap) and r2's (a mushy
+    // heap of overlapping rings): ±22 deg, aimed a touch higher (z 0.4).
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.6, droopDeg: -30, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -652,7 +655,7 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // (the face direction, a touch up; hairPatch `faceDir`, ±15 deg of
     // tilt): 1024d r4's rings leaned at random and most were seen side-on as
     // arches and worms; the bar's are round open spirals showing their hole.
-    ...(g > 1.15 ? { faceDir: faceDir({ x: 0, y: 1, z: 0.3 }), faceJitterDeg: 30 } : {}),
+    ...(g > 1.15 ? { faceDir: faceDir({ x: 0, y: 1, z: 0.4 }), faceJitterDeg: 22 } : {}),
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
