@@ -527,7 +527,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // r3: between r1 (a neat beret of fat sausages) and r2 (a wiry tangle of
     // thin 18 mm noodles): rings a size smaller (4.6 x 2.7), less chaos
     // (vary 0.5), the strand plumper again in the scene (hm_loop_mult 1.25).
-    loop: gLoop(g > 1.15 ? { lengthYr: 4.6, halfWidthYr: 2.7, droopDeg: -38, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // r4: rounder rings (4.4 x 2.9) so more face the viewer as rings, not leaning loops.
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.4, halfWidthYr: 2.9, droopDeg: -40, vary: 0.5 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -578,7 +579,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // at h 19; the lifted dye at h 8-10 read dusty rose however it was desaturated).
     // cow-fable-1024 r2: lifted a touch more and paler (0.2, desat 1.0): r1's
     // rings measured s 0.61 v 0.52 against the bar's caramel at s 0.44 v 0.60.
-    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.2, 1.0), 8) : lighten(colourHex, 0.14),
+    // r4: a shade lighter again (0.24): r3's rings measured v 0.57 s 0.54 against the bar's v 0.60 s 0.44.
+    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.24, 1.0), 8) : lighten(colourHex, 0.14),
   }
 }
 
