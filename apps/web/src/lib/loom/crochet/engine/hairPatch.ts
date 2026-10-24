@@ -18,7 +18,7 @@
  * the surface and its height off the head.
  */
 
-import { buildRounds } from './shaping'
+import { buildRounds, roundStitchAngle } from './shaping'
 import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import type { BuiltContinuous } from './yarnPath'
@@ -83,6 +83,14 @@ export interface HairPatch {
    *  not pulled tight into a stitch plumps up to its full pile, so the cow's
    *  curls are drawn fatter than the fabric they stand on. */
   strandYr?: number
+  /** FACE THE LENS (cow-fable-1024e): a WORLD direction every loop's plane is
+   *  turned to face (its normal, ±`faceJitterDeg` of tilt, default 15), in
+   *  place of the `droopDeg` lean and the yaw spread. A chenille ring worked
+   *  on a flat circle and sewn to the crown holds its plane, and the bar
+   *  cow's rings show their holes to the camera as round open spirals; the
+   *  leaned loops read as arches and worms seen side-on. Absent = unchanged. */
+  faceDir?: { x: number; y: number; z: number }
+  faceJitterDeg?: number
   colourHex: string
 }
 
@@ -144,16 +152,31 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   // twisted curls the build quietly put a loop in EVERY stitch of the loop
   // rounds, 96 rings for the 22 the words promised).
   const perStitch = !!(h.plainEvery || h.loopEvery || h.curlEvery)
+  const { e1, e2, w } = patchFrame(h.dir)
+  // The faced direction in the patch frame, then per stitch in that stitch's
+  // own fabric frame: the round builder lays stitch i of a round at
+  // `roundStitchAngle` and maps its fabric x (along the row) to the tangent
+  // and y to the radius there.
+  const fp = h.faceDir ? { x: dot(h.faceDir, e1), y: dot(h.faceDir, e2), z: dot(h.faceDir, w) } : undefined
+  const facePlaneAt = (k: number, c: number): Partial<LoopShape> | undefined => {
+    if (!fp) return undefined
+    const th = roundStitchAngle(h.rounds[k]!, c)
+    const facePlane = { x: -fp.x * Math.sin(th) + fp.y * Math.cos(th), y: fp.x * Math.cos(th) + fp.y * Math.sin(th), z: fp.z }
+    return { facePlane, ...(h.faceJitterDeg != null ? { faceJitterDeg: h.faceJitterDeg } : {}) }
+  }
+  const curlAt = (k: number, c: number): Partial<LoopShape> | undefined =>
+    h.curlEvery && h.curlLoop && stitchAtOf(h, k, c) === 'loopcurl' ? h.curlLoop : undefined
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
     loopByRound: h.loopByRound,
     ...(perStitch ? { stitchAt: (k: number, c: number) => stitchAtOf(h, k, c) } : {}),
-    ...(h.curlEvery && h.curlLoop
-      ? { loopByStitch: (k: number, c: number) => (stitchAtOf(h, k, c) === 'loopcurl' ? h.curlLoop : undefined) }
-      : {}),
+    ...(fp
+      ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c) }) }
+      : h.curlEvery && h.curlLoop
+        ? { loopByStitch: (k: number, c: number) => curlAt(k, c) }
+        : {}),
   })
-  const { e1, e2, w } = patchFrame(h.dir)
   const g = yr * (h.gravity ?? HAIR_GRAVITY)
   // World down in the patch frame: toward the head (+z) on a crown patch, and
   // down the face along it — so the front loops fall over the forehead.

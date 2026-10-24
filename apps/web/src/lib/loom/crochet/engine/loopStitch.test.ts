@@ -81,6 +81,52 @@ test('the cow fringe (alternate loop rounds, outward-leaning rings) audits clean
   assert.equal(stitchAtOf(h, 1, 0), 'sc', 'round 2 is a plain round')
 })
 
+// ── Rings that FACE a direction (cow-fable-1024e: HairPatch.faceDir) ─────────
+/** The angle (deg) between each loose loop's plane normal (its area vector,
+ *  after relax, in the patch's own frame) and a direction in that frame. */
+function loopPlaneAngles(built: ReturnType<typeof buildHairPatch>, dirPatch: { x: number; y: number; z: number }): number[] {
+  const m = built.model
+  const loops: number[][] = []
+  let cur: number[] = []
+  for (const ni of built.strandPath) { if (m.loose?.[ni]) cur.push(ni); else if (cur.length) { loops.push(cur); cur = [] } }
+  if (cur.length) loops.push(cur)
+  const fl = Math.hypot(dirPatch.x, dirPatch.y, dirPatch.z)
+  return loops.map((L) => {
+    const pts = L.map((i) => m.nodes[i]!)
+    const c = pts.reduce((a, p) => ({ x: a.x + p.x / pts.length, y: a.y + p.y / pts.length, z: a.z + p.z / pts.length }), { x: 0, y: 0, z: 0 })
+    let n = { x: 0, y: 0, z: 0 }
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i]!, b = pts[(i + 1) % pts.length]!
+      const ra = { x: a.x - c.x, y: a.y - c.y, z: a.z - c.z }, rb = { x: b.x - c.x, y: b.y - c.y, z: b.z - c.z }
+      n = { x: n.x + ra.y * rb.z - ra.z * rb.y, y: n.y + ra.z * rb.x - ra.x * rb.z, z: n.z + ra.x * rb.y - ra.y * rb.x }
+    }
+    const nl = Math.hypot(n.x, n.y, n.z) || 1
+    return (Math.acos(Math.min(1, Math.abs((n.x * dirPatch.x + n.y * dirPatch.y + n.z * dirPatch.z) / (nl * fl)))) * 180) / Math.PI
+  })
+}
+
+test('a fringe with faceDir turns every ring to face it (and without it, the rings lean as before)', () => {
+  // The fine-gauge cow fringe faces the lens; the patch is sewn straight up
+  // (dir +z) so the patch frame is the world's: e1 = +x, e2 = -y, w = -z.
+  const g = 1.3
+  const base = { ...cowFringe('#5c382c', 'M', g), dir: { x: 0, y: 0, z: 1 } }
+  assert.ok(base.faceDir, 'the fine-gauge cow fringe faces a direction')
+  const faced = { ...base, faceDir: { x: 0, y: 1, z: 0.3 }, faceJitterDeg: 15 }
+  const plain = { ...base, faceDir: undefined }
+  const yr = 3 / g
+  const toPatch = (d: { x: number; y: number; z: number }) => ({ x: d.x, y: -d.y, z: -d.z })
+  const bf = buildHairPatch(faced, yr)
+  assert.deepEqual(hairPatchProblems(faced, bf, yr), [])
+  const af = loopPlaneAngles(bf, toPatch(faced.faceDir))
+  const ap = loopPlaneAngles(buildHairPatch(plain, yr), toPatch(faced.faceDir))
+  assert.equal(af.length, 22)
+  const within = (a: number[]) => a.filter((x) => x < 35).length
+  assert.ok(within(af) >= 18, `${within(af)} of ${af.length} faced rings within 35 deg`)
+  assert.ok(within(ap) <= 10, `${within(ap)} of ${ap.length} leaned rings within 35 deg`)
+  // The gauge-1 fringe never faces: its hash is the table's.
+  assert.equal(cowFringe('#5c382c', 'M').faceDir, undefined)
+})
+
 test('the cow program carries every signature piece and the stitched nostrils', () => {
   const p = buildCowProgram(COW_DEFAULTS)
   const names = p.parts.map((x) => x.name)

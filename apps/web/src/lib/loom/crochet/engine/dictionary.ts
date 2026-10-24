@@ -40,6 +40,16 @@ export interface LoopShape {
   droopDeg: number
   /** ± fraction the finger wrap varies stitch to stitch (deterministic per stitch). */
   vary: number
+  /** FACE A DIRECTION (cow-fable-1024e; hairPatch.ts `faceDir`): the loop's
+   *  PLANE is turned so its normal points this way, given in the loop's own
+   *  fabric frame (x along the row, y up the work, z the loop's side), with
+   *  the `droopDeg` lean and the yaw spread replaced by a small tilt jitter
+   *  (`faceJitterDeg`, default 15). A chenille ring worked on a flat circle
+   *  and sewn to a crown holds its plane, and the bar cow's rings all show
+   *  their hole to the lens. Absent = the loop as before, every hash kept. */
+  facePlane?: { x: number; y: number; z: number }
+  /** ± degrees of plane tilt jitter with `facePlane` (default 15). */
+  faceJitterDeg?: number
 }
 
 /**

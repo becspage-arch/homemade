@@ -430,6 +430,15 @@ export function buildShaped(
   }
 }
 
+/** The magic ring's node count and the angle, round the disc, of stitch i of
+ *  a `count`-stitch round: every round starts where the ring strand ends
+ *  (`RING_PHASE`), so the first stitch sits over the one below. One rule for
+ *  the round builders and for anyone placing something per stitch of a round
+ *  (hairPatch.ts: the loop that faces a direction). */
+export const RING_N = 18
+export const RING_PHASE = ((RING_N - 1) / RING_N) * Math.PI * 2
+export const roundStitchAngle = (count: number, i: number): number => RING_PHASE + ((i + 0.5) / count) * Math.PI * 2
+
 /**
  * Working in the round off a MAGIC RING: a continuous spiral (no join, no
  * turn) of `counts[k]` stitches per round — counts up by 6 per round makes the
@@ -527,7 +536,6 @@ export function buildRounds(
   // hole). The 6 round-1 hooks crowd this radius and collision spreads them; the
   // 'ring' link role tolerates that squash (it is held by wrapping, not a z-side).
   const rr = yr * 0.85
-  const RING_N = 18
   const ringNodes: number[] = []
   for (let i = 0; i < RING_N; i++) {
     const a = (i / RING_N) * Math.PI * 2
@@ -536,7 +544,7 @@ export function buildRounds(
   // Every round starts where the ring strand ends, so the working yarn steps
   // straight from the ring into round 1 (no float across the hole) and each
   // round's first stitch sits over the one below (a true continuous spiral).
-  const phase = ((RING_N - 1) / RING_N) * Math.PI * 2
+  const phase = RING_PHASE
 
   interface RCrown {
     back: number
@@ -575,7 +583,7 @@ export function buildRounds(
     if (k === 0) {
       // Round 1: `count` stitches hooked around the ring strand itself.
       for (let i = 0; i < count; i++) {
-        const th = phase + ((i + 0.5) / count) * Math.PI * 2
+        const th = roundStitchAngle(count, i)
         const ring = ringNodes[Math.round(((th / (Math.PI * 2)) % 1) * RING_N) % RING_N]!
         const xC = th * rRef
         const r = emitPlainStitch(S, dims, {
@@ -618,7 +626,7 @@ export function buildRounds(
         const b = below[bi++]!
         const n = ops[oi] === 'inc' ? 2 : 1
         for (let t = 0; t < n; t++) {
-          const th = phase + ((li + 0.5) / count) * Math.PI * 2
+          const th = roundStitchAngle(count, li)
           const xC = th * rRef
           // Same side-by-side insertion offset as flat shaping: an inc pair's two
           // hooks must not initialise coincident under the shared crown.
@@ -941,7 +949,6 @@ export function buildSphere(
       return { x: rp * Math.cos(th), y: rp * Math.sin(th), z: q.z + q.nz * lz }
     }
 
-  const RING_N = 18
   roundNow = -1 // the magic ring belongs to no round (and is pinned anyway)
   const ringNodes: number[] = []
   const ringRRef = rr
@@ -952,7 +959,7 @@ export function buildSphere(
     push(p.x, p.y, p.z, 0)
     ringNodes.push(nodes.length - 1)
   }
-  const phase = ((RING_N - 1) / RING_N) * Math.PI * 2
+  const phase = RING_PHASE
 
   interface SCrown {
     back: number
@@ -999,7 +1006,7 @@ export function buildSphere(
       // there instead of further inside.
       const cyEff = rr * 0.95 + dims.dh
       for (let i = 0; i < count; i++) {
-        const th = phase + ((i + 0.5) / count) * Math.PI * 2
+        const th = roundStitchAngle(count, i)
         const ring = ringNodes[Math.round(((th / (Math.PI * 2)) % 1) * RING_N) % RING_N]!
         const xC = th * rRef
         const r = emitPlainStitch(S, dims, {
@@ -1033,7 +1040,7 @@ export function buildSphere(
         if (op === 'dec') {
           const b1 = below[bi++]!
           const b2 = below[bi++]!
-          const th = phase + ((li + 0.5) / count) * Math.PI * 2
+          const th = roundStitchAngle(count, li)
           const xC = th * rRef
           const r = emitDecrease(S, dims, {
             j: k,
@@ -1061,7 +1068,7 @@ export function buildSphere(
           const b = below[bi++]!
           const n = op === 'inc' ? 2 : 1
           for (let t = 0; t < n; t++) {
-            const th = phase + ((li + 0.5) / count) * Math.PI * 2
+            const th = roundStitchAngle(count, li)
             const xC = th * rRef
             const hookOff = n === 1 ? 0 : yr * HOOK_SPREAD_YR * 0.6 * (t === 0 ? 1 : -1)
             const hookDepthScale = n === 2 && t === 1 ? 1.5 : 1 // pair-second tucks deeper (canopy seam fix)

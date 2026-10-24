@@ -591,7 +591,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // nest of noodles, so the strand back up (1.15 x g), the rings a touch
     // smaller (3.7 x 3.2: the OUTER diameter the bar's sixth of the head on
     // the fatter strand), calmer (vary 0.4), the lean between r2 and r3 (-30).
-    loop: gLoop(g > 1.15 ? { lengthYr: 3.7, halfWidthYr: 3.2, droopDeg: -30, vary: 0.4 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
+    // cow-fable-1024e r2: with every ring facing the lens (r1) the heap read
+    // as a flat tiled cap of small coins, so the rings a size bigger again
+    // (4.1 x 3.6: ~20 mm, the bar's sixth of the head seen face-on), the
+    // facing jittered wider (±30 deg) so they overlap at angles, and less
+    // gravity so the heap stands.
+    loop: gLoop(g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.6, droopDeg: -30, vary: 0.4 } : { lengthYr: 5.0, halfWidthYr: 2.4, droopDeg: -50, vary: 0.45 }, g),
     // Cow round 9: a plain dc every third stitch (loops in two of three) so
     // the rings are not wall to wall, and every fourth loop given a single
     // twist so a few tighter curls sit among the open rings — the bar's
@@ -617,15 +622,16 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     loopByRound: (k) =>
       gLoop(
         k === 0
-          ? (g > 1.15 ? { lengthYr: 4.1, halfWidthYr: 3.4, droopDeg: -22 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
+          ? (g > 1.15 ? { lengthYr: 4.5, halfWidthYr: 3.8, droopDeg: -22 } : { lengthYr: 5.6, halfWidthYr: 2.4, droopDeg: -30 }) // over three fingers, standing up: the crown of the mound (1024c r1: standing, rounder; 1024d r1: a size bigger and rounder)
           : k === last
-            ? (g > 1.15 ? { lengthYr: 3.3, halfWidthYr: 2.8, droopDeg: -38 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
+            ? (g > 1.15 ? { lengthYr: 3.7, halfWidthYr: 3.2, droopDeg: -38 } : { lengthYr: 4.0, halfWidthYr: 2.0, droopDeg: -52 }) // (r3: shorter at a finer gauge; 1024d r1: rounder) the spill forward to the brow and over the horn roots (shorter, less flat: r29's reached an eye)
             : undefined,
         g,
       ),
     // cow-fable-1024c r1: at a fine gauge half the gravity, so the big
     // chenille rings hold themselves up off the head (the bar's stand).
-    gravity: g > 1.15 ? 0.0008 : 0.0015,
+    // cow-fable-1024e r2: less again (0.0005), so the faced rings stand off the head.
+    gravity: g > 1.15 ? 0.0005 : 0.0015,
     // Round 17: plumper — the bar's curls are fat round chenille rings, a
     // third thicker again than the yarn pulled into a stitch.
     // Fine gauge (Fable 23 Oct, r1): the loop strand keeps its gauge-1 mm
@@ -642,6 +648,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // before too (the fine-gauge fringe has carried the fabric's pile since
     // 1023 r1), so nothing changes category.
     strandYr: (g > 1.15 ? 1.15 : 1.3) * g,
+    // cow-fable-1024e r1: at a fine gauge every ring's PLANE faces the lens
+    // (the face direction, a touch up; hairPatch `faceDir`, ±15 deg of
+    // tilt): 1024d r4's rings leaned at random and most were seen side-on as
+    // arches and worms; the bar's are round open spirals showing their hole.
+    ...(g > 1.15 ? { faceDir: faceDir({ x: 0, y: 1, z: 0.3 }), faceJitterDeg: 30 } : {}),
     // Render-only (outside the geometry hash): a loop of chenille that is not
     // pulled into a stitch shows its full, uncrushed pile, and in the bar's
     // photo the fringe reads a shade lighter than the crushed fabric of the
@@ -907,7 +918,11 @@ const EYE_DIR = { x: 0.5, y: 1, z: 0.16 }
  *  their lower edge about on the muzzle's top (the bar; cow-fable-1024c r1). */
 // cow-fable-1024d r1: a touch higher (z 0.12) on the bigger muzzle, so the
 // lower edge sits on its top edge rather than biting into it.
-const FINE_EYE_DIR = { x: 0.4, y: 1, z: 0.12 }
+// cow-fable-1024e r1 (the audit of 1024d r4: the eyes sat ON the muzzle's
+// top edge and the calf looked heavy): higher again (z 0.24) so about half an
+// eye of brown face shows between the eye and the muzzle's top curve, the
+// eyes just above its upper corners — the bar's bright look.
+const FINE_EYE_DIR = { x: 0.4, y: 1, z: 0.24 }
 
 /** Brown-only pile: a short dense fringe of real hair curves on the dark
  *  chenille (the bar's lit pile tips), none on the cream (grey whiskers). */
