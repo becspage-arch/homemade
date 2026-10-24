@@ -116,6 +116,7 @@ class Displace(unittest.TestCase):
     def test_loop_mult_and_wobble_are_not_in_the_preset(self):
         fp = R.handmade_params(dict(R.FIBRE_PARAMS["chenille"], handmade=1))
         self.assertNotIn("hm_loop_mult", fp)
+        self.assertNotIn("hm_loop_wobble", fp)
         self.assertNotIn("hm_wobble", fp)
 
     def test_plies_of_one_stroke_move_together(self):

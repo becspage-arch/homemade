@@ -559,7 +559,9 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // cow-fable-1023b r1 (Rebecca: the curls "too red"): at a fine gauge the
     // lit loop lets more of its saturation go (desat 1.4: the bar's fringe
     // tops are s 0.55 against the body's 0.7; r4's rings read coral at 0.65).
-    colourHex: g > 1.15 ? lighten(colourHex, 0.14, 0.9) : lighten(colourHex, 0.14), // r2: 0.9 (1.4 read dusty pink)
+    // r4: and the hue turned 10 deg toward orange (the bar's fringe is caramel
+    // at h 19; the lifted dye at h 8-10 read dusty rose however it was desaturated).
+    colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.14, 0.8), 10) : lighten(colourHex, 0.14),
   }
 }
 
@@ -608,6 +610,26 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
 function norm(v: Dir): Dir {
   const l = Math.hypot(v.x, v.y, v.z) || 1
   return { x: v.x / l, y: v.y / l, z: v.z / l }
+}
+
+/** Turn a hex colour's hue by `deg` (HSV), saturation and value kept. Render-only (a colour). */
+function warmHue(hex: string, deg: number): string {
+  const n = parseInt(hex.slice(1), 16)
+  const r = ((n >> 16) & 255) / 255
+  const g = ((n >> 8) & 255) / 255
+  const b = (n & 255) / 255
+  const max = Math.max(r, g, b)
+  const min = Math.min(r, g, b)
+  const d = max - min
+  if (d === 0) return hex
+  let h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4
+  h = (((h * 60 + deg) % 360) + 360) % 360
+  const sat = d / max
+  const c = max * sat
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1))
+  const m = max - c
+  const [r1, g1, b1] = h < 60 ? [c, x, 0] : h < 120 ? [x, c, 0] : h < 180 ? [0, c, x] : h < 240 ? [0, x, c] : h < 300 ? [x, 0, c] : [c, 0, x]
+  return '#' + [r1, g1, b1].map((v) => Math.round((v + m) * 255).toString(16).padStart(2, '0')).join('')
 }
 
 /** Lift a hex colour's value by `f` (0..1), hue and saturation kept. */

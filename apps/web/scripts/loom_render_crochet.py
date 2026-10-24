@@ -280,6 +280,9 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #                       fibre's `strand_mult` (cow-fable-1023b r3: a fabric
 #                       strand fattened to the stitch pitch must not fatten
 #                       the fringe rings with it). Absent = strand_mult.
+#   hm_loop_wobble      the loops' own hm_wobble (r4: the row wander, scaled
+#                       by the loop's fat radius, flattened the fringe rings
+#                       on to the brow). Absent = hm_wobble.
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
@@ -1034,7 +1037,10 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         bundle = (spread + st["radiusMm"]) * mult
         rf = None
         if hm_geo:
-            cs, rfs = hm_displace(centre, bundle, fpb, ripple=(strand == "single"))
+            fpl = fpb
+            if "hm_loop_wobble" in fpb and is_loop(st["radiusMm"]):
+                fpl = dict(fpb, hm_wobble=fpb["hm_loop_wobble"])
+            cs, rfs = hm_displace(centre, bundle, fpl, ripple=(strand == "single"))
             centre, rf = cs, rfs[0]
             tw = hm_amt(fpb, "hm_loop_twist")
             if strand == "single" and tw > 0 and is_loop(st["radiusMm"]):
