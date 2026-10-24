@@ -399,13 +399,15 @@ const EAR_AIM = { x: 0.6, y: 0.8, z: -0.05 }
 // the bar's cups stand out SIDEWAYS just below the horns, facing forward so
 // the brown hollow shows): the bowl opens more out (x 0.7) and a touch less up.
 // r3: and back toward the lens (x 0.5): at 0.7 the straight-on camera saw each cup edge-on as a rolled coil.
-const CUP_EAR_AIM = { x: 0.5, y: 0.82, z: 0.15 }
+// r4: between (x 0.6): r3's straight-on cups read as flat discs with no hollow.
+const CUP_EAR_AIM = { x: 0.6, y: 0.78, z: 0.15 }
 // r2: lower still (z 0.1: r1's sat up at the horn tips) and 11 mm out.
 /** The cupped ear's place on the head (`cuppedEars` only): a touch lower than
  *  EAR_DIR, at eye-to-brow level under the horns (r2; the bar's). */
 // cow-fable-1024b r1: lower on the side of the head (z 0.25) and a touch
 // forward, with the cup held further out from the head (CUP_EAR_OUT_MM).
-const CUP_EAR_DIR = { x: 1, y: 0.1, z: 0.1 }
+// r4: a touch higher (z 0.18): r3's far ear sat half behind the cheek.
+const CUP_EAR_DIR = { x: 1, y: 0.1, z: 0.18 }
 const CUP_EAR_OUT_MM = 11
 const EAR_SPIN = { x: 0, y: 0, z: 1 }
 /** Front legs (cow round 9, the bar): two long chunky tubes sewn at the
