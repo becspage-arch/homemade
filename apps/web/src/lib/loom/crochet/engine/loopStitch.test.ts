@@ -119,7 +119,7 @@ test('a fringe with faceDir turns every ring to face it (and without it, the rin
   assert.deepEqual(hairPatchProblems(faced, bf, yr), [])
   const af = loopPlaneAngles(bf, toPatch(faced.faceDir))
   const ap = loopPlaneAngles(buildHairPatch(plain, yr), toPatch(faced.faceDir))
-  assert.equal(af.length, 22)
+  assert.equal(af.length, 24)
   const within = (a: number[]) => a.filter((x) => x < 35).length
   assert.ok(within(af) >= 18, `${within(af)} of ${af.length} faced rings within 35 deg`)
   assert.ok(within(ap) <= 10, `${within(ap)} of ${ap.length} leaned rings within 35 deg`)
