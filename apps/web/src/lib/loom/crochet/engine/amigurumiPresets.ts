@@ -1039,7 +1039,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     // head and hanging straight down beside the face, the lined face turned
     // forward and out, clear of the head (measured: no free ear fabric
     // inside the head's settled shell beyond one yarn radius).
-    const earSpin = fineBunny(choices) ? BUNNY_FINE_EAR_SPIN : LOP_EAR_SPIN
+    const earSpin = fineBunny(choices) && g < BUNNY_FINE_EAR_SPIN_MAX_GAUGE ? BUNNY_FINE_EAR_SPIN : LOP_EAR_SPIN
     for (const side of [-1, 1] as const) {
       const place = {
         on: 'head',
@@ -1252,11 +1252,16 @@ const BUNNY_MUZZLE_Z = -0.36
  *  13-round lace tail (~62 mm) spent in the fold, stopping at the ear. r3: a
  *  little crown before the fold (0.2R), 22 slow tip rounds so the tail hangs
  *  down the side to the shoulder (the bar's), a smaller pompom. */
-const BUNNY_FINE_HAT = { bend: { startFrac: 0.2, angleDeg: 150, dirDeg: 40 }, lengthFrac: 0.9, tiltBackDeg: 14, slowTipRounds: 22, pompomRadiusFrac: 0.3 }
+const BUNNY_FINE_HAT = { bend: { startFrac: 0.17, angleDeg: 152, dirDeg: 40 }, lengthFrac: 0.9, tiltBackDeg: 14, slowTipRounds: 22, pompomRadiusFrac: 0.3 }
 /** r2: at scale 0.85 the ball muzzle stood off the face as a white snout;
  *  r3: a touch smaller and seated deeper (mm) so it is a flat pale oval. */
 const BUNNY_FINE_MUZZLE = { scale: 0.74, mix: 0.32, z: -0.3, seatMm: 7 }
-const BUNNY_FINE_EAR_SPIN = { x: -0.2, y: 1 }
+/** r3 at -0.2 read as all-pink paddles and, turned to the lens, narrowed the
+ *  figure 8% at gauge 1.6 (gauge.test's 5% size gate; 1.3 passed at 4.5%):
+ *  -0.35 shows the cream rim again, and the turn applies below 1.6 only — the
+ *  1.6 ear is already the capped 21 st in finer yarn, the figure's narrowest. */
+const BUNNY_FINE_EAR_SPIN = { x: -0.35, y: 1 }
+const BUNNY_FINE_EAR_SPIN_MAX_GAUGE = 1.6
 const BUNNY_FINE_FACE = { eyeElev: -10, eyeAz: 42 }
 /** The fine-gauge bunny: the bar's sleepy bunny worked at `gauge` > 1. */
 function fineBunny(choices: AmigurumiChoices): boolean {
