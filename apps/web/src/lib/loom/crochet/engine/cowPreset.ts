@@ -759,10 +759,11 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled 
 }
 
 /** The coiled fringe's numbers (cow-build-1025; in the fine yarn's radii).
- *  Each coil 1.75 turns of a 2.3 yr centre-line radius rising 3 yr a turn:
- *  drawn with the body's own strand (strandYr 0.62, so the render treats it
- *  as the fabric yarn — the same chenille pile, not a bare loop tube) it is
- *  ~16 mm across with a ~5 mm hole (the bar's curls), and no two coils come
+ *  Each coil a turn and a half of a 2.5 yr centre-line radius rising 2.7 yr
+ *  a turn (cow-fable-1025 r1; the build's 1.75 turns of 2.3 at 3.0 read as
+ *  springs): drawn on a 0.9 yr strand so the render's loop path takes it
+ *  (the build's 0.62 was the fabric's and rendered as smooth clay), it is
+ *  ~17 mm across with a ~5 mm hole (the bar's curls), and no two coils come
  *  nearer than two drawn strands (2.4 yr centre to centre: each keeps a gap
  *  and its own shadow). The coils want rows further apart than the open
  *  rings did (measured on the patch alone: on rounds 2/4/6/8 with a loop in
@@ -777,8 +778,15 @@ export function cowCoils(rounds: number[]): Partial<HairPatch> {
     loopRounds,
     loopEvery: 4,
     faceRounds: loopRounds.filter((k) => k !== last),
-    coil: { radiusYr: 2.3, turns: 1.75, pitchYr: 3.0, pairYr: 0.7 },
-    strandYr: 0.62,
+    // cow-fable-1025 r1: a size fatter and shorter — a turn and a half of a
+    // 2.5 yr radius rising 2.7 a turn (1.75 turns of 2.3 at 3.0 read as
+    // stacked springs side-on; the bar's are rings), drawn on a strand of
+    // 0.9 yr so the render's loop path takes them (hm_loop_ratio 1.4 x the
+    // body's 0.62) and gives them the chenille's twist, ripple and pile. The
+    // clearance stays two drawn body strands (2.4 yr). Measured on the patch
+    // alone: 26 coils, none linked, none nearer than 5.7 mm.
+    coil: { radiusYr: 2.5, turns: 1.5, pitchYr: 2.7, pairYr: 0.7 },
+    strandYr: 0.9,
     coilClearYr: 2.4,
   }
 }
@@ -1083,7 +1091,8 @@ function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir, g = 1, scale = { rou
     to: { round: mid - side * inner, st: downSt },
     taut: true,
   }))
-  const r = (v: number): string => (Math.round(v * 2) / 2).toString().replace('.5', '½')
+  // Halves written as a maker writes them: "½", "1½" — never "0½" (cow-fable-1025).
+  const r = (v: number): string => (Math.round(v * 2) / 2).toString().replace('.5', '½').replace(/^0½/, '½')
   const st = (v: number): string => `${r(Math.abs(v))} ${Math.round(Math.abs(v) * 2) === 2 ? 'stitch' : 'stitches'}`
   return [{
     name: 'nose', on: 'muzzle',

@@ -294,8 +294,8 @@ test('the coiled cow fringe (cow-build-1025) audits clean: 26 coils, none linked
   assert.deepEqual(cowCoils(gDisc([6, 12, 18, 24, 30, 36], g)).loopRounds, [1, 4, 7])
   // The words: the loop measured on a card, the coil said, the rounds right.
   const words = writeHairInstructions(h, 'head', yr)
-  assert.match(words[0]!, /COILED CURL: wrap the yarn round a strip of card 6 cm wide/)
-  assert.match(words[0]!, /tight corkscrew of nearly two turns/)
+  assert.match(words[0]!, /COILED CURL: wrap the yarn round a strip of card 5.5 cm wide/)
+  assert.match(words[0]!, /tight corkscrew of a turn and a half/)
   assert.match(words[1]!, /every fourth stitch only.*except in round 8 a lp st in every third stitch/)
   assert.match(words.join('\n'), /Round 2: 2 lp st in each st\. \(12\)/)
   assert.match(words.join('\n'), /Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)/)
