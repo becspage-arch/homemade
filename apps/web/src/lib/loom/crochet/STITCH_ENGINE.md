@@ -3441,6 +3441,17 @@ additive and every existing composition byte-identical):
   (`SEATED_BACK_LEG_GAUGE_DROP`; the default's back feet float that much there). The sewing line changes with it.
   `cowBackLegs.test.ts`. Off = the default hash.
 
+### 8j-coil. Coiled curls and the oval muzzle (cow-build-1025, 2026-10-25)
+
+- `LoopShape.coil` (`CoilShape`: radiusYr, turns, pitchYr, pairYr) makes a loop stitch's loop a tight corkscrew
+  (`emitCoil`, loopStitch.ts): same root and passes, the doubled strand wound round the loop plane's normal. A
+  coiled hair patch (`HairPatch.coil`) eases close coils apart (`easeCoilsApart`) and is audited by
+  `coilProblems`: every curl pair's Gauss linking number 0 and centre-lines >= `coilClearYr`. The words measure
+  the loop on a card from the coil's own leg length.
+- `ovalRounds(equator, aspect)` (sphereProfile.ts): a prolate spheroid from a magic ring, the sphere walk on an
+  ellipse's meridian; aspect 1 = `sphereRounds`. Round top, no straight rounds.
+- Both reach the cow only through `CowChoices.coiledCurls` / `muzzleOval` at gauge > 1.15; absent = unchanged.
+
 ## 8k. DRAPE RELAX — gravity, a table and self-collision for soft fabric (2026-10-10)
 
 `engine/drape.ts`. Why: §8h-2's beanie flat-lay and cowl stagings failed — a space warp of
