@@ -115,3 +115,64 @@ export function sphereEquator(equator: number, stitch: StitchId = 'sc'): number 
   const { up } = sphereAscent(equator, stitch)
   return up[up.length - 1]!
 }
+
+/**
+ * AN OVAL BALL (cow-build-1025: the Highland calf's muzzle, a soft wide oval
+ * round all round). A prolate spheroid worked from a magic ring: `equator`
+ * stitches round its widest middle (its height on the face, sewn on lying
+ * across it) and `aspect` x that diameter end to end (its width). The same
+ * walk as `sphereCountsFromGauge`, down the meridian of an ELLIPSE (semi-axes
+ * a = aspect x b along the axis, b = equator x pitch / 2pi across) instead of
+ * a circle: +6 a round off the ring, easing to +1 and 0 well before the middle
+ * (the long gently-curved sides), mirrored for the decreases. Where a capsule
+ * (`sphereRounds` with straight rounds) holds its widest count flat — a
+ * cylinder, a flat top edge seen from the front, and a corner where the domes
+ * meet it — the oval's counts taper all the way, so its outline is an ellipse:
+ * round top, round ends, no corner. Every step is an integer number of
+ * increases or decreases spread evenly through the round, as `sphereRounds`.
+ * aspect 1 = `sphereRounds(equator)`'s walk on the same pitch.
+ */
+export function ovalRounds(equator: number, aspect: number, stitch: StitchId = 'sc'): number[] {
+  const sw = STITCHES[stitch].gaugeYr
+  const drift = rowPitchYr(stitch) * SPHERE_DRIFT_SCALE
+  const rr = SPHERE_RING_YR
+  const b = (equator * sw) / (2 * Math.PI)
+  const a = b * Math.max(1, aspect)
+  // The meridian's arc length from the pole, tabulated on the ellipse's angle
+  // (point: along the axis a cos t, across b sin t).
+  const N = 2000
+  const arc: number[] = [0]
+  const rad: number[] = [0]
+  for (let i = 1; i <= N; i++) {
+    const t0 = (Math.PI * (i - 1)) / N
+    const t1 = (Math.PI * i) / N
+    arc.push(arc[i - 1]! + Math.hypot(a * (Math.cos(t1) - Math.cos(t0)), b * (Math.sin(t1) - Math.sin(t0))))
+    rad.push(b * Math.sin(t1))
+  }
+  const total = arc[N]!
+  const rAt = (m: number): number => {
+    let lo = 0
+    let hi = N
+    while (hi - lo > 1) {
+      const mid = (lo + hi) >> 1
+      if (arc[mid]! < m) lo = mid
+      else hi = mid
+    }
+    const f = (m - arc[lo]!) / Math.max(arc[hi]! - arc[lo]!, 1e-9)
+    return rad[lo]! + (rad[hi]! - rad[lo]!) * f
+  }
+  const raw: number[] = []
+  let prev = 0
+  for (let m = rr + drift; m <= total - rr - drift * 0.35; m += drift) {
+    const target = Math.max(4, Math.round((2 * Math.PI * Math.max(rAt(m), 1e-3)) / sw))
+    prev = prev === 0 ? Math.min(6, target) : prev + Math.max(-6, Math.min(6, target - prev))
+    raw.push(prev)
+  }
+  // Mirrored like `sphereRounds`: the ascent to the widest count, the rounds
+  // the walk spends there, the ascent reversed (a palindrome closes to a pole).
+  const widest = Math.max(...raw)
+  const top = raw.indexOf(widest)
+  const up = raw.slice(0, top + 1)
+  const plateau = raw.filter((c) => c === widest).length
+  return [...up, ...Array.from({ length: Math.max(0, plateau - 1) }, () => widest), ...up.slice(0, -1).reverse()]
+}

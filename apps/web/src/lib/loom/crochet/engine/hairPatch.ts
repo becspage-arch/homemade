@@ -22,7 +22,8 @@ import { buildRounds, roundStitchAngle } from './shaping'
 import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import type { BuiltContinuous } from './yarnPath'
-import { STITCHES, type LoopShape, type StitchId } from './dictionary'
+import { STITCHES, type CoilShape, type LoopShape, type StitchId } from './dictionary'
+import { coilProblems } from './loopStitch'
 import type { V3 } from '../yarnLoop'
 
 export const HAIR_STYLE_IDS = ['none', 'fringe', 'curly-fringe'] as const
@@ -102,6 +103,20 @@ export interface HairPatch {
    *  rings lean out over the sewn rim and cover it, where faced they stood
    *  up off it and left the rim bare). Absent = every loop round faces. */
   faceRounds?: number[]
+  /** COILED CURLS (cow-build-1025; loopStitch.ts `emitCoil`): every loop of
+   *  the patch twisted until it springs back into its own tight corkscrew
+   *  (LoopShape.coil), instead of an open loop. The coil's turns lie in the
+   *  plane the loop would have had (`droopDeg`, or `faceDir` on the faced
+   *  rounds), so a faced coil shows the lens a little curled ring. Checked
+   *  at build: no two coils linked or touching (`coilProblems`), after the
+   *  coils that sit too close are eased apart the way a maker fluffs them
+   *  (`easeCoilsApart`). Absent = open loops, every hash unchanged. */
+  coil?: CoilShape
+  /** Per-round overrides of `coil` (0-based; merged over it). */
+  coilByRound?: (k: number) => Partial<CoilShape> | undefined
+  /** The coils' clearance, centre-line to centre-line between two curls, in
+   *  yarn radii (default two drawn strand radii, 2 x `strandYr`). */
+  coilClearYr?: number
   colourHex: string
 }
 
@@ -183,16 +198,20 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   }
   const curlAt = (k: number, c: number): Partial<LoopShape> | undefined =>
     h.curlEvery && h.curlLoop && stitchAtOf(h, k, c) === 'loopcurl' ? h.curlLoop : undefined
+  // The coiled curl (cow-build-1025), per round.
+  const coilAt = (k: number): Partial<LoopShape> | undefined => (h.coil ? { coil: { ...h.coil, ...h.coilByRound?.(k) } } : undefined)
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
     loopByRound: h.loopByRound,
     ...(perStitch ? { stitchAt: (k: number, c: number) => stitchAtOf(h, k, c) } : {}),
-    ...(fp
-      ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c) }) }
-      : h.curlEvery && h.curlLoop
-        ? { loopByStitch: (k: number, c: number) => curlAt(k, c) }
-        : {}),
+    ...(h.coil
+      ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c), ...coilAt(k) }) }
+      : fp
+        ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c) }) }
+        : h.curlEvery && h.curlLoop
+          ? { loopByStitch: (k: number, c: number) => curlAt(k, c) }
+          : {}),
   })
   const g = yr * (h.gravity ?? HAIR_GRAVITY)
   // World down in the patch frame: toward the head (+z) on a crown patch, and
@@ -207,6 +226,10 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
     if (!m.loose?.[i] && n.z > face) face = n.z
   })
   m.zBand = m.nodes.map((n, i) => (m.loose?.[i] ? { hi: face } : m.zBand?.[i] ?? null))
+  // Coils (cow-build-1025): fluffed apart as worked, before they settle, so
+  // none starts inside another (the relax's collision then keeps them apart
+  // and unlinked), and again after.
+  if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face, 120)
   relax(m, {
     collMinDist: yr * 1.25,
     collK: 0.28,
@@ -218,12 +241,107 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
     gravity,
     iterations: 420,
   })
+  if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face)
   return built
+}
+
+/** The coils' clearance in mm (HairPatch.coilClearYr). */
+export function coilClearMm(h: HairPatch, yr: number): number {
+  return yr * (h.coilClearYr ?? 2 * (h.strandYr ?? 0.62))
+}
+
+/** Each loop's loose body as its own polyline, in build order: the loose
+ *  nodes come in one unbroken run per loop (loopStitch.ts `emitLoop`). */
+export function loopBodies(built: BuiltContinuous): number[][] {
+  const m = built.model
+  const runs: number[][] = []
+  let cur: number[] = []
+  for (let i = 0; i < m.nodes.length; i++) {
+    if (m.loose?.[i]) cur.push(i)
+    else if (cur.length) {
+      runs.push(cur)
+      cur = []
+    }
+  }
+  if (cur.length) runs.push(cur)
+  return runs
+}
+
+/**
+ * EASE THE COILS APART (cow-build-1025): where two settled coils come nearer
+ * than the clearance, each is moved a little away from the other — the
+ * whole coil, weighted from nothing at its root (sewn in) to all of it at
+ * its tip, the way a maker fluffs two curls off each other with a finger.
+ * Small steps (a fifth of the shortfall, at most a quarter of a yarn radius,
+ * a round), so no strand is ever carried through another; the coil audit
+ * (`coilProblems`) then measures what is left. Nothing past the sewn face.
+ */
+export function easeCoilsApart(built: BuiltContinuous, clearMm: number, faceZ: number, rounds = 60): void {
+  const m = built.model
+  const bodies = loopBodies(built)
+  const step = built.yarnRadiusMm * 0.25
+  const weight = bodies.map((b) => b.map((_, i) => {
+    const t = (i + 1) / (b.length + 1)
+    const u = 1 - Math.abs(2 * t - 1)
+    return Math.min(1, u * 2.5)
+  }))
+  for (let r = 0; r < rounds; r++) {
+    let moved = false
+    for (let a = 0; a < bodies.length; a++) {
+      for (let b = a + 1; b < bodies.length; b++) {
+        let best = Infinity
+        let pa = -1
+        let pb = -1
+        for (const i of bodies[a]!) for (const k of bodies[b]!) {
+          const p = m.nodes[i]!
+          const q = m.nodes[k]!
+          const d = (p.x - q.x) ** 2 + (p.y - q.y) ** 2 + (p.z - q.z) ** 2
+          if (d < best) {
+            best = d
+            pa = i
+            pb = k
+          }
+        }
+        const d = Math.sqrt(best)
+        // Eased to a touch past the clearance (3%), so the small steps
+        // settle clear of it instead of creeping up to it.
+        if (d >= clearMm * 1.03) continue
+        const p = m.nodes[pa]!
+        const q = m.nodes[pb]!
+        const dx = (p.x - q.x) / (d || 1)
+        const dy = (p.y - q.y) / (d || 1)
+        const dz = (p.z - q.z) / (d || 1)
+        const s = Math.min(step, (clearMm * 1.03 - d) * 0.25 + 1e-3)
+        bodies[a]!.forEach((i, t) => {
+          const n = m.nodes[i]!
+          const w = weight[a]![t]! * s
+          n.x += dx * w
+          n.y += dy * w
+          n.z = Math.min(faceZ, n.z + dz * w)
+        })
+        bodies[b]!.forEach((i, t) => {
+          const n = m.nodes[i]!
+          const w = weight[b]![t]! * s
+          n.x -= dx * w
+          n.y -= dy * w
+          n.z = Math.min(faceZ, n.z - dz * w)
+        })
+        moved = true
+      }
+    }
+    if (!moved) break
+  }
 }
 
 /** The audit gate for a patch (in its own flat polar frame, before conforming). */
 export function hairPatchProblems(h: HairPatch, built: BuiltContinuous, yr: number): string[] {
-  return auditProblems({ built, recipe: undefined as never }, h.name, 0, yr).map((p) => `${h.name}: ${p}`)
+  const probs = auditProblems({ built, recipe: undefined as never }, h.name, 0, yr)
+  // The coils' own check (cow-build-1025): no two linked, none touching.
+  if (h.coil) {
+    const curls = loopBodies(built).map((b) => b.map((i) => built.model.nodes[i]!))
+    probs.push(...coilProblems(curls, coilClearMm(h, yr) * 0.999))
+  }
+  return probs.map((p) => `${h.name}: ${p}`)
 }
 
 /** The host bits the conforming needs: its settled bounds (an ellipsoid fit). */
@@ -298,14 +416,30 @@ function twistWords(h: HairPatch): string {
 }
 
 /** UK-terms written instructions for the patch, from the same counts. */
-export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[] {
+export function writeHairInstructions(h: HairPatch, hostLabel = 'head', yarnRadiusMm?: number): string[] {
   const lines: string[] = []
   const twisted = h.stitch === 'loopcurl'
+  // The coiled curl (cow-build-1025), from the same coil the geometry winds:
+  // each leg of the loop is the coil's length, so the loop is pulled out that
+  // long round a strip of card, twisted, and let spring back on itself.
+  const coiled = (): string => {
+    const cl = h.coil!
+    const legMm = cl.turns * Math.hypot(2 * Math.PI * cl.radiusYr, cl.pitchYr) * (yarnRadiusMm ?? 0)
+    const cm = Math.max(1, Math.round(legMm / 5) / 2)
+    const turns = cl.turns >= 1.9 ? 'two turns' : cl.turns >= 1.6 ? 'nearly two turns' : cl.turns >= 1.4 ? 'a turn and a half' : 'about a turn'
+    return (
+      'Every loop in this circle is a COILED CURL: ' +
+      (yarnRadiusMm ? `wrap the yarn round a strip of card ${cm} cm wide instead of your finger, so each loop is about ${cm} cm long, ` : 'make each loop long, ') +
+      'and before you finish the stitch twist the loop round and round between finger and thumb until it kinks, then let it go: ' +
+      `it springs back on itself into a tight corkscrew of ${turns}. Finish the stitch and settle each curl on its own, not hooked through its neighbour. `
+    )
+  }
   lines.push(
     `${h.name.charAt(0).toUpperCase() + h.name.slice(1)} (a separate circle, sewn on). ` +
       'Loop stitch (lp st): insert hook in next st, wrap the yarn from front to back round your forefinger held behind the work, ' +
       'catch the yarn behind your finger and pull it through the st (2 loops on hook), yrh and pull through both loops, then slip your finger out. ' +
       (twisted ? `For a curly loop, ${twistWords(h)} before you finish the stitch. ` : '') +
+      (h.coil ? coiled() : '') +
       'The loop forms on the side facing away from you. Work every round with the same side facing you: ' +
       `that side is sewn against the ${hostLabel}, and the loops stand out on the other.`,
   )
@@ -314,6 +448,8 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   // again as one over one (the stacked tuft's crown loops).
   const baseLen = h.loop?.lengthYr ?? STITCHES[h.stitch].loop?.lengthYr ?? 3
   const fingers = (k: number): string => {
+    // A coil's loop is measured on the card (above), not on fingers.
+    if (h.coil) return ''
     const len = h.loopByRound?.(k)?.lengthYr ?? baseLen
     const base = baseLen >= 4.5 ? 2 : 1
     const n = len >= baseLen * 1.25 ? base + 1 : len <= baseLen * 0.95 && h.loopByRound?.(k) ? Math.max(1, base - 1) : base
@@ -360,7 +496,9 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head'): string[
   })
   lines.push(
     `Fasten off, leaving a long tail. Sew the circle to the top of the ${hostLabel}, loops outward, with its front edge about one round above the eyes, ` +
-      'then fluff the loops forward with your fingers so they fall over the forehead.',
+      (h.coil
+        ? 'then settle the curls with your fingers so each sits on its own, side by side, none hooked through another.'
+        : 'then fluff the loops forward with your fingers so they fall over the forehead.'),
   )
   return lines
 }

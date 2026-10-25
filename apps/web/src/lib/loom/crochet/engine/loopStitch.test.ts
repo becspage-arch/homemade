@@ -202,3 +202,104 @@ test('the cow program carries every signature piece and the stitched nostrils', 
   assert.equal(p.yarnFibre, 'chenille')
   assert.equal(p.yarnWeight, 'bulky') // cow round 23: blanket-weight chenille, the bar's fat stitch read
 })
+
+// ── Coiled curls (cow-build-1025) ───────────────────────────────────────────
+import { coilDims, coilProblems, emitCoil, linkingNumber } from './loopStitch'
+import { cowCoils } from './cowPreset'
+import { gaugeYarnRadiusMm, gDisc } from './gauge'
+import { loopBodies } from './hairPatch'
+
+/** A unit circle of n points in a plane through c (normal z), radius r. */
+const ring = (c: { x: number; y: number; z: number }, r: number, plane: 'xy' | 'xz', n = 48) =>
+  Array.from({ length: n }, (_, i) => {
+    const t = (2 * Math.PI * i) / n
+    return plane === 'xy' ? { x: c.x + r * Math.cos(t), y: c.y + r * Math.sin(t), z: c.z } : { x: c.x + r * Math.cos(t), y: c.y, z: c.z + r * Math.sin(t) }
+  })
+
+test('linkingNumber: two chain links are linked (±1), two rings side by side or stacked are not (0)', () => {
+  const a = ring({ x: 0, y: 0, z: 0 }, 1, 'xy')
+  assert.equal(Math.round(Math.abs(linkingNumber(a, ring({ x: 1, y: 0, z: 0 }, 1, 'xz')))), 1)
+  assert.ok(Math.abs(linkingNumber(a, ring({ x: 3, y: 0, z: 0 }, 1, 'xz'))) < 1e-6)
+  assert.ok(Math.abs(linkingNumber(a, ring({ x: 0, y: 0, z: 0.5 }, 1, 'xy'))) < 1e-6)
+  // A curve on a tube round the ring, winding twice round the tube (through the ring's disc twice).
+  const twice = Array.from({ length: 240 }, (_, i) => {
+    const u = (2 * Math.PI * i) / 240
+    const v = 2 * u
+    return { x: (1 + 0.4 * Math.cos(v)) * Math.cos(u), y: (1 + 0.4 * Math.cos(v)) * Math.sin(u), z: 0.4 * Math.sin(v) }
+  })
+  assert.equal(Math.round(Math.abs(linkingNumber(a, twice))), 2)
+  // coilProblems names a linked pair and a touching pair, and passes a clean set.
+  assert.match(coilProblems([a, ring({ x: 1, y: 0, z: 0 }, 1, 'xz')], 0.1).join(' '), /linked/)
+  assert.match(coilProblems([a, ring({ x: 2.05, y: 0, z: 0 }, 1, 'xy')], 0.2).join(' '), /touch/)
+  assert.deepEqual(coilProblems([a, ring({ x: 3, y: 0, z: 0 }, 0.8, 'xz')], 0.2), [])
+})
+
+test('emitCoil: the curl is a corkscrew of its own — the turns, radius and rise asked for, out of the work only, its two legs side by side', () => {
+  const yr = 2
+  const pts: { x: number; y: number; z: number }[] = []
+  const push = (x: number, y: number, z: number): number => pts.push({ x, y, z }) - 1
+  const coil = { radiusYr: 2.3, turns: 1.75, pitchYr: 3, pairYr: 0.7 }
+  const e0 = { x: 0, y: 0, z: -1 } // straight out of the work (side -1)
+  const a1 = { x: 1, y: 0, z: 0 }
+  const b0 = { x: 0, y: 1, z: 0 }
+  const body = emitCoil(push, { P: { x: 0, y: 0, z: 0 }, e0, a1, b0, side: -1, yr, coil, vary: 0, j: 1, c: 2 })
+  assert.equal(body.length, pts.length)
+  const d = coilDims({ yr, coil, vary: 0, j: 1, c: 2 })
+  assert.equal(d.R, yr * 2.3)
+  assert.equal(d.turns, 1.75)
+  // Out of the work only: never past the root's plane, and it stands 2R out.
+  assert.ok(pts.every((p) => p.z <= 1e-9))
+  const out = -Math.min(...pts.map((p) => p.z))
+  assert.ok(Math.abs(out - 2 * d.R) < 0.15 * yr, `stands ${out.toFixed(2)} out, 2R = ${(2 * d.R).toFixed(2)}`)
+  // Advances along the axis (b0) by turns x pitch, its legs a pair apart.
+  const ys = pts.map((p) => p.y)
+  const rise = Math.max(...ys) - Math.min(...ys)
+  assert.ok(Math.abs(rise - (1.75 * 3 + 2 * 0.7) * yr) < 0.3 * yr, `rise ${rise.toFixed(2)}`)
+  // Winding: the angle round the axis, unwrapped along the first leg, is 1.75 turns.
+  const half = Math.floor(body.length / 2)
+  let wind = 0
+  let prev = Math.atan2(pts[0]!.x, -(pts[0]!.z + d.R) * -1)
+  for (let i = 1; i < half; i++) {
+    const p = pts[i]!
+    const a = Math.atan2(p.x, p.z + d.R)
+    let da = a - prev
+    while (da > Math.PI) da -= 2 * Math.PI
+    while (da < -Math.PI) da += 2 * Math.PI
+    if (i > 1) wind += da
+    prev = a
+  }
+  assert.ok(Math.abs(Math.abs(wind) / (2 * Math.PI) - 1.75) < 0.15, `wound ${(Math.abs(wind) / (2 * Math.PI)).toFixed(2)} turns`)
+  // Evenly spaced along the strand (the relaxer's segment rest lengths).
+  for (let i = 1; i < pts.length; i++) {
+    const s = Math.hypot(pts[i]!.x - pts[i - 1]!.x, pts[i]!.y - pts[i - 1]!.y, pts[i]!.z - pts[i - 1]!.z)
+    assert.ok(s < 0.9 * yr, `segment ${i} is ${s.toFixed(2)}`)
+  }
+})
+
+test('the coiled cow fringe (cow-build-1025) audits clean: 26 coils, none linked, none touching; absent = the open rings', () => {
+  const g = 1.3
+  const yr = gaugeYarnRadiusMm('bulky', g)
+  const h = cowFringe('#5c382c', 'M', g, true)
+  assert.deepEqual(h.loopRounds, [1, 4, 7])
+  assert.ok(h.coil)
+  const built = buildHairPatch(h, yr)
+  assert.deepEqual(hairPatchProblems(h, built, yr), [])
+  const curls = loopBodies(built).map((b) => b.map((i) => built.model.nodes[i]!))
+  assert.equal(curls.length, 26)
+  // The audit is real: every pair checked by hand here too.
+  for (let i = 0; i < curls.length; i++) for (let k = i + 1; k < curls.length; k++) assert.ok(Math.abs(linkingNumber(curls[i]!, curls[k]!)) < 0.5, `curls ${i}/${k} linked`)
+  // Off means off: the plain fine-gauge fringe and the gauge-1 fringe carry no coil.
+  assert.equal(cowFringe('#5c382c', 'M', g).coil, undefined)
+  assert.equal(cowFringe('#5c382c', 'M', 1, true).coil, undefined)
+  assert.deepEqual(cowCoils(gDisc([6, 12, 18, 24, 30, 36], g)).loopRounds, [1, 4, 7])
+  // The words: the loop measured on a card, the coil said, the rounds right.
+  const words = writeHairInstructions(h, 'head', yr)
+  assert.match(words[0]!, /COILED CURL: wrap the yarn round a strip of card 6 cm wide/)
+  assert.match(words[0]!, /tight corkscrew of nearly two turns/)
+  assert.match(words[1]!, /every fourth stitch only.*except in round 8 a lp st in every third stitch/)
+  assert.match(words.join('\n'), /Round 2: 2 lp st in each st\. \(12\)/)
+  assert.match(words.join('\n'), /Round 5: \*3 lp st, 2 lp st in next st\* 6 times\. \(30\)/)
+  assert.match(words.join('\n'), /Round 4: \*2 dc, 2 dc in next st\* 6 times\. \(24\)/)
+  assert.doesNotMatch(words.join('\n'), /round (two|three) fingers/)
+  assert.match(words.join('\n'), /settle the curls/)
+})

@@ -50,6 +50,31 @@ export interface LoopShape {
   facePlane?: { x: number; y: number; z: number }
   /** ± degrees of plane tilt jitter with `facePlane` (default 15). */
   faceJitterDeg?: number
+  /** A COILED CURL (cow-build-1025; loopStitch.ts `emitCoil`): the loop
+   *  twisted on the finger until, let go, it springs back into its own tight
+   *  corkscrew — the doubled strand wound `turns` times round an axis, each
+   *  turn of centre-line radius `radiusYr`, rising `pitchYr` a turn. The
+   *  turns lie in the loop's plane (the one `droopDeg` / `facePlane` gives)
+   *  and the axis is that plane's normal, so seen along the facing a coil
+   *  reads as a small ring curled on itself, a footprint of its own instead
+   *  of a long open loop reaching its neighbours. `lengthYr` / `halfWidthYr`
+   *  / `twist` / `curl` are not read for a coil. Absent = the open loop, every
+   *  hash unchanged. */
+  coil?: CoilShape
+}
+
+/** The coiled curl's shape, in yarn radii (LoopShape.coil). */
+export interface CoilShape {
+  /** Centre-line radius of each turn. */
+  radiusYr: number
+  /** Turns of the corkscrew (1.5-2: a "crocodile" curl). */
+  turns: number
+  /** Rise along the axis per turn; at least the doubled strand's own depth
+   *  (two strands side by side along the axis) so no turn sits in the next. */
+  pitchYr: number
+  /** Half the gap between the loop's two strands, laid side by side along
+   *  the axis (default 0.7: the two strands a collision diameter apart). */
+  pairYr?: number
 }
 
 /**

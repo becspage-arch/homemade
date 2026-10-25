@@ -37,7 +37,7 @@
  * for every stitch), then collision and gravity settle it.
  */
 
-import type { LoopShape } from './dictionary'
+import type { CoilShape, LoopShape } from './dictionary'
 
 /** Deterministic per-stitch variation in [-1, 1] (the finger wrap is never
  *  exactly the same twice). */
@@ -156,6 +156,13 @@ export function emitLoop(
     const f = faceFrame(shape.facePlane, shape.faceJitterDeg ?? 15, side, s, j, c)
     if (f) ({ e0, a1, b0 } = f)
   }
+  if (shape.coil) {
+    // A COILED CURL (cow-build-1025): the same root and passes, the body a
+    // tight corkscrew of its own (`emitCoil`).
+    const body = emitCoil(push, { P: { x: xH + s * r0, y: yRoot, z: zP }, e0, a1, b0, side, yr, coil: shape.coil, vary, j, c })
+    push(xH - s * r0, yRoot, zP)
+    return { rootA, body }
+  }
   // The loop's AXIS. Straight out (curl 0), or a CORKSCREW round the outward
   // direction (curl = turns over the loop's length): a twisted loop that has
   // sprung back on itself. It winds round e0, so it can never curl back into
@@ -194,4 +201,164 @@ export function emitLoop(
   // Back through the work beside root A.
   push(xH - s * r0, yRoot, zP)
   return { rootA, body }
+}
+
+/** Where one coiled curl's body starts and how it is framed (`emitCoil`). */
+export interface CoilEmit {
+  /** The pass through the work the body leaves from (the root). */
+  P: V
+  /** Straight out of the work (tipped by the droop, or in the faced plane). */
+  e0: V
+  /** Across the loop (along the row, or the faced plane's second axis). */
+  a1: V
+  /** The loop plane's normal (the faced direction when faced). */
+  b0: V
+  /** Which z side the loop stands out on. */
+  side: number
+  yr: number
+  coil: CoilShape
+  vary: number
+  j: number
+  c: number
+}
+
+/** The coil's per-stitch numbers after the deterministic variation: radius
+ *  and turns vary by up to ±25% / ±20% of `vary`, and the hand of the twist
+ *  (which way it springs back) is either, stitch by stitch. */
+export function coilDims(a: Pick<CoilEmit, 'yr' | 'coil' | 'vary' | 'j' | 'c'>): { R: number; turns: number; pitch: number; pair: number; hand: number } {
+  const { yr, coil, vary, j, c } = a
+  return {
+    R: yr * coil.radiusYr * (1 + 0.25 * vary * loopJitter(j, c, 11)),
+    turns: coil.turns * (1 + 0.2 * vary * loopJitter(j, c, 12)),
+    pitch: yr * coil.pitchYr,
+    pair: yr * (coil.pairYr ?? 0.7),
+    hand: loopJitter(j, c, 13) >= 0 ? 1 : -1,
+  }
+}
+
+/**
+ * A COILED CURL's body (cow-build-1025; LoopShape.coil). The loop stitch's
+ * loop, twisted on the finger until it springs back into a tight corkscrew
+ * when let go: the doubled strand (the loop's two legs side by side, `pair`
+ * apart along the axis) winds `turns` times round an axis, out from the
+ * root along one leg, round the tip, back along the other. Each turn lies in
+ * the loop's plane (e0 out of the work, a1 across), so the first turn leaves
+ * the root along the work and rises 2R out of it like an open ring; the axis
+ * is the plane's normal (b0, turned to point out of the work), so the coil
+ * advances `pitch` a turn along it — seen along the facing, a little ring
+ * curled on itself. Only its own footprint (about 2R across): it never
+ * reaches the next curl the way a long open loop does.
+ *
+ * Pushes the body's nodes (loose, evenly spaced about 0.75 yr) and returns
+ * their indices; the caller pushes the pass back through the work.
+ */
+export function emitCoil(push: (x: number, y: number, z: number, w?: number) => number, a: CoilEmit): number[] {
+  const { P, e0, a1, b0, side, yr } = a
+  const { R, turns, pitch, pair, hand } = coilDims(a)
+  let ax = unitV(b0) ?? { x: 0, y: 1, z: 0 }
+  if (dotV(ax, { x: 0, y: 0, z: side }) < 0) ax = { x: -ax.x, y: -ax.y, z: -ax.z }
+  const T0 = 2 * Math.PI * turns
+  const helix = (th: number): V => add(add(add(P, e0, R * (1 - Math.cos(th))), a1, hand * R * Math.sin(th)), ax, (pitch * th) / (2 * Math.PI))
+  const tangent = (th: number): V => unitV(add(add(add({ x: 0, y: 0, z: 0 }, e0, R * Math.sin(th)), a1, hand * R * Math.cos(th)), ax, pitch / (2 * Math.PI)))!
+  const legLen = turns * Math.hypot(2 * Math.PI * R, pitch)
+  const n = Math.max(8, Math.ceil(legLen / (yr * 0.75)))
+  const body: number[] = []
+  const at = (q: V): void => {
+    body.push(push(q.x, q.y, q.z))
+  }
+  // Out along the first leg (offset +pair along the axis) ...
+  for (let i = 1; i <= n; i++) at(add(helix((T0 * i) / n), ax, pair))
+  // ... round the tip (a half circle from one leg to the other) ...
+  const T = tangent(T0)
+  const tipN = Math.max(3, Math.ceil((Math.PI * pair) / (yr * 0.75)))
+  const tip = helix(T0)
+  for (let i = 1; i < tipN; i++) {
+    const al = (Math.PI * i) / tipN
+    at(add(add(tip, ax, pair * Math.cos(al)), T, pair * Math.sin(al)))
+  }
+  // ... and back along the second (offset -pair) to the root.
+  for (let i = n; i >= 1; i--) at(add(helix((T0 * i) / n), ax, -pair))
+  return body
+}
+
+// ── The coils' build-time check (cow-build-1025) ───────────────────────────
+
+/** The Gauss LINKING NUMBER of two closed polylines (each closed from its
+ *  last point back to its first): the exact sum over segment pairs of the
+ *  signed solid angle (Klenin & Langowski 2000), divided by 4 pi. 0 for two
+ *  curls that only sit beside or over each other, ±1 when one is threaded
+ *  through the other — the chain-link the open rings made. */
+export function linkingNumber(A: V[], B: V[]): number {
+  let total = 0
+  const na = A.length
+  const nb = B.length
+  for (let i = 0; i < na; i++) {
+    const p1 = A[i]!
+    const p2 = A[(i + 1) % na]!
+    for (let k = 0; k < nb; k++) {
+      const p3 = B[k]!
+      const p4 = B[(k + 1) % nb]!
+      total += segmentSolidAngle(p1, p2, p3, p4)
+    }
+  }
+  return total / (4 * Math.PI)
+}
+
+const subV = (a: V, b: V): V => ({ x: a.x - b.x, y: a.y - b.y, z: a.z - b.z })
+
+function segmentSolidAngle(p1: V, p2: V, p3: V, p4: V): number {
+  const r13 = subV(p3, p1)
+  const r14 = subV(p4, p1)
+  const r23 = subV(p3, p2)
+  const r24 = subV(p4, p2)
+  const faces = [crossV(r13, r14), crossV(r14, r24), crossV(r24, r23), crossV(r23, r13)].map(unitV)
+  if (faces.some((f) => !f)) return 0
+  const [n1, n2, n3, n4] = faces as V[]
+  const asin = (x: number): number => Math.asin(Math.max(-1, Math.min(1, x)))
+  const omega = asin(dotV(n1!, n2!)) + asin(dotV(n2!, n3!)) + asin(dotV(n3!, n4!)) + asin(dotV(n4!, n1!))
+  const sgn = Math.sign(dotV(crossV(subV(p4, p3), subV(p2, p1)), r13))
+  return omega * sgn
+}
+
+/** The closest approach of two polylines' nodes (mm). */
+export function closestApproach(A: V[], B: V[]): number {
+  let best = Infinity
+  for (const p of A) for (const q of B) {
+    const d = (p.x - q.x) ** 2 + (p.y - q.y) ** 2 + (p.z - q.z) ** 2
+    if (d < best) best = d
+  }
+  return Math.sqrt(best)
+}
+
+/**
+ * The COIL AUDIT (cow-build-1025): for every pair of curls, (1) their
+ * linking number is 0 — no curl threaded through another — and (2) their
+ * centre-lines never come nearer than `clearMm` (two drawn strand radii:
+ * the yarn of one curl does not pass into the yarn of the next). Each curl
+ * is its body closed through its root. Returns the problems, empty when
+ * every curl sits on its own.
+ */
+export function coilProblems(curls: V[][], clearMm: number): string[] {
+  const out: string[] = []
+  const box = curls.map((cv) => {
+    const b = { lo: { x: Infinity, y: Infinity, z: Infinity }, hi: { x: -Infinity, y: -Infinity, z: -Infinity } }
+    for (const p of cv) {
+      b.lo = { x: Math.min(b.lo.x, p.x), y: Math.min(b.lo.y, p.y), z: Math.min(b.lo.z, p.z) }
+      b.hi = { x: Math.max(b.hi.x, p.x), y: Math.max(b.hi.y, p.y), z: Math.max(b.hi.z, p.z) }
+    }
+    return b
+  })
+  for (let i = 0; i < curls.length; i++) {
+    for (let k = i + 1; k < curls.length; k++) {
+      const bi = box[i]!
+      const bk = box[k]!
+      // Boxes further apart than the clearance can neither touch nor link.
+      if (bi.lo.x > bk.hi.x + clearMm || bk.lo.x > bi.hi.x + clearMm || bi.lo.y > bk.hi.y + clearMm || bk.lo.y > bi.hi.y + clearMm || bi.lo.z > bk.hi.z + clearMm || bk.lo.z > bi.hi.z + clearMm) continue
+      const lk = linkingNumber(curls[i]!, curls[k]!)
+      if (Math.abs(lk) > 0.5) out.push(`curls ${i} and ${k} are linked (linking number ${lk.toFixed(2)})`)
+      const d = closestApproach(curls[i]!, curls[k]!)
+      if (d < clearMm) out.push(`curls ${i} and ${k} touch: centre-lines ${d.toFixed(2)} mm apart (clearance ${clearMm.toFixed(2)} mm)`)
+    }
+  }
+  return out
 }

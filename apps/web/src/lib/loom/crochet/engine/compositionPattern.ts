@@ -14,7 +14,7 @@
  * itself is owned elsewhere and untouched here.
  */
 
-import { programToChart, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
+import { YARN_WEIGHT_RADIUS_MM, programToChart, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
 import { writeFaceInstructions } from './faceEmbroidery'
 import { writeHairInstructions } from './hairPatch'
@@ -263,7 +263,11 @@ export function writeAssembly(p: CompositionProgram): string[] {
     lines.push(...writeFaceInstructions(p.embroidery, prettify(baseName(headName), 1).toLowerCase()))
   }
   // The hair: a separate loop-stitch circle, worked and sewn on.
-  for (const h of p.hair ?? []) lines.push(...writeHairInstructions(h, prettify(baseName(h.on), 1).toLowerCase()))
+  for (const h of p.hair ?? []) {
+    // A coiled patch's loop is measured in cm (cow-build-1025), so its words take the yarn radius.
+    const yrMm = h.coil ? p.yarnRadiusMm ?? YARN_WEIGHT_RADIUS_MM[p.yarnWeight ?? 'worsted'] : undefined
+    lines.push(...writeHairInstructions(h, prettify(baseName(h.on), 1).toLowerCase(), yrMm))
+  }
   lines.push('Weave in every end and give the finished piece a gentle shape with your hands.')
   return lines
 }

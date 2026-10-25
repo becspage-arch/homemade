@@ -41,11 +41,11 @@ import type { AmigurumiPart, CompositionProgram, CompositionProp } from './compo
 import type { EmbroideryFeature } from './faceEmbroidery'
 import type { HairPatch } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
-import { sphereRounds } from './sphereProfile'
+import { ovalRounds, sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
 import { earPart, type EarPieceOptions } from './earPiece'
-import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
+import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
 export interface CowChoices {
@@ -82,6 +82,25 @@ export interface CowChoices {
    *  two thirds of the head wide and half of it tall; the table's is a 0.42
    *  knob. The nostrils move out with it. */
   muzzleSize?: { equator?: number; across?: number }
+  /** THE OVAL MUZZLE (cow-build-1025; gauge > 1.15 only, absent = the
+   *  capsule `muzzleSize` builds, every hash unchanged). An oval ball
+   *  (`ovalRounds`, a prolate spheroid worked from a magic ring) in place of
+   *  the capsule: its counts taper all the way to the middle round, so seen
+   *  from the front it is an ellipse — a round top and round ends — where
+   *  the capsule's straight rounds read as a flat top edge with squarish
+   *  corners. `equator` scales the widest round like `muzzleSize.equator`
+   *  (the oval's height on the face, the size table's count x this, g x at
+   *  the gauge); `aspect` is its length end to end over that diameter (its
+   *  width on the face over its height; the bar's ~1.3). Overrides
+   *  `muzzleSize` when both are given. */
+  muzzleOval?: { equator?: number; aspect?: number }
+  /** COILED CURLS (cow-build-1025; gauge > 1.15 only, absent = the open
+   *  rings, every hash unchanged): the fringe's loops worked as tight
+   *  coils (`LoopShape.coil`, loopStitch.ts `emitCoil`) — each loop twisted
+   *  until it springs back into its own little corkscrew — with the patch's
+   *  build-time check that no two coils touch or link (hairPatch.ts
+   *  `coilProblems`). */
+  coiledCurls?: boolean
   name?: string
 }
 
@@ -301,7 +320,7 @@ const PROFILE_SPEC: Record<AmigurumiSize, {
  */
 const GAUGE_LEG_LIFT: Record<string, number> = { 'M@1.3': 4.0, 'M@1.4': 2.7, 'S@1.3': 3.7, 'S@1.4': 1.6, 'S@1.6': 1.9, 'L@1.4': 1.85, 'L@1.6': 0.9 }
 
-function cowProfileAt(size: AmigurumiSize, g: number, muzzleSize?: CowChoices['muzzleSize']): CowProfile {
+function cowProfileAt(size: AmigurumiSize, g: number, muzzleSize?: CowChoices['muzzleSize'], muzzleOval?: CowChoices['muzzleOval']): CowProfile {
   const base = PROFILES[size]
   if (g === 1) return base
   const p = PROFILE_SPEC[size]
@@ -312,11 +331,16 @@ function cowProfileAt(size: AmigurumiSize, g: number, muzzleSize?: CowChoices['m
   const mz: [number, number] = g > 1.15 && muzzleSize
     ? [Math.round(p.muzzle[0] * (muzzleSize.equator ?? 1)), p.muzzle[1] + (muzzleSize.across ?? 0)]
     : p.muzzle
+  // The oval muzzle (CowChoices.muzzleOval): the widest round g x the
+  // table's (scaled), the counts an oval ball's. g > 1.15 only.
+  const oval = g > 1.15 && muzzleOval
+    ? ovalRounds(gSphere(Math.round(p.muzzle[0] * (muzzleOval.equator ?? 1)), g), muzzleOval.aspect ?? 1.3)
+    : undefined
   return {
     ...base,
     body: sph(p.body),
     head: sph(p.head),
-    muzzle: sph(mz),
+    muzzle: oval ?? sph(mz),
     horn: gCone(4, p.hornWidest, 0, 6, g),
     ear: nudged(gDisc(COW_EAR_CUP_ROUNDS[size], g)),
     frontLeg: gTube(p.frontLeg[0], p.frontLeg[1], g),
@@ -486,7 +510,7 @@ const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
-export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPatch {
+export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled = false): HairPatch {
   // Five rounds at M (a circle ~60 mm across on the crown), loop stitch on
   // rounds 1, 3 and 5 and plain dc between: loops on every other round is
   // how a maker keeps a long-looped fringe from matting, and it is what lets
@@ -726,6 +750,36 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1): HairPa
     // or barely lighter; measured on the bar the lit fringe is v 0.37 over a
     // v 0.28 brow, ours was v 0.58 over 0.28): back to the body (0.08, desat 0.6, hue +4).
     colourHex: g > 1.15 ? warmHue(lighten(colourHex, 0.08, 0.6), 4) : lighten(colourHex, 0.14),
+    // cow-build-1025 (`CowChoices.coiledCurls`, fine gauge only): every loop a
+    // COILED CURL (loopStitch.ts `emitCoil`) — the bar's fringe is tight
+    // chenille coils each curled on itself, side by side with their own
+    // shadow, where the open rings crossed each other and read as chain links.
+    ...(g > 1.15 && coiled ? cowCoils(rounds) : {}),
+  }
+}
+
+/** The coiled fringe's numbers (cow-build-1025; in the fine yarn's radii).
+ *  Each coil 1.75 turns of a 2.3 yr centre-line radius rising 3 yr a turn:
+ *  drawn with the body's own strand (strandYr 0.62, so the render treats it
+ *  as the fabric yarn — the same chenille pile, not a bare loop tube) it is
+ *  ~16 mm across with a ~5 mm hole (the bar's curls), and no two coils come
+ *  nearer than two drawn strands (2.4 yr centre to centre: each keeps a gap
+ *  and its own shadow). The coils want rows further apart than the open
+ *  rings did (measured on the patch alone: on rounds 2/4/6/8 with a loop in
+ *  every fifth stitch two pairs of coils sat root to root and linked), so
+ *  loops on every THIRD round (2, 5 and the edge round 8 at 1.3) with a loop
+ *  in every FOURTH stitch inside and every third on the edge: 26 coils
+ *  (3 + 7 + 16), none linked, none nearer than 5.7 mm. */
+export function cowCoils(rounds: number[]): Partial<HairPatch> {
+  const last = rounds.length - 1
+  const loopRounds = rounds.map((_, k) => k).filter((k) => k % 3 === 1 || k === last)
+  return {
+    loopRounds,
+    loopEvery: 4,
+    faceRounds: loopRounds.filter((k) => k !== last),
+    coil: { radiusYr: 2.3, turns: 1.75, pitchYr: 3.0, pairYr: 0.7 },
+    strandYr: 0.62,
+    coilClearYr: 2.4,
   }
 }
 
@@ -824,7 +878,7 @@ export function cowPresetName(choices: CowChoices): string {
 /** The maker's choices → the calf as a composition the loom can build. */
 export function buildCowProgram(choices: CowChoices): CompositionProgram {
   const g = clampGauge(choices.gauge)
-  const s = cowProfileAt(choices.size, g, choices.muzzleSize)
+  const s = cowProfileAt(choices.size, g, choices.muzzleSize, choices.muzzleOval)
   // How much the muzzle knob stretched the capsule (1 / 1 without it): the
   // nostrils sit the same FRACTION of the muzzle out from its middle (the
   // bar's are near its sides), so their round and stitch offsets scale.
@@ -951,7 +1005,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     parts,
     props,
     embroidery: cowNostrils(s.muzzle, fd, g, nostrilScale),
-    hair: [cowFringe(main, choices.size, g)],
+    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
