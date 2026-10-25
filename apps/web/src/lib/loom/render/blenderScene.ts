@@ -213,6 +213,15 @@ export interface HeroPhotoKnobs {
   /** A knit cloth's soft rounded rumples and its rise round the toy, in units
    *  of 0.1 x the piece height (0). */
   photoRumple?: number
+  /** A catch-light (cow-fable-1024b): a small hard light beside the camera, a
+   *  little above it, seen by glossy rays only, so each safety eye carries one
+   *  small bright reflection and the fabric's lighting is untouched; x the
+   *  key at the piece (0 = off, the render as before). */
+  photoCatch?: number
+  /** The catch-light's elevation above the camera axis, degrees
+   *  (cow-fable-1024g: higher puts the spot in the eye's upper half, the
+   *  bar's). 22 = where it has always sat. */
+  photoCatchElev?: number
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -249,6 +258,8 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoWeaveScale: 1,
   photoCrumpleScale: 1,
   photoRumple: 0,
+  photoCatch: 0,
+  photoCatchElev: 22,
 }
 
 /** Per-stage v2 framing when the view does not set `photoFrame` /

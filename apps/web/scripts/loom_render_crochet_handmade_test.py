@@ -95,6 +95,51 @@ class Displace(unittest.TestCase):
         self.assertLessEqual(rf.max(), (1 + fp["hm_tension"]) * (1 + 0.09 * fp["hm_ripple"]) + 1e-9)
         self.assertGreaterEqual(rf.min(), (1 - fp["hm_tension"]) * (1 - 0.09 * fp["hm_ripple"]) - 1e-9)
 
+    def test_wobble_off_by_default_and_slow_when_on(self):
+        # hm_wobble is not in the preset: handmade 1 alone never sets it
+        fp = R.handmade_params({"handmade": 1})
+        self.assertEqual(R.hm_amt(fp, "hm_wobble"), 0)
+        poly = helix()
+        base, _ = R.hm_displace([poly], 1.0, {"hm_jitter": 0.0})
+        self.assertTrue(np.allclose(np.array(base[0]), np.array(poly)))
+        out, rf = R.hm_displace([poly], 1.0, {"hm_wobble": 0.6})
+        d = np.linalg.norm(np.array(out[0]) - np.array(poly), axis=1)
+        self.assertLessEqual(d.max(), 0.6 * math.sqrt(3) + 1e-9)
+        self.assertGreater(d.max(), 0.05)
+        self.assertTrue(np.allclose(rf[0], 1.0))
+        # slower than the stitch jitter: neighbouring points barely differ
+        step = np.linalg.norm(np.diff(np.array(out[0]) - np.array(poly), axis=0), axis=1)
+        jit, _ = R.hm_displace([poly], 1.0, {"hm_jitter": 0.6})
+        jstep = np.linalg.norm(np.diff(np.array(jit[0]) - np.array(poly), axis=0), axis=1)
+        self.assertLess(step.max(), 0.5 * jstep.max())
+
+    def test_loop_mult_and_wobble_are_not_in_the_preset(self):
+        fp = R.handmade_params(dict(R.FIBRE_PARAMS["chenille"], handmade=1))
+        self.assertNotIn("hm_loop_mult", fp)
+        self.assertNotIn("hm_loop_wobble", fp)
+        self.assertNotIn("hm_wobble", fp)
+        # cow-fable-1024f: the loop-only pile and tone knobs are opt-in too
+        self.assertNotIn("hm_loop_bare", fp)
+        self.assertNotIn("hm_loop_tone", fp)
+        self.assertEqual(R.hm_amt(fp, "hm_loop_bare"), 0)
+        self.assertNotIn("hm_loop_calm", fp)
+        self.assertEqual(R.hm_amt(fp, "hm_loop_calm"), 0)
+
+    def test_catch_light_elevation_defaults_to_where_it_sat(self):
+        # cow-fable-1024g: `photoCatchElev` is 22 in both photo tables (the
+        # angle the catch-light was hard-coded at), so a scene without it
+        # renders exactly as before, and a view that sets it wins.
+        self.assertEqual(R.PHOTO_V2["photoCatchElev"], 22.0)
+        self.assertEqual(R.PHOTO_V1["photoCatchElev"], 22.0)
+        self.assertEqual(R.photo_opts({"photo": "v2"})["photoCatchElev"], 22.0)
+        self.assertEqual(R.photo_opts({"photo": "v2", "photoCatchElev": 45})["photoCatchElev"], 45)
+
+    def test_loop_tone_scales_the_hex_and_one_is_identity(self):
+        self.assertEqual(R.tone_hex("#694535", 1.0), "#694535")
+        self.assertEqual(R.tone_hex("#694535", 0.9), "#5e3e30")
+        self.assertEqual(R.tone_hex("#ffffff", 1.2), "#ffffff")
+        self.assertEqual(R.tone_hex("#000000", 0.5), "#000000")
+
     def test_plies_of_one_stroke_move_together(self):
         fp = R.handmade_params({"handmade": 1, "hm_loft": 0.0, "hm_tension": 0.0})
         a = helix()

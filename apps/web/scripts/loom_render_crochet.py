@@ -54,6 +54,15 @@ def hex_to_lin(h):
     return (lin(r), lin(g), lin(b), 1.0)
 
 
+def tone_hex(h, tone):
+    """The yarn colour's sRGB channels scaled by `tone` (1 = unchanged), clamped:
+    `hm_loop_tone` darkens or lifts the fringe loops' own material a shade
+    without touching the scene's hex (cow-fable-1024f)."""
+    h = h.lstrip("#")
+    out = [min(255, max(0, int(round(int(h[i:i + 2], 16) * tone)))) for i in (0, 2, 4)]
+    return "#%02x%02x%02x" % tuple(out)
+
+
 # Per-fibre shader knobs (STITCH_ENGINE yarn-fibre pass). `cotton` is the
 # ORIGINAL crisp-plied numbers, unchanged, so a program that doesn't set
 # `fibre` (every program before this pass, and every one that stays on the
@@ -250,6 +259,9 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #   hm_tension  0..0.3  strand radius +- fraction: tight vs loose stitches
 #                       (a tight stitch is also drawn a little inward)
 #   hm_cell_r   3..8    the stitch scale of all the variation, in strand radii
+#   hm_wobble   0..1    a slower wander (cell x 3.5): rows that wobble and
+#                       stitches that lean together in patches, x the strand
+#                       radius at 1 (cow-fable-1023b; not in the preset)
 #   hm_seed     int     the maker (another seed = another hand)
 # Heathered colour:
 #   hm_heather  0..1    per-stitch drift: value +-16%, hue +-0.01, sat +-6% at 1
@@ -273,6 +285,26 @@ def replied(centre, spread_mm, n_ply, turns_per_mm):
 #                       fraction of the density and no tip lift
 #   hm_loop_ratio 1.2..2  a group is a "loop" when its radius is this many
 #                       times the toy's main strand radius
+#   hm_loop_mult        the loops' own strand multiplier in place of the
+#                       fibre's `strand_mult` (cow-fable-1023b r3: a fabric
+#                       strand fattened to the stitch pitch must not fatten
+#                       the fringe rings with it). Absent = strand_mult.
+#   hm_loop_wobble      the loops' own hm_wobble (r4: the row wander, scaled
+#                       by the loop's fat radius, flattened the fringe rings
+#                       on to the brow). Absent = hm_wobble.
+#   hm_loop_bare 0/1    1 = NO pile hairs on the loops at all, whatever
+#                       `pile_max_radius_mm` and `hm_loop_pile` say, so each
+#                       chenille ring is a crisp velvet tube with its own
+#                       shadow instead of a fuzz that merges with its
+#                       neighbours (cow-fable-1024f). Absent / 0 = unchanged.
+#   hm_loop_tone        the loops' material colour = the scene hex with its
+#                       sRGB channels x this (0.9 a shade darker, 1.1 lighter);
+#                       absent / 1 = unchanged (cow-fable-1024f).
+#   hm_loop_calm 0..1   the loops keep their built shape: the stitch
+#                       irregularity (hm_jitter / hm_loft / hm_tension /
+#                       hm_ripple) on the loops x (1 - this), so a ring is
+#                       not crumpled by a cell the size of itself (cow-fable-
+#                       1024f r3). Absent / 0 = unchanged.
 # Cotton halo (ply / replied fibres only):
 #   hm_halo     0..1    faint fibre haze at the silhouette plus sparse short
 #                       fine fibre hairs (1.8 hairs/mm2 x 0.55 mm at 1)
@@ -350,6 +382,7 @@ def hm_displace(polys, r_mm, fp, ripple=False):
     import numpy as np
     jit, loft, ten = hm_amt(fp, "hm_jitter"), hm_amt(fp, "hm_loft"), hm_amt(fp, "hm_tension")
     rip = hm_amt(fp, "hm_ripple") if ripple else 0.0
+    wob = hm_amt(fp, "hm_wobble")
     cell = fp.get("hm_cell_r", 4.5) * r_mm
     seed = int(fp.get("hm_seed", 1)) * 1000003
     arrs = [np.asarray(p, dtype=np.float64).reshape(-1, 3) for p in polys]
@@ -366,6 +399,11 @@ def hm_displace(polys, r_mm, fp, ripple=False):
         if jit > 0:
             for k in range(3):
                 d[:, k] += jit * r_mm * hm_noise(P, cell, seed + 11 * (k + 1))
+        if wob > 0:
+            # row wobble: a field a few stitches across, so a run of stitches
+            # drifts and leans together and the rows stop being ruled lines
+            for k in range(3):
+                d[:, k] += wob * r_mm * hm_noise(P, 3.5 * cell, seed + 17 * (k + 1) + 400)
         if loft > 0 or ten > 0:
             o = P - centroid
             o /= np.maximum(np.linalg.norm(o, axis=1, keepdims=True), 1e-9)
@@ -987,7 +1025,7 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
     fpb = handmade_params(FIBRE_PARAMS.get(fibre, FIBRE_PARAMS["cotton"]))
     has_halo = bool(fpb.get("halo"))
     strand = fpb.get("strand", "ply")
-    hm_geo = any(hm_amt(fpb, k) > 0 for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple", "hm_loop_twist"))
+    hm_geo = any(hm_amt(fpb, k) > 0 for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple", "hm_loop_twist", "hm_wobble"))
     # the toy's main strand radius (the radius carrying the most points): a
     # group much fatter than it is a loop (the cow's fringe), see hm_loop_ratio
     by_r = {}
@@ -1015,10 +1053,22 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
         centre, spread = strand_centre(st["filaments"])
         if not spread:
             return st["filaments"], st["radiusMm"], None
-        bundle = (spread + st["radiusMm"]) * fpb.get("strand_mult", 1.0)
+        mult = fpb.get("strand_mult", 1.0)
+        if "hm_loop_mult" in fpb and is_loop(st["radiusMm"]):
+            mult = float(fpb["hm_loop_mult"])
+        bundle = (spread + st["radiusMm"]) * mult
         rf = None
         if hm_geo:
-            cs, rfs = hm_displace(centre, bundle, fpb, ripple=(strand == "single"))
+            fpl = fpb
+            if "hm_loop_wobble" in fpb and is_loop(st["radiusMm"]):
+                fpl = dict(fpb, hm_wobble=fpb["hm_loop_wobble"])
+            calm = hm_amt(fpb, "hm_loop_calm")
+            if calm > 0 and is_loop(st["radiusMm"]):
+                # `hm_loop_calm` (cow-fable-1024f): the fringe rings keep the
+                # circles they were built as; the per-stitch displacement
+                # whose cell is a whole ring wide crumpled them into worms
+                fpl = dict(fpl, **{k: hm_amt(fpl, k) * (1.0 - calm) for k in ("hm_jitter", "hm_loft", "hm_tension", "hm_ripple")})
+            cs, rfs = hm_displace(centre, bundle, fpl, ripple=(strand == "single"))
             centre, rf = cs, rfs[0]
             tw = hm_amt(fpb, "hm_loop_twist")
             if strand == "single" and tw > 0 and is_loop(st["radiusMm"]):
@@ -1090,10 +1140,15 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             _c, spr = strand_centre(group[0]["filaments"])
             r_out_mm = (spr + radius) * (fpb.get("strand_mult", 1.0) if strand != "ply" else 1.0)
         cell_bu = fpb.get("hm_cell_r", 4.5) * r_out_mm * S
+        # `hm_loop_tone` (cow-fable-1024f, render-only): the fat loops' material
+        # a shade darker or lighter than the scene hex. Absent / 1 = unchanged.
+        mat_hex = hexcol
+        if "hm_loop_tone" in fpb and float(fpb["hm_loop_tone"]) != 1.0 and is_loop(radius):
+            mat_hex = tone_hex(hexcol, float(fpb["hm_loop_tone"]))
         if strand == "single" and fpb.get("material", "pile") == "pile":
-            ymat = chenille_material("y_" + hexcol, hexcol, fpb, cell_bu, r_out_mm * S)
+            ymat = chenille_material("y_" + hexcol, mat_hex, fpb, cell_bu, r_out_mm * S)
         else:
-            ymat = yarn_material("y_" + hexcol, hexcol, sheen, fibre, fpb, cell_bu)
+            ymat = yarn_material("y_" + hexcol, mat_hex, sheen, fibre, fpb, cell_bu)
         if metallic > 0:
             # A metallic thread (the spiral trees' gold star and cord, strokes[].metallic):
             # the plied yarn surface blended toward a brushed metal. Absent from
@@ -1114,7 +1169,11 @@ def build_yarn(strokes, drape=None, z_offset=0.0, fibre="cotton"):
             dark_ok = not fpb.get("pile_dark_only") or depth_weight(hex_to_lin(hexcol)) > 0.75
             size_ok = radius <= fpb.get("pile_max_radius_mm", 1e9)
             lp = hm_amt(fpb, "hm_loop_pile")
-            if dark_ok and lp > 0 and is_loop(radius):
+            if hm_amt(fpb, "hm_loop_bare") > 0 and is_loop(radius):
+                # `hm_loop_bare` (cow-fable-1024f): the fringe rings carry no
+                # pile at all, so each reads as its own crisp chenille tube
+                pass
+            elif dark_ok and lp > 0 and is_loop(radius):
                 # handmade: the fat loops (cow fringe) get their own, denser
                 # pile so they read as fuzzy chenille, not smooth tubes
                 add_pile_hairs(ob, hexcol, dict(fpb, pile_density=fpb["pile_density"] * lp,
@@ -4074,6 +4133,13 @@ VARIANT_BUILDERS = {
 #   photoRumple     a knit cloth's soft rounded rumples (a chunky blanket rolls,
 #                   it does not crease), x piece height x 0.1; the cloth rises
 #                   round the toy where it sits in it             (0)
+#   photoCatch      a catch-light (cow-fable-1024b): a small hard light beside
+#                   the camera, a little above it, seen by GLOSSY rays only, so
+#                   each safety eye carries one small bright reflection and the
+#                   fabric's lighting is untouched; x the key at the piece (0)
+#   photoCatchElev  the catch-light's elevation above the camera axis, degrees
+#                   (cow-fable-1024g: higher puts the spot in the eye's upper
+#                   half, the bar's); 22 = where it has always sat      (22)
 PHOTO_STAGE3_OFF = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
@@ -4086,6 +4152,7 @@ PHOTO_V2 = dict(
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
+    photoCatch=0.0, photoCatchElev=22.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4097,6 +4164,7 @@ PHOTO_V1 = dict(
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
+    photoCatch=0.0, photoCatchElev=22.0,
 )
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
@@ -4284,6 +4352,18 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
     if po["photoRim"] > 0:
         side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
         made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"], 0.22 * r, GOLD))
+    if po.get("photoCatch", 0.0) > 0:
+        # cow-fable-1024b: a small hard light just off the camera axis (a
+        # touch to the key's side, above the eye line), glossy rays only, so
+        # the safety eyes catch one bright spot and nothing else changes.
+        side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
+        catch = light(at(side * 12.0, float(po.get("photoCatchElev", 22.0)), 0.9 * r), aim, po["photoCatch"], 0.05 * r, (1.0, 0.98, 0.95))
+        for attr in ("visible_diffuse", "visible_transmission", "visible_volume_scatter"):
+            try:
+                setattr(catch, attr, False)
+            except Exception:
+                pass
+        made.append(catch)
     for ob in made:
         try:
             ob.visible_camera = False
