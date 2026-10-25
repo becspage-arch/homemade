@@ -856,10 +856,12 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       kind: 'nightcap', on: 'head', colourHex: choices.hatHex ?? HAT_HEX_DEFAULT, headRadiusMm, yarnWeight: program.yarnWeight,
       brimHeightFrac: TOY_HAT_BRIM_FRAC,
       bandFitFrac: TOY_HAT_FIT, bandRounds: TOY_HAT_BAND_ROUNDS, brimRounds: TOY_HAT_BRIM_ROUNDS,
-      bend: { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
+      bend: fineBunny(choices)
+        ? { ...BUNNY_FINE_HAT.bend, lengthMm: headRadiusMm * BUNNY_FINE_HAT.lengthFrac }
+        : { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
       coneStep: TOY_HAT_CONE_STEP,
       slowTipRounds: TOY_HAT_SLOW_TIP_ROUNDS,
-      tiltBackDeg: TOY_HAT_TILT_BACK_DEG,
+      tiltBackDeg: fineBunny(choices) ? BUNNY_FINE_HAT.tiltBackDeg : TOY_HAT_TILT_BACK_DEG,
       pompomRadiusFrac: TOY_POMPOM_RADIUS_FRAC,
       pompomHex: choices.pompomHex ?? POMPOM_HEX_DEFAULT,
       pompomFibre: TOY_POMPOM_FIBRE,
@@ -963,15 +965,15 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       // Round 6: the bunny's muzzle is in the MAIN yarn (the bar's cream
       // muzzle — a contrast disc read as a pig's snout); the pink is only the
       // embroidered nose. The bear keeps its contrast muzzle (the cow's).
-      colourHex: choices.base === 'bunny' ? palerShade(main, BUNNY_MUZZLE_MIX) : contrast,
+      colourHex: choices.base === 'bunny' ? palerShade(main, fineBunny(choices) ? BUNNY_FINE_MUZZLE.mix : BUNNY_MUZZLE_MIX) : contrast,
       // Round 11: the bear's muzzle grows with its bigger head, and shows its
       // magic ring (drawn to a pinprick, under the nose) instead of the
       // fasten-off end, which rendered as a hole round the nose.
       // Round 5: the toy's muzzle is a wide flat oval low on the face (the
       // bar's), worked at the toy's fine gauge.
-      scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : choices.base === 'bunny' ? BUNNY_MUZZLE_SCALE[choices.size] : toy ? TOY_MUZZLE_SCALE[choices.size] : 0.85,
+      scale: choices.base === 'dog' ? DOG_SNOUT_SCALE[choices.size] : choices.base === 'cat' ? 0.78 : choices.base === 'bunny' ? (fineBunny(choices) ? BUNNY_FINE_MUZZLE.scale : BUNNY_MUZZLE_SCALE[choices.size]) : toy ? TOY_MUZZLE_SCALE[choices.size] : 0.85,
       place: {
-        on: 'head', dir: fd({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : choices.base === 'bunny' ? BUNNY_MUZZLE_Z : -0.22 }),
+        on: 'head', dir: fd({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : choices.base === 'bunny' ? (fineBunny(choices) ? BUNNY_FINE_MUZZLE.z : BUNNY_MUZZLE_Z) : -0.22 }),
         // An embroidered face is sewn ACROSS the muzzle front, so it wants the
         // magic ring there (drawn to a pinprick), not the closing hole.
         seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear && (choices.face ?? 'safety') === 'safety', surfaceFit: 'ellipsoid',
@@ -1037,12 +1039,13 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     // head and hanging straight down beside the face, the lined face turned
     // forward and out, clear of the head (measured: no free ear fabric
     // inside the head's settled shell beyond one yarn radius).
+    const earSpin = fineBunny(choices) ? BUNNY_FINE_EAR_SPIN : LOP_EAR_SPIN
     for (const side of [-1, 1] as const) {
       const place = {
         on: 'head',
         dir: fd({ x: side * LOP_EAR_DIR.x, y: LOP_EAR_DIR.y, z: LOP_EAR_DIR.z }),
         aim: fd({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
-        spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
+        spin: fd({ x: side * earSpin.x, y: earSpin.y, z: 0 }),
         seat: 4, poleIn: false, surfaceFit: 'ellipsoid' as const,
       }
       if (choices.cuppedEars && choices.base === 'bunny') {
@@ -1067,7 +1070,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
           on: 'head',
           dir: fd({ x: side * LOP_EAR_DIR.x, y: LOP_EAR_DIR.y, z: LOP_EAR_DIR.z }),
           aim: fd({ x: side * LOP_EAR_AIM.x, y: LOP_EAR_AIM.y, z: LOP_EAR_AIM.z }),
-          spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
+          spin: fd({ x: side * earSpin.x, y: earSpin.y, z: 0 }),
           seat: 4, poleIn: false, surfaceFit: 'ellipsoid',
           offset: { z: LOP_EAR_LIFT[choices.size] + (LOP_EAR_GAUGE_LIFT[`${choices.size}@${g}`] ?? 0) },
         },
@@ -1233,6 +1236,26 @@ const TOY_MUZZLE_SCALE: Record<AmigurumiSize, number> = { S: 0.95, M: 0.95, L: 0
 const BUNNY_MUZZLE_SCALE: Record<AmigurumiSize, number> = { S: 0.7, M: 0.68, L: 0.62 }
 const BUNNY_MUZZLE_MIX = 0.22
 const BUNNY_MUZZLE_Z = -0.36
+/**
+ * The FINE-GAUGE bunny (bunny-fable-1025, by eye against the bar; opt-in
+ * through `AmigurumiChoices.gauge`, so the gauge-1 preset and its hash are
+ * untouched — the cow's fine-gauge paths do the same). At gauge 1.4 the hat
+ * is worked in lace yarn, so its cone is shorter (~96 mm) than the gauge-1
+ * cap's; with the slouch ramp of 1.5R (78 mm) the fold only completed in the
+ * last few rounds and the cap stood as a tall gnome's cone with its tip hooked
+ * (r1). A shorter ramp folds the shoulder over the crown. The muzzle is a
+ * wider, paler patch set a touch higher (the bar's), the eyes a touch wider
+ * and lower, and the lined ear face turns more toward the lens (the bar's
+ * lining is a wide oval, r1's a narrow strip).
+ */
+const BUNNY_FINE_HAT = { bend: { startFrac: 0.12, angleDeg: 150, dirDeg: 32 }, lengthFrac: 0.85, tiltBackDeg: 14 }
+const BUNNY_FINE_MUZZLE = { scale: 0.85, mix: 0.4, z: -0.3 }
+const BUNNY_FINE_EAR_SPIN = { x: -0.2, y: 1 }
+const BUNNY_FINE_FACE = { eyeElev: -10, eyeAz: 42 }
+/** The fine-gauge bunny: the bar's sleepy bunny worked at `gauge` > 1. */
+function fineBunny(choices: AmigurumiChoices): boolean {
+  return choices.base === 'bunny' && clampGauge(choices.gauge) !== 1
+}
 /** The bear's round ear (`toyEar`, fine gauge) trimmed to its head. */
 const TOY_EAR_SCALE: Record<AmigurumiSize, number> = { S: 0.85, M: 0.95, L: 1.0 }
 
@@ -1698,8 +1721,8 @@ function faceEmbroidery(choices: AmigurumiChoices, program: CompositionProgram):
         : undefined,
     forward: fd({ x: 0, y: 1, z: 0 }),
     right: fd({ x: 1, y: 0, z: 0 }),
-    eyeElevDeg: set.eyeElev,
-    eyeAzDeg: set.eyeAz,
+    eyeElevDeg: fineBunny(choices) ? BUNNY_FINE_FACE.eyeElev : set.eyeElev,
+    eyeAzDeg: fineBunny(choices) ? BUNNY_FINE_FACE.eyeAz : set.eyeAz,
     blushElevDeg: set.blushElev,
     blushAzDeg: set.blushAz,
     eyeHalfSt: set.eyeHalfSt * g,
