@@ -860,9 +860,9 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
         ? { ...BUNNY_FINE_HAT.bend, lengthMm: headRadiusMm * BUNNY_FINE_HAT.lengthFrac }
         : { ...TOY_HAT_BEND, lengthMm: headRadiusMm * TOY_HAT_BEND_LENGTH_FRAC },
       coneStep: TOY_HAT_CONE_STEP,
-      slowTipRounds: TOY_HAT_SLOW_TIP_ROUNDS,
+      slowTipRounds: fineBunny(choices) ? BUNNY_FINE_HAT.slowTipRounds : TOY_HAT_SLOW_TIP_ROUNDS,
       tiltBackDeg: fineBunny(choices) ? BUNNY_FINE_HAT.tiltBackDeg : TOY_HAT_TILT_BACK_DEG,
-      pompomRadiusFrac: TOY_POMPOM_RADIUS_FRAC,
+      pompomRadiusFrac: fineBunny(choices) ? BUNNY_FINE_HAT.pompomRadiusFrac : TOY_POMPOM_RADIUS_FRAC,
       pompomHex: choices.pompomHex ?? POMPOM_HEX_DEFAULT,
       pompomFibre: TOY_POMPOM_FIBRE,
     }]
@@ -976,7 +976,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         on: 'head', dir: fd({ x: 0, y: 1, z: choices.base === 'cat' ? -0.3 : bear ? -0.32 : choices.base === 'bunny' ? (fineBunny(choices) ? BUNNY_FINE_MUZZLE.z : BUNNY_MUZZLE_Z) : -0.22 }),
         // An embroidered face is sewn ACROSS the muzzle front, so it wants the
         // magic ring there (drawn to a pinprick), not the closing hole.
-        seat: choices.base === 'dog' ? 4 : 3, poleIn: !bear && (choices.face ?? 'safety') === 'safety', surfaceFit: 'ellipsoid',
+        seat: choices.base === 'dog' ? 4 : fineBunny(choices) ? BUNNY_FINE_MUZZLE.seatMm : 3, poleIn: !bear && (choices.face ?? 'safety') === 'safety', surfaceFit: 'ellipsoid',
       },
     },
   ]
@@ -1248,8 +1248,14 @@ const BUNNY_MUZZLE_Z = -0.36
  * and lower, and the lined ear face turns more toward the lens (the bar's
  * lining is a wide oval, r1's a narrow strip).
  */
-const BUNNY_FINE_HAT = { bend: { startFrac: 0.12, angleDeg: 150, dirDeg: 32 }, lengthFrac: 0.85, tiltBackDeg: 14 }
-const BUNNY_FINE_MUZZLE = { scale: 0.85, mix: 0.4, z: -0.3 }
+/** r2: the 0.85R ramp from 0.12R laid the cap flat as a beret with the
+ *  13-round lace tail (~62 mm) spent in the fold, stopping at the ear. r3: a
+ *  little crown before the fold (0.2R), 22 slow tip rounds so the tail hangs
+ *  down the side to the shoulder (the bar's), a smaller pompom. */
+const BUNNY_FINE_HAT = { bend: { startFrac: 0.2, angleDeg: 150, dirDeg: 40 }, lengthFrac: 0.9, tiltBackDeg: 14, slowTipRounds: 22, pompomRadiusFrac: 0.3 }
+/** r2: at scale 0.85 the ball muzzle stood off the face as a white snout;
+ *  r3: a touch smaller and seated deeper (mm) so it is a flat pale oval. */
+const BUNNY_FINE_MUZZLE = { scale: 0.74, mix: 0.32, z: -0.3, seatMm: 7 }
 const BUNNY_FINE_EAR_SPIN = { x: -0.2, y: 1 }
 const BUNNY_FINE_FACE = { eyeElev: -10, eyeAz: 42 }
 /** The fine-gauge bunny: the bar's sleepy bunny worked at `gauge` > 1. */
