@@ -203,6 +203,10 @@ export interface HeroPhotoKnobs {
   /** 0 = today's spray; 1 = ~40% of the stems run behind the toy and out past
    *  its right shoulder, kept clear of its footprint (0). */
   photoBunchBehind?: number
+  /** 0 = the bunch lies on the cloth; 1 = stood up (cow-cute-1027): the cut
+   *  ends on the cloth at the left, the twine raised, the heads leaning up
+   *  behind and beside the toy at different heights, stems fanning (0). */
+  photoBunchStand?: number
   /** Cloth texture strength on the crumpled cloth (linen threads and slubs,
    *  knit stitch shadow and fuzz); 0 = the material as built (0). */
   photoWeave?: number
@@ -254,6 +258,7 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoRoom: 0,
   photoBunchFull: 1,
   photoBunchBehind: 0,
+  photoBunchStand: 0,
   photoWeave: 0,
   photoWeaveScale: 1,
   photoCrumpleScale: 1,
@@ -285,6 +290,7 @@ export const HERO_PHOTO_STAGE3_KNOBS = [
   'photoRoom',
   'photoBunchFull',
   'photoBunchBehind',
+  'photoBunchStand',
   'photoWeave',
   'photoWeaveScale',
   'photoCrumpleScale',

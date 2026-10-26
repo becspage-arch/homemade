@@ -159,6 +159,14 @@ export interface AmigurumiPart {
    */
   form?: 'sphere' | 'disc'
   /**
+   * OFF THE TABLE (cow-cute-1027): a closed stuffed piece is relaxed sitting
+   * on a table (programScene `floorZ` 0), which flattens its bottom; a piece
+   * then turned on its side (a head worked side to side, `place.axis`) wears
+   * that flat as a straight cheek. `true` relaxes it with no table, round
+   * all over. Absent = as before, every hash unchanged.
+   */
+  offTable?: boolean
+  /**
    * An UNSTUFFED piece pressed flat (a bunny's long ear): the two plates'
    * final gap, centre-line to centre-line, in mm (relax.ts `press`). The piece
    * is audited in its settled frame (`auditProblems` frame 'current').
@@ -1063,7 +1071,7 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
   const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr)
   const panelMask = part.panel ? facePanel(built, part) : undefined
   if (part.press) relaxPressed(built, part.press, yr, part.pressShape)
-  else relaxProgram(built, yr)
+  else relaxProgram(built, yr, part.offTable === true ? { offTable: true } : undefined)
   return { built, panelMask }
 }
 

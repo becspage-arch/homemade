@@ -114,6 +114,14 @@ export interface HairPatch {
   coil?: CoilShape
   /** Per-round overrides of `coil` (0-based; merged over it). */
   coilByRound?: (k: number) => Partial<CoilShape> | undefined
+  /** MIXED CURLS (cow-cute-1027; coiled patches only): every `every`th curl
+   *  along a round (the first, then every `every`th after it) is wound BIG —
+   *  its coil radius x `big`, the loop pulled out round a wider card — and the
+   *  rest x `small` (default 1), so small tight curls sit among big loose
+   *  ones (cute rule 37: a fringe of one size reads as a stamp). `rounds`
+   *  limits the big curls to those rounds (0-based; absent = every loop
+   *  round). Absent = every curl the patch's coil, every hash unchanged. */
+  coilMix?: { every: number; big: number; small?: number; rounds?: number[] }
   /** The coils' clearance, centre-line to centre-line between two curls, in
    *  yarn radii (default two drawn strand radii, 2 x `strandYr`). */
   coilClearYr?: number
@@ -154,6 +162,19 @@ export function stitchAtOf(h: HairPatch, k: number, c: number): StitchId {
     if ((loopsBefore + 1) % h.curlEvery === 0) return 'loopcurl'
   }
   return h.stitch
+}
+
+/** The coil radius factor for the loop at stitch c of round k under
+ *  `coilMix` (1 without it): `big` for every `every`th loop along the round
+ *  (counted over the loops, not the plain stitches) on the mix's rounds,
+ *  else `small`. */
+export function coilMixScale(h: HairPatch, k: number, c: number): number {
+  const m = h.coilMix
+  if (!m) return 1
+  const every = loopEveryAt(h, k)
+  const loopsBefore = every ? Math.floor((c + 1) / every) - 1 : c
+  const bigHere = (!m.rounds || m.rounds.includes(k)) && loopsBefore % Math.max(1, m.every) === 0
+  return bigHere ? m.big : m.small ?? 1
 }
 
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
@@ -199,14 +220,19 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   const curlAt = (k: number, c: number): Partial<LoopShape> | undefined =>
     h.curlEvery && h.curlLoop && stitchAtOf(h, k, c) === 'loopcurl' ? h.curlLoop : undefined
   // The coiled curl (cow-build-1025), per round.
-  const coilAt = (k: number): Partial<LoopShape> | undefined => (h.coil ? { coil: { ...h.coil, ...h.coilByRound?.(k) } } : undefined)
+  const coilAt = (k: number, c: number): Partial<LoopShape> | undefined => {
+    if (!h.coil) return undefined
+    const cl = { ...h.coil, ...h.coilByRound?.(k) }
+    const f = coilMixScale(h, k, c)
+    return { coil: f === 1 ? cl : { ...cl, radiusYr: cl.radiusYr * f } }
+  }
   const built = buildRounds('sc', h.rounds, yr, undefined, {
     roundStitch: (k) => (isLoopRound(h, k) ? h.stitch : 'sc'),
     loop: h.loop,
     loopByRound: h.loopByRound,
     ...(perStitch ? { stitchAt: (k: number, c: number) => stitchAtOf(h, k, c) } : {}),
     ...(h.coil
-      ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c), ...coilAt(k) }) }
+      ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c), ...coilAt(k, c) }) }
       : fp
         ? { loopByStitch: (k: number, c: number) => ({ ...curlAt(k, c), ...facePlaneAt(k, c) }) }
         : h.curlEvery && h.curlLoop
@@ -424,14 +450,20 @@ export function writeHairInstructions(h: HairPatch, hostLabel = 'head', yarnRadi
   // long round a strip of card, twisted, and let spring back on itself.
   const coiled = (): string => {
     const cl = h.coil!
-    const legMm = cl.turns * Math.hypot(2 * Math.PI * cl.radiusYr, cl.pitchYr) * (yarnRadiusMm ?? 0)
-    const cm = Math.max(1, Math.round(legMm / 5) / 2)
+    const cardCm = (f: number): number => Math.max(1, Math.round((cl.turns * Math.hypot(2 * Math.PI * cl.radiusYr * f, cl.pitchYr) * (yarnRadiusMm ?? 0)) / 5) / 2)
+    const mix = h.coilMix
+    const cm = cardCm(mix?.small ?? 1)
     const turns = cl.turns >= 1.9 ? 'two turns' : cl.turns >= 1.6 ? 'nearly two turns' : cl.turns >= 1.4 ? 'a turn and a half' : 'about a turn'
+    // cow-cute-1027 (`coilMix`): the big curls, from the same rule the build reads.
+    const mixWords = mix && yarnRadiusMm
+      ? `Mix the sizes: ${mix.every <= 1 ? 'every curl' : `the first curl of ${mix.rounds ? (mix.rounds.length === 1 ? `round ${mix.rounds[0]! + 1}` : `rounds ${mix.rounds.slice(0, -1).map((k) => k + 1).join(', ')} and ${mix.rounds[mix.rounds.length - 1]! + 1}`) : 'each loop round'} and every ${({ 2: 'second', 3: 'third', 4: 'fourth' } as Record<number, string>)[mix.every] ?? `${mix.every}th`} curl after it`} is a BIG curl: wrap it round a strip of card ${cardCm(mix.big)} cm wide instead, so it springs into a big loose curl among the small tight ones. `
+      : ''
     return (
       'Every loop in this circle is a COILED CURL: ' +
       (yarnRadiusMm ? `wrap the yarn round a strip of card ${cm} cm wide instead of your finger, so each loop is about ${cm} cm long, ` : 'make each loop long, ') +
       'and before you finish the stitch twist the loop round and round between finger and thumb until it kinks, then let it go: ' +
-      `it springs back on itself into a tight corkscrew of ${turns}. Finish the stitch and settle each curl on its own, not hooked through its neighbour. `
+      `it springs back on itself into a tight corkscrew of ${turns}. Finish the stitch and settle each curl on its own, not hooked through its neighbour. ` +
+      mixWords
     )
   }
   lines.push(

@@ -25,9 +25,12 @@ const DEFAULT_COLOUR = '#c98a5e' // warm terracotta stand-in (pale wool washes w
 
 /** Relax a compiled program in place, choosing the profile from its fabric frame
  *  — identical to scripts/loom-program.ts + engine/buildSwatch, kept in sync. */
-export function relaxProgram(built: BuiltContinuous, yr: number): void {
+export function relaxProgram(built: BuiltContinuous, yr: number, opts?: { offTable?: boolean }): void {
   const surface = built.frame === 'surface'
   const polar = built.frame === 'polar'
+  // cow-cute-1027 (AmigurumiPart.offTable): a stuffed piece relaxed with no
+  // table under it, so it settles round all over (absent = as always).
+  const floor = surface && opts?.offTable ? {} : { floorZ: 0 }
   relax(built.model, {
     collMinDist: yr * 1.25,
     collK: 0.28,
@@ -36,7 +39,7 @@ export function relaxProgram(built: BuiltContinuous, yr: number): void {
     planeK: 0,
     layoutK: 0.06,
     layoutMode: surface ? 'surface' : polar ? 'radial' : 'y',
-    ...(surface ? { floorZ: 0, stuffing: STUFF_PRESSURE, stuffPrior: STUFF_PRIOR } : polar ? { floorZ: -yr * 1.3 } : {}),
+    ...(surface ? { ...floor, stuffing: STUFF_PRESSURE, stuffPrior: STUFF_PRIOR } : polar ? { floorZ: -yr * 1.3 } : {}),
     iterations: surface ? 560 : polar ? 360 : 320,
   })
 }

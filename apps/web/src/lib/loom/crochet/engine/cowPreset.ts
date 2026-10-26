@@ -128,7 +128,48 @@ export interface CowChoices {
   /** THE CUTE GATE (cuteCheck.ts; AmigurumiChoices.cuteGate): hard and firm
    *  cute-rule failures fail the compile. Absent / false = report only. */
   cuteGate?: boolean
+  /** THE CUTE NUMBERS (cow-cute-1027; gauge > 1.15 only): the placements and
+   *  sizes that bring the fine-gauge calf inside the cute rules (CUTE-RULES.md,
+   *  cuteCheck.ts) — eyes wider apart on the muzzle's top corners, the muzzle
+   *  low enough to be the chin, the folded ears a size smaller and up at the
+   *  brow, shorter horns that taper, fuller front legs closer together, and a
+   *  mix of big and small curls. Each applies only to the piece it is for
+   *  (the folded ears, curved horns, tapered legs and coiled curls keep their
+   *  own switches; their explicit options still win). `true` = `COW_CUTE_FIT`;
+   *  fields override it. Absent / false = every hash unchanged. */
+  cuteFit?: boolean | Partial<CowCuteFit>
   name?: string
+}
+
+/** The cute numbers (`CowChoices.cuteFit`): directions are in the toy's
+ *  front frame (the face ones turned to the lens like the defaults). */
+export interface CowCuteFit {
+  /** Safety eyes (FINE_EYE_DIR's stand-in). */
+  eyeDir: Dir
+  /** The muzzle's place on the head (MUZZLE_DIR's stand-in). */
+  muzzleDir: Dir
+  /** The folded ear (`foldedEars`): its circle's widest round (gauge-1
+   *  stitches; COW_FOLD_EAR's), where it is sewn, where it points and where
+   *  its hollow faces (FOLD_EAR_DIR / AIM / FACE's stand-ins). */
+  earWidth: number
+  /** The ear's pinch (0..1; absent = COW_FOLD_EAR's). */
+  earPinch?: number
+  earDir: Dir
+  earAim: Dir
+  earFace: Dir
+  /** The curved horn's defaults (`curvedHorns: true`; over COW_CURVED_HORN). */
+  horn: Partial<CurvedHornOptions>
+  /** The tapered front leg's defaults (`taperedLegs: true`; over
+   *  COW_TAPERED_LEG), where it is sewn (FRONT_LEG_DIR's stand-in) and its
+   *  drop onto the table (mm, in place of TAPERED_LEG_LIFT). */
+  leg: Partial<TaperedLegOptions>
+  frontLegDir: Dir
+  frontLegLift: number
+  /** The coiled fringe's big and small curls (`coiledCurls`; HairPatch.coilMix). */
+  coilMix?: HairPatch['coilMix']
+  /** The head relaxed off the table (AmigurumiPart.offTable): round cheeks,
+   *  where the table's flat turned to the side read as a straight cheek. */
+  roundHead: boolean
 }
 
 /** The curved horn's shape (gauge-1 stitch counts; g x at a fine gauge). */
@@ -155,6 +196,8 @@ export const COW_CURVED_HORN: CurvedHornOptions = { tip: 5, widest: 11, length: 
 export interface TaperedLegOptions {
   foot: number
   top: number
+  /** Rounds held at the foot's width (default 2: limbProfiles' round foot). */
+  footHold?: number
   /** Rounds foot to top, close included (default: the size's own leg, so
    *  the calf still stands on it: 12 / 15 / 18 rounds at S / M / L). */
   length?: number
@@ -163,6 +206,30 @@ export interface TaperedLegOptions {
 /** Starting numbers: today's leg is 12 round (and 12 / 15 / 18 rounds long
  *  at S / M / L, gauge 1). */
 export const COW_TAPERED_LEG: TaperedLegOptions = { foot: 11, top: 7 }
+
+/** The cute numbers (cow-cute-1027), measured with the cute check on the
+ *  fine-gauge listing calf (folded ears, curved horns, tapered legs, coiled
+ *  curls); see `CowChoices.cuteFit` and jobs/cow-cute-1027.md. */
+export const COW_CUTE_FIT: CowCuteFit = {
+  eyeDir: { x: 0.65, y: 1, z: 0.16 },
+  muzzleDir: { x: 0, y: 1, z: -0.62 },
+  earWidth: 18,
+  earDir: { x: 1, y: 0.04, z: 0.42 },
+  earAim: { x: 0.9, y: 0.42, z: 0.05 },
+  earFace: { x: 0.35, y: 1, z: 0.25 },
+  horn: { tip: 5, widest: 12, length: 5, plump: 1.2 },
+  leg: { foot: 15, top: 12 },
+  frontLegDir: { x: 0.68, y: 0.95, z: 0.5 },
+  frontLegLift: -2.97,
+  coilMix: { every: 3, big: 1.5, small: 0.75 },
+  roundHead: true,
+}
+
+/** The cute numbers for these choices, or undefined (off, or gauge <= 1.15). */
+function cowCuteFit(choices: CowChoices, g: number): CowCuteFit | undefined {
+  if (!choices.cuteFit || g <= 1.15) return undefined
+  return { ...COW_CUTE_FIT, ...(choices.cuteFit === true ? {} : choices.cuteFit) }
+}
 
 export const COW_DEFAULTS: CowChoices = {
   size: 'M',
@@ -570,7 +637,7 @@ const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
-export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled = false): HairPatch {
+export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled = false, coilMix?: HairPatch['coilMix']): HairPatch {
   // Five rounds at M (a circle ~60 mm across on the crown), loop stitch on
   // rounds 1, 3 and 5 and plain dc between: loops on every other round is
   // how a maker keeps a long-looped fringe from matting, and it is what lets
@@ -815,6 +882,10 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled 
     // chenille coils each curled on itself, side by side with their own
     // shadow, where the open rings crossed each other and read as chain links.
     ...(g > 1.15 && coiled ? cowCoils(rounds) : {}),
+    // cow-cute-1027 (`cuteFit`): big and small curls mixed (cute rule 37).
+    // The big curls on the inner rounds unless said (the edge round's curls
+    // sit close along the rim and link when they grow: cow-fable-1025).
+    ...(g > 1.15 && coiled && coilMix ? { coilMix: { ...coilMix, rounds: coilMix.rounds ?? cowCoils(rounds).faceRounds } } : {}),
   }
 }
 
@@ -879,16 +950,20 @@ const FOLD_EAR_AIM = { x: 0.9, y: 0.2, z: -0.32 }
 const FOLD_EAR_FACE = { x: 0.35, y: 1, z: 0.25 }
 
 /** One folded ear (`COW_FOLD_EAR`), sewn by its pinched base. */
-function cowFoldEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1): AmigurumiPart {
-  return foldedPart(gFolded(COW_FOLD_EAR[choices.size], g), {
+function cowFoldEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1, cf?: CowCuteFit): AmigurumiPart {
+  const DIR = cf?.earDir ?? FOLD_EAR_DIR, AIM = cf?.earAim ?? FOLD_EAR_AIM, FACE = cf?.earFace ?? FOLD_EAR_FACE
+  const ear = cf ? { ...COW_FOLD_EAR[choices.size], width: cf.earWidth, ...(cf.earPinch != null ? { pinch: cf.earPinch } : {}) } : COW_FOLD_EAR[choices.size]
+  return foldedPart(gFolded(ear, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
-    sewNote: 'by the pinched base on the sides of the head level with the brow, just below the horns, the hollow facing forward and the ear angled out and a little down',
+    sewNote: cf
+      ? 'by the pinched base high on the sides of the head at the brow, just under the horns, the hollow facing forward and the ear standing out level and a little forward'
+      : 'by the pinched base on the sides of the head level with the brow, just below the horns, the hollow facing forward and the ear angled out and a little down',
     place: {
       on: 'head',
-      dir: fd({ x: side * FOLD_EAR_DIR.x, y: FOLD_EAR_DIR.y, z: FOLD_EAR_DIR.z }),
-      aim: fd({ x: side * FOLD_EAR_AIM.x, y: FOLD_EAR_AIM.y, z: FOLD_EAR_AIM.z }),
-      spin: fd({ x: side * FOLD_EAR_FACE.x, y: FOLD_EAR_FACE.y, z: FOLD_EAR_FACE.z }),
+      dir: fd({ x: side * DIR.x, y: DIR.y, z: DIR.z }),
+      aim: fd({ x: side * AIM.x, y: AIM.y, z: AIM.z }),
+      spin: fd({ x: side * FACE.x, y: FACE.y, z: FACE.z }),
       seat: 3, poleIn: false, surfaceFit: 'ellipsoid',
     },
   }, gaugeYarnRadiusMm(COW_YARN, g))
@@ -990,11 +1065,13 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   const main = choices.mainHex
   const cream = choices.contrastHex
   const fd = (d: Dir): Dir => faceDir(d)
+  const cf = cowCuteFit(choices, g)
 
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
     {
       name: 'head', stitch: 'sc', rounds: s.head, colourHex: main,
+      ...(cf?.roundHead ? { offTable: true } : {}),
       sewNote: 'straight onto the top of the body with no neck, sunk well down so the shoulders run into the cheeks; the magic ring under one ear and the closed end under the other, so the head sits wider than it is tall',
       place: { on: 'body', overlap: s.headSink, offset: { y: 2 }, axis: fd(HEAD_AXIS) },
     },
@@ -1003,11 +1080,11 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       // LYING ACROSS the lower half of the face so the lens sees a wide oval
       // (the nostrils are stitched across its front).
       name: 'muzzle', stitch: 'sc', rounds: s.muzzle, colourHex: cream,
-      place: { on: 'head', dir: fd(MUZZLE_DIR), aim: fd(MUZZLE_AIM), seat: s.muzzleSeat, centred: true, surfaceFit: 'ellipsoid' },
+      place: { on: 'head', dir: fd(cf?.muzzleDir ?? MUZZLE_DIR), aim: fd(MUZZLE_AIM), seat: s.muzzleSeat, centred: true, surfaceFit: 'ellipsoid' },
       sewNote: 'lying across the lower half of the face with its ends toward the ears, its top edge just below the eyes',
     },
   ]
-  const curved = cowCurvedHorn(choices, g)
+  const curved = cowCurvedHorn(choices, g, cf)
   for (const side of [-1, 1] as const) {
     if (curved) {
       parts.push({
@@ -1041,7 +1118,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     })
   }
   if (choices.foldedEars) {
-    for (const side of [-1, 1] as const) parts.push(cowFoldEar(choices, side, fd, g))
+    for (const side of [-1, 1] as const) parts.push(cowFoldEar(choices, side, fd, g, cf))
   } else if (choices.cuppedEars) {
     for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd, g))
   } else for (const side of [-1, 1] as const) {
@@ -1062,7 +1139,10 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
-  const frontLeg = cowTaperedLeg(choices, g) ?? s.frontLeg
+  const frontLeg = cowTaperedLeg(choices, g, cf) ?? s.frontLeg
+  const tapered = frontLeg !== s.frontLeg
+  const LEG_DIR = tapered && cf ? cf.frontLegDir : FRONT_LEG_DIR
+  const taperLift = tapered ? (cf ? cf.frontLegLift : TAPERED_LEG_LIFT[`${choices.size}@${g}`] ?? 0) : 0
   for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'front-leg-l' : 'front-leg-r', stitch: 'sc', rounds: frontLeg, colourHex: main,
@@ -1071,10 +1151,10 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         : 'by the slim closed top at the front of the shoulders, close together, hanging straight down the front of the body so each round foot rests on the table',
       place: {
         on: 'body',
-        dir: { x: side * FRONT_LEG_DIR.x, y: FRONT_LEG_DIR.y, z: FRONT_LEG_DIR.z },
+        dir: { x: side * LEG_DIR.x, y: LEG_DIR.y, z: LEG_DIR.z },
         aim: { x: side * FRONT_LEG_AIM.x, y: FRONT_LEG_AIM.y, z: FRONT_LEG_AIM.z },
         seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: s.frontLegLift + (frontLeg === s.frontLeg ? 0 : TAPERED_LEG_LIFT[`${choices.size}@${g}`] ?? 0) },
+        offset: { z: s.frontLegLift + taperLift },
       },
     })
   }
@@ -1109,7 +1189,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   // apart/high, a blank look"; measured, the bar's eyes are 0.44 of the face
   // apart with their lower edge on the muzzle's top, ours 0.53 apart with a
   // gap): at a fine gauge closer together and lower. Gauge 1 keeps EYE_DIR.
-  const eyeDir = g > 1.15 ? FINE_EYE_DIR : EYE_DIR
+  const eyeDir = cf?.eyeDir ?? (g > 1.15 ? FINE_EYE_DIR : EYE_DIR)
   for (const side of [-1, 1] as const) {
     props.push({
       name: side < 0 ? 'eye-l' : 'eye-r', on: 'head',
@@ -1131,7 +1211,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     parts,
     props,
     embroidery: cowNostrils(s.muzzle, fd, g, nostrilScale),
-    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true)],
+    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
@@ -1143,9 +1223,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
 
 /** The curved horn (`CowChoices.curvedHorns`): its rounds and stitches at
  *  gauge g, or undefined when the straight cone is asked for. */
-function cowCurvedHorn(choices: CowChoices, g: number): ReturnType<typeof planBend>['spec'] | undefined {
+function cowCurvedHorn(choices: CowChoices, g: number, cf?: CowCuteFit): ReturnType<typeof planBend>['spec'] | undefined {
   if (!choices.curvedHorns) return undefined
-  const o = { ...COW_CURVED_HORN, ...(choices.curvedHorns === true ? {} : choices.curvedHorns) }
+  const o = { ...COW_CURVED_HORN, ...cf?.horn, ...(choices.curvedHorns === true ? {} : choices.curvedHorns) }
   // The point stays a 5-stitch ring at any gauge (gCone's rule); the base and
   // the length are g x, so the horn is the same size in mm.
   const rounds = taperRounds(o.tip, Math.max(o.tip + 1, Math.round(o.widest * g)), Math.max(4, Math.round(o.length * g)), o.plump)
@@ -1165,11 +1245,11 @@ function cowCurvedHorn(choices: CowChoices, g: number): ReturnType<typeof planBe
 const TAPERED_LEG_LIFT: Record<string, number> = { 'S@1': 3.53, 'M@1': 3.17, 'L@1': 3.3, 'S@1.3': 0.84, 'M@1.3': 0.88, 'L@1.3': -3.6 }
 
 /** The tapered front leg (`CowChoices.taperedLegs`) at gauge g. */
-function cowTaperedLeg(choices: CowChoices, g: number): number[] | undefined {
+function cowTaperedLeg(choices: CowChoices, g: number, cf?: CowCuteFit): number[] | undefined {
   if (!choices.taperedLegs) return undefined
-  const o = { ...COW_TAPERED_LEG, ...(choices.taperedLegs === true ? {} : choices.taperedLegs) }
+  const o = { ...COW_TAPERED_LEG, ...cf?.leg, ...(choices.taperedLegs === true ? {} : choices.taperedLegs) }
   const length = o.length ?? PROFILES[choices.size].frontLeg.length
-  return taperedLimbRounds({ foot: Math.round(o.foot * g), top: Math.round(o.top * g), length: Math.round(length * g) })
+  return taperedLimbRounds({ foot: Math.round(o.foot * g), top: Math.round(o.top * g), length: Math.round(length * g), ...(o.footHold != null ? { footHold: o.footHold } : {}) })
 }
 
 /** The curved horn leaves the head more sideways than the straight cone (the

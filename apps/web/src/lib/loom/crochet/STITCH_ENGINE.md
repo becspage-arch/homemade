@@ -3900,6 +3900,22 @@ crochet-bar/jobs/cute-check-1026.md; every preset's report: crochet-bar/proofs/c
   explained in the job log, not tuned away. With `foldedEars` + `curvedHorns` + `taperedLegs` rules 18, 20, 21, 24,
   25, 26, 31 and 34 pass.
 
+## 8t. THE CUTE NUMBERS — the cow inside the cute rules (2026-10-27)
+
+Job log `crochet-bar/jobs/cow-cute-1027.md`. The fine-gauge listing calf (folded ears, curved horns, tapered legs,
+coiled curls) with `CowChoices.cuteFit` and `cuteGate` compiles with 0 problems and passes all 32 cute rules for its
+family (was 19). All opt-in; absent = byte-identical programs and every preset hash unchanged.
+
+- `CowChoices.cuteFit` (`COW_CUTE_FIT`, gauge > 1.15 only): eyes wider and on the muzzle's top corners, the muzzle
+  lower so it is the chin, the folded ear a size smaller, higher and level, shorter less plump horns, fuller front
+  legs closer together (and their lift), the mixed curls, and the head relaxed off the table. Explicit horn / leg
+  options still win. The scene also takes `eyeMm` 16, `muzzleOval` {1.2, 1.45} and `contrastHex` #c8ad8b.
+- `HairPatch.coilMix` (`coilMixScale`): every Nth curl on the listed rounds a big coil, the rest small, with words.
+  The coil link audit decides how big: every second curl or 1.6 x linked on the crown round.
+- `AmigurumiPart.offTable` -> `relaxProgram(..., { offTable })`: a stuffed piece is otherwise relaxed sitting on a
+  table, and the side-to-side head wore the table's flat as a straight cheek (rule 34 found it once the ears moved).
+- Render: `photoBunchStand` (0 = off, pixel-identical): the dried bunch tied, stood up and leaning beside the toy.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

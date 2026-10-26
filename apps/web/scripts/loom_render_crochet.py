@@ -2474,6 +2474,7 @@ def apply_stage(stage, scene, ctx):
     _PHOTO.clear()
     _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"],
                   foot=ctx.get("footprint"), bunch_full=po["photoBunchFull"], bunch_behind=po["photoBunchBehind"],
+                  bunch_stand=po["photoBunchStand"],
                   weave=po["photoWeave"], weave_scale=po["photoWeaveScale"], crumple_scale=po["photoCrumpleScale"],
                   rumple=po["photoRumple"])
     if po["photoFrame"]:
@@ -4123,6 +4124,10 @@ VARIANT_BUILDERS = {
 #   photoBunchBehind 0 = today's spray; 1 = ~40% of the stems run from the tie
 #                   behind the toy out past its right shoulder (the cow bar's
 #                   armful), still kept clear of the footprint    (0)
+#   photoBunchStand 0 = the bunch lies on the cloth; 1 = it is stood up
+#                   (cow-cute-1027): cut ends on the cloth at the left, the
+#                   twine raised, the heads leaning up behind and beside the
+#                   toy at different heights, stems fanning     (0)
 #   photoWeave      cloth texture strength on the crumpled cloth: linen thread
 #                   shading, slub threads and bump; knit stitch shadow and
 #                   fuzz (0 = the cloth's material as built)      (0)
@@ -4141,7 +4146,7 @@ VARIANT_BUILDERS = {
 #                   (cow-fable-1024g: higher puts the spot in the eye's upper
 #                   half, the bar's); 22 = where it has always sat      (22)
 PHOTO_STAGE3_OFF = dict(
-    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
 )
 PHOTO_V2 = dict(
@@ -4150,7 +4155,7 @@ PHOTO_V2 = dict(
     photoExposure=0.0, photoFstop=5.6, photoFocus="face", photoCamera="threequarter",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.68, photoAim=0.5,
     photoProps="v2", photoBlanket="auto", photoCrumple=0.09,
-    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
 )
@@ -4162,7 +4167,7 @@ PHOTO_V1 = dict(
     photoExposure=0.0, photoFstop=None, photoFocus="centre", photoCamera="stage",
     photoYawDeg=16.0, photoTiltDeg=77.0, photoFrame=0.0, photoAim=0.5,
     photoProps="v1", photoBlanket="none", photoCrumple=0.045,
-    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0,
+    photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
 )
@@ -4498,6 +4503,17 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
     tx, ty = -0.75 * R, 1.35 * R
     gy = max(-1.3 * R, vis.y_near() + 0.15 * H)
     gx = vis.xc(gy) - 0.72 * vis.hw(gy)
+    # cow-cute-1027 photoBunchStand (0 = off, the bunch above exactly): the
+    # bar's bunch is TIED and STANDS UP: the cut ends rest on the cloth at the
+    # frame's left, the twine a little way in, and the heads lean up and in
+    # behind and beside the toy's left shoulder at different heights, stems
+    # fanning. The same stems and heads, re-aimed and lifted.
+    stand = max(0.0, _PHOTO.get("bunch_stand", 0.0))
+    if stand > 0:
+        # tied behind the left shoulder as before, the heads up and out to
+        # the toy's left side (beside it, not in front), the cut ends behind
+        gy = 0.1 * R
+        gx = vis.xc(gy) - 0.8 * vis.hw(gy)
     a0 = math.atan2(gy - ty, gx - tx)
     reach = math.hypot(gx - tx, gy - ty)
     ax, ay = math.cos(a0), math.sin(a0)
@@ -4525,6 +4541,8 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
         L = (0.45 + 0.65 * rnd(2)) * reach
         tail = (0.3 + 0.3 * rnd(3)) * H
         fan = lane * (0.05 + 0.42 * rnd(4)) * fw - 0.08   # angular spread of the heads (biased away from the piece)
+        if stand > 0:
+            fan = fan * 1.5           # a stood sheaf fans wider
         ca, sa = math.cos(fan), math.sin(fan)
         dx, dy = ax * ca - ay * sa, ay * ca + ax * sa
         stack = (0.06 * H * (1.0 - abs(lane)) + 0.02 * H * rnd(5)) * fw
@@ -4537,6 +4555,10 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
             dx, dy = bax * cb - bay * sb, bay * cb + bax * sb
             stack += 0.05 * H * behind
         qx, qy = (-bay, bax) if back else (px, py)
+        if stand > 0:
+            # each head at its own height: the middle of the fan tallest
+            hh = stand * H * (0.14 + 0.3 * rnd(31) + 0.14 * (1.0 - abs(lane))) * (0.6 if back else 1.0)
+            zt = 0.12 * H * stand
         pts = []
         M = 14
         for j in range(M + 1):
@@ -4546,12 +4568,20 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
             x = tx + dx * L * t + qx * (lane * 0.025 * H + w + bow)
             y = ty + dy * L * t + qy * (lane * 0.025 * H + w + bow)
             lift = stack * (1.0 - 0.3 * max(0.0, t)) + 0.008 * H + 0.12 * H * math.sin(math.pi * 0.5 * max(0.0, t)) * (0.4 + 0.6 * rnd(7))
+            if stand > 0:
+                # stood up: the cut ends down on the cloth, the tie raised,
+                # the stems rising from it to their heads (a soft upward bow)
+                if t < 0:
+                    lift = 0.006 * H + zt * max(0.0, 1.0 + t * L / tail)
+                else:
+                    lift = 0.006 * H + zt + (hh - zt) * t ** 1.15
             pts.append(on(x, y, lift))
         add_curve(("stem", kk % 4), pts, 0.0032 * H * (0.8 + 0.4 * rnd(8)))
         tip = Vector(pts[-1])
         pre = Vector(pts[-3])
         u = (tip - pre)
-        u.z *= 0.3          # r4: heads lie along the cloth (a keep-out push could stand a spike on end)
+        if stand <= 0:
+            u.z *= 0.3          # r4: heads lie along the cloth (a keep-out push could stand a spike on end)
         u = u.normalized()
         side = Vector((-u.y, u.x, 0.0)).normalized()
         up = u.cross(side).normalized()
@@ -4577,7 +4607,7 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
                 br = (u + side * (0.9 if hh % 2 else -0.9) * (0.4 + 0.4 * rnd(11))).normalized()
                 c = base + br * (0.035 + 0.02 * rnd(12)) * H + Vector((0, 0, 0.012 * H))
                 add_curve(("stem", (kk + hh) % 4), [tuple(base), tuple(c)], 0.0022 * H)
-                face = (Vector((0.0, -0.45, 1.0)) + br * 0.3).normalized()
+                face = ((Vector((0.0, -1.0, 0.55)) if stand > 0 else Vector((0.0, -0.45, 1.0))) + br * 0.3).normalized()
                 fs = face.cross(Vector((1, 0, 0))).normalized()
                 ft = face.cross(fs).normalized()
                 hr = (0.022 + 0.008 * rnd(13)) * H
@@ -4662,6 +4692,8 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
     pts = []
     rb = 0.045 * H
     g0 = ground(tx, ty)
+    if stand > 0:
+        g0 += 0.12 * H * stand - 0.03 * H      # the twine round the raised waist of the sheaf
     for i in range(49):
         t = i / 48.0
         ang = t * 4 * 2 * math.pi
@@ -4671,9 +4703,10 @@ def _bunch_v2(root, H, R, vis, ground, foot=None):
     pts.append(on(pts[-1][0] - 0.05 * H, pts[-1][1] - 0.07 * H, 0.004 * H))
     pts.append(on(pts[-1][0] - 0.04 * H, pts[-1][1] - 0.1 * H, 0.003 * H))
     _curve("b2_tie", root, twine, pts, 0.0045 * H)
-    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s%s" % (
+    print("[photo] bunch v2: %d stems, tie (%.1f, %.1f), heads to (%.1f, %.1f), footprint %s%s%s" % (
         N, tx, ty, gx, gy, "polar" if foot else "r %.1f" % keep,
-        "" if full == 1.0 and not behind else ", full %.2f behind %.2f (%d/10 back)" % (full, behind, nback)))
+        "" if full == 1.0 and not behind else ", full %.2f behind %.2f (%d/10 back)" % (full, behind, nback),
+        "" if stand <= 0 else ", standing %.2f" % stand))
 
 
 def grade_golden(scene, warmth=1.0):
