@@ -17,6 +17,7 @@
 
 import { buildSphere, buildRounds } from './shaping'
 import { buildTube, type TubeAnchor, type TubeCap, type TubeJoin } from './tube'
+import { buildBentTube, type BendStitch } from './bentTube'
 import { relaxProgram, geometryHash, colourStrokes } from './programScene'
 import { relax, STUFF_PRIOR } from './relax'
 import { auditProblems } from './auditChecks'
@@ -226,6 +227,16 @@ export interface AmigurumiPart {
    * its audit result is the one `build` recorded on the flat piece.
    */
   custom?: { build: (yr: number) => CustomPiece }
+  /**
+   * A BENT TUBE (bent-tube pass, 2026-10-26; bentTube.ts): an open piece that
+   * curves as it is worked — hdc on the outside of the curve, sc on the
+   * inside, per round as `plan` says (`planBend` writes it for an angle).
+   * Built by `buildBentTube` from `rounds` (round 1 into a magic ring, the
+   * tip), relaxed and audited in its own per-node frame, and seated by its
+   * OPEN end (the base: local z min) with the curl's inside at local +x, so
+   * `place.spin` says which way the tip curls. Absent = as before.
+   */
+  bentTube?: { plan: BendStitch[][] }
 }
 
 export interface CustomPiece {
@@ -745,6 +756,12 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       // (w = u, hBase = min-z) this is the original  pc + u·(parentR − seat − base).
       const hBase = place.centred ? 0 : scale * ((poleIn ? lb.maxz : lb.minz) - cz)
       T = { x: jx - hBase * w.x, y: jy - hBase * w.y, z: jz - hBase * w.z }
+      if (part.bentTube && !place.centred) {
+        // A bent tube's bounding box is off its base (the tip curls to one
+        // side), so seat the BASE's centre — local (0, 0, z min) — on the join.
+        const b0 = applyRot(R, { x: scale * (0 - cx), y: scale * (0 - cy), z: scale * ((poleIn ? lb.maxz : lb.minz) - cz) })
+        T = { x: jx - b0.x, y: jy - b0.y, z: jz - b0.z }
+      }
       if (place.offset) {
         T = { x: T.x + (place.offset.x ?? 0), y: T.y + (place.offset.y ?? 0), z: T.z + (place.offset.z ?? 0) }
       }
@@ -996,6 +1013,13 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
     // A flat circle: the locked round builder, relaxed as round work (never
     // stuffed). Its right side is local +z.
     const built = buildRounds(part.stitch, part.rounds, yr)
+    relaxProgram(built, yr)
+    return { built }
+  }
+  if (part.bentTube) {
+    // A bent tube: its curve is in its stitches (bentTube.ts); relaxed as a
+    // tube is (unstuffed fabric held to its worked shape).
+    const built = buildBentTube({ rounds: part.rounds, plan: part.bentTube.plan, gaugeYr: part.gaugeYr }, yr)
     relaxProgram(built, yr)
     return { built }
   }

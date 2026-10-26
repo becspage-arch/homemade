@@ -132,6 +132,16 @@ function currentFrame(built: BuiltSwatch['built'], yr: number): { n: V3[]; m: V3
   return { n, m, t }
 }
 
+/** A curved-axis piece's BUILT frame (YarnModel.frame3, bentTube.ts): the
+ *  per-node meridian and normal it was worked on, the along-round direction
+ *  completing them — the 'built' surface frame for a surface that is not one
+ *  of revolution. Absent = null (every other piece is measured as before). */
+function frame3Of(built: BuiltSwatch['built']): { n: V3[]; m: V3[]; t: V3[] } | null {
+  const f = built.model.frame3
+  if (!f || built.model.meridian) return null
+  return { n: f.map((q) => q.n), m: f.map((q) => q.m), t: f.map((q) => cross(q.n, q.m)) }
+}
+
 function cross(a: V3, b: V3): V3 {
   return { x: a.y * b.z - a.z * b.y, y: a.z * b.x - a.x * b.z, z: a.x * b.y - a.y * b.x }
 }
@@ -140,7 +150,8 @@ interface V3 { x: number; y: number; z: number }
 
 export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr: number, opts?: AuditOptions): string[] {
   const { built } = swatch
-  const cur = opts?.frame === 'current' && built.frame === 'surface' ? currentFrame(built, yr) : null
+  const f3 = opts?.frame === 'current' ? null : frame3Of(built)
+  const cur = opts?.frame === 'current' && built.frame === 'surface' ? currentFrame(built, yr) : f3
   const { nodes, dist, bend } = built.model
   const problems: string[] = []
 
@@ -244,7 +255,10 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
       const sign = l.zSign ?? 1
       if (Math.abs(d.x) > yr * 2.0) return `leg slipped sideways out of the mouth (dx=${(d.x / yr).toFixed(2)}yr)`
       if (Math.abs(d.y) > yr * 2.0) return `leg slid up/down out of the mouth (dy=${(d.y / yr).toFixed(2)}yr)`
-      if ((h.z - b.z) * sign < yr * 0.15) return `leg settled BEHIND the head it must pass in front of (dz=${(((h.z - b.z) * sign) / yr).toFixed(2)}yr)`
+      // On a curved-axis piece (frame3) "in front" is along the fabric's own
+      // normal, not world z (which turns with the axis); every other piece as before.
+      const dzF = f3 ? (h.x - b.x) * f3.n[l.below]!.x + (h.y - b.y) * f3.n[l.below]!.y + (h.z - b.z) * f3.n[l.below]!.z : h.z - b.z
+      if (dzF * sign < yr * 0.15) return `leg settled BEHIND the head it must pass in front of (dz=${((dzF * sign) / yr).toFixed(2)}yr)`
       return null
     }
     // 'cross' (chain): inside the previous loop's mouth, before its fold, over it.

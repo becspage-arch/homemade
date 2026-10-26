@@ -240,6 +240,17 @@ export interface YarnModel {
    * hold for that node. Absent = no axis mode (every existing build unchanged).
    */
   layoutAxis?: ({ hx: number; hy: number } | null)[]
+  /**
+   * Per-node 3D FABRIC FRAME of a piece worked on a surface that is not one of
+   * revolution (bentTube.ts: a tube that curves as it is worked): the unit
+   * meridian (row-height direction, away from the start) and the outward
+   * normal at each node, captured at build time. With layoutMode 'surface'
+   * and no `meridian`, the blocked hold acts exactly as the surface hold does
+   * (full along the meridian, whisper-soft along the normal, the along-round
+   * direction free), in this frame; the audit measures interlocks in it.
+   * Absent = no such hold (every existing build is bit-identical).
+   */
+  frame3?: { m: { x: number; y: number; z: number }; n: { x: number; y: number; z: number } }[]
 }
 
 function projectDistance(nodes: RNode[], c: DistConstraint): void {
@@ -334,6 +345,10 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
     cfg.layoutK > 0 && surface
       ? nodes.map((n) => ({ r: Math.hypot(n.x, n.y), z: n.z }))
       : null
+  // The same hold on a curved-axis surface (YarnModel.frame3): each node's
+  // worked position, held along its own meridian and (softly) its normal.
+  const f3 = cfg.layoutK > 0 && cfg.layoutMode === 'surface' && !model.meridian && model.frame3 ? model.frame3 : null
+  const q3 = f3 ? nodes.map((n) => ({ x: n.x, y: n.y, z: n.z })) : null
 
   // Bonded pairs (anything joined by a constraint) never collide — connected yarn
   // touches. A node also never collides with another node on the SAME stitch
@@ -698,6 +713,22 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
           n.y *= f
         }
         n.z += mz
+      }
+    }
+    if (f3) {
+      const kL = cfg.layoutK
+      const kN = kL * 0.4
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0 || loose?.[i]) continue
+        const F = f3[i]!
+        const q = q3![i]!
+        const dx = q.x - n.x, dy = q.y - n.y, dz = q.z - n.z
+        const a = (dx * F.m.x + dy * F.m.y + dz * F.m.z) * kL
+        const b = (dx * F.n.x + dy * F.n.y + dz * F.n.z) * kN
+        n.x += F.m.x * a + F.n.x * b
+        n.y += F.m.y * a + F.n.y * b
+        n.z += F.m.z * a + F.n.z * b
       }
     }
 
