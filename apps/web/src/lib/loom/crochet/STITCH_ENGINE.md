@@ -3861,6 +3861,45 @@ end) — next look: tip 6, plump 2. The legs are slimmer and taper up from a rou
 bulbous foot wider than the shin. The words' assembly line for the horn is its own (stuffed lightly, never packed:
 a hard-stuffed curve straightens).
 
+## 8s. THE CUTE CHECK — every built toy measured against the cute rules (2026-10-26)
+
+Cute-engine plan step 3 (Rebecca: "an engine that can build this adorableness into ANY pattern idea. Not just
+copy one"). The 37 rules (`engine/cuteRules.ts`, crochet-bar/CUTE-RULES.md) are proportions, placements and
+finishes measured on the bar photos; this step reads the same quantities off a COMPILED toy. Job log:
+crochet-bar/jobs/cute-check-1026.md; every preset's report: crochet-bar/proofs/cute-check-1026/report.md.
+
+- `engine/cuteMeasure.ts` `measureCute(program, compiled)`: a LEVEL FRONT VIEW along the program's camera yaw (the
+  direction `faceDir` turns the faces), every extent = strand centre-lines + a yarn radius each side, normalised to
+  head width W, head height H (crown incl. hair to chin) and toy height T, as the photos were. A front-view
+  SILHOUETTE (every strand splatted as a yarn-thick capsule at the photos' ~310 px per head, holes filled, Moore
+  traced) feeds the chin overhang (13) and measure_cute.py's own corner / straight-run code, ported (33, 34; a
+  corner straddling the contour's start counts once). A CENTRE LINE fitted along any piece worked in rounds (a
+  window of one round's share of the strand is one ring: centroid on the axis, width as seen across it) gives
+  sagitta, bend, rise, arc length and settled taper (24-28, horns from where they leave the head and hair
+  outline; a tail when there are no horns), limb width and foot bulge (29, 31). EAR RIM (21, extends
+  `earMetrics`): a depth map of the ear, the opening = fabric recessed behind the plane fitted to its outline,
+  rim thickness round it, thickest / thinnest. Eyes from the eye props (or embroidered eyes), muzzle and ear
+  placement from the pieces; the asymmetry count (36) from the program: a tilt, an unmirrored pair (in the body's
+  or the face's frame), hair swept aside, a hat tail flopped aside, an embroidered feature with no mirror, mixed
+  curls; the curl spread (37) from the settled loops of every hair patch. The family comes from the pieces
+  (horns or four legs = quadruped-seated; arms / wings / feet = biped-animal; hair cap / bodice / skirt = doll;
+  else not a figure) unless `program.cute.family` names it.
+- COLOUR (10, 14, 15, 16) is a PROXY: the yarn hex in CIE Lab (D65), marked `proxy`, never gating. The render's
+  light moves L* by 10-20 and pulls b* (our cream reads b* 15 as yarn, 10 on the r1 render); a colour read off
+  the render is later work.
+- `engine/cuteCheck.ts` `cuteCheck` / `cuteReportFor`: per rule pass / fail, value, range, strictness, source and a
+  plain line for a failure ("eyes too close: 0.44 of the head width, want 0.55-0.70"). Never throws.
+- WIRED as a REPORT: `compileComposition` attaches `CompiledComposition.cute` after the geometry hash (no hash
+  moves, no build fails); amigurumi-presets.test.ts prints each preset's summary, `scripts/loom-cute-report.ts`
+  prints every preset's failures and writes the preset x rule table. THE GATE is opt-in: `cuteGate: true` on
+  `AmigurumiChoices` / `CowChoices` (or `program.cute.gate`) puts every hard and firm failure read off geometry or
+  the program into `problems` ("cute: ..."), so the compile fails; soft rules and colour proxies only warn.
+- Validated on the cow-fable-1025 r1 scene (hash 266fa006, reproduced): the geometry fails 19 rules, 17 of them
+  in the photo's 23; the differences are the camera (level vs the render's raised, perspective lens: 2, 8, 9),
+  the render (yarn-thick lit tip ends: 33; the pile: 29; lighting: 15) and the photo's by-eye horn thickness (27),
+  explained in the job log, not tuned away. With `foldedEars` + `curvedHorns` + `taperedLegs` rules 18, 20, 21, 24,
+  25, 26, 31 and 34 pass.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

@@ -136,6 +136,9 @@ for (const choices of allPresetChoices()) {
       `      ${amigurumiPresetName(choices)}: ${program.parts.length} pieces, ${stitches} sts, ` +
       `${Math.round(width)} x ${Math.round(height)} mm, minz ${minz.toFixed(2)}`,
     )
+    // The cute report (cuteCheck.ts): printed, never asserted here; the gate
+    // is opt-in (`cuteGate`). scripts/loom-cute-report.ts prints the failures.
+    console.log(`      cute: ${compiled.cute?.summary ?? 'no report'}`)
   })
 }
 

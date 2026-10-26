@@ -125,6 +125,9 @@ export interface CowChoices {
    *  "slim, close, tapering to rounded feet"; ours read thick). `true` = the
    *  defaults (`COW_TAPERED_LEG`). Opt-in: absent / false = today's legs. */
   taperedLegs?: boolean | Partial<TaperedLegOptions>
+  /** THE CUTE GATE (cuteCheck.ts; AmigurumiChoices.cuteGate): hard and firm
+   *  cute-rule failures fail the compile. Absent / false = report only. */
+  cuteGate?: boolean
   name?: string
 }
 
@@ -1134,6 +1137,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
       'two long front legs, two back legs and a tail, each worked as a spiral from a magic ring and sewn on, with a loop-stitch fringe sewn between the horns.',
     ...cowGaugeFields(g),
+    ...(choices.cuteGate === true ? { cute: { gate: true } } : {}),
   }
 }
 

@@ -257,6 +257,11 @@ export interface AmigurumiChoices {
   /** TAPERED FRONT LEGS (`CowChoices.taperedLegs`; limbProfiles.ts): slim
    *  legs on a round foot. Cow only. Opt-in: absent / false = today's legs. */
   taperedLegs?: boolean
+  /** THE CUTE GATE (cuteCheck.ts): every compile reports the toy against the
+   *  cute rules; with this on, a hard or firm failure fails the compile (soft
+   *  ones warn). Opt-in for new subjects: absent / false = report only, and
+   *  the program is the object it always was. */
+  cuteGate?: boolean
   name?: string
 }
 
@@ -841,6 +846,13 @@ export function amigurumiPresetName(choices: AmigurumiChoices): string {
 
 /** The maker's choices → a composition the loom can build. */
 export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionProgram {
+  const program = buildChosenProgram(choices)
+  // The opt-in cute gate (cuteCheck.ts); off, the program is untouched.
+  if (choices.cuteGate === true) program.cute = { ...program.cute, gate: true }
+  return program
+}
+
+function buildChosenProgram(choices: AmigurumiChoices): CompositionProgram {
   // The doll is its own module, with its own (doll-proportioned) face.
   if (choices.base === 'doll') return dollProgram(choices, amigurumiPresetName(choices))
   if (choices.base === 'cow') {

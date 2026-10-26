@@ -31,6 +31,8 @@ import { heroPhotoView, pickHeroStageVariant, type HeroPhoto, type HeroPhotoKnob
 import { wearNightcap } from './hatAccessory'
 import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
+import { cuteReportFor, type CuteReport } from './cuteCheck'
+import type { ToyFamily } from './cuteRules'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -437,6 +439,13 @@ export interface CompositionProgram {
   finishedSizeMm?: { width: number; height: number }
   hookMm?: number
   notes?: string
+  /** THE CUTE CHECK (cuteCheck.ts, cute-engine step 3). Every compile is
+   *  measured against the cute rules and reported (`CompiledComposition.cute`)
+   *  whatever this says. `family` names the rule family when the pieces do
+   *  not (absent = read from the part names); `gate: true` makes the hard and
+   *  firm failures compile problems. Absent = report only: no build fails
+   *  and no hash moves. */
+  cute?: { family?: ToyFamily; gate?: boolean }
 }
 
 /** A part's geometric scale: its trim, or the ratio of its own lighter yarn
@@ -495,6 +504,10 @@ export interface CompiledComposition {
    *  audit gate (prefixed with the part name); do NOT render. */
   problems: string[]
   geometryHash: string
+  /** The cute report (cuteCheck.ts): every rule for the toy's family, pass or
+   *  fail with its measured value. A report, outside the hash; it adds to
+   *  `problems` only when the program opts into the gate (`cute.gate`). */
+  cute?: CuteReport
 }
 
 /** Rotation (as a 3×3, row-major) mapping the +z axis onto unit vector `u` —
@@ -962,7 +975,12 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
   }
 
   const ghash = geometryHash({ model: { nodes: allNodes as never } } as never)
-  return { placed, props, embroidery, hair, yr, problems, geometryHash: ghash }
+  const compiled: CompiledComposition = { placed, props, embroidery, hair, yr, problems, geometryHash: ghash }
+  // The cute check: measured on the finished toy, after the hash. A report
+  // unless the program opts into the gate.
+  compiled.cute = cuteReportFor(p, compiled)
+  if (compiled.cute.blocking.length) problems.push(...compiled.cute.blocking)
+  return compiled
 }
 
 
