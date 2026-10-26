@@ -46,6 +46,8 @@ import type { AmigurumiSize } from './amigurumiPresets'
 import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
 import { earPart, type EarPieceOptions } from './earPiece'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
+import { bentTubeWords, planBend, taperRounds } from './bentTube'
+import { taperedLimbRounds } from './limbProfiles'
 import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
@@ -110,8 +112,54 @@ export interface CowChoices {
    *  build-time check that no two coils touch or link (hairPatch.ts
    *  `coilProblems`). */
   coiledCurls?: boolean
+  /** CURVED HORNS (bent-tube pass, 2026-10-26; bentTube.ts). Rebecca, 26 Oct:
+   *  ours are "straight and like a unicorn horn vs having a cheeky curve
+   *  upwards". Each horn a short plump taper worked tip first and CURVED AS IT
+   *  IS WORKED — htr on the outside of the curve, dc on the inside (UK) — left
+   *  open, stuffed lightly and sewn by the open end, the tip curling up.
+   *  `true` = the defaults (`COW_CURVED_HORN`); fields override them. Opt-in:
+   *  absent / false = the straight cones, every hash unchanged. */
+  curvedHorns?: boolean | Partial<CurvedHornOptions>
+  /** TAPERED FRONT LEGS (bent-tube pass; limbProfiles.ts): slim legs worked
+   *  from a round foot, narrowing up the leg to a slimmer top (the bar's
+   *  "slim, close, tapering to rounded feet"; ours read thick). `true` = the
+   *  defaults (`COW_TAPERED_LEG`). Opt-in: absent / false = today's legs. */
+  taperedLegs?: boolean | Partial<TaperedLegOptions>
   name?: string
 }
+
+/** The curved horn's shape (gauge-1 stitch counts; g x at a fine gauge). */
+export interface CurvedHornOptions {
+  /** Stitches in the ring: 5 is a point, 6 a blunt nub (bentTube `taperRounds`). */
+  tip: number
+  /** The base's width (stitches). */
+  widest: number
+  /** Rounds tip to base. */
+  length: number
+  /** > 1 widens faster near the tip (plump and short); 1 is a straight cone. */
+  plump: number
+  /** The requested curve (degrees) and where along the horn it is worked
+   *  (fractions of its rounds from the tip). */
+  angleDeg: number
+  from: number
+  to: number
+}
+
+/** Starting numbers, chosen against the bar's short plump horns (§8r). */
+export const COW_CURVED_HORN: CurvedHornOptions = { tip: 5, widest: 11, length: 8, plump: 1.6, angleDeg: 70, from: 0.15, to: 0.85 }
+
+/** The tapered front leg (gauge-1 stitch counts and rounds; g x at a gauge). */
+export interface TaperedLegOptions {
+  foot: number
+  top: number
+  /** Rounds foot to top, close included (default: the size's own leg, so
+   *  the calf still stands on it: 12 / 15 / 18 rounds at S / M / L). */
+  length?: number
+}
+
+/** Starting numbers: today's leg is 12 round (and 12 / 15 / 18 rounds long
+ *  at S / M / L, gauge 1). */
+export const COW_TAPERED_LEG: TaperedLegOptions = { foot: 11, top: 7 }
 
 export const COW_DEFAULTS: CowChoices = {
   size: 'M',
@@ -956,7 +1004,28 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       sewNote: 'lying across the lower half of the face with its ends toward the ears, its top edge just below the eyes',
     },
   ]
+  const curved = cowCurvedHorn(choices, g)
   for (const side of [-1, 1] as const) {
+    if (curved) {
+      parts.push({
+        name: side < 0 ? 'horn-l' : 'horn-r', stitch: 'sc', rounds: curved.rounds, colourHex: cream,
+        bentTube: { plan: curved.plan },
+        words: bentTubeWords(curved),
+        sewNote: 'by the open end, high on each side of the crown either side of the fringe, pointing out to the side with the htr (the outside of the curve) underneath, so the tip curls up',
+        // The generic line says "stuffing firmly"; a curved horn is stuffed
+        // lightly (packed hard, it straightens) — its own assembly line.
+        joinWords: 'Sew the horns to the head by the open end, high on each side of the crown either side of the fringe, pointing out to the side with the htr (the outside of the curve) underneath, so the tip curls up; top up the light stuffing as you close the seam, never packed hard.',
+        place: {
+          on: 'head',
+          dir: fd({ x: side * HORN_DIR.x, y: HORN_DIR.y, z: HORN_DIR.z }),
+          aim: fd({ x: side * CURVED_HORN_AIM.x, y: CURVED_HORN_AIM.y, z: CURVED_HORN_AIM.z }),
+          // The curl's inside (local +x) up, a touch forward: the tip curls up.
+          spin: fd(CURVED_HORN_CURL),
+          seat: 3, poleIn: false, surfaceFit: 'ellipsoid',
+        },
+      })
+      continue
+    }
     parts.push({
       name: side < 0 ? 'horn-l' : 'horn-r', stitch: 'sc', rounds: s.horn, colourHex: cream,
       sewNote: 'by the flat closed end, high on each side of the crown either side of the fringe, tips pointing up and out',
@@ -990,16 +1059,19 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
+  const frontLeg = cowTaperedLeg(choices, g) ?? s.frontLeg
   for (const side of [-1, 1] as const) {
     parts.push({
-      name: side < 0 ? 'front-leg-l' : 'front-leg-r', stitch: 'sc', rounds: s.frontLeg, colourHex: main,
-      sewNote: 'by the narrow closed end at the front of the shoulders, close together, hanging straight down the front of the body so each hoof rests on the table',
+      name: side < 0 ? 'front-leg-l' : 'front-leg-r', stitch: 'sc', rounds: frontLeg, colourHex: main,
+      sewNote: frontLeg === s.frontLeg
+        ? 'by the narrow closed end at the front of the shoulders, close together, hanging straight down the front of the body so each hoof rests on the table'
+        : 'by the slim closed top at the front of the shoulders, close together, hanging straight down the front of the body so each round foot rests on the table',
       place: {
         on: 'body',
         dir: { x: side * FRONT_LEG_DIR.x, y: FRONT_LEG_DIR.y, z: FRONT_LEG_DIR.z },
         aim: { x: side * FRONT_LEG_AIM.x, y: FRONT_LEG_AIM.y, z: FRONT_LEG_AIM.z },
         seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: s.frontLegLift },
+        offset: { z: s.frontLegLift + (frontLeg === s.frontLeg ? 0 : TAPERED_LEG_LIFT[`${choices.size}@${g}`] ?? 0) },
       },
     })
   }
@@ -1064,6 +1136,42 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     ...cowGaugeFields(g),
   }
 }
+
+/** The curved horn (`CowChoices.curvedHorns`): its rounds and stitches at
+ *  gauge g, or undefined when the straight cone is asked for. */
+function cowCurvedHorn(choices: CowChoices, g: number): ReturnType<typeof planBend>['spec'] | undefined {
+  if (!choices.curvedHorns) return undefined
+  const o = { ...COW_CURVED_HORN, ...(choices.curvedHorns === true ? {} : choices.curvedHorns) }
+  // The point stays a 5-stitch ring at any gauge (gCone's rule); the base and
+  // the length are g x, so the horn is the same size in mm.
+  const rounds = taperRounds(o.tip, Math.max(o.tip + 1, Math.round(o.widest * g)), Math.max(4, Math.round(o.length * g)), o.plump)
+  return planBend(rounds, { angleDeg: o.angleDeg, from: o.from, to: o.to }).spec
+}
+
+/**
+ * THE TAPERED LEGS' LIFT (mm, added to the front legs' `frontLegLift` when
+ * `taperedLegs` is on), measured like GAUGE_LEG_LIFT off the whole-toy compile
+ * (the leg-lift probe, then cowBentHorn.test.ts MATRIX=1, 26 Oct): the
+ * slimmer leg settles differently from today's tube, so without it the round
+ * feet sat 3.53 / 3.17 / 3.30 mm UNDER the table at S / M / L gauge 1, 0.84 /
+ * 0.88 mm under at S / M 1.3, and 3.60 mm ABOVE it at L 1.3 (where the body
+ * and back legs carry the calf). Keyed `${size}@${gauge}`; a size or gauge not listed gets
+ * none (re-measure before adding it to designerAudit TAPERED_LEGS_AUDITED).
+ */
+const TAPERED_LEG_LIFT: Record<string, number> = { 'S@1': 3.53, 'M@1': 3.17, 'L@1': 3.3, 'S@1.3': 0.84, 'M@1.3': 0.88, 'L@1.3': -3.6 }
+
+/** The tapered front leg (`CowChoices.taperedLegs`) at gauge g. */
+function cowTaperedLeg(choices: CowChoices, g: number): number[] | undefined {
+  if (!choices.taperedLegs) return undefined
+  const o = { ...COW_TAPERED_LEG, ...(choices.taperedLegs === true ? {} : choices.taperedLegs) }
+  const length = o.length ?? PROFILES[choices.size].frontLeg.length
+  return taperedLimbRounds({ foot: Math.round(o.foot * g), top: Math.round(o.top * g), length: Math.round(length * g) })
+}
+
+/** The curved horn leaves the head more sideways than the straight cone (the
+ *  curl lifts the tip), and curls up and a touch forward. */
+const CURVED_HORN_AIM = { x: 1, y: 0.1, z: 0.35 }
+const CURVED_HORN_CURL = { x: 0, y: 0.25, z: 1 }
 
 /** Eyes: on the head just above the muzzle's top corners. */
 // Round 21: lower (at the muzzle's top edge) and closer together — the bar's.

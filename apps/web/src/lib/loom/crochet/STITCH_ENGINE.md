@@ -3781,6 +3781,86 @@ pattern is generated from the same round arrays, so the words carry the new coun
 - Render memory: stitches and scene points both go up ~g^2 (bunny 1.4: 1.09 M -> 2.06 M points); the fine-cotton bunny at 1.4 OOMs the 8 GB probe at bevel 2 and
   fits at `fibreTune.bevel_res: 1` (7.4 GB). Job log: crochet-bar/jobs/gauge.md.
 
+## 8r. THE BENT TUBE — tubes that curve as they are worked, and tapered limbs (2026-10-26)
+
+Rebecca on the cow (26 Oct): the horns are "straight and like a unicorn horn vs having a cheeky curve upwards". A
+GENERAL shape, not a cow fix: horns, tails, trunks, curved ears, a bent knee. `engine/bentTube.ts`
+(`buildBentTube`, `planBend`, `bentTubeWords`, `bentTubeMetrics`, `taperRounds`) and `engine/limbProfiles.ts`
+(`taperedLimbRounds`); opt-in on the cow as `CowChoices.curvedHorns` / `taperedLegs`. Job log and proofs:
+crochet-bar/jobs/bent-tube-1026.md, proofs/bent-tube-1026/.
+
+### How a designer bends a tube, and so how the engine does
+
+Taller stitches on the OUTSIDE of the curve (htr, US hdc), dc (US sc) on the inside, the same run in the middle of
+every round, one above the other. Each round is still a ring of `count` stitches, but the outside climbs further
+than the inside, so the next ring cannot sit parallel: it tilts away from the tall side. The engine builds exactly
+that and nothing else bends it:
+
+- `plan[k][i]` is the stitch MADE at each position of round k (an inc pair two entries, a dec one, always sc). Every
+  stitch is emitted by the locked emitters on the stitch below it (hdc packed to the round's sc column pitch, like
+  the rib's post pack).
+- Each ring sits at its count's radius and is tilted from the last by the FIRST HARMONIC (cos/sin component) of that
+  round's stitch heights round the ring, over the ring's mean radius; its advance is the mean height less what the
+  radius change uses (the tube's pitch-continuity rule). No angle is passed to the builder.
+- The head line of each round climbs the same harmonic, so every crown sits ON its ring and the step a round
+  cannot make smoothly (htr beside dc) is taken up inside that round. Placing crowns at the running SUM of their
+  stitch heights instead drifts them off the rings round after round (the residual of a top hat minus its
+  harmonic accumulates): the inside folded in on itself, rounds 7 and 10 within a yarn. Fixed before r1.
+- The surface is not one of revolution, so the build records each node's 3D meridian and outward normal
+  (`YarnModel.frame3`). With `layoutMode 'surface'` and no `meridian`, relax.ts holds each node exactly as the
+  surface hold does, in that frame (full along the meridian, 0.4 x along the normal, along-round free), and the
+  audit measures interlocks in it (auditChecks `frame3Of`; a 'through' link's "in front" is along that normal, not
+  world z). Absent frame3 = bit-identical.
+- Seated by the OPEN end (local z min, the axis there +z), the curl's inside at local +x: `place.spin` says which
+  way the tip curls; composition.ts seats the base centre (not the bbox centre) on the join for a `bentTube` part.
+- Spiral, magic-ring start, open end: stuffed lightly and sewn on by the open end, as real horns and tails are. A
+  point starts at 5 stitches: a 4-ring growing to 6 at once leaves its first increase's hook 0.6 yr under its crown
+  even straight, next to the 0.45 gate, and a bend nearby tipped it over (two measured fails).
+
+`planBend(rounds, { angleDeg, from, to })`: over the rounds in [from, to] (fractions of the length from round 1,
+default 0.15-0.8; never round 1-2 or the last; >= 6 stitches), the same share of each round in hdc centred on the
+round's middle (every 1st, 2nd or 3rd round for a gentle curve), the share swept and the nearest predicted bend
+kept. Half the round is the most (the cos component falls again past it): an 11-round horn tops out ~84 degrees,
+a 14-round taper reaches 90+. A dc on the outside was tried (hdc-flanked): the 2.6x step is too big for the ring,
+the settled piece lost a third of its bend and floated a hook, so it is not offered.
+
+### Measured (bentTube.test.ts; the sweep in the job log)
+
+The bend is measured off the SETTLED nodes: the angle between the PCA normals of round 2's and the last but one
+round's crowns, against `predictedBendDeg` on the same pair of rings. Horn 5..14 over 11 rounds, yr 2.4: asked
+20 / 40 / 60 / 80 -> predicted 20.0 / 38.9 / 59.9 / 79.5 -> settled 19.4 / 38.0 / 58.5 / 78.0, audit clean,
+identical at yr 1.5 and 3.2 (it is in the stitches). Per round the built tilt matches the predicted to ~0.5 deg.
+Climb crown to crown on the settled fabric: an hdc column 1.1-1.4 x an sc (its natural 1.56, the ring takes up
+the step). No self-intersection: rounds three apart stay >= 3 yr apart at 80 degrees. A narrowing tail (decreases)
+bends the same way. Words are UK, run-length, exactly the builder's ops ("dc in next 4 sts, htr in next 4 sts,
+dc in next 5 sts. (13 sts; 4 on the outside of the curve)"), read back to every count by the test.
+
+### Tapered limbs
+
+`taperedLimbRounds({ foot, top, length })`: the foot climbs as a ball's cap (`sphereAscent`, so it domes), holds a
+round, narrows a stitch at a time to the top, and closes (>= 6). Counts only: the locked stuffed builder, audited
+like every part. The cow's `taperedLegs` (front legs, gauge-1 foot 11 / top 7, as many rounds as the size's own leg
+— 12 / 15 / 18 at S / M / L — g x): 35 mm across at M 1.3 against today's 43, sewn by the slim top so the round foot
+rests on the table. The first cut used M's 15 rounds at every size (S's feet 23.7 mm through the table, L's 17 mm
+in the air); with the size's length the feet sat 3.2-3.6 mm under at gauge 1, 0.85 mm under at S/M 1.3 and 3.6 mm
+above at L 1.3, now taken up by a measured lift per size x gauge (`TAPERED_LEG_LIFT`, like GAUGE_LEG_LIFT).
+
+Saving from the Studio: `curvedHorns` / `taperedLegs` ride `AmigurumiChoices` and the designer schema;
+designerAudit `CURVED_HORNS_AUDITED` / `TAPERED_LEGS_AUDITED` accept them on the cow at S/M/L, gauge 1 and 1.3, with
+any cupped-ear / seated-leg switch already accepted there — the 48 combinations cowBentHorn.test.ts `MATRIX=1`
+compiles (all clean, every toy and every front foot within 0.5 mm of the table). The bent horn's and the tapered
+leg's rounds are on the designer's derived list, not on `AUDITED_PROFILES` (that list is audited as plain sc
+pieces standing alone; the horn is only the horn with its stitch plan).
+The back legs (the "wide haunches") are untouched: they carry the seated-leg contact measurements (jobs/cow-legs.md).
+
+### Rendered (Fargate probe, one task, the cow-fable-1025 r1 scene + both knobs; hash 0d33d7a7)
+
+The unicorn spike is gone: each horn leaves the side of the crown and curls UP, a cream crescent either side of the
+fringe (the bar's motif). Against the bar the tip is a little slim and sharp (the bar's stays plump to a blunt round
+end) — next look: tip 6, plump 2. The legs are slimmer and taper up from a round foot; the bar's are fuller with a
+bulbous foot wider than the shin. The words' assembly line for the horn is its own (stuffed lightly, never packed:
+a hard-stuffed curve straightens).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

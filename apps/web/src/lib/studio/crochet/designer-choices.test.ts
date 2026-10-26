@@ -3,7 +3,8 @@
  * switches (designer-choices.ts, engine/designerAudit.ts).
  *
  *  - the schema takes gauge 1, 1.3, 1.4 and 1.6 and nothing else, and the
- *    switches only where an engine test audited them;
+ *    switches (cupped ears, seated back legs, curved horns, tapered legs)
+ *    only where an engine test audited them;
  *  - the defaults build exactly the program they always did (so every saved
  *    design and every geometry hash is unchanged);
  *  - a gauge-1.4 bunny saved through the gate, stored as JSON and read back,
@@ -102,21 +103,31 @@ test('the switches only where their tests audited them', () => {
     [{ base: 'cow', size: 'S', seatBackLegs: true }, false],
     [{ base: 'bunny', seatBackLegs: true }, false],
     [{ base: 'bunny', seatBackLegs: false }, true],
+    [{ base: 'cow', curvedHorns: true }, true],
+    [{ base: 'cow', size: 'S', taperedLegs: true }, true],
+    [{ base: 'cow', size: 'L', gauge: 1.3, curvedHorns: true, taperedLegs: true }, true],
+    [{ base: 'cow', gauge: 1.3, cuppedEars: true, seatBackLegs: true, curvedHorns: true, taperedLegs: true }, true],
+    [{ base: 'cow', gauge: 1.4, curvedHorns: true }, false],
+    [{ base: 'cow', gauge: 1.6, taperedLegs: true }, false],
+    [{ base: 'bunny', curvedHorns: true }, false],
+    [{ base: 'bear', taperedLegs: true }, false],
+    [{ base: 'bear', curvedHorns: false, taperedLegs: false }, true],
   ] as Array<[Partial<AmigurumiChoices>, boolean]>) {
     const r = parse(choices(extra))
     assert.equal(r.success, ok, `${JSON.stringify(extra)}: ${r.success ? 'accepted' : r.error.issues.map((i) => i.message).join('; ')}`)
   }
   assert.ok(!parse({ ...choices({ base: 'cow' }), seatBackLegs: 'yes' }).success)
+  assert.ok(!parse({ ...choices({ base: 'cow' }), curvedHorns: 1 }).success)
 })
 
 test('defaults unchanged: every preset saves the program it always did', () => {
   for (const c of allPresetChoices()) {
     const before = { ...buildAmigurumiProgram(c), name: 'n', finishedSizeMm: presetSettledSizeMm(c.base, c.size) }
-    for (const extra of [{}, { gauge: 1 }, { cuppedEars: false }, { seatBackLegs: false }, { gauge: 1, cuppedEars: false, seatBackLegs: false }]) {
+    for (const extra of [{}, { gauge: 1 }, { cuppedEars: false }, { seatBackLegs: false }, { curvedHorns: false, taperedLegs: false }, { gauge: 1, cuppedEars: false, seatBackLegs: false, curvedHorns: false, taperedLegs: false }]) {
       const r = parse({ ...c, ...extra })
       assert.ok(r.success, `${c.base}/${c.size} ${JSON.stringify(extra)}`)
       const n = normaliseDesignerChoices(r.data)
-      assert.ok(!('gauge' in n) && !('cuppedEars' in n) && !('seatBackLegs' in n), 'the off values are not passed on')
+      for (const k of ['gauge', 'cuppedEars', 'seatBackLegs', 'curvedHorns', 'taperedLegs']) assert.ok(!(k in n), `the off ${k} is not passed on`)
       const built = buildDesignerProgram(n, 'n')
       assert.ok('program' in built, `${c.base}/${c.size}: ${'problems' in built ? built.problems : ''}`)
       same(built.program, before, `${c.base}/${c.size} ${JSON.stringify(extra)}`)
@@ -155,6 +166,16 @@ test('the cow switches reach the cow builder through the designer', () => {
   same(built.program, { ...cow, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'M') })
   const plain = buildCowProgram({ size: 'M', mainHex: TOY.mainHex, contrastHex: TOY.contrastHex, eyeMm: 9, gauge: 1.4 })
   assert.notEqual(JSON.stringify(built.program.parts), JSON.stringify(plain.parts), 'the switches did something')
+  // The curved horns and tapered legs (cowBentHorn.test.ts) the same way.
+  const r2 = parse(choices({ base: 'cow', size: 'L', gauge: 1.3, curvedHorns: true, taperedLegs: true }))
+  assert.ok(r2.success)
+  const b2 = buildDesignerProgram(normaliseDesignerChoices(r2.data), 'Calf')
+  assert.ok('program' in b2, 'problems' in b2 ? b2.problems.join('; ') : '')
+  const cow2 = buildCowProgram({ size: 'L', mainHex: TOY.mainHex, contrastHex: TOY.contrastHex, eyeMm: 9, gauge: 1.3, curvedHorns: true, taperedLegs: true })
+  same(b2.program, { ...cow2, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'L') })
+  assert.ok(b2.program.parts.some((p) => p.bentTube), 'the bent horn reaches the program')
+  // Stored as JSON and read back, the horn's stitch plan survives.
+  same(JSON.parse(JSON.stringify(b2.program)), b2.program)
 })
 
 test('every accepted combination builds on audited pieces; an unaudited gauge build is refused', () => {
