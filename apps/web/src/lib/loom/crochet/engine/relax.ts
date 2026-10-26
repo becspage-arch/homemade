@@ -167,6 +167,39 @@ export interface RelaxConfig {
    * Absent = off (bit-identical).
    */
   pinch?: { halfAngleDeg: number; gap: number }
+  /**
+   * A FOLD MOULD (fold-ear pass, 2026-10-26; foldedPiece.ts). A flat piece (a
+   * circle worked in rounds, an oval or a point worked in rows) lying in the
+   * x-y plane, its base at low y, its front face +z, has its two base corners
+   * folded forward and sewn together, so it cups softly forward and curls.
+   * Modelled like `pressShape`: two plates a gap `2·half` apart, here curved
+   * ACROSS the piece into circular arcs, one per height y, each through the
+   * piece's middle line (x = 0, z = m(y)) with its centre forward (+z) at
+   * radius 1/κ(y). `k` and `m` sample κ (1/mm) and the middle line's forward
+   * bow (mm) evenly from the base `y0` to the top `y1` (linear between): a
+   * high κ at the base is the pinch (the corners wrapped toward each other), a
+   * low κ above it the soft cup the ear keeps, a rising m the curl. The bow
+   * forms on the press's slow schedule; contact is one-sided on each plate
+   * along the arc's normal, the fabric slides freely along it, and collision
+   * keeps it a yarn from itself. Nothing is pinned and nothing is joined.
+   * `holdK` is the blocked hold in the mould's own frame (the 'y' layout
+   * hold's analog across the piece): each node's arc length round its arc is
+   * drawn toward the across-position it started the relax at, so the fabric
+   * wraps round the arc where it lies instead of sliding round it. Absent =
+   * off (bit-identical).
+   */
+  mould?: { k: number[]; m: number[]; half: number; y0: number; y1: number; holdK?: number }
+  /**
+   * SEWN (fold-ear pass, 2026-10-26): the maker's sewing step on a finished
+   * piece — two stitches of an edge brought together and sewn through with a
+   * couple of small stitches. Each entry is a TETHER, the sewing yarn: nodes
+   * `a` and `b` may be at most `max` mm apart (one-sided, like a thread: it
+   * never pushes), drawn in from their starting distance on the press's slow
+   * schedule. It lives here, in the relax, not among the fabric's own
+   * constraints (`YarnModel.dist`), because it is not fabric: the audit's
+   * one-strand / no-spring rules still read the stitches alone. Absent = off.
+   */
+  sew?: { a: number; b: number; max: number }[]
   iterations: number
 }
 
@@ -413,6 +446,11 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const pinchZ0 = pinch ? Math.min(...nodes.map((n) => n.z)) : 0
   const pinchZ1 = pinch ? Math.max(...nodes.map((n) => n.z)) : 0
 
+  const mouldX0 = cfg.mould?.holdK ? nodes.map((n) => n.x) : null
+  const sew0 = cfg.sew?.length
+    ? cfg.sew.map((q) => Math.max(q.max, Math.hypot(nodes[q.a]!.x - nodes[q.b]!.x, nodes[q.a]!.y - nodes[q.b]!.y, nodes[q.a]!.z - nodes[q.b]!.z)))
+    : null
+
   const N = nodes.length
   const bonded = new Set<number>()
   const key = (a: number, b: number): number => (a < b ? a * N + b : b * N + a)
@@ -553,6 +591,77 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         if (n.x > X) n.x = X
         else if (n.x < -X) n.x = -X
       }
+    }
+
+    // 4a''. The fold mould (see RelaxConfig.mould).
+    if (cfg.mould) {
+      const M = cfg.mould
+      const f = Math.min(1, it / (cfg.iterations * 0.7))
+      const span = M.y1 - M.y0 || 1
+      const at = (arr: number[], t: number): number => {
+        const u = t * (arr.length - 1)
+        const i = Math.min(arr.length - 2, Math.floor(u))
+        return arr.length < 2 ? arr[0]! : arr[i]! + (arr[i + 1]! - arr[i]!) * (u - i)
+      }
+      const hk = M.holdK ?? 0
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i]!
+        if (n.w === 0) continue
+        const t = Math.min(1, Math.max(0, (n.y - M.y0) / span))
+        const k = f * at(M.k, t)
+        const m = f * at(M.m, t)
+        if (k < 1e-6) {
+          if (mouldX0) n.x += (mouldX0[i]! - n.x) * hk
+          if (n.z > m + M.half) n.z = m + M.half
+          else if (n.z < m - M.half) n.z = m - M.half
+          continue
+        }
+        const rho = 1 / k
+        const cz = m + rho
+        if (mouldX0) {
+          // Turn the node round the arc's centre toward its started-at arc length.
+          // The angle round the arc, taken on the same side as the node's own
+          // started-at arc length (past half a turn either side the two edges
+          // meet at the front, and atan2 alone would swap them).
+          const ph0 = mouldX0[i]! / rho
+          let ph = Math.atan2(n.x, cz - n.z)
+          while (ph - ph0 > Math.PI) ph -= 2 * Math.PI
+          while (ph - ph0 < -Math.PI) ph += 2 * Math.PI
+          const dph = (ph0 - ph) * hk
+          const c = Math.cos(dph), sn = Math.sin(dph)
+          const ox = n.x, oz = n.z - cz
+          n.x = ox * c - oz * sn
+          n.z = cz + ox * sn + oz * c
+        }
+        const dx = n.x
+        const dz = n.z - cz
+        const r = Math.hypot(dx, dz) || 1e-9
+        const lo = Math.max(rho * 0.05, rho - M.half)
+        const hi = rho + M.half
+        const target = r < lo ? lo : r > hi ? hi : r
+        if (target !== r) {
+          n.x = dx * (target / r)
+          n.z = cz + dz * (target / r)
+        }
+      }
+    }
+
+    // 4a'''. Sewn (see RelaxConfig.sew).
+    if (sew0) {
+      const f = Math.min(1, it / (cfg.iterations * 0.7))
+      cfg.sew!.forEach((q, si) => {
+        const a = nodes[q.a]!, b = nodes[q.b]!
+        const lim = sew0[si]! + (q.max - sew0[si]!) * f
+        const dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z
+        const d = Math.hypot(dx, dy, dz)
+        if (d <= lim || d < 1e-9) return
+        const wa = a.w, wb = b.w
+        const ws = wa + wb
+        if (ws === 0) return
+        const c = (d - lim) / d
+        a.x += dx * c * (wa / ws); a.y += dy * c * (wa / ws); a.z += dz * c * (wa / ws)
+        b.x -= dx * c * (wb / ws); b.y -= dy * c * (wb / ws); b.z -= dz * c * (wb / ws)
+      })
     }
 
     // 4b. The table: one-sided contact, nothing sinks below the surface.

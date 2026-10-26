@@ -45,6 +45,7 @@ import { ovalRounds, sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
 import { writeInstructions, type YarnFibre, type YarnWeight } from './program'
 import { earPart, type EarPieceOptions } from './earPiece'
+import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
@@ -66,6 +67,14 @@ export interface CowChoices {
    *  of the pressed half-ball ears. Opt-in: absent / false = the round 31
    *  ears, and every geometry hash is unchanged. */
   cuppedEars?: boolean
+  /** FOLDED EARS (fold-ear pass, 2026-10-26; `foldedPiece.ts`): each ear a
+   *  flat circle worked in rounds, folded and pinched at the base with a
+   *  sewing step (two stitches of the last round either side of the bottom
+   *  brought together and sewn), so it cups softly forward and curls — the
+   *  bar's soft folded ear (Rebecca: ours were "little cups vs all cutesy and
+   *  folded"). Overrides `cuppedEars`. Opt-in: absent / false = the ears as
+   *  before, and every geometry hash is unchanged. */
+  foldedEars?: boolean
   /** SEATED BACK LEGS (cow back-legs pass, 2026-10-17): the back legs sewn
    *  by their inner side against the body's flanks, low down and just behind
    *  the front legs, the rounded feet facing front (the bar's seated calf).
@@ -794,6 +803,46 @@ function cowEarWords(rounds: number[]): string[] {
   ]
 }
 
+/**
+ * THE FOLDED EAR (fold-ear pass, 2026-10-26; `foldedPiece.ts`, opt-in via
+ * `CowChoices.foldedEars`). The bar's ears are soft flat ovals pinched at the
+ * base so they fold forward like a shell, angled down and out, the inner face
+ * partly showing. A flat circle in rounds (gauge-1 counts; g x at a finer
+ * gauge), the last-round stitches a sixth of the circle either side of the
+ * bottom (pinch 0.8 → 4 at M) folded together and sewn, a soft cup kept above
+ * and the top curling forward. Every size audits clean (foldedPiece.test.ts).
+ */
+export const COW_FOLD_EAR: Record<AmigurumiSize, FoldedPieceOptions> = {
+  S: { shape: 'round', width: 18, pinch: 0.8, cup: 0.5, curl: 0.3 },
+  M: { shape: 'round', width: 24, pinch: 0.8, cup: 0.5, curl: 0.3 },
+  L: { shape: 'round', width: 30, pinch: 0.8, cup: 0.5, curl: 0.3 },
+}
+/** The folded ear's place (`foldedEars` only): beside the brow under the
+ *  horns, where the cupped ear sits. */
+const FOLD_EAR_DIR = { x: 1, y: 0.12, z: 0.25 }
+/** Where it points from its pinched base: out, a little forward and down
+ *  (the bar's ears angle down and out). */
+const FOLD_EAR_AIM = { x: 0.9, y: 0.2, z: -0.32 }
+/** Where its hollow faces: forward and a little out and up, so the lens sees
+ *  into the fold (local +x of the piece). */
+const FOLD_EAR_FACE = { x: 0.35, y: 1, z: 0.25 }
+
+/** One folded ear (`COW_FOLD_EAR`), sewn by its pinched base. */
+function cowFoldEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1): AmigurumiPart {
+  return foldedPart(gFolded(COW_FOLD_EAR[choices.size], g), {
+    name: side < 0 ? 'ear-l' : 'ear-r',
+    colourHex: choices.mainHex,
+    sewNote: 'by the pinched base on the sides of the head level with the brow, just below the horns, the hollow facing forward and the ear angled out and a little down',
+    place: {
+      on: 'head',
+      dir: fd({ x: side * FOLD_EAR_DIR.x, y: FOLD_EAR_DIR.y, z: FOLD_EAR_DIR.z }),
+      aim: fd({ x: side * FOLD_EAR_AIM.x, y: FOLD_EAR_AIM.y, z: FOLD_EAR_AIM.z }),
+      spin: fd({ x: side * FOLD_EAR_FACE.x, y: FOLD_EAR_FACE.y, z: FOLD_EAR_FACE.z }),
+      seat: 3, poleIn: false, surfaceFit: 'ellipsoid',
+    },
+  }, gaugeYarnRadiusMm(COW_YARN, g))
+}
+
 /** One cupped ear (`COW_CUP_EAR`): sewn by its back (the ring) where the
  *  round 31 ear is, the open bowl turned forward and out along the same aim
  *  so the lens looks into the hollow, and turned about that axis so the
@@ -919,7 +968,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
-  if (choices.cuppedEars) {
+  if (choices.foldedEars) {
+    for (const side of [-1, 1] as const) parts.push(cowFoldEar(choices, side, fd, g))
+  } else if (choices.cuppedEars) {
     for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd, g))
   } else for (const side of [-1, 1] as const) {
     parts.push({
