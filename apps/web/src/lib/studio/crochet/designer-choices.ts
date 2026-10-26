@@ -2,7 +2,8 @@
  * The Studio amigurumi designer's choices, as the save route accepts them.
  *
  * Kept out of the route file so the schema can be tested without a request.
- * The opt-in engine fields (`gauge`, `cuppedEars`, `seatBackLegs`) are taken
+ * The opt-in engine fields (`gauge`, `cuppedEars`, `seatBackLegs`,
+ * `curvedHorns`, `taperedLegs`) are taken
  * only in the combinations an engine test audited (engine/designerAudit.ts);
  * anything else is refused here, before the server rebuilds the toy.
  */
@@ -51,6 +52,8 @@ export const DesignerChoicesSchema = z
       .optional(),
     cuppedEars: z.boolean().optional(),
     seatBackLegs: z.boolean().optional(),
+    curvedHorns: z.boolean().optional(),
+    taperedLegs: z.boolean().optional(),
     name: z.string().max(120).optional(),
   })
   .superRefine((c, ctx) => {
@@ -67,12 +70,14 @@ export type DesignerChoices = z.infer<typeof DesignerChoicesSchema>
  * object (and hash) as one saved before the fields existed.
  */
 export function normaliseDesignerChoices(c: DesignerChoices): AmigurumiChoices {
-  const { gauge, cuppedEars, seatBackLegs, ...rest } = c
+  const { gauge, cuppedEars, seatBackLegs, curvedHorns, taperedLegs, ...rest } = c
   return {
     ...rest,
     ...(gauge != null && gauge !== 1 ? { gauge } : {}),
     ...(cuppedEars === true ? { cuppedEars } : {}),
     ...(seatBackLegs === true ? { seatBackLegs } : {}),
+    ...(curvedHorns === true ? { curvedHorns } : {}),
+    ...(taperedLegs === true ? { taperedLegs } : {}),
   }
 }
 

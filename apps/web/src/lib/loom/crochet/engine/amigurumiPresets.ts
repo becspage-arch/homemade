@@ -241,6 +241,13 @@ export interface AmigurumiChoices {
    *  against the body's flanks. Cow only. Opt-in: absent / false = today's
    *  legs, and every geometry hash is unchanged. */
   seatBackLegs?: boolean
+  /** CURVED HORNS (`CowChoices.curvedHorns`, bent-tube pass; bentTube.ts):
+   *  the cow's horns worked with taller stitches along one side so they curl
+   *  up. Cow only. Opt-in: absent / false = the straight cones. */
+  curvedHorns?: boolean
+  /** TAPERED FRONT LEGS (`CowChoices.taperedLegs`; limbProfiles.ts): slim
+   *  legs on a round foot. Cow only. Opt-in: absent / false = today's legs. */
+  taperedLegs?: boolean
   name?: string
 }
 
@@ -837,6 +844,8 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       // choices (and its program) are the object they always were.
       ...(choices.cuppedEars === true ? { cuppedEars: true } : {}),
       ...(choices.seatBackLegs === true ? { seatBackLegs: true } : {}),
+      ...(choices.curvedHorns === true ? { curvedHorns: true } : {}),
+      ...(choices.taperedLegs === true ? { taperedLegs: true } : {}),
     })
   }
   const program = buildBaseProgram(choices)

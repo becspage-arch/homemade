@@ -11,6 +11,15 @@
  *     the requested one, and the tip curls UP; the front legs are slimmer
  *     than today's and stand on the table; the words carry both pieces.
  *
+ *   - THE DESIGNER'S COMBINATIONS (designerAudit.ts CURVED_HORNS_AUDITED /
+ *     TAPERED_LEGS_AUDITED): every combination the Studio save path accepts
+ *     with either switch on compiles clean and sits on the table (the tapered
+ *     legs' measured lift, cowPreset TAPERED_LEG_LIFT). By default only the
+ *     M at gauge 1 with both on (a few minutes); `MATRIX=1` runs all 48
+ *     (S/M/L x gauge 1, 1.3 x horns/legs/both x cupped ears, seated legs at M;
+ *     ~1 h on 4 cores, `SIZES=S GAUGES=1.3` narrows it). Run MATRIX=1 before
+ *     widening the table or moving a lift.
+ *
  *   cd apps/web && pnpm exec tsx --conditions react-server --test src/lib/loom/crochet/engine/cowBentHorn.test.ts
  */
 
@@ -20,6 +29,8 @@ import { buildCowProgram, COW_CURVED_HORN, COW_DEFAULTS, type CowChoices } from 
 import { compileComposition } from './composition'
 import { writeCompositionInstructions } from './compositionPattern'
 import { bentTubeMetrics } from './bentTube'
+import { designerAuditedChoices } from './designerAudit'
+import { buildAmigurumiProgram, type AmigurumiSize } from './amigurumiPresets'
 
 const same = (a: unknown, b: unknown, msg?: string): void => assert.equal(JSON.stringify(a), JSON.stringify(b), msg)
 
@@ -74,10 +85,34 @@ test('the fine-gauge calf with curved horns and tapered legs: clean, curled up, 
   for (const n of ['front-leg-l', 'front-leg-r']) {
     assert.ok(width(compiled, n) < width(today, n) * 0.9, `${n}: ${width(compiled, n).toFixed(1)} vs ${width(today, n).toFixed(1)} mm`)
     const minz = compiled.placed.find((q) => q.part.name === n)!.bounds.minz
-    assert.ok(Math.abs(minz) <= 1.0, `${n}: foot ${minz.toFixed(2)} mm off the table`)
+    assert.ok(Math.abs(minz) <= 0.5, `${n}: foot ${minz.toFixed(2)} mm off the table`)
   }
   const words = writeCompositionInstructions(program).join('\n')
   assert.ok(/on the outside of the curve/.test(words), 'the horn rounds say which stitches are the outside')
   assert.ok(/the tip curls up/.test(words), 'the sewing line says which way the curve goes')
   assert.ok(/each round foot rests on the table/.test(words), 'the leg sewing line')
+})
+
+const MATRIX = process.env.MATRIX === '1'
+const M_SIZES = (process.env.SIZES ?? (MATRIX ? 'S,M,L' : 'M')).split(',') as AmigurumiSize[]
+const M_GAUGES = (process.env.GAUGES ?? (MATRIX ? '1,1.3' : '1')).split(',').map(Number)
+const combos = designerAuditedChoices()
+  .filter((c) => (c.curvedHorns || c.taperedLegs) && M_SIZES.includes(c.size) && M_GAUGES.includes(c.gauge ?? 1))
+  .filter((c) => MATRIX || (c.curvedHorns && c.taperedLegs && !c.cuppedEars && !c.seatBackLegs))
+
+test('the designer\'s curved-horn / tapered-leg combinations build clean and sit on the table', () => {
+  assert.ok(combos.length > 0)
+  if (MATRIX && !process.env.SIZES && !process.env.GAUGES) assert.equal(combos.length, 48)
+  for (const c of combos) {
+    const label = `${c.size} @ ${c.gauge ?? 1}${c.cuppedEars ? ' cupped' : ''}${c.seatBackLegs ? ' seated' : ''}${c.curvedHorns ? ' horns' : ''}${c.taperedLegs ? ' legs' : ''}`
+    const compiled = compileComposition(buildAmigurumiProgram(c))
+    assert.deepEqual(compiled.problems, [], `${label}: ${compiled.problems.join(' | ')}`)
+    const minz = Math.min(...compiled.placed.map((q) => q.bounds.minz))
+    assert.ok(Math.abs(minz) <= 0.5, `${label}: minz ${minz.toFixed(2)} mm, not sitting on the table`)
+    if (c.taperedLegs) {
+      for (const q of compiled.placed.filter((x) => /^front-leg-/.test(x.part.name))) {
+        assert.ok(Math.abs(q.bounds.minz) <= 0.5, `${label}: ${q.part.name} foot ${q.bounds.minz.toFixed(2)} mm off the table`)
+      }
+    }
+  }
 })

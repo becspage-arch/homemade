@@ -3839,8 +3839,18 @@ dc in next 5 sts. (13 sts; 4 on the outside of the curve)"), read back to every 
 
 `taperedLimbRounds({ foot, top, length })`: the foot climbs as a ball's cap (`sphereAscent`, so it domes), holds a
 round, narrows a stitch at a time to the top, and closes (>= 6). Counts only: the locked stuffed builder, audited
-like every part. The cow's `taperedLegs` (front legs, gauge-1 foot 11 / top 7 / 15 rounds, g x): 35 mm across at
-1.3 against today's 43, sewn by the slim top so the round foot rests on the table (-0.9 mm, no lift re-measure).
+like every part. The cow's `taperedLegs` (front legs, gauge-1 foot 11 / top 7, as many rounds as the size's own leg
+— 12 / 15 / 18 at S / M / L — g x): 35 mm across at M 1.3 against today's 43, sewn by the slim top so the round foot
+rests on the table. The first cut used M's 15 rounds at every size (S's feet 23.7 mm through the table, L's 17 mm
+in the air); with the size's length the feet sat 3.2-3.6 mm under at gauge 1, 0.85 mm under at S/M 1.3 and 3.6 mm
+above at L 1.3, now taken up by a measured lift per size x gauge (`TAPERED_LEG_LIFT`, like GAUGE_LEG_LIFT).
+
+Saving from the Studio: `curvedHorns` / `taperedLegs` ride `AmigurumiChoices` and the designer schema;
+designerAudit `CURVED_HORNS_AUDITED` / `TAPERED_LEGS_AUDITED` accept them on the cow at S/M/L, gauge 1 and 1.3, with
+any cupped-ear / seated-leg switch already accepted there — the 48 combinations cowBentHorn.test.ts `MATRIX=1`
+compiles (all clean, every toy and every front foot within 0.5 mm of the table). The bent horn's and the tapered
+leg's rounds are on the designer's derived list, not on `AUDITED_PROFILES` (that list is audited as plain sc
+pieces standing alone; the horn is only the horn with its stitch plan).
 The back legs (the "wide haunches") are untouched: they carry the seated-leg contact measurements (jobs/cow-legs.md).
 
 ### Rendered (Fargate probe, one task, the cow-fable-1025 r1 scene + both knobs; hash 0d33d7a7)

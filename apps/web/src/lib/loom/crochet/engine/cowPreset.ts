@@ -143,12 +143,14 @@ export const COW_CURVED_HORN: CurvedHornOptions = { tip: 5, widest: 11, length: 
 export interface TaperedLegOptions {
   foot: number
   top: number
-  /** Rounds foot to top, close included. */
-  length: number
+  /** Rounds foot to top, close included (default: the size's own leg, so
+   *  the calf still stands on it: 12 / 15 / 18 rounds at S / M / L). */
+  length?: number
 }
 
-/** Starting numbers: today's leg is 12 round and 15 rounds long at gauge 1. */
-export const COW_TAPERED_LEG: TaperedLegOptions = { foot: 11, top: 7, length: 15 }
+/** Starting numbers: today's leg is 12 round (and 12 / 15 / 18 rounds long
+ *  at S / M / L, gauge 1). */
+export const COW_TAPERED_LEG: TaperedLegOptions = { foot: 11, top: 7 }
 
 export const COW_DEFAULTS: CowChoices = {
   size: 'M',
@@ -1018,7 +1020,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         dir: { x: side * FRONT_LEG_DIR.x, y: FRONT_LEG_DIR.y, z: FRONT_LEG_DIR.z },
         aim: { x: side * FRONT_LEG_AIM.x, y: FRONT_LEG_AIM.y, z: FRONT_LEG_AIM.z },
         seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
-        offset: { z: s.frontLegLift },
+        offset: { z: s.frontLegLift + (frontLeg === s.frontLeg ? 0 : TAPERED_LEG_LIFT[`${choices.size}@${g}`] ?? 0) },
       },
     })
   }
@@ -1095,11 +1097,24 @@ function cowCurvedHorn(choices: CowChoices, g: number): ReturnType<typeof planBe
   return planBend(rounds, { angleDeg: o.angleDeg, from: o.from, to: o.to }).spec
 }
 
+/**
+ * THE TAPERED LEGS' LIFT (mm, added to the front legs' `frontLegLift` when
+ * `taperedLegs` is on), measured like GAUGE_LEG_LIFT off the whole-toy compile
+ * (the leg-lift probe, then cowBentHorn.test.ts MATRIX=1, 26 Oct): the
+ * slimmer leg settles differently from today's tube, so without it the round
+ * feet sat 3.53 / 3.17 / 3.30 mm UNDER the table at S / M / L gauge 1, 0.84 /
+ * 0.88 mm under at S / M 1.3, and 3.60 mm ABOVE it at L 1.3 (where the body
+ * and back legs carry the calf). Keyed `${size}@${gauge}`; a size or gauge not listed gets
+ * none (re-measure before adding it to designerAudit TAPERED_LEGS_AUDITED).
+ */
+const TAPERED_LEG_LIFT: Record<string, number> = { 'S@1': 3.53, 'M@1': 3.17, 'L@1': 3.3, 'S@1.3': 0.84, 'M@1.3': 0.88, 'L@1.3': -3.6 }
+
 /** The tapered front leg (`CowChoices.taperedLegs`) at gauge g. */
 function cowTaperedLeg(choices: CowChoices, g: number): number[] | undefined {
   if (!choices.taperedLegs) return undefined
   const o = { ...COW_TAPERED_LEG, ...(choices.taperedLegs === true ? {} : choices.taperedLegs) }
-  return taperedLimbRounds({ foot: Math.round(o.foot * g), top: Math.round(o.top * g), length: Math.round(o.length * g) })
+  const length = o.length ?? PROFILES[choices.size].frontLeg.length
+  return taperedLimbRounds({ foot: Math.round(o.foot * g), top: Math.round(o.top * g), length: Math.round(length * g) })
 }
 
 /** The curved horn leaves the head more sideways than the straight cone (the

@@ -1,8 +1,9 @@
 /**
  * WHAT THE STUDIO DESIGNER MAY SAVE beyond the gauge-1 presets: the fine-gauge
  * knob (gauge.ts, STITCH_ENGINE.md §8q) and the opt-in switches (`cuppedEars`,
- * §8n; `seatBackLegs`, cowPreset.ts), each only where an engine test has put
- * exactly that build through the loom's audit.
+ * §8n; `seatBackLegs`, cowPreset.ts; `curvedHorns` / `taperedLegs`, §8r),
+ * each only where an engine test has put exactly that build through the
+ * loom's audit.
  *
  * The save path does not compile (a fine-gauge bunny takes minutes), so it
  * trusts two things: that the maker's choices are a combination a test
@@ -55,11 +56,19 @@ export const CUPPED_EAR_BASES: readonly AmigurumiBase[] = ['bunny', 'cow']
 /** cowBackLegs.test.ts: cow M at gauge 1, 1.3 and 1.4 (and cupped). */
 export const SEAT_BACK_LEGS_AUDITED = { base: 'cow' as AmigurumiBase, sizes: ['M'] as readonly AmigurumiSize[], gauges: [1, 1.3, 1.4] as readonly number[] }
 
+/** cowBentHorn.test.ts: the curved horns and the tapered front legs, each
+ *  alone and together, compiled through the whole-toy audit on the cow at
+ *  every size, gauge 1 and 1.3, with and without cupped ears (and seated back
+ *  legs at M); the tapered legs' measured lift (cowPreset TAPERED_LEG_LIFT)
+ *  stands them on the table at each. */
+export const CURVED_HORNS_AUDITED = { base: 'cow' as AmigurumiBase, sizes: ['S', 'M', 'L'] as readonly AmigurumiSize[], gauges: [1, 1.3] as readonly number[] }
+export const TAPERED_LEGS_AUDITED = { base: 'cow' as AmigurumiBase, sizes: ['S', 'M', 'L'] as readonly AmigurumiSize[], gauges: [1, 1.3] as readonly number[] }
+
 const SIZES: readonly AmigurumiSize[] = ['S', 'M', 'L']
 
 /** Why these choices are not a combination the engine tests audited (empty =
  *  fine). The opt-in fields absent / false / 1 are always fine. */
-export function designerChoiceProblems(c: Pick<AmigurumiChoices, 'base' | 'size' | 'gauge' | 'cuppedEars' | 'seatBackLegs' | 'hat' | 'hair'>): string[] {
+export function designerChoiceProblems(c: Pick<AmigurumiChoices, 'base' | 'size' | 'gauge' | 'cuppedEars' | 'seatBackLegs' | 'curvedHorns' | 'taperedLegs' | 'hat' | 'hair'>): string[] {
   const problems: string[] = []
   const g = c.gauge ?? 1
   if (!DESIGNER_GAUGES.includes(g)) {
@@ -83,6 +92,14 @@ export function designerChoiceProblems(c: Pick<AmigurumiChoices, 'base' | 'size'
       problems.push(`Seated back legs have only been tested on the ${s.sizes.join('/')} ${s.base} at gauge ${s.gauges.join(', ')}.`)
     }
   }
+  for (const [on, s, what] of [
+    [c.curvedHorns, CURVED_HORNS_AUDITED, 'Curved horns'],
+    [c.taperedLegs, TAPERED_LEGS_AUDITED, 'Tapered legs'],
+  ] as const) {
+    if (on === true && (c.base !== s.base || !s.sizes.includes(c.size) || !s.gauges.includes(g))) {
+      problems.push(`${what} have only been tested on the ${s.sizes.join('/')} ${s.base} at gauge ${s.gauges.join(', ')}.`)
+    }
+  }
   return problems
 }
 
@@ -91,19 +108,27 @@ export function designerChoiceProblems(c: Pick<AmigurumiChoices, 'base' | 'size'
 export function designerAuditedChoices(): AmigurumiChoices[] {
   const colours = { mainHex: '#b5814e', contrastHex: '#e6d3ae', eyeMm: 9, nose: true, paws: true }
   const out: AmigurumiChoices[] = []
-  const bases = [...new Set<AmigurumiBase>([...(Object.keys(GAUGE_AUDITED) as AmigurumiBase[]), ...CUPPED_EAR_BASES, SEAT_BACK_LEGS_AUDITED.base])]
+  const bases = [...new Set<AmigurumiBase>([
+    ...(Object.keys(GAUGE_AUDITED) as AmigurumiBase[]), ...CUPPED_EAR_BASES, SEAT_BACK_LEGS_AUDITED.base, CURVED_HORNS_AUDITED.base, TAPERED_LEGS_AUDITED.base,
+  ])]
   for (const base of bases) {
     for (const size of SIZES) {
       for (const gauge of DESIGNER_GAUGES) {
         for (const cuppedEars of [false, true]) {
           for (const seatBackLegs of [false, true]) {
-            const c: AmigurumiChoices = {
-              base, size, ...colours,
-              ...(gauge !== 1 ? { gauge } : {}),
-              ...(cuppedEars ? { cuppedEars } : {}),
-              ...(seatBackLegs ? { seatBackLegs } : {}),
+            for (const curvedHorns of [false, true]) {
+              for (const taperedLegs of [false, true]) {
+                const c: AmigurumiChoices = {
+                  base, size, ...colours,
+                  ...(gauge !== 1 ? { gauge } : {}),
+                  ...(cuppedEars ? { cuppedEars } : {}),
+                  ...(seatBackLegs ? { seatBackLegs } : {}),
+                  ...(curvedHorns ? { curvedHorns } : {}),
+                  ...(taperedLegs ? { taperedLegs } : {}),
+                }
+                if (designerChoiceProblems(c).length === 0) out.push(c)
+              }
             }
-            if (designerChoiceProblems(c).length === 0) out.push(c)
           }
         }
       }
