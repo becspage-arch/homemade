@@ -33,8 +33,10 @@ test('the counts: a round grows +6 from the ring; rows shape one stitch at each 
   assert.throws(() => foldedRounds({ shape: 'round', width: 20, pinch: 0.8 }))
   assert.throws(() => foldedRowCounts({ shape: 'lop', width: 11, pinch: 1 }))
   assert.throws(() => foldedRounds({ shape: 'round', width: 24, pinch: 1.5 }))
+  // A row piece is pinched at its base corners or not at all.
+  assert.throws(() => foldedRowCounts({ shape: 'oval', width: 14, pinch: 0.8 }), /base corners/)
   for (const shape of ROW_SHAPES) {
-    const o: FoldedPieceOptions = { shape, width: 14, pinch: 0.8 }
+    const o: FoldedPieceOptions = { shape, width: 14, pinch: 1 }
     const c = foldedRowCounts(o)
     assert.equal(Math.max(...c), 14, `${shape}: widest row`)
     for (let r = 1; r < c.length; r++) {
@@ -70,17 +72,20 @@ test('the words: every round or row with its count, the fasten-off and the fold-
   assert.ok(rw.some((l) => l.includes(`the stitch ${pin.either} sts to the left of the marker and the stitch ${pin.either} sts to the right`)))
   assert.ok(rw.some((l) => /Do not stuff/.test(l)) && rw.some((l) => /Sew the ear on by the pinched base/.test(l)))
   for (const shape of ROW_SHAPES) {
-    const o: FoldedPieceOptions = { shape, width: 14, pinch: 0.6 }
+    const o: FoldedPieceOptions = { shape, width: 14, pinch: 1 }
     const w = foldedWords(o)
     const counts = foldedRowCounts(o).slice().reverse()
     assert.ok(w.some((l) => l.startsWith(`Foundation: ch ${counts[0]! + 1}.`)), `${shape} chain`)
     counts.slice(1).forEach((n, r) => assert.ok(w.some((l) => l.startsWith(`Row ${r + 1}:`) && l.endsWith(`(${n} sts)`)), `${shape} row ${r + 1}`))
-    const p = foldedPinchStitches(o) as { a: number; b: number }
-    assert.ok(w.some((l) => l.includes(`mark stitch ${p.a} and stitch ${p.b}`)), `${shape} pinch`)
+    // The pinch on rows is the base row's own two corners.
+    assert.deepEqual(foldedPinchStitches(o), { a: 1, b: counts[counts.length - 1] })
+    assert.ok(w.some((l) => /bring its first and last stitches together/.test(l)), `${shape} pinch`)
+    assert.ok(w.some((l) => /Sew the ear on by the pinched base/.test(l)), `${shape} sewn on`)
     for (const l of w) assert.ok(!/[–—]/.test(l), `no dashes: ${l}`)
+    // No pinch: sewn on flat, no sewing step.
+    const flat = foldedWords({ ...o, pinch: 0 })
+    assert.ok(flat.some((l) => /Sew the ear on flat by its last row/.test(l)) && !flat.some((l) => /Fold and pinch/.test(l)), `${shape} unpinched`)
   }
-  // pinch 1 on rows = the base's own two corners.
-  assert.ok(foldedWords({ shape: 'lop', width: 10, length: 30, pinch: 1 }).some((l) => /bring its first and last stitches together/.test(l)))
 })
 
 function assertClean(o: FoldedPieceOptions, yr: number, label: string): ReturnType<typeof buildFolded> {
@@ -115,25 +120,17 @@ test('the pinch makes the fold: pinched, the base is far deeper than the cup alo
   assert.ok(pinched.metrics.curlDeg > 3, `the top curls forward (${pinched.metrics.curlDeg.toFixed(0)} deg)`)
 })
 
-test('row shapes: the flat piece audits clean and the fold lands in the declared shape', () => {
-  const fine = YARN_WEIGHT_RADIUS_MM.fine
-  for (const shape of ROW_SHAPES) {
-    const o: FoldedPieceOptions = shape === 'lop' ? { shape, width: 10, length: 32, pinch: 1, cup: 0.25, curl: 0.2 } : { shape, width: 12, pinch: 0.8, cup: 0.3 }
-    const f = buildFolded(o, fine)
-    assert.deepEqual(f.problems.filter((p) => p.startsWith('flat:')), [], `${shape} flat`)
-    assert.deepEqual(f.problems.filter((p) => p.startsWith('shape:')), [], `${shape} shape`)
-    assert.ok(f.metrics.sewGapMm <= 5 * fine, `${shape} sewn`)
+// The bunny's lop ear (the row piece a preset ships) at every size and both
+// gauges, folded, pinched and audited exactly as the composition builds it.
+// The other row shapes, the same way: foldedPieceRows.test.ts.
+for (const g of [1, 1.3]) {
+  for (const size of ['S', 'M', 'L'] as const) {
+    test(`bunny lop ear ${size} at gauge ${g}: folds, pinches and audits clean`, () => {
+      const f = assertClean(gFolded(BUNNY_FOLD_EAR[size], g), gaugeYarnRadiusMm('fine', g), `lop ${size} @${g}`)
+      assert.ok(f.metrics.foldDepthMm >= 0.3 * f.metrics.widthMm, `fold depth ${f.metrics.foldDepthMm.toFixed(1)} of ${f.metrics.widthMm.toFixed(1)}`)
+    })
   }
-})
-
-// KNOWN GAP (fold-ear pass): a folded ROW piece still drags a few edge
-// stitches (the first stitch of a row, beside its turning chain) off their
-// crowns in the tight fold at the base — 2-6 of 128-450 interlocks. The round
-// piece is clean. Marked todo so the suite reports it without failing.
-test('row shapes: the folded interlocks audit clean', { todo: 'edge stitches beside the turning chain flip in the tight base fold' }, () => {
-  const f = buildFolded(BUNNY_FOLD_EAR.M, YARN_WEIGHT_RADIUS_MM.fine)
-  assert.deepEqual(f.problems, [])
-})
+}
 
 /** Programs carry closures (custom pieces); compare what they say. */
 const same = (a: unknown, b: unknown, msg?: string): void => assert.equal(JSON.stringify(a), JSON.stringify(b), msg)

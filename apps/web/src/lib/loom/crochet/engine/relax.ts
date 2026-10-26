@@ -187,8 +187,15 @@ export interface RelaxConfig {
    * drawn toward the across-position it started the relax at, so the fabric
    * wraps round the arc where it lies instead of sliding round it. Absent =
    * off (bit-identical).
+   * `depth` (per node, mm, +z toward the arc's centre): the plates press the
+   * fabric's FACES, not its middle. Each node's pair of plates is offset by
+   * its own depth in the blocked flat piece, so a fabric pressed against a
+   * plate moves through its whole thickness together: the layers behind the
+   * pressed face stay behind it (a hook stays under its crown) instead of
+   * being squashed onto the plate's one surface. Absent = one slab for every
+   * node (bit-identical).
    */
-  mould?: { k: number[]; m: number[]; half: number; y0: number; y1: number; holdK?: number }
+  mould?: { k: number[]; m: number[]; half: number; y0: number; y1: number; holdK?: number; depth?: number[] }
   /**
    * SEWN (fold-ear pass, 2026-10-26): the maker's sewing step on a finished
    * piece — two stitches of an edge brought together and sewn through with a
@@ -610,10 +617,11 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const t = Math.min(1, Math.max(0, (n.y - M.y0) / span))
         const k = f * at(M.k, t)
         const m = f * at(M.m, t)
+        const d = M.depth ? M.depth[i]! : 0
         if (k < 1e-6) {
           if (mouldX0) n.x += (mouldX0[i]! - n.x) * hk
-          if (n.z > m + M.half) n.z = m + M.half
-          else if (n.z < m - M.half) n.z = m - M.half
+          if (n.z > m + d + M.half) n.z = m + d + M.half
+          else if (n.z < m + d - M.half) n.z = m + d - M.half
           continue
         }
         const rho = 1 / k
@@ -636,8 +644,8 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const dx = n.x
         const dz = n.z - cz
         const r = Math.hypot(dx, dz) || 1e-9
-        const lo = Math.max(rho * 0.05, rho - M.half)
-        const hi = rho + M.half
+        const lo = Math.max(rho * 0.05, rho - d - M.half)
+        const hi = Math.max(lo, rho - d + M.half)
         const target = r < lo ? lo : r > hi ? hi : r
         if (target !== r) {
           n.x = dx * (target / r)

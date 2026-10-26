@@ -19,8 +19,9 @@
  * Then the SEWING STEP every one of these patterns ends with: the base is
  * folded with the front of the ear inside the fold, two stitches of the base
  * edge an equal count either side of its middle are brought together and
- * sewn through with a couple of small stitches (`pinch` sets which two: 1 =
- * the base's own two corners), and the ear is sewn on by that pinched base.
+ * sewn through with a couple of small stitches (a round: `pinch` sets which
+ * two; a row piece: its base row's own two corners), and the ear is sewn on
+ * by that pinched base.
  * The pinch is what makes it cup softly forward and curl; above it the ear
  * keeps a gentle cup (`cup`) and its tip turns forward (`curl`).
  *
@@ -33,7 +34,11 @@
  * the table, never a pin and never a join between stitches; and relax.ts
  * `sew`, a one-sided tether between the two sewn stitches that only ever
  * shortens (the sewing yarn pulled up), kept out of the fabric's own
- * constraints so the audit still sees no spring. The settled piece is then
+ * constraints so the audit still sees no spring. A row piece's plates press
+ * its FACES (`mould.depth`: each stitch's own depth in the blocked flat
+ * piece, so a pressed edge keeps its hooks under their crowns), and its arcs
+ * change along its length only as fast as the fabric can follow without
+ * being pulled apart between its rows (`ROW_DEVELOP`). The settled piece is then
  * AUDITED again: every interlock measured against its crown in the fabric's own local
  * frame (the fold developed flat, each crown's neighbourhood best-fitted),
  * no yarn stretched, no yarn through yarn (self-intersection), the two sewn
@@ -63,12 +68,14 @@ export interface FoldedPieceOptions {
   /** Rows: how many rows long (default: the shape's own proportion). Ignored
    *  for a round. */
   length?: number
-  /** THE PINCH, 0..1: which two stitches of the base edge are sewn together.
-   *  Rows: 1 = the base chain's own two corners, 0.5 = the stitches a quarter
-   *  of the way in from each corner. A round: the last-round stitches
-   *  round(pinch · width / 6) either side of the bottom-centre stitch (1 = a
-   *  sixth of the circle either side). 0 = no pinch (the ear is sewn on flat
-   *  by its base). */
+  /** THE PINCH: which two stitches of the base edge are sewn together. A
+   *  round, 0..1: the last-round stitches round(pinch · width / 6) either side
+   *  of the bottom-centre stitch (1 = a sixth of the circle either side).
+   *  Rows: 1 = the base row's own two corners (its first and last stitches),
+   *  the way a row-worked ear is finished; nothing between is offered, since
+   *  stitches further in would leave the corners to pleat outward past the
+   *  sewing, which this fold does not model (refused, not approximated).
+   *  0 = no pinch (the ear is sewn on flat by its base). */
   pinch: number
   /** The soft CUP kept above the pinch, 0..1: how far the ear's width curls
    *  forward at the top, as a fraction of a half-turn (default 0.25). */
@@ -122,6 +129,7 @@ function validate(o: FoldedPieceOptions): void {
   } else {
     if (o.width % 2 !== 0 || o.width < 6 || o.width > 40) throw new Error(`folded piece: a row piece's width is even, 6-40 (got ${o.width})`)
     if (o.length != null && (!Number.isInteger(o.length) || o.length < 3 || o.length > 80)) throw new Error(`folded piece: length is 3-80 rows (got ${o.length})`)
+    if (o.pinch !== 0 && o.pinch !== 1) throw new Error(`folded piece: a row piece is pinched at its base corners (pinch 1) or not at all (0) (got ${o.pinch})`)
   }
 }
 
@@ -183,9 +191,7 @@ export function foldedRowPlans(o: FoldedPieceOptions): { foundation: number; row
 export function foldedPinchStitches(o: FoldedPieceOptions): { a: number; b: number } | { either: number } | null {
   if (o.pinch <= 0) return null
   if (o.shape === 'round') return { either: Math.max(1, Math.round((o.pinch * o.width) / 6)) }
-  const F = foldedRowCounts(o)[0]!
-  const e = Math.round(((1 - o.pinch) * (F - 1)) / 2)
-  return { a: 1 + e, b: F - e }
+  return { a: 1, b: foldedRowCounts(o)[0]! }
 }
 
 // ─── The words ──────────────────────────────────────────────────────────────
@@ -218,10 +224,8 @@ export function foldedWords(o: FoldedPieceOptions, what = 'ear'): string[] {
     `Worked from the tip down to the base, in rows.`,
     ...lines,
     `Fasten off leaving a long tail for sewing. Do not stuff: the ${what} is a flat ${SHAPE_NAME[o.shape]} of one layer, ${foundation === 2 ? 'pointed at the tip' : `${foundation} sts across the tip`} and ${base} sts along the last row, which is its base.`,
-    pin && 'a' in pin
-      ? pin.a === 1 && pin.b === base
-        ? `Fold and pinch: with the right side facing you, fold the last row in half toward you, so the right side is inside the fold, and bring its first and last stitches together. Sew through both with 2 small stitches and pull snug: the base pinches and the ${what} cups softly forward.`
-        : `Fold and pinch: with the right side facing you, count along the last row and mark stitch ${pin.a} and stitch ${pin.b}. Fold the base toward you, so the right side is inside the fold, and bring the two marked stitches together. Sew through both with 2 small stitches and pull snug: the base pinches into a little pleat and the ${what} cups softly forward.`
+    pin
+      ? `Fold and pinch: with the right side facing you, fold the last row in half toward you, so the right side is inside the fold, and bring its first and last stitches together. Sew through both with 2 small stitches and pull snug: the base pinches and the ${what} cups softly forward.`
       : `Sew the ${what} on flat by its last row.`,
     pin ? `Sew the ${what} on by the pinched base, the hollow facing forward.` : '',
   ].filter((l) => l)
@@ -235,23 +239,10 @@ interface FlatPiece {
   sewn: [number, number] | null
 }
 
-/** A row piece as worked (not relaxed), in the folded piece's frame: turned
- *  half round so the base is at the bottom, centred across. */
-function buildRowsWorked(o: FoldedPieceOptions, yr: number): BuiltContinuous {
-  const { foundation, rows } = foldedRowPlans(o)
-  const built = buildShaped('sc', rows, foundation, yr)
-  const nodes = built.model.nodes
-  for (const n of nodes) { n.x = -n.x; n.y = -n.y }
-  let x0 = Infinity, x1 = -Infinity
-  for (const n of nodes) { x0 = Math.min(x0, n.x); x1 = Math.max(x1, n.x) }
-  for (const n of nodes) n.x -= (x0 + x1) / 2
-  return built
-}
-
 /** The flat piece, built and relaxed flat, in its own frame: across x, base
  *  at low y, the right side +z (a round piece: rotated so the bottom-centre
  *  stitch of the last round is at the bottom). */
-function buildFlat(o: FoldedPieceOptions, yr: number): FlatPiece {
+export function buildFlat(o: FoldedPieceOptions, yr: number): FlatPiece {
   if (o.shape === 'round') {
     const rounds = foldedRounds(o)
     const built = buildRounds('sc', rounds, yr)
@@ -316,7 +307,7 @@ function buildFlat(o: FoldedPieceOptions, yr: number): FlatPiece {
   return { built, sewn }
 }
 
-export interface FoldMould { k: number[]; m: number[]; half: number; y0: number; y1: number; holdK?: number }
+export interface FoldMould { k: number[]; m: number[]; half: number; y0: number; y1: number; holdK?: number; depth?: number[] }
 
 const MOULD_SAMPLES = 24
 /** The sewing stitch's span: the two sewn stitches' centres end this many
@@ -328,12 +319,18 @@ const SEW_GAP_YR = 2.6
  *  how much of the length the pinch eases into the cup over. */
 const FOLD_HALF_YR = 1.6
 const FOLD_HOLD_K = 0.05
-const FOLD_HOLD_K_ROWS = 0.02
 const FOLD_LAYOUT_K = 0.01
-/** A row piece's fold keeps the flat blocking hold (relaxProgram's 'y'). */
-const FOLD_LAYOUT_K_ROWS = 0.06
 const FOLD_GUIDE = 2.2 * Math.PI
 const FOLD_EASE = 0.7
+/** A row piece's fold (fold-ear rows pass, 26 Oct): its plates sit at each
+ *  stitch's own depth (mould.depth) with a yarn's play either side, the same
+ *  blocked holds as its flat relax, and its arcs never stretch the fabric
+ *  between one row and the next by more than ROW_DEVELOP (measured on the
+ *  mould; the settled fabric is held to the audit's strain gate). */
+const FOLD_HALF_YR_ROWS = 1.0
+const FOLD_HOLD_K_ROWS = 0.02
+const FOLD_LAYOUT_K_ROWS = 0.06
+const ROW_DEVELOP = 0.25
 
 /** The fold mould for a settled flat piece: per height, the arc's curvature
  *  from the piece's own width there — at the sewn stitches' height the width
@@ -390,7 +387,45 @@ export function foldMould(o: FoldedPieceOptions, flat: FlatPiece, yr: number): F
     // bow is measured from the tip, level there.
     m.push(o.shape === 'round' ? c * L * t * t : c * L * (1 - t) * (1 - t))
   }
-  return { k, m, half: yr * FOLD_HALF_YR, y0, y1, holdK: o.shape === 'round' ? FOLD_HOLD_K : FOLD_HOLD_K_ROWS }
+  // A row piece's arcs change along its length no faster than the fabric can
+  // follow: wherever the curvature changes with height, the stitches far
+  // round the arc (the side edges) are carried further between one height
+  // and the next than the middle is, so the fabric there is pulled apart row
+  // from row (a sheet bent that way no longer develops flat) and the edge
+  // stitches are dragged off their crowns. Each height's arc is limited to
+  // the curvature that keeps that row-to-row stretch under ROW_DEVELOP, from
+  // the base up (the pinch holds) and then from the tip down (its chain is
+  // where it was worked, flat).
+  if (o.shape !== 'round') {
+    const ys = k.map((_, s) => y0 + (L * s) / (MOULD_SAMPLES - 1))
+    const at = (q: number, kk: number, mm: number, y: number): P3 => (kk < 1e-9 ? { x: q, y, z: mm } : { x: Math.sin(kk * q) / kk, y, z: mm + (1 - Math.cos(kk * q)) / kk })
+    const stretch = (a: number, b: number, ka: number, kb: number): number => {
+      const hw = Math.min(width[a]!, width[b]!) / 2
+      const dy = Math.abs(ys[b]! - ys[a]!)
+      let worst = 0
+      for (const f of [0.25, 0.5, 0.75, 1]) {
+        const pa = at(hw * f, ka, m[a]!, ys[a]!), pb = at(hw * f, kb, m[b]!, ys[b]!)
+        worst = Math.max(worst, Math.hypot(pa.x - pb.x, pa.y - pb.y, pa.z - pb.z) / dy - 1)
+      }
+      return worst
+    }
+    const limit = (from: number, to: number): void => {
+      if (stretch(from, to, k[from]!, k[to]!) <= ROW_DEVELOP) return
+      let lo = 0, hi = 1
+      for (let it = 0; it < 40; it++) {
+        const mid = (lo + hi) / 2
+        if (stretch(from, to, k[from]!, k[from]! + (k[to]! - k[from]!) * mid) <= ROW_DEVELOP) lo = mid
+        else hi = mid
+      }
+      k[to] = k[from]! + (k[to]! - k[from]!) * lo
+    }
+    const target = k.slice()
+    for (let s = 1; s < k.length; s++) limit(s - 1, s)
+    // The tip's fade is kept (its chain is not moved), and eases down from it.
+    for (let s = 0; s < k.length; s++) if (s / (MOULD_SAMPLES - 1) > 0.9) k[s] = Math.min(k[s]!, target[s]!)
+    for (let s = k.length - 2; s >= 0; s--) limit(s + 1, s)
+  }
+  return { k, m, half: yr * (o.shape === 'round' ? FOLD_HALF_YR : FOLD_HALF_YR_ROWS), y0, y1, holdK: o.shape === 'round' ? FOLD_HOLD_K : FOLD_HOLD_K_ROWS }
 }
 
 type P3 = { x: number; y: number; z: number }
@@ -640,6 +675,14 @@ export function buildFolded(o: FoldedPieceOptions, yr: number, iterations = 520)
   let foldShiftYr = 0
   if (o.pinch > 0 || (o.cup ?? 0.25) > 0 || (o.curl ?? 0.3) > 0) {
     mould = foldMould(o, flat, yr)
+    // A row piece's plates press its faces (relax.ts mould.depth): each
+    // stitch keeps its depth through the settled flat piece's thickness, so
+    // the free side edges, which the bend presses outward onto a plate, keep
+    // every hook under its crown instead of being squashed flat there.
+    if (o.shape !== 'round') {
+      const zMean = flatPos.reduce((a, p) => a + p.z, 0) / flatPos.length
+      mould = { ...mould, depth: flatPos.map((p) => p.z - zMean) }
+    }
     // The fold is worked on the finished piece: the anchor is no longer held
     // (the maker holds the ear, not the ring), and the flat piece's crown
     // canopy (a flat-plane device) gives way to the mould's plates.
@@ -650,13 +693,6 @@ export function buildFolded(o: FoldedPieceOptions, yr: number, iterations = 520)
     if (o.shape === 'round') for (const n of nodes) n.w = 1
     const zBand = built.model.zBand
     built.model.zBand = undefined
-    if (o.shape !== 'round') {
-      // Rows: the fold is relaxed from the worked lattice in ONE pass with
-      // the flat blocking hold, rather than a second relax of the settled
-      // flat piece.
-      const fresh = buildRowsWorked(o, yr)
-      fresh.model.nodes.forEach((p, i) => { const n = nodes[i]!; n.x = p.x; n.y = p.y; n.z = p.z })
-    }
     relax(built.model, {
       collMinDist: yr * 1.25, collK: 0.28, collAdjacency: 9,
       planeZ: 0, planeK: 0, layoutK: o.shape === 'round' ? FOLD_LAYOUT_K : FOLD_LAYOUT_K_ROWS, layoutMode: 'y',
