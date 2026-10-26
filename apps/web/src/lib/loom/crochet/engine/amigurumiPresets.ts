@@ -36,6 +36,7 @@ import {
 } from './gauge'
 import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
 import { earPart, type EarPieceOptions } from './earPiece'
+import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
 import {
   buildFaceEmbroidery,
@@ -237,6 +238,14 @@ export interface AmigurumiChoices {
    *  stays softly hollow. Bunny only. Opt-in: absent / false = the closed
    *  pressed lop, and every geometry hash is unchanged. */
   cuppedEars?: boolean
+  /** FOLDED EARS (fold-ear pass, 2026-10-26; `foldedPiece.ts`): the bunny's
+   *  lop ears as flat pieces worked in rows from the rounded tip down to a
+   *  narrower base, folded and pinched at the base with a sewing step so each
+   *  cups softly forward and hangs; the cow's as folded circles
+   *  (`CowChoices.foldedEars`). Bunny and cow only; overrides `cuppedEars`.
+   *  Opt-in: absent / false = the ears as before, every geometry hash
+   *  unchanged. */
+  foldedEars?: boolean
   /** SEATED BACK LEGS (`CowChoices.seatBackLegs`): the cow's back legs sewn
    *  against the body's flanks. Cow only. Opt-in: absent / false = today's
    *  legs, and every geometry hash is unchanged. */
@@ -836,6 +845,7 @@ export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionPro
       // The opt-in switches pass through only when on, so the default calf's
       // choices (and its program) are the object they always were.
       ...(choices.cuppedEars === true ? { cuppedEars: true } : {}),
+      ...(choices.foldedEars === true ? { foldedEars: true } : {}),
       ...(choices.seatBackLegs === true ? { seatBackLegs: true } : {}),
     })
   }
@@ -1045,6 +1055,17 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
         seat: 4, poleIn: false, surfaceFit: 'ellipsoid' as const,
       }
+      if (choices.foldedEars && choices.base === 'bunny') {
+        // The folded lop (foldedPiece.ts): the same seat, aim, turn and worn
+        // bend; its pinched base is the seated end, its front (the hollow)
+        // the face the turn shows.
+        parts.push(foldedPart(
+          gFolded(BUNNY_FOLD_EAR[choices.size], g),
+          { name: side < 0 ? 'ear-l' : 'ear-r', colourHex: main, place, bend: LOP_EAR_BEND },
+          gaugeYarnRadiusMm(TOY_YARN, g),
+        ))
+        continue
+      }
       if (choices.cuppedEars && choices.base === 'bunny') {
         // The open lop (earPiece.ts): the same seat, aim, turn and worn bend
         // as the closed lop; its base is the open end, its tip the ring.
@@ -1197,6 +1218,19 @@ export const BUNNY_LOP_EAR: Record<AmigurumiSize, EarPieceOptions> = {
   S: { kind: 'lop', width: 18, length: 32, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 8 },
   M: { kind: 'lop', width: 21, length: 40, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
   L: { kind: 'lop', width: 21, length: 42, depth: 1, pinch: 0.5, rimRoll: 0.5, pressYr: 10 },
+}
+/**
+ * THE FOLDED LOP (fold-ear pass, 2026-10-26; `foldedPiece.ts`, opt-in via
+ * `AmigurumiChoices.foldedEars`): a flat lop worked in rows from a rounded tip,
+ * long straight rows, narrowing to the base, the base folded in half and its
+ * two corners sewn together (a little more at L), so the ear cups softly
+ * forward from the head and hangs. About the closed lop's flattened width and
+ * length. Starting numbers; tune by eye.
+ */
+export const BUNNY_FOLD_EAR: Record<AmigurumiSize, FoldedPieceOptions> = {
+  S: { shape: 'lop', width: 8, length: 32, pinch: 1, cup: 0.25, curl: 0.2 },
+  M: { shape: 'lop', width: 10, length: 40, pinch: 1, cup: 0.25, curl: 0.2 },
+  L: { shape: 'lop', width: 10, length: 42, pinch: 1, cup: 0.25, curl: 0.2 },
 }
 /** Sewn on the upper side of the head, hanging down and a little out. */
 /** Sleepy bunny 4: sewn LOWER on the side (under the hat band, the bar's)
