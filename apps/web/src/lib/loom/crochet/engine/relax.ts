@@ -100,6 +100,13 @@ export interface RelaxConfig {
    */
   stuffing?: number
   /**
+   * STUFFING TAPER (lamb-1027, cute path): per-round firmness factor (0..1,
+   * by round index; absent = 1). A limb is stuffed firmly at the foot and
+   * lightly toward the join, its last rounds left empty and flattened. Absent
+   * = every round equally firm (every existing build is bit-identical).
+   */
+  stuffByRound?: number[]
+  /**
    * How much of the worked-shape layout hold survives while a part is stuffed
    * (default 0.25). Unstuffed, that hold IS the shape: it pins every node to
    * the analytic/intrinsic profile the counts were laid on, and the fabric has
@@ -543,13 +550,15 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         if (n.w === 0) continue
         const k = roundOf![i]!
         if (k < 0) continue
+        const sk = cfg.stuffByRound ? step * (cfg.stuffByRound[k] ?? 1) : step
+        if (sk === 0) continue
         const r = Math.hypot(n.x, n.y)
         if (r > 1e-6) {
-          const f = 1 + (step * rn[k]!) / r
+          const f = 1 + (sk * rn[k]!) / r
           n.x *= f
           n.y *= f
         }
-        n.z += step * zn[k]!
+        n.z += sk * zn[k]!
       }
     }
 

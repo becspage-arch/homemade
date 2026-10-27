@@ -106,6 +106,9 @@ export type CuteQuantity =
   | 'headTiltDeg'
   | 'asymmetryCues'
   | 'curlSizeCV'
+  | 'eyeProtrusion'
+  | 'limbJoinRatio'
+  | 'footForwardDeg'
 
 /** What each quantity is, in one line, with its normaliser. */
 export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
@@ -152,6 +155,9 @@ export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
   headTiltDeg: 'tilt of the eye line from level (deg)',
   asymmetryCues: 'count of deliberate asymmetries: head tilt, crossed or offset limb, side-swept hair or flop, mixed curls, a single brow',
   curlSizeCV: 'spread of curl / loop sizes in a fringe or mane (std / mean)',
+  eyeProtrusion: 'how far a safety eye\'s dome stands out of the fabric round it / the eye diameter (a sunk eye sits in the face)',
+  limbJoinRatio: 'front leg or arm thickness where it joins the body / its thickness at the foot or paw',
+  footForwardDeg: 'angle between a seated back leg\'s sole (its axis out through the rounded end) and the lens direction (deg)',
 }
 
 /** How step 3 reads a quantity off a built toy. */
@@ -657,6 +663,40 @@ export const CUTE_RULES: readonly CuteRule[] = [
     measure: { kind: 'engine-now', from: '(hair ctrl top z - head bounds top z) / head height' },
     estimated: true,
   },
+  // ── Added from Bec's "standard for any cutesy toy" finishes (lamb-1027) ──
+  {
+    id: 'eyes-set-in',
+    what: 'Safety eyes sit sunk into the face, pulled into the stuffing, not perched proud on it.',
+    quantity: 'eyeProtrusion',
+    ranges: { 'quadruped-seated': r(0.1, 0.42), 'biped-animal': r(0.1, 0.42), doll: r(0.1, 0.42) },
+    why: 'Bec, 27 Oct: "eyes pushed into the face" is standard for any cutesy toy; a proud bead reads startled and stuck on. The bar cow\'s eyes are set into the pile (judged ~0.25 of the eye diameter showing).',
+    from: ['highland-cow'],
+    strictness: 'soft',
+    measure: { kind: 'engine-now', from: 'eye prop dome front minus the mean fabric height in a 1.2-2.2 eye-radius ring round it, along the eye axis / eye diameter' },
+    estimated: true,
+  },
+  {
+    id: 'limbs-slim-at-join',
+    what: 'A leg or arm is stuffed firmly at the foot and lightly toward the top, so it narrows where it joins the body.',
+    quantity: 'limbJoinRatio',
+    ranges: { 'quadruped-seated': r(0.45, 0.85), 'biped-animal': r(0.45, 0.9) },
+    why: 'Bec, 27 Oct: the bar\'s front leg is slim where it meets the chest; ours was fat right up under the muzzle. Stuffing tapers to the joint so the limb sews on neatly and moves. Bar cow judged ~0.7.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'fitted limb centre line: thickness 10% from the join / widest over the far 30%' },
+    estimated: true,
+  },
+  {
+    id: 'feet-forward',
+    what: 'Seated back legs present their feet forward, the round soles showing to the lens, not lumps at the sides.',
+    quantity: 'footForwardDeg',
+    ranges: { 'quadruped-seated': r(0, 35) },
+    why: 'Bec, 27 Oct: seated back legs show round soles to the front (a contrast sole where it suits). The bar cow\'s back feet face the camera (judged ~15 deg).',
+    from: ['highland-cow'],
+    strictness: 'soft',
+    measure: { kind: 'engine-now', from: 'back-leg place.aim (rounded sole end) against the front frame' },
+    estimated: true,
+  },
 ]
 
 /** The bar toy each set of measurements came from (crochet-bar/proofs/cute-rules/measurements.json). */
@@ -684,6 +724,7 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
       curlPacking: 1.1, fringeHeight: 0.09,
       limbThickness: 0.401, limbGap: 0.176, limbEndBulge: 1.15,
       sharpCorners: 1, straightRun: 0.223, headTiltDeg: 0, asymmetryCues: 1, curlSizeCV: 0.28,
+      eyeProtrusion: 0.25, limbJoinRatio: 0.7, footForwardDeg: 15,
     },
   },
   {

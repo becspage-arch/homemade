@@ -234,7 +234,8 @@ export function auditProblems(swatch: BuiltSwatch, _arg: string, _W: number, yr:
         const t = mer[l.below]!
         const rh = Math.hypot(h.x, h.y)
         const rb = Math.hypot(b.x, b.y)
-        const dn = (rh - rb) * -t.tz + (h.z - b.z) * t.tr
+        // A piece worked inside out (lamb-1027 fleece) hooks OUTWARD.
+        const dn = ((rh - rb) * -t.tz + (h.z - b.z) * t.tr) * (built.insideOut ? -1 : 1)
         if (dn > -yr * 0.45) return `hook did not get under its crown (dn=${(dn / yr).toFixed(2)}yr)`
       } else if (h.z * b.z > 0 && Math.abs(h.z - b.z) < yr * 0.45) {
         return 'hook settled on the SAME side as its crown'

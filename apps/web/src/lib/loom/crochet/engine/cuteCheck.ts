@@ -21,7 +21,7 @@ import { CUTE_RULES, type CuteRange, type CuteRule, type Strictness, type ToyFam
 import { measureCute, type CuteMeasurement, type CuteSource } from './cuteMeasure'
 
 export interface CuteRuleResult {
-  /** The rule's number in CUTE-RULES.md (1-43). */
+  /** The rule's number in CUTE-RULES.md (1-46). */
   n: number
   id: string
   strictness: Strictness
@@ -100,6 +100,9 @@ const WORDS: Record<string, { low: string; high: string; unit: string }> = {
   'ear-rim-thick': { low: 'ear rim a thin edge somewhere round the hollow', high: 'ear rim so thick the hollow closes', unit: 'thinnest rim / ear width' },
   'curls-packed': { low: 'curls sparse: big open loops with the head showing between', high: 'curls crammed', unit: 'curl area / fringe area' },
   'fringe-low': { low: 'fringe pressed flat', high: 'fringe stands up off the head as a mound', unit: 'of the head height above the crown' },
+  'eyes-set-in': { low: 'eyes sunk so deep they vanish', high: 'eyes perched proud on the face, not sunk in', unit: 'of the eye diameter standing out' },
+  'limbs-slim-at-join': { low: 'limb pinched thin at the join', high: 'limb fat right up to the join (stuff lighter toward the top)', unit: 'join / foot thickness' },
+  'feet-forward': { low: '(unreachable)', high: 'back feet turned to the sides, soles hidden', unit: 'degrees from the lens' },
   'muzzle-light': { low: 'muzzle too dark (an oatmeal, not a cream)', high: 'muzzle too light (white)', unit: 'L* (yarn hex, a proxy: want the hex range)' },
 }
 

@@ -680,6 +680,34 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     for (const q of ['eyeSpacing', 'eyeHeightFromChin', 'eyeSize', 'headTiltDeg'] as const) miss(q, 'no pair of eyes')
   }
 
+  // Lamb-1027 (Bec: "eyes pushed into the face"): how far each safety eye's
+  // dome stands out of the fabric round it (a ring 1.2-2.2 eye radii off its
+  // axis on the host piece), over the eye's diameter.
+  {
+    const vals: number[] = []
+    for (const pr of c.props.filter((q) => /^eye-[lr]$/.test(q.name))) {
+      const spec = p.props?.find((q) => q.name === pr.name)
+      const host = spec ? one(spec.on) : undefined
+      if (!host) continue
+      const a = pr.axes[2]
+      const rf = len3(a) || 1
+      const u = { x: a.x / rf, y: a.y / rf, z: a.z / rf }
+      const r = Math.max(len3(pr.axes[0]), len3(pr.axes[1]))
+      let sum = 0, n = 0
+      for (const v of host.ctrl) {
+        const d = { x: v.x - pr.centre.x, y: v.y - pr.centre.y, z: v.z - pr.centre.z }
+        const t = dot(d, u)
+        if (t < -r) continue
+        const rr = Math.sqrt(Math.max(0, dot(d, d) - t * t))
+        if (rr < 1.2 * r || rr > 2.2 * r) continue
+        sum += t; n++
+      }
+      if (n >= 4) vals.push((rf - sum / n) / (2 * r))
+    }
+    if (vals.length) set('eyeProtrusion', vals.reduce((a, x) => a + x, 0) / vals.length, 'geometry')
+    else miss('eyeProtrusion', 'no safety eyes')
+  }
+
   // ── the muzzle ──
   if (muzzle) {
     const me = ext(muzzle.ctrl)
@@ -773,7 +801,20 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     insideHead = (v) => { const q = proj(v); return hr.at(Math.round((q.u - hr.u0) / cell), Math.round((q.z - hr.z0) / cell)) === 1 }
   }
   const hornLines = horns.map((h) => lineOf(h, headC)).filter((x): x is CentreLine => !!x).map((cl) => clipCentreLine(cl, insideHead!))
-  const appLines = hornLines.length ? hornLines : tail ? [lineOf(tail, centroid(cloud(torso.length ? torso : [head])))].filter((x): x is CentreLine => !!x) : []
+  let appLines = hornLines.length ? hornLines : tail ? [lineOf(tail, centroid(cloud(torso.length ? torso : [head])))].filter((x): x is CentreLine => !!x) : []
+  // Lamb-1027: a tail NUB (a stub or ball, catalogue TL2) has no centre line
+  // to curve, bend or taper: a ball's fitted "line" reads a sagitta of 2.5 and
+  // a 90 deg bend. The appendage rules (24-28) are for an appendage at least
+  // twice as long as it is thick; a shorter tail is a nub and is not read.
+  let nub = false
+  if (!hornLines.length && appLines.length) {
+    const sh = centreLineShape(appLines[0]!, proj, yr)
+    if (sh.arcMm < 2 * sh.thickAt(0.5)) {
+      nub = true
+      appLines = []
+      notes.push(`appendage: the tail is a nub (arc ${(sh.arcMm / W).toFixed(2)} W, under twice its thickness): the appendage rules do not read it`)
+    }
+  }
   if (appLines.length) {
     const shapes = appLines.map((cl) => centreLineShape(cl, proj, yr))
     const mean = (f: (s: (typeof shapes)[number]) => number): number => shapes.reduce((a, s) => a + f(s), 0) / shapes.length
@@ -799,7 +840,7 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       set('appendageTipBelowCrown', (top - Math.max(...tipZ)) / H, 'geometry')
     } else { for (const q of ['appendageElevationDeg', 'appendageLength', 'appendageThickness', 'appendageTipBelowCrown'] as const) miss(q, 'no horns') }
   } else {
-    for (const q of ['appendageSagitta', 'appendageBendDeg', 'appendageTaper', 'appendageElevationDeg', 'appendageLength', 'appendageThickness', 'appendageTipBelowCrown'] as const) miss(q, 'no horn or tail')
+    for (const q of ['appendageSagitta', 'appendageBendDeg', 'appendageTaper', 'appendageElevationDeg', 'appendageLength', 'appendageThickness', 'appendageTipBelowCrown'] as const) miss(q, nub ? 'the tail is a nub' : 'no horn or tail')
   }
 
   // ── limbs ──
@@ -819,9 +860,34 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       })
       set('limbEndBulge', bulge.reduce((a, x) => a + x, 0) / bulge.length, 'geometry')
     }
+    // Lamb-1027 (Bec: "stuffing tapers towards the joints"): the limb where it
+    // joins the body (the first tenth of its line) against its foot or paw.
+    if (lines.length) {
+      const join = lines.map((cl) => {
+        const sh = centreLineShape(cl, proj, yr)
+        let best = 0
+        for (let t = 0.7; t <= 0.951; t += 0.025) best = Math.max(best, sh.thickAt(t))
+        return sh.thickAt(0.1) / best
+      })
+      set('limbJoinRatio', join.reduce((a, x) => a + x, 0) / join.length, 'geometry')
+    }
     const ls = frontLimbs.map((l) => ext(l.ctrl)).sort((a, b) => a.u0 - b.u0)
     if (ls.length >= 2) set('limbGap', (ls[ls.length - 1]!.u0 - ls[0]!.u1) / W, 'geometry')
-  } else for (const q of ['limbThickness', 'limbEndBulge', 'limbGap'] as const) miss(q, 'no front legs or arms')
+  } else for (const q of ['limbThickness', 'limbEndBulge', 'limbGap', 'limbJoinRatio'] as const) miss(q, 'no front legs or arms')
+  // Lamb-1027 (Bec: seated back legs present their feet forward, round soles
+  // showing): the sole is the leg's first round (the magic ring); its
+  // direction out of the leg's centre against the lens direction.
+  if (backLegs.length) {
+    const angs = backLegs.map((l) => {
+      const n0 = Math.max(3, Math.floor((l.part.rounds[0]! / l.part.rounds.reduce((a, b) => a + b, 0)) * l.ctrl.length * 2))
+      const sole = centroid(l.ctrl.slice(0, n0))
+      const mid = centroid(l.ctrl)
+      const d = { x: sole.x - mid.x, y: sole.y - mid.y, z: sole.z - mid.z }
+      const k = dot(d, F.f) / (len3(d) || 1)
+      return (Math.acos(Math.max(-1, Math.min(1, k))) * 180) / Math.PI
+    })
+    set('footForwardDeg', angs.reduce((a, x) => a + x, 0) / angs.length, 'geometry')
+  } else miss('footForwardDeg', 'no seated back legs')
   if (feet.length) {
     const fw = feet.map((f) => { const e = ext(f.ctrl); return (e.u1 - e.u0) / W })
     set('footWidth', fw.reduce((a, x) => a + x, 0) / fw.length, 'geometry')

@@ -851,8 +851,35 @@ export function buildSphere(
   /** Per-swatch stitch-gauge override (yarn radii) — the density knob, same as
    *  buildRounds. Leaves the driving stitch's locked dictionary gauge untouched. */
   gaugeYr?: number,
+  /**
+   * FLEECE (lamb-1027, catalogue CV8): loop stitches worked INTO the stuffed
+   * piece's own rounds. `stitchAt(k, i)` names the stitch made at stitch i
+   * (0-based, counted over the stitches the round MAKES) of round k: a loop
+   * stitch there (`loopst` / `loopcurl`, the same cell as dc) carries its
+   * loop; undefined = the piece's stitch. A decrease is always worked plain.
+   * `loopAt` overrides the loop shape per stitch, and `loopSide` is the side
+   * the loops stand on (+1: the outside of the ball, the finger held in front
+   * of the work). Absent = the ball exactly as before (every hash unchanged).
+   */
+  fleece?: {
+    stitchAt: (k: number, i: number) => StitchId | undefined
+    loopAt?: (k: number, i: number) => Partial<LoopShape> | undefined
+    loopSide?: number
+    /** Worked INSIDE OUT (the inside of the piece facing the worker, the way a
+     *  loop-stitch body is made): the whole piece's stitches face the other
+     *  way (fz -1), so the plain loop stitch's loops, which form on the side
+     *  away from the worker, stand on the OUTSIDE of the ball. */
+    insideOut?: boolean
+  },
 ): BuiltContinuous {
+  const FZ = fleece?.insideOut ? -1 : 1
   const yr = yarnRadiusMm
+  const fl = (k: number, i: number): { id: StitchId; loop?: Partial<LoopShape>; loopSide?: number } => {
+    const id = fleece?.stitchAt(k, i)
+    if (!id || id === st) return { id: st }
+    const loop = fleece!.loopAt?.(k, i)
+    return { id, ...(loop ? { loop } : {}), ...(fleece!.loopSide != null ? { loopSide: fleece!.loopSide } : {}) }
+  }
   const sw = yr * (gaugeYr ?? STITCHES[st].gaugeYr)
   // The real cell (§8f-3), with the radial canopy re-derived alongside it — see
   // the same note in buildRounds.
@@ -955,7 +982,7 @@ export function buildSphere(
   const ringPlace = mkPlace3(ringRRef)
   for (let i = 0; i < RING_N; i++) {
     const a = (i / RING_N) * Math.PI * 2
-    const p = ringPlace(a * ringRRef, rr, zh * 0.5)
+    const p = ringPlace(a * ringRRef, rr, zh * 0.5 * FZ)
     push(p.x, p.y, p.z, 0)
     ringNodes.push(nodes.length - 1)
   }
@@ -980,7 +1007,7 @@ export function buildSphere(
   // works against, and the key the radial canopy is derived from. A re-cut head
   // throws its crown at zh·0.8 proud, zh·0.46 laid (emitHeadLoop); the legacy
   // bump at zh·1.15.
-  const crownNz = headLoopMm > 0 ? headApexRelief(zh, SURFACE_LAY) : zh * 1.15
+  const crownNz = (headLoopMm > 0 ? headApexRelief(zh, SURFACE_LAY) : zh * 1.15) * FZ
   let below: SCrown[] = []
   let mPrev = rr
   let count = 0
@@ -1012,9 +1039,9 @@ export function buildSphere(
         const r = emitPlainStitch(S, dims, {
           j: k,
           c: i,
-          id: st,
+          ...fl(k, i),
           s: 1,
-          fz: 1,
+          fz: FZ,
           by: mPrev,
           ty: mK,
           xCrown: xC,
@@ -1022,7 +1049,7 @@ export function buildSphere(
           bcBack: ring,
           bcFront: ring,
           cyBelow: cyEff,
-          bcNormalZ: zh * 0.5,
+          bcNormalZ: zh * 0.5 * FZ,
           place3,
           linkRole: 'ring', // round 1 WRAPS the ring strand (a stem, not a crown)
           headLoopMm,
@@ -1047,7 +1074,7 @@ export function buildSphere(
             c: oi,
             id: st,
             s: 1,
-            fz: 1,
+            fz: FZ,
             by: mPrev,
             ty: mK,
             xCrown: xC,
@@ -1075,9 +1102,9 @@ export function buildSphere(
             const r = emitPlainStitch(S, dims, {
               j: k,
               c: oi,
-              id: st,
+              ...fl(k, li),
               s: 1,
-              fz: 1,
+              fz: FZ,
               by: mPrev,
               ty: mK,
               xCrown: xC,
@@ -1111,7 +1138,7 @@ export function buildSphere(
   for (let t = 1; t <= 4; t++) {
     const th = phase + Math.PI * 2 * (1 + 0.012 * t)
     const m = Math.min(mPrev + drift * 0.22 * t, Math.PI * R - yr * 0.4)
-    const p = placeEnd(th * rRefEnd, m, yr * (0.3 - 0.25 * t))
+    const p = placeEnd(th * rRefEnd, m, yr * (0.3 - 0.25 * t) * FZ)
     push(p.x, p.y, p.z)
   }
 
@@ -1139,8 +1166,9 @@ export function buildSphere(
     (Math.min(...nodes.map((n) => n.z)) + Math.max(...nodes.map((n) => n.z))) / 2
   const radialCenter = { x: 0, y: 0, z: zMid }
 
+  const loose = looseFlags(S)
   return {
-    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, round: roundArr, radialCenter },
+    model: { nodes, dist: S.dist, bend: S.bend, strand, along, meridian, round: roundArr, radialCenter, ...(loose ? { loose } : {}) },
     strandPath: S.strandPath,
     links: S.links,
     yarnRadiusMm: yr,
@@ -1148,5 +1176,6 @@ export function buildSphere(
     heightMm: halfSpan * 2,
     anchorPins: RING_N,
     frame: 'surface',
+    ...(FZ < 0 ? { insideOut: true } : {}),
   }
 }

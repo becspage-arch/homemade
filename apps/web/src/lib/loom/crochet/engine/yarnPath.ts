@@ -77,6 +77,10 @@ export interface BuiltContinuous {
   model: YarnModel
   /** The single ordered strand (node indices) to render as one yarn. */
   strandPath: number[]
+  /** A stuffed piece worked INSIDE OUT (lamb-1027 fleece, `buildSphere`):
+   *  every hook dives OUTWARD, so the audit's inward-hook test reads the
+   *  other way. Absent = right side out, as every piece before it. */
+  insideOut?: boolean
   /** Every interlock the build claims — the audit verifies these after relax. */
   links: StitchLink[]
   yarnRadiusMm: number
@@ -480,6 +484,15 @@ export interface PlainStitchSpec {
    * stitch has a `loop` in the dictionary.
    */
   loop?: Partial<LoopShape>
+  /**
+   * FLEECE (lamb-1027): which z side the loop stands out on, over the
+   * default −fz (the side away from the worker). A stuffed piece worked in
+   * the round with its right side out (`buildSphere`) has its far side
+   * INSIDE the ball, so a fleece's loops are pulled to the side facing the
+   * worker (the finger held in front of the work): +fz. Absent = −fz, every
+   * existing build unchanged.
+   */
+  loopSide?: number
 }
 
 /**
@@ -736,7 +749,7 @@ export function emitPlainStitch(
     const loopDef = STITCHES[id].loop
     if (loopDef) {
       const lp = emitLoop(push, {
-        xH, yRoot: cy - dh, hookZ, side: -fz, s, yr: d.yr,
+        xH, yRoot: cy - dh, hookZ, side: spec.loopSide ?? -fz, s, yr: d.yr,
         shape: { ...loopDef, ...spec.loop }, j, c,
       })
       S.links.push({ j, c, role: spec.linkRole ?? 'hook', hook: lp.rootA, below: bc })

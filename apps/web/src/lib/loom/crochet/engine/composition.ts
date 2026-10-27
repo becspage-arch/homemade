@@ -32,6 +32,7 @@ import { wearNightcap } from './hatAccessory'
 import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
 import { cuteReportFor, type CuteReport } from './cuteCheck'
+import { fleeceLoopAt, fleeceStitchAt, type FleeceSpec } from './fleece'
 import type { ToyFamily } from './cuteRules'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
@@ -167,6 +168,20 @@ export interface AmigurumiPart {
    */
   offTable?: boolean
   /**
+   * FLEECE (lamb-1027; fleece.ts, catalogue CV8): loop stitches worked into
+   * this closed piece's own rounds, the piece worked inside out so the loops
+   * stand on the outside. Closed stuffed pieces only (no `tube`, `press`,
+   * `form`). Absent = the piece exactly as before, every hash unchanged.
+   */
+  fleece?: FleeceSpec
+  /**
+   * STUFFING TAPER (lamb-1027, cute path; cuteFinish.ts `limbStuffing`): per
+   * round (0-based) how firmly this closed piece is stuffed, 0..1 — a limb
+   * firm at the foot, lighter toward the join, its last rounds empty and
+   * flattened. Absent = evenly firm, every hash unchanged.
+   */
+  stuffByRound?: number[]
+  /**
    * An UNSTUFFED piece pressed flat (a bunny's long ear): the two plates'
    * final gap, centre-line to centre-line, in mm (relax.ts `press`). The piece
    * is audited in its settled frame (`auditProblems` frame 'current').
@@ -296,8 +311,9 @@ export interface CompositionProp {
   /** 0 = matte moulded plastic, 1 = wet-look glossy (default 0.85). */
   gloss?: number
   /** Exact-ellipsoid surface fit for the parent (default true — props are new,
-   *  so there is no historical placement to preserve). */
-  surfaceFit?: 'box' | 'ellipsoid'
+   *  so there is no historical placement to preserve). 'points' (lamb-1027)
+   *  = the part's real fabric along the ray, past a fleece's loops. */
+  surfaceFit?: 'box' | 'ellipsoid' | 'points'
   /** Doll pass: a metal RING (a keyring's split ring or jump ring) instead of a
    *  moulded ellipsoid. `radiusMm` is the ring's radius to the wire centre,
    *  `wireMm` the wire's radius, and `ringNormal` the ring plane's normal (the
@@ -305,6 +321,12 @@ export interface CompositionProp {
   ring?: { wireMm: number; ringNormal: { x: number; y: number; z: number } }
   /** Doll pass: render as polished metal (a keyring), not plastic. */
   metal?: boolean
+  /** SUNK EYES (lamb-1027, cute path; cuteFinish.ts): the maker pulls a
+   *  length of yarn from behind the eye through to the back of the head and
+   *  tightens it, drawing the eye and the fabric round it into the stuffing
+   *  by this many mm. The fabric within ~1.8 eye radii dimples in with it
+   *  (re-audited). Absent = the eye as seated, every hash unchanged. */
+  sink?: number
 }
 
 /** A nightcap worn on the head: the sleepy bunny's. `headRadiusMm` sizes the
@@ -919,7 +941,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       y: (base.bounds.miny + base.bounds.maxy) / 2,
       z: (base.bounds.minz + base.bounds.maxz) / 2,
     }
-    const parentR = surfaceRadius(base.bounds, u, pr.surfaceFit ?? 'ellipsoid')
+    const parentR = pr.surfaceFit === 'points' ? pointsRadius(base, pc, u, yr) : surfaceRadius(base.bounds, u, pr.surfaceFit ?? 'ellipsoid')
     const seat = pr.seat ?? pr.radiusMm * 0.45
     const centre: V3 = {
       x: pc.x + u.x * (parentR - seat),
@@ -966,6 +988,33 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       gloss: pr.gloss ?? 0.85,
     }
   })
+
+  // SUNK EYES (lamb-1027): the pull-through draws each eye and the fabric
+  // round it into the stuffing. Moves real stitches, so the host is re-audited.
+  const sunk = (p.props ?? []).map((pr, i) => ({ pr, pl: props[i]! })).filter((q) => (q.pr.sink ?? 0) > 0)
+  if (sunk.length) {
+    const hosts = new Set<PlacedPart>()
+    for (const { pr, pl } of sunk) {
+      const base = byName.get(pr.on)!
+      const u = unit(pr.dir)
+      const depth = pr.sink!
+      pl.centre = { x: pl.centre.x - u.x * depth, y: pl.centre.y - u.y * depth, z: pl.centre.z - u.z * depth }
+      const reach = pr.radiusMm * 1.8
+      const world = base.ctrl.map((v) => {
+        const d = { x: v.x - pl.centre.x, y: v.y - pl.centre.y, z: v.z - pl.centre.z }
+        const t = d.x * u.x + d.y * u.y + d.z * u.z
+        const rr = Math.sqrt(Math.max(0, d.x * d.x + d.y * d.y + d.z * d.z - t * t))
+        if (rr >= reach || t < -pr.radiusMm * 2) return v
+        const f = 0.5 * (1 + Math.cos((Math.PI * rr) / reach)) * depth
+        return { x: v.x - u.x * f, y: v.y - u.y * f, z: v.z - u.z * f }
+      })
+      setWorld(base, world)
+      hosts.add(base)
+    }
+    for (const h of hosts) for (const pr of auditPart(h.built!, h.part, yr)) problems.push(`${h.part.name} (eyes sunk): ${pr}`)
+    allNodes.length = 0
+    for (const pp of placed) allNodes.push(...pp.ctrl)
+  }
 
   // Embroidery: sewn onto the settled fabric after every contact has moved
   // it. No yarn of the pieces moves, so the hash is unchanged by it.
@@ -1068,10 +1117,13 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
     else relaxProgram(built, yr)
     return { built, panelMask }
   }
-  const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr)
+  const fl = part.fleece
+  const built: BuiltContinuous = buildSphere(part.stitch, 0, yr, part.rounds, part.gaugeYr, fl
+    ? { stitchAt: (k, i) => fleeceStitchAt(fl, k, i), loopAt: (k, i) => fleeceLoopAt(fl, k, i), insideOut: true }
+    : undefined)
   const panelMask = part.panel ? facePanel(built, part) : undefined
   if (part.press) relaxPressed(built, part.press, yr, part.pressShape)
-  else relaxProgram(built, yr, part.offTable === true ? { offTable: true } : undefined)
+  else relaxProgram(built, yr, part.offTable === true || part.stuffByRound ? { ...(part.offTable ? { offTable: true } : {}), ...(part.stuffByRound ? { stuffByRound: part.stuffByRound } : {}) } : undefined)
   return { built, panelMask }
 }
 
@@ -1202,7 +1254,12 @@ function spinAbout(R: number[][], w: V3, spin: { x: number; y: number; z: number
 function pointsRadius(base: PlacedPart, pc: V3, u: V3, yr: number): number {
   const lim2 = (2 * yr) ** 2
   let best = -Infinity
-  for (const p of base.ctrl) {
+  // A fleece's loops are not the surface a piece is sewn to (lamb-1027): the
+  // needle goes between them into the fabric. Absent loose yarn = as before.
+  const loose = base.built?.model.loose
+  for (let i = 0; i < base.ctrl.length; i++) {
+    if (loose?.[base.built!.strandPath[i]!]) continue
+    const p = base.ctrl[i]!
     const dx = p.x - pc.x, dy = p.y - pc.y, dz = p.z - pc.z
     const t = dx * u.x + dy * u.y + dz * u.z
     if (t <= 0) continue

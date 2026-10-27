@@ -3942,6 +3942,30 @@ e3a65b10).
   renders L* 66-68. Still failing, said: 40 (the ear shape), 42-43 (a packed cap trips the coil audit's linking
   check, and the fringe's height did not move with loop length, gravity or faceDir: the hair relax is the lever).
 
+## 8v. THE LAMB — an original toy from the cute rules alone, and the cute finishes (2026-10-27)
+
+Job log `crochet-bar/jobs/lamb-1027.md`. `lambPreset.ts`: a seated lamb (S / M / L, gauge 1.3), every piece real
+rounds or rows, its pattern written from the same program (`lambPreset.test.ts` reads every round back into the
+stitches it makes and checks the counts and each loop stitch). Every existing preset hash is unchanged.
+
+- FLEECE (`fleece.ts`, catalogue CV8): loop stitch worked into a closed piece's own rounds. `buildSphere(..., fleece)`
+  names the stitch per (round, made stitch); the piece is worked INSIDE OUT (fz -1) so the plain loop stitch's
+  loops (which form on the side away from the worker) stand on the outside, and the audit reads an inside-out
+  piece's hooks as diving outward (`BuiltContinuous.insideOut`). A front-loop variant (`loopSide` +1) failed 29 of
+  613 hooks; a dense fleece (every stitch, twisted loops) failed 15. Every second stitch on alternate rounds, the
+  loop 2.4 x 1.75 yr, curl 0.3, droop 55, audits clean; the head's topknot needs a shorter loop (1.8).
+- CUTE FINISHES (`cuteFinish.ts`), each opt-in with words: `CompositionProp.sink` (the eye and the fabric within
+  1.8 eye radii drawn in by a cosine falloff, host re-audited, the hash then includes it); `AmigurumiPart.stuffByRound`
+  (relax.ts stuffing pressure per round: `limbStuffing` firm over the foot, light to the top, 0 for the last 2);
+  the head tilt (`rollAbout` on the head axis and every head-mounted direction, the nose's frame included);
+  `FEET_FORWARD_NOTE`.
+- RULES 44-46 (`eyes-set-in`, `limbs-slim-at-join`, `feet-forward`) measured in cuteMeasure; a tail under twice
+  its thickness is a nub and the appendage rules skip it.
+- PROPS: `surfaceFit: 'points'` (the parent's real fabric along the ray), and `pointsRadius` skips loose loop yarn.
+- NOT DONE, the next engine piece: an OVAL WORKED ROUND A FOUNDATION CHAIN (rounds as stadiums round a chain).
+  The lamb's muzzle is worked end to end and sewn across the face, so its rounds run up and down the face. A
+  round from a magic ring would read as concentric rings but cannot be wide and short enough for rules 11-12.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing

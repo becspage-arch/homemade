@@ -16,6 +16,7 @@
 
 import { YARN_WEIGHT_RADIUS_MM, programToChart, writeInstructions, type CrochetProgram, type YarnWeight } from './program'
 import type { AmigurumiPart, CompositionProgram } from './composition'
+import { SINK_EYES_WORDS } from './cuteFinish'
 import { writeFaceInstructions } from './faceEmbroidery'
 import { writeHairInstructions } from './hairPatch'
 import { nightcapInstructions } from './hatAccessory'
@@ -49,6 +50,9 @@ export interface CompositionPiece {
   yarnWeight?: YarnWeight
   /** How the piece is sewn on (AmigurumiPart.sewNote). */
   sewNote?: string
+  /** Stuffed tapering to its top (AmigurumiPart.stuffByRound; lamb-1027):
+   *  its own words say how, so the assembly does not say "stuff firmly". */
+  taperStuffed?: boolean
 }
 
 // A side suffix, optionally numbered (`toe-bean-l0`): the three toe beans on
@@ -126,6 +130,7 @@ export function compositionPieces(p: CompositionProgram): CompositionPiece[] {
       ...(first.panel ? { panel: first.panel.runs } : {}),
       ...(first.yarnWeight ? { yarnWeight: first.yarnWeight } : {}),
       ...(first.sewNote ? { sewNote: first.sewNote } : {}),
+      ...(first.stuffByRound ? { taperStuffed: true } : {}),
     }
   })
 }
@@ -245,15 +250,21 @@ export function writeAssembly(p: CompositionProgram): string[] {
     } else {
       lines.push(
         piece.sewNote
-          ? `Sew the ${piece.label.toLowerCase()} to the ${to} ${piece.sewNote}, stuffing firmly as you close each piece.`
+          ? piece.taperStuffed
+            ? `Sew the ${piece.label.toLowerCase()} to the ${to} ${piece.sewNote}.`
+            : `Sew the ${piece.label.toLowerCase()} to the ${to} ${piece.sewNote}, stuffing firmly as you close each piece.`
           : `Sew the ${piece.label.toLowerCase()} to the ${to}, ` + 'stuffing firmly as you close each piece.',
       )
     }
   }
   for (const prop of p.props ?? []) {
+    // A sunk eye was fitted in its piece's own words; the pull-through follows.
+    if ((prop.sink ?? 0) > 0) continue
     const on = prettify(baseName(prop.on), 1).toLowerCase()
     lines.push(`Fit the ${prop.name.replace(SIDE_SUFFIX, '').replace(/[-_]+/g, ' ')} to the ${on} and fasten the washer behind it.`)
   }
+  // Sunk eyes (lamb-1027, cuteFinish.ts): the pull-through, said once.
+  if ((p.props ?? []).some((q) => (q.sink ?? 0) > 0)) lines.push(SINK_EYES_WORDS)
   // The embroidered face, from the same round-and-stitch spots the render
   // lays the strands on.
   if (p.faceWords?.length) {
