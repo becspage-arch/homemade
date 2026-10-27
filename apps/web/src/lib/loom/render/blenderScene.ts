@@ -123,8 +123,13 @@ export function pickHeroStageVariant(stage: HeroStage, seed: string, explicit?: 
  *       eye line at the face; the dried bunch rebuilt from thin stems, small
  *       heads and wisps, the cloth under the toy softly crumpled, the spring
  *       jug brought into frame
+ *   v3  v2 with the soft listing light (`photoLight: 'soft'`, soft-light-1027):
+ *       a big soft window key, a white-card bounce on the far side, a soft top
+ *       light and a gentle shadow-side kicker, tuned to the bar photos'
+ *       measured side ratio and shadow depth. The recommended listing default
+ *       for every toy (`HERO_PHOTO_LISTING`).
  */
-export const HERO_PHOTO_STYLES = ['v1', 'v2'] as const
+export const HERO_PHOTO_STYLES = ['v1', 'v2', 'v3'] as const
 export type HeroPhoto = (typeof HERO_PHOTO_STYLES)[number]
 
 export function isHeroPhoto(v: unknown): v is HeroPhoto {
@@ -137,8 +142,10 @@ export function isHeroPhoto(v: unknown): v is HeroPhoto {
  * `PHOTO_V2` in loom_render_crochet.py (checked by blenderScene.test.ts).
  */
 export interface HeroPhotoKnobs {
-  /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights. */
-  photoLight?: 'window' | 'stage'
+  /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights,
+   *  'soft' = the window rig with the soft listing light (`HERO_PHOTO_SOFT`
+   *  under any knob set alongside it; photo 'v3' turns it on). */
+  photoLight?: 'window' | 'stage' | 'soft'
   /** Key strength relative to the studio key at the piece (1.6). */
   photoKey?: number
   /** Key azimuth in degrees: 0 from the camera, 90 camera left, 180 behind;
@@ -226,6 +233,27 @@ export interface HeroPhotoKnobs {
    *  (cow-fable-1024g: higher puts the spot in the eye's upper half, the
    *  bar's). 22 = where it has always sat. */
   photoCatchElev?: number
+  // ---- soft-light knobs (soft-light-1027): the rig's fixed numbers made
+  // knobs, and the soft extras; all at today's value / off by default.
+  /** Fill azimuth on the far side, degrees from the camera (45). */
+  photoFillDeg?: number
+  /** Fill elevation, degrees (12). */
+  photoFillElev?: number
+  /** Fill size over the key distance (1.4): a big white-card bounce is ~2.4. */
+  photoFillSoft?: number
+  /** Rim size over the key distance (0.22). */
+  photoRimSoft?: number
+  /** A big soft overhead light (the sky over a window table), x the key; 0 = off. */
+  photoTop?: number
+  /** Its size over the key distance (2). */
+  photoTopSoft?: number
+  /** A soft kicker from behind on the SHADOW side, lifting the far contour
+   *  off the background, x the key; 0 = off. */
+  photoKick?: number
+  /** Its azimuth on the shadow side, degrees from the camera (140). */
+  photoKickDeg?: number
+  /** The AgX look; '' = the stage's own ('AgX - Medium High Contrast'). */
+  photoLook?: string
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -265,7 +293,44 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoRumple: 0,
   photoCatch: 0,
   photoCatchElev: 22,
+  photoFillDeg: 45,
+  photoFillElev: 12,
+  photoFillSoft: 1.4,
+  photoRimSoft: 0.22,
+  photoTop: 0,
+  photoTopSoft: 2,
+  photoKick: 0,
+  photoKickDeg: 140,
+  photoLook: '',
 }
+
+/** The soft listing light (`photoLight: 'soft'`, photo 'v3'), mirrored from
+ *  `PHOTO_SOFT` in the Python (parity test): placed under the knobs a scene
+ *  sets itself. Tuned on the cow and checked on the bunny (soft-light-1027)
+ *  to the bar photos' measured lighting (CUTE-RULES photo section). */
+export const HERO_PHOTO_SOFT: Readonly<HeroPhotoKnobs> = {
+  photoKey: 4,
+  photoKeyDeg: 70,
+  photoKeyElev: 22,
+  photoKeySoft: 2.2,
+  photoKeySpread: 120,
+  photoFill: 0.3,
+  photoFillDeg: 95,
+  photoFillElev: 35,
+  photoFillSoft: 2.4,
+  photoRim: 0.35,
+  photoRimSoft: 0.6,
+  photoTop: 0.2,
+  photoTopSoft: 2.6,
+  photoKick: 5,
+  photoKickDeg: 115,
+  photoAmbient: 0.9,
+  photoStudio: 0.15,
+  photoExposure: 0.75,
+}
+
+/** The recommended listing photo style for every toy (soft-light-1027). */
+export const HERO_PHOTO_LISTING: HeroPhoto = 'v3'
 
 /** Per-stage v2 framing when the view does not set `photoFrame` /
  *  `photoYawDeg`, mirrored from `PHOTO_FRAME_BY` / `PHOTO_YAW_BY` in the Python
@@ -327,7 +392,7 @@ export const HERO_PHOTO_STAGE3_STARTS: Partial<Record<HeroStage, HeroPhotoKnobs>
  */
 export function heroPhotoView(photo?: HeroPhoto, knobs?: HeroPhotoKnobs): { photo?: HeroPhoto } & HeroPhotoKnobs {
   const out: { photo?: HeroPhoto } & HeroPhotoKnobs = {}
-  if (photo === 'v2') out.photo = 'v2'
+  if (photo === 'v2' || photo === 'v3') out.photo = photo
   if (knobs) {
     for (const [k, v] of Object.entries(knobs)) {
       if (v !== undefined && k in HERO_PHOTO_V2_DEFAULTS) (out as Record<string, unknown>)[k] = v

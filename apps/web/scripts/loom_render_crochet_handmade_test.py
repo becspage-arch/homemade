@@ -173,5 +173,55 @@ class MemSaver(unittest.TestCase):
         self.assertEqual(alias, [st])
 
 
+class SoftLight(unittest.TestCase):
+    """soft-light-1027: the soft listing light (photoLight "soft" / photo "v3")."""
+
+    def test_v2_and_v1_unchanged(self):
+        # the new knobs sit at the rig's old fixed numbers, the extras off
+        for base in (R.PHOTO_V2, R.PHOTO_V1):
+            self.assertEqual((base["photoFillDeg"], base["photoFillElev"], base["photoFillSoft"], base["photoRimSoft"]),
+                             (45.0, 12.0, 1.4, 0.22))
+            self.assertEqual((base["photoTop"], base["photoKick"], base["photoLook"]), (0.0, 0.0, ""))
+        po = R.photo_opts({"photo": "v2", "stage": "windowsill"})
+        self.assertEqual(po["photoLight"], "window")
+        for k in R.PHOTO_SOFT:
+            if k in R.PHOTO_V2 and k not in ("photoFrame", "photoYawDeg"):
+                self.assertEqual(po[k], R.PHOTO_V2[k], k)
+        self.assertEqual(R.photo_opts({})["photoLight"], "stage")
+
+    def test_v3_is_v2_with_the_soft_light(self):
+        v2 = R.photo_opts({"photo": "v2", "stage": "windowsill"})
+        v3 = R.photo_opts({"photo": "v3", "stage": "windowsill"})
+        self.assertEqual(v3["photoLight"], "soft")
+        for k, v in v3.items():
+            if k == "photoLight":
+                continue
+            self.assertEqual(v, R.PHOTO_SOFT.get(k, v2[k]), k)
+        # every soft knob is a known knob
+        self.assertTrue(set(R.PHOTO_SOFT) <= set(R.PHOTO_V2))
+
+    def test_a_knob_the_view_sets_wins_over_the_preset(self):
+        po = R.photo_opts({"photo": "v3", "photoKey": 0.9, "photoKick": 0.0})
+        self.assertEqual((po["photoKey"], po["photoKick"]), (0.9, 0.0))
+        self.assertEqual(po["photoFill"], R.PHOTO_SOFT["photoFill"])
+        # the soft light on a v2 scene, and v3 asked back to the plain window rig
+        self.assertEqual(R.photo_opts({"photo": "v2", "photoLight": "soft"})["photoTop"], R.PHOTO_SOFT["photoTop"])
+        w = R.photo_opts({"photo": "v3", "photoLight": "window"})
+        self.assertEqual((w["photoLight"], w["photoTop"]), ("window", 0.0))
+
+    def test_soft_is_softer_than_v2(self):
+        # bigger sources, a brighter fill and room, a gentler tone curve
+        S, V = R.PHOTO_SOFT, R.PHOTO_V2
+        self.assertGreater(S["photoKeySoft"], 2 * V["photoKeySoft"])
+        self.assertGreater(S["photoFillSoft"], V["photoFillSoft"])
+        # the light that is not the key (bounce, top, kicker) carries more of it
+        self.assertGreater((S["photoFill"] + S["photoTop"] + S["photoKick"]) / S["photoKey"],
+                           (V["photoFill"] + V["photoTop"] + V["photoKick"]) / V["photoKey"])
+        self.assertGreater(S["photoAmbient"], V["photoAmbient"])
+        self.assertGreater(S["photoTop"], 0)
+        self.assertGreater(S["photoKick"], 0)
+        self.assertGreater(S["photoExposure"], V["photoExposure"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -10,6 +10,8 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import {
   HERO_PHOTO_FRAME_BY,
+  HERO_PHOTO_LISTING,
+  HERO_PHOTO_SOFT,
   HERO_PHOTO_STAGE3_KNOBS,
   HERO_PHOTO_STAGE3_STARTS,
   HERO_PHOTO_V2_DEFAULTS,
@@ -154,4 +156,54 @@ test('garland-v2-fix: v2 on the wall stage is straight on at the stage zoom; oth
   // the wall stays parallel to the hung piece; every other set still turns with
   // the camera (at yaw 0, every wall render so far, the frame is the same)
   assert.match(py, /root\.rotation_euler = \(0\.0, 0\.0, 0\.0 if stage == "wall" else yaw\)/)
+})
+
+test('soft-light-1027: the soft knobs sit at today\'s rig values / off in PHOTO_V2 and PHOTO_V1 (renders unchanged)', () => {
+  const here = dirname(fileURLToPath(import.meta.url))
+  const py = readFileSync(join(here, '../../../../scripts/loom_render_crochet.py'), 'utf8')
+  const parse = (name: string) => {
+    const m = py.match(new RegExp(`${name} = dict\\(([\\s\\S]*?)\\n\\)`))
+    assert.ok(m, `${name} missing in the Python`)
+    const kv: Record<string, unknown> = {}
+    for (const x of m![1]!.matchAll(/(photo\w+)=("[^"]*"|[-\d.]+|None)/g)) {
+      const raw = x[2]!
+      kv[x[1]!] = raw.startsWith('"') ? raw.slice(1, -1) : raw === 'None' ? null : Number(raw)
+    }
+    return kv
+  }
+  // the fixed numbers the rig had before they were knobs (fill at 45 / 12 deg,
+  // 1.4 r; rim 0.22 r) and the extras off, in both styles
+  const today = {
+    photoFillDeg: 45, photoFillElev: 12, photoFillSoft: 1.4, photoRimSoft: 0.22,
+    photoTop: 0, photoKick: 0, photoLook: '',
+  }
+  const v1 = parse('PHOTO_V1')
+  for (const [k, v] of Object.entries(today)) {
+    assert.equal(HERO_PHOTO_V2_DEFAULTS[k as keyof typeof HERO_PHOTO_V2_DEFAULTS], v, k)
+    assert.equal(v1[k], v, k)
+  }
+  // the extras are guarded so off = no light made, and the look only changes when set
+  assert.match(py, /if po\.get\("photoTop", 0\.0\) > 0:/)
+  assert.match(py, /if po\.get\("photoKick", 0\.0\) > 0:/)
+  assert.match(py, /if po\.get\("photoLook"\):/)
+  // PHOTO_SOFT matches the TS preset, and only names known knobs
+  assert.deepEqual(parse('PHOTO_SOFT'), { ...HERO_PHOTO_SOFT })
+  for (const k of Object.keys(HERO_PHOTO_SOFT)) assert.ok(k in HERO_PHOTO_V2_DEFAULTS, k)
+})
+
+test('soft-light-1027: photo v3 (the listing default) passes through; v2 scenes are unchanged', () => {
+  assert.equal(HERO_PHOTO_LISTING, 'v3')
+  assert.deepEqual(heroPhotoView('v3'), { photo: 'v3' })
+  assert.deepEqual(heroPhotoView('v3', { photoKey: 1.2 }), { photo: 'v3', photoKey: 1.2 })
+  assert.deepEqual(heroPhotoView(undefined, { photoLight: 'soft' }), { photoLight: 'soft' })
+  // v2 never gains a soft knob
+  const v2 = heroPhotoView('v2')
+  for (const k of Object.keys(HERO_PHOTO_SOFT)) assert.equal(k in v2, false, k)
+  const prog = { ...buildCowProgram({ ...COW_DEFAULTS, size: 'M', stage: 'windowsill' }), accessories: [] }
+  const cc = { yr: 0.3, placed: [], hair: [], embroidery: [], props: [], problems: [] } as unknown as Parameters<
+    typeof compositionScene
+  >[1]
+  const plain = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: undefined, photoKnobs: undefined }, cc)))
+  const v3 = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: 'v3' }, cc)))
+  assert.deepEqual(v3, { ...plain, view: { ...plain.view, photo: 'v3' } })
 })

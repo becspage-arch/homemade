@@ -2558,7 +2558,7 @@ def apply_stage(stage, scene, ctx):
         _world(scene, (0.98, 0.95, 0.90), 0.5)
     if po["photoRoom"]:
         _photo_room(root, scene, variant if variant in PHOTO_ROOM_BY else stage, po["photoRoom"])
-    if po["photoLight"] == "window":
+    if po["photoLight"] in ("window", "soft"):
         builder_lights = list(set_lights)
         _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene)
     if po["photoAmbient"] != 1.0 and scene.world:
@@ -2596,6 +2596,11 @@ def apply_stage(stage, scene, ctx):
     # Round 5: a touch more contrast and a warm golden grade (lifted warm
     # highlights, slightly cool-neutral shadows) over the AgX base look.
     scene.view_settings.look = view.get("stageLook", "AgX - Medium High Contrast")
+    if po.get("photoLook"):
+        try:
+            scene.view_settings.look = po["photoLook"]   # soft-light-1027: a gentler tone curve
+        except TypeError:
+            print("[photo] unknown look %r, kept %s" % (po["photoLook"], scene.view_settings.look))
     grade_golden(scene, _tune(view, stage, "warmth", "stageWarmth", STAGE_WARMTH.get(stage, 0.65)))
     if view.get("photo"):
         print("[photo]", view.get("photo"), " ".join("%s=%s" % (k[5:], v) for k, v in po.items()))
@@ -4145,6 +4150,34 @@ VARIANT_BUILDERS = {
 #   photoCatchElev  the catch-light's elevation above the camera axis, degrees
 #                   (cow-fable-1024g: higher puts the spot in the eye's upper
 #                   half, the bar's); 22 = where it has always sat      (22)
+#
+# SOFT LIGHT knobs (job soft-light-1027): the rig's hard-wired numbers made
+# knobs, plus the soft-light extras; every one is at today's value (or off) in
+# v2 and v1, so today's renders are unchanged.
+#   photoFillDeg    fill azimuth on the far side (deg from the camera)   (45)
+#   photoFillElev   fill elevation (deg)                                 (12)
+#   photoFillSoft   fill size / the key distance                         (1.4)
+#   photoRimSoft    rim size / the key distance                          (0.22)
+#   photoTop        a big soft overhead light (the sky / ceiling over a
+#                   window table), x the key at the piece; 0 = off       (0)
+#   photoTopSoft    its size / the key distance                          (2.0)
+#   photoKick       a soft kicker from behind on the SHADOW side: lifts the
+#                   far contour off the background (the bar cow's lit right
+#                   edge); x the key; 0 = off                            (0)
+#   photoKickDeg    its azimuth on the shadow side (deg from the camera) (140)
+#   photoLook       the AgX look; "" = the stage's own ("AgX - Medium High
+#                   Contrast", or view.stageLook)                        ("")
+#
+# photoLight "soft" (and photo "v3" = v2 with photoLight "soft", the
+# recommended listing default for every toy): PHOTO_SOFT below, under any
+# knob the view sets itself. A big soft window key (4x v2's source size, a
+# wide spread) 70 deg off the lens and low (22 deg, a window's light), a big
+# white-card bounce square to the far side (95 deg, a little high), a soft top light, a soft kicker from behind on
+# the shadow side that lifts the far contour, a brighter room ambient (the
+# bounce of a real room), +0.75 exposure, the catch-light kept. Tuned
+# (soft-light-1027, local + Fargate renders of the cow) to the bar photos'
+# measured ranges: head side ratio 1.3-2.0 (bar cow 1.8; v2 gave 19), the
+# shadow side's L* at least ~0.5 of the lit side's, the far contour lifted.
 PHOTO_STAGE3_OFF = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
@@ -4158,6 +4191,8 @@ PHOTO_V2 = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
+    photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
+    photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4170,6 +4205,17 @@ PHOTO_V1 = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
+    photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
+    photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
+)
+
+# photoLight "soft" / photo "v3" (soft-light-1027): the soft listing light.
+# Values are placed under the view's own knobs (a knob the view sets wins).
+PHOTO_SOFT = dict(
+    photoKey=4.0, photoKeyDeg=70.0, photoKeyElev=22.0, photoKeySoft=2.2, photoKeySpread=120.0,
+    photoFill=0.3, photoFillDeg=95.0, photoFillElev=35.0, photoFillSoft=2.4,
+    photoRim=0.35, photoRimSoft=0.6, photoTop=0.2, photoTopSoft=2.6, photoKick=5.0, photoKickDeg=115.0,
+    photoAmbient=0.9, photoStudio=0.15, photoExposure=0.75,
 )
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
@@ -4248,9 +4294,15 @@ _PHOTO = {}
 
 
 def photo_opts(view):
-    v2 = view.get("photo") == "v2"
+    v2 = view.get("photo") in ("v2", "v3")
     base = PHOTO_V2 if v2 else PHOTO_V1
     po = {k: view.get(k, v) for k, v in base.items()}
+    if view.get("photo") == "v3" and "photoLight" not in view:
+        po["photoLight"] = "soft"           # v3 = v2 with the soft listing light
+    if po["photoLight"] == "soft":
+        for k, v in PHOTO_SOFT.items():
+            if k not in view:
+                po[k] = v
     if v2 and "photoFrame" not in view:
         po["photoFrame"] = PHOTO_FRAME_BY.get(view.get("stage"), po["photoFrame"])
     if v2 and "photoYawDeg" not in view:
@@ -4353,10 +4405,24 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
         pass
     if po["photoFill"] > 0:
         side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
-        made.append(light(at(side * 45.0, 12.0, 1.1 * r), aim, po["photoFill"], 1.4 * r, (1.0, 0.97, 0.94)))
+        made.append(light(at(side * po["photoFillDeg"], po["photoFillElev"], 1.1 * r), aim, po["photoFill"],
+                          po["photoFillSoft"] * r, (1.0, 0.97, 0.94)))
     if po["photoRim"] > 0:
         side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
-        made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"], 0.22 * r, GOLD))
+        made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"],
+                          po["photoRimSoft"] * r, GOLD))
+    if po.get("photoTop", 0.0) > 0:
+        # soft-light-1027: the sky / ceiling over a window table, a big soft
+        # source nearly overhead (a touch toward the key and the lens), so the
+        # top of every round form is lit and the contact shadow is a soft pool
+        side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
+        made.append(light(at(side * 20.0, 78.0, 1.0 * r), aim, po["photoTop"], po["photoTopSoft"] * r, WARM_SOFT))
+    if po.get("photoKick", 0.0) > 0:
+        # soft-light-1027: a soft kicker from behind on the SHADOW side, so the
+        # far contour carries a thin warm edge and lifts off the background
+        side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
+        made.append(light(at(side * po["photoKickDeg"], 30.0, 0.8 * r), (0.0, 0.0, 0.6 * H), po["photoKick"],
+                          0.5 * r, WARM))
     if po.get("photoCatch", 0.0) > 0:
         # cow-fable-1024b: a small hard light just off the camera axis (a
         # touch to the key's side, above the eye line), glossy rays only, so
