@@ -95,6 +95,8 @@ export type CuteQuantity =
   | 'appendageThickness'
   | 'earRimMin'
   | 'muzzleLightness'
+  | 'curlPacking'
+  | 'fringeHeight'
   | 'limbThickness'
   | 'limbGap'
   | 'limbEndBulge'
@@ -139,6 +141,8 @@ export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
   appendageThickness: 'appendage base thickness as seen where it leaves the head / head width',
   earRimMin: 'thinnest ear rim as seen from the front / the ear\'s width beside the head (a plump rolled cup is thick all round)',
   muzzleLightness: 'muzzle L* on its own (a light cream, whatever the face)',
+  curlPacking: 'curl count x mean curl size squared / the fringe\'s front-view box area (1 = the curls tile their patch; a sparse ring of big loops reads under 0.7)',
+  fringeHeight: 'top of the fringe above the top of the head / head height (a cap hugs the head; a mound of loops stands up off it)',
   limbThickness: 'front leg or arm width / head width',
   limbGap: 'gap between the front legs / head width',
   limbEndBulge: 'paw / hoof width / limb width at mid-length (a chunky rounded end)',
@@ -630,6 +634,29 @@ export const CUTE_RULES: readonly CuteRule[] = [
     strictness: 'soft',
     measure: { kind: 'needs-code', what: 'L* of the muzzle on the render (part colourHex is a proxy: see proxyRanges)' },
   },
+  {
+    id: 'curls-packed',
+    what: 'A curly fringe is a dense cap of many small curls, not a sparse ring of big open loops.',
+    quantity: 'curlPacking',
+    ranges: { 'quadruped-seated': r(0.8, 1.8), 'biped-animal': r(0.8, 1.8), doll: r(0.8, 1.8) },
+    why: 'Rule-calib 1027: the mixed-curls rule (37) passed on 26 big open rings with the brown showing between them; the bar\'s fringe is 40-odd small rosettes packed edge to edge.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'loopBodies sizes (2 x radius of gyration) and count over the hair ctrl front-view box' },
+    carriesTo: ['flower-wall-hanging'],
+    estimated: true,
+  },
+  {
+    id: 'fringe-low',
+    what: 'The fringe lies on the head like a cap, its top not far above the crown of the head.',
+    quantity: 'fringeHeight',
+    ranges: { 'quadruped-seated': r(0.03, 0.13) },
+    why: 'Rule-calib 1027: our loops stood 0.18 H off the crown as a mound, which also buried the horns; the bar\'s cap is about 0.09 H deep.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: '(hair ctrl top z - head bounds top z) / head height' },
+    estimated: true,
+  },
 ]
 
 /** The bar toy each set of measurements came from (crochet-bar/proofs/cute-rules/measurements.json). */
@@ -654,6 +681,7 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
       earProtrusion: 0.34, earAboveEye: 0.137, earAspect: 1.0, earRimRatio: 2.8,
       appendageSagitta: 0.168, appendageBendDeg: 37.2, appendageElevationDeg: 41.8, appendageTaper: 0.56, appendageLength: 0.309,
       appendageTipBelowCrown: 0.019, appendageThickness: 0.147, earRimMin: 0.2, muzzleLightness: 65.9,
+      curlPacking: 1.1, fringeHeight: 0.09,
       limbThickness: 0.401, limbGap: 0.176, limbEndBulge: 1.15,
       sharpCorners: 1, straightRun: 0.223, headTiltDeg: 0, asymmetryCues: 1, curlSizeCV: 0.28,
     },
@@ -691,6 +719,7 @@ export const OURS_COW_1025R1: ToyMeasurement = {
     earProtrusion: 0.242, earAboveEye: 0.017, earAspect: 1.65, earRimRatio: 1.1,
     appendageSagitta: 0.019, appendageBendDeg: -4.3, appendageElevationDeg: 19.7, appendageTaper: 0.75, appendageLength: 0.374,
     appendageTipBelowCrown: 0.177, appendageThickness: 0.126, earRimMin: 0.08, muzzleLightness: 85.5,
+    curlPacking: 0.55, fringeHeight: 0.16,
     limbThickness: 0.369, limbGap: 0.204, limbEndBulge: 1.0,
     sharpCorners: 4, straightRun: 0.308, headTiltDeg: 0, asymmetryCues: 0, curlSizeCV: 0.08,
   },

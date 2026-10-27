@@ -182,6 +182,9 @@ export interface CowCuteFit {
   frontLegLift: number
   /** The coiled fringe's big and small curls (`coiledCurls`; HairPatch.coilMix). */
   coilMix?: HairPatch['coilMix']
+  /** The coiled fringe as a CAP of small packed curls (rule-calib 1027, rules
+   *  42-43): fields laid over cowCoils' (`coiledCurls` at a fine gauge only). */
+  fringe?: Partial<HairPatch>
   /** The head relaxed off the table (AmigurumiPart.offTable): round cheeks,
    *  where the table's flat turned to the side read as a straight cheek. */
   roundHead: boolean
@@ -684,7 +687,7 @@ const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
  *  short and round at the edge where they spill onto the forehead. */
-export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled = false, coilMix?: HairPatch['coilMix']): HairPatch {
+export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled = false, coilMix?: HairPatch['coilMix'], fit?: Partial<HairPatch>): HairPatch {
   // Five rounds at M (a circle ~60 mm across on the crown), loop stitch on
   // rounds 1, 3 and 5 and plain dc between: loops on every other round is
   // how a maker keeps a long-looped fringe from matting, and it is what lets
@@ -933,6 +936,8 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled 
     // The big curls on the inner rounds unless said (the edge round's curls
     // sit close along the rim and link when they grow: cow-fable-1025).
     ...(g > 1.15 && coiled && coilMix ? { coilMix: { ...coilMix, rounds: coilMix.rounds ?? cowCoils(rounds).faceRounds } } : {}),
+    // Rule-calib 1027: the cute path's cap of small packed curls (CowCuteFit.fringe).
+    ...(g > 1.15 && coiled && fit ? fit : {}),
   }
 }
 
@@ -1262,7 +1267,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     parts,
     props,
     embroidery: cowNostrils(s.muzzle, fd, g, nostrilScale),
-    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix)],
+    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +

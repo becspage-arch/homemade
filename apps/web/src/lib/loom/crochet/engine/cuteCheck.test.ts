@@ -240,18 +240,18 @@ function r1Measurement(): CuteMeasurement {
   return { family: 'quadruped-seated', familyFrom: 'program', values: { ...OURS_COW_1025R1.values }, source, absent: {}, W: 1, H: 1, T: 1, notes: [] }
 }
 
-test('the check: the r1 photo numbers fail the 23 rules step 1 pinned (and 3 of rule-calib 1027\'s), in plain words', () => {
+test('the check: the r1 photo numbers fail the 23 rules step 1 pinned (and 5 of rule-calib 1027\'s), in plain words', () => {
   const rep = cuteCheck(r1Measurement())
   const fails = rep.results.filter((r) => !r.pass).map((r) => r.n).sort((a, b) => a - b)
   // 38 (tip 0.18 H under the crown), 40 (a one-yarn rim), 41 (a white muzzle); 39 passes (base 0.126 W).
-  assert.deepEqual(fails, [2, 3, 5, 7, 8, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 33, 34, 36, 37, 38, 40, 41])
+  assert.deepEqual(fails, [2, 3, 5, 7, 8, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 33, 34, 36, 37, 38, 40, 41, 42, 43])
   const eyes = rep.results.find((r) => r.id === 'eyes-wide-apart')!
   assert.equal(eyes.line, 'eyes too close: 0.47 of the head width, want 0.55-0.70')
   assert.equal(eyes.strictness, 'hard')
   // Hard first in the failure list.
   assert.match(rep.failures[0]!, /\(rule \d+, hard/)
   assert.equal(rep.blocking.length, 0, 'no gate, nothing blocks')
-  assert.match(rep.summary, /^quadruped-seated: 10 \/ 36 pass; hard fails 5, 13, 21, 24/)
+  assert.match(rep.summary, /^quadruped-seated: 10 \/ 38 pass; hard fails 5, 13, 21, 24/)
   // Every rule ranged for the family is reported: measured or not.
   const ranged = CUTE_RULES.filter((r) => r.ranges['quadruped-seated']).length
   assert.equal(rep.results.length + rep.notMeasured.length, ranged)
@@ -265,8 +265,8 @@ test('the gate blocks hard and firm geometry failures; soft and colour proxies o
     assert.notEqual(r.strictness, 'soft', `rule ${n} is soft`)
     assert.notEqual(r.source, 'proxy', `rule ${n} is a colour proxy`)
   }
-  // 9, 14, 15, 31, 41 (soft) and nothing else of the 26 are left out.
-  assert.deepEqual(blockedRules, [2, 3, 5, 7, 8, 13, 18, 19, 20, 21, 24, 25, 26, 27, 28, 33, 34, 36, 37, 38, 40])
+  // 9, 14, 15, 31, 41 (soft) and nothing else of the 28 are left out.
+  assert.deepEqual(blockedRules, [2, 3, 5, 7, 8, 13, 18, 19, 20, 21, 24, 25, 26, 27, 28, 33, 34, 36, 37, 38, 40, 42, 43])
   assert.ok(rep.blocking.every((l) => l.startsWith('cute: ')))
 })
 

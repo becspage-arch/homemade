@@ -21,7 +21,7 @@ import { CUTE_RULES, type CuteRange, type CuteRule, type Strictness, type ToyFam
 import { measureCute, type CuteMeasurement, type CuteSource } from './cuteMeasure'
 
 export interface CuteRuleResult {
-  /** The rule's number in CUTE-RULES.md (1-41). */
+  /** The rule's number in CUTE-RULES.md (1-43). */
   n: number
   id: string
   strictness: Strictness
@@ -98,6 +98,8 @@ const WORDS: Record<string, { low: string; high: string; unit: string }> = {
   'appendage-clears-crown': { low: 'horns tower over the crown', high: 'horn tips hidden below the crown of the curls', unit: 'of the head height below the crown' },
   'appendage-slender': { low: 'horns too thin where they leave the head', high: 'horns a fat wedge where they leave the head', unit: 'of the head width' },
   'ear-rim-thick': { low: 'ear rim a thin edge somewhere round the hollow', high: 'ear rim so thick the hollow closes', unit: 'thinnest rim / ear width' },
+  'curls-packed': { low: 'curls sparse: big open loops with the head showing between', high: 'curls crammed', unit: 'curl area / fringe area' },
+  'fringe-low': { low: 'fringe pressed flat', high: 'fringe stands up off the head as a mound', unit: 'of the head height above the crown' },
   'muzzle-light': { low: 'muzzle too dark (an oatmeal, not a cream)', high: 'muzzle too light (white)', unit: 'L* (yarn hex, a proxy: want the hex range)' },
 }
 

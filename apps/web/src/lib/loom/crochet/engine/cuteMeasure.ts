@@ -864,7 +864,12 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     const sd = Math.sqrt(sizes.reduce((a, x) => a + (x - mean) ** 2, 0) / sizes.length)
     curlCV = sd / mean
     set('curlSizeCV', curlCV, 'geometry')
-  } else miss('curlSizeCV', 'no curly fringe or mane')
+    // Rule-calib 1027: how densely the curls tile their patch (42), and how
+    // far the fringe stands off the head (43).
+    const hx = ext(c.hair.flatMap((h) => h.ctrl))
+    set('curlPacking', (sizes.length * mean * mean) / ((hx.u1 - hx.u0) * (hx.z1 - hx.z0)), 'geometry')
+    set('fringeHeight', (hairTop - he.z1) / H, 'geometry')
+  } else { for (const q of ['curlSizeCV', 'curlPacking', 'fringeHeight'] as const) miss(q, 'no curly fringe or mane') }
 
   // ── deliberate asymmetries (rule 36), read off the program and its pieces ──
   {

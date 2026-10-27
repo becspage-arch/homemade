@@ -3916,6 +3916,32 @@ family (was 19). All opt-in; absent = byte-identical programs and every preset h
   table, and the side-to-side head wore the table's flat as a straight cheek (rule 34 found it once the ears moved).
 - Render: `photoBunchStand` (0 = off, pixel-identical): the dried bunch tied, stood up and leaning beside the toy.
 
+
+## 8u. CALIBRATING THE CUTE RULES BY EYE — rules 38-43, the horn law, the cute cream (2026-10-27)
+
+Job log `crochet-bar/jobs/rule-calib-1027.md`; the rules in `CUTE-RULES.md` and `cuteRules.ts`. The cow passed all
+32 rules it had pieces for and the eye still saw nubs for horns, an oatmeal muzzle, thin ears and a mound of big
+loops. Every change is a rule, a measure, or a cute-path engine default; every preset hash is unchanged (cow M
+e3a65b10).
+
+- RULES 38-43: `appendage-clears-crown` (horn tip within -0.15..0.08 H of the crown), `appendage-slender` (base as
+  seen 0.10-0.20 W), `ear-rim-thick` (thinnest rim / ear width 0.12-0.35; needs a `rolled-rim-cup` shape the
+  engine lacks: a rolled-rim cup pinched and sewn by its pinch), `muzzle-light` (muzzle L* 60-78), `curls-packed`
+  (count x size^2 / fringe box 0.8-1.8) and `fringe-low` (fringe top 0.03-0.13 H above the head).
+- COLOUR PROXIES get `proxyRanges` (hex-space ranges the check uses for a proxy-sourced value), calibrated on two
+  renders: #ead9bf (hex L* 87, b* 15) rendered 85 / 10, #c8ad8b (72, 21) rendered 61 / 28; the bar's muzzle is
+  66-68 / 19. Rule 15 hex b* 10-18, rule 41 hex L* 75-84.
+- MEASURE: the taper (27) is read at 5% / 95% along the visible line, as the photo read the bar's horn; the horn
+  tip is the visible centre line's end plus its tip allowance.
+- ENGINE DEFAULTS (cute path only): `cuteHornCounts` (tip 4, base 0.16 x and length 0.19 x the head's widest round,
+  plump 1.6, a 50 deg curl) with the root high on the crown's sides (`CowCuteFit.hornDir` {0.6, 0.12, 0.82});
+  `CUTE_CREAM_HEX` #d6bfa4 as the contrast colour while the scene keeps the preset's; `CowCuteFit.earCup`,
+  `earCupAim` (the cute fit now places and pinches the cup ear too) and `fringe` (fields over `cowCoils`).
+- MEASURED ON THE COW (hash c7130743, rendered): horn base 0.19 W, tip at the crown, rise 47 deg, taper 0.63,
+  visible arc 0.356 W (rule 28's 0.35: the law's known 0.006 miss inside the read's +-0.03 spread); the muzzle
+  renders L* 66-68. Still failing, said: 40 (the ear shape), 42-43 (a packed cap trips the coil audit's linking
+  check, and the fringe's height did not move with loop length, gravity or faceDir: the hair relax is the lever).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
