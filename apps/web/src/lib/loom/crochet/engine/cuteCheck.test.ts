@@ -108,7 +108,8 @@ test('centre line: a straight cone is straight, level, and tapers as built', () 
   near(sh.sagitta, 0, 0.01, 'sagitta'); near(sh.bendDeg, 0, 1, 'bend'); near(sh.elevationDeg, 0, 1, 'elevation')
   // Thickness as seen = 2 r: r(0.85) / r(0.15) of the worked radius, give or
   // take the window's partial round.
-  near(sh.taper, (10 - 5 * 0.85) / (10 - 5 * 0.15), 0.06, 'taper')
+  // Rule-calib 1027: read at the ends (5% / 95%), as the photo read the bar's horn.
+  near(sh.taper, (10 - 5 * 0.95) / (10 - 5 * 0.05), 0.06, 'taper')
 })
 
 test('centre line: a quarter-circle tube has its known sagitta, bend and rise', () => {
@@ -228,26 +229,29 @@ test('family from the pieces', () => {
   assert.equal(fam(['body', 'head']), null)
 })
 
-/** Our r1 cow's photo numbers as a measurement (colour rules as proxies). */
+/** Our r1 cow's photo numbers as a measurement (the colour rules without a
+ *  hex range as proxies; the muzzle's warmth and lightness are photo reads
+ *  here, so they are checked against the photo ranges). */
 function r1Measurement(): CuteMeasurement {
   const source: CuteMeasurement['source'] = {}
   for (const q of Object.keys(OURS_COW_1025R1.values) as CuteQuantity[]) {
-    source[q] = ['eyeFaceDeltaL', 'muzzleFaceDeltaL', 'muzzleWarmthB', 'blushDeltaA'].includes(q) ? 'proxy' : 'geometry'
+    source[q] = ['eyeFaceDeltaL', 'muzzleFaceDeltaL', 'blushDeltaA'].includes(q) ? 'proxy' : 'geometry'
   }
   return { family: 'quadruped-seated', familyFrom: 'program', values: { ...OURS_COW_1025R1.values }, source, absent: {}, W: 1, H: 1, T: 1, notes: [] }
 }
 
-test('the check: the r1 photo numbers fail the 23 rules step 1 pinned, in plain words', () => {
+test('the check: the r1 photo numbers fail the 23 rules step 1 pinned (and 3 of rule-calib 1027\'s), in plain words', () => {
   const rep = cuteCheck(r1Measurement())
   const fails = rep.results.filter((r) => !r.pass).map((r) => r.n).sort((a, b) => a - b)
-  assert.deepEqual(fails, [2, 3, 5, 7, 8, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 33, 34, 36, 37])
+  // 38 (tip 0.18 H under the crown), 40 (a one-yarn rim), 41 (a white muzzle); 39 passes (base 0.126 W).
+  assert.deepEqual(fails, [2, 3, 5, 7, 8, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 33, 34, 36, 37, 38, 40, 41])
   const eyes = rep.results.find((r) => r.id === 'eyes-wide-apart')!
   assert.equal(eyes.line, 'eyes too close: 0.47 of the head width, want 0.55-0.70')
   assert.equal(eyes.strictness, 'hard')
   // Hard first in the failure list.
   assert.match(rep.failures[0]!, /\(rule \d+, hard/)
   assert.equal(rep.blocking.length, 0, 'no gate, nothing blocks')
-  assert.match(rep.summary, /^quadruped-seated: 9 \/ 32 pass; hard fails 5, 13, 21, 24/)
+  assert.match(rep.summary, /^quadruped-seated: 10 \/ 36 pass; hard fails 5, 13, 21, 24/)
   // Every rule ranged for the family is reported: measured or not.
   const ranged = CUTE_RULES.filter((r) => r.ranges['quadruped-seated']).length
   assert.equal(rep.results.length + rep.notMeasured.length, ranged)
@@ -261,8 +265,8 @@ test('the gate blocks hard and firm geometry failures; soft and colour proxies o
     assert.notEqual(r.strictness, 'soft', `rule ${n} is soft`)
     assert.notEqual(r.source, 'proxy', `rule ${n} is a colour proxy`)
   }
-  // 9, 14, 15, 31 (soft) and nothing else of the 23 are left out.
-  assert.deepEqual(blockedRules, [2, 3, 5, 7, 8, 13, 18, 19, 20, 21, 24, 25, 26, 27, 28, 33, 34, 36, 37])
+  // 9, 14, 15, 31, 41 (soft) and nothing else of the 26 are left out.
+  assert.deepEqual(blockedRules, [2, 3, 5, 7, 8, 13, 18, 19, 20, 21, 24, 25, 26, 27, 28, 33, 34, 36, 37, 38, 40])
   assert.ok(rep.blocking.every((l) => l.startsWith('cute: ')))
 })
 

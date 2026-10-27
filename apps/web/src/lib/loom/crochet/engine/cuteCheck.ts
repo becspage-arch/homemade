@@ -21,7 +21,7 @@ import { CUTE_RULES, type CuteRange, type CuteRule, type Strictness, type ToyFam
 import { measureCute, type CuteMeasurement, type CuteSource } from './cuteMeasure'
 
 export interface CuteRuleResult {
-  /** The rule's number in CUTE-RULES.md (1-37). */
+  /** The rule's number in CUTE-RULES.md (1-41). */
   n: number
   id: string
   strictness: Strictness
@@ -95,6 +95,10 @@ const WORDS: Record<string, { low: string; high: string; unit: string }> = {
   'gentle-tilt': { low: '(unreachable)', high: 'head tilted too far', unit: 'degrees' },
   'one-asymmetry': { low: 'perfectly mirrored: no deliberate asymmetry', high: 'too many asymmetries', unit: 'cues' },
   'curls-mixed': { low: 'curls all one size (a stamp)', high: 'curl sizes too scattered', unit: 'std / mean of curl size' },
+  'appendage-clears-crown': { low: 'horns tower over the crown', high: 'horn tips hidden below the crown of the curls', unit: 'of the head height below the crown' },
+  'appendage-slender': { low: 'horns too thin where they leave the head', high: 'horns a fat wedge where they leave the head', unit: 'of the head width' },
+  'ear-rim-thick': { low: 'ear rim a thin edge somewhere round the hollow', high: 'ear rim so thick the hollow closes', unit: 'thinnest rim / ear width' },
+  'muzzle-light': { low: 'muzzle too dark (an oatmeal, not a cream)', high: 'muzzle too light (white)', unit: 'L* (yarn hex, a proxy: want the hex range)' },
 }
 
 /** One plain line for a failed rule. */
@@ -117,17 +121,21 @@ export function cuteCheck(m: CuteMeasurement, gate = false): CuteReport {
   const notMeasured: CuteReport['notMeasured'] = []
   if (m.family) {
     CUTE_RULES.forEach((rule, i) => {
-      const range = rule.ranges[m.family!]
-      if (!range) return
+      const photoRange = rule.ranges[m.family!]
+      if (!photoRange) return
       const value = m.values[rule.quantity]
       if (value == null) {
         notMeasured.push({ n: i + 1, id: rule.id, why: m.absent[rule.quantity] ?? 'not measured' })
         return
       }
+      const source = m.source[rule.quantity] ?? 'geometry'
+      // A yarn-hex proxy is checked against the rule's hex range where it has
+      // one (cuteRules.ts `proxyRanges`): the photo range is for the render.
+      const range = (source === 'proxy' && rule.proxyRanges?.[m.family!]) || photoRange
       const pass = value >= range.min && value <= range.max
       results.push({
         n: i + 1, id: rule.id, strictness: rule.strictness, value, range, pass,
-        source: m.source[rule.quantity] ?? 'geometry',
+        source,
         ...(pass ? {} : { line: cuteFailureLine(rule, value, range) }),
       })
     })

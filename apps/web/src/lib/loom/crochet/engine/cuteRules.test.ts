@@ -70,6 +70,8 @@ const OURS_SHOULD_FAIL = [
   'appendage-curved', 'appendage-bend', 'appendage-rises', 'appendage-tapers', 'appendage-short',
   'limb-ends-rounded', 'no-sharp-corners', 'no-straight-edges',
   'one-asymmetry', 'curls-mixed',
+  // rule-calib 1027: horn tips under the crown, a one-yarn ear rim, a white muzzle (the base is slender: 39 passes).
+  'appendage-clears-crown', 'ear-rim-thick', 'muzzle-light',
 ].sort()
 
 test('our cow-fable-1025 r1 cow fails where it should, and only there', () => {

@@ -157,8 +157,23 @@ export interface CowCuteFit {
   earDir: Dir
   earAim: Dir
   earFace: Dir
-  /** The curved horn's defaults (`curvedHorns: true`; over COW_CURVED_HORN). */
-  horn: Partial<CurvedHornOptions>
+  /** The ear's soft cup above the pinch (0..1; absent = COW_FOLD_EAR's). */
+  earCup?: number
+  /** A cupped ear's bowl axis (`cuppedEars` without `foldedEars`; absent =
+   *  CUP_EAR_AIM): where the open rim faces. */
+  earCupAim?: Dir
+  /** The curved horn's defaults (`curvedHorns: true`; over COW_CURVED_HORN).
+   *  Absent = THE HORN LAW (`cuteHornCounts`, rule-calib 1027): the counts
+   *  follow the head's widest round so the horn is slender where it leaves
+   *  the head (rule 39) and long enough to reach the crown (rule 38). */
+  horn?: Partial<CurvedHornOptions>
+  /** Where the horn's root sits on the head (HORN_DIR's stand-in): high on
+   *  the crown's sides, so the tip stands clear of the fringe (rule 38). */
+  hornDir: Dir
+  /** The contrast cream for the cute path (`contrastHex`'s stand-in while it
+   *  is the preset default): a light warm ivory that renders like the bar's
+   *  (rules 15 and 41's hex ranges), not the oatmeal of cow-cute-1027. */
+  creamHex: string
   /** The tapered front leg's defaults (`taperedLegs: true`; over
    *  COW_TAPERED_LEG), where it is sewn (FRONT_LEG_DIR's stand-in) and its
    *  drop onto the table (mm, in place of TAPERED_LEG_LIFT). */
@@ -207,9 +222,38 @@ export interface TaperedLegOptions {
  *  at S / M / L, gauge 1). */
 export const COW_TAPERED_LEG: TaperedLegOptions = { foot: 11, top: 7 }
 
+/**
+ * THE HORN LAW (rule-calib 1027): a horn's counts from the head it sits on,
+ * for any toy with horns. The bar's horn is slender where it leaves the head
+ * (0.147 of the head width, rule 39: 0.10-0.20) and tapers to a point (tip /
+ * base 0.56, rule 27), and its tip reaches the crown of the curls (rule 38).
+ * The head's widest round is pi x the head's width in stitches, so a base of
+ * 0.16 W is 0.16 x that round; the tip is the 4-stitch point; the length is
+ * 0.19 x the round (measured on the cow: 0.356 W of visible arc against rule
+ * 28's 0.35, a 0.006 miss inside the read's own +-0.03 spread; a round
+ * shorter read 0.32-0.37 and lost the bend or the taper). cow-cute-1027's hand numbers
+ * {tip 5, widest 12, length 5, plump 1.2} made a short fat wedge (base 0.28
+ * W) that passed every horn rule and read as a nub.
+ */
+export function cuteHornCounts(headWidest: number): Pick<CurvedHornOptions, 'tip' | 'widest' | 'length' | 'plump' | 'angleDeg'> {
+  const tip = 4
+  // Plump 1.6: the horn widens fast behind the point, so the part the lens
+  // sees past the fringe still tapers (rule 27 read at the ends: 0.63) while
+  // the slender middle is what leaves the hair (rule 39: 0.19 W). A 50 deg
+  // curl: at 70 the visible, up-curled half rose 70 deg (rule 26's 30-65).
+  return { tip, widest: Math.max(tip + 3, Math.round(0.16 * headWidest)), length: Math.max(5, Math.round(0.19 * headWidest)), plump: 1.6, angleDeg: 50 }
+}
+
+/** A light warm ivory for the cute path's contrast pieces (rule-calib 1027):
+ *  hex L* 79, b* 17, inside rules 41 and 15's hex ranges (75-84, 10-18),
+ *  between the near-white #ead9bf (87, 15; rendered white) and cow-cute-
+ *  1027's oatmeal #c8ad8b (72, 21; rendered a dull dark oatmeal). */
+export const CUTE_CREAM_HEX = '#d6bfa4'
+
 /** The cute numbers (cow-cute-1027), measured with the cute check on the
  *  fine-gauge listing calf (folded ears, curved horns, tapered legs, coiled
- *  curls); see `CowChoices.cuteFit` and jobs/cow-cute-1027.md. */
+ *  curls); see `CowChoices.cuteFit` and jobs/cow-cute-1027.md. Rule-calib
+ *  1027: the horn from the law above, its root higher, the cream lighter. */
 export const COW_CUTE_FIT: CowCuteFit = {
   eyeDir: { x: 0.65, y: 1, z: 0.16 },
   muzzleDir: { x: 0, y: 1, z: -0.62 },
@@ -217,7 +261,10 @@ export const COW_CUTE_FIT: CowCuteFit = {
   earDir: { x: 1, y: 0.04, z: 0.42 },
   earAim: { x: 0.9, y: 0.42, z: 0.05 },
   earFace: { x: 0.35, y: 1, z: 0.25 },
-  horn: { tip: 5, widest: 12, length: 5, plump: 1.2 },
+  // High on the crown's sides (HORN_DIR {0.78, 0.1, 0.72} rooted the horn
+  // 0.21 H above the eyes, the bar's 0.37): the tip reaches the crown (38).
+  hornDir: { x: 0.6, y: 0.12, z: 0.82 },
+  creamHex: CUTE_CREAM_HEX,
   leg: { foot: 15, top: 12 },
   frontLegDir: { x: 0.68, y: 0.95, z: 0.5 },
   frontLegLift: -2.97,
@@ -952,7 +999,7 @@ const FOLD_EAR_FACE = { x: 0.35, y: 1, z: 0.25 }
 /** One folded ear (`COW_FOLD_EAR`), sewn by its pinched base. */
 function cowFoldEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1, cf?: CowCuteFit): AmigurumiPart {
   const DIR = cf?.earDir ?? FOLD_EAR_DIR, AIM = cf?.earAim ?? FOLD_EAR_AIM, FACE = cf?.earFace ?? FOLD_EAR_FACE
-  const ear = cf ? { ...COW_FOLD_EAR[choices.size], width: cf.earWidth, ...(cf.earPinch != null ? { pinch: cf.earPinch } : {}) } : COW_FOLD_EAR[choices.size]
+  const ear = cf ? { ...COW_FOLD_EAR[choices.size], width: cf.earWidth, ...(cf.earPinch != null ? { pinch: cf.earPinch } : {}), ...(cf.earCup != null ? { cup: cf.earCup } : {}) } : COW_FOLD_EAR[choices.size]
   return foldedPart(gFolded(ear, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
@@ -973,8 +1020,11 @@ function cowFoldEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 
  *  round 31 ear is, the open bowl turned forward and out along the same aim
  *  so the lens looks into the hollow, and turned about that axis so the
  *  pinched base (the piece's local -y) points down and in toward the head. */
-function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1): AmigurumiPart {
-  const aim = fd({ x: side * CUP_EAR_AIM.x, y: CUP_EAR_AIM.y, z: CUP_EAR_AIM.z })
+function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1, cf?: CowCuteFit): AmigurumiPart {
+  // Rule-calib 1027: the cute fit's ear place and pinch apply to whichever
+  // ear piece is chosen (the folded disc or this cup).
+  const AIM = cf?.earCupAim ?? CUP_EAR_AIM, DIR = cf?.earDir ?? CUP_EAR_DIR
+  const aim = fd({ x: side * AIM.x, y: AIM.y, z: AIM.z })
   // poleIn: the piece's +z points back along the aim. The spin names where
   // local +x looks: +x = (+y) × (+z), with +y up and out (the base down-in).
   const w = norm({ x: -aim.x, y: -aim.y, z: -aim.z })
@@ -984,14 +1034,14 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
   // ear). cow-fable-1023b r1, Rebecca's call: the bar's inner ear is the
   // SAME brown, lit, so the cup is self-coloured and aimed at the key
   // (CUP_EAR_AIM) instead.
-  const cup = COW_CUP_EAR[choices.size]
+  const cup = { ...COW_CUP_EAR[choices.size], ...(cf?.earPinch != null ? { pinch: cf.earPinch } : {}) }
   return earPart(gEar(cup, g), {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
     sewNote: 'by its back (the magic ring) on the sides of the head level with the brow, just below the horns, the pinch at the bottom, the open cup turned forward and out so you look into the hollow',
     place: {
       on: 'head',
-      dir: fd({ x: side * CUP_EAR_DIR.x, y: CUP_EAR_DIR.y, z: CUP_EAR_DIR.z }),
+      dir: fd({ x: side * DIR.x, y: DIR.y, z: DIR.z }),
       aim,
       spin,
       seat: 6, poleIn: true, surfaceFit: 'ellipsoid',
@@ -1063,9 +1113,10 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     stitches: Math.max(...s.muzzle) / Math.max(...plainMuzzle),
   }
   const main = choices.mainHex
-  const cream = choices.contrastHex
   const fd = (d: Dir): Dir => faceDir(d)
   const cf = cowCuteFit(choices, g)
+  // The cute path's cream, unless the scene chose its own contrast colour.
+  const cream = cf && choices.contrastHex === COW_DEFAULTS.contrastHex ? cf.creamHex : choices.contrastHex
 
   const parts: AmigurumiPart[] = [
     { name: 'body', stitch: 'sc', rounds: s.body, colourHex: main, place: { on: 'ground' } },
@@ -1097,7 +1148,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
         joinWords: 'Sew the horns to the head by the open end, high on each side of the crown either side of the fringe, pointing out to the side with the htr (the outside of the curve) underneath, so the tip curls up; top up the light stuffing as you close the seam, never packed hard.',
         place: {
           on: 'head',
-          dir: fd({ x: side * HORN_DIR.x, y: HORN_DIR.y, z: HORN_DIR.z }),
+          dir: fd({ x: side * (cf?.hornDir ?? HORN_DIR).x, y: (cf?.hornDir ?? HORN_DIR).y, z: (cf?.hornDir ?? HORN_DIR).z }),
           aim: fd({ x: side * CURVED_HORN_AIM.x, y: CURVED_HORN_AIM.y, z: CURVED_HORN_AIM.z }),
           // The curl's inside (local +x) up, a touch forward: the tip curls up.
           spin: fd(CURVED_HORN_CURL),
@@ -1120,7 +1171,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   if (choices.foldedEars) {
     for (const side of [-1, 1] as const) parts.push(cowFoldEar(choices, side, fd, g, cf))
   } else if (choices.cuppedEars) {
-    for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd, g))
+    for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd, g, cf))
   } else for (const side of [-1, 1] as const) {
     parts.push({
       name: side < 0 ? 'ear-l' : 'ear-r', stitch: 'sc', rounds: s.ear, colourHex: main,
@@ -1225,7 +1276,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
  *  gauge g, or undefined when the straight cone is asked for. */
 function cowCurvedHorn(choices: CowChoices, g: number, cf?: CowCuteFit): ReturnType<typeof planBend>['spec'] | undefined {
   if (!choices.curvedHorns) return undefined
-  const o = { ...COW_CURVED_HORN, ...cf?.horn, ...(choices.curvedHorns === true ? {} : choices.curvedHorns) }
+  const o = { ...COW_CURVED_HORN, ...(cf ? cf.horn ?? cuteHornCounts(Math.max(...PROFILES[choices.size].head)) : {}), ...(choices.curvedHorns === true ? {} : choices.curvedHorns) }
   // The point stays a 5-stitch ring at any gauge (gCone's rule); the base and
   // the length are g x, so the horn is the same size in mm.
   const rounds = taperRounds(o.tip, Math.max(o.tip + 1, Math.round(o.widest * g)), Math.max(4, Math.round(o.length * g)), o.plump)

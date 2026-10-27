@@ -416,7 +416,11 @@ export function centreLineShape(cl: CentreLine, proj: (p: V3) => P3, yr: number)
     elevationDeg: deg(Math.atan2(dz, Math.abs(du))),
     // The last ring's centroid is a ring radius and a yarn short of the tip.
     arcMm: L2 + yr + cl.radius[cl.radius.length - 1]!,
-    taper: thickAt(0.85) / thickAt(0.15),
+    // Rule-calib 1027: read at the ENDS (5% / 95%), as the photo read the
+    // bar's horn (base 45 px where it leaves the fringe, tip 25 px just
+    // under its rounded end). At 15% / 85% a yarn-thick 4-stitch tip could
+    // never show the bar's 0.56 against a slender base.
+    taper: thickAt(0.95) / thickAt(0.05),
     thickAt,
   }
 }
@@ -434,7 +438,7 @@ export function centreLineShape(cl: CentreLine, proj: (p: V3) => P3, yr: number)
  * pinched ear reads 2-4. Null when no opening shows from the front (a closed
  * or pressed-flat ear, or one seen edge-on).
  */
-export function earRimRatio(pts: P3[], yr: number, cell: number): { ratio: number; openingFrac: number } | null {
+export function earRimRatio(pts: P3[], yr: number, cell: number): { ratio: number; openingFrac: number; minRimMm: number } | null {
   if (pts.length < 20) return null
   let u0 = Infinity, u1 = -Infinity, z0 = Infinity, z1 = -Infinity
   for (const p of pts) { u0 = Math.min(u0, p.u); u1 = Math.max(u1, p.u); z0 = Math.min(z0, p.z); z1 = Math.max(z1, p.z) }
@@ -517,7 +521,7 @@ export function earRimRatio(pts: P3[], yr: number, cell: number): { ratio: numbe
   if (sm.length < BINS / 2) return null
   const hi = Math.max(...sm)
   const lo = Math.max(Math.min(...sm), yr)
-  return { ratio: hi / lo, openingFrac: bestN / area }
+  return { ratio: hi / lo, openingFrac: bestN / area, minRimMm: lo }
 }
 
 function fitPlane(xs: number[], ys: number[], ws: number[]): (x: number, y: number) => number {
@@ -710,6 +714,7 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     const ml = hexToLab(muzzle.part.colourHex)
     set('muzzleFaceDeltaL', ml[0] - faceLab[0], 'proxy')
     set('muzzleWarmthB', ml[2], 'proxy')
+    set('muzzleLightness', ml[0], 'proxy')
   }
   const blush = c.embroidery.filter((e) => /^(blush|cheek)/.test(e.name))
   if (blush.length) {
@@ -720,7 +725,7 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
 
   // ── the ears ──
   if (ears.length) {
-    const prot: number[] = [], above: number[] = [], aspect: number[] = [], lens: number[] = [], widths: number[] = [], rims: number[] = []
+    const prot: number[] = [], above: number[] = [], aspect: number[] = [], lens: number[] = [], widths: number[] = [], rims: number[] = [], rimMins: number[] = []
     for (const ear of ears) {
       const e = ext(ear.ctrl)
       const left = (e.u0 + e.u1) / 2 < midU
@@ -734,7 +739,7 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       lens.push((e.z1 - e.z0) / H)
       widths.push((e.u1 - e.u0) / W)
       const rim = earRimRatio(ear.ctrl.map(proj), yr, W / HEAD_PX)
-      if (rim) rims.push(rim.ratio)
+      if (rim) { rims.push(rim.ratio); rimMins.push(rim.minRimMm / Math.max(ow, e.u1 - e.u0)) }
     }
     const mean = (a: number[]): number => a.reduce((s, x) => s + x, 0) / a.length
     set('earProtrusion', mean(prot) / W, 'geometry')
@@ -748,10 +753,10 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       set('earLength', mean(lens), 'geometry')
       set('earWidth', mean(widths), 'geometry')
     } else { miss('earLength', 'the ears are not lops'); miss('earWidth', 'the ears are not lops') }
-    if (rims.length) set('earRimRatio', mean(rims), 'geometry')
-    else { set('earRimRatio', 1, 'geometry'); notes.push('ears: no opening shows from the front (a closed or flat ear), rim read as uniform (1.0)') }
+    if (rims.length) { set('earRimRatio', mean(rims), 'geometry'); set('earRimMin', mean(rimMins), 'geometry') }
+    else { set('earRimRatio', 1, 'geometry'); miss('earRimMin', 'no opening shows from the front'); notes.push('ears: no opening shows from the front (a closed or flat ear), rim read as uniform (1.0)') }
   } else {
-    for (const q of ['earProtrusion', 'earAboveEye', 'earAspect', 'earLength', 'earWidth', 'earRimRatio'] as const) miss(q, 'no ears')
+    for (const q of ['earProtrusion', 'earAboveEye', 'earAspect', 'earLength', 'earWidth', 'earRimRatio', 'earRimMin'] as const) miss(q, 'no ears')
   }
 
   // ── appendages: horns, else a tail ──
@@ -779,9 +784,22 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     if (hornLines.length) {
       set('appendageElevationDeg', mean((s) => s.elevationDeg), 'geometry')
       set('appendageLength', mean((s) => s.arcMm) / W, 'geometry')
-    } else { miss('appendageElevationDeg', 'no horns'); miss('appendageLength', 'no horns') }
+      // Rule-calib 1027: where the horn leaves the head it is slender (39),
+      // and its tip reaches the crown of the curls (38): the tip = the
+      // visible line's end carried on by its tip allowance (a ring radius
+      // and a yarn) in the line's last direction.
+      set('appendageThickness', mean((s) => s.thickAt(0.05)) / W, 'geometry')
+      const tipZ = hornLines.map((cl) => {
+        const n = cl.pts.length
+        const a = cl.pts[Math.max(0, n - 2)]!, b = cl.pts[n - 1]!
+        const d = { x: b.x - a.x, y: b.y - a.y, z: b.z - a.z }
+        const l = len3(d) || 1
+        return b.z + (d.z / l) * (yr + cl.radius[n - 1]!)
+      })
+      set('appendageTipBelowCrown', (top - Math.max(...tipZ)) / H, 'geometry')
+    } else { for (const q of ['appendageElevationDeg', 'appendageLength', 'appendageThickness', 'appendageTipBelowCrown'] as const) miss(q, 'no horns') }
   } else {
-    for (const q of ['appendageSagitta', 'appendageBendDeg', 'appendageTaper', 'appendageElevationDeg', 'appendageLength'] as const) miss(q, 'no horn or tail')
+    for (const q of ['appendageSagitta', 'appendageBendDeg', 'appendageTaper', 'appendageElevationDeg', 'appendageLength', 'appendageThickness', 'appendageTipBelowCrown'] as const) miss(q, 'no horn or tail')
   }
 
   // ── limbs ──

@@ -55,6 +55,11 @@ export type NeededShape =
   | 'bent-tube'
   /** A limb whose width changes along it (claude/crochet-bent-tube-1026). */
   | 'tapered-limb'
+  /** A cup with a rolled rim, pinched at the base and SEWN BY THE PINCH so it
+   *  stands out from the head (rule-calib 1027: the bar's ear). The folded
+   *  flat disc has a one-yarn edge; the rolled-rim cup (earPiece.ts) has the
+   *  rim but is sewn by its back, so it cannot stand out or hold its fold. */
+  | 'rolled-rim-cup'
 
 /** The quantities measured on a toy (photo or build). All dimensionless. */
 export type CuteQuantity =
@@ -86,6 +91,10 @@ export type CuteQuantity =
   | 'appendageElevationDeg'
   | 'appendageTaper'
   | 'appendageLength'
+  | 'appendageTipBelowCrown'
+  | 'appendageThickness'
+  | 'earRimMin'
+  | 'muzzleLightness'
   | 'limbThickness'
   | 'limbGap'
   | 'limbEndBulge'
@@ -126,6 +135,10 @@ export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
   appendageElevationDeg: 'base-to-tip chord above horizontal, front view (deg)',
   appendageTaper: 'appendage tip thickness / base thickness',
   appendageLength: 'appendage arc length / head width',
+  appendageTipBelowCrown: 'crown (head top incl. fringe or hair) minus horn tip height / head height (negative = the tip stands above the crown)',
+  appendageThickness: 'appendage base thickness as seen where it leaves the head / head width',
+  earRimMin: 'thinnest ear rim as seen from the front / the ear\'s width beside the head (a plump rolled cup is thick all round)',
+  muzzleLightness: 'muzzle L* on its own (a light cream, whatever the face)',
   limbThickness: 'front leg or arm width / head width',
   limbGap: 'gap between the front legs / head width',
   limbEndBulge: 'paw / hoof width / limb width at mid-length (a chunky rounded end)',
@@ -166,6 +179,15 @@ export interface CuteRule {
   carriesTo?: readonly BarPhoto[]
   /** True where the bar value is a judged estimate from a zoom, not a pixel line. */
   estimated?: boolean
+  /** For a colour rule read as a YARN-HEX PROXY (cuteMeasure.ts): the range
+   *  the hex value must fall in so the RENDER lands inside `ranges` (which
+   *  are photo values). Calibrated on two renders of the same cow (rule-calib
+   *  1027): the near-white #ead9bf (hex L* 87, b* 15) rendered L* 85, b* 10
+   *  on its lit top; the oatmeal #c8ad8b (72, 21) rendered 61, 28. The set's
+   *  light leaves a near-white near white and darkens and yellows a mid
+   *  cream, so a cream that renders like the bar's (L* 66-68, b* 19-20 at
+   *  the muzzle's centre) is a hex between the two. Absent = `ranges`. */
+  proxyRanges?: Readonly<Partial<Record<ToyFamily, CuteRange>>>
 }
 
 const r = (min: number, max: number): CuteRange => ({ min, max })
@@ -318,6 +340,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A cream muzzle leans warm (yellowish), matching a warm face.',
     quantity: 'muzzleWarmthB',
     ranges: { 'quadruped-seated': r(14, 30) },
+    proxyRanges: { 'quadruped-seated': r(10, 18) },
     why: 'Harmonious creams belong to one palette with the brown.',
     from: ['highland-cow'],
     strictness: 'soft',
@@ -562,6 +585,51 @@ export const CUTE_RULES: readonly CuteRule[] = [
     carriesTo: ['flower-wall-hanging'],
     estimated: true,
   },
+  // ── Added by eye against the bar (rule-calib-1027, 27 Oct 2026) ─────────
+  {
+    id: 'appendage-clears-crown',
+    what: 'A horn tip stands up level with the crown of the curls, clear of the fringe, not a nub hidden in it.',
+    quantity: 'appendageTipBelowCrown',
+    ranges: { 'quadruped-seated': r(-0.15, 0.08) },
+    why: 'Rule-calib 1027: the cow\'s horns passed every horn rule and still read as nubs because the whole horn sat 0.15 H below the crown, behind the fringe. The bar\'s tips reach the crown line.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: '(head + hair top z - horn tip z) / head height, tip = the visible centre line\'s end plus its tip allowance' },
+  },
+  {
+    id: 'appendage-slender',
+    what: 'A horn is slender where it leaves the head: about a seventh of the head width, never a fat wedge.',
+    quantity: 'appendageThickness',
+    ranges: { 'quadruped-seated': r(0.1, 0.2) },
+    why: 'Rule-calib 1027: the taper rule only ratios tip to base, so a short fat wedge (base 0.27 W) passed; the bar\'s horn is a slim banana (0.147 W).',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'needs-code', what: 'the visible centre line\'s settled thickness at 5% from the head / head width' },
+    needsShape: ['bent-tube'],
+  },
+  {
+    id: 'ear-rim-thick',
+    what: 'A cow-type ear\'s rim is a plump roll all the way round the hollow, never a one-yarn edge.',
+    quantity: 'earRimMin',
+    ranges: { 'quadruped-seated': r(0.12, 0.35) },
+    why: 'Rule-calib 1027: the fold rule (21) ratios thickest to thinnest rim, so a thin lower lip under a thick top roll passed while the ear read as a thin leaf; the bar\'s cups are thick all round.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'needs-code', what: 'the thinnest smoothed rim bearing of earRimRatio / the ear\'s width beside the head' },
+    needsShape: ['rolled-rim-cup'],
+    estimated: true,
+  },
+  {
+    id: 'muzzle-light',
+    what: 'A contrast muzzle is a light cream in its own right, not an oatmeal that only looks light beside a dark face.',
+    quantity: 'muzzleLightness',
+    ranges: { 'quadruped-seated': r(60, 78) },
+    proxyRanges: { 'quadruped-seated': r(75, 84) },
+    why: 'Rule-calib 1027: the tone rule (14) is a difference, so a dark face let a dull oatmeal (#c8ad8b) pass at +45; the bar\'s muzzle reads L* 66-68 at its centre, a light warm ivory.',
+    from: ['highland-cow'],
+    strictness: 'soft',
+    measure: { kind: 'needs-code', what: 'L* of the muzzle on the render (part colourHex is a proxy: see proxyRanges)' },
+  },
 ]
 
 /** The bar toy each set of measurements came from (crochet-bar/proofs/cute-rules/measurements.json). */
@@ -571,7 +639,10 @@ export interface ToyMeasurement {
   values: Readonly<Partial<Record<CuteQuantity, number>>>
 }
 
-/** Bec's bar toys, measured (26 Oct 2026). Rounded from measurements.json. */
+/** Bec's bar toys, measured (26 Oct 2026; rules 38-41 added 27 Oct: the
+ *  cow's horn tip 7 px below its 978 crown over H 366, horn base 45 px over
+ *  W 307, the ear rim judged ~20 px of its 103 px width, muzzle L* 65.9).
+ *  Rounded from measurements.json. */
 export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
   {
     label: 'bar highland cow',
@@ -582,6 +653,7 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
       eyeFaceDeltaL: 30.4, muzzleWidth: 0.668, muzzleHeight: 0.421, chinOverhang: -0.003, muzzleFaceDeltaL: 35.6, muzzleWarmthB: 20,
       earProtrusion: 0.34, earAboveEye: 0.137, earAspect: 1.0, earRimRatio: 2.8,
       appendageSagitta: 0.168, appendageBendDeg: 37.2, appendageElevationDeg: 41.8, appendageTaper: 0.56, appendageLength: 0.309,
+      appendageTipBelowCrown: 0.019, appendageThickness: 0.147, earRimMin: 0.2, muzzleLightness: 65.9,
       limbThickness: 0.401, limbGap: 0.176, limbEndBulge: 1.15,
       sharpCorners: 1, straightRun: 0.223, headTiltDeg: 0, asymmetryCues: 1, curlSizeCV: 0.28,
     },
@@ -618,6 +690,7 @@ export const OURS_COW_1025R1: ToyMeasurement = {
     eyeFaceDeltaL: 27.8, muzzleWidth: 0.635, muzzleHeight: 0.397, chinOverhang: 0.267, muzzleFaceDeltaL: 56.8, muzzleWarmthB: 10,
     earProtrusion: 0.242, earAboveEye: 0.017, earAspect: 1.65, earRimRatio: 1.1,
     appendageSagitta: 0.019, appendageBendDeg: -4.3, appendageElevationDeg: 19.7, appendageTaper: 0.75, appendageLength: 0.374,
+    appendageTipBelowCrown: 0.177, appendageThickness: 0.126, earRimMin: 0.08, muzzleLightness: 85.5,
     limbThickness: 0.369, limbGap: 0.204, limbEndBulge: 1.0,
     sharpCorners: 4, straightRun: 0.308, headTiltDeg: 0, asymmetryCues: 0, curlSizeCV: 0.08,
   },
