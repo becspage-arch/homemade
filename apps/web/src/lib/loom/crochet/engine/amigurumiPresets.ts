@@ -48,7 +48,7 @@ import {
   type FaceStyle,
 } from './faceEmbroidery'
 import { DOLL_AUDITED_PROFILE_KEYS, DOLL_SETTLED_SIZE_MM, dollProgram } from './doll'
-import { SEATED_VIEW, seatedAuditedProfiles, seatedHeadDir, seatedQuadrupedBase } from './seatedQuadruped'
+import { SEATED_VIEW, SEATED_YARN, seatedAuditedProfiles, seatedHeadDir, seatedQuadrupedBase } from './seatedQuadruped'
 
 export { sphereRounds }
 export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
@@ -1255,6 +1255,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     yarnWeight: toy ? TOY_YARN : 'worsted',
     hookMm: toy ? TOY_HOOK_MM : 4,
     ...(toy && TOY_FIBRE[choices.base] ? { yarnFibre: TOY_FIBRE[choices.base] } : {}),
+    ...(seatedBase ? { yarnFibre: SEATED_YARN.yarnFibre, fibreTune: { ...SEATED_YARN.fibreTune } } : {}),
     ...(toy ? TOY_VIEW : seatedBase ? SEATED_VIEW : FIGURE_VIEW),
     parts,
     props: faceProps(choices, 'head'),

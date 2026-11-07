@@ -1561,7 +1561,7 @@ export function strandRounds(pp: PlacedPart): number[] {
  *  strand (inclusive, consecutive runs share their cut point). A change takes
  *  effect at the FIRST point of its round, so the rounds before it are wholly
  *  the old colour. The ring/anchor (round 0) and any fasten-off tail belong to
- *  the run they sit in. Exported for the doll test. */
+ *  the run they sit in (the ring takes round 1's colour). Exported for the doll test. */
 export function colourRuns(pp: PlacedPart): { hex: string; from: number; to: number }[] {
   const rounds = strandRounds(pp)
   const changes = [...(pp.part.colourChanges ?? [])].sort((a, b) => a.fromRound - b.fromRound)
@@ -1576,7 +1576,10 @@ export function colourRuns(pp: PlacedPart): { hex: string; from: number; to: num
   let maxR = 0
   for (let i = 0; i < rounds.length; i++) {
     maxR = Math.max(maxR, rounds[i]!)
-    const hex = hexAt(maxR)
+    // The magic ring (round 0) is worked in round 1's yarn: a piece that
+    // starts in a contrast colour starts its ring in it too (a paw's sole
+    // showed a main-colour ring at its centre).
+    const hex = hexAt(Math.max(1, maxR))
     const last = out[out.length - 1]
     if (last && last.hex === hex) last.to = i
     else out.push({ hex, from: last ? last.to : i, to: i })

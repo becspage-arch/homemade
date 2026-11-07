@@ -7,7 +7,7 @@
  *
  *  - a soft PEAR body (wide hips, narrower shoulders) tucked under a head at
  *    least as wide as it (rule 2), no neck: the head sinks onto the shoulders;
- *  - two TAPERED FRONT LEGS (limbProfiles.ts) worked from a round paw up to a
+ *  - two TAPERED FRONT LEGS worked from a domed round paw, in at the ankle, up to a
  *    slimmer top, stuffed firm at the paw and lighter to an unstuffed, flat,
  *    sewn top (cuteFinish.ts `limbStuffing`, rule 45), sewn close together
  *    under the chin (rule 30) and long enough to reach from the chest to the
@@ -21,11 +21,11 @@
  *    (`PartPlacement.rest`), so the same numbers sit at every size and gauge.
  *
  * Every count comes from the head the preset gives (its widest round and its
- * rounds) through the quadruped-seated ranges in cuteRules.ts: the body is the
- * head's width over rule 2's middle, a leg is rule 29's middle of the head
- * width round, its top rule 45's middle of its paw, its length rule 53's
- * middle of its width, the gap between the front legs rule 30's middle. No
- * number here is a cat's or a dog's.
+ * rounds) through the quadruped-seated ranges in cuteRules.ts, aimed at each
+ * range's CUTE END (`SEATED_CUTE_AIM`), not its middle: the body narrower than
+ * the head, chunky legs (rule 29) that taper visibly (rule 45), close
+ * together (rule 30), only as long as the short drop to the table (rule 52).
+ * No number here is a cat's or a dog's.
  *
  * Real stitches throughout: every piece is a spiral from a magic ring built
  * by the locked round builders (the body and front legs `buildSphere`, the
@@ -37,10 +37,9 @@ import type { AmigurumiPart } from './composition'
 import type { AmigurumiSize } from './amigurumiPresets'
 import { CUTE_RULES, type CuteQuantity } from './cuteRules'
 import { sphereAscent } from './sphereProfile'
-import { taperedLimbRounds } from './limbProfiles'
 import { bentTubeWords, planBend, type BentTubeSpec } from './bentTube'
 import { FEET_FORWARD_NOTE, HEAD_TILT_DEG, HEAD_TILT_NOTE, limbStuffWords, limbStuffing, rollAbout } from './cuteFinish'
-import { writeInstructions } from './program'
+import { writeInstructions, type YarnFibre } from './program'
 
 interface Dir { x: number; y: number; z: number }
 
@@ -83,27 +82,61 @@ export function withColours(rounds: number[], changes: Record<number, string>, c
   return out
 }
 
+/**
+ * THE YARN'S LOOK (render-only: no geometry or hash moves). The seated base
+ * renders in the bar's plush chenille with the cow's pile, not the program
+ * default's crisp plied cotton, which read as twisted rope on a worsted toy
+ * (seated-base-1107 r1). The pattern's yarn weight and counts are the
+ * preset's own; this is how the toy looks in the photo.
+ */
+export const SEATED_YARN: { yarnFibre: YarnFibre; fibreTune: Record<string, number | boolean> } = {
+  yarnFibre: 'chenille',
+  fibreTune: {
+    pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
+    pile_max_radius_mm: 3.2, crush_amt: 0.22, sat_mult: 0.9, pile_dark_only: true,
+    // A thinner pile on the pale yarn too (the handmade preset's 0.4): cream
+    // paws and soles without it read as crisp popcorn beside the soft main
+    // colour (r2).
+    hm_pale_pile: 0.4,
+  },
+}
+
 // ─── the rules the base is sized from ───────────────────────────────────────
 
-/** The middle of a quadruped-seated range (cuteRules.ts), by quantity. */
-function qMid(q: CuteQuantity): number {
+/** A point in a quadruped-seated range (cuteRules.ts), by quantity: `at` 0
+ *  is the range's least, 1 its most. */
+function qAt(q: CuteQuantity, at: number): number {
   const r = CUTE_RULES.find((x) => x.quantity === q)?.ranges['quadruped-seated']
   if (!r) throw new Error(`seated base: no quadruped-seated range for ${q}`)
-  return (r.min + r.max) / 2
+  return r.min + (r.max - r.min) * at
+}
+
+/**
+ * WHERE IN EACH RANGE the base aims (0 the range's least, 1 its most). Not
+ * the middle: a seated toy reads cute at the CUTE END of its family's ranges
+ * (seated-base-1107 r2, judged beside the bar cow): a head clearly wider than
+ * the body under it, chunky legs that taper visibly from a round paw to a
+ * slim sewn top, legs only as long as the short drop from chin to table, and
+ * wide seated haunches. A preset can move any of them through `fit.cute`.
+ */
+export interface SeatedCuteAim {
+  headToBody: number; legToHead: number; joinToPaw: number; legLength: number; legGap: number; haunch: number
+}
+export const SEATED_CUTE_AIM: SeatedCuteAim = {
+  headToBody: 0.7, legToHead: 0.55, joinToPaw: 0.3, legLength: 0.35, legGap: 0, haunch: 0.5,
 }
 
 /** The targets the counts are derived from (all ratios; W the head width). */
-export function seatedTargets(): {
-  headToBody: number; legToHead: number; joinToPaw: number; legLength: number; legAspect: number; legGap: number; haunch: number
+export function seatedTargets(aim: SeatedCuteAim = SEATED_CUTE_AIM): {
+  headToBody: number; legToHead: number; joinToPaw: number; legLength: number; legGap: number; haunch: number
 } {
   return {
-    headToBody: qMid('headToTorsoWidth'),
-    legToHead: qMid('limbThickness'),
-    joinToPaw: qMid('limbJoinRatio'),
-    legLength: qMid('limbLength'),
-    legAspect: qMid('limbAspect'),
-    legGap: qMid('limbGap'),
-    haunch: qMid('haunchToHead'),
+    headToBody: qAt('headToTorsoWidth', aim.headToBody),
+    legToHead: qAt('limbThickness', aim.legToHead),
+    joinToPaw: qAt('limbJoinRatio', aim.joinToPaw),
+    legLength: qAt('limbLength', aim.legLength),
+    legGap: qAt('limbGap', aim.legGap),
+    haunch: qAt('haunchToHead', aim.haunch),
   }
 }
 
@@ -165,12 +198,15 @@ export interface SeatedFit {
   /** How far the head sinks onto the shoulders (fraction of its height). */
   headSink: number
   /** Where the front legs are sewn: the height on the chest (the direction's
-   *  z, with y 1 the front), and the gap between them as a fraction of rule
-   *  30's range (0 its least, 1 its most). How far round the chest that puts
-   *  them is worked out from the head, paw and shoulder counts
-   *  (`frontLegSpread`), so the gap holds at every size. */
+   *  z, with y 1 the front). How far round the chest that puts them is worked
+   *  out from the head, paw and shoulder counts and rule 30's gap, so the gap
+   *  holds at every size. */
   frontLegZ: number
-  frontLegGap: number
+  /** How much rounder the paw end is than the leg above it (the ankle steps
+   *  in to this fraction of the paw, rule 31). */
+  ankle: number
+  /** Where in each quadruped-seated range the counts aim (`SEATED_CUTE_AIM`). */
+  cute: SeatedCuteAim
   /** Which way the front legs hang. */
   frontLegAim: Dir
   /** Where the back legs are sewn and which way their open end points. */
@@ -185,21 +221,22 @@ export interface SeatedFit {
 }
 
 export const SEATED_FIT: SeatedFit = {
-  hips: 1,
-  hipsToLegs: 0.92,
-  shoulders: 0.82,
-  bodyLength: 1.3,
+  hips: 0.95,
+  hipsToLegs: 0.8,
+  shoulders: 0.75,
+  bodyLength: 1.1,
   legLength: 0.9,
-  legWidth: 0.9,
-  sole: 0.95,
-  haunch: 1.15,
-  backLength: 0.75,
+  legWidth: 0.95,
+  sole: 1.0,
+  haunch: 1.2,
+  backLength: 0.85,
   bendDeg: 90,
-  headSink: 0.3,
+  headSink: 0.5,
   frontLegZ: 0.05,
-  frontLegGap: 0.1,
+  ankle: 0.85,
+  cute: SEATED_CUTE_AIM,
   frontLegAim: { x: 0, y: 0.4, z: -1 },
-  backLegDir: { x: 1, y: -0.5, z: -0.45 },
+  backLegDir: { x: 1, y: -0.6, z: -0.45 },
   backLegAim: { x: 0.8, y: 0.6, z: 0 },
   backLegSpin: { x: 0, y: 1, z: 0 },
   stuff: { firm: 0.4, light: 0.3, empty: 2 },
@@ -216,7 +253,7 @@ const SPREAD_FIT = 1.064
 const widthYr = (n: number): number => 0.98 * n + 2
 
 export function seatedCounts(head: number[], fit: SeatedFit = SEATED_FIT): SeatedCounts {
-  const t = seatedTargets()
+  const t = seatedTargets(fit.cute)
   const headEq = Math.max(...head)
   // The front leg: rule 29's width round the paw, rule 45's at the top, and
   // rule 52's length of the head's height (the head's rounds; plus the top
@@ -225,10 +262,9 @@ export function seatedCounts(head: number[], fit: SeatedFit = SEATED_FIT): Seate
   const paw = Math.max(7, Math.round(headEq * t.legToHead * fit.legWidth))
   const top = Math.max(paw < 8 ? 5 : 6, Math.round(paw * t.joinToPaw))
   const legRounds = Math.max(6, Math.round(t.legLength * head.length * fit.legLength) + 1)
-  const frontLeg = limbRounds(paw, top, legRounds)
-  // The gap between the front legs (rule 30's range at `frontLegGap`).
-  const r30 = CUTE_RULES.find((x) => x.quantity === 'limbGap')!.ranges['quadruped-seated']!
-  const gap = r30.min + (r30.max - r30.min) * fit.frontLegGap
+  const frontLeg = limbRounds(paw, top, legRounds, fit.ankle)
+  // The gap between the front legs (rule 30's range at `cute.legGap`).
+  const gap = t.legGap
   // The body: rule 2's width under the head, and never narrower than the
   // two front legs and their gap (on a small toy a leg is a big share of the
   // head, and legs wider than the hips leave no room for the haunches).
@@ -244,7 +280,7 @@ export function seatedCounts(head: number[], fit: SeatedFit = SEATED_FIT): Seate
   // the bend worked over the rounds after the sole.
   const sole = Math.max(7, Math.round(paw * fit.sole))
   const haunch = Math.round(sole * fit.haunch)
-  const n = Math.max(5, Math.round(legRounds * fit.backLength))
+  const n = Math.max(6, Math.round(legRounds * fit.backLength))
   const solePart = ringUp(sole)
   const back: number[] = [...solePart]
   const rest = Math.max(2, n - back.length)
@@ -274,17 +310,22 @@ function ringUp(n: number): number[] {
   return up[up.length - 1]! < n ? [...up, n] : up
 }
 
-/** A tapered limb (limbProfiles.ts), its paw from `ringUp` so a small toy's
- *  slim paw is still worked to its width. */
-function limbRounds(paw: number, top: number, length: number): number[] {
-  const up = sphereAscent(paw).up
-  if (up[up.length - 1]! >= paw) return taperedLimbRounds({ foot: paw, top, length })
-  const r = ringUp(paw)
-  const out = [...r, paw]
+/**
+ * A front leg with a ROUND PAW: the ring domes up to the paw (`ringUp`, with
+ * a middle round added when the walk would jump straight from the ring to a
+ * wide paw, so the end is a dome, not a flat disc), holds a round, steps in
+ * at the ankle (`ankle` of the paw, so the paw reads fatter than the leg,
+ * rule 31), then narrows a stitch at a time to the slim top (rule 45), which
+ * is flattened and sewn, not closed.
+ */
+function limbRounds(paw: number, top: number, length: number, ankle: number): number[] {
+  let up = ringUp(paw)
+  if (up.length === 2 && paw >= 9) up = [6, Math.round((6 + paw) / 2), paw]
+  const out = [...up, paw]
   const t = Math.min(top, paw)
-  const taper = Math.max(1, length - out.length - 1)
-  for (let i = 1; i <= taper; i++) out.push(Math.round(paw + ((t - paw) * i) / taper))
-  if (t >= 6) out.push(Math.max(6, Math.ceil(t / 2)))
+  const neck = Math.max(t, Math.round(paw * ankle))
+  const taper = Math.max(1, length - out.length)
+  for (let i = 0; i < taper; i++) out.push(Math.round(neck + ((t - neck) * i) / Math.max(1, taper - 1)))
   return out
 }
 
