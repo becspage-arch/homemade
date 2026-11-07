@@ -48,7 +48,7 @@ import { earPart, type EarPieceOptions } from './earPiece'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { bentTubeWords, planBend, taperRounds } from './bentTube'
 import { taperedLimbRounds } from './limbProfiles'
-import { chainOvalPart, chainOvalSpot, designChainOval, type ChainOvalOptions } from './chainOval'
+import { chainOvalPart, chainOvalNostrils, designChainOval, type ChainOvalOptions } from './chainOval'
 import { pinchEarPart, type PinchEarOptions } from './pinchEar'
 import { STITCHES } from './dictionary'
 import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
@@ -1080,10 +1080,13 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
  *  brow (the cute fit's, else the folded ear's); it stands out sideways from
  *  its pinch, its hollow turned forward, a little out and up. */
 // Measured on the r1 cow (engine-shapes-1107): out level (an upward aim
-// shortens the reach past the head, rule 18) with the hollow forward and up
-// (front height / width 1.23, rule 20; straight forward reads 1.38).
+// shortens the reach past the head, rule 18). The hollow turned up and out
+// as much as forward ({1.2, 1, 1.2}): with the top roll the rim then reads
+// thick over the top and thin at the base from the front (rule 21 2.05,
+// front height / width 1.0, rule 20); {0.5, 1, 0.5} read 1.43 with the
+// thick wall seen all round.
 const PINCH_EAR_AIM = { x: 1, y: 0, z: 0.05 }
-const PINCH_EAR_FACE = { x: 0.5, y: 1, z: 0.5 }
+const PINCH_EAR_FACE = { x: 1.2, y: 1, z: 1.2 }
 
 /** One ear sewn by its pinch (`CowChoices.pinchEars`, pinchEar.ts). */
 function cowPinchEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g: number, cf?: CowCuteFit): AmigurumiPart {
@@ -1093,8 +1096,15 @@ function cowPinchEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g: 
     // Pinched until the sides meet (the most uneven rim the cup makes as seen,
     // rule 21: 1.43 against 1.15 at 0.7; audits clean at this width).
     shape: 'round', width: cup.width, depth: cup.depth, rimRoll: Math.max(1, cup.rimRoll ?? 1), pinch: 1,
+    // The rim rolled two rounds deep over the top third (rule 21 1.43 -> 2.05).
+    topRoll: { arc: 0.33 },
     ...(choices.pinchEars === true ? {} : choices.pinchEars),
   }
+  // The top roll goes on a one-round rim only: a deeper rim asked for drops it.
+  const asked: Partial<PinchEarOptions> = typeof choices.pinchEars === 'object' ? choices.pinchEars : {}
+  if (o.rimRoll !== 1 && !asked.topRoll) delete o.topRoll
+  // A pair: the top roll mirrored, so both rolls run along the top.
+  if (o.topRoll) o.topRoll = { ...o.topRoll, side: (side * (o.topRoll.side ?? 1)) as 1 | -1 }
   return pinchEarPart(o, {
     name: side < 0 ? 'ear-l' : 'ear-r',
     colourHex: choices.mainHex,
@@ -1332,7 +1342,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     ...COW_VIEW,
     parts,
     props,
-    embroidery: chainMz ? cowOvalNostrils(chainMz, fd, gaugeYarnRadiusMm(COW_YARN, g)) : cowNostrils(s.muzzle, fd, g, nostrilScale),
+    embroidery: chainMz ? cowOvalNostrils(chainMz, fd, gaugeYarnRadiusMm(COW_YARN, g), cf?.muzzleDir ?? MUZZLE_DIR) : cowNostrils(s.muzzle, fd, g, nostrilScale),
     hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
@@ -1453,31 +1463,30 @@ export function cowChainMuzzle(choices: CowChoices, g: number): ChainOvalOptions
  *  capsule muzzle's widest-round diameter. */
 const COW_CHAIN_MUZZLE_HEIGHT = 1.25
 const COW_CHAIN_MUZZLE_DEPTH = 0.4
+/** How far above the muzzle's own aim the toy is seen from (degrees): the
+ *  photo camera's height and the head's pitch (cowOvalNostrils). */
+const COW_NOSTRIL_VIEW_EXTRA_DEG = 28
 
 /**
- * The nostrils on the muzzle worked round a chain: one slanted stitch near
- * each end of the oval, on its upper half, the two leaning in toward each
- * other in a wide open "v" (the bar's). Counted the way the oval is made:
- * rounds out from the chain, stitches up from the end stitch of a round.
+ * The nostrils on the muzzle worked round a chain: the oval's own default
+ * (chainOval.ts `chainOvalNostrils`: a small slanted oval each side on the
+ * upper half, a quarter of the width in, the tops leaning in), in the cow's
+ * dark brown.
  */
-function cowOvalNostrils(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number): EmbroideryFeature[] {
-  const R = 1 + o.rounds + (o.even ?? 0)
-  // Outer end of each stitch about 2/3 of the way out, inner a round in.
-  const outer = Math.max(2, Math.round(R * 0.62)), inner = Math.max(1, outer - 2)
-  const stitches = (['E0', 'E1'] as const).map((end) => ({
-    from: chainOvalSpot(o, yr, outer, end, 2),
-    to: chainOvalSpot(o, yr, inner, end, 0),
-    taut: true,
-  }))
+function cowOvalNostrils(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number, dir: Dir): EmbroideryFeature[] {
+  // The muzzle aims down from the face's front (MUZZLE_DIR, about 32°) and
+  // the toy is seen from a little above (the photo's camera, the head's
+  // pitch): its top half shows more, so the nostrils are placed as seen.
+  // Measured (engine-shapes-1107 r3): placed for the aim alone they read 58%
+  // down the muzzle in the photo, an effective tilt of about 60°; placed for
+  // that they read 42% there (and 28% seen dead level from the front).
+  const { stitches, words } = chainOvalNostrils(o, yr, { viewTiltDeg: (Math.atan2(-dir.z, dir.y) * 180) / Math.PI + COW_NOSTRIL_VIEW_EXTRA_DEG })
   return [{
     name: 'nose', on: 'muzzle',
     zeroDir: fd({ x: 0, y: 1, z: 0 }), rightDir: { x: 0, y: 0, z: 1 },
     colourHex: NOSTRIL_HEX, threadMm: 1.3, threadLabel: 'Dark brown DK yarn (or six strands of embroidery thread)',
     stitches,
-    words:
-      'Nostrils (dark brown DK yarn): the muzzle\'s rounds circle the chain, so count rounds out from the chain and stitches up from the stitch at the very end of a round. ' +
-      `At each end of the muzzle, work one bold straight stitch: bring the needle up on round ${outer}, 2 stitches above its end stitch (toward the eyes), and take it down on round ${inner} at its end stitch, ` +
-      'so the two stitches slant toward each other in a wide open "v". Pull snug, not tight.',
+    words: words.replace('Nostrils: ', 'Nostrils (dark brown DK yarn): '),
   }]
 }
 

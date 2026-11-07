@@ -207,6 +207,10 @@ export interface AmigurumiPart {
    * real rounds. Tube parts only; absent = no brim, as before.
    */
   rimFold?: number
+  /** The last round worked over only its first N stitches (tube.ts
+   *  `partialLast`; engine-shapes-1107: a rim rolled deeper over one arc).
+   *  Absent = as before. */
+  rimPartial?: number
   /**
    * A TAPESTRY panel worked into the piece in a second colour — the lining of
    * a lop ear. Per worked round (0-based), the run of stitches, counted from
@@ -1133,6 +1137,7 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
     const built: BuiltContinuous = buildTube({
       stitch: part.stitch, rounds: part.rounds, anchor: part.tube.anchor, join: part.tube.join, cap: part.tube.cap, gaugeYr: part.gaugeYr,
       ...(part.rimFold ? { brim: { kind: 'fold' as const, rounds: part.rimFold } } : {}),
+      ...(part.rimPartial != null ? { partialLast: part.rimPartial } : {}),
     }, yr)
     // Highland cow round 27: an OPEN half-ball pressed into a CUP (a cupped
     // ear: worked from the ring, left open at the rim, never stuffed, pressed

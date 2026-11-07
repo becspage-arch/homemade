@@ -31,7 +31,8 @@
  * imports this unless a preset's switch is on.
  */
 
-import { auditPart, buildPart, type AmigurumiPart, type PartPlacement } from './composition'
+import { auditPart, buildPart, relaxPressed, type AmigurumiPart, type PartPlacement } from './composition'
+import { buildTube } from './tube'
 import { earMetrics, earPart, earRounds, earWords, type EarMetrics, type EarPieceOptions } from './earPiece'
 import type { BuiltContinuous } from './yarnPath'
 
@@ -55,6 +56,22 @@ export interface PinchEarOptions {
   /** A contrast inner (hex): the round cup's first rounds, the pointed ear's
    *  middle panel. */
   liningHex?: string
+  /** A round cup only: THE TOP ROLL. One more rim round worked over the top
+   *  arc only (a part round: the first `arc` of the round, which a round
+   *  started at the magic ring's tail puts over the top, opposite the pinch),
+   *  then the rim folded back: two rounds deep over the top, one over the
+   *  base, so the roll is plump at the top and thin at the pinch (the bar's
+   *  cow ear, CUTE-RULES 21). `arc` 0.3..0.75 of the round (default 0.45;
+   *  the cow takes 0.33). The ear is pinched a little over a quarter round
+   *  (`TOP_ROLL_CLEAR` past it) from the middle of the part round, so the
+   *  plump roll runs along one edge of the ear out from the pinch: `side` +1
+   *  pinches back from the middle (against the way the rounds run), -1 on
+   *  from it (a pair of ears takes one of each, so both rolls are on top).
+   *  Absent = the even roll. */
+  topRoll?: { arc?: number; side?: 1 | -1 }
+  /** A round cup only: squeezed gently across into an oval before it is
+   *  pinched, 0..0.6 of its width (earPiece's `squash`). Absent = round. */
+  squash?: number
 }
 
 const DEFAULTS = { round: { rimRoll: 1 }, pointed: { rimRoll: 1, pinch: 0.7 } }
@@ -66,6 +83,8 @@ const roundPinch = (width: number): number => (width <= 21 ? 1 : 0.7)
 
 function validate(o: PinchEarOptions): void {
   if (o.shape === 'round') {
+    if (o.topRoll && (o.rimRoll ?? 1) !== 1) throw new Error('pinch ear: the top roll goes on a one-round rim (rimRoll 1)')
+    if (o.topRoll && ((o.topRoll.arc ?? 0.45) < 0.3 || (o.topRoll.arc ?? 0.45) > 0.75)) throw new Error(`pinch ear: the top roll's arc is 0.3..0.75 (got ${o.topRoll.arc})`)
     if (!Number.isInteger(o.depth) || o.depth < 0 || o.depth > 4) throw new Error(`pinch ear: a round ear's depth is 0-4 even rounds (got ${o.depth})`)
     const r = o.rimRoll ?? 1
     if (r !== 1 && r !== 2) throw new Error(`pinch ear: a round ear's rim roll is 1 or 2 folded rounds (got ${r})`)
@@ -84,7 +103,11 @@ function validate(o: PinchEarOptions): void {
 export function pinchEarPiece(o: PinchEarOptions): EarPieceOptions {
   validate(o)
   if (o.shape === 'round') {
-    return { kind: 'cup', width: o.width, depth: o.depth, rimRoll: o.rimRoll ?? DEFAULTS.round.rimRoll, pinch: o.pinch ?? roundPinch(o.width), ...(o.liningHex ? { liningHex: o.liningHex } : {}) }
+    // The top roll's part round is one more rim round (folded with the rest).
+    return {
+      kind: 'cup', width: o.width, depth: o.depth, rimRoll: (o.rimRoll ?? DEFAULTS.round.rimRoll) + (o.topRoll ? 1 : 0), pinch: o.pinch ?? roundPinch(o.width),
+      ...(o.squash ? { squash: o.squash } : {}), ...(o.liningHex ? { liningHex: o.liningHex } : {}),
+    }
   }
   // A short cone: the +3 rounds up to the width, then `depth` even, open at
   // the base (no taper).
@@ -94,6 +117,58 @@ export function pinchEarPiece(o: PinchEarOptions): EarPieceOptions {
     length: up + o.depth, taper: 0, pressYr: 10,
     ...(o.liningHex ? { liningHex: o.liningHex, liningFrac: 0.4 } : {}),
   }
+}
+
+/** The top roll's part round: how many stitches it works (0 = none). */
+export function topRollStitches(o: PinchEarOptions): number {
+  if (o.shape !== 'round' || !o.topRoll) return 0
+  return Math.max(2, Math.min(o.width - 1, Math.round((o.topRoll.arc ?? 0.45) * o.width)))
+}
+
+/** How much past a quarter round the pinch sits from the top roll's middle.
+ *  Measured on the fine cow (engine-shapes-1107, arc 0.33): at 0° and 20°
+ *  the part round's end stitches' hooks were squeezed sideways by the pinch
+ *  (1-2 audit failures per ear); 25° audits clean and gives rule 21 2.05;
+ *  40° audits clean but the cup turns too far (rule 34 fails). */
+const TOP_ROLL_CLEAR = 25 * Math.PI / 180
+
+/**
+ * A cup with the top roll: built exactly as buildPart builds a tube part
+ * (buildTube, then the press / pinch relax), except that the built cup is
+ * first turned about its axis so the pinch (the relax's plates sit at -y)
+ * falls a quarter round from the middle of the part round. A rigid turn of
+ * the unrelaxed piece: the stitches are the ones built.
+ */
+function buildRolledCup(o: PinchEarOptions, part: AmigurumiPart, yr: number): { built: BuiltContinuous; panelMask?: boolean[] } {
+  const n = topRollStitches(o)
+  const count = part.rounds[part.rounds.length - 1]!
+  const built = buildTube({
+    stitch: part.stitch, rounds: part.rounds, anchor: 'ring', join: 'spiral', cap: 'dome', gaugeYr: part.gaugeYr,
+    brim: { kind: 'fold', rounds: part.rimFold! }, partialLast: n,
+  }, yr)
+  // The round starts at the ring's tail (tube.ts: phase = 17/18 of a turn)
+  // and runs anticlockwise: the part round's middle is at that + n/2 sts.
+  const mid = (17 / 18) * 2 * Math.PI + ((n / 2) / count) * 2 * Math.PI
+  const side = o.topRoll?.side ?? 1
+  // The pinch a little over a quarter round from the part round's middle, so
+  // its ends stay clear of the pinch's plates (at a quarter round the end
+  // stitches' hooks were squeezed sideways off their crowns, measured).
+  const want = -Math.PI / 2 + side * (Math.PI / 2 + TOP_ROLL_CLEAR)
+  const a = want - mid
+  const c = Math.cos(a), sn = Math.sin(a)
+  for (const nd of built.model.nodes) {
+    const x = nd.x * c - nd.y * sn, y = nd.x * sn + nd.y * c
+    nd.x = x; nd.y = y
+  }
+  relaxPressed(built, part.press ?? 0, yr, part.pressShape, 560, part.pinch)
+  return { built }
+}
+
+/** earPart's piece, with the top roll's part round. */
+function cupPart(o: PinchEarOptions, base: { name: string; colourHex: string; place: PartPlacement }, yr: number): AmigurumiPart {
+  const p = earPart(pinchEarPiece(o), base, yr)
+  const n = topRollStitches(o)
+  return n ? { ...p, rimPartial: n } : p
 }
 
 export function pinchEarRounds(o: PinchEarOptions): number[] {
@@ -107,12 +182,33 @@ export function pinchEarWords(o: PinchEarOptions): string[] {
   const base = earWords(piece)
   // earPiece's last line says how a free ear is sewn; this one is sewn by
   // its pinch.
-  const body = base.slice(0, -1)
+  let body = base.slice(0, -1)
+  const part = topRollStitches(o)
+  if (part) {
+    // The last round is the part round over the top; the fold takes it with
+    // the round below.
+    let k = -1
+    body.forEach((l, i) => { if (/^Round \d+:/.test(l)) k = i })
+    const num = /^Round (\d+):/.exec(body[k]!)![1]
+    body = body.map((l, i) =>
+      i === k
+        ? `Round ${num} (part round, over the top of the ear): dc in next ${part} sts only, leaving the rest of the round unworked; sl st in next st. (${part} sts)`
+        : /^Fold the last /.test(l)
+          ? 'Fold the last 2 rounds back over the outside of the ear, so the rim rolls outward into a thick lip: two rounds deep over the top where the part round is, one round deep at the base.'
+          : l)
+  }
   const meet = (piece.pinch ?? 0) >= 0.7
   if (o.shape === 'round') {
+    // Where the pinch goes with the top roll: the stitch a little over a
+    // quarter round from the part round's middle (buildRolledCup's turn).
+    const count = pinchEarRounds(o).at(-1)!
+    const away = Math.round((count * (Math.PI / 2 + TOP_ROLL_CLEAR)) / (2 * Math.PI))
+    const where = part
+      ? ` Make the pinch at the stitch ${away} sts ${(o.topRoll?.side ?? 1) > 0 ? 'back from the middle stitch of the part round (counting against the way you worked)' : 'on from the middle stitch of the part round (counting the way you worked)'}, so the thick roll runs along the top edge of the ear out from the pinch.`
+      : ''
     return [
       ...body,
-      `Sew the base of the rim together where you pinch it: fold the cup so the two sides of the rim${meet ? ' meet' : ' come close'} at the bottom, and take 2 small stitches through both layers with the tail to hold the pinch.`,
+      `Sew the base of the rim together where you pinch it: fold the cup so the two sides of the rim${meet ? ' meet' : ' come close'} at the bottom, and take 2 small stitches through both layers with the tail to hold the pinch.${where}`,
       'Sew the ear to the head by the pinch only, so the cup stands out from the head with its hollow facing forward and the rolled rim free all round.',
     ]
   }
@@ -144,8 +240,8 @@ const poseRound = (p: { x: number; y: number; z: number }): { x: number; y: numb
 /** Build, relax, audit and pose one ear. */
 export function buildPinchEar(o: PinchEarOptions, yr: number): PinchEarBuild {
   const piece = pinchEarPiece(o)
-  const part = earPart(piece, { name: 'ear', colourHex: '#888888', place: { on: 'ground' } }, yr)
-  const { built, panelMask } = buildPart(part, yr)
+  const part = cupPart(o, { name: 'ear', colourHex: '#888888', place: { on: 'ground' } }, yr)
+  const { built, panelMask } = topRollStitches(o) ? buildRolledCup(o, part, yr) : buildPart(part, yr)
   const problems = auditPart(built, part, yr)
   const metrics = earMetrics(piece, built)
   const nodes = built.model.nodes

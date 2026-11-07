@@ -4003,6 +4003,28 @@ preset can use, opt-in (absent = every hash unchanged; the cow default is still 
   11-13, 18-20, 33, 34 and 40 (0.19, the first time) pass; 21 (thickest / thinnest rim, 1.8-4) does NOT: 1.43, an
   even roll with a thicker pinch (the folded flat disc passes 21 and fails 40). Lamb with the oval muzzle: 26 / 31,
   the default's failing set; its pinched ears do not beat its folded ones (18, 20 fail at the lamb's ear place).
+- FOLLOW-UP (same day): TWO DEFAULTS FOR ANY TOY.
+  - OVAL NOSTRILS (`chainOvalNostrils`, chainOval.ts): any muzzle worked round a chain gets nostrils placed from its
+    own planned dome. One short slanted oval each side (2 strands side by side, 0.14 of the seen height long,
+    leaning 28° with the top in), a quarter of the width in from each side, 40% of the seen height down from the top
+    edge. "Seen" is the dome projected along its aim tilted by `viewTiltDeg`: a muzzle aimed down shows more of its
+    top half, so the chain sits low in the outline. Placed for the cow muzzle's aim alone (32°) they read 58% down in the photo, which
+    looks like a mouth. Each end of a mark is the visible dome point under it, so the marks stay on the oval. The words
+    count rounds out from the chain and stitches along the top side from the middle. The cow passes its muzzle's aim
+    (about 32°) plus 28° for the photo camera and the head's pitch (`COW_NOSTRIL_VIEW_EXTRA_DEG`): r4 reads 42% down, a quarter in, tops leaning in. The lamb keeps its
+    Y nose.
+  - THE TOP ROLL (`PinchEarOptions.topRoll: { arc, side }`, round cups, rimRoll 1): one more rim round worked over
+    `arc` of the round only (a part round, `TubeSpec.partialLast`), folded back with the rim. The rim is then two
+    rounds deep over the top and one at the base. The cup is turned rigidly before the pinch relax so the pinch sits
+    a quarter round plus 25° (`TOP_ROLL_CLEAR`) from the part round's middle, and the roll runs along the top edge
+    out from the pinch. `side` mirrors it for a pair.
+    - Measured on the fine cow, arc 0.33: a clearance of 0 or 20° squeezes the part round's end hooks sideways (1-2
+      audit failures an ear); 40° turns the cup too far (rule 34).
+    - With the hollow turned up and out as much as forward (cow `PINCH_EAR_FACE` {1.2, 1, 1.2}), rule 21 reads 2.05
+      (the even roll read 1.43) and 40 still passes (0.146). The roll on the bottom edge instead fails 21.
+    - The cow's `pinchEars` now default to `topRoll: { arc: 0.33 }`. Fine cow with both shapes: hash ea8e21d7, 0
+      problems, 36 / 40 (fails 14, 28, 42, 43; the even roll was 35 / 40); 18 0.293, 19 0.090, 20 0.998, 21 2.050, 33 0, 34 0.222,
+      40 0.146. Default cow c7130743 and lamb 7b98a445 are unchanged.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 

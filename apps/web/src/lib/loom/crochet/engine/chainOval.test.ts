@@ -17,7 +17,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
-  buildChainOvalPiece, chainOvalMetrics, chainOvalPlan, chainOvalRounds, chainOvalSideSpot, chainOvalSpot, chainOvalWords, chainRoundOneWords,
+  buildChainOvalPiece, chainOvalGeometry, chainOvalMetrics, chainOvalNostrils, chainOvalPlan, chainOvalRounds, chainOvalSideSpot, chainOvalSpot, chainOvalWords, chainRoundOneWords,
   designChainOval, type ChainOvalOptions,
 } from './chainOval'
 import { COW_DEFAULTS, buildCowProgram, cowChainMuzzle } from './cowPreset'
@@ -138,6 +138,48 @@ test('embroidery spots are read off the geometry: the ends sit at +-x, the sides
   assert.ok(Math.abs(top + Math.PI / 2) < 1e-6, `the -y side's middle (th ${top})`)
   const l = chainOvalSideSpot(o, DK, 3, -1, -1).th, r = chainOvalSideSpot(o, DK, 3, -1, 1).th
   assert.ok(Math.abs((l + r) / 2 + Math.PI / 2) < 1e-6, 'one stitch either side of the middle is symmetric')
+})
+
+test('the nostrils, a default for any oval muzzle: upper half, a quarter in from each side, tops leaning in', () => {
+  // The planned point a (fractional round, azimuth) spot names.
+  const pointOf = (o: ChainOvalOptions, yr: number, sp: { round: number; th?: number }): { x: number; y: number } => {
+    const G = chainOvalGeometry(o, yr)
+    const k = Math.floor(sp.round), t = sp.round - k
+    const rho = k >= G.rho.length ? G.rho.at(-1)! : G.rho[k - 1]! + ((G.rho[k] ?? G.rho[k - 1]!) - G.rho[k - 1]!) * t
+    const dx = Math.cos(sp.th!), dy = Math.sin(sp.th!)
+    let lo = 0, hi = 4 * (G.c + rho)
+    for (let i = 0; i < 60; i++) {
+      const m = (lo + hi) / 2, x = m * dx, y = m * dy
+      const off = Math.abs(x) <= G.c ? Math.abs(y) : Math.hypot(Math.abs(x) - G.c, y)
+      if (off < rho) lo = m; else hi = m
+    }
+    return { x: lo * dx, y: lo * dy }
+  }
+  const cow = cowChainMuzzle({ ...COW_DEFAULTS, size: 'M', gauge: 1.3, chainMuzzle: true }, 1.3)!
+  const lamb = lambChainMuzzle({ ...LAMB_DEFAULTS, chainMuzzle: true }, 1.3)!
+  for (const [name, o] of [['cow', cow], ['lamb', lamb], ['small', { kind: 'stuffed', chain: 6, rounds: 3, even: 1 } as ChainOvalOptions]] as const) {
+    const G = chainOvalGeometry(o, FINE_COW)
+    const Y = Math.max(...G.rho), X = G.c + Y
+    const { stitches, words } = chainOvalNostrils(o, FINE_COW)
+    assert.equal(stitches.length, 4, `${name}: two strands a nostril`)
+    for (const [i, sx] of [[0, 1], [2, -1]] as const) {
+      const ends = [stitches[i]!, stitches[i + 1]!].flatMap((s) => [pointOf(o, FINE_COW, s.from), pointOf(o, FINE_COW, s.to)])
+      const cx = ends.reduce((a, p) => a + p.x, 0) / 4, cy = ends.reduce((a, p) => a + p.y, 0) / 4
+      // A quarter of the width in from its side; 35-45% down from the top (-y).
+      assert.ok(Math.abs(sx * cx / X - 0.5) < 0.06, `${name}: ${sx > 0 ? 'right' : 'left'} nostril at x ${(cx / X).toFixed(2)} of the half-width`)
+      const downFrac = (cy + Y) / (2 * Y)
+      assert.ok(downFrac >= 0.35 && downFrac <= 0.45, `${name}: ${downFrac.toFixed(2)} of the height down from the top`)
+      // The top end (from, -y) leans in toward the middle.
+      const top = pointOf(o, FINE_COW, stitches[i]!.from), bot = pointOf(o, FINE_COW, stitches[i]!.to)
+      assert.ok(top.y < bot.y && sx * top.x < sx * bot.x, `${name}: the top of the mark leans in`)
+    }
+    assert.match(words, /^Nostrils: .*bring the needle up on round \d+, [\d½]+ stitch(es)? out from the middle/)
+  }
+  // A muzzle aimed down from the line it is seen along: placed as seen, so
+  // further from the chain on the top side (its top half shows more).
+  const flat = chainOvalNostrils(cow, FINE_COW).stitches[0]!.from, tilted = chainOvalNostrils(cow, FINE_COW, { viewTiltDeg: 30 }).stitches[0]!.from
+  assert.ok(pointOf(cow, FINE_COW, tilted).y < pointOf(cow, FINE_COW, flat).y, 'tilted: higher on the top side')
+  assert.throws(() => chainOvalNostrils(cow, FINE_COW, { down: 0.6 }), /down/)
 })
 
 test('the switches: absent = every default hash unchanged; on = clean, and the words print the oval', () => {

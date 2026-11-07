@@ -65,6 +65,7 @@ import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import { FrontRaster, outlineSoftness } from './cuteMeasure'
 import type { AmigurumiPart, PartPlacement } from './composition'
+import type { EmbroideryStitch } from './faceEmbroidery'
 
 export type ChainOvalKind = 'stuffed' | 'patch'
 
@@ -853,4 +854,130 @@ export function chainOvalSideSpot(o: ChainOvalOptions, yr: number, round: number
   // Along the +y side the work runs toward -x; along the -y side toward +x.
   const s = spotTh(o, yr, round, side > 0 ? 1 : 3, (side > 0 ? -1 : 1) * stOffset)
   return { round: s.round, st: 0, th: s.th }
+}
+
+/** The stadium position v (in [0, 4)) of the local point (x, y) about the
+ *  core (the inverse of coreAt's direction). */
+function vOfPoint(x: number, y: number, c: number): number {
+  if (Math.abs(x) <= c) return y < 0 ? 2.5 + (x + c) / (2 * c || 1) : 0.5 + (c - x) / (2 * c || 1)
+  const t = Math.atan2(y, x > 0 ? x - c : x + c)
+  if (x > 0) return t >= 0 ? t / Math.PI : 4 + t / Math.PI
+  return 1.5 + ((t < 0 ? t + 2 * Math.PI : t) - Math.PI / 2) / Math.PI
+}
+
+export interface ChainOvalNostrilOptions {
+  /** How far down from the oval's top edge as seen, as a fraction of its seen
+   *  height (0.3-0.5). Default 0.4. */
+  down?: number
+  /** How far in from each side, as a fraction of its width. Default 0.25. */
+  inFrac?: number
+  /** Mark length as seen, as a fraction of the seen height. Default 0.14. */
+  length?: number
+  /** The lean (degrees), top end inward. Default 28. */
+  leanDeg?: number
+  /** Parallel strands side by side (1 a slanted mark, 2 a rounded oval). Default 2. */
+  strands?: 1 | 2
+  /** Strand spacing (mm), centre to centre. Default 1.1. */
+  strandMm?: number
+  /** How far the muzzle's aim points DOWN from the line it is seen along
+   *  (degrees; a muzzle set low on the face aims down, so its top half shows
+   *  more and the chain sits low in the outline seen). Default 0. */
+  viewTiltDeg?: number
+}
+
+/**
+ * THE OVAL MUZZLE'S NOSTRILS, a default for any muzzle worked round a chain
+ * (engine-shapes-1107 follow-up, Fable 7 Nov): one short slanted oval each
+ * side, on the upper half of the oval as seen (`down` of its seen height
+ * down from the top edge; local -y is the top), a quarter of its width in
+ * from each side, the top of each leaning in, so the pair reads as nostrils
+ * and never as a mouth. Placed on the oval's own planned dome (offset and
+ * height per round, `chainOvalGeometry`) seen along its aim tilted up by
+ * `viewTiltDeg`: each end of a mark is the visible dome point under it. The
+ * words count the way the oval is made: rounds out from the chain, stitches
+ * along from the stitch over the middle of the chain on the top side.
+ */
+export function chainOvalNostrils(o: ChainOvalOptions, yr: number, opts: ChainOvalNostrilOptions = {}): { stitches: EmbroideryStitch[]; words: string } {
+  const down = opts.down ?? 0.4, inFrac = opts.inFrac ?? 0.25
+  if (down < 0.3 || down > 0.5) throw new Error(`chain oval nostrils: down is 0.3..0.5 of the height (got ${down})`)
+  if (inFrac < 0.15 || inFrac > 0.4) throw new Error(`chain oval nostrils: inFrac is 0.15..0.4 of the width (got ${inFrac})`)
+  const G = chainOvalGeometry(o, yr)
+  const counts = chainOvalRounds(o)
+  const { c, rho } = G
+  const last = G.ly[G.ly.length - 1]!
+  const al = ((opts.viewTiltDeg ?? 0) * Math.PI) / 180
+  const ca = Math.cos(al), sa = Math.sin(al)
+  // Seen up (v) and toward the viewer (d) of the local point (x, y, z).
+  const seenV = (y: number, z: number): number => -y * ca - z * sa
+  const seenD = (y: number, z: number): number => z * ca - y * sa
+  const N = 240
+  const prof = Array.from({ length: N + 1 }, (_, i) => ({ ly: (i / N) * last, ...G.at((i / N) * last) }))
+  let vTop = -Infinity, vBot = Infinity, Ymax = 0
+  for (const p of prof) {
+    vTop = Math.max(vTop, seenV(-p.rho, p.z)); vBot = Math.min(vBot, seenV(p.rho, p.z))
+    Ymax = Math.max(Ymax, p.rho)
+  }
+  const H = vTop - vBot, X = c + Ymax
+  // The visible dome point seen at (x, v): local (x, y) and its meridian ly.
+  const at = (x: number, v: number): { x: number; y: number; ly: number } => {
+    let best: { x: number; y: number; ly: number; d: number } | null = null
+    for (const sy of [-1, 1]) {
+      let prev: { v: number; d: number; y: number; ly: number } | null = null
+      for (const p of prof) {
+        const dx = Math.max(0, Math.abs(x) - c)
+        if (p.rho < dx) { prev = null; continue }
+        const y = sy * Math.sqrt(p.rho * p.rho - dx * dx)
+        const cur = { v: seenV(y, p.z), d: seenD(y, p.z), y, ly: p.ly }
+        if (prev && (prev.v - v) * (cur.v - v) <= 0 && prev.v !== cur.v) {
+          const t = (v - prev.v) / (cur.v - prev.v)
+          const hit = { x, y: prev.y + (cur.y - prev.y) * t, ly: prev.ly + (cur.ly - prev.ly) * t, d: prev.d + (cur.d - prev.d) * t }
+          if (!best || hit.d > best.d) best = hit
+        }
+        prev = cur
+      }
+    }
+    if (!best) throw new Error('chain oval nostrils: a mark falls off the oval (narrow it with inFrac / length)')
+    return best
+  }
+  // Meridian position -> fractional round (1-based).
+  const roundOf = (ly: number): number => {
+    if (ly <= G.ly[0]!) return 1
+    for (let k = 1; k < G.ly.length; k++) if (ly <= G.ly[k]!) return k + (ly - G.ly[k - 1]!) / (G.ly[k]! - G.ly[k - 1]!)
+    return G.ly.length
+  }
+  const spot = (q: { x: number; y: number; ly: number }): { round: number; st: number; th: number } => ({ round: roundOf(q.ly), st: 0, th: Math.atan2(q.y, q.x) })
+  // Stitches along the top side from the middle, on the nearest whole round.
+  const along = (q: { x: number; y: number; ly: number }): { round: number; sts: number } => {
+    const r = Math.max(1, Math.min(counts.length, Math.round(roundOf(q.ly))))
+    const rk = rho[r - 1]!
+    const P = 4 * ((Math.PI * rk) / 2) + 4 * c
+    const s = sOfV(vOfPoint(q.x, q.y, c), rk, c) - sOfV(3, rk, c)
+    return { round: r, sts: Math.abs(s) / (P / counts[r - 1]!) }
+  }
+  const len = (opts.length ?? 0.14) * H
+  const lean = ((opts.leanDeg ?? 28) * Math.PI) / 180
+  const strands = opts.strands ?? 2, gap = opts.strandMm ?? 1.1
+  const stitches: EmbroideryStitch[] = []
+  let ends: { top: { round: number; sts: number }; bot: { round: number; sts: number } } | null = null
+  for (const sx of [1, -1] as const) {
+    const cx = sx * (X - inFrac * 2 * X), cv = vTop - down * H
+    // Bottom to top as seen: up and in (toward x = 0).
+    const ux = -sx * Math.sin(lean), uv = Math.cos(lean)
+    for (let k = 0; k < strands; k++) {
+      const off = strands === 1 ? 0 : (k - (strands - 1) / 2) * gap
+      const px = cx + off * uv, pv = cv - off * ux
+      const top = at(px + (ux * len) / 2, pv + (uv * len) / 2)
+      const bot = at(px - (ux * len) / 2, pv - (uv * len) / 2)
+      stitches.push({ from: spot(top), to: spot(bot), taut: true })
+    }
+    ends ??= { top: along(at(cx + (ux * len) / 2, cv + (uv * len) / 2)), bot: along(at(cx - (ux * len) / 2, cv - (uv * len) / 2)) }
+  }
+  const st = (v: number): string => { const h = Math.round(v * 2) / 2; return `${String(h).replace('.5', '½')} ${h === 1 ? 'stitch' : 'stitches'}` }
+  const e = ends!
+  const words =
+    'Nostrils: the muzzle\'s rounds circle the chain, so count rounds out from the chain, and stitches along the top side (toward the eyes) from the stitch over the middle of the chain. ' +
+    `For each nostril, bring the needle up on round ${e.top.round}, ${st(e.top.sts)} out from the middle, and take it down on round ${e.bot.round}, ${st(e.bot.sts)} out from the middle, ` +
+    (strands > 1 ? 'then work a second stitch right beside it, so the nostril is a small slanted oval, ' : '') +
+    'the top end leaning in toward the middle. Work the other nostril the same, mirrored on the other side. Pull snug, not tight.'
+  return { stitches, words }
 }
