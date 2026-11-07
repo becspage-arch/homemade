@@ -4263,7 +4263,7 @@ PHOTO_SOFT_BY = {
 # stood bunch, the linen's weave), the nursery as the bunny bar.
 PHOTO_LISTING_BY = {
     "windowsill": dict(photoAspect=1.33, photoPlaceX=0.04, photoBunchFull=1.6, photoBunchBehind=0.7, photoBunchStand=1.0,
-                       photoWeave=1.0, photoWeaveScale=1.3, photoCrumple=0.16, photoCrumpleScale=1.1,
+                       photoWeave=1.0, photoWeaveScale=1.3,
                        photoYawDeg=0.0, photoTiltDeg=83.0, photoFrame=0.72),
     "nursery": dict(photoWeave=1.0, photoRumple=1.0),
     "linen": dict(photoWeave=1.0),
