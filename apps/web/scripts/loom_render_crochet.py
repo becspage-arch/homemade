@@ -4233,9 +4233,9 @@ PHOTO_V1 = dict(
 PHOTO_SOFT = dict(
     photoKey=7.4, photoKeyDeg=70.0, photoKeyElev=20.0, photoKeySoft=2.2, photoKeySpread=80.0, photoKeyWarm=0.8,
     photoFill=1.2, photoFillDeg=55.0, photoFillElev=5.0, photoFillSoft=2.4,
-    photoRim=2.4, photoRimSoft=0.4, photoRimSide=-1.0, photoRimDeg=150.0, photoTop=0.08, photoTopSoft=2.6,
+    photoRim=3.6, photoRimSoft=0.4, photoRimSide=-1.0, photoRimDeg=150.0, photoTop=0.08, photoTopSoft=2.6,
     photoKick=2.0, photoKickDeg=115.0, photoKickElev=35.0, photoKickAim=0.78, photoKickSpread=12.0,
-    photoRake=20.0, photoRakeElev=14.0, photoRakeSoft=0.25, photoBounce=1.1, photoFlag=1.0,
+    photoRake=30.0, photoRakeElev=14.0, photoRakeSoft=0.25, photoBounce=1.1, photoFlag=1.0,
     photoAmbient=0.45, photoStudio=0.2, photoSetLight=0.35, photoExposure=-0.1, photoGlow=0.5, photoMeter=0.3,
     photoCatch=2.0, photoCatchElev=45.0,
 )
