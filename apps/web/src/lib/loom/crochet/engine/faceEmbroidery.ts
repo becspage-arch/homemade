@@ -89,6 +89,13 @@ export function faceUsesSafetyNose(style: FaceStyle): boolean {
 export interface SurfaceSpot {
   round: number
   st: number
+  /** The spot's azimuth round the host's own local z axis (radians), read off
+   *  the host's geometry by the module that built it: for a host whose
+   *  stitches are not spread evenly round the axis (an oval worked round a
+   *  chain, chainOval.ts), where `st` x 360 / count would not land on the
+   *  stitch the words name. Overrides `st` for the placement; absent = as
+   *  before. */
+  th?: number
 }
 
 /** One straight stitch: up at `from`, down at `to`. `taut`: laid as a
@@ -718,7 +725,7 @@ export function placeEmbroidery(features: EmbroideryFeature[], hosts: Map<string
       }
     }
     const rounds = host.part.rounds
-    const thOf = (s: SurfaceSpot): number => th0 + sign * ((2 * Math.PI) / countAt(rounds, Math.max(1, Math.min(rounds.length, s.round)))) * s.st
+    const thOf = (s: SurfaceSpot): number => s.th != null ? s.th : th0 + sign * ((2 * Math.PI) / countAt(rounds, Math.max(1, Math.min(rounds.length, s.round)))) * s.st
     const bundle = yr * YARN_BUNDLE_FRAC
     const rt = f.threadMm
     const strands: V3[][] = []

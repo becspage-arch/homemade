@@ -81,6 +81,12 @@ export interface TubeSpec {
   brim?: TubeBrim
   /** Column-gauge override (yarn radii), the density knob — same as buildSphere. */
   gaugeYr?: number
+  /** A PART ROUND (engine-shapes-1107): the last round is worked over only
+   *  its first `partialLast` stitches (its count in `rounds` stays the full
+   *  round's, which the profile lays), then fastened off, so a folded brim
+   *  is one round deeper over that arc. Absent = every round whole, every
+   *  hash unchanged. */
+  partialLast?: number
 }
 
 /** The brim rib stitches, in the order they alternate around the round. */
@@ -263,6 +269,12 @@ export function validateTubeSpec(spec: TubeSpec): void {
     const cur = rounds[k]!
     if (cur > prev * 2) throw new Error(`tube: round ${k + 1} more than doubles (${prev} → ${cur})`)
     if (cur * 2 < prev) throw new Error(`tube: round ${k + 1} less than halves (${prev} → ${cur})`)
+  }
+  if (spec.partialLast != null) {
+    const n = rounds[rounds.length - 1]!
+    if (!Number.isInteger(spec.partialLast) || spec.partialLast < 2 || spec.partialLast >= n)
+      throw new Error(`tube: a part round works 2 to ${n - 1} of its ${n} stitches (got ${spec.partialLast})`)
+    if (rounds.length < 2 || n !== rounds[rounds.length - 2]) throw new Error('tube: a part round cannot shape')
   }
   if (spec.brim) {
     if (spec.brim.rounds < 1 || spec.brim.rounds >= rounds.length)
@@ -563,9 +575,11 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
       const crownNzK = rid === st ? crownNz : hlK > 0 ? headApexRelief(dK.zh, SURFACE_LAY) : dK.zh * 1.15
       const postLzK = rid === st ? bodyPostLz : yoK > 0 ? -dK.z * 3.56 + (dK.z * 3.56 + dK.z * 0.6) * 0.65 : -dK.z * 2.13
       const ops = roundOps(prev, count, (k % 2) * 0.5)
+      // A part round stops after its stitches (opt-in; absent = the whole round).
+      const stopAt = spec.partialLast != null && k === counts.length - 1 ? spec.partialLast : Infinity
       let bi = 0
       let li = 0
-      for (let oi = 0; oi < ops.length; oi++) {
+      for (let oi = 0; oi < ops.length && li < stopAt; oi++) {
         const op = ops[oi]!
         if (op === 'dec') {
           const b1 = below[bi++]!
@@ -607,7 +621,7 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
           }
         }
       }
-      if (bi !== below.length) throw new Error(`tube round ${k + 1}: consumed ${bi} of ${below.length} stitches below`)
+      if (bi !== below.length && stopAt === Infinity) throw new Error(`tube round ${k + 1}: consumed ${bi} of ${below.length} stitches below`)
     }
     below = crowns
     mPrev = mK
@@ -621,8 +635,10 @@ export function buildTube(spec: TubeSpec, yarnRadiusMm: number): BuiltContinuous
   roundNow = counts.length - 1
   const placeEnd = mkPlace3(rEnd)
   const lastRowH = ribRounds.has(counts.length - 1) ? ribRowH : ridgeRounds.has(counts.length - 1) && st !== 'sc' ? ridgeRowH : drift
+  // A part round fastens off where it stops, not a whole round on.
+  const endFrac = spec.partialLast != null ? spec.partialLast / counts[counts.length - 1]! : 1
   for (let t = 1; t <= 4; t++) {
-    const th = phase + Math.PI * 2 * (1 + 0.012 * t)
+    const th = phase + Math.PI * 2 * (endFrac + 0.012 * t)
     const ly = mPrev - lastRowH * 0.12 * t
     const p = placeEnd(th * rEnd, ly, yr * (0.3 - 0.25 * t))
     push(p.x, p.y, p.z)
