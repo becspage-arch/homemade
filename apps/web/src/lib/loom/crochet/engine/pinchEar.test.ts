@@ -15,7 +15,7 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { buildPinchEar, pinchEarRounds, pinchEarWords, type PinchEarOptions } from './pinchEar'
+import { buildPinchEar, pinchEarRounds, pinchEarWords, topRollGapSts, topRollPinchAngle, type PinchEarOptions } from './pinchEar'
 import { COW_DEFAULTS, buildCowProgram } from './cowPreset'
 import { LAMB_DEFAULTS, buildLambProgram } from './lambPreset'
 import { compileComposition } from './composition'
@@ -62,10 +62,16 @@ test('the rounds and words: the cup or cone, then the pinch sewn and the ear sew
     const w = pinchEarWords(o)
     assert.ok(w.some((l) => /^Round 6 \(part round, over the top of the ear\): dc in next 6 sts only/.test(l)), w.join('\n'))
     assert.ok(w.some((l) => /^Fold the last 2 rounds back .*two rounds deep over the top/.test(l)), 'the rim folds two deep over the top')
-    assert.match(w.at(-2)!, new RegExp(`Make the pinch at the stitch 6 sts ${o.topRoll!.side === -1 ? 'on' : 'back'} from the middle stitch of the part round`))
+    // 18 sts: ceil(18 / 6) = 3 sts clear of the part round, the pinch on the 4th.
+    assert.match(w.at(-2)!, new RegExp(`Make the pinch at the 4th stitch of the last whole round ${o.topRoll!.side === -1 ? 'on from the last' : 'back from the first'} stitch of the part round .*so 3 sts lie between`))
   }
   assert.throws(() => pinchEarRounds({ shape: 'round', width: 18, depth: 1, rimRoll: 2, topRoll: {} }), /one-round rim/)
   assert.throws(() => pinchEarRounds({ shape: 'round', width: 18, depth: 1, topRoll: { arc: 0.8 } }), /arc/)
+  // A 12-st cup: 2 sts clear each side of a 5-st part round fits (5 + 2 x 2.5
+  // = 10), a 9-st part round does not.
+  assert.equal(topRollGapSts(12), 2)
+  assert.equal(topRollGapSts(24), 4)
+  assert.throws(() => pinchEarRounds({ shape: 'round', width: 12, depth: 1, topRoll: { arc: 0.7 } }), /no room for the pinch/)
 })
 
 test('every ear audits clean, stands out from its pinch, and a cup holds a pinched hollow', () => {
@@ -88,6 +94,23 @@ test('every ear audits clean, stands out from its pinch, and a cup holds a pinch
         // pinch is checked on the cow instead (rules 20, 21 and the render).
         if (!o.topRoll) assert.ok((b.metrics.rimMm?.pinch ?? 0) > 0.05, `${tag}: base pinched (${b.metrics.rimMm?.pinch.toFixed(2)})`)
       }
+    }
+  }
+})
+
+test('the top roll\'s pinch gap is counted in stitches: clean at 12, 18 and 24 sts, arcs 0.33 and 0.45, both sides', () => {
+  // ears-1107: the gap replaced the fine cow's 25° (TOP_ROLL_CLEAR), which
+  // at arc 0.45 left the part round's end 34° from the pinch, where the cow
+  // failed. The sweep behind it (9-30 sts, arcs 0.30-0.60) is in
+  // crochet-bar/jobs/ears-1107.md.
+  for (const width of [12, 18, 24]) for (const arc of [0.33, 0.45]) for (const side of [1, -1] as const) {
+    const o: PinchEarOptions = { shape: 'round', width, depth: 1, pinch: width <= 21 ? 1 : 0.7, topRoll: { arc, side } }
+    // The pinch's middle: half the part round + ceil(count / 6) + half a stitch.
+    const n = Math.round(arc * width)
+    assert.ok(Math.abs(topRollPinchAngle(o) - (2 * Math.PI * (n / 2 + Math.ceil(width / 6) + 0.5)) / width) < 1e-9)
+    for (const yr of [DK, FINE_COW]) {
+      const b = buildPinchEar(o, yr)
+      assert.deepEqual(b.problems, [], `${width} sts, arc ${arc}, side ${side} @ ${yr}: ${b.problems.join(' | ')}`)
     }
   }
 })

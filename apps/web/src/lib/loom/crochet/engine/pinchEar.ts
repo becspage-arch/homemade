@@ -62,13 +62,15 @@ export interface PinchEarOptions {
    *  then the rim folded back: two rounds deep over the top, one over the
    *  base, so the roll is plump at the top and thin at the pinch (the bar's
    *  cow ear, CUTE-RULES 21). `arc` 0.3..0.75 of the round (default 0.45;
-   *  the cow takes 0.33). The ear is pinched a little over a quarter round
-   *  (`TOP_ROLL_CLEAR` past it) from the middle of the part round, so the
-   *  plump roll runs along one edge of the ear out from the pinch: `side` +1
+   *  the cow takes 0.33), as long as the pinch still fits clear of both
+   *  ends. The ear is pinched `topRollGapSts(count)` whole stitches clear of
+   *  the near end of the part round (`gapSts` overrides the distance to the
+   *  pinch's middle, in stitches), so the plump roll runs along one edge of
+   *  the ear out from the pinch: `side` +1
    *  pinches back from the middle (against the way the rounds run), -1 on
    *  from it (a pair of ears takes one of each, so both rolls are on top).
    *  Absent = the even roll. */
-  topRoll?: { arc?: number; side?: 1 | -1 }
+  topRoll?: { arc?: number; side?: 1 | -1; gapSts?: number }
   /** A round cup only: squeezed gently across into an oval before it is
    *  pinched, 0..0.6 of its width (earPiece's `squash`). Absent = round. */
   squash?: number
@@ -85,6 +87,12 @@ function validate(o: PinchEarOptions): void {
   if (o.shape === 'round') {
     if (o.topRoll && (o.rimRoll ?? 1) !== 1) throw new Error('pinch ear: the top roll goes on a one-round rim (rimRoll 1)')
     if (o.topRoll && ((o.topRoll.arc ?? 0.45) < 0.3 || (o.topRoll.arc ?? 0.45) > 0.75)) throw new Error(`pinch ear: the top roll's arc is 0.3..0.75 (got ${o.topRoll.arc})`)
+    if (o.topRoll) {
+      // The pinch must sit nearer the part round's near end than its far end
+      // (else the roll runs round the far edge, opposite the pinch).
+      const n = topRollStitches(o), d = o.topRoll.gapSts ?? topRollGapSts(o.width) + 0.5
+      if (n + 2 * d > o.width) throw new Error(`pinch ear: a part round of ${n} sts leaves no room for the pinch ${d} sts clear of both its ends on a ${o.width}-st cup (arc at most ${((o.width - 2 * d) / o.width).toFixed(2)})`)
+    }
     if (!Number.isInteger(o.depth) || o.depth < 0 || o.depth > 4) throw new Error(`pinch ear: a round ear's depth is 0-4 even rounds (got ${o.depth})`)
     const r = o.rimRoll ?? 1
     if (r !== 1 && r !== 2) throw new Error(`pinch ear: a round ear's rim roll is 1 or 2 folded rounds (got ${r})`)
@@ -125,12 +133,37 @@ export function topRollStitches(o: PinchEarOptions): number {
   return Math.max(2, Math.min(o.width - 1, Math.round((o.topRoll.arc ?? 0.45) * o.width)))
 }
 
-/** How much past a quarter round the pinch sits from the top roll's middle.
- *  Measured on the fine cow (engine-shapes-1107, arc 0.33): at 0° and 20°
- *  the part round's end stitches' hooks were squeezed sideways by the pinch
- *  (1-2 audit failures per ear); 25° audits clean and gives rule 21 2.05;
- *  40° audits clean but the cup turns too far (rule 34 fails). */
-const TOP_ROLL_CLEAR = 25 * Math.PI / 180
+/** THE PINCH'S GAP FROM THE PART ROUND, in stitches (ears-1107; replaces
+ *  the fine cow's `TOP_ROLL_CLEAR` = 25° past a quarter round). The pinch
+ *  goes on the middle of a stitch of the rim, with `ceil(count / 6)` whole
+ *  unworked stitches between it and the near end of the part round: the
+ *  pinch's V draws the rim in over about a sixth of the round either side,
+ *  and a part round ending inside that drags its end stitch's hook sideways
+ *  off its crown. Measured (ears-1107, DK and 2.31 mm alike, both sides):
+ *  cups of 9 to 30 sts at arcs 0.30 to 0.60 all audit clean at this gap
+ *  (160 / 160); with the pinch on the stitch boundary half a stitch nearer,
+ *  159 / 160 (18 sts at arc 0.30 slips its last stitch); a stitch nearer,
+ *  most widths fail. A fixed count of stitches or a fixed angle does not
+ *  hold: the clean gap grows with the cup's count (3 sts at 12, 4 at 21,
+ *  5 at 30), a constant share of the round. */
+export function topRollGapSts(count: number): number {
+  return Math.ceil(count / 6)
+}
+
+/** The pinch's distance from the near end of the part round, in stitches
+ *  (to the middle of the pinch stitch): the gap's whole stitches plus half
+ *  the pinch stitch, or the caller's `topRoll.gapSts`. */
+function topRollPinchSts(o: PinchEarOptions, count: number): number {
+  return o.topRoll?.gapSts ?? topRollGapSts(count) + 0.5
+}
+
+/** The pinch's angle from the middle of the part round (radians): half the
+ *  part round plus the gap, in stitches of the rim round. */
+export function topRollPinchAngle(o: PinchEarOptions): number {
+  const n = topRollStitches(o)
+  const count = pinchEarRounds(o).at(-1)!
+  return (2 * Math.PI * (n / 2 + topRollPinchSts(o, count))) / count
+}
 
 /**
  * A cup with the top roll: built exactly as buildPart builds a tube part
@@ -153,7 +186,7 @@ function buildRolledCup(o: PinchEarOptions, part: AmigurumiPart, yr: number): { 
   // The pinch a little over a quarter round from the part round's middle, so
   // its ends stay clear of the pinch's plates (at a quarter round the end
   // stitches' hooks were squeezed sideways off their crowns, measured).
-  const want = -Math.PI / 2 + side * (Math.PI / 2 + TOP_ROLL_CLEAR)
+  const want = -Math.PI / 2 + side * topRollPinchAngle(o)
   const a = want - mid
   const c = Math.cos(a), sn = Math.sin(a)
   for (const nd of built.model.nodes) {
@@ -201,10 +234,15 @@ export function pinchEarWords(o: PinchEarOptions): string[] {
   if (o.shape === 'round') {
     // Where the pinch goes with the top roll: the stitch a little over a
     // quarter round from the part round's middle (buildRolledCup's turn).
+    // Where the pinch goes with the top roll (buildRolledCup's turn): the
+    // gap's unworked stitches clear of the part round, then the pinch stitch.
     const count = pinchEarRounds(o).at(-1)!
-    const away = Math.round((count * (Math.PI / 2 + TOP_ROLL_CLEAR)) / (2 * Math.PI))
+    const d = topRollPinchSts(o, count)
+    const k = Math.round(d + 0.5)
     const where = part
-      ? ` Make the pinch at the stitch ${away} sts ${(o.topRoll?.side ?? 1) > 0 ? 'back from the middle stitch of the part round (counting against the way you worked)' : 'on from the middle stitch of the part round (counting the way you worked)'}, so the thick roll runs along the top edge of the ear out from the pinch.`
+      ? (o.topRoll?.side ?? 1) > 0
+        ? ` Make the pinch at the ${ordinal(k)} stitch of the last whole round back from the first stitch of the part round (counting against the way you worked), so ${k - 1} sts lie between the pinch and the part round and the thick roll runs along the top edge of the ear out from the pinch.`
+        : ` Make the pinch at the ${ordinal(k)} stitch of the last whole round on from the last stitch of the part round (counting the way you worked), so ${k - 1} sts lie between the part round and the pinch and the thick roll runs along the top edge of the ear out from the pinch.`
       : ''
     return [
       ...body,
@@ -218,6 +256,8 @@ export function pinchEarWords(o: PinchEarOptions): string[] {
     'Sew the ear to the head by the pinched base only, the hollow facing forward and the point up.',
   ]
 }
+
+const ordinal = (n: number): string => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th'}`
 
 export interface PinchEarBuild {
   built: BuiltContinuous

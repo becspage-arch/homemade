@@ -38,6 +38,7 @@ import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
 import { earPart, type EarPieceOptions } from './earPiece'
 import type { CuteFeatures } from './cuteRules'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
+import { designRolledLop, rolledLopPart, type RolledLopOptions } from './rolledLop'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
 import {
   buildFaceEmbroidery,
@@ -247,6 +248,15 @@ export interface AmigurumiChoices {
    *  Opt-in: absent / false = the ears as before, every geometry hash
    *  unchanged. */
   foldedEars?: boolean
+  /** ROLLED-EDGE LOPS (ears-1107; `rolledLop.ts`): the bunny's lop ears as
+   *  long oval cups worked round a foundation chain, the lining the floor,
+   *  the rim folded back into a plump roll (a round deeper down the outer
+   *  edge), pinched at the base and sewn on by the pinch, hanging with the
+   *  lined hollow forward (CUTE-RULES 21). Bunny only; overrides `foldedEars`
+   *  and `cuppedEars`. An object overrides the designed ear's options.
+   *  Opt-in: absent / false = the ears as before, every geometry hash
+   *  unchanged. */
+  rolledLops?: boolean | Partial<RolledLopOptions>
   /** SEATED BACK LEGS (`CowChoices.seatBackLegs`): the cow's back legs sewn
    *  against the body's flanks. Cow only. Opt-in: absent / false = today's
    *  legs, and every geometry hash is unchanged. */
@@ -1097,6 +1107,27 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         spin: fd({ x: side * LOP_EAR_SPIN.x, y: LOP_EAR_SPIN.y, z: 0 }),
         seat: 4, poleIn: false, surfaceFit: 'ellipsoid' as const,
       }
+      if (choices.rolledLops && choices.base === 'bunny') {
+        // The rolled-edge lop (rolledLop.ts): the same seat, aim, turn and
+        // worn bend; its pinch is the seated end, its lined hollow the face
+        // the turn shows. The pair mirrors the part round, so both thick
+        // rolls run down the outer edges.
+        const yr = gaugeYarnRadiusMm(TOY_YARN, g)
+        const ear: RolledLopOptions = {
+          ...designRolledLop(BUNNY_ROLLED_LOP_MM[choices.size], yr),
+          liningHex: contrast,
+          ...(choices.rolledLops === true ? {} : choices.rolledLops),
+        }
+        parts.push({
+          ...rolledLopPart(ear, {
+            name: side < 0 ? 'ear-l' : 'ear-r', colourHex: main, side: side < 0 ? -1 : 1,
+            sewNote: 'by the pinched base only, on the side of the head under the hat band, hanging beside the face with the lined hollow facing forward',
+            place: { ...place, spin: fd({ x: side * ROLLED_LOP_SPIN.x, y: ROLLED_LOP_SPIN.y, z: 0 }), offset: { z: LOP_EAR_LIFT[choices.size] } },
+          }),
+          bend: LOP_EAR_BEND,
+        })
+        continue
+      }
       if (choices.foldedEars && choices.base === 'bunny') {
         // The folded lop (foldedPiece.ts): the same seat, aim, turn and worn
         // bend; its pinched base is the seated end, its front (the hollow)
@@ -1274,6 +1305,19 @@ export const BUNNY_FOLD_EAR: Record<AmigurumiSize, FoldedPieceOptions> = {
   M: { shape: 'lop', width: 10, length: 40, pinch: 1, cup: 0.25, curl: 0.2 },
   L: { shape: 'lop', width: 10, length: 42, pinch: 1, cup: 0.25, curl: 0.2 },
 }
+/** The rolled-edge lop's size (`AmigurumiChoices.rolledLops`), mm: the
+ *  closed pressed lop's own length (its rounds at the toy's yarn) and a
+ *  touch wider for the roll (rules 22, 23). */
+const BUNNY_ROLLED_LOP_MM: Record<AmigurumiSize, { lengthMm: number; widthMm: number }> = {
+  // ears-1107: 105 mm at M read 1.22 H (rule 22 wants 1.4-2.0, the bar 1.8);
+  // ch 34 at M reads 1.60 H and 0.53 W (rule 23, the bar's 0.53).
+  S: { lengthMm: 112, widthMm: 21 }, M: { lengthMm: 140, widthMm: 24 }, L: { lengthMm: 156, widthMm: 24 },
+}
+/** The rolled lop's hollow faces forward, a touch in toward the face (the
+ *  bar's lining). Measured on the bunny M (ears-1107): the closed lop's
+ *  {-0.5, 1} shows the rim edge-on and no opening (rule 21 1.0); {-0.25, 1}
+ *  reads 2.57 and {0, 1} 2.52 (the bar about 2.5). */
+const ROLLED_LOP_SPIN = { x: -0.25, y: 1 }
 /** Sewn on the upper side of the head, hanging down and a little out. */
 /** Sleepy bunny 4: sewn LOWER on the side (under the hat band, the bar's)
  *  and hanging nearly straight down, close beside the body, a touch forward

@@ -94,6 +94,15 @@ export interface ChainOvalOptions {
    *  body, foot or ball-ended snout. Default false (open: sewn on by its last
    *  round). */
   closed?: boolean
+  /** THE ROLLED RIM (ears-1107, opt-in): the last `rimFold` rounds (of the
+   *  rounds worked even) folded back over the OUTSIDE of the wall, the fold
+   *  brim a tube's cup ear has (tube.ts `brim: fold`), so an open oval cup
+   *  has a plump rolled lip all round. Absent = none, every hash unchanged. */
+  rimFold?: number
+  /** A PART ROUND (ears-1107, opt-in; tube.ts `partialLast`): the last round
+   *  is worked over its first `partialLast` stitches only, then fastened
+   *  off, so a folded rim is one round deeper over that stretch. */
+  partialLast?: number
 }
 
 /** Where a stitch sits round the oval: the fan round the end of the chain
@@ -124,6 +133,11 @@ function validate(o: ChainOvalOptions): void {
   for (const e of endIncs(o)) if (!Number.isInteger(e) || e < 1 || e > MAX_END_INC) throw new Error(`oval: 1-${MAX_END_INC} increases at each end (got ${e})`)
   if (o.closed && o.kind !== 'stuffed') throw new Error('oval: only a stuffed piece is closed')
   if (o.flatness != null && (o.flatness < 0 || o.flatness > 1)) throw new Error(`oval: flatness is 0..1 (got ${o.flatness})`)
+  if (o.rimFold != null) {
+    if (!Number.isInteger(o.rimFold) || o.rimFold < 1 || o.rimFold > 3) throw new Error(`oval: a rolled rim is 1-3 folded rounds (got ${o.rimFold})`)
+    if (o.closed || o.rimFold >= ev) throw new Error(`oval: the rolled rim folds back rounds worked even, with at least one wall round below it (${ev} even, ${o.rimFold} folded)`)
+  }
+  if (o.partialLast != null && (o.closed || !Number.isInteger(o.partialLast) || o.partialLast < 2 || ev < 1)) throw new Error(`oval: a part round is 2 or more sts of a last round worked even (got ${o.partialLast})`)
 }
 
 /** The increases at each end, per increase round. */
@@ -369,6 +383,7 @@ export function chainOvalGeometry(o: ChainOvalOptions, yr: number): ChainOvalGeo
     const last = pts[pts.length - 1]!
     pts.push({ r: 0, z: last.z - Math.sqrt(Math.max(drift * drift - last.r * last.r, (0.25 * drift) ** 2)) })
   }
+  if (o.rimFold) return foldedGeometry(o, yr, counts, c, rho, pts, drift)
   let P = pts
   for (let pass = 0; pass < 2; pass++) {
     const Q = [P[0]!]
@@ -397,6 +412,49 @@ export function chainOvalGeometry(o: ChainOvalOptions, yr: number): ChainOvalGeo
     const a = P[i - 1]!, b = P[i]!
     const seg = cum[i]! - cum[i - 1]! || 1
     const t = (s - cum[i - 1]!) / seg
+    const L = Math.hypot(b.r - a.r, b.z - a.z) || 1
+    return { rho: Math.max(0, a.r + (b.r - a.r) * t), z: a.z + (b.z - a.z) * t, tr: (b.r - a.r) / L, tz: (b.z - a.z) / L }
+  }
+  return { c, rho, ly: counts.map((_, k) => drift * (k + 1)), at }
+}
+
+/** Over this many chains the round-1 hooks follow their loops (buildChainOval). */
+const LONG_CHAIN = 12
+
+/** Centre-to-centre spacing of a folded rim's two layers (tube.ts's). */
+const FOLD_GAP_YR = 2.8
+
+/** The surface with THE ROLLED RIM (`rimFold`): the counts' own profile to the
+ *  last wall round, then the fabric turned back UP the outside a fabric gap
+ *  out, a round's pitch a round (tube.ts's fold). Each vertex carries its
+ *  fabric coordinate through the smoothing, so a round lands where its
+ *  count puts it on both sides of the turn. */
+function foldedGeometry(o: ChainOvalOptions, yr: number, counts: number[], c: number, rho: number[], pts: { r: number; z: number }[], drift: number): ChainOvalGeometry {
+  const fold = o.rimFold!
+  const body = pts.slice(0, pts.length - fold)
+  const last = body[body.length - 1]!
+  const rOut = last.r + yr * FOLD_GAP_YR
+  const all = [...body]
+  for (let i = 0; i < fold; i++) all.push({ r: rOut, z: last.z + drift * i })
+  let P = all.map((p, i) => ({ ...p, f: i * drift }))
+  for (let pass = 0; pass < 2; pass++) {
+    const Q = [P[0]!]
+    for (let i = 0; i < P.length - 1; i++) {
+      const a = P[i]!, b = P[i + 1]!
+      Q.push({ r: a.r * 0.75 + b.r * 0.25, z: a.z * 0.75 + b.z * 0.25, f: a.f * 0.75 + b.f * 0.25 })
+      Q.push({ r: a.r * 0.25 + b.r * 0.75, z: a.z * 0.25 + b.z * 0.75, f: a.f * 0.25 + b.f * 0.75 })
+    }
+    Q.push(P[P.length - 1]!)
+    P = Q
+  }
+  const lift = yr * 2 - Math.min(...P.map((p) => p.z))
+  for (const p of P) p.z += lift
+  const at = (ly: number): { rho: number; z: number; tr: number; tz: number } => {
+    if (ly <= 0) return { rho: ly, z: P[0]!.z, tr: 1, tz: 0 }
+    let i = 1
+    while (i < P.length - 1 && P[i]!.f < ly) i++
+    const a = P[i - 1]!, b = P[i]!
+    const t = Math.min(1, Math.max(0, (ly - a.f) / (b.f - a.f || 1)))
     const L = Math.hypot(b.r - a.r, b.z - a.z) || 1
     return { rho: Math.max(0, a.r + (b.r - a.r) * t), z: a.z + (b.z - a.z) * t, tr: (b.r - a.r) / L, tz: (b.z - a.z) / L }
   }
@@ -484,10 +542,22 @@ export function buildChainOval(o: ChainOvalOptions, yarnRadiusMm: number): Built
         if (i <= 2 * N - 3) return chainB[i - N]!
         return chainB[N - 2]!
       }
+      // A LONG chain (ears-1107, over LONG_CHAIN ch): each side stitch's hook
+      // goes where its chain loop is. The loops sit a chain's pitch apart and
+      // the crowns an sc's, so along a long side the crowns run ahead of
+      // their loops (2.6-2.9 yr by the end of a 24-ch side, measured: the
+      // ring audit failed at the side's far end). Up to LONG_CHAIN the hook
+      // stays under its crown, as before (every oval so far: ch 5-10).
+      const loopS = (i: number, xC: number): number => {
+        const t = target(i)
+        if (N <= LONG_CHAIN || t === endNode || i === 0 || i >= 2 * N - 2 || (i >= N - 2 && i <= N)) return xC
+        const p = nodes[t]!
+        return sOfV(nearV(vOfPoint(p.x, p.y, c), vOfS(xC, rhoK, c)), rhoK, c)
+      }
       for (let i = 0; i < n; i++) {
         const xC = sAt(i)
         const r = emitPlainStitch(S, dims, {
-          j: k, c: i, id: 'sc', s: 1, fz: 1, by: lyB, ty: lyK, xCrown: xC, xHook: xC,
+          j: k, c: i, id: 'sc', s: 1, fz: 1, by: lyB, ty: lyK, xCrown: xC, xHook: loopS(i, xC),
           bcBack: target(i), bcFront: target(i), cyBelow: dims.dh + yr * 0.15, bcNormalZ: zc, place3,
           linkRole: 'ring', headLoopMm, surfaceLay: SURFACE_LAY, backCross: BACK_CROSS,
         })
@@ -514,6 +584,8 @@ export function buildChainOval(o: ChainOvalOptions, yarnRadiusMm: number): Built
           li++
           continue
         }
+        // A part round stops after its stitches (opt-in).
+        if (o.partialLast != null && k === plan.length - 1 && li >= o.partialLast) { bi = below.length; break }
         const b = below[bi++]!
         const m = op === 'inc' ? 2 : 1
         for (let t = 0; t < m; t++) {
@@ -541,8 +613,12 @@ export function buildChainOval(o: ChainOvalOptions, yarnRadiusMm: number): Built
     const placeEnd = mkPlace3(rhoE)
     const lyE = G.ly[kEnd]!
     const drift = yr * rowPitchYr('sc') * DRIFT_SCALE
+    const PE = 4 * ((Math.PI * rhoE) / 2) + 4 * c
+    const RE = plan[kEnd]!
+    // A part round fastens off where it stops, not a whole round on.
+    const sEnd = o.partialLast != null ? ((o.partialLast - (RE.head - RE.tail) / 2) * PE) / RE.count : 0
     for (let t = 1; t <= 4; t++) {
-      const sx = (0.012 * t) * (4 * ((Math.PI * rhoE) / 2) + 4 * c)
+      const sx = sEnd + (0.012 * t) * PE
       // Closed: the tail runs into the sewn seam under the last round; open
       // or a patch: woven back along the edge.
       const ly = o.closed ? lyE + drift * 0.22 * t : lyE - drift * 0.12 * t
