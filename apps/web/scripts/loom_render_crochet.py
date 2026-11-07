@@ -1810,6 +1810,7 @@ def main():
         cam=cam, tgt=tgt, view=view, key_energy=key.data.energy,
         face=face_point(data, z_offset, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
         footprint=footprint_polar(data, cx, cy, yaw_r) if stage_of(view) != "studio" else None,
+        toy_y=toy_albedo(data) if stage_of(view) != "studio" else None,
         lights=[key, fill], remove=[surface]))
     scene.render.filepath = out_path
     if mem_saver_on(data):
@@ -2471,6 +2472,8 @@ def apply_stage(stage, scene, ctx):
     cam, tgt = ctx["cam"], ctx["tgt"]
     view = ctx["view"]
     po = photo_opts(view)
+    if photo_ignored(view):
+        print("[photo] v3 listing: the preset owns the light; ignored the scene's", ", ".join(photo_ignored(view)))
     _PHOTO.clear()
     _PHOTO.update(props=po["photoProps"], blanket=po["photoBlanket"], crumple=po["photoCrumple"],
                   foot=ctx.get("footprint"), bunch_full=po["photoBunchFull"], bunch_behind=po["photoBunchBehind"],
@@ -2558,9 +2561,11 @@ def apply_stage(stage, scene, ctx):
         _world(scene, (0.98, 0.95, 0.90), 0.5)
     if po["photoRoom"]:
         _photo_room(root, scene, variant if variant in PHOTO_ROOM_BY else stage, po["photoRoom"])
-    if po["photoLight"] == "window":
+    if po.get("photoGlow", 1.0) != 1.0:
+        _photo_glow(root, po["photoGlow"])
+    if po["photoLight"] in ("window", "soft"):
         builder_lights = list(set_lights)
-        _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene)
+        _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene, face=ctx.get("face"))
     if po["photoAmbient"] != 1.0 and scene.world:
         bgn = scene.world.node_tree.nodes["Background"]
         bgn.inputs["Strength"].default_value *= po["photoAmbient"]
@@ -2593,9 +2598,24 @@ def apply_stage(stage, scene, ctx):
     scene.view_settings.exposure = view.get(
         "stageExposure", scene.view_settings.exposure + _tune(view, stage, "exposure", "_none", STAGE_EXPOSURE_LIFT.get(stage, 0.0)))
     scene.view_settings.exposure += po["photoExposure"]
+    if po.get("photoMeter", 0.0) and ctx.get("toy_y"):
+        # soft-light-1107: meter for the toy, as a photographer does: a pale
+        # toy is given a little less exposure (its highlights keep their
+        # modelling instead of rolling off into the tone curve's shoulder), a
+        # dark one a little more; a fraction of the stops between the toy's
+        # mean yarn albedo and a mid-dark reference, clamped
+        ev = po["photoMeter"] * math.log2(PHOTO_METER_REF / max(ctx["toy_y"], 1e-3))
+        ev = max(-1.0, min(0.5, ev))
+        scene.view_settings.exposure += ev
+        print("[photo] meter: toy albedo Y %.3f -> %+.2f EV" % (ctx["toy_y"], ev))
     # Round 5: a touch more contrast and a warm golden grade (lifted warm
     # highlights, slightly cool-neutral shadows) over the AgX base look.
     scene.view_settings.look = view.get("stageLook", "AgX - Medium High Contrast")
+    if po.get("photoLook"):
+        try:
+            scene.view_settings.look = po["photoLook"]   # soft-light-1027: a gentler tone curve
+        except TypeError:
+            print("[photo] unknown look %r, kept %s" % (po["photoLook"], scene.view_settings.look))
     grade_golden(scene, _tune(view, stage, "warmth", "stageWarmth", STAGE_WARMTH.get(stage, 0.65)))
     if view.get("photo"):
         print("[photo]", view.get("photo"), " ".join("%s=%s" % (k[5:], v) for k, v in po.items()))
@@ -2686,6 +2706,8 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
         # the hem wanders (r6: a slack edge, never a ruled line)
         return xr + 0.06 * H * math.sin(y / H * 0.9 + seed) + 0.02 * H * math.sin(y / H * 2.7)
     ob = _cloth(name, root, mat, -x1, edge if right is not None else xr, y0, y1, n, h)
+    if _PHOTO.get("blanket", "none") != "none" and name in _PHOTO_CLOTHS:
+        _PHOTO.setdefault("cloths", []).append(ob)     # soft-light-1107: the cloth rake lights these
     if right is not None and hem > 0.0:
         pts = []
         m = 80
@@ -4145,6 +4167,34 @@ VARIANT_BUILDERS = {
 #   photoCatchElev  the catch-light's elevation above the camera axis, degrees
 #                   (cow-fable-1024g: higher puts the spot in the eye's upper
 #                   half, the bar's); 22 = where it has always sat      (22)
+#
+# SOFT LIGHT knobs (job soft-light-1027): the rig's hard-wired numbers made
+# knobs, plus the soft-light extras; every one is at today's value (or off) in
+# v2 and v1, so today's renders are unchanged.
+#   photoFillDeg    fill azimuth on the far side (deg from the camera)   (45)
+#   photoFillElev   fill elevation (deg)                                 (12)
+#   photoFillSoft   fill size / the key distance                         (1.4)
+#   photoRimSoft    rim size / the key distance                          (0.22)
+#   photoTop        a big soft overhead light (the sky / ceiling over a
+#                   window table), x the key at the piece; 0 = off       (0)
+#   photoTopSoft    its size / the key distance                          (2.0)
+#   photoKick       a soft kicker from behind on the SHADOW side: lifts the
+#                   far contour off the background (the bar cow's lit right
+#                   edge); x the key; 0 = off                            (0)
+#   photoKickDeg    its azimuth on the shadow side (deg from the camera) (140)
+#   photoLook       the AgX look; "" = the stage's own ("AgX - Medium High
+#                   Contrast", or view.stageLook)                        ("")
+#
+# photoLight "soft" (and photo "v3" = v2 with photoLight "soft", the
+# recommended listing default for every toy): PHOTO_SOFT below, under any
+# knob the view sets itself. A big soft window key (4x v2's source size, a
+# wide spread) 70 deg off the lens and low (22 deg, a window's light), a big
+# white-card bounce square to the far side (95 deg, a little high), a soft top light, a soft kicker from behind on
+# the shadow side that lifts the far contour, a brighter room ambient (the
+# bounce of a real room), +0.75 exposure, the catch-light kept. Tuned
+# (soft-light-1027, local + Fargate renders of the cow) to the bar photos'
+# measured ranges: head side ratio 1.3-2.0 (bar cow 1.8; v2 gave 19), the
+# shadow side's L* at least ~0.5 of the lit side's, the far contour lifted.
 PHOTO_STAGE3_OFF = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
@@ -4158,6 +4208,9 @@ PHOTO_V2 = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
+    photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
+    photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
+    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4170,7 +4223,52 @@ PHOTO_V1 = dict(
     photoAspect=0.0, photoPlaceX=0.0, photoRoom=0.0, photoBunchFull=1.0, photoBunchBehind=0.0, photoBunchStand=0.0,
     photoWeave=0.0, photoWeaveScale=1.0, photoCrumpleScale=1.0, photoRumple=0.0,
     photoCatch=0.0, photoCatchElev=22.0,
+    photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
+    photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
+    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0,
 )
+
+# photoLight "soft" / photo "v3" (soft-light-1027): the soft listing light.
+# Values are placed under the view's own knobs (a knob the view sets wins).
+PHOTO_SOFT = dict(
+    photoKey=7.4, photoKeyDeg=70.0, photoKeyElev=20.0, photoKeySoft=2.2, photoKeySpread=80.0, photoKeyWarm=0.8,
+    photoFill=1.2, photoFillDeg=55.0, photoFillElev=5.0, photoFillSoft=2.4,
+    photoRim=3.6, photoRimSoft=0.4, photoRimSide=-1.0, photoRimDeg=150.0, photoTop=0.08, photoTopSoft=2.6,
+    photoKick=2.0, photoKickDeg=115.0, photoKickElev=35.0, photoKickAim=0.78, photoKickSpread=12.0,
+    photoRake=30.0, photoRakeElev=14.0, photoRakeSoft=0.25, photoBounce=1.1, photoFlag=1.0,
+    photoAmbient=0.45, photoStudio=0.2, photoSetLight=0.35, photoExposure=-0.1, photoGlow=0.5, photoMeter=0.3,
+    photoCatch=2.0, photoCatchElev=45.0,
+)
+
+# photo "v3" = the listing photo (soft-light-1107): these knobs belong to the
+# preset; a scene's own value for any of them is ignored under v3 (logged), so
+# hand-set v2 light knobs in an existing scene cannot leak into a listing.
+PHOTO_LIGHT_KNOBS = (
+    "photoLight", "photoKey", "photoKeyDeg", "photoKeyElev", "photoKeySoft", "photoKeySpread", "photoKeyWarm",
+    "photoFill", "photoFillDeg", "photoFillElev", "photoFillSoft", "photoRim", "photoRimSoft",
+    "photoSetLight", "photoStudio", "photoAmbient", "photoExposure", "photoLook",
+    "photoTop", "photoTopSoft", "photoKick", "photoKickDeg", "photoKickElev", "photoKickAim", "photoKickSpread", "photoKickSoft",
+    "photoRake", "photoRakeElev", "photoRakeSoft", "photoRoom", "photoGlow", "photoFlag", "photoBounce", "photoBounceDeg", "photoBounceAim", "photoBounceSpread", "photoMeter", "photoCatch", "photoCatchElev", "photoRimSide", "photoRimDeg",
+)
+# The soft light per set, over PHOTO_SOFT (the set's exposure and room depth:
+# a pale nursery takes less lift than the windowsill's dark wood).
+PHOTO_SOFT_BY = {
+    "windowsill": dict(photoRoom=2.4, photoGlow=0.15),
+    "nursery": dict(photoRoom=1.0),
+    "linen": dict(photoRoom=1.0),
+    "christmas": dict(photoRoom=1.0),
+}
+# The listing composition per set under v3 (a scene's own composition knob
+# wins): the windowsill as the cow bar (landscape, the toy a touch right, the
+# stood bunch, the linen's weave), the nursery as the bunny bar.
+PHOTO_LISTING_BY = {
+    "windowsill": dict(photoAspect=1.33, photoPlaceX=0.04, photoBunchFull=1.6, photoBunchBehind=0.7, photoBunchStand=1.0,
+                       photoWeave=1.0, photoWeaveScale=1.3,
+                       photoYawDeg=0.0, photoTiltDeg=83.0, photoFrame=0.72),
+    "nursery": dict(photoWeave=1.0, photoRumple=1.0),
+    "linen": dict(photoWeave=1.0),
+    "christmas": dict(photoWeave=1.0),
+}
 
 # photoFrame per stage when the view does not set it (the bunny bar fills
 # the frame far more than the cow bar does)
@@ -4243,19 +4341,65 @@ def _photo_room(root, scene, key, amt):
         bgn.inputs["Strength"].default_value *= max(0.15, 1.0 - amt * (1.0 - spec["ambient"]))
     print("[photo] room %s x%.2f: %s" % (key, amt, ", ".join(sorted(done))))
 
+def _photo_glow(root, f):
+    """photoGlow (soft-light-1107): x the set's own glow (every emission in
+    its materials: the window's outside, a lantern, fairy lights), so a
+    window behind the toy reads as a bright soft window, not a blown panel."""
+    done = set()
+    for ob in root.children_recursive:
+        for sl in getattr(ob, "material_slots", []):
+            m = sl.material
+            if not m or not m.use_nodes or m.name in done:
+                continue
+            done.add(m.name)
+            for n in m.node_tree.nodes:
+                if n.type == "EMISSION":
+                    n.inputs["Strength"].default_value *= f
+                elif n.type == "BSDF_PRINCIPLED" and "Emission Strength" in n.inputs:
+                    n.inputs["Emission Strength"].default_value *= f
+    print("[photo] glow x%.2f" % f)
+
+
 # What the set builders consult while a stage is built (reset per render).
 _PHOTO = {}
 
 
 def photo_opts(view):
-    v2 = view.get("photo") == "v2"
+    style = view.get("photo")
+    v2 = style in ("v2", "v3")
+    listing = style == "v3"
     base = PHOTO_V2 if v2 else PHOTO_V1
     po = {k: view.get(k, v) for k, v in base.items()}
-    if v2 and "photoFrame" not in view:
-        po["photoFrame"] = PHOTO_FRAME_BY.get(view.get("stage"), po["photoFrame"])
-    if v2 and "photoYawDeg" not in view:
-        po["photoYawDeg"] = PHOTO_YAW_BY.get(view.get("stage"), po["photoYawDeg"])
+    stage = view.get("stage")
+    if listing:
+        # v3 = the LISTING photo (soft-light-1107): the preset owns the light,
+        # so a light knob a scene carries (a hand-set v2 key, a fill...) is
+        # ignored and every pattern gets the same light; the set's composition
+        # defaults sit under the scene's own composition knobs
+        for k in PHOTO_LIGHT_KNOBS:
+            po[k] = base[k]
+        po["photoLight"] = "soft"
+        for k, v in PHOTO_LISTING_BY.get(stage, {}).items():
+            if k not in view:
+                po[k] = v
+    if po["photoLight"] == "soft":
+        soft = dict(PHOTO_SOFT)
+        soft.update(PHOTO_SOFT_BY.get(stage, {}))
+        for k, v in soft.items():
+            if listing or k not in view:
+                po[k] = v
+    if v2 and "photoFrame" not in view and not (listing and "photoFrame" in PHOTO_LISTING_BY.get(stage, {})):
+        po["photoFrame"] = PHOTO_FRAME_BY.get(stage, po["photoFrame"])
+    if v2 and "photoYawDeg" not in view and not (listing and "photoYawDeg" in PHOTO_LISTING_BY.get(stage, {})):
+        po["photoYawDeg"] = PHOTO_YAW_BY.get(stage, po["photoYawDeg"])
     return po
+
+
+def photo_ignored(view):
+    """The light knobs a v3 (listing) scene carries that the preset overrides."""
+    if view.get("photo") != "v3":
+        return []
+    return sorted(k for k in PHOTO_LIGHT_KNOBS if k in view)
 
 
 def photo_camera_view(view, v):
@@ -4268,6 +4412,23 @@ def photo_camera_view(view, v):
         v["tiltDeg"] = po["photoTiltDeg"]
     v["aimHeightFrac"] = max(view.get("aimHeightFrac", 0.0), po["photoAim"])
     return v
+
+
+PHOTO_METER_REF = 0.1      # photoMeter's reference albedo (linear Y): a mid-dark yarn
+
+
+def toy_albedo(data):
+    """The toy's mean yarn albedo (linear Y of each stroke's hex, weighted by
+    its drawn length in points), for photoMeter; None without strokes."""
+    tot = wsum = 0.0
+    for st in data.get("strokes") or []:
+        n = sum(len(f) for f in st.get("filaments") or [])
+        if not n or not st.get("hex"):
+            continue
+        r, g, b, _ = hex_to_lin(st["hex"])
+        tot += n * (0.2126 * r + 0.7152 * g + 0.0722 * b)
+        wsum += n
+    return tot / wsum if wsum else None
 
 
 def face_point(data, z_offset, cx, cy, yaw):
@@ -4325,7 +4486,7 @@ def footprint_polar(data, cx, cy, yaw, bins=48):
 KEY_V2 = (1.0, 0.88, 0.74)
 
 
-def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, scene):
+def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, scene, face=None):
     """The window rig: one soft warm key from the side, a broad dim fill on the
     far side, a small rim from behind on the key's side. The stage's own
     lights stay on (they light the room) but eased, the studio key/fill too."""
@@ -4342,7 +4503,9 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
         e = math.radians(el_deg)
         return (-dist * math.cos(e) * math.sin(a), -dist * math.cos(e) * math.cos(a), aim[2] + dist * math.sin(e))
     made = []
-    key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, KEY_V2)
+    kw = max(0.0, min(1.0, po.get("photoKeyWarm", 0.0)))
+    key_rgb = tuple(a + kw * (b - a) for a, b in zip(KEY_V2, GOLD)) if kw else KEY_V2
+    key = light(at(po["photoKeyDeg"], po["photoKeyElev"], r), aim, po["photoKey"], po["photoKeySoft"] * r, key_rgb)
     made.append(key)
     try:
         # r5: a window's light falls on the toy and the sill in front of it,
@@ -4353,10 +4516,124 @@ def _photo_lights(view, po, root, H, R, s, light, set_lights, studio_lights, sce
         pass
     if po["photoFill"] > 0:
         side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
-        made.append(light(at(side * 45.0, 12.0, 1.1 * r), aim, po["photoFill"], 1.4 * r, (1.0, 0.97, 0.94)))
+        made.append(light(at(side * po["photoFillDeg"], po["photoFillElev"], 1.1 * r), aim, po["photoFill"],
+                          po["photoFillSoft"] * r, (1.0, 0.97, 0.94)))
     if po["photoRim"] > 0:
+        # photoRimSide (1107): 1 = behind the key's side (v1/v2), -1 = behind the
+        # SHADOW side, where the far contour wants its thin edge
+        side = (1.0 if po["photoKeyDeg"] >= 0 else -1.0) * (1.0 if po.get("photoRimSide", 1.0) >= 0 else -1.0)
+        rl = light(at(side * po.get("photoRimDeg", 150.0), 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"],
+                   po["photoRimSoft"] * r, GOLD)
+        rl.name = "photo_rim"
+        made.append(rl)
+    if po.get("photoTop", 0.0) > 0:
+        # soft-light-1027: the sky / ceiling over a window table, a big soft
+        # source nearly overhead (a touch toward the key and the lens), so the
+        # top of every round form is lit and the contact shadow is a soft pool
         side = 1.0 if po["photoKeyDeg"] >= 0 else -1.0
-        made.append(light(at(side * 150.0, 42.0, 0.8 * r), (0.0, 0.0, 0.7 * H), po["photoRim"], 0.22 * r, GOLD))
+        made.append(light(at(side * 20.0, 78.0, 1.0 * r), aim, po["photoTop"], po["photoTopSoft"] * r, WARM_SOFT))
+    if po.get("photoKick", 0.0) > 0:
+        # soft-light-1027: a soft kicker from behind on the SHADOW side, so the
+        # far contour carries a thin warm edge and lifts off the background
+        side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
+        # photoKickAim: a fraction of the toy's height, or (-1) the face's
+        # height, so a narrow kicker finds the head on any toy
+        kz = face[2] if (face and po.get("photoKickAim", 0.6) < 0) else po.get("photoKickAim", 0.6) * H
+        kk = light(at(side * po["photoKickDeg"], po.get("photoKickElev", 30.0), 0.8 * r),
+                   (0.0, 0.0, kz), po["photoKick"], po.get("photoKickSoft", 0.5) * r, WARM)
+        kk.name = "photo_kick"
+        if po.get("photoKickSpread", 0.0) > 0:
+            # soft-light-1107: a narrow kicker skims the HEAD's far contour and
+            # leaves the body to the bounce (a wide one lit the body's far side
+            # as brightly as its near one: no modelling)
+            try:
+                kk.data.spread = math.radians(po["photoKickSpread"])
+            except Exception:
+                pass
+        made.append(kk)
+    if po.get("photoRake", 0.0) > 0 and _PHOTO.get("cloths"):
+        # soft-light-1107: the window's light raking the CLOTH only (light
+        # linking): a smaller, low source from the key's side, so the creases
+        # and the weave carry their shadows where the big soft key that wraps
+        # the toy fills them. The toy
+        # and the props neither receive it nor shadow it (shadow linking), so
+        # no long hard shadow runs across the cloth: the toy's contact shadow
+        # stays the soft one of the window-sized key
+        rk = light(at(po["photoKeyDeg"], po.get("photoRakeElev", 10.0), 1.2 * r), (0.0, 0.0, 0.0), po["photoRake"],
+                   po.get("photoRakeSoft", 0.25) * r, key_rgb)
+        rk.name = "photo_rake"
+        try:
+            rx = bpy.data.collections.new("photo_rake_rx")
+            for ob in _PHOTO["cloths"]:
+                rx.objects.link(ob)
+            rk.light_linking.receiver_collection = rx
+            bl = bpy.data.collections.new("photo_rake_bl")
+            cloths = set(_PHOTO["cloths"])
+            for ob in scene.objects:
+                if ob.type in ("MESH", "CURVE", "CURVES") and ob not in cloths:
+                    bl.objects.link(ob)
+            rk.light_linking.blocker_collection = bl
+            for it in bl.collection_objects:
+                it.light_linking.link_state = "EXCLUDE"
+            print("[photo] rake %.2f on %d cloth(s), elev %.0f" % (po["photoRake"], len(rx.objects), po.get("photoRakeElev", 10.0)))
+        except Exception as e:      # no light linking (Blender < 4.0): no rake
+            print("[photo] rake needs light linking (%s): off" % e)
+            rk.data.energy = 0.0
+        made.append(rk)
+    bounce = None
+    if po.get("photoBounce", 0.0) > 0:
+        # soft-light-1107: the white card on the table in front of the toy
+        # (every product table has one): a soft source just above the cloth,
+        # below the lens, throwing light UP under the chin and into the gap
+        # between the legs, which the window above cannot reach. It lights
+        # the toy only (not the cloth it stands on, not the room)
+        # photoBounceDeg: its azimuth, + toward the SHADOW side
+        side = -1.0 if po["photoKeyDeg"] >= 0 else 1.0
+        bounce = light(at(side * po.get("photoBounceDeg", 0.0), 2.0, 0.75 * r), (0.0, 0.0, po.get("photoBounceAim", 0.35) * H),
+                       po["photoBounce"], 0.9 * r, WARM_SOFT)
+        if po.get("photoBounceSpread", 0.0) > 0:
+            try:
+                bounce.data.spread = math.radians(po["photoBounceSpread"])
+            except Exception:
+                pass
+        made.append(bounce)
+    # soft-light-1107: with photoFlag the toy's rig is kept off (light
+    # linking) the room behind the toy (a photographer's black flag: the
+    # window and the bounce light the toy, the room stays in its own light)
+    keep_off = []
+    if po.get("photoFlag", 0.0) > 0:
+        inv = root.matrix_world.inverted()
+        behind = R * 1.3 + 0.25 * H
+        cl = set(_PHOTO.get("cloths") or [])
+        for ob in root.children_recursive:
+            if ob.type not in ("MESH", "CURVE", "CURVES") or ob in cl:
+                continue
+            c = sum((ob.matrix_world @ Vector(v) for v in ob.bound_box), Vector()) / 8.0
+            if (inv @ c).y > behind:
+                keep_off.append(ob)
+
+    def keep_light_off(lt, obs, tag):
+        if not obs:
+            return
+        try:
+            col = bpy.data.collections.new("photo_off_" + tag)
+            for ob in obs:
+                col.objects.link(ob)
+            for it in col.collection_objects:
+                it.light_linking.link_state = "EXCLUDE"
+            lt.light_linking.receiver_collection = col
+        except Exception as e:
+            print("[photo] light linking unavailable (%s)" % e)
+    for i, lt in enumerate(list(made)):
+        if lt.name.startswith("photo_rake"):
+            continue        # the rake keeps its own links (the cloth only)
+        # the bounce card and the kicker light the toy, not the cloth (a kicker
+        # skimming the cloth from behind fills the creases the rake draws)
+        # (the rim only under the flag, so a v1/v2 photo keeps its rim on the cloth)
+        off_cloth = lt is bounce or lt.name.startswith("photo_kick") or (lt.name.startswith("photo_rim") and po.get("photoFlag", 0.0) > 0)
+        keep_light_off(lt, keep_off + (list(_PHOTO.get("cloths") or []) if off_cloth else []), str(i))
+    if keep_off:
+        print("[photo] flag: the rig kept off %d room object(s) behind the toy" % len(keep_off))
     if po.get("photoCatch", 0.0) > 0:
         # cow-fable-1024b: a small hard light just off the camera axis (a
         # touch to the key's side, above the eye line), glossy rays only, so

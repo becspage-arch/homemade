@@ -173,5 +173,93 @@ class MemSaver(unittest.TestCase):
         self.assertEqual(alias, [st])
 
 
+class SoftLight(unittest.TestCase):
+    """soft-light-1027: the soft listing light (photoLight "soft" / photo "v3")."""
+
+    def test_v2_and_v1_unchanged(self):
+        # the new knobs sit at the rig's old fixed numbers, the extras off
+        for base in (R.PHOTO_V2, R.PHOTO_V1):
+            self.assertEqual((base["photoFillDeg"], base["photoFillElev"], base["photoFillSoft"], base["photoRimSoft"]),
+                             (45.0, 12.0, 1.4, 0.22))
+            self.assertEqual((base["photoTop"], base["photoKick"], base["photoLook"]), (0.0, 0.0, ""))
+        po = R.photo_opts({"photo": "v2", "stage": "windowsill"})
+        self.assertEqual(po["photoLight"], "window")
+        for k in R.PHOTO_SOFT:
+            if k in R.PHOTO_V2 and k not in ("photoFrame", "photoYawDeg"):
+                self.assertEqual(po[k], R.PHOTO_V2[k], k)
+        self.assertEqual(R.photo_opts({})["photoLight"], "stage")
+
+    def test_v3_is_v2_with_the_soft_light_and_the_listing_composition(self):
+        for stage in ("windowsill", "nursery", "linen", "christmas", "wall"):
+            v2 = R.photo_opts({"photo": "v2", "stage": stage})
+            v3 = R.photo_opts({"photo": "v3", "stage": stage})
+            self.assertEqual(v3["photoLight"], "soft")
+            want = dict(v2)
+            want.update(R.PHOTO_SOFT)
+            want.update(R.PHOTO_SOFT_BY.get(stage, {}))
+            want.update(R.PHOTO_LISTING_BY.get(stage, {}))
+            want["photoLight"] = "soft"
+            self.assertEqual(v3, want, stage)
+        # every soft / per-set knob is a known knob; the preset's are all light knobs
+        self.assertTrue(set(R.PHOTO_SOFT) <= set(R.PHOTO_V2))
+        self.assertTrue(set(R.PHOTO_SOFT) <= set(R.PHOTO_LIGHT_KNOBS))
+        for t in R.PHOTO_SOFT_BY.values():
+            self.assertTrue(set(t) <= set(R.PHOTO_LIGHT_KNOBS))
+        for t in R.PHOTO_LISTING_BY.values():
+            self.assertTrue(set(t) <= set(R.PHOTO_V2))
+            self.assertFalse(set(t) & set(R.PHOTO_LIGHT_KNOBS))
+        self.assertTrue(set(R.PHOTO_LIGHT_KNOBS) <= set(R.PHOTO_V2))
+
+    def test_v3_owns_the_light_a_scene_keeps_its_composition(self):
+        # soft-light-1107: a hand-set v2 light in a scene is ignored under v3
+        view = {"photo": "v3", "stage": "windowsill", "photoKey": 0.9, "photoKick": 0.0, "photoFill": 3.0,
+                "photoLight": "window", "photoExposure": 1.0, "photoAspect": 1.0, "photoFrame": 0.6}
+        po = R.photo_opts(view)
+        self.assertEqual(po["photoLight"], "soft")
+        for k in ("photoKey", "photoKick", "photoFill", "photoExposure"):
+            self.assertEqual(po[k], R.PHOTO_SOFT[k], k)
+        self.assertEqual((po["photoAspect"], po["photoFrame"]), (1.0, 0.6))
+        self.assertEqual(R.photo_ignored(view), ["photoExposure", "photoFill", "photoKey", "photoKick", "photoLight"])
+        self.assertEqual(R.photo_ignored({"photo": "v2", "photoKey": 1.0}), [])
+        # tuning: the soft light on a v2 scene, where the view's knobs still win
+        t = R.photo_opts({"photo": "v2", "photoLight": "soft", "photoKey": 0.9, "stage": "windowsill"})
+        self.assertEqual((t["photoKey"], t["photoTop"], t["photoRoom"]),
+                         (0.9, R.PHOTO_SOFT["photoTop"], R.PHOTO_SOFT_BY["windowsill"]["photoRoom"]))
+        # the windowsill listing frame and turn are the listing's, not PHOTO_FRAME_BY's
+        w = R.photo_opts({"photo": "v3", "stage": "windowsill"})
+        self.assertEqual((w["photoFrame"], w["photoYawDeg"], w["photoTiltDeg"]), (0.72, 0.0, 83.0))
+        n = R.photo_opts({"photo": "v3", "stage": "nursery"})
+        self.assertEqual((n["photoFrame"], n["photoYawDeg"]), (R.PHOTO_FRAME_BY["nursery"], R.PHOTO_YAW_BY["nursery"]))
+
+    def test_the_1107_knobs_are_off_in_v1_and_v2(self):
+        off = dict(photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0,
+                   photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35,
+                   photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25,
+                   photoRimSide=1.0, photoRimDeg=150.0)
+        for base in (R.PHOTO_V2, R.PHOTO_V1):
+            for k, v in off.items():
+                self.assertEqual(base[k], v, k)
+        # and no photo style at all is the stage exactly as before
+        po = R.photo_opts({})
+        self.assertEqual(po["photoLight"], "stage")
+        for k, v in off.items():
+            self.assertEqual(po[k], v, k)
+
+    def test_soft_is_softer_than_v2(self):
+        # bigger sources, a broader fill, more of the light off the key, a
+        # shadow-side kicker and rim, the cloth's own rake, exposure metered
+        S, V = R.PHOTO_SOFT, R.PHOTO_V2
+        self.assertGreater(S["photoKeySoft"], 2 * V["photoKeySoft"])
+        self.assertGreater(S["photoFillSoft"], V["photoFillSoft"])
+        self.assertGreater((S["photoFill"] + S["photoTop"] + S["photoKick"]) / S["photoKey"],
+                           (V["photoFill"] + V["photoTop"] + V["photoKick"]) / V["photoKey"])
+        self.assertGreater(S["photoAmbient"], V["photoAmbient"])
+        self.assertGreater(S["photoTop"], 0)
+        self.assertGreater(S["photoKick"], 0)
+        self.assertLess(S["photoRimSide"], 0)
+        self.assertGreater(S["photoRake"], 0)
+        self.assertGreater(S["photoMeter"], 0)
+        self.assertEqual(S["photoFlag"], 1.0)
+
 if __name__ == "__main__":
     unittest.main()

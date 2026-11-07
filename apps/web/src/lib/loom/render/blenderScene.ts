@@ -123,8 +123,14 @@ export function pickHeroStageVariant(stage: HeroStage, seed: string, explicit?: 
  *       eye line at the face; the dried bunch rebuilt from thin stems, small
  *       heads and wisps, the cloth under the toy softly crumpled, the spring
  *       jug brought into frame
+ *   v3  the LISTING photo (soft-light-1027 / 1107): v2's camera and props
+ *       with the soft listing light (`HERO_PHOTO_SOFT`, per set
+ *       `HERO_PHOTO_SOFT_BY`) and the set's listing composition
+ *       (`HERO_PHOTO_LISTING_BY`). The preset OWNS the light: a scene's own
+ *       light knobs are dropped / ignored, so every pattern is lit the same.
+ *       The listing path's default (`HERO_PHOTO_LISTING`, `withListingPhoto`).
  */
-export const HERO_PHOTO_STYLES = ['v1', 'v2'] as const
+export const HERO_PHOTO_STYLES = ['v1', 'v2', 'v3'] as const
 export type HeroPhoto = (typeof HERO_PHOTO_STYLES)[number]
 
 export function isHeroPhoto(v: unknown): v is HeroPhoto {
@@ -137,8 +143,10 @@ export function isHeroPhoto(v: unknown): v is HeroPhoto {
  * `PHOTO_V2` in loom_render_crochet.py (checked by blenderScene.test.ts).
  */
 export interface HeroPhotoKnobs {
-  /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights. */
-  photoLight?: 'window' | 'stage'
+  /** 'window' = the one-sided window rig (v2), 'stage' = the stage's own lights,
+   *  'soft' = the window rig with the soft listing light (`HERO_PHOTO_SOFT`
+   *  under any knob set alongside it; photo 'v3' turns it on). */
+  photoLight?: 'window' | 'stage' | 'soft'
   /** Key strength relative to the studio key at the piece (1.6). */
   photoKey?: number
   /** Key azimuth in degrees: 0 from the camera, 90 camera left, 180 behind;
@@ -226,6 +234,63 @@ export interface HeroPhotoKnobs {
    *  (cow-fable-1024g: higher puts the spot in the eye's upper half, the
    *  bar's). 22 = where it has always sat. */
   photoCatchElev?: number
+  // ---- soft-light knobs (soft-light-1027): the rig's fixed numbers made
+  // knobs, and the soft extras; all at today's value / off by default.
+  /** Fill azimuth on the far side, degrees from the camera (45). */
+  photoFillDeg?: number
+  /** Fill elevation, degrees (12). */
+  photoFillElev?: number
+  /** Fill size over the key distance (1.4): a big white-card bounce is ~2.4. */
+  photoFillSoft?: number
+  /** Rim size over the key distance (0.22). */
+  photoRimSoft?: number
+  /** A big soft overhead light (the sky over a window table), x the key; 0 = off. */
+  photoTop?: number
+  /** Its size over the key distance (2). */
+  photoTopSoft?: number
+  /** A soft kicker from behind on the SHADOW side, lifting the far contour
+   *  off the background, x the key; 0 = off. */
+  photoKick?: number
+  /** Its azimuth on the shadow side, degrees from the camera (140). */
+  photoKickDeg?: number
+  /** The AgX look; '' = the stage's own ('AgX - Medium High Contrast'). */
+  photoLook?: string
+  // ---- soft-light-1107 knobs: all OFF / at today's value by default, so v1
+  // and v2 render unchanged; the listing preset (`HERO_PHOTO_SOFT`) sets them.
+  /** The kicker's elevation, degrees (30). */
+  photoKickElev?: number
+  /** Its aim height as a fraction of the piece height; -1 = the face (0.6). */
+  photoKickAim?: number
+  /** Its spread in degrees; 0 = the lamp's own (a narrow one skims the head only). */
+  photoKickSpread?: number
+  /** Its size over the key distance (0.5). */
+  photoKickSoft?: number
+  /** 0..1: the key's colour from the v2 window white toward gold (0). */
+  photoKeyWarm?: number
+  /** x every glow in the set (the window's outside, a lantern, fairy lights) (1). */
+  photoGlow?: number
+  /** 1 = a black flag: the toy's rig kept off the room behind it (light linking) (0). */
+  photoFlag?: number
+  /** A white card on the table in front of the toy, lighting it from below, x the key (0). */
+  photoBounce?: number
+  /** Its azimuth, degrees, + toward the shadow side (0). */
+  photoBounceDeg?: number
+  /** Its aim height as a fraction of the piece height (0.35). */
+  photoBounceAim?: number
+  /** Its spread in degrees; 0 = the lamp's own. */
+  photoBounceSpread?: number
+  /** Exposure metered to the toy's yarn: x log2(0.1 / its albedo), clamped (0 = off). */
+  photoMeter?: number
+  /** A low window light on the CLOTH only (light linking), drawing its creases, x the key (0). */
+  photoRake?: number
+  /** Its elevation, degrees (10). */
+  photoRakeElev?: number
+  /** Its size over the key distance (0.25). */
+  photoRakeSoft?: number
+  /** 1 = the rim behind the key's side (v1 / v2); -1 = behind the SHADOW side (1). */
+  photoRimSide?: number
+  /** The rim's azimuth from the camera, degrees (150). */
+  photoRimDeg?: number
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -265,6 +330,133 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoRumple: 0,
   photoCatch: 0,
   photoCatchElev: 22,
+  photoFillDeg: 45,
+  photoFillElev: 12,
+  photoFillSoft: 1.4,
+  photoRimSoft: 0.22,
+  photoTop: 0,
+  photoTopSoft: 2,
+  photoKick: 0,
+  photoKickDeg: 140,
+  photoLook: '',
+  photoKickElev: 30,
+  photoKickAim: 0.6,
+  photoKickSpread: 0,
+  photoKickSoft: 0.5,
+  photoKeyWarm: 0,
+  photoGlow: 1,
+  photoFlag: 0,
+  photoBounce: 0,
+  photoBounceDeg: 0,
+  photoBounceAim: 0.35,
+  photoBounceSpread: 0,
+  photoMeter: 0,
+  photoRake: 0,
+  photoRakeElev: 10,
+  photoRakeSoft: 0.25,
+  photoRimSide: 1,
+  photoRimDeg: 150,
+}
+
+/** The soft listing light (`photoLight: 'soft'`, photo 'v3'), mirrored from
+ *  `PHOTO_SOFT` in the Python (parity test). Tuned in soft-light-1107 on the
+ *  highland cow, the sleepy bunny and the lamb together (one preset, no per-toy
+ *  knobs) to the bar photos' measured lighting, CUTE-RULES photo rules P1-P11:
+ *  a big warm window key, a low broad fill, a soft top, a narrow shadow-side
+ *  kicker and a thin shadow-side rim, a white card in front, a low light on
+ *  the cloth only (its creases), the room flagged off the rig, and the
+ *  exposure metered to the toy's yarn. Under 'v3' these OWN the light; under
+ *  `photoLight: 'soft'` alone they sit under the view's knobs (for tuning). */
+export const HERO_PHOTO_SOFT: Readonly<HeroPhotoKnobs> = {
+  photoKey: 7.4,
+  photoKeyDeg: 70,
+  photoKeyElev: 20,
+  photoKeySoft: 2.2,
+  photoKeySpread: 80,
+  photoKeyWarm: 0.8,
+  photoFill: 1.2,
+  photoFillDeg: 55,
+  photoFillElev: 5,
+  photoFillSoft: 2.4,
+  photoRim: 3.6,
+  photoRimSoft: 0.4,
+  photoRimSide: -1,
+  photoRimDeg: 150,
+  photoTop: 0.08,
+  photoTopSoft: 2.6,
+  photoKick: 2,
+  photoKickDeg: 115,
+  photoKickElev: 35,
+  photoKickAim: 0.78,
+  photoKickSpread: 12,
+  photoRake: 30,
+  photoRakeElev: 14,
+  photoRakeSoft: 0.25,
+  photoBounce: 1.1,
+  photoFlag: 1,
+  photoAmbient: 0.45,
+  photoStudio: 0.2,
+  photoSetLight: 0.35,
+  photoExposure: -0.1,
+  photoGlow: 0.5,
+  photoMeter: 0.3,
+  photoCatch: 2,
+  photoCatchElev: 45,
+}
+
+/** The soft light per set, over `HERO_PHOTO_SOFT` (mirrors `PHOTO_SOFT_BY`):
+ *  the room's depth and the window's glow belong to the preset, per set. */
+export const HERO_PHOTO_SOFT_BY: Readonly<Partial<Record<HeroStage | 'wall', HeroPhotoKnobs>>> = {
+  windowsill: { photoRoom: 2.4, photoGlow: 0.15 },
+  nursery: { photoRoom: 1 },
+  linen: { photoRoom: 1 },
+  christmas: { photoRoom: 1 },
+}
+
+/** The listing composition per set under 'v3' (mirrors `PHOTO_LISTING_BY`);
+ *  a scene's own composition knob wins over these. */
+export const HERO_PHOTO_LISTING_BY: Readonly<Partial<Record<HeroStage | 'wall', HeroPhotoKnobs>>> = {
+  windowsill: {
+    photoAspect: 1.33,
+    photoPlaceX: 0.04,
+    photoBunchFull: 1.6,
+    photoBunchBehind: 0.7,
+    photoBunchStand: 1,
+    photoWeave: 1,
+    photoWeaveScale: 1.3,
+    photoYawDeg: 0,
+    photoTiltDeg: 83,
+    photoFrame: 0.72,
+  },
+  nursery: { photoWeave: 1, photoRumple: 1 },
+  linen: { photoWeave: 1 },
+  christmas: { photoWeave: 1 },
+}
+
+/** The knobs the listing preset owns (mirrors `PHOTO_LIGHT_KNOBS`): under
+ *  'v3' a scene's own value for any of them is dropped (`heroPhotoView`) and
+ *  ignored by the renderer, so a hand-set v2 light never leaks into a listing. */
+export const HERO_PHOTO_LIGHT_KNOBS = [
+  'photoLight', 'photoKey', 'photoKeyDeg', 'photoKeyElev', 'photoKeySoft', 'photoKeySpread', 'photoKeyWarm',
+  'photoFill', 'photoFillDeg', 'photoFillElev', 'photoFillSoft', 'photoRim', 'photoRimSoft',
+  'photoSetLight', 'photoStudio', 'photoAmbient', 'photoExposure', 'photoLook',
+  'photoTop', 'photoTopSoft', 'photoKick', 'photoKickDeg', 'photoKickElev', 'photoKickAim', 'photoKickSpread', 'photoKickSoft',
+  'photoRake', 'photoRakeElev', 'photoRakeSoft', 'photoRoom', 'photoGlow', 'photoFlag', 'photoBounce', 'photoBounceDeg',
+  'photoBounceAim', 'photoBounceSpread', 'photoMeter', 'photoCatch', 'photoCatchElev', 'photoRimSide', 'photoRimDeg',
+] as const satisfies readonly (keyof HeroPhotoKnobs)[]
+
+/** The recommended listing photo style for every toy (soft-light-1027). */
+export const HERO_PHOTO_LISTING: HeroPhoto = 'v3'
+
+/**
+ * The listing path's photo style (soft-light-1107): a program on a styled
+ * stage is shot with `HERO_PHOTO_LISTING` unless it asks for 'v1' (the
+ * original stage photo) itself. An unset style and a v2 one both become v3,
+ * whose light is the preset's alone; a studio / unstaged program is untouched.
+ */
+export function withListingPhoto<T extends { stage?: string; photo?: HeroPhoto }>(program: T): T {
+  if (!program.stage || program.stage === 'studio' || program.photo === 'v1' || program.photo === HERO_PHOTO_LISTING) return program
+  return { ...program, photo: HERO_PHOTO_LISTING }
 }
 
 /** Per-stage v2 framing when the view does not set `photoFrame` /
@@ -327,10 +519,12 @@ export const HERO_PHOTO_STAGE3_STARTS: Partial<Record<HeroStage, HeroPhotoKnobs>
  */
 export function heroPhotoView(photo?: HeroPhoto, knobs?: HeroPhotoKnobs): { photo?: HeroPhoto } & HeroPhotoKnobs {
   const out: { photo?: HeroPhoto } & HeroPhotoKnobs = {}
-  if (photo === 'v2') out.photo = 'v2'
+  if (photo === 'v2' || photo === 'v3') out.photo = photo
+  // under v3 the preset owns the light: a scene's light knobs are not written
+  const owned: readonly string[] = photo === 'v3' ? HERO_PHOTO_LIGHT_KNOBS : []
   if (knobs) {
     for (const [k, v] of Object.entries(knobs)) {
-      if (v !== undefined && k in HERO_PHOTO_V2_DEFAULTS) (out as Record<string, unknown>)[k] = v
+      if (v !== undefined && k in HERO_PHOTO_V2_DEFAULTS && !owned.includes(k)) (out as Record<string, unknown>)[k] = v
     }
   }
   return out
