@@ -17,9 +17,11 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
-  buildChainOvalPiece, chainOvalGeometry, chainOvalMetrics, chainOvalNostrils, chainOvalPlan, chainOvalRounds, chainOvalSideSpot, chainOvalSpot, chainOvalWords, chainRoundOneWords,
-  designChainOval, type ChainOvalOptions,
+  LISTING_CAMERA_TILT_DEG, buildChainOvalPiece, chainOvalGeometry, chainOvalMetrics, chainOvalNostrils, chainOvalPart, chainOvalPlan, chainOvalRounds, chainOvalSideSpot, chainOvalSpot,
+  chainOvalWords, chainRoundOneWords, designChainOval, ovalViewTiltDeg, wornHostRadii, type ChainOvalOptions,
 } from './chainOval'
+import { sphereRounds } from './sphereProfile'
+import { YARN_WEIGHT_RADIUS_MM } from './program'
 import { COW_DEFAULTS, buildCowProgram, cowChainMuzzle } from './cowPreset'
 import { LAMB_DEFAULTS, buildLambProgram, lambChainMuzzle } from './lambPreset'
 import { compileComposition } from './composition'
@@ -195,4 +197,65 @@ test('the switches: absent = every default hash unchanged; on = clean, and the w
   assert.match(lamb.embroidery![0]!.words!, /rounds out from the chain/)
   const cc = compileComposition(lamb)
   assert.deepEqual(cc.problems, [])
+})
+
+test('nostrils as the listing camera sees them, for any head pitch (engine-1107)', () => {
+  // The view tilt is the aim's angle below level, plus the head's pitch,
+  // plus the camera looking down; a face-frame aim with a pitch is the same
+  // tilt as that aim turned by the pitch.
+  const pitchDown = (d: { x: number; y: number; z: number }, deg: number) => {
+    const a = (deg * Math.PI) / 180
+    return { x: d.x, y: d.y * Math.cos(a) + d.z * Math.sin(a), z: d.z * Math.cos(a) - d.y * Math.sin(a) }
+  }
+  const face = { x: 0, y: 1, z: -0.35 }
+  assert.ok(Math.abs(ovalViewTiltDeg(face, { headPitchDeg: 25 }) - ovalViewTiltDeg(pitchDown(face, 25))) < 1e-9)
+  assert.ok(Math.abs(ovalViewTiltDeg({ x: 0, y: 1, z: 0 }) - (90 - LISTING_CAMERA_TILT_DEG)) < 1e-9)
+  // A second toy, not the cow: a DK ball head worked crown down, with a small
+  // stuffed oval muzzle low on the face, level (0) and nodded down (25 deg).
+  // Built, draped and seen by the listing camera, the nostrils land on the
+  // upper half where the cow's do (about 40% down, a quarter in), and
+  // ignoring the pitch puts the nodded toy's lower.
+  const yr = YARN_WEIGHT_RADIUS_MM.dk
+  const head = sphereRounds(36)
+  const o = designChainOval({ widthMm: 36, heightMm: 26, depthMm: 10, kind: 'stuffed' }, yr)
+  const span = chainOvalGeometry(o, yr).rho.at(-1)!
+  const host = wornHostRadii(head, yr, 'up', span)
+  const elev = ((90 - LISTING_CAMERA_TILT_DEG) * Math.PI) / 180
+  const seen = (pitch: number, usePitch: boolean) => {
+    const dir = pitchDown(face, pitch)
+    const tilt = usePitch ? ovalViewTiltDeg(face, { headPitchDeg: pitch }) : ovalViewTiltDeg(face)
+    const { stitches, words } = chainOvalNostrils(o, yr, { viewTiltDeg: tilt, asMade: true, hostRadiusMm: host })
+    const cc = compileComposition({
+      name: `pitch-${pitch}`, yarnWeight: 'dk',
+      parts: [
+        { name: 'head', stitch: 'sc', rounds: head, colourHex: '#c8a27c', place: { on: 'ground' } },
+        chainOvalPart(o, { name: 'muzzle', colourHex: '#efe2cf', place: { on: 'head', dir, aim: dir, spin: { x: 1, y: 0, z: 0 }, seat: 2, poleIn: false, surfaceFit: 'ellipsoid' } }),
+      ],
+      embroidery: [{ name: 'nose', on: 'muzzle', zeroDir: { x: 0, y: 1, z: 0 }, rightDir: { x: 0, y: 0, z: 1 }, colourHex: '#3a2418', threadMm: 1.3, threadLabel: 'DK', stitches, words }],
+    })
+    assert.deepEqual(cc.problems, [])
+    // The camera in front (+y), looking down `elev`: seen up and across.
+    const up = (q: { y: number; z: number }) => -q.y * Math.sin(elev) + q.z * Math.cos(elev)
+    const mz = cc.placed.find((q) => q.part.name === 'muzzle')!
+    const vs = mz.ctrl.map(up), xs = mz.ctrl.map((q) => q.x)
+    const vT = Math.max(...vs), vB = Math.min(...vs), xL = Math.min(...xs), xR = Math.max(...xs)
+    const nose = cc.embroidery.find((e) => e.name === 'nose')!
+    const mids = nose.strands.map((st) => st[Math.floor(st.length / 2)]!)
+    return {
+      down: mids.reduce((a, m) => a + (vT - up(m)) / (vT - vB), 0) / mids.length,
+      across: mids.map((m) => (m.x - xL) / (xR - xL)).sort((a, b) => a - b),
+    }
+  }
+  const level = seen(0, true), nodded = seen(25, true), ignored = seen(25, false)
+  // Measured: level 0.405, nodded 0.466, the pitch ignored 0.584 (the cow
+  // 0.42). The nodded toy keeps a residual 0.06: seen 51 deg off its aim, the
+  // made dome's model reads its top half a little short.
+  for (const [name, r] of [['level', level], ['nodded 25 deg', nodded]] as const) {
+    assert.ok(r.down >= 0.34 && r.down <= 0.5, `${name}: ${r.down.toFixed(3)} of the muzzle down`)
+    assert.ok(r.across[0]! > 0.15 && r.across[1]! < 0.35 && r.across[2]! > 0.65 && r.across[3]! < 0.85, `${name}: across ${r.across.map((a) => a.toFixed(2)).join(' ')}`)
+  }
+  // The pitch takes out most of what it moves: ignored, the nodded toy's
+  // nostrils sit more than twice as far from the level toy's.
+  assert.ok(ignored.down - level.down > 2 * Math.abs(nodded.down - level.down) && ignored.down - level.down > 0.12,
+    `the pitch is taken out: level ${level.down.toFixed(3)}, nodded ${nodded.down.toFixed(3)}, pitch ignored ${ignored.down.toFixed(3)}`)
 })

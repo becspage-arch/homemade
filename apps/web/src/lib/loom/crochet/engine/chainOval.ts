@@ -867,7 +867,7 @@ function vOfPoint(x: number, y: number, c: number): number {
 
 export interface ChainOvalNostrilOptions {
   /** How far down from the oval's top edge as seen, as a fraction of its seen
-   *  height (0.3-0.5). Default 0.4. */
+   *  height (0.3-0.5). Default 0.4 on the planned dome, 0.37 `asMade`. */
   down?: number
   /** How far in from each side, as a fraction of its width. Default 0.25. */
   inFrac?: number
@@ -881,8 +881,115 @@ export interface ChainOvalNostrilOptions {
   strandMm?: number
   /** How far the muzzle's aim points DOWN from the line it is seen along
    *  (degrees; a muzzle set low on the face aims down, so its top half shows
-   *  more and the chain sits low in the outline seen). Default 0. */
+   *  more and the chain sits low in the outline seen). Default 0. For a toy
+   *  in the listing photo: `ovalViewTiltDeg` (its aim, the head's pitch and
+   *  the listing camera). */
   viewTiltDeg?: number
+  /** Place on the oval as it is MADE (engine-1107): its height per round
+   *  read off the stuffed, relaxed build (`chainOvalRoundHeights`) instead
+   *  of the planned dome. A stuffed oval stands taller at its walls and
+   *  flatter over the top than the plan, so seen from above its top half
+   *  shows less. Default false (the planned dome; no build). */
+  asMade?: boolean
+  /** The face the oval is draped onto (a stuffed oval sewn by its last
+   *  round, `CustomPiece.drape`), as its radii of curvature across and up it
+   *  (mm; one number = a sphere): its rim follows that curve, so its edges
+   *  fall back from the viewer. For a head worked in the round:
+   *  `wornHostRadii`. Absent = a flat face. */
+  hostRadiusMm?: number | { across: number; up: number }
+}
+
+/** The listing photo's camera tilt (degrees, 90 = level): photo 'v3', the
+ *  listing preset (soft-light-1027, `HERO_PHOTO_LISTING_BY.windowsill.
+ *  photoTiltDeg` in render/blenderScene.ts, 83 = looking down 7 deg). The
+ *  rule-calib r1 and engine-shapes renders used the same tilt under v2. Kept
+ *  here (not imported) until that branch is merged; the render owns it. */
+export const LISTING_CAMERA_TILT_DEG = 83
+
+/**
+ * How far a piece's aim points DOWN from the line the listing camera sees it
+ * along (degrees), for any toy: the aim's own angle below level, plus the
+ * head's pitch in the program (+ = nodded down; 0 when the preset's face
+ * directions already carry it), plus how far the camera looks down
+ * (90 - `cameraTiltDeg`). engine-1107: replaces the cow's hand-fitted
+ * `COW_NOSTRIL_VIEW_EXTRA_DEG` (28 deg), which stood in for the camera
+ * (7 deg) and for the planned dome's error against the made, draped muzzle
+ * (`asMade`, `hostRadiusMm`).
+ */
+export function ovalViewTiltDeg(aim: { x: number; y: number; z: number }, opts: { headPitchDeg?: number; cameraTiltDeg?: number } = {}): number {
+  const below = (Math.atan2(-aim.z, Math.hypot(aim.x, aim.y)) * 180) / Math.PI
+  return below + (opts.headPitchDeg ?? 0) + (90 - (opts.cameraTiltDeg ?? LISTING_CAMERA_TILT_DEG))
+}
+
+/**
+ * The face a piece is draped onto, for a head worked in the round: its radius
+ * of curvature ACROSS the face and UP it (mm), at the head's widest round,
+ * over `spanMm` either side (the piece's half-size). Round the head's axis it
+ * is the widest round's radius (its circumference over 2 pi); along the axis
+ * it is the meridian's, from the counts (each round one round of fabric on
+ * from the last: what the radius does not use, length does), so straight
+ * rounds read flat. `axis`: which way the head's axis runs on the face
+ * ('across' for a head worked side to side, the cow's; 'up' for one worked
+ * from the crown down).
+ */
+export function wornHostRadii(rounds: number[], yr: number, axis: 'across' | 'up', spanMm: number): { across: number; up: number } {
+  const sw = yr * STITCHES.sc.gaugeYr
+  const drift = yr * rowPitchYr('sc') * DRIFT_SCALE
+  const r = rounds.map((n) => (n * sw) / (2 * Math.PI))
+  const z: number[] = [0]
+  for (let k = 1; k < r.length; k++) z.push(z[k - 1]! + Math.sqrt(Math.max(drift * drift - (r[k]! - r[k - 1]!) ** 2, 0)))
+  const R = Math.max(...r)
+  // The widest band's middle, then how far the profile falls in by spanMm
+  // either way along the axis: the meridian's sag s^2 / 2 rho.
+  const wide = r.map((v, k) => (v >= R - 1e-9 ? z[k]! : NaN)).filter(Number.isFinite)
+  const mid = (Math.min(...wide) + Math.max(...wide)) / 2
+  const rAt = (zz: number): number => {
+    if (zz <= z[0]!) return r[0]!
+    for (let k = 1; k < z.length; k++) if (zz <= z[k]!) return r[k - 1]! + ((r[k]! - r[k - 1]!) * (zz - z[k - 1]!)) / (z[k]! - z[k - 1]! || 1)
+    return r[r.length - 1]!
+  }
+  const fall = (R - rAt(mid - spanMm) + R - rAt(mid + spanMm)) / 2
+  const meridian = fall > 1e-6 ? Math.max(R, (spanMm * spanMm) / (2 * fall)) : 1e6
+  return axis === 'across' ? { across: meridian, up: R } : { across: R, up: meridian }
+}
+
+const ROUND_HEIGHTS = new Map<string, { top: number[]; offset: number[]; edge: number }>()
+/**
+ * The oval as it is made, read off the stuffed, relaxed build in its own
+ * frame (the same build the composition sews on, before it is draped):
+ * `top`, the height (local z, mm) of the outer fabric over the chain (index
+ * 0) and over each round (index k = round k: its highest yarn, the crowns
+ * the eye sees); `offset`, how far each round's crowns lie out from the
+ * chain along its straight sides (mm; the stuffing pushes them a little past
+ * the plan's); `edge`, the lowest yarn of the last round (the edge sewn to
+ * the face). Memoised per options and yarn: the build takes seconds.
+ */
+export function chainOvalRoundHeights(o: ChainOvalOptions, yr: number): { top: number[]; offset: number[]; edge: number } {
+  const key = `${JSON.stringify(o)}@${yr}`
+  const hit = ROUND_HEIGHTS.get(key)
+  if (hit) return hit
+  const built = buildChainOval(o, yr)
+  relaxChainOval(built, o, yr)
+  const round = built.model.round ?? []
+  const n = chainOvalRounds(o).length
+  const top = new Array<number>(n + 1).fill(-Infinity)
+  const offset = new Array<number>(n + 1).fill(0)
+  const G = chainOvalGeometry(o, yr), c = G.c
+  let edge = Infinity
+  built.model.nodes.forEach((p, i) => {
+    // model.round: 0-based worked round, -1 the chain.
+    const k = round[i] ?? -1
+    const j = k < 0 ? 0 : k + 1
+    if (j > n) return
+    top[j] = Math.max(top[j]!, p.z)
+    if (j && Math.abs(p.x) <= c) offset[j] = Math.max(offset[j]!, Math.abs(p.y))
+    if (j === n) edge = Math.min(edge, p.z)
+  })
+  for (let j = 0; j <= n; j++) if (!Number.isFinite(top[j]!)) top[j] = j ? top[j - 1]! : 0
+  for (let j = 1; j <= n; j++) if (!offset[j]) offset[j] = G.rho[j - 1]!
+  const out = { top, offset, edge: Number.isFinite(edge) ? edge : top[n]! }
+  ROUND_HEIGHTS.set(key, out)
+  return out
 }
 
 /**
@@ -898,7 +1005,10 @@ export interface ChainOvalNostrilOptions {
  * along from the stitch over the middle of the chain on the top side.
  */
 export function chainOvalNostrils(o: ChainOvalOptions, yr: number, opts: ChainOvalNostrilOptions = {}): { stitches: EmbroideryStitch[]; words: string } {
-  const down = opts.down ?? 0.4, inFrac = opts.inFrac ?? 0.25
+  // As made, 0.37: where the approved engine-shapes r4 nostrils (42% down
+  // in the listing render) sit on the oval as made, seen at the listing tilt
+  // (engine-1107, measured on the compiled cow); on the planned dome, 0.4.
+  const down = opts.down ?? (opts.asMade ? 0.37 : 0.4), inFrac = opts.inFrac ?? 0.25
   if (down < 0.3 || down > 0.5) throw new Error(`chain oval nostrils: down is 0.3..0.5 of the height (got ${down})`)
   if (inFrac < 0.15 || inFrac > 0.4) throw new Error(`chain oval nostrils: inFrac is 0.15..0.4 of the width (got ${inFrac})`)
   const G = chainOvalGeometry(o, yr)
@@ -910,12 +1020,54 @@ export function chainOvalNostrils(o: ChainOvalOptions, yr: number, opts: ChainOv
   // Seen up (v) and toward the viewer (d) of the local point (x, y, z).
   const seenV = (y: number, z: number): number => -y * ca - z * sa
   const seenD = (y: number, z: number): number => z * ca - y * sa
+  // The height as made (engine-1107 `asMade`): the relaxed build's round
+  // heights along the meridian (the chain at 0, round k at its crowns' ly),
+  // in place of the plan's.
+  const made = opts.asMade ? chainOvalRoundHeights(o, yr) : null
+  const madeAt = (m: number[], ly: number): number => {
+    if (ly <= 0) return m[0]!
+    let prevLy = 0
+    for (let k = 0; k < G.ly.length; k++) {
+      const lk = G.ly[k]!
+      if (ly <= lk) return m[k]! + (m[k + 1]! - m[k]!) * ((ly - prevLy) / (lk - prevLy || 1))
+      prevLy = lk
+    }
+    return m[m.length - 1]!
+  }
+  // Draped onto a curved face (`hostRadiusMm`): every point falls back by
+  // the face's sag under it.
+  const Rh = typeof opts.hostRadiusMm === 'number' ? { across: opts.hostRadiusMm, up: opts.hostRadiusMm } : opts.hostRadiusMm
+  const fallBy = (R: number, d: number): number => R - Math.sqrt(Math.max(R * R - d * d, 0))
+  const sag = (x: number, y: number): number => (Rh ? fallBy(Rh.across, x) + fallBy(Rh.up, y) : 0)
   const N = 240
-  const prof = Array.from({ length: N + 1 }, (_, i) => ({ ly: (i / N) * last, ...G.at((i / N) * last) }))
+  const prof = Array.from({ length: N + 1 }, (_, i) => {
+    const ly = (i / N) * last, g = G.at(ly)
+    return made ? { ly, ...g, rho: Math.max(g.rho, madeAt(made.offset, ly)), z: madeAt(made.top, ly) } : { ly, ...g }
+  })
   let vTop = -Infinity, vBot = Infinity, Ymax = 0
-  for (const p of prof) {
-    vTop = Math.max(vTop, seenV(-p.rho, p.z)); vBot = Math.min(vBot, seenV(p.rho, p.z))
-    Ymax = Math.max(Ymax, p.rho)
+  for (const p of prof) Ymax = Math.max(Ymax, p.rho)
+  // The outline as seen: every meridian round the stadium (on a flat face the
+  // middle one bounds it; draped, the sides fall back too).
+  // As made, the outline also takes the edge sewn to the face (the last
+  // round's lowest yarn), under the last round's crowns.
+  const outline = made ? [...prof, { rho: Ymax, z: made.edge }] : prof
+  for (const p of outline) {
+    for (const ux of Rh ? [-1, -0.5, 0, 0.5, 1] : [0]) {
+      const x = ux * c
+      for (const sy of [-1, 1]) {
+        const y = sy * p.rho, z = p.z - sag(x, y)
+        vTop = Math.max(vTop, seenV(y, z)); vBot = Math.min(vBot, seenV(y, z))
+      }
+    }
+    if (Rh) {
+      for (let j = 1; j < 12; j++) {
+        const a = (j / 12) * Math.PI - Math.PI / 2
+        for (const sx of [-1, 1]) {
+          const x = sx * (c + p.rho * Math.cos(a)), y = p.rho * Math.sin(a), z = p.z - sag(x, y)
+          vTop = Math.max(vTop, seenV(y, z)); vBot = Math.min(vBot, seenV(y, z))
+        }
+      }
+    }
   }
   const H = vTop - vBot, X = c + Ymax
   // The visible dome point seen at (x, v): local (x, y) and its meridian ly.
@@ -926,8 +1078,8 @@ export function chainOvalNostrils(o: ChainOvalOptions, yr: number, opts: ChainOv
       for (const p of prof) {
         const dx = Math.max(0, Math.abs(x) - c)
         if (p.rho < dx) { prev = null; continue }
-        const y = sy * Math.sqrt(p.rho * p.rho - dx * dx)
-        const cur = { v: seenV(y, p.z), d: seenD(y, p.z), y, ly: p.ly }
+        const y = sy * Math.sqrt(p.rho * p.rho - dx * dx), z = p.z - sag(x, y)
+        const cur = { v: seenV(y, z), d: seenD(y, z), y, ly: p.ly }
         if (prev && (prev.v - v) * (cur.v - v) <= 0 && prev.v !== cur.v) {
           const t = (v - prev.v) / (cur.v - prev.v)
           const hit = { x, y: prev.y + (cur.y - prev.y) * t, ly: prev.ly + (cur.ly - prev.ly) * t, d: prev.d + (cur.d - prev.d) * t }

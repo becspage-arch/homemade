@@ -4025,6 +4025,17 @@ preset can use, opt-in (absent = every hash unchanged; the cow default is still 
     - The cow's `pinchEars` now default to `topRoll: { arc: 0.33 }`. Fine cow with both shapes: hash ea8e21d7, 0
       problems, 36 / 40 (fails 14, 28, 42, 43; the even roll was 35 / 40); 18 0.293, 19 0.090, 20 0.998, 21 2.050, 33 0, 34 0.222,
       40 0.146. Default cow c7130743 and lamb 7b98a445 are unchanged.
+- ENGINE-1107 (the join of engine-rules, engine-shapes and rule-eye): THE NOSTRIL VIEW, DERIVED. The cow's fitted
+  `COW_NOSTRIL_VIEW_EXTRA_DEG` (28°) is gone. It stood for two things: the listing camera looking down 7° (photo v3
+  tilt 83, `LISTING_CAMERA_TILT_DEG`) and the planned dome's error against the muzzle as it lies (about 21°).
+  - `ovalViewTiltDeg(aim, { headPitchDeg })`: the aim's angle below level + the head's pitch + the camera's 7°. Any toy.
+  - `chainOvalNostrils(..., { asMade: true, hostRadiusMm })`: the marks are placed on the oval AS MADE (each round's
+    outer height and offset off the stuffed, relaxed build, `chainOvalRoundHeights`, memoised) draped over the face
+    (`wornHostRadii`: the head's widest-round radius one way, its meridian from the counts the other). As made, the
+    default `down` is 0.37: where the approved r4 nostrils sit on that model at the listing tilt.
+  - Measured on the compiled fine cow in the program's own listing view (camera 7° down): before 39-40% down,
+    24% / 76% across; now 40-41% down, 25% / 75% across, and the words are identical (round 5, 3 stitches out, to
+    round 5, 4 stitches out). A second toy (a DK ball head, a small oval muzzle) at two head pitches: chainOval.test.
 
 ## 9. What did NOT work (the failure log — don't repeat these)
 

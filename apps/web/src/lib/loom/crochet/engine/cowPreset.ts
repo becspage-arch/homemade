@@ -48,7 +48,7 @@ import { earPart, type EarPieceOptions } from './earPiece'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { bentTubeWords, planBend, taperRounds } from './bentTube'
 import { taperedLimbRounds } from './limbProfiles'
-import { chainOvalPart, chainOvalNostrils, designChainOval, type ChainOvalOptions } from './chainOval'
+import { chainOvalGeometry, chainOvalPart, chainOvalNostrils, designChainOval, ovalViewTiltDeg, wornHostRadii, type ChainOvalOptions } from './chainOval'
 import { pinchEarPart, type PinchEarOptions } from './pinchEar'
 import { STITCHES } from './dictionary'
 import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
@@ -1342,7 +1342,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     ...COW_VIEW,
     parts,
     props,
-    embroidery: chainMz ? cowOvalNostrils(chainMz, fd, gaugeYarnRadiusMm(COW_YARN, g), cf?.muzzleDir ?? MUZZLE_DIR) : cowNostrils(s.muzzle, fd, g, nostrilScale),
+    embroidery: chainMz
+      ? cowOvalNostrils(chainMz, fd, gaugeYarnRadiusMm(COW_YARN, g), cf?.muzzleDir ?? MUZZLE_DIR, parts.find((q) => q.name === 'head')!.rounds)
+      : cowNostrils(s.muzzle, fd, g, nostrilScale),
     hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
@@ -1463,24 +1465,22 @@ export function cowChainMuzzle(choices: CowChoices, g: number): ChainOvalOptions
  *  capsule muzzle's widest-round diameter. */
 const COW_CHAIN_MUZZLE_HEIGHT = 1.25
 const COW_CHAIN_MUZZLE_DEPTH = 0.4
-/** How far above the muzzle's own aim the toy is seen from (degrees): the
- *  photo camera's height and the head's pitch (cowOvalNostrils). */
-const COW_NOSTRIL_VIEW_EXTRA_DEG = 28
-
 /**
  * The nostrils on the muzzle worked round a chain: the oval's own default
  * (chainOval.ts `chainOvalNostrils`: a small slanted oval each side on the
  * upper half, a quarter of the width in, the tops leaning in), in the cow's
  * dark brown.
  */
-function cowOvalNostrils(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number, dir: Dir): EmbroideryFeature[] {
-  // The muzzle aims down from the face's front (MUZZLE_DIR, about 32°) and
-  // the toy is seen from a little above (the photo's camera, the head's
-  // pitch): its top half shows more, so the nostrils are placed as seen.
-  // Measured (engine-shapes-1107 r3): placed for the aim alone they read 58%
-  // down the muzzle in the photo, an effective tilt of about 60°; placed for
-  // that they read 42% there (and 28% seen dead level from the front).
-  const { stitches, words } = chainOvalNostrils(o, yr, { viewTiltDeg: (Math.atan2(-dir.z, dir.y) * 180) / Math.PI + COW_NOSTRIL_VIEW_EXTRA_DEG })
+function cowOvalNostrils(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number, dir: Dir, headRounds: number[]): EmbroideryFeature[] {
+  // Placed as the listing camera sees the muzzle (engine-1107; was a fitted
+  // COW_NOSTRIL_VIEW_EXTRA_DEG of 28 deg over the aim): the muzzle aims down
+  // from the face (about 32 deg), the head is not pitched, the camera looks
+  // down 7 deg; and on the oval as made (stuffed and relaxed), draped over
+  // the head, worked side to side (its axis across the face). Lands where
+  // the fitted angle put them in the program's own listing view.
+  const span = chainOvalGeometry(o, yr).rho.at(-1)!
+  const host = wornHostRadii(headRounds, yr, 'across', span)
+  const { stitches, words } = chainOvalNostrils(o, yr, { viewTiltDeg: ovalViewTiltDeg(dir), asMade: true, hostRadiusMm: host })
   return [{
     name: 'nose', on: 'muzzle',
     zeroDir: fd({ x: 0, y: 1, z: 0 }), rightDir: { x: 0, y: 0, z: 1 },
