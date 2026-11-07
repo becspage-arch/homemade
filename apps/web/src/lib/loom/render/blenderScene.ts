@@ -291,6 +291,13 @@ export interface HeroPhotoKnobs {
   photoRimSide?: number
   /** The rim's azimuth from the camera, degrees (150). */
   photoRimDeg?: number
+  // ---- soft-light-1107b knobs (Bec: "the foreground is completely blown out"): off by default
+  /** x the photo cloth's own colours (1 = as built). */
+  photoClothTone?: number
+  /** 0..1: the photo cloth's colours toward oatmeal (0). */
+  photoClothWarm?: number
+  /** 0..1: the set's glow (the window's outside) toward warm daylight (0). */
+  photoGlowWarm?: number
 }
 
 /** The v2 defaults, mirrored from `PHOTO_V2` in the Python (documentation and
@@ -356,6 +363,9 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
   photoRakeSoft: 0.25,
   photoRimSide: 1,
   photoRimDeg: 150,
+  photoClothTone: 1,
+  photoClothWarm: 0,
+  photoGlowWarm: 0,
 }
 
 /** The soft listing light (`photoLight: 'soft'`, photo 'v3'), mirrored from
@@ -369,37 +379,38 @@ export const HERO_PHOTO_V2_DEFAULTS: Required<HeroPhotoKnobs> = {
  *  `photoLight: 'soft'` alone they sit under the view's knobs (for tuning). */
 export const HERO_PHOTO_SOFT: Readonly<HeroPhotoKnobs> = {
   photoKey: 7.4,
-  photoKeyDeg: 70,
-  photoKeyElev: 20,
-  photoKeySoft: 2.2,
+  photoKeyDeg: 62,
+  photoKeyElev: 38,
+  photoKeySoft: 2.6,
   photoKeySpread: 80,
   photoKeyWarm: 0.8,
-  photoFill: 1.2,
+  photoFill: 0.5,
   photoFillDeg: 55,
   photoFillElev: 5,
   photoFillSoft: 2.4,
-  photoRim: 3.6,
-  photoRimSoft: 0.4,
+  photoRim: 6,
+  photoRimSoft: 0.25,
   photoRimSide: -1,
   photoRimDeg: 150,
   photoTop: 0.08,
   photoTopSoft: 2.6,
-  photoKick: 2,
+  photoKick: 1,
   photoKickDeg: 115,
   photoKickElev: 35,
   photoKickAim: 0.78,
   photoKickSpread: 12,
-  photoRake: 30,
-  photoRakeElev: 14,
-  photoRakeSoft: 0.25,
+  photoRake: 20,
+  photoRakeElev: 20,
+  photoRakeSoft: 1,
   photoBounce: 1.1,
   photoFlag: 1,
+  photoClothWarm: 0.7,
   photoAmbient: 0.45,
   photoStudio: 0.2,
   photoSetLight: 0.35,
   photoExposure: -0.1,
   photoGlow: 0.5,
-  photoMeter: 0.3,
+  photoMeter: 0.15,
   photoCatch: 2,
   photoCatchElev: 45,
 }
@@ -407,7 +418,7 @@ export const HERO_PHOTO_SOFT: Readonly<HeroPhotoKnobs> = {
 /** The soft light per set, over `HERO_PHOTO_SOFT` (mirrors `PHOTO_SOFT_BY`):
  *  the room's depth and the window's glow belong to the preset, per set. */
 export const HERO_PHOTO_SOFT_BY: Readonly<Partial<Record<HeroStage | 'wall', HeroPhotoKnobs>>> = {
-  windowsill: { photoRoom: 2.4, photoGlow: 0.15 },
+  windowsill: { photoRoom: 1.2, photoGlow: 0.75, photoGlowWarm: 0.75 },
   nursery: { photoRoom: 1 },
   linen: { photoRoom: 1 },
   christmas: { photoRoom: 1 },
@@ -422,7 +433,7 @@ export const HERO_PHOTO_LISTING_BY: Readonly<Partial<Record<HeroStage | 'wall', 
     photoBunchFull: 1.6,
     photoBunchBehind: 0.7,
     photoBunchStand: 1,
-    photoWeave: 1,
+    photoWeave: 2.2,
     photoWeaveScale: 1.3,
     photoYawDeg: 0,
     photoTiltDeg: 83,
@@ -443,6 +454,7 @@ export const HERO_PHOTO_LIGHT_KNOBS = [
   'photoTop', 'photoTopSoft', 'photoKick', 'photoKickDeg', 'photoKickElev', 'photoKickAim', 'photoKickSpread', 'photoKickSoft',
   'photoRake', 'photoRakeElev', 'photoRakeSoft', 'photoRoom', 'photoGlow', 'photoFlag', 'photoBounce', 'photoBounceDeg',
   'photoBounceAim', 'photoBounceSpread', 'photoMeter', 'photoCatch', 'photoCatchElev', 'photoRimSide', 'photoRimDeg',
+  'photoClothTone', 'photoGlowWarm', 'photoClothWarm',
 ] as const satisfies readonly (keyof HeroPhotoKnobs)[]
 
 /** The recommended listing photo style for every toy (soft-light-1027). */

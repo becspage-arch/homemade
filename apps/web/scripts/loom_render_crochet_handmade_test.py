@@ -235,7 +235,7 @@ class SoftLight(unittest.TestCase):
         off = dict(photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0,
                    photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35,
                    photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25,
-                   photoRimSide=1.0, photoRimDeg=150.0)
+                   photoRimSide=1.0, photoRimDeg=150.0, photoClothTone=1.0, photoClothWarm=0.0, photoGlowWarm=0.0)
         for base in (R.PHOTO_V2, R.PHOTO_V1):
             for k, v in off.items():
                 self.assertEqual(base[k], v, k)

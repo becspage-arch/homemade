@@ -2479,7 +2479,8 @@ def apply_stage(stage, scene, ctx):
                   foot=ctx.get("footprint"), bunch_full=po["photoBunchFull"], bunch_behind=po["photoBunchBehind"],
                   bunch_stand=po["photoBunchStand"],
                   weave=po["photoWeave"], weave_scale=po["photoWeaveScale"], crumple_scale=po["photoCrumpleScale"],
-                  rumple=po["photoRumple"])
+                  rumple=po["photoRumple"], cloth_tone=po.get("photoClothTone", 1.0),
+                  cloth_warm=po.get("photoClothWarm", 0.0))
     if po["photoFrame"]:
         # hold the piece at a set share of the frame height: slide the camera
         # along its own line (its aim, turn and tilt are kept)
@@ -2561,8 +2562,8 @@ def apply_stage(stage, scene, ctx):
         _world(scene, (0.98, 0.95, 0.90), 0.5)
     if po["photoRoom"]:
         _photo_room(root, scene, variant if variant in PHOTO_ROOM_BY else stage, po["photoRoom"])
-    if po.get("photoGlow", 1.0) != 1.0:
-        _photo_glow(root, po["photoGlow"])
+    if po.get("photoGlow", 1.0) != 1.0 or po.get("photoGlowWarm", 0.0) > 0:
+        _photo_glow(root, po["photoGlow"], po.get("photoGlowWarm", 0.0))
     if po["photoLight"] in ("window", "soft"):
         builder_lights = list(set_lights)
         _photo_lights(view, po, root, H, R, s, room_light, builder_lights, ctx.get("lights", []), scene, face=ctx.get("face"))
@@ -2692,6 +2693,15 @@ def _throw(name, root, mat, vis, H, R, D, amp, back=0.45, lift=0.04, seed=0.0, h
             else:
                 mat = knit_material(name + "_v3", mat["loom_hex"], stitch_cm=mat["loom_stitch"] * wsc,
                                     rough=mat["loom_rough"], boost=wv)
+        # soft-light-1107b: the cloth's own tone (a listing cloth is a warm
+        # beige that sits BELOW the toy's lightest yarn, never a white sheet)
+        ct = _PHOTO.get("cloth_tone", 1.0)
+        cw = _PHOTO.get("cloth_warm", 0.0)
+        if ct != 1.0 or cw > 0:
+            mat = mat.copy()
+            mat.name = name + "_tone"
+            _scale_mat_colour(mat, tuple(ct * (1.0 + cw * (w - 1.0)) for w in PHOTO_CLOTH_WARM_RGB))
+            print("[photo] cloth %s tone x%.2f warm %.2f" % (name, ct, cw))
     if heap:
         def h(x, y):
             return f(x, y) + heap(x, y)
@@ -4210,7 +4220,7 @@ PHOTO_V2 = dict(
     photoCatch=0.0, photoCatchElev=22.0,
     photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
     photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
-    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0,
+    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0, photoClothTone=1.0, photoGlowWarm=0.0, photoClothWarm=0.0,
 )
 # The same knobs with v2 OFF: every one is a no-op, so a scene without
 # `photo` renders exactly as before.
@@ -4225,18 +4235,18 @@ PHOTO_V1 = dict(
     photoCatch=0.0, photoCatchElev=22.0,
     photoFillDeg=45.0, photoFillElev=12.0, photoFillSoft=1.4, photoRimSoft=0.22,
     photoTop=0.0, photoTopSoft=2.0, photoKick=0.0, photoKickDeg=140.0, photoLook="",
-    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0,
+    photoKickElev=30.0, photoKickAim=0.6, photoKickSpread=0.0, photoKickSoft=0.5, photoKeyWarm=0.0, photoGlow=1.0, photoFlag=0.0, photoBounce=0.0, photoBounceDeg=0.0, photoBounceAim=0.35, photoBounceSpread=0.0, photoMeter=0.0, photoRake=0.0, photoRakeElev=10.0, photoRakeSoft=0.25, photoRimSide=1.0, photoRimDeg=150.0, photoClothTone=1.0, photoGlowWarm=0.0, photoClothWarm=0.0,
 )
 
 # photoLight "soft" / photo "v3" (soft-light-1027): the soft listing light.
 # Values are placed under the view's own knobs (a knob the view sets wins).
 PHOTO_SOFT = dict(
-    photoKey=7.4, photoKeyDeg=70.0, photoKeyElev=20.0, photoKeySoft=2.2, photoKeySpread=80.0, photoKeyWarm=0.8,
-    photoFill=1.2, photoFillDeg=55.0, photoFillElev=5.0, photoFillSoft=2.4,
-    photoRim=3.6, photoRimSoft=0.4, photoRimSide=-1.0, photoRimDeg=150.0, photoTop=0.08, photoTopSoft=2.6,
-    photoKick=2.0, photoKickDeg=115.0, photoKickElev=35.0, photoKickAim=0.78, photoKickSpread=12.0,
-    photoRake=30.0, photoRakeElev=14.0, photoRakeSoft=0.25, photoBounce=1.1, photoFlag=1.0,
-    photoAmbient=0.45, photoStudio=0.2, photoSetLight=0.35, photoExposure=-0.1, photoGlow=0.5, photoMeter=0.3,
+    photoKey=7.4, photoKeyDeg=62.0, photoKeyElev=38.0, photoKeySoft=2.6, photoKeySpread=80.0, photoKeyWarm=0.8,
+    photoFill=0.5, photoFillDeg=55.0, photoFillElev=5.0, photoFillSoft=2.4,
+    photoRim=6.0, photoRimSoft=0.25, photoRimSide=-1.0, photoRimDeg=150.0, photoTop=0.08, photoTopSoft=2.6,
+    photoKick=1.0, photoKickDeg=115.0, photoKickElev=35.0, photoKickAim=0.78, photoKickSpread=12.0,
+    photoRake=20.0, photoRakeElev=20.0, photoRakeSoft=1.0, photoBounce=1.1, photoFlag=1.0, photoClothWarm=0.7,
+    photoAmbient=0.45, photoStudio=0.2, photoSetLight=0.35, photoExposure=-0.1, photoGlow=0.5, photoMeter=0.15,
     photoCatch=2.0, photoCatchElev=45.0,
 )
 
@@ -4248,12 +4258,12 @@ PHOTO_LIGHT_KNOBS = (
     "photoFill", "photoFillDeg", "photoFillElev", "photoFillSoft", "photoRim", "photoRimSoft",
     "photoSetLight", "photoStudio", "photoAmbient", "photoExposure", "photoLook",
     "photoTop", "photoTopSoft", "photoKick", "photoKickDeg", "photoKickElev", "photoKickAim", "photoKickSpread", "photoKickSoft",
-    "photoRake", "photoRakeElev", "photoRakeSoft", "photoRoom", "photoGlow", "photoFlag", "photoBounce", "photoBounceDeg", "photoBounceAim", "photoBounceSpread", "photoMeter", "photoCatch", "photoCatchElev", "photoRimSide", "photoRimDeg",
+    "photoRake", "photoRakeElev", "photoRakeSoft", "photoRoom", "photoGlow", "photoFlag", "photoBounce", "photoBounceDeg", "photoBounceAim", "photoBounceSpread", "photoMeter", "photoCatch", "photoCatchElev", "photoRimSide", "photoRimDeg", "photoClothTone", "photoGlowWarm", "photoClothWarm",
 )
 # The soft light per set, over PHOTO_SOFT (the set's exposure and room depth:
 # a pale nursery takes less lift than the windowsill's dark wood).
 PHOTO_SOFT_BY = {
-    "windowsill": dict(photoRoom=2.4, photoGlow=0.15),
+    "windowsill": dict(photoRoom=1.2, photoGlow=0.75, photoGlowWarm=0.75),
     "nursery": dict(photoRoom=1.0),
     "linen": dict(photoRoom=1.0),
     "christmas": dict(photoRoom=1.0),
@@ -4263,7 +4273,7 @@ PHOTO_SOFT_BY = {
 # stood bunch, the linen's weave), the nursery as the bunny bar.
 PHOTO_LISTING_BY = {
     "windowsill": dict(photoAspect=1.33, photoPlaceX=0.04, photoBunchFull=1.6, photoBunchBehind=0.7, photoBunchStand=1.0,
-                       photoWeave=1.0, photoWeaveScale=1.3,
+                       photoWeave=2.2, photoWeaveScale=1.3,
                        photoYawDeg=0.0, photoTiltDeg=83.0, photoFrame=0.72),
     "nursery": dict(photoWeave=1.0, photoRumple=1.0),
     "linen": dict(photoWeave=1.0),
@@ -4302,11 +4312,16 @@ PHOTO_ROOM_BY.update(windowsill=PHOTO_ROOM_BY["garden"], nursery=PHOTO_ROOM_BY["
                      christmas=PHOTO_ROOM_BY["pine"], linen=PHOTO_ROOM_BY["throw"])
 
 
+PHOTO_CLOTH_WARM_RGB = (1.0, 0.95, 0.84)   # photoClothWarm 1: the cloth's colours toward oatmeal
+
+
 def _scale_mat_colour(mat, f):
     """Darken a material's own colours by f (unlinked Base Colour and the two
-    colours of every RGBA mix), its textures and bump left as they are."""
+    colours of every RGBA mix), its textures and bump left as they are. f may
+    be one number or an (r, g, b) triple."""
     if not mat or not mat.use_nodes:
         return
+    fr, fg, fb = f if isinstance(f, tuple) else (f, f, f)
     for n in mat.node_tree.nodes:
         socks = []
         if n.type == "BSDF_PRINCIPLED":
@@ -4316,7 +4331,7 @@ def _scale_mat_colour(mat, f):
         for sk in socks:
             if not sk.is_linked:
                 c = sk.default_value
-                sk.default_value = (c[0] * f, c[1] * f, c[2] * f, c[3])
+                sk.default_value = (c[0] * fr, c[1] * fg, c[2] * fb, c[3])
 
 
 def _photo_room(root, scene, key, amt):
@@ -4341,7 +4356,7 @@ def _photo_room(root, scene, key, amt):
         bgn.inputs["Strength"].default_value *= max(0.15, 1.0 - amt * (1.0 - spec["ambient"]))
     print("[photo] room %s x%.2f: %s" % (key, amt, ", ".join(sorted(done))))
 
-def _photo_glow(root, f):
+def _photo_glow(root, f, warm=0.0):
     """photoGlow (soft-light-1107): x the set's own glow (every emission in
     its materials: the window's outside, a lantern, fairy lights), so a
     window behind the toy reads as a bright soft window, not a blown panel."""
@@ -4352,12 +4367,36 @@ def _photo_glow(root, f):
             if not m or not m.use_nodes or m.name in done:
                 continue
             done.add(m.name)
-            for n in m.node_tree.nodes:
+            for n in list(m.node_tree.nodes):
                 if n.type == "EMISSION":
                     n.inputs["Strength"].default_value *= f
+                    if warm > 0:
+                        _warm_emission(m.node_tree, n, warm)
                 elif n.type == "BSDF_PRINCIPLED" and "Emission Strength" in n.inputs:
                     n.inputs["Emission Strength"].default_value *= f
-    print("[photo] glow x%.2f" % f)
+    print("[photo] glow x%.2f warm %.2f" % (f, warm))
+
+
+PHOTO_GLOW_WARM_RGB = (1.0, 0.86, 0.66)   # a sunny window's own colour (the cow bar's panes: L* 90, b* +11)
+
+
+def _warm_emission(nt, em, w):
+    """photoGlowWarm: tint an emission toward warm daylight by w (0..1),
+    whether its colour is a constant or a texture."""
+    warm = tuple(1.0 + w * (c - 1.0) for c in PHOTO_GLOW_WARM_RGB)
+    sk = em.inputs["Color"]
+    if sk.is_linked:
+        src = sk.links[0].from_socket
+        mx = nt.nodes.new("ShaderNodeMix")
+        mx.data_type = "RGBA"
+        mx.blend_type = "MULTIPLY"
+        mx.inputs["Factor"].default_value = 1.0
+        nt.links.new(src, mx.inputs[6])
+        mx.inputs[7].default_value = (warm[0], warm[1], warm[2], 1.0)
+        nt.links.new(mx.outputs[2], sk)
+    else:
+        c = sk.default_value
+        sk.default_value = (c[0] * warm[0], c[1] * warm[1], c[2] * warm[2], c[3])
 
 
 # What the set builders consult while a stage is built (reset per render).

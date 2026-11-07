@@ -266,6 +266,7 @@ test('soft-light-1107: the per-set soft light, the listing composition and the o
     photoKickElev: 30, photoKickAim: 0.6, photoKickSpread: 0, photoKickSoft: 0.5, photoKeyWarm: 0, photoGlow: 1, photoFlag: 0,
     photoBounce: 0, photoBounceDeg: 0, photoBounceAim: 0.35, photoBounceSpread: 0, photoMeter: 0, photoRake: 0,
     photoRakeElev: 10, photoRakeSoft: 0.25, photoRimSide: 1, photoRimDeg: 150,
+    photoClothTone: 1, photoClothWarm: 0, photoGlowWarm: 0,
   }
   const v1 = kvs(py.match(/PHOTO_V1 = dict\(([\s\S]*?)\n\)/)![1]!)
   for (const [k, v] of Object.entries(off)) {
