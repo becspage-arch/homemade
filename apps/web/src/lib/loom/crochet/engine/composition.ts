@@ -26,13 +26,15 @@ import { YARN_WEIGHT_RADIUS_MM, type YarnWeight, type YarnFibre } from './progra
 import type { StitchId } from './dictionary'
 import type { BuiltContinuous } from './yarnPath'
 import { placeEmbroidery, type EmbroideryFeature, type PlacedEmbroidery } from './faceEmbroidery'
-import { placeHair, type HairPatch, type PlacedHair } from './hairPatch'
+import { loopBodies, placeHair, type HairPatch, type PlacedHair } from './hairPatch'
 import { heroPhotoView, pickHeroStageVariant, type HeroPhoto, type HeroPhotoKnobs, type HeroStage } from '../../render/blenderScene'
 import { wearNightcap } from './hatAccessory'
 import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type RootedHairSpec } from './dollHair'
 import { bendTube } from './tubeStaging'
 import { cuteReportFor, type CuteReport } from './cuteCheck'
-import { fleeceLoopAt, fleeceStitchAt, type FleeceSpec } from './fleece'
+import { fleeceCoiled, fleeceLoopAt, fleeceStitchAt, type FleeceSpec } from './fleece'
+import { springCoils } from './coilSpring'
+import { coilProblems } from './loopStitch'
 import type { ToyFamily } from './cuteRules'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
@@ -860,14 +862,26 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     if (parent && parent !== pp) pairs.push([pp, parent])
   }
   if (pairs.length) {
+    // curl-relax-1107: a sprung fleece's curls are not the piece's surface:
+    // its shell is its fabric, and its curls are not pressed (they lie on
+    // the neighbour, they do not flatten it, nor drag the fabric's hooks).
+    const curlOf = (pp: PlacedPart): boolean[] | null => {
+      const lo = pp.part.fleece?.spring ? pp.built?.model.loose : undefined
+      return lo ? pp.built!.strandPath.map((ni) => !!lo[ni]) : null
+    }
     const shell = new Map<PlacedPart, Shell>()
-    for (const pp of placed) shell.set(pp, buildShell(pp.ctrl))
+    for (const pp of placed) {
+      const cm = curlOf(pp)
+      shell.set(pp, buildShell(cm ? pp.ctrl.filter((_, i) => !cm[i]) : pp.ctrl))
+    }
     const move = new Map<PlacedPart, V3[]>()
     for (const pp of placed) move.set(pp, pp.ctrl.map(() => ({ x: 0, y: 0, z: 0 })))
     const press = (a: PlacedPart, b: PlacedPart): void => {
       const sh = shell.get(b)!
       const dm = move.get(a)!
+      const cm = curlOf(a)
       for (let i = 0; i < a.ctrl.length; i++) {
+        if (cm?.[i]) continue
         const pr = shellProbe(sh, a.ctrl[i]!)
         if (!pr) continue
         const h = pr.depth
@@ -1122,6 +1136,11 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
     ? { stitchAt: (k, i) => fleeceStitchAt(fl, k, i), loopAt: (k, i) => fleeceLoopAt(fl, k, i), insideOut: true }
     : undefined)
   const panelMask = part.panel ? facePanel(built, part) : undefined
+  // curl-relax-1107: a sprung fleece's curls (or loops) open from seeds,
+  // so a packed fleece settles with none threaded through another.
+  if (fl?.spring && built.model.loose) {
+    springCoils(built.model, loopBodies(built), { collMinDist: yr * 1.25, ...(built.model.radialCenter ? { outsideOf: built.model.radialCenter } : {}) })
+  }
   if (part.press) relaxPressed(built, part.press, yr, part.pressShape)
   else relaxProgram(built, yr, part.offTable === true || part.stuffByRound ? { ...(part.offTable ? { offTable: true } : {}), ...(part.stuffByRound ? { stuffByRound: part.stuffByRound } : {}) } : undefined)
   return { built, panelMask }
@@ -1176,10 +1195,14 @@ export function relaxPressed(
 /** The audit gate for one piece, in the frame its settled shape needs. */
 export function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
   if (part.custom) return CUSTOM_PROBLEMS.get(built) ?? []
-  return auditProblems(
+  const probs = auditProblems(
     { built, recipe: undefined as never }, part.name, 0, yr,
     part.press || part.pinch ? { frame: 'current' } : undefined,
   )
+  // curl-relax-1107: a coiled or sprung fleece gets the coil audit (no two
+  // curls or loops linked; packed curls may touch, so no clearance).
+  if (fleeceCoiled(part.fleece) || part.fleece?.spring) probs.push(...coilProblems(loopBodies(built).map((b) => b.map((i) => built.model.nodes[i]!)), 0))
+  return probs
 }
 
 /**

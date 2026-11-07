@@ -50,6 +50,20 @@ export interface FleeceSpec {
    *  the open loops (cute rule 37, mixed sizes). Absent = every loop open. */
   curlEvery?: number
   curlLoop?: Partial<LoopShape>
+  /** LOOPS THAT SPRING OPEN (curl-relax-1107; coilSpring.ts): every loop
+   *  (an open loop, or a coiled curl with `loop.coil`: twisted on the finger
+   *  until it springs back on itself, a poodle's or a lamb's bouclé) starts
+   *  the relax as a small seed and grows back to its wound length against
+   *  its neighbours, so a fleece packed loop to loop settles with none
+   *  threaded through another (the coil audit checks it: the lamb-1027
+   *  fleece, wound at full size, had 53 linked pairs). Absent = the loops
+   *  relaxed as wound, every hash unchanged. */
+  spring?: boolean
+}
+
+/** Is every loop of this fleece a coiled curl (`loop.coil`)? */
+export function fleeceCoiled(f: FleeceSpec | undefined): boolean {
+  return !!f?.loop.coil
 }
 
 /** The loop spacing of the `at`th fleece round. */
@@ -188,6 +202,9 @@ export function fleeceHowTo(f: FleeceSpec, fingerMm: number): string {
     'This piece is worked INSIDE OUT from the start, so the loops stand on the outside: as the first rounds cup, push the work through so the inside of the cup faces you, and keep it that way round to the end. ' +
     `Loop stitch (lp st): insert the hook in the next st, wrap the yarn from front to back round ${former}, ` +
     `catch the yarn behind it and pull it through the st (2 loops on hook), yrh and pull through both loops, then slip it out, leaving a soft loop about ${cm} cm long on the far side; do not pull the loops tight. ` +
+    (f.loop.coil
+      ? 'Every loop is a CURL: before you finish the stitch, twist the loop round between finger and thumb until it kinks, then let it go so it springs back on itself into a soft round curl. Settle each curl beside the ones before it, never hooked through a neighbour. '
+      : '') +
     `On each fleece round a lp st is worked in ${each} as written, the rest plain dc; a decrease is always a plain dc2tog.` +
     (f.curlEvery ? ` A twisted lp st is the same stitch with the loop given ${((f.curlLoop?.twist ?? 3) / 2) >= 1.5 ? 'one and a half twists' : 'a full twist'} on your finger before you close the stitch, so it curls back on itself: a tight curl among the open loops.` : '')
   )

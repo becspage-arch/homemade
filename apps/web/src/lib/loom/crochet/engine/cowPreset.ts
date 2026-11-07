@@ -253,12 +253,42 @@ export function cuteHornCounts(headWidest: number): Pick<CurvedHornOptions, 'tip
  *  1027's oatmeal #c8ad8b (72, 21; rendered a dull dark oatmeal). */
 export const CUTE_CREAM_HEX = '#d6bfa4'
 
+/** THE PACKED CAP (curl-relax-1107, rules 42-43): a coil on every round
+ *  after the first, in every third stitch, smaller coils mixed big and
+ *  small on every loop round (37), touching allowed (`coilClearYr` 0) and
+ *  sprung open from seeds (`coilSpring`, coilSpring.ts) so the packed curls
+ *  settle edge to edge with none linked; a heavier chenille (gravity 3x the
+ *  hair default) lets the cap lie on the crown. Measured on the listing calf
+ *  at M: 70 curls, packing 0.88 (42: 0.8-1.8), fringe 0.125 H above the
+ *  head (43: 0.03-0.13), size CV 0.18 (37: 0.18-0.40), the patch audit and
+ *  the coil audit clean. Wound at full size the same cap had 13-19 linked
+ *  pairs (rule-calib 1027 round 2). A loop in every second stitch packs
+ *  tighter (1.02-1.07) but stands 0.135 H, over rule 43; gravity 0.01
+ *  floats hooks on the patch. */
+export const COW_CUTE_FRINGE: Partial<HairPatch> = {
+  firstLoopRound: 1,
+  loopRounds: undefined,
+  loopEvery: 3,
+  coil: { radiusYr: 1.8, turns: 1.5, pitchYr: 2.7, pairYr: 0.7 },
+  coilMix: { every: 3, big: 1.6, small: 0.7 },
+  coilClearYr: 0,
+  coilSpring: true,
+  gravity: 0.0075,
+  strandYr: 0.9,
+  // Faced a little lower than the open rings' (z 0.55): the lens sees the
+  // curls' holes on the crown, not only on the brow.
+  faceDir: { x: 0, y: 1, z: 0.3 },
+}
+
 /** The cute numbers (cow-cute-1027), measured with the cute check on the
  *  fine-gauge listing calf (folded ears, curved horns, tapered legs, coiled
  *  curls); see `CowChoices.cuteFit` and jobs/cow-cute-1027.md. Rule-calib
  *  1027: the horn from the law above, its root higher, the cream lighter. */
 export const COW_CUTE_FIT: CowCuteFit = {
-  eyeDir: { x: 0.65, y: 1, z: 0.16 },
+  // curl-relax-1107: a touch lower (z 0.16 -> 0.08). The packed cap lies on
+  // the crown (rule 43), so the head's height H no longer carries a 0.18 H
+  // mound of loops, and the same eyes read 0.52 H up (rule 6: 0.38-0.50).
+  eyeDir: { x: 0.65, y: 1, z: 0.08 },
   muzzleDir: { x: 0, y: 1, z: -0.62 },
   earWidth: 18,
   earDir: { x: 1, y: 0.04, z: 0.42 },
@@ -273,6 +303,7 @@ export const COW_CUTE_FIT: CowCuteFit = {
   frontLegLift: -2.97,
   coilMix: { every: 3, big: 1.5, small: 0.75 },
   roundHead: true,
+  fringe: COW_CUTE_FRINGE,
 }
 
 /** The cute numbers for these choices, or undefined (off, or gauge <= 1.15). */
@@ -938,6 +969,12 @@ export function cowFringe(colourHex: string, size: AmigurumiSize, g = 1, coiled 
     ...(g > 1.15 && coiled && coilMix ? { coilMix: { ...coilMix, rounds: coilMix.rounds ?? cowCoils(rounds).faceRounds } } : {}),
     // Rule-calib 1027: the cute path's cap of small packed curls (CowCuteFit.fringe).
     ...(g > 1.15 && coiled && fit ? fit : {}),
+    // curl-relax-1107: a sprung cap with no faced rounds of its own faces
+    // every loop round but the edge, so each curl shows the lens its hole
+    // (faced on two rounds only, the rest stood edge-on and read as worms).
+    ...(g > 1.15 && coiled && fit?.coilSpring && !fit.faceRounds
+      ? { faceRounds: rounds.map((_, k) => k).filter((k) => k >= (fit.firstLoopRound ?? 0) && k !== last) }
+      : {}),
   }
 }
 

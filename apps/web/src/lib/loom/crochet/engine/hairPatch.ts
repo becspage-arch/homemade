@@ -24,6 +24,7 @@ import { auditProblems } from './auditChecks'
 import type { BuiltContinuous } from './yarnPath'
 import { STITCHES, type CoilShape, type LoopShape, type StitchId } from './dictionary'
 import { coilProblems } from './loopStitch'
+import { springCoils } from './coilSpring'
 import type { V3 } from '../yarnLoop'
 
 export const HAIR_STYLE_IDS = ['none', 'fringe', 'curly-fringe'] as const
@@ -125,6 +126,15 @@ export interface HairPatch {
   /** The coils' clearance, centre-line to centre-line between two curls, in
    *  yarn radii (default two drawn strand radii, 2 x `strandYr`). */
   coilClearYr?: number
+  /** THE CURLS SPRING OPEN (curl-relax-1107; coilSpring.ts): the coils
+   *  start the relax as small seeds of themselves, each scaled about its own
+   *  root so no seed reaches its neighbour's, and grow back to their wound
+   *  length with the fabric held and collision acting, so a cap packed edge
+   *  to edge settles with every curl touching its neighbours and none
+   *  threaded through another (wound at full size, packed coils are emitted
+   *  through each other and no relax can unlink them). Coiled patches only;
+   *  absent / false = the coils fluffed apart as before, every hash unchanged. */
+  coilSpring?: boolean
   colourHex: string
 }
 
@@ -255,7 +265,8 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   // Coils (cow-build-1025): fluffed apart as worked, before they settle, so
   // none starts inside another (the relax's collision then keeps them apart
   // and unlinked), and again after.
-  if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face, 120)
+  if (h.coil && h.coilSpring) springCoils(m, loopBodies(built), { collMinDist: yr * 1.25, gravity })
+  else if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face, 120)
   relax(m, {
     collMinDist: yr * 1.25,
     collK: 0.28,

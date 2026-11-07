@@ -41,6 +41,7 @@ import type { AmigurumiSize } from './amigurumiPresets'
 import type { YarnFibre, YarnWeight } from './program'
 import type { HeroStage } from '../../render/blenderScene'
 import type { FleeceSpec } from './fleece'
+import type { CoilShape } from './dictionary'
 import { fleeceHowTo, writeFleeceRounds } from './fleece'
 import { ovalRounds } from './sphereProfile'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
@@ -71,6 +72,12 @@ export interface LambChoices {
   cuteGate?: boolean
   /** OPT-IN: no fleece (plain rounds in the fleece colour), for comparison. */
   plainFleece?: boolean
+  /** OPT-IN (curl-relax-1107): a CURLY fleece, every loop a coiled curl
+   *  (`LAMB_FLEECE_COIL`) that springs open against its neighbours
+   *  (`FleeceSpec.spring`), so the fleece is a packed bouclé of round curls
+   *  instead of open loops with the fabric showing between them. Absent =
+   *  the open-loop fleece, every hash unchanged. */
+  curlyFleece?: boolean
   /** The head's tilt (deg; cuteFinish HEAD_TILT_DEG by default; 0 = upright). */
   headTiltDeg?: number
   name?: string
@@ -156,6 +163,19 @@ export const LAMB_FLEECE_LOOP = { lengthYr: 2.0, halfWidthYr: 1.6, curl: 0.3, dr
 /** The topknot's loop: a little shorter (the head's small rounds cup hard,
  *  and the longer body loop floats the hooks there). */
 export const LAMB_CAP_LOOP = { lengthYr: 1.6, halfWidthYr: 1.4, curl: 0.3, droopDeg: 70, vary: 0.3 }
+
+/** THE CURLY FLEECE (curl-relax-1107; `curlyFleece`): each loop a soft coil
+ *  of a turn and a half (yarn radii at gauge 1; g x at a gauge, like the loop). */
+export const LAMB_FLEECE_COIL: CoilShape = { radiusYr: 0.75, turns: 1.5, pitchYr: 1.5, pairYr: 0.7 }
+
+function scaleCoil(c: CoilShape, g: number): CoilShape {
+  return { ...c, radiusYr: c.radiusYr * g, pitchYr: c.pitchYr * g }
+}
+
+/** A fleece made curly: every loop the coil, sprung open from seeds. */
+export function curlyOf(f: FleeceSpec, coil: CoilShape, g: number): FleeceSpec {
+  return { ...f, loop: { ...f.loop, coil: scaleCoil(coil, g) }, spring: true }
+}
 
 /** The fleece rounds of a body or tail ball: alternate rounds from the third
  *  to four from the end (the seat stays plain so the lamb sits). */
@@ -257,7 +277,12 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
   // ── the body: a fleece ball ──
   const body = gSphereRounds(P.body[0], P.body[1], g)
   // L's bigger body: the dense carpet floats hooks on several rounds (3-8 audit failures), so every second stitch throughout.
-  const bodyFl = bodyFleece(body, g, 2, 4, choices.size === 'L' ? 2 : FLEECE_EVERY)
+  const curly = choices.curlyFleece === true
+  const bodyFl0 = bodyFleece(body, g, 2, 4, choices.size === 'L' ? 2 : FLEECE_EVERY)
+  // The curly body's fleece starts two rounds later: the first rounds sit
+  // under the head (sunk into the shoulders), and curls there pressed hooks
+  // of round 2 out from under their crowns when the head was sewn on.
+  const bodyFl = curly ? curlyOf(bodyFleece(body, g, 4, 4, choices.size === 'L' ? 2 : FLEECE_EVERY), LAMB_FLEECE_COIL, g) : bodyFl0
   const close = 'Stuff firmly, then fasten off, thread the tail through the final round and draw the opening closed.'
   const fleeceWords = (rounds: number[], f: FleeceSpec, colourAt?: (k: number) => string | undefined): string[] => [
     fleeceHowTo(f, loopMm),
@@ -266,6 +291,10 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
 
   // ── the head: the topknot in its first rounds, then the face ──
   const head = gSphereRounds(P.head[0], P.head[1], g)
+  // The topknot keeps its open loops as wound (curl-relax-1107, renders r1
+  // and r2): on the head's small cupped rounds, coiled or sprung loops could
+  // only grow outward past their crowded neighbours and stood up as stalks,
+  // where the wound loops lie down the crown as a boucle cap.
   const cap = lambHeadCap(head, g)
   const plain = choices.plainFleece === true
 
@@ -353,7 +382,8 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
 
   // ── the tail nub: a small fleece ball ──
   const tail = gSphereRounds(P.tail, 0, g)
-  const tailFl = bodyFleece(tail, g, 2, 2)
+  const tailFl0 = bodyFleece(tail, g, 2, 2)
+  const tailFl = curly ? curlyOf(tailFl0, LAMB_FLEECE_COIL, g) : tailFl0
   parts.push({
     name: 'tail', stitch: 'sc', rounds: tail, colourHex: choices.fleeceHex,
     ...(plain ? {} : { fleece: tailFl, words: fleeceWords(tail, tailFl) }),

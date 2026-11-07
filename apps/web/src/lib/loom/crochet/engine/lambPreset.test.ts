@@ -187,3 +187,19 @@ test('S and L: no audit problems, every hard rule passes, the same three firm mi
     assert.deepEqual(fails.map((r) => r.n), [33, 34, 40], size)
   }
 })
+
+test('curly fleece (curl-relax-1107): off means off; on, the body and tail sprung coils, the topknot as wound, and the words say so', () => {
+  const off = buildLambProgram(LAMB_DEFAULTS)
+  assert.equal(JSON.stringify(buildLambProgram({ ...LAMB_DEFAULTS, curlyFleece: false })), JSON.stringify(off))
+  const on = buildLambProgram({ ...LAMB_DEFAULTS, curlyFleece: true })
+  for (const name of ['body', 'tail']) {
+    const f = on.parts.find((p) => p.name === name)!.fleece!
+    assert.ok(f.spring && f.loop.coil, name)
+    assert.equal(off.parts.find((p) => p.name === name)!.fleece!.spring, undefined)
+  }
+  // The topknot keeps its wound open loops.
+  assert.equal(JSON.stringify(on.parts.find((p) => p.name === 'head')!.fleece), JSON.stringify(off.parts.find((p) => p.name === 'head')!.fleece))
+  const words = on.parts.find((p) => p.name === 'body')!.words!.join('\n')
+  assert.match(words, /Every loop is a CURL/)
+  assert.doesNotMatch(words, /—/)
+})

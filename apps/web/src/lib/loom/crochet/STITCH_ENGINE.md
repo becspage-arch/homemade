@@ -3966,6 +3966,34 @@ stitches it makes and checks the counts and each loop stitch). Every existing pr
   The lamb's muzzle is worked end to end and sewn across the face, so its rounds run up and down the face. A
   round from a magic ring would read as concentric rings but cannot be wide and short enough for rules 11-12.
 
+## 8x. THE CURLS SPRING OPEN: packed coils and fleece with no curl linked (2026-11-07, curl-relax-1107)
+
+Rule-calib 1027 found that a packed cap of coiled curls (rules 42, 43) trips the coil audit: "curls N and M are
+linked". Traced stage by stage (emitted, eased, relaxed, eased): the links are there at EMISSION. Each coil is wound
+at its full size beside its neighbours, so where they are packed closer than their own width they are emitted
+through each other (19 of 70 pairs on the cow's packed cap), and no relax can unlink two closed curves without
+passing yarn through yarn; the collision that keeps yarn apart is what holds the link. The lamb-1027 fleece's open
+loops had the same fault, unseen because the fleece had no linking audit: 36 linked pairs on the body, 17 on the head.
+
+`coilSpring.ts` (`springCoils`): each loose run (a coil or loop body) starts as a SEED, scaled about its own root so
+no seed reaches its neighbour's; seeds that still link or press into each other are halved again. The rest lengths of
+every constraint touching the run (its segments, its bending distances, its joins to the passes) are scaled the same,
+so the seed is the wound shape, small. Then in 16 geometric stages the rest lengths grow back to the wound length with
+the fabric held still (w 0), collision acting between runs and run against fabric, each run its own yarn with no self
+collision while it grows (a seed's far turns sit closer than a strand apart; its own collision burst it open in one
+step and threaded a neighbour). Rest lengths, strand ids and weights are restored exactly; nothing is drawn. Opt-in:
+`HairPatch.coilSpring` (coiled patches) and `FleeceSpec.spring` (any fleece; a sprung or coiled fleece also gets the
+coil audit, clearance 0, and its curls stay out of the contact flattening's shells, so a neighbour sewn onto the fleece
+presses the fabric, not the curls). `LambChoices.curlyFleece`: the body's and tail's fleece loops coils (`LAMB_FLEECE_COIL`), sprung, the body's fleece
+from round 5 (curls on the rounds under the sunk head pressed hooks of round 2 out from under their crowns once the head
+was sewn on); the topknot keeps its wound open loops. Sprung or coiled on the head's small cupped rounds, the crowded
+loops could only grow outward and stood up as stalks (renders r1, r2): the spring has no gravity or lie of its own on a
+stuffed piece, the next thing to add.
+Cow cute path: `COW_CUTE_FRINGE` (a coil on every round, every third stitch, mixed on every round, touching allowed,
+sprung, gravity 3x) and the eyes a touch lower (the head's H no longer carries a 0.18 H mound). Every preset hash
+unchanged (cow M e3a65b10, lamb M 7b98a445). Measured: cow cute calf 42 0.82, 43 0.128, 37 0.18, patch and coil audits
+clean; curly lamb M body 0 linked pairs (default 36), rule 59 0.066, 60 1.53, no audit problems. Tests coilSpring.test.ts.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
