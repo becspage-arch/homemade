@@ -48,6 +48,9 @@ import { earPart, type EarPieceOptions } from './earPiece'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { bentTubeWords, planBend, taperRounds } from './bentTube'
 import { taperedLimbRounds } from './limbProfiles'
+import { chainOvalPart, chainOvalSpot, designChainOval, type ChainOvalOptions } from './chainOval'
+import { pinchEarPart, type PinchEarOptions } from './pinchEar'
+import { STITCHES } from './dictionary'
 import { clampGauge, gBall, gCone, gCord, gDisc, gEar, gLoop, gSphere, gSphereRounds, gTube, gaugeYarn, gaugeYarnRadiusMm, nudged } from './gauge'
 import type { HeroStage } from '../../render/blenderScene'
 
@@ -105,6 +108,24 @@ export interface CowChoices {
    *  width on the face over its height; the bar's ~1.3). Overrides
    *  `muzzleSize` when both are given. */
   muzzleOval?: { equator?: number; aspect?: number }
+  /** THE MUZZLE WORKED ROUND A CHAIN (engine-shapes-1107; chainOval.ts;
+   *  gauge > 1.15 only). The standard amigurumi muzzle: a foundation chain
+   *  worked along both sides, increasing at the ends, so the stitches circle
+   *  the muzzle in concentric oval rounds (Bec: ours looked "stitched up and
+   *  down"), domed, worked even for its depth, stuffed lightly and sewn on by
+   *  its last round. Its size is the oval muzzle's (`muzzleOval`, or the
+   *  size's own), `true` = designed from that size; fields override the
+   *  design. Overrides `muzzleSize` / `muzzleOval`'s piece (their size is
+   *  kept). Absent / false = every hash unchanged. */
+  chainMuzzle?: boolean | Partial<ChainOvalOptions>
+  /** THE EARS SEWN BY THEIR PINCH (engine-shapes-1107; pinchEar.ts; gauge >
+   *  1.15 only): the rolled-rim cup (the size's `COW_CUP_EAR`), its rim
+   *  pinched at the base until the sides meet and sewn to the head by the
+   *  pinch alone, so it stands out from the head with the hollow facing
+   *  forward (CUTE-RULES 18-21, 40). `true` = the cow's; fields override
+   *  (`shape: 'pointed'`, `liningHex`). Overrides `foldedEars` / `cuppedEars`.
+   *  Absent / false = every hash unchanged. */
+  pinchEars?: boolean | Partial<PinchEarOptions>
   /** COILED CURLS (cow-build-1025; gauge > 1.15 only, absent = the open
    *  rings, every hash unchanged): the fringe's loops worked as tight
    *  coils (`LoopShape.coil`, loopStitch.ts `emitCoil`) — each loop twisted
@@ -1055,6 +1076,39 @@ function cowCupEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g = 1
   }, gaugeYarnRadiusMm(COW_YARN, g))
 }
 
+/** The pinched ear's place (`pinchEars`): high on the side of the head at the
+ *  brow (the cute fit's, else the folded ear's); it stands out sideways from
+ *  its pinch, its hollow turned forward, a little out and up. */
+// Measured on the r1 cow (engine-shapes-1107): out level (an upward aim
+// shortens the reach past the head, rule 18) with the hollow forward and up
+// (front height / width 1.23, rule 20; straight forward reads 1.38).
+const PINCH_EAR_AIM = { x: 1, y: 0, z: 0.05 }
+const PINCH_EAR_FACE = { x: 0.5, y: 1, z: 0.5 }
+
+/** One ear sewn by its pinch (`CowChoices.pinchEars`, pinchEar.ts). */
+function cowPinchEar(choices: CowChoices, side: -1 | 1, fd: (d: Dir) => Dir, g: number, cf?: CowCuteFit): AmigurumiPart {
+  const DIR = cf?.earDir ?? FOLD_EAR_DIR
+  const cup = gEar(COW_CUP_EAR[choices.size], g)
+  const o: PinchEarOptions = {
+    // Pinched until the sides meet (the most uneven rim the cup makes as seen,
+    // rule 21: 1.43 against 1.15 at 0.7; audits clean at this width).
+    shape: 'round', width: cup.width, depth: cup.depth, rimRoll: Math.max(1, cup.rimRoll ?? 1), pinch: 1,
+    ...(choices.pinchEars === true ? {} : choices.pinchEars),
+  }
+  return pinchEarPart(o, {
+    name: side < 0 ? 'ear-l' : 'ear-r',
+    colourHex: choices.mainHex,
+    sewNote: 'by the pinch only, high on the sides of the head at the brow just under the horns, the cup standing out sideways with its hollow facing forward',
+    place: {
+      on: 'head',
+      dir: fd({ x: side * DIR.x, y: DIR.y, z: DIR.z }),
+      aim: fd({ x: side * PINCH_EAR_AIM.x, y: PINCH_EAR_AIM.y, z: PINCH_EAR_AIM.z }),
+      spin: fd({ x: side * PINCH_EAR_FACE.x, y: PINCH_EAR_FACE.y, z: PINCH_EAR_FACE.z }),
+      seat: 2, poleIn: false, surfaceFit: 'ellipsoid',
+    },
+  })
+}
+
 function norm(v: Dir): Dir {
   const l = Math.hypot(v.x, v.y, v.z) || 1
   return { x: v.x / l, y: v.y / l, z: v.z / l }
@@ -1120,6 +1174,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
   const main = choices.mainHex
   const fd = (d: Dir): Dir => faceDir(d)
   const cf = cowCuteFit(choices, g)
+  const chainMz = cowChainMuzzle(choices, g)
   // The cute path's cream, unless the scene chose its own contrast colour.
   const cream = cf && choices.contrastHex === COW_DEFAULTS.contrastHex ? cf.creamHex : choices.contrastHex
 
@@ -1131,7 +1186,16 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       sewNote: 'straight onto the top of the body with no neck, sunk well down so the shoulders run into the cheeks; the magic ring under one ear and the closed end under the other, so the head sits wider than it is tall',
       place: { on: 'body', overlap: s.headSink, offset: { y: 2 }, axis: fd(HEAD_AXIS) },
     },
-    {
+    chainMz
+      ? chainOvalPart(chainMz, {
+        name: 'muzzle', colourHex: cream, what: 'muzzle',
+        // Sewn by its last round round the lower face, the chain lying across
+        // it (local +x), the dome standing out of the face.
+        place: { on: 'head', dir: fd(cf?.muzzleDir ?? MUZZLE_DIR), aim: fd(cf?.muzzleDir ?? MUZZLE_DIR), spin: fd(MUZZLE_AIM), seat: 2, poleIn: false, surfaceFit: 'ellipsoid' },
+        sewNote: 'by its last round across the lower half of the face, the chain lying side to side, its top edge just below the eyes',
+        joinWords: 'Sew the muzzle on by its last round across the lower half of the face, the line of the chain lying side to side and its top edge just below the eyes, stuffing it lightly as you close the seam so it stays soft and domed.',
+      })
+      : {
       // The wide cream muzzle: a capsule worked end to end, stuffed, and sewn
       // LYING ACROSS the lower half of the face so the lens sees a wide oval
       // (the nostrils are stitched across its front).
@@ -1173,7 +1237,9 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
       },
     })
   }
-  if (choices.foldedEars) {
+  if (choices.pinchEars && g > 1.15) {
+    for (const side of [-1, 1] as const) parts.push(cowPinchEar(choices, side, fd, g, cf))
+  } else if (choices.foldedEars) {
     for (const side of [-1, 1] as const) parts.push(cowFoldEar(choices, side, fd, g, cf))
   } else if (choices.cuppedEars) {
     for (const side of [-1, 1] as const) parts.push(cowCupEar(choices, side, fd, g, cf))
@@ -1266,7 +1332,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     ...COW_VIEW,
     parts,
     props,
-    embroidery: cowNostrils(s.muzzle, fd, g, nostrilScale),
+    embroidery: chainMz ? cowOvalNostrils(chainMz, fd, gaugeYarnRadiusMm(COW_YARN, g)) : cowNostrils(s.muzzle, fd, g, nostrilScale),
     hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
@@ -1361,6 +1427,58 @@ function cowGaugeFields(g: number): Partial<CompositionProgram> {
   if (g === 1) return {}
   const y = gaugeYarn({ yarnWeight: COW_YARN, hookMm: COW_HOOK_MM }, g)
   return { yarnWeight: y.yarnWeight, yarnRadiusMm: y.yarnRadiusMm, hookMm: y.hookMm, ...(y.gaugeText ? { gaugeText: y.gaugeText } : {}) }
+}
+
+/**
+ * THE MUZZLE WORKED ROUND A CHAIN (`CowChoices.chainMuzzle`): designed from
+ * the size the oval muzzle has (its widest round's diameter tall, `aspect`
+ * x that wide; the cute fit's {1.2, 1.45} by default), domed and stuffed
+ * lightly, standing out about half its height.
+ */
+export function cowChainMuzzle(choices: CowChoices, g: number): ChainOvalOptions | undefined {
+  if (!choices.chainMuzzle || g <= 1.15) return undefined
+  const mo = choices.muzzleOval ?? { equator: 1.2, aspect: 1.45 }
+  const yr = gaugeYarnRadiusMm(COW_YARN, g)
+  const eq = gSphere(Math.round(PROFILE_SPEC[choices.size].muzzle[0] * (mo.equator ?? 1)), g)
+  const d = (eq * STITCHES.sc.gaugeYr * yr) / Math.PI
+  // Measured on the r1 cow (engine-shapes-1107): the oval needs to be a
+  // quarter taller than the capsule's widest round to reach up under the eyes
+  // (rule 8) and form the chin (rule 13), and a little less wide for its
+  // height than the capsule's 1.45 so the eyes stay over its corners (rule 9).
+  const h = d * COW_CHAIN_MUZZLE_HEIGHT
+  const designed = designChainOval({ widthMm: h * 1.2 * ((mo.aspect ?? 1.45) / 1.45), heightMm: h, depthMm: d * COW_CHAIN_MUZZLE_DEPTH, kind: 'stuffed' }, yr)
+  return { ...designed, ...(choices.chainMuzzle === true ? {} : choices.chainMuzzle), kind: 'stuffed' }
+}
+/** The chain muzzle's height and how far it stands out of the face, over the
+ *  capsule muzzle's widest-round diameter. */
+const COW_CHAIN_MUZZLE_HEIGHT = 1.25
+const COW_CHAIN_MUZZLE_DEPTH = 0.4
+
+/**
+ * The nostrils on the muzzle worked round a chain: one slanted stitch near
+ * each end of the oval, on its upper half, the two leaning in toward each
+ * other in a wide open "v" (the bar's). Counted the way the oval is made:
+ * rounds out from the chain, stitches up from the end stitch of a round.
+ */
+function cowOvalNostrils(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number): EmbroideryFeature[] {
+  const R = 1 + o.rounds + (o.even ?? 0)
+  // Outer end of each stitch about 2/3 of the way out, inner a round in.
+  const outer = Math.max(2, Math.round(R * 0.62)), inner = Math.max(1, outer - 2)
+  const stitches = (['E0', 'E1'] as const).map((end) => ({
+    from: chainOvalSpot(o, yr, outer, end, 2),
+    to: chainOvalSpot(o, yr, inner, end, 0),
+    taut: true,
+  }))
+  return [{
+    name: 'nose', on: 'muzzle',
+    zeroDir: fd({ x: 0, y: 1, z: 0 }), rightDir: { x: 0, y: 0, z: 1 },
+    colourHex: NOSTRIL_HEX, threadMm: 1.3, threadLabel: 'Dark brown DK yarn (or six strands of embroidery thread)',
+    stitches,
+    words:
+      'Nostrils (dark brown DK yarn): the muzzle\'s rounds circle the chain, so count rounds out from the chain and stitches up from the stitch at the very end of a round. ' +
+      `At each end of the muzzle, work one bold straight stitch: bring the needle up on round ${outer}, 2 stitches above its end stitch (toward the eyes), and take it down on round ${inner} at its end stitch, ` +
+      'so the two stitches slant toward each other in a wide open "v". Pull snug, not tight.',
+  }]
 }
 
 function cowNostrils(muzzle: number[], fd: (d: Dir) => Dir, g = 1, scale = { rounds: 1, stitches: 1 }): EmbroideryFeature[] {

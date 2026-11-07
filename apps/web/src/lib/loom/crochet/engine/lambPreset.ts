@@ -47,6 +47,9 @@ import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { taperedLimbRounds } from './limbProfiles'
 import { clampGauge, gBall, gSphere, gSphereRounds, gaugeYarn, gaugeYarnRadiusMm } from './gauge'
 import { writeInstructions } from './program'
+import { chainOvalPart, chainOvalSideSpot, designChainOval, type ChainOvalOptions } from './chainOval'
+import { pinchEarPart, type PinchEarOptions } from './pinchEar'
+import { STITCHES } from './dictionary'
 import { FEET_FORWARD_NOTE, HEAD_TILT_DEG, HEAD_TILT_NOTE, limbStuffWords, limbStuffing, rollAbout, sunkEye } from './cuteFinish'
 
 export interface LambChoices {
@@ -73,6 +76,16 @@ export interface LambChoices {
   plainFleece?: boolean
   /** The head's tilt (deg; cuteFinish HEAD_TILT_DEG by default; 0 = upright). */
   headTiltDeg?: number
+  /** OPT-IN (engine-shapes-1107; chainOval.ts): the muzzle worked round a
+   *  foundation chain (concentric oval rounds, domed, stuffed lightly, sewn
+   *  by its last round), with the nose and mouth counted on it. `true` =
+   *  designed from the size's muzzle; fields override. Absent = unchanged. */
+  chainMuzzle?: boolean | Partial<ChainOvalOptions>
+  /** OPT-IN (engine-shapes-1107; pinchEar.ts): ears sewn by their pinch (a
+   *  short pointed ear pressed into a scoop by default; `shape: 'round'` for
+   *  a rolled-rim cup). `true` = the lamb's; fields override. Absent =
+   *  unchanged. */
+  pinchEars?: boolean | Partial<PinchEarOptions>
   name?: string
 }
 
@@ -200,6 +213,9 @@ const EAR_DIR: Dir = { x: 1, y: 0.0, z: 0.8 }
 const EAR_AIM: Dir = { x: 1, y: 0.25, z: -0.1 }
 const EAR_FACE: Dir = { x: 0.2, y: 1, z: 0.2 }
 const EAR_DROOP: Dir = { x: 1, y: 0.3, z: -0.5 }
+/** An ear sewn by its pinch (`pinchEars`) is sewn lower, at the head's widest,
+ *  so it stands out past the head (rule 18) instead of over the topknot. */
+const PINCH_EAR_DIR: Dir = { x: 1, y: 0.05, z: 0.4 }
 /** Front legs at the shoulder corners, hanging down the chest. */
 const FRONT_LEG_DIR: Dir = { x: 0.82, y: 0.95, z: 0.5 }
 const FRONT_LEG_AIM: Dir = { x: 0.1, y: 0.5, z: -1 }
@@ -270,6 +286,7 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
   const plain = choices.plainFleece === true
 
   const muzzle = ovalRounds(gSphere(P.muzzle, g), 1.95)
+  const chainMz = lambChainMuzzle(choices, g)
   const parts: AmigurumiPart[] = [
     {
       name: 'body', stitch: 'sc', rounds: body, colourHex: choices.fleeceHex,
@@ -287,7 +304,13 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
       sewNote: `straight onto the top of the body with no neck, sunk well down so the fleece of the shoulders runs up under the cheeks; the magic ring (the crown of the topknot) up and a little back${tilt ? `; ${HEAD_TILT_NOTE}` : ''}`,
       place: { on: 'body', overlap: L.headSink, offset: { y: 4 }, axis: hd(HEAD_AXIS) },
     },
-    {
+    chainMz
+      ? chainOvalPart(chainMz, {
+        name: 'muzzle', colourHex: choices.muzzleHex, what: 'muzzle',
+        place: { on: 'head', dir: hd(MUZZLE_DIR), aim: hd(MUZZLE_DIR), spin: hd(MUZZLE_AIM), seat: 2, poleIn: false, surfaceFit: 'points' },
+        sewNote: 'by its last round across the lower half of the face, the chain lying side to side, its lower edge the chin',
+      })
+      : {
       name: 'muzzle', stitch: 'sc', rounds: muzzle, colourHex: choices.muzzleHex,
       place: { on: 'head', dir: hd(MUZZLE_DIR), aim: hd(MUZZLE_AIM), seat: 2, centred: true, surfaceFit: 'points' },
       sewNote: 'lying across the lower half of the face with its ends toward the ears, its lower edge the chin, stuffing it lightly as you close the seam',
@@ -298,6 +321,23 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
   const ear = gFolded(earOptions(choices.size), g)
   for (const side of [-1, 1] as const) {
     const AIM = side < 0 ? EAR_DROOP : EAR_AIM
+    if (choices.pinchEars) {
+      parts.push(pinchEarPart(lambPinchEar(choices, g), {
+        name: side < 0 ? 'ear-l' : 'ear-r',
+        colourHex: choices.faceHex,
+        sewNote: side < 0
+          ? 'by the pinch on the side of the head just under the edge of the topknot; sew the left ear angled down and forward so it droops'
+          : 'by the pinch on the side of the head just under the edge of the topknot, held out level and a little forward, the hollow facing forward',
+        place: {
+          on: 'head',
+          dir: hd({ x: side * PINCH_EAR_DIR.x, y: PINCH_EAR_DIR.y, z: PINCH_EAR_DIR.z }),
+          aim: hd({ x: side * AIM.x, y: AIM.y, z: AIM.z }),
+          spin: hd({ x: side * EAR_FACE.x, y: EAR_FACE.y, z: EAR_FACE.z }),
+          seat: 2, poleIn: false, surfaceFit: 'points',
+        },
+      }))
+      continue
+    }
     parts.push(foldedPart(ear, {
       name: side < 0 ? 'ear-l' : 'ear-r',
       colourHex: choices.faceHex,
@@ -398,8 +438,9 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
   }
   for (const q of parts) if (join[q.name]) q.joinWords = join[q.name]
   const muzzlePart = parts.find((q) => q.name === 'muzzle')!
-  muzzlePart.words = [...plainRounds(muzzle), 'Stuff lightly (it should lie soft across the face, not stand out like a ball), then fasten off, thread the tail through the final round and draw the opening closed. Leave a long tail for sewing.']
-  const nose = lambNose(muzzle, hd, g, choices.noseHex)
+  if (chainMz) muzzlePart.joinWords = 'Sew the muzzle on by its last round across the lower half of the face, the line of the chain lying side to side, its lower edge the chin and the eyes sitting on its top corners, stuffing it lightly as you close the seam.'
+  else muzzlePart.words = [...plainRounds(muzzle), 'Stuff lightly (it should lie soft across the face, not stand out like a ball), then fasten off, thread the tail through the final round and draw the opening closed. Leave a long tail for sewing.']
+  const nose = chainMz ? lambOvalNose(chainMz, hd, yrMm, choices.noseHex) : lambNose(muzzle, hd, g, choices.noseHex)
 
   const y = gaugeYarn({ yarnWeight: LAMB_YARN, hookMm: LAMB_HOOK_MM }, g)
   return {
@@ -427,6 +468,55 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
 const LAMB_FIBRE_TUNE: Record<string, number | boolean> = {
   pile_density: 1.8, pile_children: 6, pile_len_mm: 2.6, pile_radius_mm: 0.06, pile_lean: 0.9, pile_tip_lift: 0.4,
   pile_max_radius_mm: 3.2, crush_amt: 0.22, sat_mult: 0.9, pile_dark_only: true,
+}
+
+/** The muzzle worked round a chain (`LambChoices.chainMuzzle`), designed from
+ *  the size's capsule muzzle: a quarter taller than its widest round, 1.6x
+ *  as wide as tall (the capsule lies 1.95 long; measured, a narrower oval
+ *  leaves the eyes off its corners, rule 9, and the chin short, rule 13),
+ *  standing out a third of its height. */
+export function lambChainMuzzle(choices: LambChoices, g: number): ChainOvalOptions | undefined {
+  if (!choices.chainMuzzle) return undefined
+  const yr = gaugeYarnRadiusMm(LAMB_YARN, g)
+  const d = (gSphere(PROFILE_SPEC[choices.size].muzzle, g) * STITCHES.sc.gaugeYr * yr) / Math.PI
+  const h = d * 1.25
+  const designed = designChainOval({ widthMm: h * 1.6, heightMm: h, depthMm: d * 0.35, kind: 'stuffed' }, yr)
+  return { ...designed, ...(choices.chainMuzzle === true ? {} : choices.chainMuzzle), kind: 'stuffed' }
+}
+
+/** The lamb's ear sewn by its pinch (`LambChoices.pinchEars`): a short
+ *  pointed ear pressed into a scoop, its base pinched. */
+export function lambPinchEar(choices: LambChoices, g: number): PinchEarOptions {
+  const width = Math.max(9, Math.min(15, 3 * Math.round((PROFILE_SPEC[choices.size].ear.width * 1.5 * g) / 3)))
+  return { shape: 'pointed', width, depth: Math.max(1, Math.round(PROFILE_SPEC[choices.size].ear.length * 0.25 * g)), ...(choices.pinchEars === true ? {} : choices.pinchEars) }
+}
+
+/**
+ * The nose and mouth on the muzzle worked round a chain: the same little "Y",
+ * counted the way the oval is made, in rounds out from the chain on its top
+ * side and stitches along from the middle of the chain.
+ */
+function lambOvalNose(o: ChainOvalOptions, fd: (d: Dir) => Dir, yr: number, hex: string): EmbroideryFeature[] {
+  const R = 1 + o.rounds + (o.even ?? 0)
+  // The top side is local -y (the muzzle is sewn with local +y down the face).
+  const top = Math.max(3, Math.round(R * 0.55))
+  const meet = top - 1
+  const mouth = Math.max(1, meet - 2)
+  const stitches = [
+    { from: chainOvalSideSpot(o, yr, top, -1, -1), to: chainOvalSideSpot(o, yr, meet, -1, 0), taut: true },
+    { from: chainOvalSideSpot(o, yr, top, -1, 1), to: chainOvalSideSpot(o, yr, meet, -1, 0), taut: true },
+    { from: chainOvalSideSpot(o, yr, meet, -1, 0), to: chainOvalSideSpot(o, yr, mouth, -1, 0), taut: true },
+  ]
+  return [{
+    name: 'nose', on: 'muzzle',
+    zeroDir: fd({ x: 0, y: 1, z: 0 }), rightDir: fd({ x: 0, y: 0, z: 1 }),
+    colourHex: hex, threadMm: 1.1, threadLabel: 'Dusty rose DK yarn (or six strands of embroidery thread)',
+    stitches,
+    words:
+      'Nose and mouth (dusty rose DK yarn): the muzzle\'s rounds circle the chain, so count rounds out from the chain on its top side, and stitches along from the stitch over the middle of the chain. ' +
+      `Bring the needle up on round ${top}, 1 stitch left of the middle, and take it down on round ${meet} at the middle; make the same stitch from 1 stitch right of the middle, so the two meet in a small "v" (the nose); ` +
+      `then bring the needle up at that point and take it down on round ${mouth} at the middle (the mouth). Pull snug, not tight.`,
+  }]
 }
 
 /**

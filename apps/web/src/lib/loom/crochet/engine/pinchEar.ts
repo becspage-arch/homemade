@@ -1,0 +1,212 @@
+/**
+ * THE PINCHED EAR (engine-shapes-1107): a general ear sewn on BY ITS PINCH,
+ * the construction the bar's cow, bear and mouse ears use (CUTE-RULES 18-21
+ * and 40, `rolled-rim-cup`). Two shapes, either lined with a contrast inner.
+ *
+ * 'round' — a cow / bear / mouse ear. A rolled-rim cup (earPiece.ts 'cup': a
+ *   half-ball worked from a magic ring, +6 a round, worked even for its depth,
+ *   the last round(s) folded back over the outside into a plump lip). The
+ *   base of the rim is PINCHED until its two sides meet and held with two
+ *   small stitches through both layers; the ear is then sewn to the head by
+ *   that pinch ALONE, so the cup stands out from the head with its hollow
+ *   facing forward, instead of lying on the head by its back (earPiece's cup
+ *   is sewn by its ring and cannot stand out past the head: rule 40's note).
+ *
+ * 'pointed' — a cat / fox ear with a soft roll. A short cone worked tip first
+ *   (earPiece.ts 'lop': +3 a round from 6, so the tip is a soft point, not a
+ *   flat disc), worked even a few rounds, pressed into a shallow scoop with
+ *   its edges turned forward (the soft roll), the open base pinched in and
+ *   sewn on by it.
+ *
+ * Construction honesty: both are earPiece's audited pieces, built and relaxed
+ * exactly as earPart makes them (buildTube, one strand, the ring the only
+ * pinned node; the pinch and the press are one-sided plates, never pins). The
+ * audit runs on the settled piece in its own frame; the pose that turns it to
+ * be sewn by its pinch is rigid, so the stitches it audited are the ones
+ * placed. The composition seats the pinch (CustomPiece.seat) on the join.
+ *
+ * Posed frame (what a placement sees): the pinch at the origin end, the ear
+ * standing out along local +z (the placement's `aim`), the hollow facing
+ * local +x (the placement's `spin`), local -z the head. Opt-in: nothing
+ * imports this unless a preset's switch is on.
+ */
+
+import { auditPart, buildPart, type AmigurumiPart, type PartPlacement } from './composition'
+import { earMetrics, earPart, earRounds, earWords, type EarMetrics, type EarPieceOptions } from './earPiece'
+import type { BuiltContinuous } from './yarnPath'
+
+export type PinchEarShape = 'round' | 'pointed'
+
+export interface PinchEarOptions {
+  shape: PinchEarShape
+  /** Stitches round the widest round (round: +6 a round, 9 up; pointed: +3
+   *  a round, 9-15). */
+  width: number
+  /** Rounds worked even after the widest (round: 0-4, then the rim; pointed:
+   *  the ear's straight length, 1-8, at least 4 rounds even in all, the
+   *  lop's own minimum). */
+  depth: number
+  /** Round: folded rounds of the rolled rim (1-2, default 1). Pointed: how far
+   *  the edges turn forward, 0..1 (default 1). */
+  rimRoll?: number
+  /** How far the base is pinched together, 0.3..1 (default: a round cup 1,
+   *  the sides meeting, up to 21 sts and 0.7 wider; a pointed ear 0.7). */
+  pinch?: number
+  /** A contrast inner (hex): the round cup's first rounds, the pointed ear's
+   *  middle panel. */
+  liningHex?: string
+}
+
+const DEFAULTS = { round: { rimRoll: 1 }, pointed: { rimRoll: 1, pinch: 0.7 } }
+/** A round cup's pinch: until the sides meet up to 21 sts (at 0.7 a cup of
+ *  18 or less does not narrow at all, measured); a wider cup at 1 tears its
+ *  rim round's hooks sideways off their crowns (24: 3, 30: 6 failures,
+ *  measured), so 0.7. */
+const roundPinch = (width: number): number => (width <= 21 ? 1 : 0.7)
+
+function validate(o: PinchEarOptions): void {
+  if (o.shape === 'round') {
+    if (!Number.isInteger(o.depth) || o.depth < 0 || o.depth > 4) throw new Error(`pinch ear: a round ear's depth is 0-4 even rounds (got ${o.depth})`)
+    const r = o.rimRoll ?? 1
+    if (r !== 1 && r !== 2) throw new Error(`pinch ear: a round ear's rim roll is 1 or 2 folded rounds (got ${r})`)
+  } else {
+    if (!Number.isInteger(o.depth) || o.depth < 1 || o.depth > 8) throw new Error(`pinch ear: a pointed ear's length is 1-8 even rounds (got ${o.depth})`)
+    // Measured (engine-shapes-1107): a +3 cone to 18 floats a hook off its
+    // crown in its third round at any press (8-16 yr); 9-15 audit clean.
+    if (o.width < 9 || o.width > 15) throw new Error(`pinch ear: a pointed ear is 9-15 sts wide (got ${o.width})`)
+  }
+  const p = o.pinch ?? (o.shape === 'round' ? roundPinch(o.width) : 0.7)
+  if (p < 0.3 || p > 1) throw new Error(`pinch ear: the pinch is 0.3..1 (got ${p}); an unpinched ear is earPiece's`)
+  if (o.shape === 'round' && o.width > 21 && p > 0.85) throw new Error(`pinch ear: a cup over 21 sts tears at a pinch over 0.85 (got ${p} at ${o.width})`)
+}
+
+/** The earPiece options each shape is built from. */
+export function pinchEarPiece(o: PinchEarOptions): EarPieceOptions {
+  validate(o)
+  if (o.shape === 'round') {
+    return { kind: 'cup', width: o.width, depth: o.depth, rimRoll: o.rimRoll ?? DEFAULTS.round.rimRoll, pinch: o.pinch ?? roundPinch(o.width), ...(o.liningHex ? { liningHex: o.liningHex } : {}) }
+  }
+  // A short cone: the +3 rounds up to the width, then `depth` even, open at
+  // the base (no taper).
+  const up = Math.ceil((o.width - 6) / 3) + 1
+  return {
+    kind: 'lop', width: o.width, depth: 1, rimRoll: o.rimRoll ?? DEFAULTS.pointed.rimRoll, pinch: o.pinch ?? DEFAULTS.pointed.pinch,
+    length: up + o.depth, taper: 0, pressYr: 10,
+    ...(o.liningHex ? { liningHex: o.liningHex, liningFrac: 0.4 } : {}),
+  }
+}
+
+export function pinchEarRounds(o: PinchEarOptions): number[] {
+  return earRounds(pinchEarPiece(o))
+}
+
+/** The ear's words: earPiece's rounds and shaping, then the pinch and the
+ *  sewing by it. */
+export function pinchEarWords(o: PinchEarOptions): string[] {
+  const piece = pinchEarPiece(o)
+  const base = earWords(piece)
+  // earPiece's last line says how a free ear is sewn; this one is sewn by
+  // its pinch.
+  const body = base.slice(0, -1)
+  const meet = (piece.pinch ?? 0) >= 0.7
+  if (o.shape === 'round') {
+    return [
+      ...body,
+      `Sew the base of the rim together where you pinch it: fold the cup so the two sides of the rim${meet ? ' meet' : ' come close'} at the bottom, and take 2 small stitches through both layers with the tail to hold the pinch.`,
+      'Sew the ear to the head by the pinch only, so the cup stands out from the head with its hollow facing forward and the rolled rim free all round.',
+    ]
+  }
+  return [
+    ...body,
+    'Sew the base together where you pinch it: press the ear flat, fold the open base in at the middle so the edges turn forward, and take 2 small stitches through all the layers to hold the pinch.',
+    'Sew the ear to the head by the pinched base only, the hollow facing forward and the point up.',
+  ]
+}
+
+export interface PinchEarBuild {
+  built: BuiltContinuous
+  problems: string[]
+  /** Measured in earPiece's own frame before the pose (earPiece.earMetrics). */
+  metrics: EarMetrics
+  /** The pinch (posed frame, mm): the point sewn to the head. */
+  seat: { x: number; y: number; z: number }
+  /** Posed extents (mm): how far it stands out (z) and how wide (y). */
+  standOutMm: number
+  widthMm: number
+  /** A pointed ear's lining panel, per strand node. */
+  panelMask?: boolean[]
+}
+
+/** earPiece's cup frame (hollow -z, ring +z, pinch -y) to the posed frame
+ *  (pinch at min z, standing out +z, hollow +x): a rigid turn. */
+const poseRound = (p: { x: number; y: number; z: number }): { x: number; y: number; z: number } => ({ x: -p.z, y: -p.x, z: p.y })
+
+/** Build, relax, audit and pose one ear. */
+export function buildPinchEar(o: PinchEarOptions, yr: number): PinchEarBuild {
+  const piece = pinchEarPiece(o)
+  const part = earPart(piece, { name: 'ear', colourHex: '#888888', place: { on: 'ground' } }, yr)
+  const { built, panelMask } = buildPart(part, yr)
+  const problems = auditPart(built, part, yr)
+  const metrics = earMetrics(piece, built)
+  const nodes = built.model.nodes
+  const body = nodes.slice(built.anchorPins ?? 0)
+  let seat: { x: number; y: number; z: number }
+  if (o.shape === 'round') {
+    // The pinch: the rim's lowest-y stitches (the base, where the V plates
+    // drew the two sides together).
+    let y0 = Infinity, y1 = -Infinity
+    for (const n of body) { y0 = Math.min(y0, n.y); y1 = Math.max(y1, n.y) }
+    const band = body.filter((n) => n.y <= y0 + (y1 - y0) * 0.08)
+    const m = band.reduce((a, n) => ({ x: a.x + n.x / band.length, y: a.y + n.y / band.length, z: a.z + n.z / band.length }), { x: 0, y: 0, z: 0 })
+    for (const n of nodes) { const q = poseRound(n); n.x = q.x; n.y = q.y; n.z = q.z }
+    seat = poseRound(m)
+  } else {
+    // A pointed ear is already posed: tip +z, lined face +x, base -z.
+    let z0 = Infinity
+    for (const n of body) z0 = Math.min(z0, n.z)
+    const band = body.filter((n) => n.z <= z0 + 1.5 * yr)
+    seat = band.reduce((a, n) => ({ x: a.x + n.x / band.length, y: a.y + n.y / band.length, z: a.z + n.z / band.length }), { x: 0, y: 0, z: 0 })
+  }
+  let zMax = -Infinity, ylo = Infinity, yhi = -Infinity
+  for (const n of body) { zMax = Math.max(zMax, n.z); ylo = Math.min(ylo, n.y); yhi = Math.max(yhi, n.y) }
+  return { built, problems, metrics, seat, standOutMm: zMax - seat.z, widthMm: yhi - ylo, ...(panelMask ? { panelMask } : {}) }
+}
+
+/**
+ * One pinched ear as a composition part. Place it with `dir` on the head,
+ * `aim` the way it stands out, `spin` the way its hollow faces, `poleIn`
+ * false; the pinch is seated on the join (CustomPiece.seat).
+ */
+export function pinchEarPart(
+  o: PinchEarOptions,
+  base: { name: string; colourHex: string; place: PartPlacement; sewNote?: string },
+): AmigurumiPart {
+  const piece = pinchEarPiece(o)
+  const lining = o.liningHex
+  const rounds = earRounds(piece)
+  return {
+    name: base.name,
+    stitch: 'sc',
+    rounds,
+    // The custom build carries its own colours: a round cup's lining is its
+    // first rounds (earPart's colour changes), a pointed ear's a panel.
+    colourHex: base.colourHex,
+    words: pinchEarWords(o),
+    ...(base.sewNote ? { sewNote: base.sewNote } : {}),
+    ...(lining && o.shape === 'round' ? (() => {
+      const p = earPart(piece, { name: base.name, colourHex: base.colourHex, place: base.place }, 1)
+      return { colourHex: p.colourHex, ...(p.colourChanges ? { colourChanges: p.colourChanges } : {}) }
+    })() : {}),
+    ...(lining && o.shape === 'pointed' ? (() => {
+      const p = earPart(piece, { name: base.name, colourHex: base.colourHex, place: base.place }, 1)
+      return p.panel ? { panel: p.panel } : {}
+    })() : {}),
+    place: base.place,
+    custom: {
+      build: (yr: number) => {
+        const b = buildPinchEar(o, yr)
+        return { built: b.built, problems: b.problems, seat: b.seat, ...(b.panelMask ? { panelMask: b.panelMask } : {}) }
+      },
+    },
+  }
+}

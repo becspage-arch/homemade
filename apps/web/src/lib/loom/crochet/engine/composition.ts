@@ -268,6 +268,22 @@ export interface CustomPiece {
   built: BuiltContinuous
   /** The audit of the flat piece (empty = genuinely stitched). */
   problems: string[]
+  /** The piece's own audit, re-run whenever the composition moves its
+   *  stitches after the build (a `form: 'disc'` drape onto the parent).
+   *  engine-shapes-1107: an oval worked round a chain is draped onto the face
+   *  as it is sewn. Absent = `problems`, as before. */
+  audit?: (built: BuiltContinuous) => string[]
+  /** The point of the posed piece (local, mm) sewn onto the join, instead of
+   *  its bounding box's middle (engine-shapes-1107: a cup ear sewn by its
+   *  pinch). Absent = as before. */
+  seat?: V3
+  /** Drape the placed piece onto its parent's settled surface like a
+   *  `form: 'disc'` appliqué, keeping its own relief (engine-shapes-1107: a
+   *  domed muzzle sewn round the face by its last round). Absent = as before. */
+  drape?: boolean
+  /** Which strand nodes are a `panel` stitch (a lined ear's contrast), for a
+   *  custom piece built through `buildPart` of a panelled part. */
+  panelMask?: boolean[]
   /** Flat relaxed node → posed local position (applied to every node after
    *  the audit; the composition then places the posed piece like any other). */
   pose?: (p: V3, node: number) => V3
@@ -275,6 +291,10 @@ export interface CustomPiece {
 
 /** The audit each custom piece's builder recorded, looked up by the built. */
 const CUSTOM_PROBLEMS = new WeakMap<BuiltContinuous, string[]>()
+/** A custom piece's own re-audit and seat point (CustomPiece.audit / seat). */
+const CUSTOM_AUDIT = new WeakMap<BuiltContinuous, (built: BuiltContinuous) => string[]>()
+const CUSTOM_SEAT = new WeakMap<BuiltContinuous, V3>()
+const CUSTOM_DRAPE = new WeakSet<BuiltContinuous>()
 
 export interface PartBend {
   startFrac: number
@@ -799,7 +819,13 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       // (w = u, hBase = min-z) this is the original  pc + u·(parentR − seat − base).
       const hBase = place.centred ? 0 : scale * ((poleIn ? lb.maxz : lb.minz) - cz)
       T = { x: jx - hBase * w.x, y: jy - hBase * w.y, z: jz - hBase * w.z }
-      if (part.bentTube && !place.centred) {
+      const seatAt = CUSTOM_SEAT.get(built)
+      if (seatAt && !place.centred) {
+        // A custom piece sewn by a named point (CustomPiece.seat): that point
+        // on the join, the piece standing off it along the aim.
+        const b0 = applyRot(R, { x: scale * (seatAt.x - cx), y: scale * (seatAt.y - cy), z: scale * (seatAt.z - cz) })
+        T = { x: jx - b0.x, y: jy - b0.y, z: jz - b0.z }
+      } else if (part.bentTube && !place.centred) {
         // A bent tube's bounding box is off its base (the tip curls to one
         // side), so seat the BASE's centre — local (0, 0, z min) — on the join.
         const b0 = applyRot(R, { x: scale * (0 - cx), y: scale * (0 - cy), z: scale * ((poleIn ? lb.maxz : lb.minz) - cz) })
@@ -917,7 +943,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
 
   // ---- APPLIQUÉ DISCS are sewn flat onto the parent's FINAL surface, then
   //      re-audited on the geometry that is rendered.
-  const draped = placed.filter((pp) => pp.part.form === 'disc')
+  const draped = placed.filter((pp) => pp.part.form === 'disc' || (pp.built != null && CUSTOM_DRAPE.has(pp.built)))
   if (draped.length) {
     for (const pp of draped) {
       const parent = byName.get((pp.part.place as { on: string }).on)
@@ -1072,6 +1098,9 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
     // builder; the pose (the maker's staging) is applied to the nodes after.
     const piece = part.custom.build(yr)
     CUSTOM_PROBLEMS.set(piece.built, piece.problems)
+    if (piece.audit) CUSTOM_AUDIT.set(piece.built, piece.audit)
+    if (piece.seat) CUSTOM_SEAT.set(piece.built, piece.seat)
+    if (piece.drape) CUSTOM_DRAPE.add(piece.built)
     if (piece.pose) {
       const nodes = piece.built.model.nodes
       for (let i = 0; i < nodes.length; i++) {
@@ -1082,7 +1111,7 @@ export function buildPart(part: AmigurumiPart, yr: number): { built: BuiltContin
         n.z = q.z
       }
     }
-    return { built: piece.built }
+    return { built: piece.built, ...(piece.panelMask ? { panelMask: piece.panelMask } : {}) }
   }
   if (part.form === 'disc') {
     // A flat circle: the locked round builder, relaxed as round work (never
@@ -1175,7 +1204,10 @@ export function relaxPressed(
 
 /** The audit gate for one piece, in the frame its settled shape needs. */
 export function auditPart(built: BuiltContinuous, part: AmigurumiPart, yr: number): string[] {
-  if (part.custom) return CUSTOM_PROBLEMS.get(built) ?? []
+  if (part.custom) {
+    const own = CUSTOM_AUDIT.get(built)
+    return own ? own(built) : CUSTOM_PROBLEMS.get(built) ?? []
+  }
   return auditProblems(
     { built, recipe: undefined as never }, part.name, 0, yr,
     part.press || part.pinch ? { frame: 'current' } : undefined,

@@ -3966,6 +3966,44 @@ stitches it makes and checks the counts and each loop stitch). Every existing pr
   The lamb's muzzle is worked end to end and sewn across the face, so its rounds run up and down the face. A
   round from a magic ring would read as concentric rings but cannot be wide and short enough for rules 11-12.
 
+## 8w. TWO GENERAL SHAPES — the oval worked round a chain, the ear sewn by its pinch (2026-11-07)
+
+Job log `crochet-bar/jobs/engine-shapes-1107.md`. Bec (7 Nov): an engine "that can build all kinds of adorable toys
+including made up ones and real looking ones". Both shapes came out of the lamb test; both are general parts any
+preset can use, opt-in (absent = every hash unchanged; the cow default is still c7130743, the lamb 7b98a445).
+
+- THE OVAL WORKED ROUND A CHAIN (`chainOval.ts`, a custom piece). Chain N, round 1 into both sides of the chain
+  ("starting in the 2nd ch from the hook, dc in next N-2 ch, 3 dc in last ch; working along the other side of the
+  chain, dc in next N-3 ch, 2 dc in next ch (2N)"), then increase rounds with the increases spread through each
+  end's fan (3 a end = flat, 2 a end = dome), staggered half a step so they never stack, rounds worked even for
+  depth, and optionally decreases mirrored to close it. `kind: 'patch'` (face / belly patch, sole: flat, softly
+  cupped with 2s, `form: 'disc'`) or `'stuffed'` (muzzle, snout, oval head or body; open and sewn by its last round,
+  or `closed`). Geometry: every round is a stadium at offset rho_k round the chain's core (rho from the count),
+  climbing a profile set by the continuity of the drift; stitches placed by arc length, so the crowns circle the
+  chain in concentric ovals (measured: every increase round outside the one before, no crown turning back by more
+  than two stitches). Built by the locked emitters into the pinned chain (round 1's hooks are `ring` links into the
+  chain loops), per-node frame3, relaxed as worked (`layoutMode 'surface'`), audited clean (patch, open, closed;
+  DK and the fine cow's yarn). An open stuffed oval is DRAPED onto its parent like an appliqué
+  (`CustomPiece.drape`) and re-audited in its settled per-node frame (`auditChainOvalSettled`;
+  `CustomPiece.audit`). `designChainOval` picks chain, flat / dome / even rounds from the size asked by searching the
+  same geometry the build places. Embroidery on it counts the way it is made (`chainOvalSpot`, `chainOvalSideSpot`;
+  `SurfaceSpot.th` carries the azimuth read off the geometry, since the stitches are not even round the axis).
+  Seen square on it is a stadium: its straight sides are the chain (cow ch 5: a 0.27 head-width run in its own
+  frame; on the toy the head outline reads 0.22, rule 34).
+- THE EAR SEWN BY ITS PINCH (`pinchEar.ts`, a custom piece). `shape: 'round'`: earPiece's rolled-rim cup, its rim
+  pinched at the base until the sides meet (pinch 1 up to 21 sts: at 0.7 a cup of 18 or less does not narrow;
+  over 21 a pinch of 1 tears the rim's hooks sideways, so 0.7 and a throw above 0.85), turned rigidly so the pinch
+  is its base and SEATED on the join by that point (`CustomPiece.seat`): it stands out from the head, hollow
+  forward. `shape: 'pointed'`: earPiece's lop as a short +3 cone (9-15 sts: a +3 cone to 18 floats a hook in its
+  third round at any press), pressed into a scoop, the base pinched and sewn on. Either lined. Words: the cup or
+  cone, then "Sew the base of the rim together where you pinch it ... 2 small stitches through both layers" and
+  "Sew the ear to the head by the pinch only".
+- WIRED: `CowChoices.chainMuzzle` / `pinchEars` (gauge > 1.15) and `LambChoices.chainMuzzle` / `pinchEars`, the
+  nostrils / nose counted on the oval. Fine cow (rule-calib r1 scene) with both: 0 problems, 35 / 40, rules 8, 9,
+  11-13, 18-20, 33, 34 and 40 (0.19, the first time) pass; 21 (thickest / thinnest rim, 1.8-4) does NOT: 1.43, an
+  even roll with a thicker pinch (the folded flat disc passes 21 and fails 40). Lamb with the oval muzzle: 26 / 31,
+  the default's failing set; its pinched ears do not beat its folded ones (18, 20 fail at the lamb's ear place).
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
