@@ -41,6 +41,7 @@ import {
 } from '../src/lib/loom/crochet/engine/program'
 import { compileRelaxAudit, programScene, geometryHash, type Staging } from '../src/lib/loom/crochet/engine/programScene'
 import { photorealFinishAllowed } from '../src/lib/loom/crochet/engine/heroPolicy'
+import { withListingPhoto, type HeroPhoto } from '../src/lib/loom/render/blenderScene'
 import {
   compileComposition,
   compositionScene,
@@ -91,8 +92,10 @@ export interface RenderProgramResult {
  * render-on-publish callers pass the pattern's SLUG as `name`, so a pattern
  * keeps its set however its display name changes. A hand-set `stageSeed` wins.
  */
-export function withStageSeed<T extends { stageSeed?: string }>(program: T, slug?: string): T {
-  return program.stageSeed || !slug ? program : { ...program, stageSeed: slug }
+export function withStageSeed<T extends { stageSeed?: string; stage?: string; photo?: HeroPhoto }>(program: T, slug?: string): T {
+  // soft-light-1107: every listing render is shot with the listing photo (the
+  // preset's light, no per-pattern light knobs) unless it asks for v1 itself
+  return withListingPhoto(program.stageSeed || !slug ? program : { ...program, stageSeed: slug })
 }
 
 export interface RenderProgramOptions {

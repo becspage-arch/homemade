@@ -10,14 +10,20 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import {
   HERO_PHOTO_FRAME_BY,
+  HERO_PHOTO_LIGHT_KNOBS,
   HERO_PHOTO_LISTING,
+  HERO_PHOTO_LISTING_BY,
   HERO_PHOTO_SOFT,
+  HERO_PHOTO_SOFT_BY,
   HERO_PHOTO_STAGE3_KNOBS,
   HERO_PHOTO_STAGE3_STARTS,
   HERO_PHOTO_V2_DEFAULTS,
   HERO_PHOTO_YAW_BY,
   HERO_STAGE_VARIANTS,
   heroPhotoView,
+  withListingPhoto,
+  type HeroPhoto,
+  type HeroPhotoKnobs,
   pickHeroStageVariant,
 } from './blenderScene'
 import { buildCowProgram, COW_DEFAULTS } from '../crochet/engine/cowPreset'
@@ -151,8 +157,9 @@ test('garland-v2-fix: v2 on the wall stage is straight on at the stage zoom; oth
   )
   assert.deepEqual({ ...HERO_PHOTO_YAW_BY, wall: undefined }, { nursery: 6, wall: undefined })
   // the per-stage tables are read only under v2 (v1 / off renders never see them)
-  assert.match(py, /if v2 and "photoFrame" not in view:\n\s+po\["photoFrame"\] = PHOTO_FRAME_BY/)
-  assert.match(py, /if v2 and "photoYawDeg" not in view:\n\s+po\["photoYawDeg"\] = PHOTO_YAW_BY/)
+  // (v3 lets the set's listing composition, PHOTO_LISTING_BY, take its place)
+  assert.match(py, /if v2 and "photoFrame" not in view and not \(listing and [^\n]*\n\s+po\["photoFrame"\] = PHOTO_FRAME_BY/)
+  assert.match(py, /if v2 and "photoYawDeg" not in view and not \(listing and [^\n]*\n\s+po\["photoYawDeg"\] = PHOTO_YAW_BY/)
   // the wall stays parallel to the hung piece; every other set still turns with
   // the camera (at yaw 0, every wall render so far, the frame is the same)
   assert.match(py, /root\.rotation_euler = \(0\.0, 0\.0, 0\.0 if stage == "wall" else yaw\)/)
@@ -191,12 +198,18 @@ test('soft-light-1027: the soft knobs sit at today\'s rig values / off in PHOTO_
   for (const k of Object.keys(HERO_PHOTO_SOFT)) assert.ok(k in HERO_PHOTO_V2_DEFAULTS, k)
 })
 
-test('soft-light-1027: photo v3 (the listing default) passes through; v2 scenes are unchanged', () => {
+test('soft-light-1107: photo v3 owns the light (scene light knobs dropped); v2 scenes are unchanged', () => {
   assert.equal(HERO_PHOTO_LISTING, 'v3')
   assert.deepEqual(heroPhotoView('v3'), { photo: 'v3' })
-  assert.deepEqual(heroPhotoView('v3', { photoKey: 1.2 }), { photo: 'v3', photoKey: 1.2 })
+  // a hand-set v2 light (key, fill, kicker...) never reaches a v3 scene; composition knobs do
+  assert.deepEqual(heroPhotoView('v3', { photoKey: 1.2, photoFill: 0.4, photoKick: 3, photoExposure: 0.5, photoAspect: 1.2 }), {
+    photo: 'v3',
+    photoAspect: 1.2,
+  })
+  for (const k of HERO_PHOTO_LIGHT_KNOBS) assert.equal(k in heroPhotoView('v3', { [k]: 1 } as HeroPhotoKnobs), false, k)
+  // v2 keeps every knob it is given, and never gains a soft one
+  assert.deepEqual(heroPhotoView('v2', { photoKey: 1.2 }), { photo: 'v2', photoKey: 1.2 })
   assert.deepEqual(heroPhotoView(undefined, { photoLight: 'soft' }), { photoLight: 'soft' })
-  // v2 never gains a soft knob
   const v2 = heroPhotoView('v2')
   for (const k of Object.keys(HERO_PHOTO_SOFT)) assert.equal(k in v2, false, k)
   const prog = { ...buildCowProgram({ ...COW_DEFAULTS, size: 'M', stage: 'windowsill' }), accessories: [] }
@@ -204,6 +217,61 @@ test('soft-light-1027: photo v3 (the listing default) passes through; v2 scenes 
     typeof compositionScene
   >[1]
   const plain = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: undefined, photoKnobs: undefined }, cc)))
-  const v3 = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: 'v3' }, cc)))
+  const v3 = JSON.parse(JSON.stringify(compositionScene({ ...prog, photo: 'v3', photoKnobs: { photoKey: 2, photoRoom: 3 } }, cc)))
   assert.deepEqual(v3, { ...plain, view: { ...plain.view, photo: 'v3' } })
+})
+
+test('soft-light-1107: the listing path shoots every styled stage with v3 (v1 opts out; studio untouched)', () => {
+  const shot = (p: { stage?: string; photo?: HeroPhoto }) => withListingPhoto(p).photo
+  assert.equal(shot({ stage: 'windowsill' }), 'v3')
+  assert.equal(shot({ stage: 'nursery', photo: 'v2' }), 'v3')
+  assert.equal(shot({ stage: 'linen', photo: 'v1' }), 'v1')
+  assert.equal(shot({ stage: 'studio' }), undefined)
+  assert.equal(shot({}), undefined)
+  const p: { stage: string; photo: HeroPhoto } = { stage: 'christmas', photo: 'v3' }
+  assert.equal(withListingPhoto(p), p)
+})
+
+test('soft-light-1107: the per-set soft light, the listing composition and the owned light knobs match the Python', () => {
+  const here = dirname(fileURLToPath(import.meta.url))
+  const py = readFileSync(join(here, '../../../../scripts/loom_render_crochet.py'), 'utf8')
+  const kvs = (body: string) => {
+    const kv: Record<string, unknown> = {}
+    for (const x of body.matchAll(/(photo\w+)=("[^"]*"|[-\d.]+|None)/g)) kv[x[1]!] = x[2]!.startsWith('"') ? x[2]!.slice(1, -1) : Number(x[2])
+    return kv
+  }
+  const byStage = (name: string) => {
+    const m = py.match(new RegExp(`^${name} = \\{([\\s\\S]*?)\\n\\}`, 'm'))
+    assert.ok(m, `${name} missing in the Python`)
+    return Object.fromEntries([...m![1]!.matchAll(/"(\w+)": dict\(([^)]*)\)/g)].map((x) => [x[1], kvs(x[2]!)]))
+  }
+  assert.deepEqual(byStage('PHOTO_SOFT_BY'), { ...HERO_PHOTO_SOFT_BY })
+  assert.deepEqual(byStage('PHOTO_LISTING_BY'), { ...HERO_PHOTO_LISTING_BY })
+  const lk = py.match(/^PHOTO_LIGHT_KNOBS = \(([\s\S]*?)\n\)/m)
+  assert.ok(lk, 'PHOTO_LIGHT_KNOBS missing in the Python')
+  assert.deepEqual([...lk![1]!.matchAll(/"(photo\w+)"/g)].map((x) => x[1]).sort(), [...HERO_PHOTO_LIGHT_KNOBS].sort())
+  // every knob named is a known one; the light knobs and the composition knobs never overlap
+  for (const t of [HERO_PHOTO_SOFT_BY, HERO_PHOTO_LISTING_BY]) {
+    for (const knobs of Object.values(t)) for (const k of Object.keys(knobs!)) assert.ok(k in HERO_PHOTO_V2_DEFAULTS, k)
+  }
+  for (const knobs of Object.values(HERO_PHOTO_LISTING_BY)) {
+    for (const k of Object.keys(knobs!)) assert.equal((HERO_PHOTO_LIGHT_KNOBS as readonly string[]).includes(k), false, k)
+  }
+  for (const knobs of Object.values(HERO_PHOTO_SOFT_BY)) {
+    for (const k of Object.keys(knobs!)) assert.ok((HERO_PHOTO_LIGHT_KNOBS as readonly string[]).includes(k), k)
+  }
+  for (const k of Object.keys(HERO_PHOTO_SOFT)) assert.ok((HERO_PHOTO_LIGHT_KNOBS as readonly string[]).includes(k), k)
+  // the 1107 knobs are off / at today's value in v1 and v2 (no existing render moves)
+  const off = {
+    photoKickElev: 30, photoKickAim: 0.6, photoKickSpread: 0, photoKickSoft: 0.5, photoKeyWarm: 0, photoGlow: 1, photoFlag: 0,
+    photoBounce: 0, photoBounceDeg: 0, photoBounceAim: 0.35, photoBounceSpread: 0, photoMeter: 0, photoRake: 0,
+    photoRakeElev: 10, photoRakeSoft: 0.25, photoRimSide: 1, photoRimDeg: 150,
+  }
+  const v1 = kvs(py.match(/PHOTO_V1 = dict\(([\s\S]*?)\n\)/)![1]!)
+  for (const [k, v] of Object.entries(off)) {
+    assert.equal(HERO_PHOTO_V2_DEFAULTS[k as keyof typeof HERO_PHOTO_V2_DEFAULTS], v, k)
+    assert.equal(v1[k], v, k)
+  }
+  // the off values make no light: every 1107 extra is guarded
+  for (const g of ['photoBounce', 'photoRake', 'photoFlag']) assert.match(py, new RegExp(`if po\\.get\\("${g}", 0\\.0\\) > 0`), g)
 })
