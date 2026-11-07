@@ -48,6 +48,7 @@ import {
   type FaceStyle,
 } from './faceEmbroidery'
 import { DOLL_AUDITED_PROFILE_KEYS, DOLL_SETTLED_SIZE_MM, dollProgram } from './doll'
+import { SEATED_VIEW, seatedAuditedProfiles, seatedHeadDir, seatedQuadrupedBase } from './seatedQuadruped'
 
 export { sphereRounds }
 export { FACE_STYLES, FACE_STYLE_IDS, type FaceStyle } from './faceEmbroidery'
@@ -175,6 +176,12 @@ export const AUDITED_PROFILES: number[][] = [
   // The Highland cow's pieces (cowPreset.ts): side-to-side heads, capsule
   // muzzles, tip-first horns, flat leaf ears, long front legs.
   ...COW_AUDITED_PROFILES,
+  // The seated four-legged base (seatedQuadruped.ts, seated-base 1107): the
+  // pear body, tapered front legs and bent-tube back legs it sizes for the
+  // cat's and dog's S / M / L heads (the size table's sphereRounds 18 / 24 /
+  // 30, one straight round). Audited standing alone here; the back leg is
+  // built as a bent tube in the presets, re-audited there.
+  ...[18, 24, 30].flatMap((eq) => seatedAuditedProfiles(sphereRounds(eq, 1))),
 ]
 
 const PROFILE_KEYS = new Set(AUDITED_PROFILES.map((r) => r.join(',')))
@@ -263,6 +270,11 @@ export interface AmigurumiChoices {
    *  ones warn). Opt-in for new subjects: absent / false = report only, and
    *  the program is the object it always was. */
   cuteGate?: boolean
+  /** THE CLASSIC FIGURE (opt-out, for comparison): the cat and dog are built
+   *  on the seated four-legged base (seatedQuadruped.ts, seated-base-1107) by
+   *  default; `true` builds them on the first-round worsted figure (a ball
+   *  body on a neck, sideways stub legs) as before. Cat and dog only. */
+  classicFigure?: boolean
   name?: string
 }
 
@@ -839,6 +851,23 @@ function faceDir(d: Dir, yaw = FIGURE_YAW): Dir {
   return { x: d.x * c - d.y * s, y: d.x * s + d.y * c, z: d.z }
 }
 
+/** Is this preset built on the seated four-legged base (seatedQuadruped.ts)? */
+export function onSeatedBase(choices: Pick<AmigurumiChoices, 'base' | 'classicFigure'>): boolean {
+  return (choices.base === 'cat' || choices.base === 'dog') && choices.classicFigure !== true
+}
+
+/** The camera yaw a preset's face is turned back through to meet the lens. */
+function presetYaw(choices: Pick<AmigurumiChoices, 'base' | 'classicFigure'>): number {
+  return isToy(choices.base) ? TOY_YAW : onSeatedBase(choices) ? SEATED_VIEW.yawDeg : FIGURE_YAW
+}
+
+/** A head feature's direction for this preset: turned to the lens, and on the
+ *  seated base rolled with the head's tilt (seatedQuadruped `seatedHeadDir`). */
+function presetFaceDir(choices: Pick<AmigurumiChoices, 'base' | 'classicFigure'>): (d: Dir) => Dir {
+  const yaw = presetYaw(choices)
+  return onSeatedBase(choices) ? (d) => seatedHeadDir(faceDir(d, yaw)) : (d) => faceDir(d, yaw)
+}
+
 export function amigurumiPresetName(choices: AmigurumiChoices): string {
   const base = AMIGURUMI_BASES.find((b) => b.id === choices.base)?.label ?? 'Amigurumi'
   const size = AMIGURUMI_SIZES.find((s) => s.id === choices.size)?.label ?? ''
@@ -894,7 +923,7 @@ function buildChosenProgram(choices: AmigurumiChoices): CompositionProgram {
   const program = buildBaseProgram(choices)
   const embroidery = faceEmbroidery(choices, program)
   if (embroidery.length) program.embroidery = embroidery
-  const hair = hairPatchesFor(choices.hair, 'head', choices.mainHex, faceDir(HAIR_DIR)).map((h) => gaugeHairPatch(h, clampGauge(choices.gauge)))
+  const hair = hairPatchesFor(choices.hair, 'head', choices.mainHex, presetFaceDir(choices)(HAIR_DIR)).map((h) => gaugeHairPatch(h, clampGauge(choices.gauge)))
   if (hair.length) program.hair = hair
   if (choices.hat === 'nightcap' && isToy(choices.base)) {
     const head = program.parts.find((x) => x.name === 'head')!
@@ -967,8 +996,8 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
   // big head on a smaller body, arms folded on the tummy, sole-first feet
   // forward with toe beans, lined lop ears (bunny), a belly patch (bear).
   const toy = bear || choices.base === 'bunny'
-  const yaw = toy ? TOY_YAW : FIGURE_YAW
-  const fd = (d: Dir): Dir => faceDir(d, yaw)
+  const seated = onSeatedBase(choices)
+  const fd = presetFaceDir(choices)
   const armDir = (side: -1 | 1): Dir =>
     bear
       ? { x: side * BEAR_ARM_DIR.x, y: BEAR_ARM_DIR.y, z: BEAR_ARM_DIR.z }
@@ -989,7 +1018,16 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
   const lowerName = (side: -1 | 1): string =>
     onAllFours ? (side < 0 ? 'back-leg-l' : 'back-leg-r') : side < 0 ? 'leg-l' : 'leg-r'
 
+  // THE SEATED BASE (seated-base-1107): the cat's and dog's body, head and
+  // four legs, sized from the head by the cute rules (seatedQuadruped.ts).
+  const seatedBase = seated
+    ? seatedQuadrupedBase({
+        size: choices.size, head: s.head, mainHex: main, yarnRadiusMm: gaugeYarnRadiusMm('worsted', g),
+        ...(choices.paws ? { soleHex: contrast } : {}),
+      })
+    : undefined
   const parts: AmigurumiPart[] = [
+    ...(seatedBase ? seatedBase.parts.filter((x) => x.name === 'body' || x.name === 'head') : [
     { name: 'body', stitch: 'sc', rounds: choices.base === 'bunny' ? s.bunnyBody : toy ? s.toyBody : s.body, colourHex: main, place: { on: 'ground' } },
     // A short narrow neck piece, so the silhouette steps body, neck, head
     // rather than the two balls merging into one loaf.
@@ -1005,6 +1043,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
       rounds: toy ? s.toyHead : s.head, colourHex: main,
       place: { on: 'neck', overlap: choices.base === 'bunny' ? BUNNY_HEAD_SINK[choices.size] : toy ? TOY_HEAD_SINK[choices.size] : 2, offset: { y: 1 } },
     },
+    ] as AmigurumiPart[]),
     // A dog's SNOUT is one plateau round rounder than the bear's flat muzzle
     // pad and stands further off the face; a cat's is the bear's, smaller.
     // Named `muzzle` in every case so the written pattern and the assembly
@@ -1059,8 +1098,8 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         scale: CAT_EAR_SCALE[choices.size],
         place: {
           on: 'head',
-          dir: faceDir({ x: side * 0.68, y: 0.12, z: 1 }),
-          aim: faceDir({ x: side * 0.5, y: 0.02, z: 1 }),
+          dir: fd({ x: side * 0.68, y: 0.12, z: 1 }),
+          aim: fd({ x: side * 0.5, y: 0.02, z: 1 }),
           seat: CAT_EAR_SEAT[choices.size], poleIn: true, surfaceFit: 'ellipsoid',
         },
       })
@@ -1076,8 +1115,8 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
         scale: DOG_EAR_SCALE[choices.size],
         place: {
           on: 'head',
-          dir: faceDir({ x: side * 1, y: 0.12, z: 0.5 }),
-          aim: faceDir({ x: side * 0.4, y: 0.05, z: -1 }),
+          dir: fd({ x: side * 1, y: 0.12, z: 0.5 }),
+          aim: fd({ x: side * 0.4, y: 0.05, z: -1 }),
           seat: 3.5, poleIn: true, surfaceFit: 'ellipsoid',
         },
       })
@@ -1141,6 +1180,10 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
   const lift = GROUND_LIFT[choices.size]
   if (toy) {
     pushToyLimbs(parts, choices, s, g)
+  } else if (seatedBase) {
+    // The seated base's four legs (paws and soles in the contrast yarn when
+    // the toy has paw pads: worked in, not sewn-on discs).
+    parts.push(...seatedBase.parts.filter((x) => /leg-[lr]$/.test(x.name)))
   } else {
     for (const side of [-1, 1] as const) {
       parts.push({
@@ -1192,7 +1235,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     })
   }
 
-  if (!toy && choices.paws && amigurumiBaseSpec(choices.base).paws) {
+  if (!toy && !seatedBase && choices.paws && amigurumiBaseSpec(choices.base).paws) {
     const pad = (name: string, on: string, dir: Dir): AmigurumiPart => ({
       name, stitch: 'sc', rounds: s.muzzle, colourHex: contrast, scale: 0.62,
       // The bear's pads show their magic ring (a pinprick) rather than the
@@ -1212,7 +1255,7 @@ function buildBaseProgram(choices: AmigurumiChoices): CompositionProgram {
     yarnWeight: toy ? TOY_YARN : 'worsted',
     hookMm: toy ? TOY_HOOK_MM : 4,
     ...(toy && TOY_FIBRE[choices.base] ? { yarnFibre: TOY_FIBRE[choices.base] } : {}),
-    ...(toy ? TOY_VIEW : FIGURE_VIEW),
+    ...(toy ? TOY_VIEW : seatedBase ? SEATED_VIEW : FIGURE_VIEW),
     parts,
     props: faceProps(choices, 'head'),
     notes: FIGURE_NOTES[choices.base] ?? FIGURE_NOTES.bear!,
@@ -1692,7 +1735,7 @@ const HAIR_DIR = { x: 0, y: 0.75, z: 1 }
 function faceProps(choices: AmigurumiChoices, on: string): CompositionProp[] | undefined {
   const props: CompositionProp[] = []
   const style = choices.face ?? 'safety'
-  const fd = (d: Dir): Dir => faceDir(d, isToy(choices.base) ? TOY_YAW : FIGURE_YAW)
+  const fd = presetFaceDir(choices)
   if (choices.eyeMm > 0 && faceUsesSafetyEyes(style)) {
     const r = choices.eyeMm / 2
     for (const side of [-1, 1] as const) {
@@ -1756,7 +1799,7 @@ function faceEmbroidery(choices: AmigurumiChoices, program: CompositionProgram):
   const muzzle = program.parts.find((x) => x.name === 'muzzle')
   const set = FACE_SET[choices.base]
   const toy = isToy(choices.base)
-  const fd = (d: Dir): Dir => faceDir(d, toy ? TOY_YAW : FIGURE_YAW)
+  const fd = presetFaceDir(choices)
   // The toy's finer stitches: the same feature spans more of them, and the
   // fine-gauge knob's g x more again.
   const g = (toy ? TOY_GAUGE_SCALE : 1) * clampGauge(choices.gauge)

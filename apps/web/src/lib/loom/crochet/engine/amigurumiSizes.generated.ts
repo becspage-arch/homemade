@@ -265,6 +265,42 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
   "6,12,18,18,18,18,18,18,12,6": {
     "width": 38.1,
     "height": 40.1
+  },
+  "6,12,16,17,17,16,14,12,6": {
+    "width": 35.9,
+    "height": 40.7
+  },
+  "6,7,7,6,6,5": {
+    "width": 15.8,
+    "height": 32.6
+  },
+  "6,7,7,8,8": {
+    "width": 18.1,
+    "height": 27.2
+  },
+  "6,12,17,20,22,22,21,19,18,16,12,6": {
+    "width": 45.9,
+    "height": 52.9
+  },
+  "6,8,8,8,7,7,6,6,6": {
+    "width": 18.4,
+    "height": 48
+  },
+  "6,8,8,8,9,9,9": {
+    "width": 19.8,
+    "height": 37.6
+  },
+  "6,12,18,22,25,26,27,27,25,24,22,20,17,12,6": {
+    "width": 56.6,
+    "height": 64.6
+  },
+  "6,10,11,11,10,9,9,8,7,6": {
+    "width": 23.5,
+    "height": 52.2
+  },
+  "6,10,10,11,11,11,12,12": {
+    "width": 26.4,
+    "height": 41.6
   }
 }
 
@@ -320,28 +356,28 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 145
   },
   "cat-S": {
-    "width": 95,
-    "height": 105
+    "width": 75,
+    "height": 80
   },
   "cat-M": {
-    "width": 105,
-    "height": 130
+    "width": 90,
+    "height": 105
   },
   "cat-L": {
-    "width": 140,
-    "height": 170
+    "width": 110,
+    "height": 130
   },
   "dog-S": {
-    "width": 95,
-    "height": 95
+    "width": 75,
+    "height": 70
   },
   "dog-M": {
-    "width": 105,
-    "height": 115
+    "width": 90,
+    "height": 90
   },
   "dog-L": {
-    "width": 140,
-    "height": 150
+    "width": 110,
+    "height": 110
   },
   "bird-S": {
     "width": 40,
@@ -399,12 +435,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "bunny-S": "69b3eccc",
   "bunny-M": "23b32f6d",
   "bunny-L": "314414f8",
-  "cat-S": "393281f6",
-  "cat-M": "bdb741b0",
-  "cat-L": "5f10b0c8",
-  "dog-S": "1228be29",
-  "dog-M": "f60359f1",
-  "dog-L": "1b0a6e40",
+  "cat-S": "9d64e1b6",
+  "cat-M": "6ab8765d",
+  "cat-L": "61e143f7",
+  "dog-S": "83a1f5f2",
+  "dog-M": "422c35ee",
+  "dog-L": "a9e77337",
   "bird-S": "cbee1191",
   "bird-M": "d2153790",
   "bird-L": "3513694e",

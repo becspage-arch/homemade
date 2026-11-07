@@ -46,7 +46,7 @@ import { ovalRounds } from './sphereProfile'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { taperedLimbRounds } from './limbProfiles'
 import { clampGauge, gBall, gSphere, gSphereRounds, gaugeYarn, gaugeYarnRadiusMm } from './gauge'
-import { writeInstructions } from './program'
+import { plainRounds, withColours } from './seatedQuadruped'
 import { FEET_FORWARD_NOTE, HEAD_TILT_DEG, HEAD_TILT_NOTE, limbStuffWords, limbStuffing, rollAbout, sunkEye } from './cuteFinish'
 
 export interface LambChoices {
@@ -220,24 +220,6 @@ function earOptions(size: AmigurumiSize): FoldedPieceOptions {
 export function lambPresetName(choices: LambChoices): string {
   const size = { S: 'Small', M: 'Medium', L: 'Large' }[choices.size]
   return choices.name?.trim() || `${size} lamb`
-}
-
-/** A closed piece's plain words, minus the closing line. */
-function plainRounds(rounds: number[]): string[] {
-  return writeInstructions({ name: 'piece', stitch: 'sc', form: 'sphere', rounds }).slice(0, -1)
-}
-
-/** A piece's words with colour changes at the start of the given rounds
- *  (0-based round -> yarn label). */
-function withColours(rounds: number[], changes: Record<number, string>, close: string): string[] {
-  const lines = plainRounds(rounds)
-  const out: string[] = []
-  lines.forEach((l, k) => {
-    if (changes[k]) out.push(k === 0 ? `Start with the ${changes[k]} yarn.` : `Change to the ${changes[k]} yarn.`)
-    out.push(l)
-  })
-  out.push(close)
-  return out
 }
 
 /** The maker's choices → the lamb as a composition the loom can build. */

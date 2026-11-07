@@ -98,6 +98,12 @@ export type PartPlacement =
       spin?: { x: number; y: number; z: number }
       /** Final nudge in world mm after seating (e.g. drop a leg onto the table). */
       offset?: { x?: number; y?: number; z?: number }
+      /** RESTS ON THE TABLE (seated-base-1107): after seating (and `offset`),
+       *  the piece is moved straight up or down until its lowest point is this
+       *  many mm above the table (0: on it, where a body placed 'ground'
+       *  sits), so a leg reaches the table at any size or gauge without a
+       *  measured drop. Absent = as before, every hash unchanged. */
+      rest?: number
       /** Sewn on by its SIDE, not by a pole (Highland cow, 2026-10-10): the
        *  piece's centre, not its seated pole, goes `seat` mm under the
        *  parent's surface along `dir`, and `aim` lays its axis across — a
@@ -750,6 +756,7 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
       spin?: { x: number; y: number; z: number }
       axis?: { x: number; y: number; z: number }
       centred?: boolean
+      rest?: number
     }
     if (place.on === 'ground') {
       T = { x: place.offset?.x ?? 0, y: place.offset?.y ?? 0, z: halfH } // lowest point at z = 0
@@ -837,10 +844,16 @@ export function compileComposition(p: CompositionProgram, yrOverride?: number): 
     if (part.bend) bendLocal(local, part.bend, lb, place.poleIn === true)
 
     // 5. Apply the transform to the settled centre-line into the composed world.
-    const ctrl = local.map((v) => {
+    let ctrl = local.map((v) => {
       const r = applyRot(R, { x: scale * (v.x - c.x), y: scale * (v.y - c.y), z: scale * (v.z - c.z) })
       return { x: T.x + r.x, y: T.y + r.y, z: T.z + r.z }
     })
+    if (place.dir && place.rest != null) {
+      // Rests on the table: straight down (or up) onto it.
+      const dz = place.rest - bbox(ctrl).minz
+      T = { x: T.x, y: T.y, z: T.z + dz }
+      ctrl = ctrl.map((q) => ({ x: q.x, y: q.y, z: q.z + dz }))
+    }
     const worldBounds = bbox(ctrl)
     const pp: PlacedPart = { part, ctrl, bounds: worldBounds, built, xform: { R, T, scale, c }, panelMask }
     placed.push(pp)
