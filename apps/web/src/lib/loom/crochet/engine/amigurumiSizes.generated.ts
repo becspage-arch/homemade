@@ -266,41 +266,41 @@ export const PROFILE_SIZE_MM_GENERATED: Record<string, { width: number; height: 
     "width": 38.1,
     "height": 40.1
   },
-  "6,12,16,17,17,16,14,12,6": {
-    "width": 35.9,
-    "height": 40.7
+  "6,12,14,15,15,13,11,10,6": {
+    "width": 31.7,
+    "height": 43.1
   },
   "6,7,7,6,6,5": {
     "width": 15.8,
     "height": 32.6
   },
-  "6,7,7,8,8": {
+  "6,7,7,8,8,8": {
     "width": 18.1,
-    "height": 27.2
+    "height": 32.5
   },
-  "6,12,17,20,22,22,21,19,18,16,12,6": {
-    "width": 45.9,
-    "height": 52.9
+  "6,12,17,19,20,20,18,17,15,14,12,6": {
+    "width": 41.9,
+    "height": 54.2
   },
-  "6,8,8,8,7,7,6,6,6": {
-    "width": 18.4,
-    "height": 48
+  "6,8,9,9,8,7,7,6": {
+    "width": 19.9,
+    "height": 42.9
   },
-  "6,8,8,8,9,9,9": {
-    "width": 19.8,
-    "height": 37.6
+  "6,9,9,10,10,11,11": {
+    "width": 23.6,
+    "height": 37
   },
-  "6,12,18,22,25,26,27,27,25,24,22,20,17,12,6": {
-    "width": 56.6,
-    "height": 64.6
+  "6,12,18,21,24,25,25,23,21,19,18,16,12,6": {
+    "width": 52.3,
+    "height": 61.1
   },
-  "6,10,11,11,10,9,9,8,7,6": {
+  "6,10,11,11,9,8,8,7,7,6": {
     "width": 23.5,
-    "height": 52.2
+    "height": 52.1
   },
-  "6,10,10,11,11,11,12,12": {
-    "width": 26.4,
-    "height": 41.6
+  "6,10,11,11,12,12,12,13,13": {
+    "width": 27.7,
+    "height": 46.8
   }
 }
 
@@ -356,28 +356,28 @@ export const PRESET_SETTLED_SIZE_MM_GENERATED: Record<string, { width: number; h
     "height": 145
   },
   "cat-S": {
-    "width": 75,
-    "height": 80
+    "width": 70,
+    "height": 75
   },
   "cat-M": {
     "width": 90,
-    "height": 105
+    "height": 100
   },
   "cat-L": {
-    "width": 110,
-    "height": 130
+    "width": 105,
+    "height": 115
   },
   "dog-S": {
-    "width": 75,
-    "height": 70
+    "width": 70,
+    "height": 65
   },
   "dog-M": {
     "width": 90,
-    "height": 90
+    "height": 80
   },
   "dog-L": {
-    "width": 110,
-    "height": 110
+    "width": 105,
+    "height": 95
   },
   "bird-S": {
     "width": 40,
@@ -435,12 +435,12 @@ export const PRESET_GEOMETRY_HASH_GENERATED: Record<string, string> = {
   "bunny-S": "69b3eccc",
   "bunny-M": "23b32f6d",
   "bunny-L": "314414f8",
-  "cat-S": "9d64e1b6",
-  "cat-M": "6ab8765d",
-  "cat-L": "61e143f7",
-  "dog-S": "83a1f5f2",
-  "dog-M": "422c35ee",
-  "dog-L": "a9e77337",
+  "cat-S": "c2b80907",
+  "cat-M": "bffd959c",
+  "cat-L": "cbd3e3c6",
+  "dog-S": "2335ae83",
+  "dog-M": "630520e9",
+  "dog-L": "baa6e7e7",
   "bird-S": "cbee1191",
   "bird-M": "d2153790",
   "bird-L": "3513694e",
