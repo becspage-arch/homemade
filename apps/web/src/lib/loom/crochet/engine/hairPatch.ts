@@ -216,9 +216,9 @@ export interface RosetteOptions {
 }
 
 export const ROSETTE: RosetteOptions = {
-  sizeOfW: 0.13,
+  sizeOfW: 0.17,
   turns: 1.75,
-  strandYr: 1.6,
+  strandYr: 1.3,
   spacing: 0.9,
   mix: { every: 2, big: 1.3, small: 0.75 },
   gravity: 0.013,

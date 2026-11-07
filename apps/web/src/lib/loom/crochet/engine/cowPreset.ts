@@ -719,11 +719,10 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // Round 28: a touch forward again so the mound spills to the brow.
 const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
 
-/** The settled head's width in yarn radii per (widest round's stitches x the
- *  2.7 yr column pitch / pi). Measured on the compiled cute cow M (gauge 1.3):
- *  the front-view head is 87 yr wide over a 54-stitch widest round, so 1.88.
- *  (The sc sits wider than its round pitch, and the stuffing stretches it.) */
-const STUFFED_HEAD_STRETCH = 1.88
+/** A stuffed head settles about 1.24x wider than its widest round's worked
+ *  circumference over pi (cow M at gauge 1.3: 107 mm worked, 133 mm settled,
+ *  57.7 yarn radii of 2.31 mm). */
+const STUFFED_HEAD_STRETCH = 1.24
 /** The fringe for these choices: on the cute path with coiled curls, laid
  *  out as rosettes sized from the head (curl-relax-1107): the head's widest
  *  round over pi, in the sc's column pitch and stretched by the stuffing, is

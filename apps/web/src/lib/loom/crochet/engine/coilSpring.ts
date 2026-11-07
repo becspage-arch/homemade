@@ -35,6 +35,8 @@ type V = { x: number; y: number; z: number }
 
 /** Relax iterations between two holds of the coils' set. */
 const HOLD_EVERY = 5
+/** The settle hold's longest step per iteration, in collision distances. */
+const HOLD_MAX_STEP = 0.05
 
 function centroidOf(ps: V[]): V {
   const c = { x: 0, y: 0, z: 0 }
@@ -84,7 +86,7 @@ export interface CoilSpringReport {
  *  decides where it sits). The settle after the spring keeps doing this, so
  *  the packed curls press into each other and stay round instead of
  *  crumpling to worms (curl-relax-1107, round 2: the r5 render). */
-export function holdCoilSets(model: YarnModel, bodies: number[][], sets: V[][], k: number, scale: (b: number) => number = () => 1, ends = 0): void {
+export function holdCoilSets(model: YarnModel, bodies: number[][], sets: V[][], k: number, scale: (b: number) => number = () => 1, ends = 0, maxStep = Infinity): void {
   const nodes = model.nodes
   bodies.forEach((b, bi) => {
     const c = centroidOf(b.map((i) => nodes[i]!))
@@ -95,9 +97,17 @@ export function holdCoilSets(model: YarnModel, bodies: number[][], sets: V[][], 
       // Free near the stitch (`ends` nodes each side): the hold must not
       // drag the loop's legs, and the stitch with them, off the work.
       const kk = ends > 0 ? k * Math.min(1, Math.min(j, b.length - 1 - j) / ends) : k
-      p.x += (c.x + q.x * s - p.x) * kk
-      p.y += (c.y + q.y * s - p.y) * kk
-      p.z += (c.z + q.z * s - p.z) * kk
+      let dx = (c.x + q.x * s - p.x) * kk
+      let dy = (c.y + q.y * s - p.y) * kk
+      let dz = (c.z + q.z * s - p.z) * kk
+      // No step longer than `maxStep`: a hold that jumps a strand further
+      // than the collision can see in one iteration could carry it through
+      // a neighbour (measured on a packed cap: 1 pair linked unclamped).
+      const len = Math.hypot(dx, dy, dz)
+      if (len > maxStep) { const f = maxStep / len; dx *= f; dy *= f; dz *= f }
+      p.x += dx
+      p.y += dy
+      p.z += dz
     })
   })
 }
@@ -107,7 +117,7 @@ export function holdCoilSets(model: YarnModel, bodies: number[][], sets: V[][], 
  *  `ends` nodes at each end of a coil left free (its legs, into the work). */
 export function relaxHoldingSets(model: YarnModel, bodies: number[][], sets: V[][], k: number, cfg: RelaxConfig, ends = 6): void {
   if (k <= 0) { relax(model, cfg); return }
-  relax(model, { ...cfg, eachIteration: () => holdCoilSets(model, bodies, sets, k, () => 1, ends) })
+  relax(model, { ...cfg, eachIteration: () => holdCoilSets(model, bodies, sets, k, () => 1, ends, cfg.collMinDist * HOLD_MAX_STEP) })
 }
 
 /**
