@@ -8,7 +8,8 @@
  *   - the listing calf (gauge 1.3, folded ears, curved horns, tapered legs,
  *     coiled curls, the oval muzzle) with `cuteFit` compiles with no problems
  *     and passes every hard and firm cute rule but 40 (rule-calib 1027: the
- *     ear rim needs a shape the engine lacks).
+ *     ear rim needs a shape the engine lacks) and 61 (engine-rules 1107: the
+ *     muzzle in rounds needs the oval round a chain), with 28, 42, 43 known.
  *
  *   cd apps/web && pnpm exec tsx --conditions react-server --test src/lib/loom/crochet/engine/cowCute.test.ts
  */
@@ -72,7 +73,14 @@ test('the listing calf with cuteFit passes every cute rule the engine has a shap
   // miss. 42 and 43 (curls packed, fringe low): the fringe is a mound of big
   // loops; a packed cap trips the coil audit's linking check (rule-calib 1027
   // round 2), so these wait on the hair relax.
-  assert.deepEqual(fails.map((r) => r.n), [28, 40, 42, 43])
+  // 61 (engine-rules 1107): the oval muzzle is worked end to end, its rounds
+  // running up and down the face; the bar's rounds circle the nose. It names
+  // the oval-round-a-chain shape the engine lacks, like 40 the rolled-rim cup.
+  // Every other new rule passes: eyes 33 deg off the lens (bar 33), the bare
+  // face band 0.15 H (bar 0.18), legs 0.62 H long, 2.1 x their width (bar
+  // 2.07), reaching the table.
+  assert.deepEqual(fails.map((r) => r.n), [28, 40, 42, 43, 61])
+  for (const id of ['eyes-face-the-lens', 'face-band-short', 'limbs-long', 'limbs-not-balls', 'legs-reach-the-table']) assert.ok(c.cute!.results.find((r) => r.id === id)!.pass, id)
   // The horn law and the cute cream, as measured.
   const by = (id: string) => c.cute!.results.find((r) => r.id === id)!
   assert.ok(by('appendage-clears-crown').pass && by('appendage-slender').pass && by('appendage-tapers').pass, 'horn rules')

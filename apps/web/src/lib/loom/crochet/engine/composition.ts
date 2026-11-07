@@ -33,7 +33,7 @@ import { ringletHairStrokes, rootedHairStrokes, type RingletHairSpec, type Roote
 import { bendTube } from './tubeStaging'
 import { cuteReportFor, type CuteReport } from './cuteCheck'
 import { fleeceLoopAt, fleeceStitchAt, type FleeceSpec } from './fleece'
-import type { ToyFamily } from './cuteRules'
+import type { CuteFeatures, ToyFamily } from './cuteRules'
 
 /** Where a part sits in the composed object. Parts are laid out in list order, so
  *  a part may only reference an EARLIER part.
@@ -474,8 +474,11 @@ export interface CompositionProgram {
    *  whatever this says. `family` names the rule family when the pieces do
    *  not (absent = read from the part names); `gate: true` makes the hard and
    *  firm failures compile problems. Absent = report only: no build fails
-   *  and no hash moves. */
-  cute?: { family?: ToyFamily; gate?: boolean }
+   *  and no hash moves. `features` (engine-rules 1107) declares the toy's
+   *  feature types (ear, eye, horn and tail types, coat, muzzle), so the
+   *  check reads each feature by the rules for its type; absent keys are
+   *  read off the parts (cuteMeasure.ts `inferCuteFeatures`). */
+  cute?: { family?: ToyFamily; gate?: boolean; features?: CuteFeatures }
 }
 
 /** A part's geometric scale: its trim, or the ratio of its own lighter yarn

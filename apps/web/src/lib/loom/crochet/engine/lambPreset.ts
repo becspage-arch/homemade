@@ -419,7 +419,7 @@ export function buildLambProgram(choices: LambChoices): CompositionProgram {
     notes:
       'A sitting lamb in chenille: a loop-stitch fleece body worked inside out, a big head worked from a fleece topknot down to a cocoa face, a wide ivory muzzle, two folded oval ears, ' +
       'two front legs from dark hooves, two seated back legs and a fleece tail nub, each worked as a spiral from a magic ring and sewn on.',
-    cute: { family: 'quadruped-seated', ...(choices.cuteGate === true ? { gate: true } : {}) },
+    cute: { family: 'quadruped-seated', features: { ears: 'folded', tail: 'nub' }, ...(choices.cuteGate === true ? { gate: true } : {}) },
   }
 }
 

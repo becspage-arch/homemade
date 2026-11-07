@@ -32,8 +32,110 @@ export type ToyFamily =
   | 'biped-animal'
   /** A doll: a human or fairy figure, slim limbs, no muzzle (the fairy). */
   | 'doll'
+  /** PROVISIONAL (engine-rules 1107, catalogue gap G1): a face on a body in
+   *  one piece, a ball, egg, dome or bean (a ghost, slime, octopus, jellyfish,
+   *  ladybird, Tsum-style toy, the ball and egg presets with eyes). Its own
+   *  body is the "head": W is its width, H its height. No bar photo yet:
+   *  every range is marked provisional and never blocks. */
+  | 'blob'
+  /** PROVISIONAL (engine-rules 1107, gap G1): a long body, a serpent, fish,
+   *  caterpillar, seahorse, Nessie or a dragon's tail, the head at one end of
+   *  a body several heads long. No bar photo yet: provisional ranges only. */
+  | 'long-body'
 
-export const TOY_FAMILIES: readonly ToyFamily[] = ['quadruped-seated', 'biped-animal', 'doll']
+export const TOY_FAMILIES: readonly ToyFamily[] = ['quadruped-seated', 'biped-animal', 'doll', 'blob', 'long-body']
+
+/** The families every range of which is provisional (no bar photo yet). */
+export const PROVISIONAL_FAMILIES: readonly ToyFamily[] = ['blob', 'long-body']
+
+// ─── feature types (engine-rules 1107) ─────────────────────────────────────
+//
+// Bec, 7 Nov: the engine must "build all kinds of adorable toys including made
+// up ones and real looking ones". One rule table copied from the cow judged a
+// cat's prick ear by the cow's folded cup and a cat's cord tail by the cow's
+// curved horn. So a toy DECLARES (or the measurer reads off its parts) the
+// TYPE of each feature it has, and a rule says which types it is for.
+
+/** How the ears are made, as the lens sees them (PARTS-CATALOGUE.md EA*). */
+export type EarType =
+  /** A cup or bowl with a rolled rim, pinched (EA2; the bar cow's ear). */
+  | 'cupped'
+  /** A flat round, oval or petal piece folded and pinched at the base (EA3, EA4, EA8). */
+  | 'folded'
+  /** A long lined ear hanging down (EA6; the bar bunny's). */
+  | 'lop'
+  /** A triangle or tall ear standing up (EA5, EA9: cat, fox, hare). */
+  | 'upright-pointed'
+  /** A small half ball, pressed (EA1: a teddy's). */
+  | 'round'
+  /** A short tapered ear hanging down beside the face (EA7: a dog's). */
+  | 'floppy'
+  | 'none'
+
+/** How the eyes are made. */
+export type EyeType =
+  /** Safety eyes (EY1). */
+  | 'safety'
+  /** Embroidered OPEN eyes (EY2: a satin oval with a light). */
+  | 'embroidered'
+  /** Embroidered SLEEPING eyes (EY3: an arc with lashes; the bar bunny's). */
+  | 'sleeping'
+  | 'none'
+
+/** An appendage's shape, as the design means it (horns, a tail). */
+export type AppendageType =
+  /** Curved along its length: the curve rules (24-27) read it. */
+  | 'curved'
+  /** Straight by design (a unicorn horn, a cat's cord tail, a rhino horn):
+   *  no curve rule reads it. */
+  | 'straight'
+  /** A stub or ball (a lamb's tail, horn buds): not read as an appendage. */
+  | 'nub'
+  | 'none'
+
+/** What covers the head or body. */
+export type CoatType =
+  /** A curly fringe or mane: a hair patch of loops or coils (the bar cow's). */
+  | 'curly-fringe'
+  /** Loop-stitch fleece worked INTO a piece's own rounds (a lamb, a poodle). */
+  | 'fleece'
+  /** A doll's or a human's hair (a hair cap, rooted strands). */
+  | 'hair'
+  /** A hat on the head (the bar bunny's nightcap). */
+  | 'hat'
+
+/** A toy's feature types: declared in `CompositionProgram.cute.features`,
+ *  read off the parts where not declared (cuteMeasure.ts `inferCuteFeatures`). */
+export interface CuteFeatures {
+  ears?: EarType
+  eyes?: EyeType
+  /** How many eyes (1 = a cyclops, 3+ = a spider or an alien). */
+  eyeCount?: number
+  horns?: AppendageType
+  tail?: AppendageType
+  coat?: readonly CoatType[]
+  /** A contrast muzzle part (the cow's), a tone-on-tone snout, or none. */
+  muzzle?: 'contrast' | 'tone' | 'none'
+}
+
+/** Which feature types a rule is for. Every key given must match; absent =
+ *  any. A toy that does not match is "not applicable" for the rule (the
+ *  report says why), never a failure. */
+export interface RuleScope {
+  ears?: readonly EarType[]
+  eyes?: readonly EyeType[]
+  eyeCount?: 'one' | 'two' | 'many'
+  /** The rule reads a CURVED appendage: curved horns, else a curved tail
+   *  (else, on a long body, the body itself when it is declared curved). */
+  curvedAppendage?: true
+  /** The rule reads HORNS of this type (the cow's horn rules: curved). */
+  horns?: readonly AppendageType[]
+  coat?: readonly CoatType[]
+  muzzle?: readonly ('contrast' | 'tone')[]
+}
+
+/** The eye count bucket a scope names. */
+export const eyeCountBucket = (n: number): 'one' | 'two' | 'many' => (n <= 1 ? 'one' : n === 2 ? 'two' : 'many')
 
 /** The bar photos (crochet-bar/bar-*.png). Never committed: names only. */
 export type BarPhoto = 'highland-cow' | 'sleepy-bunny' | 'fairy-doll' | 'flower-wall-hanging' | 'spiral-trees'
@@ -60,6 +162,9 @@ export type NeededShape =
    *  flat disc has a one-yarn edge; the rolled-rim cup (earPiece.ts) has the
    *  rim but is sewn by its back, so it cannot stand out or hold its fold. */
   | 'rolled-rim-cup'
+  /** An oval worked in rounds round a foundation chain, so its rounds circle
+   *  the front of the face (lamb-1027 lesson 8; claude/crochet-engine-shapes-1107). */
+  | 'oval-round-a-chain'
 
 /** The quantities measured on a toy (photo or build). All dimensionless. */
 export type CuteQuantity =
@@ -109,6 +214,17 @@ export type CuteQuantity =
   | 'eyeProtrusion'
   | 'limbJoinRatio'
   | 'footForwardDeg'
+  | 'eyeAxisDeg'
+  | 'eyeOffCentre'
+  | 'eyeSpread'
+  | 'faceBand'
+  | 'limbLength'
+  | 'limbAspect'
+  | 'limbReach'
+  | 'fleeceLoopSize'
+  | 'fleecePacking'
+  | 'bodyLength'
+  | 'muzzleRingAxisDeg'
 
 /** What each quantity is, in one line, with its normaliser. */
 export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
@@ -158,6 +274,17 @@ export const CUTE_QUANTITIES: Readonly<Record<CuteQuantity, string>> = {
   eyeProtrusion: 'how far a safety eye\'s dome stands out of the fabric round it / the eye diameter (a sunk eye sits in the face)',
   limbJoinRatio: 'front leg or arm thickness where it joins the body / its thickness at the foot or paw',
   footForwardDeg: 'angle between a seated back leg\'s sole (its axis out through the rounded end) and the lens direction (deg)',
+  eyeAxisDeg: 'angle, seen from above, between each eye\'s outward axis and the lens direction (deg): 0 = looking straight at the lens, 90 = on the side of the head',
+  eyeOffCentre: 'one eye: its centre off the face\'s midline / face width',
+  eyeSpread: 'three or more eyes: outermost eye centres apart / face width',
+  faceBand: 'bare face between the coat\'s lower edge (fringe, fleece cap, hair) and the muzzle top, on the face\'s midline / head height',
+  limbLength: 'front leg or arm length as seen clear of the head and muzzle (its centre line, plus its rounded end) / head height',
+  limbAspect: 'front leg or arm length as seen / its thickness at mid-length (a ball reads ~1)',
+  limbReach: 'how much of the chin-to-table drop the front legs span as seen (1 = from under the chin down to the table)',
+  fleeceLoopSize: 'mean fleece loop size (2 x its radius of gyration) / face width',
+  fleecePacking: 'fleece loops on the side facing the lens x mean loop size squared / the front-view area of the fleeced fabric',
+  bodyLength: 'a long body\'s centre-line length / face width',
+  muzzleRingAxisDeg: 'angle between the axis the muzzle\'s rounds are worked along (magic ring to last round) and the lens direction (deg): 0 = rounds circling the front of the face, 90 = rounds running up and down it',
 }
 
 /** How step 3 reads a quantity off a built toy. */
@@ -168,7 +295,14 @@ export type MeasureSource =
    *  centre line, a render colour read, ...). */
   | { kind: 'needs-code'; what: string }
 
-export interface CuteRange { min: number; max: number }
+export interface CuteRange {
+  min: number
+  max: number
+  /** Set where no bar photo has measured it yet (a new family, a feature
+   *  type the bar toys lack): the range is a reasoned guess, reported with
+   *  the word "provisional" and never blocking, until a bar photo sets it. */
+  provisional?: true
+}
 
 export interface CuteRule {
   id: string
@@ -198,9 +332,14 @@ export interface CuteRule {
    *  cream, so a cream that renders like the bar's (L* 66-68, b* 19-20 at
    *  the muzzle's centre) is a hex between the two. Absent = `ranges`. */
   proxyRanges?: Readonly<Partial<Record<ToyFamily, CuteRange>>>
+  /** The feature types the rule is for (engine-rules 1107): a toy whose
+   *  features do not match is "not applicable", not a failure. Absent = any. */
+  scope?: RuleScope
 }
 
 const r = (min: number, max: number): CuteRange => ({ min, max })
+/** A provisional range: no bar photo has measured it yet. */
+const rp = (min: number, max: number): CuteRange => ({ min, max, provisional: true })
 
 export const CUTE_RULES: readonly CuteRule[] = [
   // ── Proportion ───────────────────────────────────────────────────────────
@@ -249,7 +388,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-wide-apart',
     what: 'The eyes are set wide apart, well over half the head width.',
     quantity: 'eyeSpacing',
-    ranges: { 'quadruped-seated': r(0.55, 0.7), 'biped-animal': r(0.55, 0.7), doll: r(0.55, 0.7) },
+    ranges: { 'quadruped-seated': r(0.55, 0.7), 'biped-animal': r(0.55, 0.7), doll: r(0.55, 0.7), blob: rp(0.45, 0.7), 'long-body': rp(0.5, 0.7) },
+    scope: { eyeCount: 'two' },
     why: 'Wide-set eyes are the strongest baby-face cue; close eyes read as a watchful, older face.',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'hard',
@@ -259,7 +399,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-low',
     what: 'The eyes sit low on the head: on the muzzle line for a muzzled animal, in the lower third for a bunny or doll.',
     quantity: 'eyeHeightFromChin',
-    ranges: { 'quadruped-seated': r(0.38, 0.5), 'biped-animal': r(0.25, 0.38), doll: r(0.18, 0.32) },
+    ranges: { 'quadruped-seated': r(0.38, 0.5), 'biped-animal': r(0.25, 0.38), doll: r(0.18, 0.32), blob: rp(0.3, 0.55), 'long-body': rp(0.35, 0.55) },
     why: 'A big forehead above low eyes is the baby-face proportion.',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'firm',
@@ -269,7 +409,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-small',
     what: 'Safety eyes are small dots, about a ninth of the head width; sleeping eyes are short arcs.',
     quantity: 'eyeSize',
-    ranges: { 'quadruped-seated': r(0.09, 0.13), 'biped-animal': r(0.13, 0.2), doll: r(0.08, 0.13) },
+    ranges: { 'quadruped-seated': r(0.09, 0.13), 'biped-animal': rp(0.09, 0.14), doll: r(0.08, 0.13), blob: rp(0.08, 0.14), 'long-body': rp(0.08, 0.13) },
+    scope: { eyes: ['safety', 'embroidered'] },
     why: 'Small, wide-set dots read sweet; big glossy eyes read startled or buggy.',
     from: ['highland-cow', 'fairy-doll', 'sleepy-bunny'],
     strictness: 'firm',
@@ -299,7 +440,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-read-dark',
     what: 'The eyes are clearly darker than the face.',
     quantity: 'eyeFaceDeltaL',
-    ranges: { 'quadruped-seated': r(25, 100), 'biped-animal': r(25, 100), doll: r(25, 100) },
+    ranges: { 'quadruped-seated': r(25, 100), 'biped-animal': r(25, 100), doll: r(25, 100), blob: rp(25, 100), 'long-body': rp(25, 100) },
     why: 'The face must read at thumbnail size; on a dark brown face that needs a gloss highlight or a light rim.',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'firm',
@@ -360,7 +501,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'blush',
     what: 'Bunny and doll cheeks carry a soft pink blush just below and outside the eyes.',
     quantity: 'blushDeltaA',
-    ranges: { 'biped-animal': r(6, 18), doll: r(6, 18) },
+    ranges: { 'biped-animal': r(6, 18), doll: r(6, 18), blob: rp(6, 18) },
     why: 'A faint blush is the gentlest character cue; too strong reads as clown paint.',
     from: ['sleepy-bunny', 'fairy-doll'],
     strictness: 'soft',
@@ -370,7 +511,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'blush-placement',
     what: 'The blush sits a little below the eye line.',
     quantity: 'blushBelowEye',
-    ranges: { 'biped-animal': r(0.08, 0.22), doll: r(0.08, 0.22) },
+    ranges: { 'biped-animal': r(0.08, 0.22), doll: r(0.08, 0.22), blob: rp(0.04, 0.2) },
     why: 'On the apple of the cheek, where a child blushes.',
     from: ['sleepy-bunny', 'fairy-doll'],
     strictness: 'soft',
@@ -382,6 +523,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A cow-type ear stands well out from the side of the head.',
     quantity: 'earProtrusion',
     ranges: { 'quadruped-seated': r(0.28, 0.45) },
+    scope: { ears: ['cupped', 'folded'] },
     why: 'Ears out sideways widen the head (the head-is-the-widest rule) and frame the face.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -392,6 +534,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A cow-type ear sits at the brow, clearly above the eye line.',
     quantity: 'earAboveEye',
     ranges: { 'quadruped-seated': r(0.08, 0.25) },
+    scope: { ears: ['cupped', 'folded'] },
     why: 'Ears at eye level look like handles; ears at the brow lift the face.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -402,6 +545,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A cow-type ear seen from the front is as wide as it is tall, not a tall ring.',
     quantity: 'earAspect',
     ranges: { 'quadruped-seated': r(0.8, 1.25) },
+    scope: { ears: ['cupped', 'folded'] },
     why: 'A wide, open, folded ear reads soft; a tall upright ring reads like a cup handle.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -413,6 +557,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Ears are folded or pinched at the base, so the rim rolls over unevenly and the opening sits off centre.',
     quantity: 'earRimRatio',
     ranges: { 'quadruped-seated': r(1.8, 4), 'biped-animal': r(1.8, 4) },
+    scope: { ears: ['cupped', 'folded', 'lop'] },
     why: 'Bec, 26 Oct: ours are "little cups vs all cutesy and folded". A fold gives the ear a soft, floppy life.',
     from: ['highland-cow', 'sleepy-bunny'],
     strictness: 'hard',
@@ -425,6 +570,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Lop ears are long, hanging nearly to the table beside the body.',
     quantity: 'earLength',
     ranges: { 'biped-animal': r(1.4, 2.0) },
+    scope: { ears: ['lop'] },
     why: 'Long soft lops are the bunny\'s signature and make a sleepy, cuddly outline.',
     from: ['sleepy-bunny'],
     strictness: 'firm',
@@ -435,6 +581,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Lop ears are broad, about half the head width, so the lining shows.',
     quantity: 'earWidth',
     ranges: { 'biped-animal': r(0.4, 0.6) },
+    scope: { ears: ['lop'] },
     why: 'A broad ear carries the contrast lining, a signature detail.',
     from: ['sleepy-bunny'],
     strictness: 'firm',
@@ -445,7 +592,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'appendage-curved',
     what: 'A horn, tail or antenna is curved along its length, never a straight cone.',
     quantity: 'appendageSagitta',
-    ranges: { 'quadruped-seated': r(0.1, 0.3), 'biped-animal': r(0.1, 0.3), doll: r(0.1, 0.3) },
+    ranges: { 'quadruped-seated': r(0.1, 0.3), 'biped-animal': r(0.1, 0.3), doll: r(0.1, 0.3), 'long-body': rp(0.15, 0.45) },
+    scope: { curvedAppendage: true },
     why: 'Bec, 26 Oct: ours are "straight and like a unicorn horn vs having a cheeky curve upwards". A curve gives cheek.',
     from: ['highland-cow'],
     strictness: 'hard',
@@ -457,7 +605,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'appendage-bend',
     what: 'The curve turns the tip clearly upward from where the base points.',
     quantity: 'appendageBendDeg',
-    ranges: { 'quadruped-seated': r(25, 70), 'biped-animal': r(25, 70), doll: r(25, 70) },
+    ranges: { 'quadruped-seated': r(25, 70), 'biped-animal': r(25, 70), doll: r(25, 70), 'long-body': rp(25, 90) },
+    scope: { curvedAppendage: true },
     why: 'The "cheeky curve upwards": out first, then up.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -469,6 +618,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Horns point up and out, about 30-65 degrees above level.',
     quantity: 'appendageElevationDeg',
     ranges: { 'quadruped-seated': r(30, 65) },
+    scope: { horns: ['curved'] },
     why: 'Up-and-out horns are perky; level horns read like handlebars.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -478,7 +628,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'appendage-tapers',
     what: 'A horn or tail tapers clearly to a rounded tip.',
     quantity: 'appendageTaper',
-    ranges: { 'quadruped-seated': r(0.35, 0.65), 'biped-animal': r(0.35, 0.65), doll: r(0.35, 0.65) },
+    ranges: { 'quadruped-seated': r(0.35, 0.65), 'biped-animal': r(0.35, 0.65), doll: r(0.35, 0.65), 'long-body': rp(0.2, 0.65) },
+    scope: { curvedAppendage: true },
     why: 'A taper reads organic and soft; a near-parallel tube reads like a peg.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -490,6 +641,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Horns stay short, under a third of the head width.',
     quantity: 'appendageLength',
     ranges: { 'quadruped-seated': r(0.22, 0.35) },
+    scope: { horns: ['curved'] },
     why: 'Stubby horns are a calf\'s; long horns make it an adult bull.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -543,7 +695,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'no-sharp-corners',
     what: 'The outline of the head and everything on it has no sharp corners (at most one rounded tip).',
     quantity: 'sharpCorners',
-    ranges: { 'quadruped-seated': r(0, 1), 'biped-animal': r(0, 1), doll: r(0, 1) },
+    ranges: { 'quadruped-seated': r(0, 1), 'biped-animal': r(0, 1), doll: r(0, 1), blob: rp(0, 1), 'long-body': rp(0, 1) },
     why: 'Cute is round: every bar outline is made of curves; a squared-off horn end or a cut edge reads hard.',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'firm',
@@ -554,7 +706,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'no-straight-edges',
     what: 'No stretch of the head\'s outline is straight for more than a quarter of the head width.',
     quantity: 'straightRun',
-    ranges: { 'quadruped-seated': r(0, 0.25), 'biped-animal': r(0, 0.25), doll: r(0, 0.25) },
+    ranges: { 'quadruped-seated': r(0, 0.25), 'biped-animal': r(0, 0.25), doll: r(0, 0.25), blob: rp(0, 0.25), 'long-body': rp(0, 0.25) },
     why: 'Straight edges are the clearest sign of a stiff, made-by-machine shape.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -567,7 +719,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'gentle-tilt',
     what: 'The face is symmetrical; a small head tilt is welcome, never more than about 8 degrees.',
     quantity: 'headTiltDeg',
-    ranges: { 'quadruped-seated': r(0, 8), 'biped-animal': r(0, 8), doll: r(0, 8) },
+    ranges: { 'quadruped-seated': r(0, 8), 'biped-animal': r(0, 8), doll: r(0, 8), blob: rp(0, 8), 'long-body': rp(0, 8) },
     why: 'A slight tilt is shy and sweet; a big one reads broken.',
     from: ['sleepy-bunny', 'highland-cow', 'fairy-doll'],
     strictness: 'soft',
@@ -577,7 +729,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'one-asymmetry',
     what: 'At least one deliberate asymmetry: a tilt, a crossed leg, hair or a hat tail swept to one side, mixed curls, a single brow.',
     quantity: 'asymmetryCues',
-    ranges: { 'quadruped-seated': r(1, 4), 'biped-animal': r(1, 4), doll: r(1, 4) },
+    ranges: { 'quadruped-seated': r(1, 4), 'biped-animal': r(1, 4), doll: r(1, 4), blob: rp(1, 4), 'long-body': rp(1, 4) },
     why: 'A perfectly mirrored toy looks generated; one human touch makes it look made and alive.',
     from: ['fairy-doll', 'sleepy-bunny', 'highland-cow'],
     strictness: 'firm',
@@ -588,6 +740,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A curly fringe or mane mixes small tight curls and bigger loose ones.',
     quantity: 'curlSizeCV',
     ranges: { 'quadruped-seated': r(0.18, 0.4), 'biped-animal': r(0.18, 0.4), doll: r(0.18, 0.4) },
+    scope: { coat: ['curly-fringe'] },
     why: 'Mixed curls look tousled and natural; uniform rings look like a pattern stamp.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -601,6 +754,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A horn tip stands up level with the crown of the curls, clear of the fringe, not a nub hidden in it.',
     quantity: 'appendageTipBelowCrown',
     ranges: { 'quadruped-seated': r(-0.15, 0.08) },
+    scope: { horns: ['curved'] },
     why: 'Rule-calib 1027: the cow\'s horns passed every horn rule and still read as nubs because the whole horn sat 0.15 H below the crown, behind the fringe. The bar\'s tips reach the crown line.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -611,6 +765,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A horn is slender where it leaves the head: about a seventh of the head width, never a fat wedge.',
     quantity: 'appendageThickness',
     ranges: { 'quadruped-seated': r(0.1, 0.2) },
+    scope: { horns: ['curved'] },
     why: 'Rule-calib 1027: the taper rule only ratios tip to base, so a short fat wedge (base 0.27 W) passed; the bar\'s horn is a slim banana (0.147 W).',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -622,6 +777,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A cow-type ear\'s rim is a plump roll all the way round the hollow, never a one-yarn edge.',
     quantity: 'earRimMin',
     ranges: { 'quadruped-seated': r(0.12, 0.35) },
+    scope: { ears: ['cupped', 'folded'] },
     why: 'Rule-calib 1027: the fold rule (21) ratios thickest to thinnest rim, so a thin lower lip under a thick top roll passed while the ear read as a thin leaf; the bar\'s cups are thick all round.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -645,6 +801,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'A curly fringe is a dense cap of many small curls, not a sparse ring of big open loops.',
     quantity: 'curlPacking',
     ranges: { 'quadruped-seated': r(0.8, 1.8), 'biped-animal': r(0.8, 1.8), doll: r(0.8, 1.8) },
+    scope: { coat: ['curly-fringe'] },
     why: 'Rule-calib 1027: the mixed-curls rule (37) passed on 26 big open rings with the brown showing between them; the bar\'s fringe is 40-odd small rosettes packed edge to edge.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -657,6 +814,7 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'The fringe lies on the head like a cap, its top not far above the crown of the head.',
     quantity: 'fringeHeight',
     ranges: { 'quadruped-seated': r(0.03, 0.13) },
+    scope: { coat: ['curly-fringe'] },
     why: 'Rule-calib 1027: our loops stood 0.18 H off the crown as a mound, which also buried the horns; the bar\'s cap is about 0.09 H deep.',
     from: ['highland-cow'],
     strictness: 'firm',
@@ -668,7 +826,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-set-in',
     what: 'Safety eyes sit sunk into the face, pulled into the stuffing, not perched proud on it.',
     quantity: 'eyeProtrusion',
-    ranges: { 'quadruped-seated': r(0.1, 0.42), 'biped-animal': r(0.1, 0.42), doll: r(0.1, 0.42) },
+    ranges: { 'quadruped-seated': r(0.1, 0.42), 'biped-animal': r(0.1, 0.42), doll: r(0.1, 0.42), blob: rp(0.1, 0.42), 'long-body': rp(0.1, 0.42) },
+    scope: { eyes: ['safety'] },
     why: 'Bec, 27 Oct: "eyes pushed into the face" is standard for any cutesy toy; a proud bead reads startled and stuck on. The bar cow\'s eyes are set into the pile (judged ~0.25 of the eye diameter showing).',
     from: ['highland-cow'],
     strictness: 'soft',
@@ -697,12 +856,196 @@ export const CUTE_RULES: readonly CuteRule[] = [
     measure: { kind: 'engine-now', from: 'back-leg place.aim (rounded sole end) against the front frame' },
     estimated: true,
   },
+  // ── Any toy (engine-rules 1107): the face measured on the FACE, eyes by
+  //    type and count, ears by type, limbs that reach, fleece, new families ──
+  {
+    id: 'eyes-face-the-lens',
+    what: 'The eyes are on the front of the face, looking out at the lens, not round the sides of the head.',
+    quantity: 'eyeAxisDeg',
+    ranges: {
+      'quadruped-seated': r(0, 40), 'biped-animal': r(0, 42), doll: r(0, 40),
+      blob: rp(0, 40), 'long-body': rp(0, 45),
+    },
+    why: 'Lamb-1027: rule 5 (wide apart) passed on a fleece-widened head with the eyes round its corners, where they read as pin dots. The bar\'s eyes are glossy domes on the front of the face; set wide, they still face the viewer.',
+    from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'safety eye prop outward axis (axes[2]), else head-centre-to-eye direction for an embroidered eye, against the lens direction, in the horizontal plane' },
+    estimated: true,
+  },
+  {
+    id: 'one-eye-centred',
+    what: 'A one-eyed toy (a cyclops, a little monster) has its eye on the middle of the face.',
+    quantity: 'eyeOffCentre',
+    ranges: { 'quadruped-seated': rp(0, 0.05), 'biped-animal': rp(0, 0.05), doll: rp(0, 0.05), blob: rp(0, 0.05), 'long-body': rp(0, 0.05) },
+    scope: { eyeCount: 'one' },
+    why: 'Catalogue gap G2: rule 5 assumes two eyes. One eye off centre reads as a mistake, not a character.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'the eye\'s front-view centre off the face fabric\'s midline / face width' },
+  },
+  {
+    id: 'many-eyes-spread',
+    what: 'Three or more eyes (a spider, an alien) spread across the face about as wide as two eyes would be.',
+    quantity: 'eyeSpread',
+    ranges: { 'quadruped-seated': rp(0.45, 0.75), 'biped-animal': rp(0.45, 0.75), doll: rp(0.45, 0.75), blob: rp(0.45, 0.75), 'long-body': rp(0.45, 0.75) },
+    scope: { eyeCount: 'many' },
+    why: 'Catalogue gap G2: a cluster bunched in the middle reads as a bug; spread like two wide-set eyes, many eyes keep the baby face.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'outermost eye centres apart in the front view / face width' },
+  },
+  {
+    id: 'sleeping-eyes-arc',
+    what: 'Sleeping eyes are short embroidered arcs, about a sixth of the face wide.',
+    quantity: 'eyeSize',
+    ranges: { 'quadruped-seated': rp(0.12, 0.2), 'biped-animal': r(0.13, 0.2), doll: rp(0.1, 0.18), blob: rp(0.12, 0.2), 'long-body': rp(0.12, 0.2) },
+    scope: { eyes: ['sleeping'] },
+    why: 'Split from rule 7 (engine-rules 1107): a closed eye is a line, not a dot, so it is read on its own range. The bar bunny\'s arcs are 0.166 W.',
+    from: ['sleepy-bunny'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'sleeping-eye embroidery front-view width / face width' },
+  },
+  {
+    id: 'face-band-short',
+    what: 'Under a fringe or a fleece cap, the bare face down to the muzzle is short, and the eyes fill it.',
+    quantity: 'faceBand',
+    ranges: { 'quadruped-seated': r(0.1, 0.22) },
+    scope: { coat: ['curly-fringe', 'fleece'], muzzle: ['contrast', 'tone'] },
+    why: 'Lamb-1027: between the topknot and the muzzle a wide band of brown with nothing in it made the face read like a monkey\'s or a calf\'s. The bar cow\'s curls come down to just over its eyes and the eyes sit on the muzzle, so the band is 0.18 H.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'lowest coat point (hair patch, head loops) on the face\'s midline strip, front half, minus the muzzle top there / head height' },
+    estimated: true,
+  },
+  {
+    id: 'limbs-long',
+    what: 'Front legs or arms are long enough to read as legs: a seated animal\'s run from under the chin to the table.',
+    quantity: 'limbLength',
+    ranges: { 'quadruped-seated': r(0.55, 0.85), 'biped-animal': r(0.45, 0.75), doll: r(0.6, 0.95), 'long-body': rp(0.2, 0.8) },
+    why: 'Lamb-1027: the bar\'s front legs run from the chest to the table so the body reads; ours were short fat balls under the muzzle, and rule 29 (chunky) only pushed them fatter. Nothing asked for LENGTH. Bar cow 0.69 H (chin to table), bunny arms about 0.60, doll arms about 0.77.',
+    from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'fitted limb centre line (base = the end nearest the head), front view: its arc clear of the head and muzzle outline, plus its end ring and a yarn / head height' },
+    estimated: true,
+  },
+  {
+    id: 'limbs-not-balls',
+    what: 'A leg or arm is about twice as long as it is thick (a doll\'s far more), never a ball.',
+    quantity: 'limbAspect',
+    ranges: { 'quadruped-seated': r(1.6, 2.6), 'biped-animal': r(1.6, 2.8), doll: r(3.5, 6), 'long-body': rp(1.2, 3) },
+    why: 'Lamb-1027: the short-ball legs were as long as they were thick. Bar cow 2.1 (254 px under the chin by 123), bunny arms about 2.2, doll arms about 4.6.',
+    from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'limbLength x head height / limb thickness at mid-length (rule 29\'s width)' },
+    estimated: true,
+  },
+  {
+    id: 'legs-reach-the-table',
+    what: 'A seated animal\'s front legs come down from under the chin all the way to the table.',
+    quantity: 'limbReach',
+    ranges: { 'quadruped-seated': r(0.85, 1.05) },
+    why: 'Lamb-1027: front legs that stop short of the table, or start low under a ball body, leave the toy propped on a lump; the bar cow\'s legs stand from its chin to the table (1.0).',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: '(lower of the leg top and the chin, minus the leg bottom) / (chin minus the table), front legs' },
+  },
+  {
+    id: 'pointed-ears-on-top',
+    what: 'Pointed or tall upright ears stand on top of the head, well above the eyes.',
+    quantity: 'earAboveEye',
+    ranges: { 'quadruped-seated': rp(0.3, 0.65), 'biped-animal': rp(0.3, 0.7), blob: rp(0.3, 0.7), 'long-body': rp(0.3, 0.65) },
+    scope: { ears: ['upright-pointed'] },
+    why: 'Cute-check 1026: a cat\'s prick ear was judged by the cow\'s ear table (held out at the brow). A prick ear on the crown is right for a cat or a fox; low on the sides it reads as horns.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: '(ear bounds centre z - eye centre z) / head height' },
+  },
+  {
+    id: 'pointed-ears-shape',
+    what: 'A pointed ear is a soft triangle about as tall as it is wide at the base, not a spike.',
+    quantity: 'earAspect',
+    ranges: { 'quadruped-seated': rp(0.8, 1.6), 'biped-animal': rp(0.8, 1.8), blob: rp(0.8, 1.6), 'long-body': rp(0.8, 1.6) },
+    scope: { ears: ['upright-pointed'] },
+    why: 'A short wide prick ear is a kitten\'s; a tall narrow spike is an adult or a bat.',
+    from: ['highland-cow'],
+    strictness: 'soft',
+    measure: { kind: 'engine-now', from: 'ear front-view height / width (the part beside or above the head)' },
+  },
+  {
+    id: 'round-ears-on-top',
+    what: 'Small round ears sit high on the head, at the top corners.',
+    quantity: 'earAboveEye',
+    ranges: { 'quadruped-seated': rp(0.25, 0.6), 'biped-animal': rp(0.25, 0.6), blob: rp(0.25, 0.6) },
+    scope: { ears: ['round'] },
+    why: 'A teddy\'s round ears at the top corners frame a big forehead; at eye level they read as a mouse\'s or as handles.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: '(ear bounds centre z - eye centre z) / head height' },
+  },
+  {
+    id: 'floppy-ears-hang',
+    what: 'Floppy ears hang from the top of the head beside the face, their middle about level with the eyes.',
+    quantity: 'earAboveEye',
+    ranges: { 'quadruped-seated': rp(-0.2, 0.2), 'biped-animal': rp(-0.2, 0.2) },
+    scope: { ears: ['floppy'] },
+    why: 'A puppy\'s ears frame the face; hung too low they read as jowls, held too high as a cow\'s.',
+    from: ['highland-cow'],
+    strictness: 'soft',
+    measure: { kind: 'engine-now', from: '(ear bounds centre z - eye centre z) / head height' },
+  },
+  {
+    id: 'fleece-loops-small',
+    what: 'A fleece is many small loops, not long noodles.',
+    quantity: 'fleeceLoopSize',
+    ranges: { 'quadruped-seated': rp(0.04, 0.12), 'biped-animal': rp(0.04, 0.12), doll: rp(0.04, 0.12), blob: rp(0.04, 0.12), 'long-body': rp(0.04, 0.12) },
+    scope: { coat: ['fleece'] },
+    why: 'Lamb-1027 lesson 1: the curl rules (37, 42, 43) read hair patches only, so a fleece worked into the body\'s own rounds was never measured. Its first render (loops 2.4 yarn radii, standing out) read as white noodles; the bar\'s packed curls are about 0.10 W each. Provisional until a fleece bar photo.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'loose (loop) yarn runs of a fleece piece: 2 x radius of gyration, mean / face width' },
+  },
+  {
+    id: 'fleece-packed',
+    what: 'A fleece is packed: the loops cover the fabric they are worked into, the way the bar\'s curls tile the cow\'s fringe.',
+    quantity: 'fleecePacking',
+    ranges: { 'quadruped-seated': rp(0.8, 2.5), 'biped-animal': rp(0.8, 2.5), doll: rp(0.8, 2.5), blob: rp(0.8, 2.5), 'long-body': rp(0.8, 2.5) },
+    scope: { coat: ['fleece'] },
+    why: 'Lamb-1027 lessons 1 and 11: a loop in every second stitch left the fabric showing between the loops; the dense fleece ([2, 1]) read as a boucle cap. The same measure as rule 42 (count x size squared over the area), read over the fleeced fabric. Provisional until a fleece bar photo.',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'front-half loops x mean size squared / the front-view area within reach of their roots' },
+  },
+  {
+    id: 'muzzle-in-rounds',
+    what: 'The muzzle is worked in rounds that circle the front of the face (an oval round a chain), not end to end with its rounds running up and down it.',
+    quantity: 'muzzleRingAxisDeg',
+    ranges: { 'quadruped-seated': r(0, 40), 'biped-animal': r(0, 40), 'long-body': rp(0, 40) },
+    scope: { muzzle: ['contrast', 'tone'] },
+    why: 'Lamb-1027 lesson 8 and "what is missing" 2 (Bec\'s item 3): the bar\'s muzzle is a soft oval of concentric rounds; ours, worked end to end, is a flat block striped up and down. The bar cow\'s and bunny\'s rounds circle the nose (judged 0 deg); the disc muzzles of our bear, bunny, cat and dog read 22-29 deg; the cow\'s and the lamb\'s end-to-end ovals 86-88.',
+    from: ['highland-cow', 'sleepy-bunny'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'fitted muzzle centre line: first ring to last ring, its angle to the lens (acute)' },
+    needsShape: ['oval-round-a-chain'],
+    estimated: true,
+  },
+  {
+    id: 'long-body-length',
+    what: 'A long-bodied toy (a snake, a caterpillar) is a few heads long, not a sausage that goes on and on.',
+    quantity: 'bodyLength',
+    ranges: { 'long-body': rp(2.5, 7) },
+    why: 'Catalogue gap G1: a serpent or fish is judged by eye only today. A short chubby length keeps the baby proportion (rule 1\'s idea along the body).',
+    from: ['highland-cow'],
+    strictness: 'firm',
+    measure: { kind: 'engine-now', from: 'the body (or tail) centre line arc length / face width' },
+  },
 ]
 
 /** The bar toy each set of measurements came from (crochet-bar/proofs/cute-rules/measurements.json). */
 export interface ToyMeasurement {
   label: string
   family: ToyFamily
+  /** The toy's feature types (which rules apply). */
+  features: CuteFeatures
   values: Readonly<Partial<Record<CuteQuantity, number>>>
 }
 
@@ -714,6 +1057,7 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
   {
     label: 'bar highland cow',
     family: 'quadruped-seated',
+    features: { ears: 'cupped', eyes: 'safety', eyeCount: 2, horns: 'curved', tail: 'none', coat: ['curly-fringe'], muzzle: 'contrast' },
     values: {
       headHeightShare: 0.59, headToTorsoWidth: 0.984, earSpanToWidest: 1.0, haunchToHead: 1.678,
       eyeSpacing: 0.575, eyeHeightFromChin: 0.448, eyeSize: 0.116, eyeMuzzleGap: -0.039, eyeInsetFromMuzzleEdge: 0.046,
@@ -725,26 +1069,46 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
       limbThickness: 0.401, limbGap: 0.176, limbEndBulge: 1.15,
       sharpCorners: 1, straightRun: 0.223, headTiltDeg: 0, asymmetryCues: 1, curlSizeCV: 0.28,
       eyeProtrusion: 0.25, limbJoinRatio: 0.7, footForwardDeg: 15,
+      // engine-rules 1107 (re-measured on the face: W 307 px is the face fur
+      // under the ears at the eye line, no fringe or ear in it, so every
+      // W-normalised value above holds): the eye blobs are 32 x 43 and
+      // 39 x 43 px, foreshortened by cos(angle) to 42 and 25 deg (mean 34, a
+      // sphere at 0.575 W apart gives 35); the curls' lowest edge on the
+      // midline at y 1125, the muzzle top 1192 (67 px / H 366); the front
+      // legs seen from the chin (1344) to the table (1598), 254 px by 123 wide.
+      eyeAxisDeg: 33.4, faceBand: 0.183, limbLength: 0.694, limbAspect: 2.07, limbReach: 1.0, muzzleRingAxisDeg: 0,
     },
   },
   {
     label: 'bar sleepy bunny',
     family: 'biped-animal',
+    features: { ears: 'lop', eyes: 'sleeping', eyeCount: 2, coat: ['hat'], muzzle: 'tone' },
     values: {
       headHeightShare: 0.477, headToTorsoWidth: 1.136, earSpanToWidest: 1.0,
       eyeSpacing: 0.647, eyeHeightFromChin: 0.306, eyeSize: 0.166, eyeFaceDeltaL: 65.8,
       muzzleWidth: 0.378, muzzleHeight: 0.231, muzzleFaceDeltaL: 2.9, blushDeltaA: 13.5, blushBelowEye: 0.159,
       earLength: 1.799, earWidth: 0.529, earRimRatio: 2.5,
       limbThickness: 0.256, footWidth: 0.698, headTiltDeg: 5.6, asymmetryCues: 2,
+      // engine-rules 1107 (est): W 410 px is the face between the lops' roots;
+      // the closed eyes have no dome to foreshorten, so their angle is the
+      // sphere's at 0.647 W apart (asin 0.647 = 40 deg, an upper bound: the
+      // face is flatter than a ball); the arms from the shoulder under the
+      // chin (~1290) curving in to the paws (~1505), ~235 px of arc by 105.
+      eyeAxisDeg: 40.3, limbLength: 0.602, limbAspect: 2.23, muzzleRingAxisDeg: 0,
     },
   },
   {
     label: 'bar fairy doll',
     family: 'doll',
+    features: { ears: 'none', eyes: 'embroidered', eyeCount: 2, coat: ['hair'], muzzle: 'none' },
     values: {
       headHeightShare: 0.287, headToTorsoWidth: 1.477,
       eyeSpacing: 0.588, eyeHeightFromChin: 0.25, eyeSize: 0.097, eyeFaceDeltaL: 77.5,
       blushDeltaA: 9, blushBelowEye: 0.124, limbThickness: 0.173, headTiltDeg: 0.4, asymmetryCues: 3,
+      // engine-rules 1107 (est): W 257 px is the face skin inside the hair
+      // (the hair spans 337 px); eyes by the sphere at 0.588 W (36 deg); the
+      // arms from the shoulder (~1206) to the hands (~1377), ~195 px by 42.
+      eyeAxisDeg: 36, limbLength: 0.745, limbAspect: 4.51,
     },
   },
 ]
@@ -753,6 +1117,7 @@ export const BAR_MEASUREMENTS: readonly ToyMeasurement[] = [
 export const OURS_COW_1025R1: ToyMeasurement = {
   label: 'our cow, cow-fable-1025 r1',
   family: 'quadruped-seated',
+  features: { ears: 'cupped', eyes: 'safety', eyeCount: 2, horns: 'curved', tail: 'none', coat: ['curly-fringe'], muzzle: 'contrast' },
   values: {
     headHeightShare: 0.601, headToTorsoWidth: 0.911, earSpanToWidest: 0.923, haunchToHead: 1.597,
     eyeSpacing: 0.472, eyeHeightFromChin: 0.477, eyeSize: 0.142, eyeMuzzleGap: 0.022, eyeInsetFromMuzzleEdge: 0.082,
@@ -766,6 +1131,27 @@ export const OURS_COW_1025R1: ToyMeasurement = {
   },
 }
 
+/** Our lamb, lamb-1027 (M, hash 7b98a445), as the engine-rules 1107
+ *  measurer reads it (W off the face fabric, 140.6 mm; with its loops 158.4).
+ *  Bec saw four things the rules then missed, and these values now fail
+ *  them: the eyes round the sides of the head (47, 49 deg), the muzzle worked
+ *  end to end, a block (61, 88 deg), the bare band under the topknot (51,
+ *  0.25 H), the short ball legs (52-54: 0.42 H long, 1.1 x as long as thick,
+ *  0.76 of the way to the table). */
+export const OURS_LAMB_1027: ToyMeasurement = {
+  label: 'our lamb, lamb-1027 M',
+  family: 'quadruped-seated',
+  features: { ears: 'folded', eyes: 'safety', eyeCount: 2, horns: 'none', tail: 'nub', coat: ['fleece'], muzzle: 'contrast' },
+  values: {
+    headHeightShare: 0.615, headToTorsoWidth: 0.969, earSpanToWidest: 1.074, haunchToHead: 1.763,
+    eyeHeightFromChin: 0.492, eyeSize: 0.142, eyeAxisDeg: 48.9, eyeSpacing: 0.631, headTiltDeg: 5.0, eyeProtrusion: 0.397,
+    muzzleWidth: 0.739, muzzleHeight: 0.431, eyeMuzzleGap: -0.036, eyeInsetFromMuzzleEdge: 0.054, chinOverhang: 0, muzzleRingAxisDeg: 88,
+    earProtrusion: 0.447, earAboveEye: 0.123, earAspect: 0.957, earRimRatio: 2.769, earRimMin: 0.089,
+    limbThickness: 0.395, limbEndBulge: 1.018, limbJoinRatio: 0.68, limbLength: 0.42, limbAspect: 1.101, limbReach: 0.755, limbGap: 0.078,
+    footForwardDeg: 30, sharpCorners: 7, straightRun: 0.33, fleeceLoopSize: 0.061, fleecePacking: 1.344, faceBand: 0.25, asymmetryCues: 2,
+  },
+}
+
 export interface CuteVerdict {
   rule: CuteRule
   value: number
@@ -773,17 +1159,35 @@ export interface CuteVerdict {
   pass: boolean
 }
 
+/** Does a rule apply to a toy of this family with these features? Null =
+ *  it applies; else the reason it does not (for the report). A feature the
+ *  toy does not declare (and the measurer could not read) matches any scope
+ *  key except the eye count and the curved appendage, which must be there. */
+export function ruleNotApplicable(rule: CuteRule, family: ToyFamily, f: CuteFeatures): string | null {
+  if (!rule.ranges[family]) return `no range for ${family}`
+  const sc = rule.scope
+  if (!sc) return null
+  if (sc.ears && f.ears && !sc.ears.includes(f.ears)) return `for ${sc.ears.join(' / ')} ears; these are ${f.ears}`
+  if (sc.eyes && f.eyes && !sc.eyes.includes(f.eyes)) return `for ${sc.eyes.join(' / ')} eyes; these are ${f.eyes}`
+  if (sc.eyeCount && (f.eyeCount == null || eyeCountBucket(f.eyeCount) !== sc.eyeCount)) return `for ${sc.eyeCount === 'one' ? 'one eye' : sc.eyeCount === 'two' ? 'two eyes' : 'three or more eyes'}; ${f.eyeCount ?? 0} here`
+  if (sc.curvedAppendage && f.horns !== 'curved' && f.tail !== 'curved') return 'no curved horn or tail declared'
+  if (sc.horns && !(f.horns && sc.horns.includes(f.horns))) return `for ${sc.horns.join(' / ')} horns; ${f.horns && f.horns !== 'none' ? `these are ${f.horns}` : 'none here'}`
+  if (sc.coat && !(f.coat ?? []).some((c) => sc.coat!.includes(c))) return `for a ${sc.coat.join(' / ')} coat; ${(f.coat ?? []).length ? (f.coat ?? []).join(' / ') : 'none'} here`
+  if (sc.muzzle && !(f.muzzle && f.muzzle !== 'none' && sc.muzzle.includes(f.muzzle))) return `for a ${sc.muzzle.join(' / ')} muzzle; ${f.muzzle ?? 'none'} here`
+  return null
+}
+
 /**
- * Check measured values against the rules for a family. Pure; a rule with no
- * range for the family, or a quantity not measured, is skipped. Step 3 will
- * call this with values read off a built toy; nothing calls it yet.
+ * Check measured values against the rules for a family and its feature
+ * types. Pure; a rule with no range for the family, one whose scope does not
+ * match the features, or a quantity not measured, is skipped.
  */
-export function checkCuteRules(family: ToyFamily, values: Readonly<Partial<Record<CuteQuantity, number>>>): CuteVerdict[] {
+export function checkCuteRules(family: ToyFamily, values: Readonly<Partial<Record<CuteQuantity, number>>>, features: CuteFeatures = {}): CuteVerdict[] {
   const out: CuteVerdict[] = []
   for (const rule of CUTE_RULES) {
     const range = rule.ranges[family]
     const value = values[rule.quantity]
-    if (!range || value == null) continue
+    if (!range || value == null || ruleNotApplicable(rule, family, features)) continue
     out.push({ rule, value, range, pass: value >= range.min && value <= range.max })
   }
   return out

@@ -36,7 +36,7 @@
 
 import type { V3 } from '../yarnLoop'
 import type { CompiledComposition, CompositionProgram, PlacedPart } from './composition'
-import type { CuteQuantity, ToyFamily } from './cuteRules'
+import type { AppendageType, CoatType, CuteFeatures, CuteQuantity, EarType, EyeType, ToyFamily } from './cuteRules'
 import { loopBodies } from './hairPatch'
 
 /** Where a measured value came from. */
@@ -52,6 +52,11 @@ export interface CuteMeasurement {
   family: ToyFamily | null
   /** How the family was found. */
   familyFrom: 'program' | 'inferred' | 'none'
+  /** The toy's feature types (which rules apply): declared in the program
+   *  (`cute.features`) or read off its parts (`inferCuteFeatures`). */
+  features: CuteFeatures
+  /** Which feature keys the program declared (the rest were read off the parts). */
+  featuresDeclared: (keyof CuteFeatures)[]
   values: Partial<Record<CuteQuantity, number>>
   source: Partial<Record<CuteQuantity, CuteSource>>
   /** Quantities this toy has nothing to measure for (no horns, no hair...). */
@@ -545,7 +550,46 @@ function fitPlane(xs: number[], ys: number[], ws: number[]): (x: number, y: numb
   return (x, y) => a * x + b * y + c
 }
 
-// ─── the family ────────────────────────────────────────────────────────────
+// ─── the family and the feature types ──────────────────────────────────────
+
+/** An eye prop or embroidery name: eye-l, eye-r, eye-c, eye-1..., not an eye's
+ *  light, lid or lash (engine-rules 1107: one, two or many eyes). */
+export function isEyeName(n: string): boolean {
+  return /^eye(-[a-z0-9]+)?$/.test(n) && !/^eye-(light|lid|lash|brow)/.test(n)
+}
+
+/**
+ * The toy's feature types (cuteRules.ts `CuteFeatures`): what the program
+ * declares in `cute.features`, the rest read off its pieces. Undeclared:
+ * eyes from the props / embroidery (a safety eye; an embroidered eye with a
+ * light = open, without = sleeping); ears lop when they hang past the eyes
+ * and are >= 0.6 H long, else cupped (the cow-type ear the first rules were
+ * measured on); horns curved (the bar's horn: a straight unicorn or rhino
+ * horn must say so); a tail curved when it is a bent tube, else straight;
+ * the coat from hair patches (curly fringe), fleece pieces, a hair cap or a
+ * hat; a muzzle part is contrast when its yarn is >= 12 L* off the face's.
+ */
+export function inferCuteFeatures(p: CompositionProgram, c: CompiledComposition, opts: { lopEars?: boolean; tailNub?: boolean } = {}): { features: CuteFeatures; declared: (keyof CuteFeatures)[] } {
+  const d = p.cute?.features ?? {}
+  const eyeProps = c.props.filter((q) => isEyeName(q.name))
+  const eyeEmb = c.embroidery.filter((e) => isEyeName(e.name))
+  const eyes: EyeType = eyeProps.length ? 'safety' : eyeEmb.length ? (c.embroidery.some((e) => /^eye-light/.test(e.name)) ? 'embroidered' : 'sleeping') : 'none'
+  const has = (re: RegExp): PlacedPart[] => c.placed.filter((pp) => re.test(pp.part.name))
+  const ears: EarType = has(/^ear-[lr]$/).length ? (opts.lopEars ? 'lop' : 'cupped') : 'none'
+  const horns: AppendageType = has(/^horn-[lr]$/).length ? 'curved' : 'none'
+  const tailPart = c.placed.find((pp) => pp.part.name === 'tail')
+  const tail: AppendageType = tailPart ? (tailPart.part.bentTube ? 'curved' : opts.tailNub ? 'nub' : 'straight') : 'none'
+  const coat: CoatType[] = []
+  if (c.hair.length) coat.push('curly-fringe')
+  if (p.parts.some((x) => x.fleece)) coat.push('fleece')
+  if (p.parts.some((x) => x.name === 'hair-cap')) coat.push('hair')
+  if ((p.accessories ?? []).some((a) => a.kind === 'nightcap')) coat.push('hat')
+  const head = c.placed.find((pp) => pp.part.name === 'head')
+  const muz = c.placed.find((pp) => pp.part.name === 'muzzle')
+  const muzzle = muz && head ? (Math.abs(hexToLab(muz.part.colourHex)[0] - hexToLab(head.part.colourHex)[0]) >= 12 ? 'contrast' : 'tone') : 'none'
+  const inferred: CuteFeatures = { ears, eyes, eyeCount: eyeProps.length || eyeEmb.length, horns, tail, coat, muzzle }
+  return { features: { ...inferred, ...d }, declared: Object.keys(d) as (keyof CuteFeatures)[] }
+}
 
 /** Which family's ranges a toy is checked against: the program's own
  *  `cute.family`, else read from its pieces and how they are stacked. Null = not a figure (a ball, an
@@ -553,7 +597,12 @@ function fitPlane(xs: number[], ys: number[], ws: number[]): (x: number, y: numb
 export function inferToyFamily(p: CompositionProgram): { family: ToyFamily | null; from: CuteMeasurement['familyFrom'] } {
   if (p.cute?.family) return { family: p.cute.family, from: 'program' }
   const names = new Set(p.parts.map((x) => x.name))
-  if (!names.has('head')) return { family: null, from: 'none' }
+  // Engine-rules 1107 (gap G1): no head, but a face on the body (eyes sewn
+  // on it) = a blob, the face-on-body family (the ball and egg presets).
+  if (!names.has('head')) {
+    const faceOnBody = (p.props ?? []).some((q) => isEyeName(q.name) && q.on === 'body') || (p.embroidery ?? []).some((e) => isEyeName(e.name) && e.on === 'body')
+    return faceOnBody && names.has('body') ? { family: 'blob', from: 'inferred' } : { family: null, from: 'none' }
+  }
   // A doll stands: her body is stacked on her legs (an animal toy's body
   // sits on the table); dressed, she has a hair cap, a bodice or a skirt.
   const bodyOn = (p.parts.find((x) => x.name === 'body')?.place as { on?: string } | undefined)?.on ?? ''
@@ -571,6 +620,33 @@ export interface CuteDebug {
   silhouette?: (r: FrontRaster, contour: [number, number][], chinRow: number, corners: [number, number][]) => void
 }
 
+/** A piece's own fabric: its strand without the loose (loop) yarn of a
+ *  fleece or a loop-stitch patch worked into it (engine-rules 1107). */
+export function fabricOf(pp: PlacedPart): V3[] {
+  const loose = pp.built?.model.loose
+  const path = pp.built?.strandPath
+  if (!loose || !path) return pp.ctrl
+  const f = pp.ctrl.filter((_, i) => !loose[path[i]!])
+  return f.length >= 12 ? f : pp.ctrl
+}
+
+/** A piece's loose (loop) yarn as one polyline per loop, with the fabric
+ *  point it springs from (the strand point before the run). */
+export function loopsOf(pp: PlacedPart): { pts: V3[]; root: V3 }[] {
+  const loose = pp.built?.model.loose
+  const path = pp.built?.strandPath
+  if (!loose || !path) return []
+  const runs: { pts: V3[]; root: V3 }[] = []
+  let cur: V3[] = []
+  let root: V3 | null = null
+  for (let i = 0; i < pp.ctrl.length; i++) {
+    if (loose[path[i]!]) { if (!cur.length) root = pp.ctrl[Math.max(0, i - 1)]!; cur.push(pp.ctrl[i]!) }
+    else if (cur.length) { runs.push({ pts: cur, root: root! }); cur = [] }
+  }
+  if (cur.length) runs.push({ pts: cur, root: root! })
+  return runs
+}
+
 /** The silhouette's scale: cells across the head, as the photos (~310 px). */
 const HEAD_PX = 310
 
@@ -584,8 +660,9 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
   const source: CuteMeasurement['source'] = {}
   const absent: CuteMeasurement['absent'] = {}
   const notes: string[] = []
-  const out: CuteMeasurement = { family, familyFrom: from, values, source, absent, W: 0, H: 0, T: 0, notes }
-  const head = c.placed.find((pp) => pp.part.name === 'head')
+  const out: CuteMeasurement = { family, familyFrom: from, features: {}, featuresDeclared: [], values, source, absent, W: 0, H: 0, T: 0, notes }
+  // A blob's face is on its body: the body is the "head" (engine-rules 1107).
+  const head = c.placed.find((pp) => pp.part.name === 'head') ?? (family === 'blob' ? c.placed.find((pp) => pp.part.name === 'body') : undefined)
   if (!family || !head) return out
   const yr = c.yr
   const set = (q: CuteQuantity, v: number | null | undefined, s: CuteSource): void => {
@@ -619,21 +696,45 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
   const feet = named(/^leg-[lr]$/)
   const tail = one('tail')
   const hairCap = one('hair-cap')
-  const torso = [one('body'), one('bodice')].filter((x): x is PlacedPart => !!x)
+  const torso = [one('body'), one('bodice')].filter((x): x is PlacedPart => !!x && x !== head)
 
   // ── the normalisers ──
-  const he = ext(head.ctrl)
+  // Engine-rules 1107: the FACE, not the fur. W and the face landmarks are
+  // read off the head's own fabric: its loose (loop) yarn, a fleece topknot
+  // worked into its rounds, is not the face (lamb-1027: the loops widened W,
+  // so "wide-set" eyes went round the corners of the head). The bar's W was
+  // always the face (the cow's under its ears, the doll's inside her hair).
+  const headFabric = fabricOf(head)
+  const he = ext(headFabric)
+  const heAll = ext(head.ctrl)
   const W = he.u1 - he.u0
+  if (heAll.u1 - heAll.u0 > W + 2 * yr) notes.push(`face: W read off the head's fabric, ${W.toFixed(1)} mm (${(heAll.u1 - heAll.u0).toFixed(1)} mm with its loops)`)
   const hairTop = Math.max(-Infinity, ...c.hair.map((h) => ext(h.ctrl).z1), hairCap ? ext(hairCap.ctrl).z1 : -Infinity)
-  const top = Math.max(he.z1, hairTop)
+  const top = Math.max(heAll.z1, hairTop)
   const chin = Math.min(he.z0, muzzle ? ext(muzzle.ctrl).z0 : Infinity)
   const H = top - chin
   let ground = Infinity
   for (const pp of c.placed) ground = Math.min(ground, pp.bounds.minz - yr)
   const T = top - ground
   out.W = W; out.H = H; out.T = T
-  const headC = centroid(head.ctrl)
-  const midU = dot(headC, F.u)
+  const headC = centroid(headFabric)
+  const midU = (he.u0 + he.u1) / 2
+  // The feature types (which rules apply): declared, else read off the parts.
+  const lopEars = ears.length > 0 && ears.every((ear) => {
+    const e = ext(ear.ctrl)
+    const eyesZ = c.props.filter((q) => isEyeName(q.name)).map((q) => q.centre.z)
+    const ez = eyesZ.length ? eyesZ.reduce((a, z) => a + z, 0) / eyesZ.length : (he.z0 + he.z1) / 2
+    return e.z0 < ez && (e.z1 - e.z0) / H > 0.6
+  })
+  let tailNub = false
+  if (tail) {
+    const cl = fitCentreLine(tail.ctrl, tail.part.rounds, centroid(cloud(torso.length ? torso : [head])))
+    if (cl) { const sh = centreLineShape(cl, proj, yr); tailNub = sh.arcMm < 2 * sh.thickAt(0.5) }
+  }
+  const feat = inferCuteFeatures(p, c, { lopEars, tailNub })
+  const features = feat.features
+  out.features = features
+  out.featuresDeclared = feat.declared
 
   // ── proportion ──
   set('headHeightShare', H / T, 'geometry')
@@ -652,49 +753,71 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
   }
   if (backLegs.length) { const b = ext(cloud(backLegs)); set('haunchToHead', (b.u1 - b.u0) / W, 'geometry') } else miss('haunchToHead', 'no seated back legs')
 
-  // ── the eyes (safety-eye props, else embroidered eyes) ──
-  interface Eye { u: number; z: number; halfU: number; halfZ: number; hex: string }
+  // ── the eyes (safety-eye props, else embroidered eyes; one, two or many) ──
+  interface Eye { u: number; z: number; halfU: number; halfZ: number; hex: string; axisDeg: number }
   const eyes: Eye[] = []
-  for (const pr of c.props.filter((q) => /^eye-[lr]$/.test(q.name))) {
+  // Engine-rules 1107: the angle, seen from above, between an eye's outward
+  // axis and the lens (lamb-1027: wide-set on a fleece-widened head, the
+  // eyes were round its corners). A safety eye's axis is its prop's third
+  // axis, signed away from the piece it is set in; an embroidered eye's is
+  // the direction from its piece's centre out through it.
+  const yawFromLens = (a: V3): number => (Math.atan2(Math.abs(dot(a, F.u)), dot(a, F.f)) * 180) / Math.PI
+  for (const pr of c.props.filter((q) => isEyeName(q.name))) {
     const halfU = Math.sqrt(pr.axes.reduce((a, ax) => a + dot(ax, F.u) ** 2, 0))
     const halfZ = Math.sqrt(pr.axes.reduce((a, ax) => a + ax.z ** 2, 0))
-    eyes.push({ u: dot(pr.centre, F.u), z: pr.centre.z, halfU, halfZ, hex: pr.hex })
+    const spec = p.props?.find((q) => q.name === pr.name)
+    const hostC = centroid(fabricOf(one(spec?.on ?? '') ?? head))
+    const out3 = { x: pr.centre.x - hostC.x, y: pr.centre.y - hostC.y, z: pr.centre.z - hostC.z }
+    const a = pr.axes[2]
+    const s = dot(a, out3) < 0 ? -1 : 1
+    eyes.push({ u: dot(pr.centre, F.u), z: pr.centre.z, halfU, halfZ, hex: pr.hex, axisDeg: yawFromLens({ x: s * a.x, y: s * a.y, z: s * a.z }) })
   }
   if (!eyes.length) {
-    for (const e of c.embroidery.filter((q) => /^eye-[lr]$/.test(q.name))) {
+    for (const e of c.embroidery.filter((q) => isEyeName(q.name))) {
       const pts = e.strands.flat()
       if (!pts.length) continue
       const ee = ext(pts)
-      eyes.push({ u: (ee.u0 + ee.u1) / 2, z: (ee.z0 + ee.z1) / 2, halfU: (ee.u1 - ee.u0) / 2 - yr + e.radiusMm, halfZ: (ee.z1 - ee.z0) / 2 - yr + e.radiusMm, hex: e.hex })
+      const ec = centroid(pts)
+      const hostC = centroid(fabricOf(one(p.embroidery?.find((q) => q.name === e.name)?.on ?? '') ?? head))
+      eyes.push({ u: (ee.u0 + ee.u1) / 2, z: (ee.z0 + ee.z1) / 2, halfU: (ee.u1 - ee.u0) / 2 - yr + e.radiusMm, halfZ: (ee.z1 - ee.z0) / 2 - yr + e.radiusMm, hex: e.hex, axisDeg: yawFromLens({ x: ec.x - hostC.x, y: ec.y - hostC.y, z: 0 }) })
     }
   }
   eyes.sort((a, b) => a.u - b.u)
   const eyeL = eyes[0], eyeR = eyes[eyes.length - 1]
   const eyeZ = eyes.length ? eyes.reduce((a, e) => a + e.z, 0) / eyes.length : NaN
-  if (eyes.length >= 2) {
-    set('eyeSpacing', (eyeR!.u - eyeL!.u) / W, 'geometry')
+  if (eyes.length) {
     set('eyeHeightFromChin', (eyeZ - chin) / H, 'geometry')
     set('eyeSize', (eyes.reduce((a, e) => a + 2 * e.halfU, 0) / eyes.length) / W, 'geometry')
+    set('eyeAxisDeg', eyes.reduce((a, e) => a + e.axisDeg, 0) / eyes.length, 'geometry')
+  } else for (const q of ['eyeHeightFromChin', 'eyeSize', 'eyeAxisDeg'] as const) miss(q, 'no eyes')
+  if (eyes.length === 2) {
+    set('eyeSpacing', (eyeR!.u - eyeL!.u) / W, 'geometry')
     set('headTiltDeg', Math.abs((Math.atan2(eyeR!.z - eyeL!.z, eyeR!.u - eyeL!.u) * 180) / Math.PI), 'geometry')
   } else {
-    for (const q of ['eyeSpacing', 'eyeHeightFromChin', 'eyeSize', 'headTiltDeg'] as const) miss(q, 'no pair of eyes')
+    for (const q of ['eyeSpacing', 'headTiltDeg'] as const) miss(q, eyes.length ? `${eyes.length} eye${eyes.length > 1 ? 's' : ''}, not a pair` : 'no pair of eyes')
   }
+  if (eyes.length === 1) set('eyeOffCentre', Math.abs(eyes[0]!.u - midU) / W, 'geometry')
+  else miss('eyeOffCentre', 'not a one-eyed toy')
+  if (eyes.length >= 3) set('eyeSpread', (eyeR!.u - eyeL!.u) / W, 'geometry')
+  else miss('eyeSpread', 'fewer than three eyes')
 
   // Lamb-1027 (Bec: "eyes pushed into the face"): how far each safety eye's
   // dome stands out of the fabric round it (a ring 1.2-2.2 eye radii off its
   // axis on the host piece), over the eye's diameter.
   {
     const vals: number[] = []
-    for (const pr of c.props.filter((q) => /^eye-[lr]$/.test(q.name))) {
+    for (const pr of c.props.filter((q) => isEyeName(q.name))) {
       const spec = p.props?.find((q) => q.name === pr.name)
       const host = spec ? one(spec.on) : undefined
       if (!host) continue
+      // The fabric round the eye, not a fleece's loops (engine-rules 1107).
+      const hostFabric = fabricOf(host)
       const a = pr.axes[2]
       const rf = len3(a) || 1
       const u = { x: a.x / rf, y: a.y / rf, z: a.z / rf }
       const r = Math.max(len3(pr.axes[0]), len3(pr.axes[1]))
       let sum = 0, n = 0
-      for (const v of host.ctrl) {
+      for (const v of hostFabric) {
         const d = { x: v.x - pr.centre.x, y: v.y - pr.centre.y, z: v.z - pr.centre.z }
         const t = dot(d, u)
         if (t < -r) continue
@@ -722,7 +845,7 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     // view row widths 85% of the way down the muzzle.
     const cell = W / HEAD_PX
     const both = new FrontRaster(he.u0 - W * 0.3, chin - H * 0.1, cell, he.u1 + W * 0.3, top + H * 0.1)
-    both.polyline(head.ctrl.map(proj), yr)
+    both.polyline(headFabric.map(proj), yr)
     both.polyline(muzzle.ctrl.map(proj), yr)
     both.fillHoles()
     const mr = new FrontRaster(he.u0 - W * 0.3, chin - H * 0.1, cell, he.u1 + W * 0.3, top + H * 0.1)
@@ -731,8 +854,19 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     const zRow = me.z1 - 0.85 * (me.z1 - me.z0)
     const hs = both.rowSpan(zRow), ms = mr.rowSpan(zRow)
     if (hs && ms) set('chinOverhang', ((hs[1] - hs[0]) - (ms[1] - ms[0])) / W, 'geometry')
+    // Engine-rules 1107 (lamb-1027 lesson 8): the axis the muzzle's rounds
+    // are worked along, magic ring to last round, against the lens: rounds
+    // circling the front of the face read ~0, a muzzle worked end to end
+    // (its rounds running up and down the face) ~90.
+    const ml = fitCentreLine(muzzle.ctrl, muzzle.part.rounds, headC)
+    if (ml) {
+      const a = ml.pts[0]!, b = ml.pts[ml.pts.length - 1]!
+      const ax = { x: b.x - a.x, y: b.y - a.y, z: b.z - a.z }
+      const k = Math.abs(dot(ax, F.f)) / (len3(ax) || 1)
+      set('muzzleRingAxisDeg', (Math.acos(Math.min(1, k)) * 180) / Math.PI, 'geometry')
+    } else miss('muzzleRingAxisDeg', 'the muzzle is not worked in rounds')
   } else {
-    for (const q of ['muzzleWidth', 'muzzleHeight', 'eyeMuzzleGap', 'eyeInsetFromMuzzleEdge', 'chinOverhang'] as const) miss(q, 'no muzzle')
+    for (const q of ['muzzleWidth', 'muzzleHeight', 'eyeMuzzleGap', 'eyeInsetFromMuzzleEdge', 'chinOverhang', 'muzzleRingAxisDeg'] as const) miss(q, 'no muzzle')
   }
 
   // ── colour proxies (hex in Lab) ──
@@ -774,13 +908,11 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     if (above.length) set('earAboveEye', mean(above), 'geometry')
     if (aspect.length) set('earAspect', mean(aspect), 'geometry')
     else miss('earAspect', 'the ears do not show beside the head')
-    // The lop rules read only LOPS: ears hanging past the eye line, at least
-    // 0.6 of the head tall (a bear's round ears are not lops).
-    const lops = ears.every((ear) => { const e = ext(ear.ctrl); return Number.isFinite(eyeZ) && e.z0 < eyeZ && (e.z1 - e.z0) / H > 0.6 })
-    if (lops) {
-      set('earLength', mean(lens), 'geometry')
-      set('earWidth', mean(widths), 'geometry')
-    } else { miss('earLength', 'the ears are not lops'); miss('earWidth', 'the ears are not lops') }
+    // The lop rules read only LOPS (their scope, engine-rules 1107: the ear
+    // type declared, else ears hanging past the eye line at least 0.6 of the
+    // head tall; a bear's round ears are not lops).
+    set('earLength', mean(lens), 'geometry')
+    set('earWidth', mean(widths), 'geometry')
     if (rims.length) { set('earRimRatio', mean(rims), 'geometry'); set('earRimMin', mean(rimMins), 'geometry') }
     else { set('earRimRatio', 1, 'geometry'); miss('earRimMin', 'no opening shows from the front'); notes.push('ears: no opening shows from the front (a closed or flat ear), rim read as uniform (1.0)') }
   } else {
@@ -801,13 +933,24 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     insideHead = (v) => { const q = proj(v); return hr.at(Math.round((q.u - hr.u0) / cell), Math.round((q.z - hr.z0) / cell)) === 1 }
   }
   const hornLines = horns.map((h) => lineOf(h, headC)).filter((x): x is CentreLine => !!x).map((cl) => clipCentreLine(cl, insideHead!))
-  let appLines = hornLines.length ? hornLines : tail ? [lineOf(tail, centroid(cloud(torso.length ? torso : [head])))].filter((x): x is CentreLine => !!x) : []
+  // Engine-rules 1107: the curve rules (24-27) read a CURVED appendage
+  // (cuteRules `scope.curvedAppendage`): the horns, unless only the tail is
+  // declared curved; a long body with no tail piece is read along its body.
+  const tailLine = tail ? lineOf(tail, centroid(cloud(torso.length ? torso : [head]))) : null
+  const bodyLine = family === 'long-body' && !tail && torso[0] ? lineOf(torso[0], headC) : null
+  const hornsFirst = hornLines.length > 0 && (features.horns === 'curved' || !(features.tail === 'curved' && tailLine))
+  let appLines = hornsFirst ? hornLines : tailLine ? [tailLine] : bodyLine ? [bodyLine] : []
+  if (family === 'long-body') {
+    const bl = bodyLine ?? (torso[0] ? lineOf(torso[0], headC) : null)
+    if (bl) set('bodyLength', (centreLineShape(bl, proj, yr).arcMm + (tailLine ? centreLineShape(tailLine, proj, yr).arcMm : 0)) / W, 'geometry')
+    else miss('bodyLength', 'no body piece worked in rounds')
+  } else miss('bodyLength', 'not a long body')
   // Lamb-1027: a tail NUB (a stub or ball, catalogue TL2) has no centre line
   // to curve, bend or taper: a ball's fitted "line" reads a sagitta of 2.5 and
   // a 90 deg bend. The appendage rules (24-28) are for an appendage at least
   // twice as long as it is thick; a shorter tail is a nub and is not read.
   let nub = false
-  if (!hornLines.length && appLines.length) {
+  if (!hornsFirst && appLines.length && appLines[0] === tailLine) {
     const sh = centreLineShape(appLines[0]!, proj, yr)
     if (sh.arcMm < 2 * sh.thickAt(0.5)) {
       nub = true
@@ -821,8 +964,8 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     set('appendageSagitta', mean((s) => s.sagitta), 'geometry')
     set('appendageBendDeg', mean((s) => s.bendDeg), 'geometry')
     set('appendageTaper', mean((s) => s.taper), 'geometry')
-    if (!hornLines.length) notes.push('appendage: no horns, the tail read as the appendage (curve, bend, taper)')
-    if (hornLines.length) {
+    if (!hornsFirst) notes.push(`appendage: ${appLines[0] === bodyLine ? 'the long body' : 'the tail'} read as the appendage (curve, bend, taper)${features.tail === 'curved' ? '' : '; the curve rules read it only when it is declared curved'}`)
+    if (hornsFirst) {
       set('appendageElevationDeg', mean((s) => s.elevationDeg), 'geometry')
       set('appendageLength', mean((s) => s.arcMm) / W, 'geometry')
       // Rule-calib 1027: where the horn leaves the head it is slender (39),
@@ -845,8 +988,12 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
 
   // ── limbs ──
   if (frontLimbs.length) {
-    const body = torso.length ? centroid(cloud(torso)) : headC
-    const lines = frontLimbs.map((l) => lineOf(l, body)).filter((x): x is CentreLine => !!x)
+    // The base (the end sewn on) is the end nearest the head (engine-rules
+    // 1107): a doll's arm folded up to her bouquet ends nearer the body's
+    // centre than her shoulder does, so the body's centre picked the hand.
+    // A seated animal's leg top and a bunny's shoulder are nearest the head
+    // either way.
+    const lines = frontLimbs.map((l) => lineOf(l, headC)).filter((x): x is CentreLine => !!x)
     if (lines.length) {
       const mids = lines.map((cl) => centreLineShape(cl, proj, yr).thickAt(0.5))
       set('limbThickness', mids.reduce((a, x) => a + x, 0) / mids.length / W, 'geometry')
@@ -871,9 +1018,57 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       })
       set('limbJoinRatio', join.reduce((a, x) => a + x, 0) / join.length, 'geometry')
     }
+    // Engine-rules 1107 (lamb-1027: "short fat balls under the muzzle"; the
+    // bar's front legs run from the chest to the table): the limb's LENGTH as
+    // the lens sees it, on the same fitted line as rules 29, 31 and 45: the
+    // front-view arc of its centre line clear of the head, plus its rounded end
+    // (the last ring's radius and a yarn), over H; and that length over the
+    // limb's mid thickness (rule 29's width), so a ball reads ~1.
+    if (lines.length) {
+      // What the lens sees of the limb: its centre line outside the head's
+      // and the muzzle's front-view outline (a seated animal's leg top is
+      // behind the muzzle; a bear's arm out beside the head is in view).
+      const cell = W / HEAD_PX
+      const occ = new FrontRaster(he.u0 - W, chin - 2 * H, cell, he.u1 + W, top + H)
+      occ.polyline(headFabric.map(proj), yr)
+      if (muzzle) occ.polyline(muzzle.ctrl.map(proj), yr)
+      occ.fillHoles()
+      // Hidden = inside that outline AND behind its front surface there (a
+      // bear's arm folded in front of the bottom of its head is in view).
+      const hidden = (u: number, z: number, w: number): boolean => {
+        const i = Math.round((u - occ.u0) / cell), j = Math.round((z - occ.z0) / cell)
+        if (occ.at(i, j) !== 1) return false
+        const d = occ.depth[j * occ.nx + i]!
+        return !Number.isFinite(d) || d > w + yr
+      }
+      const vis = lines.map((cl) => {
+        const q = cl.pts.map(proj)
+        let arc = 0
+        for (let i = 1; i < q.length; i++) {
+          const a = q[i - 1]!, b = q[i]!
+          const seg = Math.hypot(b.u - a.u, b.z - a.z)
+          const n = Math.max(1, Math.ceil(seg / cell))
+          for (let k = 0; k < n; k++) {
+            const t = (k + 0.5) / n
+            if (!hidden(a.u + (b.u - a.u) * t, a.z + (b.z - a.z) * t, a.w + (b.w - a.w) * t)) arc += seg / n
+          }
+        }
+        const tip = q[q.length - 1]!
+        return arc + (hidden(tip.u, tip.z, tip.w) ? 0 : yr + cl.radius[cl.radius.length - 1]!)
+      })
+      const mids = lines.map((cl) => centreLineShape(cl, proj, yr).thickAt(0.5))
+      set('limbLength', vis.reduce((a, x) => a + x, 0) / vis.length / H, 'geometry')
+      set('limbAspect', vis.reduce((a, x, i) => a + x / mids[i]!, 0) / vis.length, 'geometry')
+    }
+    // How much of the chin-to-table drop the front legs span (a seated
+    // animal's stand from under the chin to the table).
+    {
+      const reach = frontLimbs.map((l) => { const e = ext(l.ctrl); return (Math.min(e.z1, chin) - e.z0) / Math.max(1e-6, chin - ground) })
+      set('limbReach', reach.reduce((a, x) => a + x, 0) / reach.length, 'geometry')
+    }
     const ls = frontLimbs.map((l) => ext(l.ctrl)).sort((a, b) => a.u0 - b.u0)
     if (ls.length >= 2) set('limbGap', (ls[ls.length - 1]!.u0 - ls[0]!.u1) / W, 'geometry')
-  } else for (const q of ['limbThickness', 'limbEndBulge', 'limbGap', 'limbJoinRatio'] as const) miss(q, 'no front legs or arms')
+  } else for (const q of ['limbThickness', 'limbEndBulge', 'limbGap', 'limbJoinRatio', 'limbLength', 'limbAspect', 'limbReach'] as const) miss(q, 'no front legs or arms')
   // Lamb-1027 (Bec: seated back legs present their feet forward, round soles
   // showing): the sole is the leg's first round (the magic ring); its
   // direction out of the leg's centre against the lens direction.
@@ -936,6 +1131,63 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     set('curlPacking', (sizes.length * mean * mean) / ((hx.u1 - hx.u0) * (hx.z1 - hx.z0)), 'geometry')
     set('fringeHeight', (hairTop - he.z1) / H, 'geometry')
   } else { for (const q of ['curlSizeCV', 'curlPacking', 'fringeHeight'] as const) miss(q, 'no curly fringe or mane') }
+
+  // ── fleece (engine-rules 1107, lamb-1027 lesson 1): loop stitch worked
+  //    INTO a piece's own rounds, read like the curls: each loop's size
+  //    (2 x radius of gyration) over W, and how densely the loops on the side
+  //    facing the lens pack their fabric: (mean size / the median spacing of
+  //    their roots)^2, rule 42's count x size^2 / area with the area each
+  //    loop has to itself. ──
+  {
+    const fleeced = c.placed.filter((pp) => pp.part.fleece && pp.built?.model.loose)
+    const all: number[] = []
+    let packW = 0, packN = 0
+    for (const pp of fleeced) {
+      const runs = loopsOf(pp).filter((r) => r.pts.length >= 4)
+      if (runs.length < 3) continue
+      const pc = centroid(fabricOf(pp))
+      const sizes: number[] = []
+      const roots: V3[] = []
+      for (const r of runs) {
+        const m = centroid(r.pts)
+        let r2 = 0
+        for (const v of r.pts) r2 += (v.x - m.x) ** 2 + (v.y - m.y) ** 2 + (v.z - m.z) ** 2
+        const sz = 2 * Math.sqrt(r2 / r.pts.length)
+        all.push(sz)
+        if (dot({ x: m.x - pc.x, y: m.y - pc.y, z: m.z - pc.z }, F.f) > 0) { sizes.push(sz); roots.push(r.root) }
+      }
+      if (roots.length < 3) continue
+      const nn = roots.map((a, i) => {
+        let best = Infinity
+        roots.forEach((b, j) => { if (j !== i) best = Math.min(best, Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z)) })
+        return best
+      }).sort((a, b) => a - b)
+      const spacing = Math.max(yr, nn[Math.floor(nn.length / 2)]!)
+      const ms = sizes.reduce((a, x) => a + x, 0) / sizes.length
+      packW += (ms / spacing) ** 2 * roots.length
+      packN += roots.length
+    }
+    if (all.length >= 3) {
+      set('fleeceLoopSize', all.reduce((a, x) => a + x, 0) / all.length / W, 'geometry')
+      if (packN) set('fleecePacking', packW / packN, 'geometry')
+      else miss('fleecePacking', 'no fleece loops face the lens')
+      notes.push(`fleece: ${all.length} loops on ${fleeced.map((pp) => pp.part.name).join(', ')}`)
+    } else for (const q of ['fleeceLoopSize', 'fleecePacking'] as const) miss(q, 'no fleece worked into a piece')
+  }
+
+  // ── the face band (engine-rules 1107, lamb-1027 "what is missing" 3): the
+  //    bare face on the midline between the coat's lower edge (a fringe, the
+  //    head's own loops, a hair cap) and the muzzle top, front half only. ──
+  if (muzzle) {
+    const inStrip = (v: V3): boolean => Math.abs(dot(v, F.u) - midU) < 0.12 * W && dot(v, F.f) > dot(headC, F.f)
+    const coat = [...c.hair.flatMap((h) => h.ctrl), ...loopsOf(head).flatMap((r) => r.pts), ...(hairCap ? hairCap.ctrl : [])].filter(inStrip)
+    const mz = muzzle.ctrl.filter(inStrip)
+    if (coat.length && mz.length) {
+      const coatLow = Math.min(...coat.map((v) => v.z)) - yr
+      const muzTop = Math.max(...mz.map((v) => v.z)) + yr
+      set('faceBand', (coatLow - muzTop) / H, 'geometry')
+    } else miss('faceBand', coat.length ? 'the muzzle is off the face\'s midline' : 'no coat on the face\'s midline')
+  } else miss('faceBand', 'no muzzle')
 
   // ── deliberate asymmetries (rule 36), read off the program and its pieces ──
   {

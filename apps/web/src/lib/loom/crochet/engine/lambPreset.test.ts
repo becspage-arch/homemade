@@ -166,24 +166,37 @@ test('the listing lamb: no audit problems, on the table, the hard rules pass, th
   const fails = c.cute!.results.filter((r) => !r.pass && r.strictness !== 'soft' && r.source !== 'proxy')
   // 33/34: the fleece's loops and the folded ears' tips read as corners on
   // the head's outline; 40: the folded ear has a one-yarn rim (the cow's
-  // known gap). See the job log's lessons.
-  assert.deepEqual(fails.map((r) => r.n), [33, 34, 40])
+  // known gap). See the job log's lessons. Engine-rules 1107 (W read off the
+  // FACE, not the fleece, and the rules Bec's lamb verdict asked for) adds
+  // what she saw: 7 the 20 mm eyes are big for the 141 mm face; 47 the eyes
+  // are round the sides of the head (49 deg off the lens); 51 the bare band
+  // under the topknot (0.25 H); 52-54 the short ball front legs (0.42 H,
+  // 1.1 x as long as thick, 0.76 of the way to the table); 61 the muzzle
+  // worked end to end (its rounds run up and down the face).
+  assert.deepEqual(fails.map((r) => r.n), [7, 33, 34, 40, 47, 51, 52, 53, 54, 61])
   const by = (id: string) => c.cute!.results.find((r) => r.id === id)!
-  for (const id of ['eyes-set-in', 'limbs-slim-at-join', 'feet-forward', 'one-asymmetry', 'gentle-tilt']) assert.ok(by(id).pass, id)
+  for (const id of ['eyes-set-in', 'limbs-slim-at-join', 'feet-forward', 'one-asymmetry', 'gentle-tilt', 'eyes-wide-apart', 'fleece-loops-small', 'fleece-packed']) assert.ok(by(id).pass, id)
+  assert.deepEqual(c.cute!.features.coat, ['fleece'])
+  assert.ok(c.cute!.measured.notes.some((n) => /W read off the head's fabric/.test(n)), 'W is the face, the topknot left out')
   for (const n of ['front-leg-l', 'front-leg-r', 'back-leg-l', 'back-leg-r', 'body']) {
     assert.ok(Math.abs(c.placed.find((q) => q.part.name === n)!.bounds.minz) < 3.5, `${n} on the table`)
   }
-  // The gate blocks on exactly those three.
+  // The gate blocks on exactly those.
   const gated = compileComposition(buildLambProgram({ ...LAMB_DEFAULTS, cuteGate: true }))
-  assert.equal(gated.problems.length, 3)
-  assert.ok(gated.problems.every((x) => /^cute: .*\(rule (33|34|40), firm\)$/.test(x)), gated.problems.join('\n'))
+  assert.equal(gated.problems.length, 10)
+  assert.ok(gated.problems.every((x) => /^cute: .*\(rule (7|33|34|40|47|51|52|53|54|61), firm\)$/.test(x)), gated.problems.join('\n'))
 })
 
-test('S and L: no audit problems, every hard rule passes, the same three firm misses', () => {
+test('S and L: no audit problems, every hard rule passes, the firm misses pinned', () => {
+  // Read off the face, the S and L heads are narrower than their bodies (2),
+  // their muzzles wider than the face (11) and their ears stand out further
+  // than the rule allows (18): lamb-1027 lessons 6-7, sized for a
+  // fleece-widened head. L's face band (0.217 H) passes, just.
+  const want: Record<'S' | 'L', number[]> = { S: [2, 11, 18, 33, 34, 40, 47, 51, 52, 53, 54, 61], L: [2, 11, 18, 33, 34, 40, 47, 52, 53, 54, 61] }
   for (const size of ['S', 'L'] as const) {
     const c = compileComposition(buildLambProgram({ ...LAMB_DEFAULTS, size }))
     assert.deepEqual(c.problems, [], size)
     const fails = c.cute!.results.filter((r) => !r.pass && r.strictness !== 'soft' && r.source !== 'proxy')
-    assert.deepEqual(fails.map((r) => r.n), [33, 34, 40], size)
+    assert.deepEqual(fails.map((r) => r.n), want[size], size)
   }
 })

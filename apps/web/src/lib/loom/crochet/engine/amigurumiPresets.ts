@@ -36,6 +36,7 @@ import {
 } from './gauge'
 import { COW_BASE, COW_AUDITED_PROFILES, buildCowProgram } from './cowPreset'
 import { earPart, type EarPieceOptions } from './earPiece'
+import type { CuteFeatures } from './cuteRules'
 import { foldedPart, gFolded, type FoldedPieceOptions } from './foldedPiece'
 import { YARN_WEIGHT_RADIUS_MM, type YarnFibre, type YarnWeight } from './program'
 import {
@@ -847,9 +848,29 @@ export function amigurumiPresetName(choices: AmigurumiChoices): string {
 /** The maker's choices → a composition the loom can build. */
 export function buildAmigurumiProgram(choices: AmigurumiChoices): CompositionProgram {
   const program = buildChosenProgram(choices)
+  // The toy's feature types for the cute check (engine-rules 1107): which
+  // ear, horn and tail rules read it. Report only: no geometry reads this.
+  const features = presetCuteFeatures(choices)
+  if (features) program.cute = { ...program.cute, features: { ...features, ...program.cute?.features } }
   // The opt-in cute gate (cuteCheck.ts); off, the program is untouched.
   if (choices.cuteGate === true) program.cute = { ...program.cute, gate: true }
   return program
+}
+
+/** The feature types each base's pieces ARE (cuteRules.ts `CuteFeatures`),
+ *  for what the measurer cannot tell from a part's name: a cat's ear is a
+ *  prick ear, not the cow's cup, and its cord tail is straight by design.
+ *  Eyes, coat and muzzle are read off the pieces. */
+export function presetCuteFeatures(choices: AmigurumiChoices): CuteFeatures | null {
+  switch (choices.base) {
+    case 'cow': return { ears: choices.foldedEars === true ? 'folded' : 'cupped', horns: 'curved', tail: 'straight' }
+    case 'cat': return { ears: 'upright-pointed', tail: 'straight' }
+    case 'dog': return { ears: 'floppy', tail: 'nub' }
+    case 'bear': return { ears: 'round', tail: 'nub' }
+    case 'bunny': return { ears: 'lop', tail: 'nub' }
+    case 'bird': case 'chick': case 'doll': case 'ball': case 'egg': return { ears: 'none' }
+    default: return null
+  }
 }
 
 function buildChosenProgram(choices: AmigurumiChoices): CompositionProgram {

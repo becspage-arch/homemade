@@ -22,6 +22,7 @@ import {
   allPresetChoices,
   buildAmigurumiProgram,
   isAuditedProfile,
+  presetCuteFeatures,
   presetSettledSizeMm,
   type AmigurumiChoices,
 } from '@/lib/loom/crochet/engine/amigurumiPresets'
@@ -163,7 +164,10 @@ test('the cow switches reach the cow builder through the designer', () => {
   const built = buildDesignerProgram(normaliseDesignerChoices(r.data), 'Calf')
   assert.ok('program' in built)
   const cow = buildCowProgram({ size: 'M', mainHex: TOY.mainHex, contrastHex: TOY.contrastHex, eyeMm: 9, gauge: 1.4, cuppedEars: true, seatBackLegs: true })
-  same(built.program, { ...cow, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'M') })
+  // The designer path also declares the toy's feature types for the cute
+  // report (presetCuteFeatures, engine-rules 1107); no geometry reads them.
+  const cute = { features: presetCuteFeatures({ base: 'cow' } as AmigurumiChoices)! }
+  same(built.program, { ...cow, cute, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'M') })
   const plain = buildCowProgram({ size: 'M', mainHex: TOY.mainHex, contrastHex: TOY.contrastHex, eyeMm: 9, gauge: 1.4 })
   assert.notEqual(JSON.stringify(built.program.parts), JSON.stringify(plain.parts), 'the switches did something')
   // The curved horns and tapered legs (cowBentHorn.test.ts) the same way.
@@ -172,7 +176,7 @@ test('the cow switches reach the cow builder through the designer', () => {
   const b2 = buildDesignerProgram(normaliseDesignerChoices(r2.data), 'Calf')
   assert.ok('program' in b2, 'problems' in b2 ? b2.problems.join('; ') : '')
   const cow2 = buildCowProgram({ size: 'L', mainHex: TOY.mainHex, contrastHex: TOY.contrastHex, eyeMm: 9, gauge: 1.3, curvedHorns: true, taperedLegs: true })
-  same(b2.program, { ...cow2, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'L') })
+  same(b2.program, { ...cow2, cute, name: 'Calf', finishedSizeMm: presetSettledSizeMm('cow', 'L') })
   assert.ok(b2.program.parts.some((p) => p.bentTube), 'the bent horn reaches the program')
   // Stored as JSON and read back, the horn's stitch plan survives.
   same(JSON.parse(JSON.stringify(b2.program)), b2.program)

@@ -17,11 +17,11 @@
  */
 
 import type { CompiledComposition, CompositionProgram } from './composition'
-import { CUTE_RULES, type CuteRange, type CuteRule, type Strictness, type ToyFamily } from './cuteRules'
+import { CUTE_RULES, ruleNotApplicable, type CuteFeatures, type CuteRange, type CuteRule, type Strictness, type ToyFamily } from './cuteRules'
 import { measureCute, type CuteMeasurement, type CuteSource } from './cuteMeasure'
 
 export interface CuteRuleResult {
-  /** The rule's number in CUTE-RULES.md (1-46). */
+  /** The rule's number in CUTE-RULES.md (1-61). */
   n: number
   id: string
   strictness: Strictness
@@ -29,6 +29,8 @@ export interface CuteRuleResult {
   range: CuteRange
   pass: boolean
   source: CuteSource
+  /** The range is provisional (no bar photo yet): reported, never blocking. */
+  provisional?: true
   /** A failure in plain words; absent on a pass. */
   line?: string
 }
@@ -39,6 +41,11 @@ export interface CuteReport {
   results: CuteRuleResult[]
   /** Rules ranged for this family that had nothing to measure (no horns...). */
   notMeasured: { n: number; id: string; why: string }[]
+  /** Rules ranged for this family that are for another feature type (a
+   *  cow's folded-ear rules on a cat's prick ear): not checked, and why. */
+  notApplicable: { n: number; id: string; why: string }[]
+  /** The feature types the rules were picked by (declared or read off the parts). */
+  features: CuteFeatures
   /** The failures in plain words, hard first, then firm, then soft. */
   failures: string[]
   /** True when the gate is on for this toy. */
@@ -104,6 +111,22 @@ const WORDS: Record<string, { low: string; high: string; unit: string }> = {
   'limbs-slim-at-join': { low: 'limb pinched thin at the join', high: 'limb fat right up to the join (stuff lighter toward the top)', unit: 'join / foot thickness' },
   'feet-forward': { low: '(unreachable)', high: 'back feet turned to the sides, soles hidden', unit: 'degrees from the lens' },
   'muzzle-light': { low: 'muzzle too dark (an oatmeal, not a cream)', high: 'muzzle too light (white)', unit: 'L* (yarn hex, a proxy: want the hex range)' },
+  'eyes-face-the-lens': { low: '(unreachable)', high: 'eyes round the sides of the head, not on the front of the face', unit: 'degrees from the lens' },
+  'one-eye-centred': { low: '(unreachable)', high: 'the one eye is off the middle of the face', unit: 'of the face width off centre' },
+  'many-eyes-spread': { low: 'the eyes bunched in the middle', high: 'the eyes spread round the head', unit: 'of the face width across' },
+  'sleeping-eyes-arc': { low: 'sleeping eyes too short', high: 'sleeping eyes too long', unit: 'of the face width' },
+  'face-band-short': { low: 'the coat hangs down over the eyes, nearly onto the muzzle', high: 'a wide bare band of face between the coat and the muzzle', unit: 'of the head height' },
+  'limbs-long': { low: 'legs or arms too short (stubs under the chin)', high: 'legs or arms too long', unit: 'of the head height below the chin' },
+  'limbs-not-balls': { low: 'legs or arms are balls, not limbs', high: 'legs or arms too long and thin', unit: 'length / thickness' },
+  'legs-reach-the-table': { low: 'front legs do not reach from under the chin to the table', high: 'front legs reach past the table', unit: 'of the chin-to-table drop' },
+  'pointed-ears-on-top': { low: 'pointed ears too low (on the sides, like horns)', high: 'pointed ears too high', unit: 'of the head height above the eyes' },
+  'pointed-ears-shape': { low: 'pointed ears too flat', high: 'pointed ears too tall (a spike)', unit: 'height / width' },
+  'round-ears-on-top': { low: 'round ears too low (at eye level)', high: 'round ears too high', unit: 'of the head height above the eyes' },
+  'floppy-ears-hang': { low: 'floppy ears hang too low (jowls)', high: 'floppy ears held too high', unit: 'of the head height above the eyes' },
+  'fleece-loops-small': { low: 'fleece loops too small to read', high: 'fleece loops too long (noodles)', unit: 'of the face width' },
+  'fleece-packed': { low: 'fleece sparse: fabric shows between the loops', high: 'fleece crammed', unit: '(loop size / spacing) squared' },
+  'muzzle-in-rounds': { low: '(unreachable)', high: 'muzzle worked end to end, its rounds running up and down the face (a block, not an oval of rounds)', unit: 'degrees between its rounds\' axis and the lens' },
+  'long-body-length': { low: 'the long body too short', high: 'the long body too long', unit: 'face widths' },
 }
 
 /** One plain line for a failed rule. */
@@ -120,14 +143,19 @@ export function cuteFailureLine(rule: CuteRule, value: number, range: CuteRange)
 
 const ORDER: Record<Strictness, number> = { hard: 0, firm: 1, soft: 2 }
 
-/** Check a measurement against the family's rules. */
+/** Check a measurement against the family's rules, each rule only where the
+ *  toy's feature types are the ones it is for (engine-rules 1107). */
 export function cuteCheck(m: CuteMeasurement, gate = false): CuteReport {
   const results: CuteRuleResult[] = []
   const notMeasured: CuteReport['notMeasured'] = []
+  const notApplicable: CuteReport['notApplicable'] = []
+  const features = m.features ?? {}
   if (m.family) {
     CUTE_RULES.forEach((rule, i) => {
       const photoRange = rule.ranges[m.family!]
       if (!photoRange) return
+      const na = ruleNotApplicable(rule, m.family!, features)
+      if (na) { notApplicable.push({ n: i + 1, id: rule.id, why: na }); return }
       const value = m.values[rule.quantity]
       if (value == null) {
         notMeasured.push({ n: i + 1, id: rule.id, why: m.absent[rule.quantity] ?? 'not measured' })
@@ -141,19 +169,21 @@ export function cuteCheck(m: CuteMeasurement, gate = false): CuteReport {
       results.push({
         n: i + 1, id: rule.id, strictness: rule.strictness, value, range, pass,
         source,
+        ...(range.provisional ? { provisional: true as const } : {}),
         ...(pass ? {} : { line: cuteFailureLine(rule, value, range) }),
       })
     })
   }
   const fails = results.filter((r) => !r.pass).sort((a, b) => ORDER[a.strictness] - ORDER[b.strictness] || a.n - b.n)
-  const failures = fails.map((r) => `${r.line} (rule ${r.n}, ${r.strictness}${r.source === 'proxy' ? ', colour proxy' : ''})`)
-  const blocking = gate ? fails.filter((r) => r.strictness !== 'soft' && r.source !== 'proxy').map((r) => `cute: ${r.line} (rule ${r.n}, ${r.strictness})`) : []
+  const failures = fails.map((r) => `${r.line} (rule ${r.n}, ${r.strictness}${r.source === 'proxy' ? ', colour proxy' : ''}${r.provisional ? ', provisional' : ''})`)
+  // A provisional range (no bar photo yet) never blocks, like a soft rule.
+  const blocking = gate ? fails.filter((r) => r.strictness !== 'soft' && r.source !== 'proxy' && !r.provisional).map((r) => `cute: ${r.line} (rule ${r.n}, ${r.strictness})`) : []
   const passN = results.filter((r) => r.pass).length
   const hardFails = fails.filter((r) => r.strictness === 'hard').map((r) => r.n)
   const summary = m.family
     ? `${m.family}: ${passN} / ${results.length} pass${hardFails.length ? `; hard fails ${hardFails.join(', ')}` : ''}${fails.length ? `; fails ${fails.map((r) => r.n).sort((a, b) => a - b).join(', ')}` : ''}`
     : 'not a figure: no cute rules apply'
-  return { family: m.family, familyFrom: m.familyFrom, results, notMeasured, failures, gate, blocking, summary, measured: { W: m.W, H: m.H, T: m.T, notes: m.notes } }
+  return { family: m.family, familyFrom: m.familyFrom, results, notMeasured, notApplicable, features, failures, gate, blocking, summary, measured: { W: m.W, H: m.H, T: m.T, notes: m.notes } }
 }
 
 /** Measure and check a compiled toy. Never throws: a measurer error is
@@ -165,7 +195,7 @@ export function cuteReportFor(p: CompositionProgram, c: CompiledComposition): Cu
   } catch (err) {
     const error = err instanceof Error ? err.message : String(err)
     return {
-      family: null, familyFrom: 'none', results: [], notMeasured: [], failures: [], gate,
+      family: null, familyFrom: 'none', results: [], notMeasured: [], notApplicable: [], features: {}, failures: [], gate,
       blocking: gate ? [`cute: the cute check could not run (${error})`] : [],
       summary: `cute check error: ${error}`, measured: { W: 0, H: 0, T: 0, notes: [] }, error,
     }
