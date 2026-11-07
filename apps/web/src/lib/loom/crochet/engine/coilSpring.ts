@@ -33,6 +33,15 @@ import { closestApproach, linkingNumber } from './loopStitch'
 
 type V = { x: number; y: number; z: number }
 
+/** Relax iterations between two holds of the coils' set. */
+const HOLD_EVERY = 5
+
+function centroidOf(ps: V[]): V {
+  const c = { x: 0, y: 0, z: 0 }
+  for (const p of ps) { c.x += p.x / ps.length; c.y += p.y / ps.length; c.z += p.z / ps.length }
+  return c
+}
+
 export interface CoilSpringOptions {
   /** Centre-to-centre distance two yarns are kept apart by while they grow. */
   collMinDist: number
@@ -50,6 +59,15 @@ export interface CoilSpringOptions {
    *  root (minus half a strand), so no coil opens into the piece through the
    *  gaps between its stitches. Absent = the model's own bounds (`zBand`). */
   outsideOf?: V
+  /** How hard each coil keeps its own wound SET while it grows (0 to 1, a
+   *  pull per hold step toward its wound shape at the stage's scale, centred
+   *  where the coil now is; default 0.15). The yarn's bending distances only
+   *  remember the set locally, so a big coil (a rosette) grown from a seed
+   *  without this comes back crumpled to two fifths of its size (measured:
+   *  0.17 of the head's width wound, 0.069 sprung), and gravity folds it. The
+   *  hold moves the coil as a whole, so collision still decides where it
+   *  sits against its neighbours; 0 = off. */
+  holdShape?: number
   /** Called after each growth stage (diagnostics; stage 0 = the seeds). */
   onStage?: (stage: number) => void
 }
@@ -106,6 +124,11 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
   const grow = [...scaled(model.dist), ...scaled(model.bend)]
   const setScale = (sOf: (k: number) => number): void => { for (const g of grow) g.c.rest = g.rest * sOf(g.k) }
 
+  // The wound set of each body, about its own centroid (the hold's target).
+  const set = bodies.map((b) => {
+    const c = centroidOf(b.map((i) => nodes[i]!))
+    return b.map((i) => ({ x: nodes[i]!.x - c.x, y: nodes[i]!.y - c.y, z: nodes[i]!.z - c.z }))
+  })
   // Seed: each body scaled about its root.
   bodies.forEach((b, k) => {
     const s = seeds[k]!
@@ -174,6 +197,23 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
   bodies.forEach((b, k) => { for (const i of b) tmp[i] = base + k })
   model.strand = tmp
   const stages = opts.stages ?? 16
+  // The hold: each body pulled toward its wound set at scale s, placed on
+  // its own centroid now (a translation only, so it never drags a coil into
+  // a neighbour; collision acts on every iteration between holds).
+  const hold = opts.holdShape ?? 0.15
+  const holdSets = (sOf: (k: number) => number, k0: number): void => {
+    bodies.forEach((b, k) => {
+      const c = centroidOf(b.map((i) => nodes[i]!))
+      const s = sOf(k)
+      b.forEach((i, j) => {
+        const p = nodes[i]!
+        const q = set[k]![j]!
+        p.x += (c.x + q.x * s - p.x) * k0
+        p.y += (c.y + q.y * s - p.y) * k0
+        p.z += (c.z + q.z * s - p.z) * k0
+      })
+    })
+  }
   opts.onStage?.(0)
   try {
     for (let st = 1; st <= stages; st++) {
@@ -181,17 +221,23 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
       // Geometric growth: the same ratio every stage, so a small seed is
       // not asked to double in its first stage (measured: a linear schedule
       // threaded one pair in 120 on its first stage).
-      setScale((k) => Math.pow(seeds[k]!, 1 - t))
-      relax(model, {
-        collMinDist: opts.collMinDist,
-        collK: 0.28,
-        collAdjacency: 1e9,
-        planeZ: 0,
-        planeK: 0,
-        layoutK: 0,
-        ...(opts.gravity ? { gravity: opts.gravity } : {}),
-        iterations: opts.iterationsPerStage ?? 30,
-      })
+      const sOf = (k: number): number => Math.pow(seeds[k]!, 1 - t)
+      setScale(sOf)
+      const iters = opts.iterationsPerStage ?? 30
+      const chunk = hold > 0 ? HOLD_EVERY : iters
+      for (let done = 0; done < iters; done += chunk) {
+        if (hold > 0) holdSets(sOf, hold)
+        relax(model, {
+          collMinDist: opts.collMinDist,
+          collK: 0.28,
+          collAdjacency: 1e9,
+          planeZ: 0,
+          planeK: 0,
+          layoutK: 0,
+          ...(opts.gravity ? { gravity: opts.gravity } : {}),
+          iterations: Math.min(chunk, iters - done),
+        })
+      }
       opts.onStage?.(st)
     }
   } finally {

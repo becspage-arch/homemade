@@ -187,6 +187,75 @@ export function coilMixScale(h: HairPatch, k: number, c: number): number {
   return bigHere ? m.big : m.small ?? 1
 }
 
+/**
+ * ROSETTE CURLS (curl-relax-1107 round 2): the look of a curly coat made of
+ * plump, open, round rosettes with a hole in each (the bar cow's fringe,
+ * measured on its photo: about 17 curls across the front, each about 0.17
+ * of the head's width, packed edge to edge, CV about 0.2), as defaults any
+ * curly patch can take. Sized from the host it is sewn to, not per toy.
+ */
+export interface RosetteOptions {
+  /** Each curl's outer diameter as a share of the host's width. */
+  sizeOfW: number
+  /** Turns of the coil: a little over one, so it reads as an open ring. */
+  turns: number
+  /** The loose yarn's drawn radius (yarn radii): a soft, fat chenille. */
+  strandYr: number
+  /** Curl spacing (stitches and rounds) as a share of the curl's diameter.
+   *  1 (curl-relax-1107, round 2): the curls already meet edge to edge and
+   *  pack 0.86 in the front view (rule 42); closer (0.8 to 0.9) packs more
+   *  rings than fit, and the sprung coils crowd each other smaller. */
+  spacing: number
+  /** Big and small curls (rule 37): radius x big / small, every `every`th. */
+  mix: { every: number; big: number; small: number }
+  /** Gravity on the loose yarn (yarn radii per iteration; HAIR_GRAVITY's 3x). */
+  gravity: number
+}
+
+export const ROSETTE: RosetteOptions = {
+  sizeOfW: 0.15,
+  turns: 1.25,
+  strandYr: 1.15,
+  spacing: 1.0,
+  mix: { every: 3, big: 1.4, small: 0.8 },
+  gravity: 0.0075,
+}
+
+/** The sc's column pitch in yarn radii (dictionary gauge): a round's stitch
+ *  spacing and, near enough, its depth. */
+const ROUND_PITCH_YR = 2.7
+
+/**
+ * Lay a coiled patch out as rosettes on a host `hostWidthYr` wide (yarn
+ * radii): the coil sized from the host, a curl every `step` stitches on
+ * every `step`th round (and the edge round), every inner loop round faced,
+ * sprung open, touching allowed. Everything else of the patch is kept.
+ */
+export function rosettePatch(h: HairPatch, hostWidthYr: number, o: Partial<RosetteOptions> = {}): HairPatch {
+  const r = { ...ROSETTE, ...o }
+  const D = r.sizeOfW * hostWidthYr
+  const pair = h.coil?.pairYr ?? 0.7
+  const R = Math.max(1.2, D / 2 - r.strandYr)
+  const step = Math.max(1, Math.round((D * r.spacing) / ROUND_PITCH_YR))
+  const last = h.rounds.length - 1
+  const loopRounds = h.rounds.map((_, k) => k).filter((k) => (k >= 1 && (k - 1) % step === 0) || k === last)
+  return {
+    ...h,
+    loopRounds,
+    loopEvery: step,
+    loopEveryByRound: undefined,
+    plainEvery: undefined,
+    faceRounds: loopRounds.filter((k) => k !== last),
+    coil: { radiusYr: R, turns: r.turns, pitchYr: 2 * pair + 0.3, pairYr: pair },
+    coilByRound: undefined,
+    coilMix: { ...r.mix },
+    coilClearYr: 0,
+    coilSpring: true,
+    strandYr: r.strandYr,
+    gravity: r.gravity,
+  }
+}
+
 /** Gravity on the loose loops, per relax iteration, in yarn radii. */
 export const HAIR_GRAVITY = 0.0025
 

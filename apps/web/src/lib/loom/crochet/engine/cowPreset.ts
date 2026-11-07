@@ -39,7 +39,7 @@
 
 import type { AmigurumiPart, CompositionProgram, CompositionProp } from './composition'
 import type { EmbroideryFeature } from './faceEmbroidery'
-import type { HairPatch } from './hairPatch'
+import { rosettePatch, type HairPatch, type RosetteOptions } from './hairPatch'
 import { ballRounds, cordRounds, tubeRounds } from './roundProfiles'
 import { ovalRounds, sphereRounds } from './sphereProfile'
 import type { AmigurumiSize } from './amigurumiPresets'
@@ -185,6 +185,9 @@ export interface CowCuteFit {
   /** The coiled fringe as a CAP of small packed curls (rule-calib 1027, rules
    *  42-43): fields laid over cowCoils' (`coiledCurls` at a fine gauge only). */
   fringe?: Partial<HairPatch>
+  /** The coiled fringe as plump open ROSETTES sized from the head
+   *  (hairPatch.ts `rosettePatch`, over `fringe`); false = `fringe` alone. */
+  rosette?: Partial<RosetteOptions> | false
   /** The head relaxed off the table (AmigurumiPart.offTable): round cheeks,
    *  where the table's flat turned to the side read as a straight cheek. */
   roundHead: boolean
@@ -304,6 +307,7 @@ export const COW_CUTE_FIT: CowCuteFit = {
   coilMix: { every: 3, big: 1.5, small: 0.75 },
   roundHead: true,
   fringe: COW_CUTE_FRINGE,
+  rosette: {},
 }
 
 /** The cute numbers for these choices, or undefined (off, or gauge <= 1.15). */
@@ -714,6 +718,21 @@ const TAIL_AIM = { x: 1, y: -0.25, z: 0.35 }
 // high on the crown again, the curls standing up, so a band of forehead shows.
 // Round 28: a touch forward again so the mound spills to the brow.
 const HAIR_DIR = { x: 0, y: 0.78, z: 1 }
+
+/** The settled head's width in yarn radii per (widest round's stitches x the
+ *  2.7 yr column pitch / pi). Measured on the compiled cute cow M (gauge 1.3):
+ *  the front-view head is 87 yr wide over a 54-stitch widest round, so 1.88.
+ *  (The sc sits wider than its round pitch, and the stuffing stretches it.) */
+const STUFFED_HEAD_STRETCH = 1.88
+/** The fringe for these choices: on the cute path with coiled curls, laid
+ *  out as rosettes sized from the head (curl-relax-1107): the head's widest
+ *  round over pi, in the sc's column pitch and stretched by the stuffing, is
+ *  its width in yarn radii. */
+function cowFringeFor(choices: CowChoices, main: string, g: number, headRounds: number[], cf?: CowCuteFit): HairPatch {
+  const f = cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)
+  if (!cf || cf.rosette === false || cf.rosette == null || !f.coil || g <= 1.15) return f
+  return rosettePatch(f, (STUFFED_HEAD_STRETCH * Math.max(...headRounds) * 2.7) / Math.PI, cf.rosette)
+}
 
 /** The curly fringe: loop stitch from the magic ring out, four rounds, the
  *  loops longest at the centre so the tuft stands as a mound 2-3 curls deep,
@@ -1304,7 +1323,7 @@ export function buildCowProgram(choices: CowChoices): CompositionProgram {
     parts,
     props,
     embroidery: cowNostrils(s.muzzle, fd, g, nostrilScale),
-    hair: [cowFringe(main, choices.size, g, choices.coiledCurls === true, cf?.coilMix, cf?.fringe)],
+    hair: [cowFringeFor(choices, main, g, s.head, cf)],
     ...(choices.stage && choices.stage !== 'studio' ? { stage: choices.stage, stageZoom: COW_STAGE_ZOOM } : {}),
     notes:
       'A sitting Highland calf in chenille: a stuffed can of a body, a big head worked side to side sewn straight onto its shoulders with no neck, a domed cream muzzle, two cream horns, two open cupped ears pressed into ovals, ' +
