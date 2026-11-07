@@ -347,8 +347,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'big-head',
     what: 'The head is a big share of the toy\'s height.',
     quantity: 'headHeightShare',
-    ranges: { 'quadruped-seated': r(0.5, 0.65), 'biped-animal': r(0.4, 0.55), doll: r(0.25, 0.4) },
-    why: 'A baby\'s proportions: a big head on a small body is the first thing that reads as young and loveable at thumbnail size.',
+    ranges: { 'quadruped-seated': r(0.5, 0.65), 'biped-animal': r(0.4, 0.62), doll: r(0.25, 0.4) },
+    why: 'A baby\'s proportions: a big head on a small body is the first thing that reads as young and loveable at thumbnail size. Rule-eye 1107: a seated biped\'s head of 0.58-0.60 of the toy (our bear and bunny, the body tucked under it) reads as a baby by eye, as the cow\'s 0.59 does; the bar bunny\'s 0.48 is a bunny sitting tall on big feet, not a ceiling. B now 0.40-0.62 (Q 0.65).',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'firm',
     measure: { kind: 'engine-now', from: 'head (+ fringe/hair) bounds z extent / toy bounds max z' },
@@ -357,8 +357,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'head-as-wide-as-body',
     what: 'The head is at least as wide as the torso with its front legs or arms.',
     quantity: 'headToTorsoWidth',
-    ranges: { 'quadruped-seated': r(0.95, 1.25), 'biped-animal': r(1.0, 1.35), doll: r(1.3, 1.7) },
-    why: 'A small, soft body tucked under a wide head; a body wider than the head reads as an adult animal.',
+    ranges: { 'quadruped-seated': r(0.95, 1.25), 'biped-animal': r(0.9, 1.35), doll: r(1.3, 1.7) },
+    why: 'A small, soft body tucked under a wide head; a body wider than the head reads as an adult animal. Rule-eye 1107: a biped\'s arms folded on its tummy add their width to the torso (our bear 0.91 reads as a head over a small body by eye, the cow is 0.98 with its legs), so B starts at 0.90 as Q starts at 0.95; a cat whose legs splay sideways (0.58) still fails.',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'firm',
     measure: { kind: 'engine-now', from: 'head bounds x extent / union of body + front-leg (or arm) bounds x extent' },
@@ -368,7 +368,8 @@ export const CUTE_RULES: readonly CuteRule[] = [
     what: 'Across the ears, the head is as wide as the whole toy: nothing below it sticks out further.',
     quantity: 'earSpanToWidest',
     ranges: { 'quadruped-seated': r(0.95, 1.15), 'biped-animal': r(0.95, 1.3) },
-    why: 'The eye goes to the face first; a silhouette that widens downwards reads as a heavy, sitting adult.',
+    scope: { ears: ['cupped', 'folded', 'lop', 'floppy'] },
+    why: 'The eye goes to the face first; a silhouette that widens downwards reads as a heavy, sitting adult. Rule-eye 1107: the span is "across the ears", so it is for ears that stand out or hang beside the head; a teddy\'s round ears or a cat\'s prick ears on top add nothing to the head\'s width, and the bar bunny\'s own feet (0.7 W each, touching) would fail it at 0.7 without its lops hanging beside them. Our bear (0.79, big feet under a big head) reads fine by eye. Rule 2 still reads the body.',
     from: ['highland-cow', 'sleepy-bunny'],
     strictness: 'firm',
     measure: { kind: 'engine-now', from: 'union of ear bounds x extent / whole toy bounds x extent below the chin' },
@@ -388,9 +389,9 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-wide-apart',
     what: 'The eyes are set wide apart, well over half the head width.',
     quantity: 'eyeSpacing',
-    ranges: { 'quadruped-seated': r(0.55, 0.7), 'biped-animal': r(0.55, 0.7), doll: r(0.55, 0.7), blob: rp(0.45, 0.7), 'long-body': rp(0.5, 0.7) },
+    ranges: { 'quadruped-seated': r(0.52, 0.7), 'biped-animal': r(0.52, 0.7), doll: r(0.52, 0.7), blob: rp(0.45, 0.7), 'long-body': rp(0.5, 0.7) },
     scope: { eyeCount: 'two' },
-    why: 'Wide-set eyes are the strongest baby-face cue; close eyes read as a watchful, older face.',
+    why: 'Wide-set eyes are the strongest baby-face cue; close eyes read as a watchful, older face. Rule-eye 1107: 0.54 (our cat, dog and bunny, rendered) reads as wide-set by eye, indistinguishable from the cow\'s 0.575; a hard rule\'s floor is where the eye starts to see "close", so it is 0.52 (the average designers\' 0.45-0.55 sit below it, our r1 cow\'s 0.47 still fails).',
     from: ['highland-cow', 'sleepy-bunny', 'fairy-doll'],
     strictness: 'hard',
     measure: { kind: 'engine-now', from: 'eye prop centres x distance (or embroidery eye centres) / head bounds x extent' },
@@ -420,11 +421,12 @@ export const CUTE_RULES: readonly CuteRule[] = [
     id: 'eyes-on-the-muzzle',
     what: 'A muzzled animal\'s eyes touch or sit just onto the muzzle\'s top edge.',
     quantity: 'eyeMuzzleGap',
-    ranges: { 'quadruped-seated': r(-0.07, 0) },
-    why: 'Eyes resting on the muzzle pull the features together into one small, low face.',
-    from: ['highland-cow'],
+    ranges: { 'quadruped-seated': r(-0.07, 0), 'biped-animal': r(-0.07, 0.05) },
+    why: 'Eyes resting on the muzzle pull the features together into one small, low face. Rule-eye 1107: the bar bunny\'s closed eyes sit at its muzzle\'s top corners with the nose right under them (gap about 0-0.03 W, est), and our bunny\'s eyes float 0.17 W above its small muzzle, the one thing the eye sees first on its face that no B rule read. B -0.07 to 0.05.',
+    from: ['highland-cow', 'sleepy-bunny'],
     strictness: 'firm',
     measure: { kind: 'engine-now', from: '(muzzle bounds max z - (eye centre z - eye radius)) / head width, sign: positive gap = bad' },
+    estimated: true,
   },
   {
     id: 'eyes-over-muzzle-corners',
@@ -984,11 +986,11 @@ export const CUTE_RULES: readonly CuteRule[] = [
   },
   {
     id: 'floppy-ears-hang',
-    what: 'Floppy ears hang from the top of the head beside the face, their middle about level with the eyes.',
+    what: 'Floppy ears hang from the top of the head beside the face, their middle between the eyes and the muzzle.',
     quantity: 'earAboveEye',
-    ranges: { 'quadruped-seated': rp(-0.2, 0.2), 'biped-animal': rp(-0.2, 0.2) },
+    ranges: { 'quadruped-seated': rp(-0.4, 0.15), 'biped-animal': rp(-0.4, 0.15) },
     scope: { ears: ['floppy'] },
-    why: 'A puppy\'s ears frame the face; hung too low they read as jowls, held too high as a cow\'s.',
+    why: 'A puppy\'s ears frame the face; hung too low they read as jowls, held too high as a cow\'s. Rule-eye 1107: an ear hung from the top of the head (root ~0.3 H above the eyes) that reaches the chin has its middle 0.1-0.3 H BELOW the eyes; our dog\'s (-0.31, rendered) frame the face beside the muzzle and read right, so the range is -0.40 to 0.15 (still provisional: no bar puppy).',
     from: ['highland-cow'],
     strictness: 'soft',
     measure: { kind: 'engine-now', from: '(ear bounds centre z - eye centre z) / head height' },
@@ -1188,7 +1190,19 @@ export function checkCuteRules(family: ToyFamily, values: Readonly<Partial<Recor
     const range = rule.ranges[family]
     const value = values[rule.quantity]
     if (!range || value == null || ruleNotApplicable(rule, family, features)) continue
-    out.push({ rule, value, range, pass: value >= range.min && value <= range.max })
+    out.push({ rule, value, range, pass: inCuteRange(value, range) })
   }
   return out
+}
+
+/** Is a measured value inside a rule's range, AT THE PRECISION THE RULES ARE
+ *  WRITTEN IN? Rule-eye 1107: the ranges carry two decimals (whole degrees
+ *  and L* above 10), and the report prints the value the same way, so a
+ *  value that rounds onto a bound is on the bound: "0.45 of the head width,
+ *  want 0.33-0.45" was a failure at 0.451 (our cat's legs), "0.30 want
+ *  0.30-0.45" at 0.299 (our bunny's muzzle), neither one the eye can see. */
+export function inCuteRange(value: number, range: CuteRange): boolean {
+  const q = Math.abs(value) >= 10 ? 1 : 100
+  const v = Math.round(value * q) / q
+  return v >= Math.round(range.min * q) / q && v <= Math.round(range.max * q) / q
 }

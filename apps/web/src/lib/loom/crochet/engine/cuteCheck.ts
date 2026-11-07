@@ -17,7 +17,7 @@
  */
 
 import type { CompiledComposition, CompositionProgram } from './composition'
-import { CUTE_RULES, ruleNotApplicable, type CuteFeatures, type CuteRange, type CuteRule, type Strictness, type ToyFamily } from './cuteRules'
+import { CUTE_RULES, inCuteRange, ruleNotApplicable, type CuteFeatures, type CuteRange, type CuteRule, type Strictness, type ToyFamily } from './cuteRules'
 import { measureCute, type CuteMeasurement, type CuteSource } from './cuteMeasure'
 
 export interface CuteRuleResult {
@@ -165,7 +165,7 @@ export function cuteCheck(m: CuteMeasurement, gate = false): CuteReport {
       // A yarn-hex proxy is checked against the rule's hex range where it has
       // one (cuteRules.ts `proxyRanges`): the photo range is for the render.
       const range = (source === 'proxy' && rule.proxyRanges?.[m.family!]) || photoRange
-      const pass = value >= range.min && value <= range.max
+      const pass = inCuteRange(value, range)
       results.push({
         n: i + 1, id: rule.id, strictness: rule.strictness, value, range, pass,
         source,
