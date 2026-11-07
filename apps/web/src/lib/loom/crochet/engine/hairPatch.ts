@@ -24,7 +24,7 @@ import { auditProblems } from './auditChecks'
 import type { BuiltContinuous } from './yarnPath'
 import { STITCHES, type CoilShape, type LoopShape, type StitchId } from './dictionary'
 import { coilProblems } from './loopStitch'
-import { springCoils } from './coilSpring'
+import { relaxHoldingSets, springCoils } from './coilSpring'
 import type { V3 } from '../yarnLoop'
 
 export const HAIR_STYLE_IDS = ['none', 'fringe', 'curly-fringe'] as const
@@ -197,28 +197,31 @@ export function coilMixScale(h: HairPatch, k: number, c: number): number {
 export interface RosetteOptions {
   /** Each curl's outer diameter as a share of the host's width. */
   sizeOfW: number
-  /** Turns of the coil: a little over one, so it reads as an open ring. */
+  /** Turns of the coil: one and three quarters, so a plump curl reads as a
+   *  rosette (a ring with a second turn showing inside it), not a hoop. */
   turns: number
-  /** The loose yarn's drawn radius (yarn radii): a soft, fat chenille. */
+  /** The loose yarn's drawn radius (yarn radii): a soft, fat chenille, and
+   *  the girth the curls keep against each other (relax.ts collScale). The
+   *  hole is then about one strand across, as in the bar's rosettes. */
   strandYr: number
-  /** Curl spacing (stitches and rounds) as a share of the curl's diameter.
-   *  1 (curl-relax-1107, round 2): the curls already meet edge to edge and
-   *  pack 0.86 in the front view (rule 42); closer (0.8 to 0.9) packs more
-   *  rings than fit, and the sprung coils crowd each other smaller. */
+  /** Curl spacing (stitches and rounds) as a share of the curl's diameter:
+   *  0.9, so the plump rings meet edge to edge and press a little (packing
+   *  0.80 in the front view, rule 42). */
   spacing: number
   /** Big and small curls (rule 37): radius x big / small, every `every`th. */
   mix: { every: number; big: number; small: number }
-  /** Gravity on the loose yarn (yarn radii per iteration; HAIR_GRAVITY's 3x). */
+  /** Gravity on the loose yarn (yarn radii per iteration): the curls held
+   *  round by their set (coilSpring.ts) can take a real droop. */
   gravity: number
 }
 
 export const ROSETTE: RosetteOptions = {
-  sizeOfW: 0.15,
-  turns: 1.25,
-  strandYr: 1.15,
-  spacing: 1.0,
-  mix: { every: 3, big: 1.4, small: 0.8 },
-  gravity: 0.0075,
+  sizeOfW: 0.13,
+  turns: 1.75,
+  strandYr: 1.6,
+  spacing: 0.9,
+  mix: { every: 2, big: 1.3, small: 0.75 },
+  gravity: 0.013,
 }
 
 /** The sc's column pitch in yarn radii (dictionary gauge): a round's stitch
@@ -334,26 +337,60 @@ export function buildHairPatch(h: HairPatch, yr: number): BuiltContinuous {
   // Coils (cow-build-1025): fluffed apart as worked, before they settle, so
   // none starts inside another (the relax's collision then keeps them apart
   // and unlinked), and again after.
-  if (h.coil && h.coilSpring) springCoils(m, loopBodies(built), { collMinDist: yr * 1.25, gravity })
-  else if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face, 120)
-  relax(m, {
+  // A sprung coat's loose yarn collides at its own drawn girth (relax.ts
+  // `collScale`): every stitch is drawn at DEFAULT_STRAND_YR.
+  // The girth ramps up over the loop's first and last few nodes: where the
+  // loop goes into its stitch it is pulled tight, and it plumps beyond.
+  if (h.coil && h.coilSpring && h.strandYr) {
+    const cs = m.nodes.map(() => 1)
+    const fat = h.strandYr / DEFAULT_STRAND_YR
+    for (const b of loopBodies(built)) b.forEach((i, j) => { cs[i] = 1 + (fat - 1) * Math.min(1, (Math.min(j, b.length - 1 - j) + 1) / (GIRTH_RAMP + 1)) })
+    m.collScale = cs
+  }
+  const settle = {
     collMinDist: yr * 1.25,
     collK: 0.28,
     collAdjacency: 9,
     planeZ: 0,
     planeK: 0,
     layoutK: 0.06,
-    layoutMode: 'radial',
+    layoutMode: 'radial' as const,
     gravity,
     iterations: 420,
-  })
+  }
+  if (h.coil && h.coilSpring) {
+    // Sprung, then settled with each coil still holding its set, so packed
+    // rosettes press round against each other instead of crumpling.
+    const bodies = loopBodies(built)
+    const { sets } = springCoils(m, bodies, { collMinDist: yr * 1.25, gravity })
+    // The loop yarn is light beside the stuffed head it hangs from: while it
+    // settles it moves, the stitches it is worked into hardly do (measured:
+    // at equal weight 1 to 11 of 240 hooks slipped as the plump rings pressed
+    // on their legs; at LOOSE_LIGHT none).
+    const w0 = m.nodes.map((n) => n.w)
+    m.nodes.forEach((n, i) => { if (m.loose?.[i]) n.w *= LOOSE_LIGHT })
+    relaxHoldingSets(m, bodies, sets, SETTLE_HOLD, settle)
+    m.nodes.forEach((n, i) => { n.w = w0[i]! })
+  } else {
+    if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face, 120)
+    relax(m, settle)
+  }
   if (h.coil) easeCoilsApart(built, coilClearMm(h, yr), face)
   return built
 }
 
 /** The coils' clearance in mm (HairPatch.coilClearYr). */
+/** The loose strand's drawn radius when a patch gives none (yarn radii). */
+const DEFAULT_STRAND_YR = 0.62
+/** Nodes over which a sprung loop's collision girth ramps up from its stitch. */
+const GIRTH_RAMP = 4
+/** How hard a sprung coil holds its set while the patch settles (coilSpring.ts). */
+const SETTLE_HOLD = 0.1
+/** How much lighter a sprung coil's yarn is than the work while it settles. */
+const LOOSE_LIGHT = 10
+
 export function coilClearMm(h: HairPatch, yr: number): number {
-  return yr * (h.coilClearYr ?? 2 * (h.strandYr ?? 0.62))
+  return yr * (h.coilClearYr ?? 2 * (h.strandYr ?? DEFAULT_STRAND_YR))
 }
 
 /** Each loop's loose body as its own polyline, in build order: the loose

@@ -214,6 +214,9 @@ export interface RelaxConfig {
    * one-strand / no-spring rules still read the stitches alone. Absent = off.
    */
   sew?: { a: number; b: number; max: number }[]
+  /** Called at the start of every iteration (curl-relax-1107: the sprung
+   *  coils' set hold, coilSpring.ts). Absent = nothing (bit-identical). */
+  eachIteration?: (it: number) => void
   iterations: number
 }
 
@@ -276,6 +279,17 @@ export interface YarnModel {
    * no loose yarn (every existing build is bit-identical).
    */
   loose?: boolean[]
+  /**
+   * Per-node COLLISION THICKNESS (curl-relax-1107): each node's yarn as a
+   * multiple of the work's yarn, so a fat drawn strand (a chenille curl,
+   * HairPatch.strandYr) is kept apart by its own girth and does not sink into
+   * its neighbours. Two nodes are pushed apart to collMinDist x the smaller
+   * of their two values: two fat curls keep their girth against each other,
+   * but against the worked fabric (scale 1) a curl presses in as any yarn
+   * does, so it never shoves the stitches it sits on off their hooks. Absent = every yarn the same (every existing build is
+   * bit-identical).
+   */
+  collScale?: number[]
   /**
    * Per-node HEIGHT AXIS for free-form flat motifs (layoutMode 'axis', the
    * motif kit, motifs/kit.ts): the in-plane unit direction each node's stitch
@@ -370,8 +384,11 @@ class Grid {
 
 export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const { nodes, dist, bend, strand, along } = model
-  const grid = new Grid(cfg.collMinDist)
-  const minD2 = cfg.collMinDist * cfg.collMinDist
+  const cs = model.collScale
+  let csMax = 1
+  if (cs) for (const v of cs) csMax = Math.max(csMax, v)
+  const grid = new Grid(cfg.collMinDist * csMax)
+  const minD2 = cfg.collMinDist * cfg.collMinDist * csMax * csMax
   // Capture each node's worked line for the "laid flat / blocked" pull: its row
   // (initial y) for flat work, its round (initial radius) for work in the round.
   const radial = cfg.layoutMode === 'radial'
@@ -490,6 +507,7 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
   const grav = cfg.gravity && loose ? cfg.gravity : null
 
   for (let it = 0; it < cfg.iterations; it++) {
+    cfg.eachIteration?.(it)
     // 0. Gravity on free-hanging yarn only (see RelaxConfig.gravity).
     if (grav) {
       for (let i = 0; i < nodes.length; i++) {
@@ -523,10 +541,12 @@ export function relax(model: YarnModel, cfg: RelaxConfig): void {
         const dz = b.z - a.z
         const d2 = dx * dx + dy * dy + dz * dz
         if (d2 >= minD2 || d2 < 1e-12) continue
+        const minD = cs ? cfg.collMinDist * Math.min(cs[i]!, cs[j]!) : cfg.collMinDist
+        if (cs && d2 >= minD * minD) continue
         const d = Math.sqrt(d2)
         const wsum = a.w + b.w
         if (wsum === 0) continue
-        const corr = ((cfg.collMinDist - d) / d) * cfg.collK
+        const corr = ((minD - d) / d) * cfg.collK
         const ux = dx * corr
         const uy = dy * corr
         const uz = dz * corr

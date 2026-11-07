@@ -75,6 +75,39 @@ export interface CoilSpringOptions {
 export interface CoilSpringReport {
   /** Each coil's seed scale (1 = it had room to start at full size). */
   seeds: number[]
+  /** Each coil's wound set about its own centroid (for `holdCoilSets`). */
+  sets: V[][]
+}
+
+/** Pull each coil toward its wound set at `scale` (1 = full size), placed on
+ *  its own centroid now, by `k` (a translation only, so collision still
+ *  decides where it sits). The settle after the spring keeps doing this, so
+ *  the packed curls press into each other and stay round instead of
+ *  crumpling to worms (curl-relax-1107, round 2: the r5 render). */
+export function holdCoilSets(model: YarnModel, bodies: number[][], sets: V[][], k: number, scale: (b: number) => number = () => 1, ends = 0): void {
+  const nodes = model.nodes
+  bodies.forEach((b, bi) => {
+    const c = centroidOf(b.map((i) => nodes[i]!))
+    const s = scale(bi)
+    b.forEach((i, j) => {
+      const p = nodes[i]!
+      const q = sets[bi]![j]!
+      // Free near the stitch (`ends` nodes each side): the hold must not
+      // drag the loop's legs, and the stitch with them, off the work.
+      const kk = ends > 0 ? k * Math.min(1, Math.min(j, b.length - 1 - j) / ends) : k
+      p.x += (c.x + q.x * s - p.x) * kk
+      p.y += (c.y + q.y * s - p.y) * kk
+      p.z += (c.z + q.z * s - p.z) * kk
+    })
+  })
+}
+
+/** Relax `model` with the coils' sets held on every iteration (by `k`, kept
+ *  small so no hold step carries a strand through its neighbour), the
+ *  `ends` nodes at each end of a coil left free (its legs, into the work). */
+export function relaxHoldingSets(model: YarnModel, bodies: number[][], sets: V[][], k: number, cfg: RelaxConfig, ends = 6): void {
+  if (k <= 0) { relax(model, cfg); return }
+  relax(model, { ...cfg, eachIteration: () => holdCoilSets(model, bodies, sets, k, () => 1, ends) })
 }
 
 /**
@@ -115,7 +148,12 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
     }
     return Math.max(minSeed, Math.min(1, s))
   })
-  if (seeds.every((s) => s >= 1)) return { seeds }
+  // The wound set of each body, about its own centroid (the hold's target).
+  const set = bodies.map((b) => {
+    const c = centroidOf(b.map((i) => nodes[i]!))
+    return b.map((i) => ({ x: nodes[i]!.x - c.x, y: nodes[i]!.y - c.y, z: nodes[i]!.z - c.z }))
+  })
+  if (seeds.every((s) => s >= 1)) return { seeds, sets: set }
 
   // The constraints the growth scales: any that touches a body's node (its
   // own segments, its bending distances, the joins to its passes).
@@ -124,11 +162,6 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
   const grow = [...scaled(model.dist), ...scaled(model.bend)]
   const setScale = (sOf: (k: number) => number): void => { for (const g of grow) g.c.rest = g.rest * sOf(g.k) }
 
-  // The wound set of each body, about its own centroid (the hold's target).
-  const set = bodies.map((b) => {
-    const c = centroidOf(b.map((i) => nodes[i]!))
-    return b.map((i) => ({ x: nodes[i]!.x - c.x, y: nodes[i]!.y - c.y, z: nodes[i]!.z - c.z }))
-  })
   // Seed: each body scaled about its root.
   bodies.forEach((b, k) => {
     const s = seeds[k]!
@@ -201,19 +234,7 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
   // its own centroid now (a translation only, so it never drags a coil into
   // a neighbour; collision acts on every iteration between holds).
   const hold = opts.holdShape ?? 0.15
-  const holdSets = (sOf: (k: number) => number, k0: number): void => {
-    bodies.forEach((b, k) => {
-      const c = centroidOf(b.map((i) => nodes[i]!))
-      const s = sOf(k)
-      b.forEach((i, j) => {
-        const p = nodes[i]!
-        const q = set[k]![j]!
-        p.x += (c.x + q.x * s - p.x) * k0
-        p.y += (c.y + q.y * s - p.y) * k0
-        p.z += (c.z + q.z * s - p.z) * k0
-      })
-    })
-  }
+  const holdSets = (sOf: (k: number) => number, k0: number): void => holdCoilSets(model, bodies, set, k0, sOf)
   opts.onStage?.(0)
   try {
     for (let st = 1; st <= stages; st++) {
@@ -251,5 +272,5 @@ export function springCoils(model: YarnModel, bodies: number[][], opts: CoilSpri
     }
     for (let i = 0; i < n; i++) nodes[i]!.w = w0[i]!
   }
-  return { seeds }
+  return { seeds, sets: set }
 }
