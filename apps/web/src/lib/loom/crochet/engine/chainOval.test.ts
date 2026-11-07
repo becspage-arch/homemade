@@ -209,7 +209,10 @@ test('nostrils as the listing camera sees them, for any head pitch (engine-1107)
   }
   const face = { x: 0, y: 1, z: -0.35 }
   assert.ok(Math.abs(ovalViewTiltDeg(face, { headPitchDeg: 25 }) - ovalViewTiltDeg(pitchDown(face, 25))) < 1e-9)
-  assert.ok(Math.abs(ovalViewTiltDeg({ x: 0, y: 1, z: 0 }) - (90 - LISTING_CAMERA_TILT_DEG)) < 1e-9)
+  // The camera is the render's own v3 listing camera (blenderScene
+  // HERO_PHOTO_LISTING_BY.windowsill): tilt 83, looking down 7 deg.
+  assert.equal(LISTING_CAMERA_TILT_DEG, 83)
+  assert.ok(Math.abs(ovalViewTiltDeg({ x: 0, y: 1, z: 0 }) - 7) < 1e-9)
   // A second toy, not the cow: a DK ball head worked crown down, with a small
   // stuffed oval muzzle low on the face, level (0) and nodded down (25 deg).
   // Built, draped and seen by the listing camera, the nostrils land on the

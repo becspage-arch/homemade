@@ -65,6 +65,7 @@ import { relax } from './relax'
 import { auditProblems } from './auditChecks'
 import { FrontRaster, outlineSoftness } from './cuteMeasure'
 import type { AmigurumiPart, PartPlacement } from './composition'
+import { HERO_PHOTO_LISTING_BY, HERO_PHOTO_V2_DEFAULTS } from '../../render/blenderScene'
 import type { EmbroideryStitch } from './faceEmbroidery'
 
 export type ChainOvalKind = 'stuffed' | 'patch'
@@ -899,12 +900,13 @@ export interface ChainOvalNostrilOptions {
   hostRadiusMm?: number | { across: number; up: number }
 }
 
-/** The listing photo's camera tilt (degrees, 90 = level): photo 'v3', the
- *  listing preset (soft-light-1027, `HERO_PHOTO_LISTING_BY.windowsill.
- *  photoTiltDeg` in render/blenderScene.ts, 83 = looking down 7 deg). The
- *  rule-calib r1 and engine-shapes renders used the same tilt under v2. Kept
- *  here (not imported) until that branch is merged; the render owns it. */
-export const LISTING_CAMERA_TILT_DEG = 83
+/** The listing photo's camera tilt (degrees, 90 = level), read off the
+ *  render's own listing preset: photo 'v3' (`HERO_PHOTO_LISTING`) on its
+ *  listing set, the windowsill (`HERO_PHOTO_LISTING_BY.windowsill`, 83 =
+ *  looking down 7 deg), else the v2 camera it keeps. One camera for the
+ *  pattern: the stitches a maker counts do not change with the photo's set. */
+export const LISTING_CAMERA_TILT_DEG: number =
+  HERO_PHOTO_LISTING_BY.windowsill?.photoTiltDeg ?? HERO_PHOTO_V2_DEFAULTS.photoTiltDeg
 
 /**
  * How far a piece's aim points DOWN from the line the listing camera sees it
