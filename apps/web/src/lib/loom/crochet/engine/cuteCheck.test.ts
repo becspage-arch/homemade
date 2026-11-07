@@ -246,7 +246,7 @@ test('the check: the r1 photo numbers fail the 23 rules step 1 pinned (and 5 of 
   // 38 (tip 0.18 H under the crown), 40 (a one-yarn rim), 41 (a white muzzle); 39 passes (base 0.126 W).
   assert.deepEqual(fails, [2, 3, 5, 7, 8, 9, 13, 14, 15, 18, 19, 20, 21, 24, 25, 26, 27, 28, 31, 33, 34, 36, 37, 38, 40, 41, 42, 43])
   const eyes = rep.results.find((r) => r.id === 'eyes-wide-apart')!
-  assert.equal(eyes.line, 'eyes too close: 0.47 of the head width, want 0.55-0.70')
+  assert.equal(eyes.line, 'eyes too close: 0.47 of the head width, want 0.52-0.70')
   assert.equal(eyes.strictness, 'hard')
   // Hard first in the failure list.
   assert.match(rep.failures[0]!, /\(rule \d+, hard/)

@@ -888,16 +888,22 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
   // ── the ears ──
   if (ears.length) {
     const prot: number[] = [], above: number[] = [], aspect: number[] = [], lens: number[] = [], widths: number[] = [], rims: number[] = [], rimMins: number[] = []
+    // Rule-eye 1107: an ear ON TOP of the head (a cat's prick ear, a teddy's
+    // round ear) is read whole: beside the head only a sliver of it shows, so
+    // the cat's soft triangle read as a 3:1 spike (rule 56). The cow-type ear
+    // held out at the brow, and a hanging ear, keep the photos' box: the part
+    // the lens sees beside the head.
+    const onTop = features.ears === 'upright-pointed' || features.ears === 'round'
     for (const ear of ears) {
       const e = ext(ear.ctrl)
       const left = (e.u0 + e.u1) / 2 < midU
       prot.push(left ? he.u0 - e.u0 : e.u1 - he.u1)
       // The part of the ear the lens sees beside the head (the photos' box).
-      const out = ear.ctrl.filter((v) => (left ? dot(v, F.u) < he.u0 : dot(v, F.u) > he.u1))
+      const out = onTop ? [] : ear.ctrl.filter((v) => (left ? dot(v, F.u) < he.u0 : dot(v, F.u) > he.u1))
       const oe = out.length > 4 ? ext(out) : e
-      const ow = left ? he.u0 - oe.u0 : oe.u1 - he.u1
+      const ow = onTop ? e.u1 - e.u0 : left ? he.u0 - oe.u0 : oe.u1 - he.u1
       if (Number.isFinite(eyeZ)) above.push(((oe.z0 + oe.z1) / 2 - eyeZ) / H)
-      if (out.length > 4 && ow > 0) aspect.push((oe.z1 - oe.z0) / ow)
+      if ((onTop || out.length > 4) && ow > 0) aspect.push((oe.z1 - oe.z0) / ow)
       lens.push((e.z1 - e.z0) / H)
       widths.push((e.u1 - e.u0) / W)
       const rim = earRimRatio(ear.ctrl.map(proj), yr, W / HEAD_PX)
@@ -1075,7 +1081,13 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
   if (backLegs.length) {
     const angs = backLegs.map((l) => {
       const n0 = Math.max(3, Math.floor((l.part.rounds[0]! / l.part.rounds.reduce((a, b) => a + b, 0)) * l.ctrl.length * 2))
-      const sole = centroid(l.ctrl.slice(0, n0))
+      // Rule-eye 1107: the sole is the leg's FREE end. A leg worked sole
+      // first (the cow's, the lamb's) is sewn by its fasten-off end, so its
+      // magic ring is the sole; a leg seated by its ring (`poleIn`, the
+      // figure presets') presents its fasten-off end, and reading the ring
+      // there put the cat's soles at the hip (147 deg).
+      const poleIn = (l.part.place as { poleIn?: boolean } | undefined)?.poleIn === true
+      const sole = centroid(poleIn ? l.ctrl.slice(-n0) : l.ctrl.slice(0, n0))
       const mid = centroid(l.ctrl)
       const d = { x: sole.x - mid.x, y: sole.y - mid.y, z: sole.z - mid.z }
       const k = dot(d, F.f) / (len3(d) || 1)
@@ -1088,11 +1100,26 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
     set('footWidth', fw.reduce((a, x) => a + x, 0) / fw.length, 'geometry')
   } else miss('footWidth', 'no feet')
 
-  // ── softness: the front-view silhouette of the whole toy ──
+  // ── softness: the front-view silhouette of the head and what is on it ──
+  // Rule-eye 1107: the rules (33, 34) are for "the head and its appendages",
+  // and the raster held every piece above the chin row: the doll's lace
+  // wings and hair roses read as 14 corners and the bunny's lops as a 0.54 W
+  // straight edge (the bar doll has scalloped wings and roses, the bar bunny
+  // straight-sided lops). So the silhouette leaves out a hanging ear (lop,
+  // floppy: straight sides by design) and DECORATIONS: a motif or a pad of
+  // three rounds or fewer sewn on a piece (wings, roses, a leaf, a bow, toe
+  // beans), never a named head feature. The body stays in the raster so the
+  // outline runs on below the chin instead of being cut flat there.
   {
     const cell = W / HEAD_PX
     let u0 = Infinity, u1 = -Infinity
-    const all: V3[][] = [...c.placed.map((pp) => pp.ctrl), ...c.hair.map((h) => h.ctrl)]
+    const hanging = features.ears === 'lop' || features.ears === 'floppy'
+    const deco = (pp: PlacedPart): boolean => {
+      const on = (pp.part.place as { on?: string } | undefined)?.on
+      return !!on && on !== 'ground' && pp.part.rounds.length <= 3 && !/^(head|body|neck|ear|horn|muzzle|nose|hair-cap)/.test(pp.part.name)
+    }
+    const shape = c.placed.filter((pp) => !(hanging && /^ear-[lr]$/.test(pp.part.name)) && !deco(pp))
+    const all: V3[][] = [...shape.map((pp) => pp.ctrl), ...c.hair.map((h) => h.ctrl)]
     for (const pts of all) { const e = ext(pts); u0 = Math.min(u0, e.u0); u1 = Math.max(u1, e.u1) }
     const zTop = Math.max(...all.map((pts) => ext(pts).z1))
     const R = new FrontRaster(u0 - 4 * yr, ground - 4 * yr, cell, u1 + 4 * yr, zTop + 4 * yr)
@@ -1233,10 +1260,21 @@ export function measureCute(p: CompositionProgram, c: CompiledComposition, debug
       )
       return Math.min(offWorld, offFace)
     }
+    // Rule-eye 1107: small decorations (a motif or a pad, three rounds or
+    // fewer) that are unmirrored on the same parent piece are ONE cue, the
+    // way the eye reads them: the bar doll's five roses, flowers and a leaf
+    // on one side of her hair are "flowers on one side" (her 3 cues: crossed
+    // legs, side-swept hair, the flowers), not six.
+    const deco = new Map<string, string[]>()
     for (const [k, g] of sides) {
-      if (g.l.length !== g.r.length) { cues.push(`${k} on one side only`); continue }
-      if (g.l.some((pa) => Math.min(...g.r.map((pb) => mirrorOff(pa, pb))) > 0.08 * W)) cues.push(`${k} not mirrored`)
+      const how = g.l.length !== g.r.length ? 'on one side only' : g.l.some((pa) => Math.min(...g.r.map((pb) => mirrorOff(pa, pb))) > 0.08 * W) ? 'not mirrored' : null
+      if (!how) continue
+      const pp = (g.l[0] ?? g.r[0])!
+      const on = (pp.part.place as { on?: string } | undefined)?.on
+      if (pp.part.rounds.length <= 3 && on && on !== 'ground') { deco.set(on, [...(deco.get(on) ?? []), k]); continue }
+      cues.push(`${k} ${how}`)
     }
+    for (const [on, ks] of deco) cues.push(`${ks.join(', ')} on the ${on} not mirrored`)
     // A hair patch or a fringe swept to one side.
     for (const h of p.hair ?? []) {
       const d = h.dir
