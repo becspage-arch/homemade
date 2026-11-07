@@ -4037,6 +4037,21 @@ preset can use, opt-in (absent = every hash unchanged; the cow default is still 
     24% / 76% across; now 40-41% down, 25% / 75% across, and the words are identical (round 5, 3 stitches out, to
     round 5, 4 stitches out). A second toy (a DK ball head, a small oval muzzle) at two head pitches: chainOval.test.
 
+## 8x. EARS (ears-1107, 2026-11-07): the top-roll pinch gap in stitches; the rolled-edge lop
+
+- pinchEar.ts: the top roll's pinch sits `ceil(count / 6)` whole stitches clear of the part round's near end, on the
+  middle of the next stitch (`topRollGapSts`, `topRollPinchAngle`; replaces the cow-only `TOP_ROLL_CLEAR` 25 deg).
+  - Clean on 160/160 cups (9-30 sts, arcs 0.30-0.60, both sides, DK and 2.31 mm).
+  - Neither a fixed stitch count nor a fixed angle holds.
+  - A part round with no room for the gap throws.
+  - Fine cow + shapes: ea8e21d7 -> 2ba0b2d2, rule 21 2.03, rule 40 0.149.
+- rolledLop.ts (new, opt-in): a long oval cup round a foundation chain. Lining floor, two wall rounds, the last folded
+  back into a rolled rim, a part round down the outer edge, pinched at the slip-knot end and sewn by the pinch.
+  - Bunny switch `rolledLops`: rule 21 2.52 at M (closed lop 1.0).
+- chainOval.ts opt-ins: `rimFold` (fold brim on an oval), `partialLast` (part round). Over 12 ch, round-1 side hooks
+  follow their chain loops (the loops are a chain's pitch apart, so crowns drifted 2.6-2.9 yr ahead on a 24-ch side).
+- Details and measurements: crochet-bar/jobs/ears-1107.md.
+
 ## 9. What did NOT work (the failure log — don't repeat these)
 
 - **Holding the HOOP firmly and letting only the meridian give, under stuffing
