@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getCurrentDbUser } from '@/lib/get-current-user'
 import { hasPremium } from '@/lib/entitlements'
+import { checkRateLimit } from '@/lib/ratelimit'
 import { generatePatternImage } from '@/lib/studio/generation/pattern-engine'
 
 export const dynamic = 'force-dynamic'
@@ -23,7 +24,7 @@ export const runtime = 'nodejs'
  */
 export async function POST(req: Request) {
   const user = await getCurrentDbUser()
-  if (!hasPremium(user)) {
+  if (!user || !hasPremium(user)) {
     return NextResponse.json(
       { error: 'Homemade Premium is required to design a pattern from an idea.' },
       { status: 402 },
@@ -50,6 +51,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Keep your idea under 400 characters.' }, { status: 400 })
   }
   const detailed = body.detailed === true
+
+  // Daily allowance per member: each go spends a Flux call. Checked after the
+  // input validation so a rejected brief doesn't use up a go.
+  const limit = await checkRateLimit('ideaImage', user.id)
+  if (!limit.allowed) {
+    return NextResponse.json({ error: limit.message }, { status: 429 })
+  }
 
   try {
     const image = await generatePatternImage(brief, { detailed })

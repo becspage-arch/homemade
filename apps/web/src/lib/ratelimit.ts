@@ -2,6 +2,9 @@ import 'server-only'
 import { Redis } from '@upstash/redis'
 import { Ratelimit } from '@upstash/ratelimit'
 
+/** Describe-an-idea images a member can generate per day. */
+export const IDEA_IMAGE_DAILY_LIMIT = 20
+
 let redis: Redis | null = null
 let limiters: Limiters | null = null
 
@@ -13,6 +16,7 @@ type Limiters = {
   reportSubmitted: Ratelimit
   searchQuery: Ratelimit
   signup: Ratelimit
+  ideaImage: Ratelimit
 }
 
 function getRedis(): Redis | null {
@@ -74,6 +78,15 @@ function getLimiters(): Limiters | null {
       analytics: true,
       prefix: 'rl:signup',
     }),
+    // Describe-an-idea (Premium). Every go is a paid Fal Flux call, so each
+    // member gets a fixed daily allowance. At Flux Pro prices the worst case is
+    // well under the monthly subscription. Change IDEA_IMAGE_DAILY_LIMIT to move it.
+    ideaImage: new Ratelimit({
+      redis: r,
+      limiter: Ratelimit.fixedWindow(IDEA_IMAGE_DAILY_LIMIT, '1 d'),
+      analytics: true,
+      prefix: 'rl:idea-image',
+    }),
   }
   return limiters
 }
@@ -123,5 +136,10 @@ function friendlyMessage(bucket: RateLimitKey, resetAt: number | undefined): str
       // Never shown to a signer-upper — signup is never blocked. checkRateLimit's
       // `allowed: false` result is only used as a risk signal.
       return `Signup rate checked. Try again in ${window}.`
+    case 'ideaImage': {
+      const hours = resetAt ? Math.max(1, Math.ceil((resetAt - Date.now()) / 3_600_000)) : 24
+      const wait = mins < 60 ? window : hours === 1 ? '1 hour' : `${hours} hours`
+      return `You've used today's ${IDEA_IMAGE_DAILY_LIMIT} idea designs. You can design more in ${wait}. Your saved patterns are all still here.`
+    }
   }
 }
