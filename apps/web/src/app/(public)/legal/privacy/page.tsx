@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
         <h3>Payment information</h3>
         <p>
-          Once the premium tier launches, payment is handled by Stripe.
+          Premium payments are handled by Stripe.
           Stripe processes your card details directly — we receive only the
           subscription state (active, cancelled, lapsed) and a billing
           country for tax purposes. We do not store card numbers.
@@ -169,9 +169,14 @@ export default function PrivacyPage() {
             drafting, not for handling user input.
           </li>
           <li>
-            <strong>Stripe</strong> (added at premium launch) — payment
-            card data, billing address, tax information. Global with UK and
-            EU regions.
+            <strong>Stripe</strong> (Premium payments) — payment card data,
+            billing address, tax information. Global with UK and EU regions.
+          </li>
+          <li>
+            <strong>TollBit</strong> (licensing our content to AI companies)
+            — IP address, approximate location, browser details and the pages
+            requested, taken from our site&apos;s request logs so automated
+            AI crawlers can be identified and charged. United States.
           </li>
         </ul>
 
