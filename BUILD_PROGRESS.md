@@ -55,6 +55,21 @@ maker-photo system is live. Train 13 shipped the 34 personalised samplers
 ("Make it yours", word art in the Studio). Nothing in flight on a branch. Then
 needlework converted the same way, fill to 1,818, close-out.
 
+## Premium: describe-an-idea daily cap; checkout confirmed live (2026-11-25)
+
+Checked before "going live": Premium checkout has in fact been live since the
+23 June go-live. ECS task `homemade-web:24` runs `STRIPE_MODE=live`,
+`CHECKOUT_ENABLED=true` with the live key, webhook secret and four live price
+ids mounted; the live webhook endpoint is enabled for all six events; the four
+prices are active; Stripe Tax is on (no registrations yet, so no tax is
+collected); the Customer Portal is configured; `/premium` shows "Go Premium".
+No subscriptions yet. The module README's go-live steps are done.
+
+Added before promoting it: `/api/studio/idea-to-image` (one paid Fal Flux call
+per go) is capped at `IDEA_IMAGE_DAILY_LIMIT` = 20 per member per day, via a
+new `ideaImage` fixed-window bucket in `lib/ratelimit.ts`. Over the cap it
+returns 429 with a plain message the Studio panels already show.
+
 ## Crochet bulk autopilot, driven by a Claude routine (2026-09-06)
 
 The crochet lane no longer runs as an Inngest job on ECS, because it could not:
